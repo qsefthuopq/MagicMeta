@@ -1,5 +1,7 @@
 package com.elmakers.mine.bukkit.meta;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.WordUtils;
@@ -8,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Parameter {
     private String key;
     private String name;
-    private String description;
     private String field;
+    private List<String> description;
     private ParameterType type;
     private Category category;
 
@@ -18,7 +20,7 @@ public class Parameter {
         this.key = field;
         this.type = type;
 
-        description = "";
+        description = new ArrayList<>();
         name = WordUtils.capitalizeFully(field, new char[]{'_'}).replaceAll("_", " ");
     }
 
@@ -41,16 +43,16 @@ public class Parameter {
         return name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public String getField() {
         return field;
     }
 
     public String getType() {
         return type.getKey();
+    }
+
+    public List<String> getDescription() {
+        return description;
     }
 
     public String getCategory() {

@@ -16,12 +16,12 @@ public class SpellActionDescription {
     private String className;
     private String shortClass;
     private String name;
-    private String description;
+    private List<String> description;
     private Collection<Parameter> parameters;
     private Category category;
 
     public SpellActionDescription(@Nonnull Class<? extends SpellAction> actionClass, @Nonnull Collection<Parameter> parameters) {
-        description = "";
+        description = new ArrayList<>();
         className = actionClass.getSimpleName();
         shortClass = className.replace("Action", "");
         name = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(shortClass), ' ');
@@ -45,7 +45,7 @@ public class SpellActionDescription {
         return name;
     }
 
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 

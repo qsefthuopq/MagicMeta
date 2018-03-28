@@ -15,15 +15,15 @@ public class ParameterType {
     private Class<?> classType;
     private String key;
     private String name;
-    private String description;
     private String className;
+    private List<String> description;
     private Set<String> options = new HashSet<>();
 
     public ParameterType(@Nonnull String key, @Nonnull Class<?> classType) {
         this.key = key;
         this.classType = classType;
         className = classType.getName();
-        description = "";
+        description = new ArrayList<>();
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
     }
 
@@ -51,7 +51,7 @@ public class ParameterType {
         return optionsList;
     }
 
-    public String getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
