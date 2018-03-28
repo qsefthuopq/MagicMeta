@@ -25,6 +25,7 @@ public class Configurable {
     protected Configurable(@Nonnull Class<?> classType, @Nonnull Collection<Parameter> parameters, String classSuffix) {
         description = new ArrayList<>();
         description.add("");
+        category = "";
         className = classType.getSimpleName();
         shortClass = className.replace(classSuffix, "");
         name = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(shortClass), ' ');

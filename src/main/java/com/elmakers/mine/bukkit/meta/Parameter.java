@@ -22,6 +22,7 @@ public class Parameter {
         this.field = field;
         this.key = field;
         this.type = type.getKey();
+        this.category = "";
 
         description = new ArrayList<>();
         description.add("");
