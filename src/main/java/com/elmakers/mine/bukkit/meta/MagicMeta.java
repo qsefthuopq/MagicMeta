@@ -2,9 +2,12 @@ package com.elmakers.mine.bukkit.meta;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,6 +16,8 @@ import javax.annotation.Nonnull;
 import org.reflections.Reflections;
 import com.elmakers.mine.bukkit.action.CastContext;
 import com.elmakers.mine.bukkit.api.action.SpellAction;
+import com.elmakers.mine.bukkit.effect.EffectPlayer;
+import com.elmakers.mine.bukkit.effect.builtin.EffectSingle;
 import com.elmakers.mine.bukkit.magic.Mage;
 import com.elmakers.mine.bukkit.magic.MagicController;
 import com.elmakers.mine.bukkit.spell.ActionSpell;
@@ -26,12 +31,16 @@ public class MagicMeta {
     private static final String BUILTIN_SPELL_PACKAGE = "com.elmakers.mine.bukkit.action.builtin";
 
     private final Set<String> spellParameters = new HashSet<>();
+    private final Set<String> effectParameters = new HashSet<>();
     private final Set<String> spellProperties = new HashSet<>();
     private final Map<String, Category> categories = new HashMap<>();
     private final Map<String, Parameter> allParameters = new HashMap<>();
     private final Map<String, SpellActionDescription> actions = new HashMap<>();
     private final ParameterTypeStore parameterTypeStore = new ParameterTypeStore();
     private final SortedObjectMapper mapper = new SortedObjectMapper();
+
+    private final MagicController controller;
+    private final Mage mage;
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -54,6 +63,11 @@ public class MagicMeta {
         System.out.println("Done.");
     }
 
+    private MagicMeta() {
+        controller = new MagicController();
+        mage = new Mage("Interrogator", controller);
+    }
+
     private void loadMeta(@Nonnull File inputFile) {
         // TODO!
     }
@@ -64,12 +78,19 @@ public class MagicMeta {
         Map<String, Object> root = new HashMap<>();
         root.put("actions", actions);
         root.put("categories", categories);
-        root.put("spell_parameters", spellParameters);
-        root.put("spell_properties", spellProperties);
+        root.put("effect_parameters", sortCollection(effectParameters));
+        root.put("spell_parameters", sortCollection(spellParameters));
+        root.put("spell_properties", sortCollection(spellProperties));
         root.put("parameters", allParameters);
         root.put("types", parameterTypeStore.getTypes());
 
         mapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, root);
+    }
+
+    private List<String> sortCollection(Collection<String> unsorted) {
+        List<String> sorted = new ArrayList<>(unsorted);
+        Collections.sort(sorted);
+        return sorted;
     }
 
     private void addSpellParameters(MagicController controller, Mage mage, BaseSpell spell, Set<Parameter> parameters, Set<Parameter> properties, String categoryKey) {
@@ -95,7 +116,7 @@ public class MagicMeta {
         }
     }
 
-    private void addBaseSpellProperties(MagicController controller, Mage mage) {
+    private void generateSpellMeta() {
         Set<Parameter> parameters = new HashSet<>();
         Set<Parameter> properties = new HashSet<>();
 
@@ -124,23 +145,17 @@ public class MagicMeta {
         }
     }
 
-    private void generateMeta() {
+    private void generateActionMeta() {
         // Note that this seems to get everything outside of this package as well. Not sure why.
         Reflections reflections = new Reflections(BUILTIN_SPELL_PACKAGE);
 
         Set<Class<? extends SpellAction>> allClasses = reflections.getSubTypesOf(SpellAction.class);
 
-        MagicController controller = new MagicController();
-        Mage mage = new Mage("Interrogator", controller);
-
-        // This will scan for base spell properties loaded at init time
         InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(parameterTypeStore);
         ActionSpell spell = new ActionSpell();
         spell.initialize(controller);
         spell.setMage(mage);
         spell.loadTemplate("interrogator", templateConfiguration);
-
-        addBaseSpellProperties(controller, mage);
 
         CastContext context = new CastContext(mage);
         context.setSpell(spell);
@@ -153,12 +168,12 @@ public class MagicMeta {
             System.out.println("Scanning " + actionClass.getName());
             try {
                 SpellAction testAction = actionClass.getConstructor().newInstance();
-                InterrogatingConfiguration testConfiguration = new InterrogatingConfiguration(parameterTypeStore);
-                testAction.initialize(spell, testConfiguration);
-                testAction.prepare(context, testConfiguration);
+                InterrogatingConfiguration actionConfiguration = new InterrogatingConfiguration(parameterTypeStore);
+                testAction.initialize(spell, actionConfiguration);
+                testAction.prepare(context, actionConfiguration);
 
                 // TODO: Track spells with exceptional parameter types
-                Collection<Parameter> spellParameters = testConfiguration.getParameters();
+                Collection<Parameter> spellParameters = actionConfiguration.getParameters();
                 for (Parameter parameter : spellParameters) {
                     allParameters.put(parameter.getKey(), parameter);
                 }
@@ -169,6 +184,24 @@ public class MagicMeta {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void generateEffectsMeta() {
+        System.out.println("Scanning EffectSingle");
+        InterrogatingConfiguration effectConfiguration = new InterrogatingConfiguration(parameterTypeStore);
+        EffectPlayer player = new EffectSingle();
+        player.load(null, effectConfiguration);
+        Collection<Parameter> singleParameters = effectConfiguration.getParameters();
+        for (Parameter parameter : singleParameters) {
+            allParameters.put(parameter.getKey(), parameter);
+            effectParameters.add(parameter.getKey());
+        }
+    }
+
+    private void generateMeta() {
+        generateSpellMeta();
+        generateActionMeta();
+        generateEffectsMeta();
     }
 
     private Category getCategory(String key) {

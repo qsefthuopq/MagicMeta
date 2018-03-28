@@ -1260,6 +1260,7 @@
       "name" : "Undo"
     }
   },
+  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
   "parameters" : {
     "add_effects" : {
       "category" : "",
@@ -1898,6 +1899,13 @@
       "name" : "Close Range",
       "type" : "double"
     },
+    "color_override" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_override",
+      "name" : "Color Override",
+      "type" : "string"
+    },
     "command_block_allowed" : {
       "category" : "base",
       "description" : [ ],
@@ -2134,7 +2142,7 @@
       "description" : [ ],
       "field" : "damage",
       "name" : "Damage",
-      "type" : "double"
+      "type" : "integer"
     },
     "damage_max_distance" : {
       "category" : "",
@@ -2862,7 +2870,7 @@
       "description" : [ ],
       "field" : "interval",
       "name" : "Interval",
-      "type" : "long"
+      "type" : "integer"
     },
     "item" : {
       "category" : "",
@@ -3003,6 +3011,13 @@
       "field" : "local_echo",
       "name" : "Local Echo",
       "type" : "boolean"
+    },
+    "location" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "location",
+      "name" : "Location",
+      "type" : "string"
     },
     "location_offset" : {
       "category" : "",
@@ -3354,6 +3369,13 @@
       "name" : "Origin At Target",
       "type" : "boolean"
     },
+    "origin_offset" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "origin_offset",
+      "name" : "Origin Offset",
+      "type" : "vector"
+    },
     "otworld" : {
       "category" : "",
       "description" : [ ],
@@ -3374,6 +3396,13 @@
       "field" : "override",
       "name" : "Override",
       "type" : "boolean"
+    },
+    "particle_override" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_override",
+      "name" : "Particle Override",
+      "type" : "string"
     },
     "passenger" : {
       "category" : "",
@@ -3695,7 +3724,7 @@
       "description" : [ ],
       "field" : "range",
       "name" : "Range",
-      "type" : "integer"
+      "type" : "double"
     },
     "range_padding" : {
       "category" : "",
@@ -3787,6 +3816,13 @@
       "field" : "reflective_override",
       "name" : "Reflective Override",
       "type" : "boolean"
+    },
+    "relative_offset" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "relative_offset",
+      "name" : "Relative Offset",
+      "type" : "vector"
     },
     "relative_source_offset" : {
       "category" : "",
@@ -3928,6 +3964,13 @@
       "name" : "Requires",
       "type" : "string"
     },
+    "requires_entity" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "requires_entity",
+      "name" : "Requires Entity",
+      "type" : "boolean"
+    },
     "requires_entity_target" : {
       "category" : "",
       "description" : [ ],
@@ -4024,7 +4067,7 @@
       "description" : [ ],
       "field" : "sample",
       "name" : "Sample",
-      "type" : "boolean"
+      "type" : "string"
     },
     "saturation" : {
       "category" : "",
@@ -4157,7 +4200,14 @@
       "description" : [ ],
       "field" : "sound",
       "name" : "Sound",
-      "type" : "string"
+      "type" : "sound"
+    },
+    "sound_broadcast" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sound_broadcast",
+      "name" : "Sound Broadcast",
+      "type" : "boolean"
     },
     "sound_interval" : {
       "category" : "",
@@ -4241,7 +4291,7 @@
       "description" : [ ],
       "field" : "source_location",
       "name" : "Source Location",
-      "type" : "string"
+      "type" : "location_type"
     },
     "source_offset" : {
       "category" : "",
@@ -4563,7 +4613,7 @@
       "description" : [ ],
       "field" : "target_location",
       "name" : "Target Location",
-      "type" : "string"
+      "type" : "location_type"
     },
     "target_min_offset" : {
       "category" : "",
@@ -5266,8 +5316,8 @@
       "type" : "double"
     }
   },
-  "spell_parameters" : [ "bypass_mage_cooldown", "target_self", "reflective_override", "bypass_protection", "command_block_allowed", "close_range", "destructible_durability", "tmo", "passthrough", "cooldown", "consume_reduction", "check_protection", "id", "bypass_break", "brush", "target_vanished", "bypass_build", "entity_undo", "bypass_pvp", "cancel_on_damage", "damage_resistance_protection", "target_invisible", "target_tamed", "target_breakables", "entity_weight", "hitbox", "tworld", "origin_at_target", "allow_max_range", "bypass_deactivate", "total_duration", "target_npc", "bypass_permissions", "player_weight", "bb", "npc_weight", "target_name", "close_fov", "instant_block_effects", "range", "target_unknown", "destructible", "otworld", "undo_speed", "unsafe", "fov", "transparent", "reverse_targeting", "bp", "distance_weight", "hitbox_size", "duration", "fov_weight", "cost_reduction", "undo", "bu", "destructible_override", "target_contents", "prevent_passthrough", "cancel_on_cast_other", "quiet", "free", "fizzle_chance", "display_cooldown", "cancel_on_no_wand", "backfire_chance", "loud", "cd", "cooldown_reduction", "message_targets", "target_armor_stand", "ignore_blocks", "cool", "target_underwater", "indestructible", "passive", "targetable", "target", "cancel_on_no_permission", "bypass", "hitbox_block_size", "t2world", "target_min_offset", "reflective", "u", "range_padding", "vertical_range", "check_destructible", "target_breakable_depth", "bypass_undo", "warmup", "pworld" ],
-  "spell_properties" : [ "upgrade_required_path", "progress_description", "progress_levels", "require_build", "level_description", "disguise_restricted", "hidden", "quick_cast", "cast_on_no_target", "require_health_percentage", "icon", "description", "cancellable", "worth", "uses_brush", "disable_mana_regeneration", "earns_cooldown", "brush_selection", "upgrade_required_casts", "alias", "earns_sp", "icon_url", "pvp_restricted", "brush_effects", "toggle", "icon_disabled_url", "require_break", "cancel_effects", "world_border_restricted", "icon_disabled", "inherit", "name", "glide_exclusive", "undoable", "category", "extended_description", "glide_restricted", "show_undoable" ],
+  "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
+  "spell_properties" : [ "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
   "types" : {
     "biome" : {
       "className" : "org.bukkit.block.Biome",
@@ -5305,6 +5355,12 @@
       "name" : "Integer",
       "options" : [ ]
     },
+    "location_type" : {
+      "className" : "com.elmakers.mine.bukkit.magic.SourceLocation$LocationType",
+      "description" : [ ],
+      "name" : "Location Type",
+      "options" : [ "block", "body", "cast", "eyes", "feet", "hit", "wand" ]
+    },
     "long" : {
       "className" : "java.lang.Long",
       "description" : [ ],
@@ -5328,6 +5384,12 @@
       "description" : [ ],
       "name" : "Potion Effects",
       "options" : [ ]
+    },
+    "sound" : {
+      "className" : "org.bukkit.Sound",
+      "description" : [ ],
+      "name" : "Sound",
+      "options" : [ "ambient_cave", "block_anvil_break", "block_anvil_destroy", "block_anvil_fall", "block_anvil_hit", "block_anvil_land", "block_anvil_place", "block_anvil_step", "block_anvil_use", "block_brewing_stand_brew", "block_chest_close", "block_chest_locked", "block_chest_open", "block_chorus_flower_death", "block_chorus_flower_grow", "block_cloth_break", "block_cloth_fall", "block_cloth_hit", "block_cloth_place", "block_cloth_step", "block_comparator_click", "block_dispenser_dispense", "block_dispenser_fail", "block_dispenser_launch", "block_end_gateway_spawn", "block_enderchest_close", "block_enderchest_open", "block_fence_gate_close", "block_fence_gate_open", "block_fire_ambient", "block_fire_extinguish", "block_furnace_fire_crackle", "block_glass_break", "block_glass_fall", "block_glass_hit", "block_glass_place", "block_glass_step", "block_grass_break", "block_grass_fall", "block_grass_hit", "block_grass_place", "block_grass_step", "block_gravel_break", "block_gravel_fall", "block_gravel_hit", "block_gravel_place", "block_gravel_step", "block_iron_door_close", "block_iron_door_open", "block_iron_trapdoor_close", "block_iron_trapdoor_open", "block_ladder_break", "block_ladder_fall", "block_ladder_hit", "block_ladder_place", "block_ladder_step", "block_lava_ambient", "block_lava_extinguish", "block_lava_pop", "block_lever_click", "block_metal_break", "block_metal_fall", "block_metal_hit", "block_metal_place", "block_metal_pressureplate_click_off", "block_metal_pressureplate_click_on", "block_metal_step", "block_note_basedrum", "block_note_bass", "block_note_harp", "block_note_hat", "block_note_pling", "block_note_snare", "block_piston_contract", "block_piston_extend", "block_portal_ambient", "block_portal_travel", "block_portal_trigger", "block_redstone_torch_burnout", "block_sand_break", "block_sand_fall", "block_sand_hit", "block_sand_place", "block_sand_step", "block_slime_break", "block_slime_fall", "block_slime_hit", "block_slime_place", "block_slime_step", "block_snow_break", "block_snow_fall", "block_snow_hit", "block_snow_place", "block_snow_step", "block_stone_break", "block_stone_button_click_off", "block_stone_button_click_on", "block_stone_fall", "block_stone_hit", "block_stone_place", "block_stone_pressureplate_click_off", "block_stone_pressureplate_click_on", "block_stone_step", "block_tripwire_attach", "block_tripwire_click_off", "block_tripwire_click_on", "block_tripwire_detach", "block_water_ambient", "block_waterlily_place", "block_wood_break", "block_wood_button_click_off", "block_wood_button_click_on", "block_wood_fall", "block_wood_hit", "block_wood_place", "block_wood_pressureplate_click_off", "block_wood_pressureplate_click_on", "block_wood_step", "block_wooden_door_close", "block_wooden_door_open", "block_wooden_trapdoor_close", "block_wooden_trapdoor_open", "enchant_thorns_hit", "entity_armorstand_break", "entity_armorstand_fall", "entity_armorstand_hit", "entity_armorstand_place", "entity_arrow_hit", "entity_arrow_hit_player", "entity_arrow_shoot", "entity_bat_ambient", "entity_bat_death", "entity_bat_hurt", "entity_bat_loop", "entity_bat_takeoff", "entity_blaze_ambient", "entity_blaze_burn", "entity_blaze_death", "entity_blaze_hurt", "entity_blaze_shoot", "entity_bobber_splash", "entity_bobber_throw", "entity_cat_ambient", "entity_cat_death", "entity_cat_hiss", "entity_cat_hurt", "entity_cat_purr", "entity_cat_purreow", "entity_chicken_ambient", "entity_chicken_death", "entity_chicken_egg", "entity_chicken_hurt", "entity_chicken_step", "entity_cow_ambient", "entity_cow_death", "entity_cow_hurt", "entity_cow_milk", "entity_cow_step", "entity_creeper_death", "entity_creeper_hurt", "entity_creeper_primed", "entity_donkey_ambient", "entity_donkey_angry", "entity_donkey_chest", "entity_donkey_death", "entity_donkey_hurt", "entity_egg_throw", "entity_elder_guardian_ambient", "entity_elder_guardian_ambient_land", "entity_elder_guardian_curse", "entity_elder_guardian_death", "entity_elder_guardian_death_land", "entity_elder_guardian_hurt", "entity_elder_guardian_hurt_land", "entity_enderdragon_ambient", "entity_enderdragon_death", "entity_enderdragon_fireball_explode", "entity_enderdragon_flap", "entity_enderdragon_growl", "entity_enderdragon_hurt", "entity_enderdragon_shoot", "entity_endereye_launch", "entity_endermen_ambient", "entity_endermen_death", "entity_endermen_hurt", "entity_endermen_scream", "entity_endermen_stare", "entity_endermen_teleport", "entity_endermite_ambient", "entity_endermite_death", "entity_endermite_hurt", "entity_endermite_step", "entity_enderpearl_throw", "entity_experience_bottle_throw", "entity_experience_orb_pickup", "entity_experience_orb_touch", "entity_firework_blast", "entity_firework_blast_far", "entity_firework_large_blast", "entity_firework_large_blast_far", "entity_firework_launch", "entity_firework_shoot", "entity_firework_twinkle", "entity_firework_twinkle_far", "entity_generic_big_fall", "entity_generic_burn", "entity_generic_death", "entity_generic_drink", "entity_generic_eat", "entity_generic_explode", "entity_generic_extinguish_fire", "entity_generic_hurt", "entity_generic_small_fall", "entity_generic_splash", "entity_generic_swim", "entity_ghast_ambient", "entity_ghast_death", "entity_ghast_hurt", "entity_ghast_scream", "entity_ghast_shoot", "entity_ghast_warn", "entity_guardian_ambient", "entity_guardian_ambient_land", "entity_guardian_attack", "entity_guardian_death", "entity_guardian_death_land", "entity_guardian_flop", "entity_guardian_hurt", "entity_guardian_hurt_land", "entity_horse_ambient", "entity_horse_angry", "entity_horse_armor", "entity_horse_breathe", "entity_horse_death", "entity_horse_eat", "entity_horse_gallop", "entity_horse_hurt", "entity_horse_jump", "entity_horse_land", "entity_horse_saddle", "entity_horse_step", "entity_horse_step_wood", "entity_hostile_big_fall", "entity_hostile_death", "entity_hostile_hurt", "entity_hostile_small_fall", "entity_hostile_splash", "entity_hostile_swim", "entity_irongolem_attack", "entity_irongolem_death", "entity_irongolem_hurt", "entity_irongolem_step", "entity_item_break", "entity_item_pickup", "entity_itemframe_add_item", "entity_itemframe_break", "entity_itemframe_place", "entity_itemframe_remove_item", "entity_itemframe_rotate_item", "entity_leashknot_break", "entity_leashknot_place", "entity_lightning_impact", "entity_lightning_thunder", "entity_lingeringpotion_throw", "entity_magmacube_death", "entity_magmacube_hurt", "entity_magmacube_jump", "entity_magmacube_squish", "entity_minecart_inside", "entity_minecart_riding", "entity_mooshroom_shear", "entity_mule_ambient", "entity_mule_death", "entity_mule_hurt", "entity_painting_break", "entity_painting_place", "entity_pig_ambient", "entity_pig_death", "entity_pig_hurt", "entity_pig_saddle", "entity_pig_step", "entity_player_attack_crit", "entity_player_attack_knockback", "entity_player_attack_nodamage", "entity_player_attack_strong", "entity_player_attack_sweep", "entity_player_attack_weak", "entity_player_big_fall", "entity_player_breath", "entity_player_burp", "entity_player_death", "entity_player_hurt", "entity_player_levelup", "entity_player_small_fall", "entity_player_splash", "entity_player_swim", "entity_rabbit_ambient", "entity_rabbit_attack", "entity_rabbit_death", "entity_rabbit_hurt", "entity_rabbit_jump", "entity_sheep_ambient", "entity_sheep_death", "entity_sheep_hurt", "entity_sheep_shear", "entity_sheep_step", "entity_shulker_ambient", "entity_shulker_bullet_hit", "entity_shulker_bullet_hurt", "entity_shulker_close", "entity_shulker_death", "entity_shulker_hurt", "entity_shulker_hurt_closed", "entity_shulker_open", "entity_shulker_shoot", "entity_shulker_teleport", "entity_silverfish_ambient", "entity_silverfish_death", "entity_silverfish_hurt", "entity_silverfish_step", "entity_skeleton_ambient", "entity_skeleton_death", "entity_skeleton_horse_ambient", "entity_skeleton_horse_death", "entity_skeleton_horse_hurt", "entity_skeleton_hurt", "entity_skeleton_shoot", "entity_skeleton_step", "entity_slime_attack", "entity_slime_death", "entity_slime_hurt", "entity_slime_jump", "entity_slime_squish", "entity_small_magmacube_death", "entity_small_magmacube_hurt", "entity_small_magmacube_squish", "entity_small_slime_death", "entity_small_slime_hurt", "entity_small_slime_jump", "entity_small_slime_squish", "entity_snowball_throw", "entity_snowman_ambient", "entity_snowman_death", "entity_snowman_hurt", "entity_snowman_shoot", "entity_spider_ambient", "entity_spider_death", "entity_spider_hurt", "entity_spider_step", "entity_splash_potion_break", "entity_splash_potion_throw", "entity_squid_ambient", "entity_squid_death", "entity_squid_hurt", "entity_tnt_primed", "entity_villager_ambient", "entity_villager_death", "entity_villager_hurt", "entity_villager_no", "entity_villager_trading", "entity_villager_yes", "entity_witch_ambient", "entity_witch_death", "entity_witch_drink", "entity_witch_hurt", "entity_witch_throw", "entity_wither_ambient", "entity_wither_break_block", "entity_wither_death", "entity_wither_hurt", "entity_wither_shoot", "entity_wither_spawn", "entity_wolf_ambient", "entity_wolf_death", "entity_wolf_growl", "entity_wolf_howl", "entity_wolf_hurt", "entity_wolf_pant", "entity_wolf_shake", "entity_wolf_step", "entity_wolf_whine", "entity_zombie_ambient", "entity_zombie_attack_door_wood", "entity_zombie_attack_iron_door", "entity_zombie_break_door_wood", "entity_zombie_death", "entity_zombie_horse_ambient", "entity_zombie_horse_death", "entity_zombie_horse_hurt", "entity_zombie_hurt", "entity_zombie_infect", "entity_zombie_pig_ambient", "entity_zombie_pig_angry", "entity_zombie_pig_death", "entity_zombie_pig_hurt", "entity_zombie_step", "entity_zombie_villager_ambient", "entity_zombie_villager_converted", "entity_zombie_villager_cure", "entity_zombie_villager_death", "entity_zombie_villager_hurt", "entity_zombie_villager_step", "item_armor_equip_chain", "item_armor_equip_diamond", "item_armor_equip_generic", "item_armor_equip_gold", "item_armor_equip_iron", "item_armor_equip_leather", "item_bottle_fill", "item_bottle_fill_dragonbreath", "item_bucket_empty", "item_bucket_empty_lava", "item_bucket_fill", "item_bucket_fill_lava", "item_chorus_fruit_teleport", "item_elytra_flying", "item_firecharge_use", "item_flintandsteel_use", "item_hoe_till", "item_shield_block", "item_shield_break", "item_shovel_flatten", "music_creative", "music_credits", "music_dragon", "music_end", "music_game", "music_menu", "music_nether", "record_11", "record_13", "record_blocks", "record_cat", "record_chirp", "record_far", "record_mall", "record_mellohi", "record_stal", "record_strad", "record_wait", "record_ward", "ui_button_click", "weather_rain", "weather_rain_above" ]
     },
     "string" : {
       "className" : "java.lang.String",

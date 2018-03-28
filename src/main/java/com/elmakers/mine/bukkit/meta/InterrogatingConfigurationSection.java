@@ -6,12 +6,16 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 
+import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Biome;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.EntityType;
 import org.bukkit.util.Vector;
+import com.elmakers.mine.bukkit.magic.SourceLocation;
+import com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect;
 
 public class InterrogatingConfigurationSection extends MemorySection {
     private Set<Parameter> parameters = new HashSet<>();
@@ -68,6 +72,10 @@ public class InterrogatingConfigurationSection extends MemorySection {
             case "weather":
                 parameterType = parameterStore.getParameterType("weather", String.class);
                 break;
+            case "color2":
+            case "color":
+                parameterType = parameterStore.getParameterType("color", String.class);
+                break;
             case "damage_type":
                 parameterType = parameterStore.getParameterType("damage_type", String.class);
                 break;
@@ -78,16 +86,31 @@ public class InterrogatingConfigurationSection extends MemorySection {
             case "biome":
                 parameterType = parameterStore.getParameterType(Biome.class);
                 break;
+            case "particle":
+                parameterType = parameterStore.getParameterType(ParticleEffect.class);
+                break;
+            case "sound":
+                parameterType = parameterStore.getParameterType(Sound.class);
+                break;
+            case "firework":
+                parameterType = parameterStore.getParameterType(FireworkEffect.Type.class);
+                break;
+            case "source_location":
+            case "target_location":
+                parameterType = parameterStore.getParameterType(SourceLocation.LocationType.class);
+                break;
             case "location_offset":
             case "offset":
             case "random_source_offset":
             case "random_target_offset":
+            case "relative_offset":
             case "relative_source_offset":
             case "relative_target_offset":
             case "return_offset":
             case "return_relative_offset":
             case "source_direction_offset":
             case "source_offset":
+            case "origin_offset":
             case "target_direction_offset":
             case "target_offset":
             case "velocity_offset":
