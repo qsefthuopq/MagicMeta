@@ -3633,7 +3633,7 @@
       "description" : [ "" ],
       "field" : "height",
       "name" : "Height",
-      "type" : "double"
+      "type" : "float"
     },
     "height_back" : {
       "category" : "",
@@ -4053,7 +4053,7 @@
       "description" : [ "" ],
       "field" : "length",
       "name" : "Length",
-      "type" : "float"
+      "type" : "double"
     },
     "length_back" : {
       "category" : "",
@@ -5012,7 +5012,7 @@
       "description" : [ "" ],
       "field" : "pitch_max",
       "name" : "Pitch Max",
-      "type" : "integer"
+      "type" : "double"
     },
     "pitch_min" : {
       "category" : "",
@@ -7231,7 +7231,7 @@
       "description" : [ "" ],
       "field" : "x_factor",
       "name" : "X Factor",
-      "type" : "float"
+      "type" : "double"
     },
     "x_offset" : {
       "category" : "",
@@ -7287,14 +7287,14 @@
       "description" : [ "" ],
       "field" : "y_factor",
       "name" : "Y Factor",
-      "type" : "float"
+      "type" : "double"
     },
     "y_offset" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "y_offset",
       "name" : "Y Offset",
-      "type" : "float"
+      "type" : "double"
     },
     "y_radius" : {
       "category" : "",

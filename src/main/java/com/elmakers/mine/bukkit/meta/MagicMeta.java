@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
 
@@ -136,7 +139,9 @@ public class MagicMeta {
         // Note that this seems to get everything outside of this package as well. Not sure why.
         Reflections reflections = new Reflections(BUILTIN_SPELL_PACKAGE);
 
-        Set<Class<? extends SpellAction>> allClasses = reflections.getSubTypesOf(SpellAction.class);
+        Set<Class<? extends SpellAction>> classSet = reflections.getSubTypesOf(SpellAction.class);
+        List<Class<? extends SpellAction>> allClasses = new ArrayList<>(classSet);
+        Collections.sort(allClasses, new ClassComparator());
 
         InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
         ActionSpell spell = new ActionSpell();
@@ -211,7 +216,9 @@ public class MagicMeta {
         // Gather all effect classes
         Reflections reflections = new Reflections(EFFECTLIB_PACKAGE);
 
-        Set<Class<? extends Effect>> allEffects = reflections.getSubTypesOf(Effect.class);
+        Set<Class<? extends Effect>> effectsSet = reflections.getSubTypesOf(Effect.class);
+        List<Class<? extends Effect>> allEffects = new ArrayList<>(effectsSet);
+        Collections.sort(allEffects, new ClassComparator());
 
         for (Class<? extends Effect> effectClass : allEffects) {
             if (effectClass.getAnnotation(Deprecated.class) != null
