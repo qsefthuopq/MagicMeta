@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.annotation.Nonnull;
 
 import org.bukkit.Material;
+import org.bukkit.block.Biome;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.entity.EntityType;
@@ -73,6 +74,9 @@ public class InterrogatingConfigurationSection extends MemorySection {
             case "material":
             case "brush":
                 parameterType = parameterStore.getParameterType(Material.class);
+                break;
+            case "biome":
+                parameterType = parameterStore.getParameterType(Biome.class);
                 break;
             case "location_offset":
             case "offset":

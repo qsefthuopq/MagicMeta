@@ -56,4 +56,8 @@ public class Parameter {
     public String getCategory() {
         return category == null ? "" : category.getKey();
     }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }

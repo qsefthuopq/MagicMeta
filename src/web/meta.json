@@ -1234,6 +1234,32 @@
       "shortClass" : "Weather"
     }
   },
+  "categories" : {
+    "actions" : {
+      "description" : "",
+      "name" : "Actions"
+    },
+    "base" : {
+      "description" : "",
+      "name" : "Base"
+    },
+    "brushes" : {
+      "description" : "",
+      "name" : "Brushes"
+    },
+    "construction" : {
+      "description" : "",
+      "name" : "Construction"
+    },
+    "targeting" : {
+      "description" : "",
+      "name" : "Targeting"
+    },
+    "undo" : {
+      "description" : "",
+      "name" : "Undo"
+    }
+  },
   "parameters" : {
     "add_effects" : {
       "category" : "",
@@ -1284,6 +1310,13 @@
       "name" : "Air",
       "type" : "integer"
     },
+    "alias" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "alias",
+      "name" : "Alias",
+      "type" : "string"
+    },
     "allow_caster" : {
       "category" : "",
       "description" : "",
@@ -1310,6 +1343,13 @@
       "description" : "",
       "field" : "allow_locked",
       "name" : "Allow Locked",
+      "type" : "boolean"
+    },
+    "allow_max_range" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "allow_max_range",
+      "name" : "Allow Max Range",
       "type" : "boolean"
     },
     "allow_passthrough" : {
@@ -1459,12 +1499,26 @@
       "name" : "Baby",
       "type" : "boolean"
     },
+    "backfire_chance" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "backfire_chance",
+      "name" : "Backfire Chance",
+      "type" : "double"
+    },
+    "bb" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bb",
+      "name" : "Bb",
+      "type" : "boolean"
+    },
     "biome" : {
       "category" : "",
       "description" : "",
       "field" : "biome",
       "name" : "Biome",
-      "type" : "string"
+      "type" : "biome"
     },
     "block_hit_count" : {
       "category" : "",
@@ -1486,6 +1540,13 @@
       "field" : "boots_item",
       "name" : "Boots Item",
       "type" : "string"
+    },
+    "bp" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bp",
+      "name" : "Bp",
+      "type" : "boolean"
     },
     "braking" : {
       "category" : "",
@@ -1536,6 +1597,34 @@
       "name" : "Brush Axis",
       "type" : "string"
     },
+    "brush_effects" : {
+      "category" : "brushes",
+      "description" : "",
+      "field" : "brush_effects",
+      "name" : "Brush Effects",
+      "type" : "boolean"
+    },
+    "brush_selection" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "brush_selection",
+      "name" : "Brush Selection",
+      "type" : "boolean"
+    },
+    "bu" : {
+      "category" : "undo",
+      "description" : "",
+      "field" : "bu",
+      "name" : "Bu",
+      "type" : "boolean"
+    },
+    "bypass" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass",
+      "name" : "Bypass",
+      "type" : "boolean"
+    },
     "bypass_backfire" : {
       "category" : "",
       "description" : "",
@@ -1543,11 +1632,67 @@
       "name" : "Bypass Backfire",
       "type" : "boolean"
     },
+    "bypass_break" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_break",
+      "name" : "Bypass Break",
+      "type" : "boolean"
+    },
+    "bypass_build" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_build",
+      "name" : "Bypass Build",
+      "type" : "boolean"
+    },
+    "bypass_deactivate" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_deactivate",
+      "name" : "Bypass Deactivate",
+      "type" : "boolean"
+    },
+    "bypass_mage_cooldown" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_mage_cooldown",
+      "name" : "Bypass Mage Cooldown",
+      "type" : "boolean"
+    },
+    "bypass_permissions" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_permissions",
+      "name" : "Bypass Permissions",
+      "type" : "boolean"
+    },
+    "bypass_protection" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_protection",
+      "name" : "Bypass Protection",
+      "type" : "boolean"
+    },
+    "bypass_pvp" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "bypass_pvp",
+      "name" : "Bypass Pvp",
+      "type" : "boolean"
+    },
     "bypass_reduction" : {
       "category" : "",
       "description" : "",
       "field" : "bypass_reduction",
       "name" : "Bypass Reduction",
+      "type" : "boolean"
+    },
+    "bypass_undo" : {
+      "category" : "undo",
+      "description" : "",
+      "field" : "bypass_undo",
+      "name" : "Bypass Undo",
       "type" : "boolean"
     },
     "can_pickup_items" : {
@@ -1564,12 +1709,61 @@
       "name" : "Cancel",
       "type" : "boolean"
     },
+    "cancel_effects" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancel_effects",
+      "name" : "Cancel Effects",
+      "type" : "boolean"
+    },
+    "cancel_on_cast_other" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancel_on_cast_other",
+      "name" : "Cancel On Cast Other",
+      "type" : "boolean"
+    },
+    "cancel_on_damage" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancel_on_damage",
+      "name" : "Cancel On Damage",
+      "type" : "double"
+    },
+    "cancel_on_no_permission" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancel_on_no_permission",
+      "name" : "Cancel On No Permission",
+      "type" : "boolean"
+    },
+    "cancel_on_no_wand" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancel_on_no_wand",
+      "name" : "Cancel On No Wand",
+      "type" : "boolean"
+    },
+    "cancellable" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cancellable",
+      "name" : "Cancellable",
+      "type" : "boolean"
+    },
     "cast_interval" : {
       "category" : "",
       "description" : "",
       "field" : "cast_interval",
       "name" : "Cast Interval",
       "type" : "long"
+    },
+    "cast_on_no_target" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cast_on_no_target",
+      "name" : "Cast On No Target",
+      "type" : "boolean"
     },
     "cast_requires_item" : {
       "category" : "",
@@ -1597,6 +1791,20 @@
       "description" : "",
       "field" : "cast_spells",
       "name" : "Cast Spells",
+      "type" : "boolean"
+    },
+    "category" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "category",
+      "name" : "Category",
+      "type" : "string"
+    },
+    "cd" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "cd",
+      "name" : "Cd",
       "type" : "boolean"
     },
     "center_probability" : {
@@ -1632,6 +1840,20 @@
       "description" : "",
       "field" : "check",
       "name" : "Check",
+      "type" : "boolean"
+    },
+    "check_destructible" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "check_destructible",
+      "name" : "Check Destructible",
+      "type" : "boolean"
+    },
+    "check_protection" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "check_protection",
+      "name" : "Check Protection",
       "type" : "boolean"
     },
     "checkered" : {
@@ -1676,6 +1898,13 @@
       "name" : "Close Range",
       "type" : "double"
     },
+    "command_block_allowed" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "command_block_allowed",
+      "name" : "Command Block Allowed",
+      "type" : "boolean"
+    },
     "commit" : {
       "category" : "",
       "description" : "",
@@ -1718,6 +1947,13 @@
       "name" : "Consume",
       "type" : "boolean"
     },
+    "consume_reduction" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "consume_reduction",
+      "name" : "Consume Reduction",
+      "type" : "double"
+    },
     "consume_variants" : {
       "category" : "",
       "description" : "",
@@ -1732,12 +1968,40 @@
       "name" : "Controllable",
       "type" : "boolean"
     },
+    "cool" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cool",
+      "name" : "Cool",
+      "type" : "integer"
+    },
+    "cooldown" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cooldown",
+      "name" : "Cooldown",
+      "type" : "integer"
+    },
+    "cooldown_reduction" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cooldown_reduction",
+      "name" : "Cooldown Reduction",
+      "type" : "double"
+    },
     "cost" : {
       "category" : "",
       "description" : "",
       "field" : "cost",
       "name" : "Cost",
       "type" : "integer"
+    },
+    "cost_reduction" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "cost_reduction",
+      "name" : "Cost Reduction",
+      "type" : "double"
     },
     "cost_type" : {
       "category" : "",
@@ -1870,7 +2134,7 @@
       "description" : "",
       "field" : "damage",
       "name" : "Damage",
-      "type" : "integer"
+      "type" : "double"
     },
     "damage_max_distance" : {
       "category" : "",
@@ -1878,6 +2142,13 @@
       "field" : "damage_max_distance",
       "name" : "Damage Max Distance",
       "type" : "double"
+    },
+    "damage_resistance_protection" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "damage_resistance_protection",
+      "name" : "Damage Resistance Protection",
+      "type" : "integer"
     },
     "damage_type" : {
       "category" : "",
@@ -1914,12 +2185,61 @@
       "name" : "Depth",
       "type" : "integer"
     },
+    "description" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "description",
+      "name" : "Description",
+      "type" : "string"
+    },
+    "destructible" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "destructible",
+      "name" : "Destructible",
+      "type" : "string"
+    },
+    "destructible_durability" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "destructible_durability",
+      "name" : "Destructible Durability",
+      "type" : "double"
+    },
+    "destructible_override" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "destructible_override",
+      "name" : "Destructible Override",
+      "type" : "boolean"
+    },
     "direction" : {
       "category" : "",
       "description" : "",
       "field" : "direction",
       "name" : "Direction",
       "type" : "string"
+    },
+    "disable_mana_regeneration" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "disable_mana_regeneration",
+      "name" : "Disable Mana Regeneration",
+      "type" : "boolean"
+    },
+    "disguise_restricted" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "disguise_restricted",
+      "name" : "Disguise Restricted",
+      "type" : "boolean"
+    },
+    "display_cooldown" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "display_cooldown",
+      "name" : "Display Cooldown",
+      "type" : "integer"
     },
     "display_name" : {
       "category" : "",
@@ -1983,6 +2303,20 @@
       "field" : "dy_offset",
       "name" : "Dy Offset",
       "type" : "double"
+    },
+    "earns_cooldown" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "earns_cooldown",
+      "name" : "Earns Cooldown",
+      "type" : "integer"
+    },
+    "earns_sp" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "earns_sp",
+      "name" : "Earns Sp",
+      "type" : "integer"
     },
     "effect" : {
       "category" : "",
@@ -2054,6 +2388,13 @@
       "name" : "Entity Hit Count",
       "type" : "integer"
     },
+    "entity_undo" : {
+      "category" : "undo",
+      "description" : "",
+      "field" : "entity_undo",
+      "name" : "Entity Undo",
+      "type" : "boolean"
+    },
     "entity_weight" : {
       "category" : "",
       "description" : "",
@@ -2095,6 +2436,13 @@
       "field" : "experience",
       "name" : "Experience",
       "type" : "integer"
+    },
+    "extended_description" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "extended_description",
+      "name" : "Extended Description",
+      "type" : "string"
     },
     "fade_in" : {
       "category" : "",
@@ -2201,6 +2549,13 @@
       "name" : "Fire",
       "type" : "boolean"
     },
+    "fizzle_chance" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "fizzle_chance",
+      "name" : "Fizzle Chance",
+      "type" : "double"
+    },
     "flicker" : {
       "category" : "",
       "description" : "",
@@ -2228,6 +2583,13 @@
       "field" : "fov_weight",
       "name" : "Fov Weight",
       "type" : "double"
+    },
+    "free" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "free",
+      "name" : "Free",
+      "type" : "boolean"
     },
     "freeze_fire" : {
       "category" : "",
@@ -2270,6 +2632,20 @@
       "field" : "game_mode",
       "name" : "Game Mode",
       "type" : "string"
+    },
+    "glide_exclusive" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "glide_exclusive",
+      "name" : "Glide Exclusive",
+      "type" : "boolean"
+    },
+    "glide_restricted" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "glide_restricted",
+      "name" : "Glide Restricted",
+      "type" : "boolean"
     },
     "glowstone_torch" : {
       "category" : "",
@@ -2319,6 +2695,13 @@
       "field" : "helmet_item",
       "name" : "Helmet Item",
       "type" : "string"
+    },
+    "hidden" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "hidden",
+      "name" : "Hidden",
+      "type" : "boolean"
     },
     "hit_count" : {
       "category" : "",
@@ -2390,6 +2773,34 @@
       "name" : "Icon",
       "type" : "string"
     },
+    "icon_disabled" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "icon_disabled",
+      "name" : "Icon Disabled",
+      "type" : "string"
+    },
+    "icon_disabled_url" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "icon_disabled_url",
+      "name" : "Icon Disabled Url",
+      "type" : "string"
+    },
+    "icon_url" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "icon_url",
+      "name" : "Icon Url",
+      "type" : "string"
+    },
+    "id" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "id",
+      "name" : "Id",
+      "type" : "string"
+    },
     "ignore_blocks" : {
       "category" : "",
       "description" : "",
@@ -2416,6 +2827,27 @@
       "description" : "",
       "field" : "increment_data",
       "name" : "Increment Data",
+      "type" : "boolean"
+    },
+    "indestructible" : {
+      "category" : "construction",
+      "description" : "",
+      "field" : "indestructible",
+      "name" : "Indestructible",
+      "type" : "string"
+    },
+    "inherit" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "inherit",
+      "name" : "Inherit",
+      "type" : "string"
+    },
+    "instant_block_effects" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "instant_block_effects",
+      "name" : "Instant Block Effects",
       "type" : "boolean"
     },
     "interact_spell" : {
@@ -2516,6 +2948,13 @@
       "name" : "Level",
       "type" : "integer"
     },
+    "level_description" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "level_description",
+      "name" : "Level Description",
+      "type" : "string"
+    },
     "levels" : {
       "category" : "",
       "description" : "",
@@ -2577,6 +3016,13 @@
       "description" : "",
       "field" : "loot",
       "name" : "Loot",
+      "type" : "boolean"
+    },
+    "loud" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "loud",
+      "name" : "Loud",
       "type" : "boolean"
     },
     "mage" : {
@@ -2703,6 +3149,13 @@
       "description" : "",
       "field" : "message_target",
       "name" : "Message Target",
+      "type" : "boolean"
+    },
+    "message_targets" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "message_targets",
+      "name" : "Message Targets",
       "type" : "boolean"
     },
     "message_type" : {
@@ -2894,6 +3347,13 @@
       "name" : "Orient Snap",
       "type" : "double"
     },
+    "origin_at_target" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "origin_at_target",
+      "name" : "Origin At Target",
+      "type" : "boolean"
+    },
     "otworld" : {
       "category" : "",
       "description" : "",
@@ -2921,6 +3381,20 @@
       "field" : "passenger",
       "name" : "Passenger",
       "type" : "boolean"
+    },
+    "passive" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "passive",
+      "name" : "Passive",
+      "type" : "boolean"
+    },
+    "passthrough" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "passthrough",
+      "name" : "Passthrough",
+      "type" : "string"
     },
     "passthrough_range" : {
       "category" : "",
@@ -3062,12 +3536,33 @@
       "name" : "Power",
       "type" : "integer"
     },
+    "prevent_passthrough" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "prevent_passthrough",
+      "name" : "Prevent Passthrough",
+      "type" : "string"
+    },
     "probability" : {
       "category" : "",
       "description" : "",
       "field" : "probability",
       "name" : "Probability",
       "type" : "double"
+    },
+    "progress_description" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "progress_description",
+      "name" : "Progress Description",
+      "type" : "string"
+    },
+    "progress_levels" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "progress_levels",
+      "name" : "Progress Levels",
+      "type" : "map"
     },
     "projectile" : {
       "category" : "",
@@ -3123,6 +3618,34 @@
       "description" : "",
       "field" : "put_in_hand",
       "name" : "Put In Hand",
+      "type" : "boolean"
+    },
+    "pvp_restricted" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "pvp_restricted",
+      "name" : "Pvp Restricted",
+      "type" : "boolean"
+    },
+    "pworld" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "pworld",
+      "name" : "Pworld",
+      "type" : "string"
+    },
+    "quick_cast" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "quick_cast",
+      "name" : "Quick Cast",
+      "type" : "boolean"
+    },
+    "quiet" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "quiet",
+      "name" : "Quiet",
       "type" : "boolean"
     },
     "radius" : {
@@ -3251,6 +3774,20 @@
       "name" : "Reflect Track Target",
       "type" : "boolean"
     },
+    "reflective" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "reflective",
+      "name" : "Reflective",
+      "type" : "string"
+    },
+    "reflective_override" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "reflective_override",
+      "name" : "Reflective Override",
+      "type" : "boolean"
+    },
     "relative_source_offset" : {
       "category" : "",
       "description" : "",
@@ -3277,7 +3814,7 @@
       "description" : "",
       "field" : "repeat",
       "name" : "Repeat",
-      "type" : "string"
+      "type" : "integer"
     },
     "repeat_random" : {
       "category" : "",
@@ -3307,6 +3844,13 @@
       "name" : "Require Block",
       "type" : "boolean"
     },
+    "require_break" : {
+      "category" : "actions",
+      "description" : "",
+      "field" : "require_break",
+      "name" : "Require Break",
+      "type" : "boolean"
+    },
     "require_build" : {
       "category" : "",
       "description" : "",
@@ -3327,6 +3871,13 @@
       "field" : "require_exit",
       "name" : "Require Exit",
       "type" : "boolean"
+    },
+    "require_health_percentage" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "require_health_percentage",
+      "name" : "Require Health Percentage",
+      "type" : "double"
     },
     "require_mana" : {
       "category" : "",
@@ -3431,6 +3982,13 @@
       "description" : "",
       "field" : "reverse",
       "name" : "Reverse",
+      "type" : "boolean"
+    },
+    "reverse_targeting" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "reverse_targeting",
+      "name" : "Reverse Targeting",
       "type" : "boolean"
     },
     "rider_untargetable" : {
@@ -3550,6 +4108,13 @@
       "description" : "",
       "field" : "show_unavailable",
       "name" : "Show Unavailable",
+      "type" : "boolean"
+    },
+    "show_undoable" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "show_undoable",
+      "name" : "Show Undoable",
       "type" : "boolean"
     },
     "show_upgrades" : {
@@ -3853,6 +4418,13 @@
       "name" : "Sub Message",
       "type" : "string"
     },
+    "t2world" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "t2world",
+      "name" : "T2world",
+      "type" : "string"
+    },
     "tamed" : {
       "category" : "",
       "description" : "",
@@ -3886,6 +4458,13 @@
       "description" : "",
       "field" : "target_all_worlds",
       "name" : "Target All Worlds",
+      "type" : "boolean"
+    },
+    "target_armor_stand" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_armor_stand",
+      "name" : "Target Armor Stand",
       "type" : "boolean"
     },
     "target_attachment" : {
@@ -3930,6 +4509,13 @@
       "name" : "Target Caster",
       "type" : "boolean"
     },
+    "target_contents" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_contents",
+      "name" : "Target Contents",
+      "type" : "string"
+    },
     "target_count" : {
       "category" : "",
       "description" : "",
@@ -3965,6 +4551,13 @@
       "name" : "Target Entity",
       "type" : "boolean"
     },
+    "target_invisible" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_invisible",
+      "name" : "Target Invisible",
+      "type" : "boolean"
+    },
     "target_location" : {
       "category" : "",
       "description" : "",
@@ -3978,6 +4571,20 @@
       "field" : "target_min_offset",
       "name" : "Target Min Offset",
       "type" : "integer"
+    },
+    "target_name" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_name",
+      "name" : "Target Name",
+      "type" : "string"
+    },
+    "target_npc" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_npc",
+      "name" : "Target Npc",
+      "type" : "boolean"
     },
     "target_offset" : {
       "category" : "",
@@ -4014,6 +4621,13 @@
       "name" : "Target Relative Direction Yaw Offset",
       "type" : "double"
     },
+    "target_self" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "target_self",
+      "name" : "Target Self",
+      "type" : "boolean"
+    },
     "target_self_timeout" : {
       "category" : "",
       "description" : "",
@@ -4042,6 +4656,13 @@
       "name" : "Target Spell",
       "type" : "string"
     },
+    "target_tamed" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_tamed",
+      "name" : "Target Tamed",
+      "type" : "boolean"
+    },
     "target_timeout" : {
       "category" : "",
       "description" : "",
@@ -4049,12 +4670,40 @@
       "name" : "Target Timeout",
       "type" : "integer"
     },
+    "target_underwater" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_underwater",
+      "name" : "Target Underwater",
+      "type" : "boolean"
+    },
+    "target_unknown" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_unknown",
+      "name" : "Target Unknown",
+      "type" : "boolean"
+    },
+    "target_vanished" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "target_vanished",
+      "name" : "Target Vanished",
+      "type" : "boolean"
+    },
     "target_yaw_offset" : {
       "category" : "",
       "description" : "",
       "field" : "target_yaw_offset",
       "name" : "Target Yaw Offset",
       "type" : "double"
+    },
+    "targetable" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "targetable",
+      "name" : "Targetable",
+      "type" : "string"
     },
     "teleport" : {
       "category" : "",
@@ -4126,6 +4775,20 @@
       "name" : "Tnt Velocity",
       "type" : "double"
     },
+    "toggle" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "toggle",
+      "name" : "Toggle",
+      "type" : "string"
+    },
+    "total_duration" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "total_duration",
+      "name" : "Total Duration",
+      "type" : "integer"
+    },
     "track_projectile" : {
       "category" : "",
       "description" : "",
@@ -4168,6 +4831,13 @@
       "name" : "Trail",
       "type" : "boolean"
     },
+    "transparent" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "transparent",
+      "name" : "Transparent",
+      "type" : "string"
+    },
     "triggers" : {
       "category" : "",
       "description" : "",
@@ -4175,12 +4845,26 @@
       "name" : "Triggers",
       "type" : "map"
     },
+    "tworld" : {
+      "category" : "targeting",
+      "description" : "",
+      "field" : "tworld",
+      "name" : "Tworld",
+      "type" : "string"
+    },
     "type" : {
       "category" : "",
       "description" : "",
       "field" : "type",
       "name" : "Type",
       "type" : "entity_type"
+    },
+    "u" : {
+      "category" : "undo",
+      "description" : "",
+      "field" : "u",
+      "name" : "U",
+      "type" : "integer"
     },
     "unbreakable" : {
       "category" : "",
@@ -4210,12 +4894,26 @@
       "name" : "Undo Oldest",
       "type" : "integer"
     },
+    "undo_speed" : {
+      "category" : "undo",
+      "description" : "",
+      "field" : "undo_speed",
+      "name" : "Undo Speed",
+      "type" : "double"
+    },
     "undo_to" : {
       "category" : "",
       "description" : "",
       "field" : "undo_to",
       "name" : "Undo To",
       "type" : "integer"
+    },
+    "undoable" : {
+      "category" : "actions",
+      "description" : "",
+      "field" : "undoable",
+      "name" : "Undoable",
+      "type" : "boolean"
     },
     "unlock" : {
       "category" : "",
@@ -4252,6 +4950,13 @@
       "name" : "Unlock Section",
       "type" : "string"
     },
+    "unsafe" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "unsafe",
+      "name" : "Unsafe",
+      "type" : "string"
+    },
     "update" : {
       "category" : "",
       "description" : "",
@@ -4279,6 +4984,20 @@
       "field" : "upgrade_levels",
       "name" : "Upgrade Levels",
       "type" : "integer"
+    },
+    "upgrade_required_casts" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "upgrade_required_casts",
+      "name" : "Upgrade Required Casts",
+      "type" : "long"
+    },
+    "upgrade_required_path" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "upgrade_required_path",
+      "name" : "Upgrade Required Path",
+      "type" : "string"
     },
     "upgrade_requires_casts" : {
       "category" : "",
@@ -4362,6 +5081,13 @@
       "description" : "",
       "field" : "use_xp",
       "name" : "Use Xp",
+      "type" : "boolean"
+    },
+    "uses_brush" : {
+      "category" : "brushes",
+      "description" : "",
+      "field" : "uses_brush",
+      "name" : "Uses Brush",
       "type" : "boolean"
     },
     "vanish" : {
@@ -4469,6 +5195,20 @@
       "name" : "Weather",
       "type" : "weather"
     },
+    "world_border_restricted" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "world_border_restricted",
+      "name" : "World Border Restricted",
+      "type" : "boolean"
+    },
+    "worth" : {
+      "category" : "base",
+      "description" : "",
+      "field" : "worth",
+      "name" : "Worth",
+      "type" : "double"
+    },
     "worth_item" : {
       "category" : "",
       "description" : "",
@@ -4526,7 +5266,15 @@
       "type" : "double"
     }
   },
+  "spell_parameters" : [ "bypass_mage_cooldown", "target_self", "reflective_override", "bypass_protection", "command_block_allowed", "close_range", "destructible_durability", "tmo", "passthrough", "cooldown", "consume_reduction", "check_protection", "id", "bypass_break", "brush", "target_vanished", "bypass_build", "entity_undo", "bypass_pvp", "cancel_on_damage", "damage_resistance_protection", "target_invisible", "target_tamed", "target_breakables", "entity_weight", "hitbox", "tworld", "origin_at_target", "allow_max_range", "bypass_deactivate", "total_duration", "target_npc", "bypass_permissions", "player_weight", "bb", "npc_weight", "target_name", "close_fov", "instant_block_effects", "range", "target_unknown", "destructible", "otworld", "undo_speed", "unsafe", "fov", "transparent", "reverse_targeting", "bp", "distance_weight", "hitbox_size", "duration", "fov_weight", "cost_reduction", "undo", "bu", "destructible_override", "target_contents", "prevent_passthrough", "cancel_on_cast_other", "quiet", "free", "fizzle_chance", "display_cooldown", "cancel_on_no_wand", "backfire_chance", "loud", "cd", "cooldown_reduction", "message_targets", "target_armor_stand", "ignore_blocks", "cool", "target_underwater", "indestructible", "passive", "targetable", "target", "cancel_on_no_permission", "bypass", "hitbox_block_size", "t2world", "target_min_offset", "reflective", "u", "range_padding", "vertical_range", "check_destructible", "target_breakable_depth", "bypass_undo", "warmup", "pworld" ],
+  "spell_properties" : [ "upgrade_required_path", "progress_description", "progress_levels", "require_build", "level_description", "disguise_restricted", "hidden", "quick_cast", "cast_on_no_target", "require_health_percentage", "icon", "description", "cancellable", "worth", "uses_brush", "disable_mana_regeneration", "earns_cooldown", "brush_selection", "upgrade_required_casts", "alias", "earns_sp", "icon_url", "pvp_restricted", "brush_effects", "toggle", "icon_disabled_url", "require_break", "cancel_effects", "world_border_restricted", "icon_disabled", "inherit", "name", "glide_exclusive", "undoable", "category", "extended_description", "glide_restricted", "show_undoable" ],
   "types" : {
+    "biome" : {
+      "className" : "org.bukkit.block.Biome",
+      "description" : "",
+      "name" : "Biome",
+      "options" : [ "beaches", "birch_forest", "birch_forest_hills", "cold_beach", "deep_ocean", "desert", "desert_hills", "extreme_hills", "extreme_hills_with_trees", "forest", "forest_hills", "frozen_ocean", "frozen_river", "hell", "ice_flats", "ice_mountains", "jungle", "jungle_edge", "jungle_hills", "mesa", "mesa_clear_rock", "mesa_rock", "mushroom_island", "mushroom_island_shore", "mutated_birch_forest", "mutated_birch_forest_hills", "mutated_desert", "mutated_extreme_hills", "mutated_extreme_hills_with_trees", "mutated_forest", "mutated_ice_flats", "mutated_jungle", "mutated_jungle_edge", "mutated_mesa", "mutated_mesa_clear_rock", "mutated_mesa_rock", "mutated_plains", "mutated_redwood_taiga", "mutated_redwood_taiga_hills", "mutated_roofed_forest", "mutated_savanna", "mutated_savanna_rock", "mutated_swampland", "mutated_taiga", "mutated_taiga_cold", "ocean", "plains", "redwood_taiga", "redwood_taiga_hills", "river", "roofed_forest", "savanna", "savanna_rock", "sky", "smaller_extreme_hills", "stone_beach", "swampland", "taiga", "taiga_cold", "taiga_cold_hills", "taiga_hills", "void" ]
+    },
     "boolean" : {
       "className" : "java.lang.Boolean",
       "description" : "",
