@@ -27,6 +27,7 @@ import com.elmakers.mine.bukkit.spell.BlockSpell;
 import com.elmakers.mine.bukkit.spell.BrushSpell;
 import com.elmakers.mine.bukkit.spell.TargetingSpell;
 import com.elmakers.mine.bukkit.spell.UndoableSpell;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.CaseFormat;
 
 import de.slikey.effectlib.Effect;
@@ -74,8 +75,9 @@ public class MagicMeta {
             return;
         }
 
-        // TODO: Read file!
-        data = new MetaData();
+        JsonNode root = mapper.readTree(inputFile);
+        data = mapper.convertValue(root, MetaData.class);
+        data.loaded();
     }
 
     private void saveMeta(@Nonnull File outputFile) throws IOException {
@@ -93,7 +95,7 @@ public class MagicMeta {
         // Gather base properties
         spell.loadTemplate("interrogator", templateConfiguration);
         for (Parameter parameter : templateConfiguration.getParameters()) {
-            parameter.setCategory(category);
+            parameter.setCategory(category.getKey());
             properties.add(parameter);
         }
 
@@ -101,7 +103,7 @@ public class MagicMeta {
         InterrogatingConfiguration spellConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
         spell.processParameters(spellConfiguration);
         for (Parameter parameter : spellConfiguration.getParameters()) {
-            parameter.setCategory(category);
+            parameter.setCategory(category.getKey());
             parameters.add(parameter);
         }
     }

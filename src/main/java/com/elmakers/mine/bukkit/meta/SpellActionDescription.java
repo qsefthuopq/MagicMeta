@@ -7,6 +7,10 @@ import com.elmakers.mine.bukkit.api.action.SpellAction;
 
 public class SpellActionDescription extends Configurable {
 
+    public SpellActionDescription() {
+
+    }
+    
     public SpellActionDescription(@Nonnull Class<? extends SpellAction> actionClass, @Nonnull Collection<Parameter> parameters) {
         super(actionClass, parameters, "Action");
     }

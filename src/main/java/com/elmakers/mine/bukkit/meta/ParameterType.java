@@ -16,16 +16,18 @@ public class ParameterType {
     private Class<?> classType;
     private String key;
     private String name;
-    private String className;
     private List<String> description;
     private Set<String> options = new HashSet<>();
-    private ParameterType valueType;
-    private ParameterType keyType;
+    private String valueType;
+    private String keyType;
+
+    public ParameterType() {
+
+    }
 
     public ParameterType(@Nonnull String key, @Nonnull Class<?> classType) {
         this.key = key;
         this.classType = classType;
-        className = classType.getName();
         description = new ArrayList<>();
         description.add("");
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
@@ -33,13 +35,13 @@ public class ParameterType {
 
     public ParameterType(@Nonnull String key, ParameterType listValueType) {
         this(key, List.class);
-        valueType = listValueType;
+        valueType = listValueType.getKey();
     }
 
     public ParameterType(@Nonnull String key, ParameterType mapKeyType, ParameterType mapValueType) {
         this(key,  Map.class);
-        keyType = mapKeyType;
-        valueType = mapValueType;
+        keyType = mapKeyType.getKey();
+        valueType = mapValueType.getKey();
     }
 
     @JsonIgnore
@@ -47,8 +49,20 @@ public class ParameterType {
         return this.key;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getClassName() {
-        return this.className;
+        return this.classType.getName();
+    }
+
+    public void setClassName(String className) {
+        try {
+            classType = Class.forName(className);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void update() {
@@ -66,19 +80,39 @@ public class ParameterType {
         return optionsList;
     }
 
+    public void setOptions(Set<String> options) {
+        this.options = options;
+    }
+
     public List<String> getDescription() {
         return description;
+    }
+
+    public void setDescription(List<String> description) {
+        this.description = description;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getValueType() {
-        return valueType == null ? null : valueType.getKey();
+        return valueType;
+    }
+
+    public void setValueType(String valueType) {
+        this.valueType = valueType;
     }
 
     public String getKeyType() {
-        return keyType == null ? null : keyType.getKey();
+        return keyType;
+    }
+
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
     }
 }

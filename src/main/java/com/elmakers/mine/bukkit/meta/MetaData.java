@@ -119,10 +119,6 @@ public class MetaData {
         this.parameterTypeStore = parameterTypeStore;
     }
 
-    public void update() {
-        parameterTypeStore.update();
-    }
-
     private List<String> sortCollection(Collection<String> unsorted) {
         List<String> sorted = new ArrayList<>(unsorted);
         Collections.sort(sorted);
@@ -172,5 +168,24 @@ public class MetaData {
 
     public void addSpellProperty(String key) {
         spellProperties.add(key);
+    }
+
+    public void update() {
+        parameterTypeStore.update();
+    }
+
+    public void loaded() {
+        for (Map.Entry<String, Category> entry : categories.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
+        for (Map.Entry<String, Parameter> entry : allParameters.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
+        for (Map.Entry<String, SpellActionDescription> entry : actions.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
+        for (Map.Entry<String, EffectDescription> entry : effects.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
     }
 }

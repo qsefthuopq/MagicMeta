@@ -11,6 +11,10 @@ public class Category {
     private String name;
     private List<String> description;
 
+    public Category() {
+
+    }
+
     public Category(String key) {
         this.key = key;
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
@@ -23,11 +27,23 @@ public class Category {
         return key;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<String> getDescription() {
         return description;
+    }
+
+    public void setDescription(List<String> description) {
+        this.description = description;
     }
 }

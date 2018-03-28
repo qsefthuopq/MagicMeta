@@ -12,13 +12,16 @@ public class Parameter {
     private String name;
     private String field;
     private List<String> description;
-    private ParameterType type;
-    private Category category;
+    private String type;
+    private String category;
+
+     public Parameter() {
+     }
 
     public Parameter(@Nonnull String field, @Nonnull ParameterType type) {
         this.field = field;
         this.key = field;
-        this.type = type;
+        this.type = type.getKey();
 
         description = new ArrayList<>();
         description.add("");
@@ -40,27 +43,47 @@ public class Parameter {
         return key;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getField() {
         return field;
     }
 
+    public void setField(String field) {
+        this.field = field;
+    }
+
     public String getType() {
-        return type.getKey();
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public List<String> getDescription() {
         return description;
     }
 
-    public String getCategory() {
-        return category == null ? "" : category.getKey();
+    public void setDescription(List<String> description) {
+        this.description = description;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String categoryKey) {
+        this.category = categoryKey;
     }
 }
