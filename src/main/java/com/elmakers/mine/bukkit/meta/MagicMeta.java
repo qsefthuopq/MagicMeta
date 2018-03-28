@@ -50,11 +50,16 @@ public class MagicMeta {
         }
 
         String fileName = args[0];
+        boolean regenerate = (args.length > 1 && args[1].equals("--regenerate"));
         MagicMeta meta = new MagicMeta();
         try {
             File metaFile = new File(fileName);
             System.out.println("Writing metadata to " + metaFile.getAbsolutePath());
-            meta.loadMeta(metaFile);
+            if (!regenerate) {
+                meta.loadMeta(metaFile);
+            } else {
+                System.out.println("Regenerating");
+            }
             meta.generateMeta();
             meta.saveMeta(metaFile);
         } catch (Exception ex) {
@@ -70,14 +75,11 @@ public class MagicMeta {
     }
 
     private void loadMeta(@Nonnull File inputFile) throws IOException {
-        if (!inputFile.exists()) {
-            data = new MetaData();
-            return;
+        if (inputFile.exists()) {
+            JsonNode root = mapper.readTree(inputFile);
+            data = mapper.convertValue(root, MetaData.class);
+            data.loaded();
         }
-
-        JsonNode root = mapper.readTree(inputFile);
-        data = mapper.convertValue(root, MetaData.class);
-        data.loaded();
     }
 
     private void saveMeta(@Nonnull File outputFile) throws IOException {
@@ -263,6 +265,9 @@ public class MagicMeta {
     }
 
     private void generateMeta() {
+        if (data == null) {
+            data = new MetaData();
+        }
         generateSpellMeta();
         generateActionMeta();
         generateEffectsMeta();
