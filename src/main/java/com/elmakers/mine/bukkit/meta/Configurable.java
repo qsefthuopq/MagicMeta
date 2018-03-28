@@ -20,6 +20,7 @@ public class Configurable {
 
     public Configurable(@Nonnull Class<?> classType, @Nonnull Collection<Parameter> parameters, String classSuffix) {
         description = new ArrayList<>();
+        description.add("");
         className = classType.getSimpleName();
         shortClass = className.replace(classSuffix, "");
         name = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(shortClass), ' ');

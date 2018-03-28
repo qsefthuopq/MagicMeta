@@ -15,6 +15,7 @@ public class Category {
         this.key = key;
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
         description = new ArrayList<>();
+        description.add("");
     }
 
     @JsonIgnore

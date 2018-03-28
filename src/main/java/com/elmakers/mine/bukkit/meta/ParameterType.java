@@ -27,6 +27,7 @@ public class ParameterType {
         this.classType = classType;
         className = classType.getName();
         description = new ArrayList<>();
+        description.add("");
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
     }
 

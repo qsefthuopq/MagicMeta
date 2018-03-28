@@ -21,6 +21,7 @@ public class Parameter {
         this.type = type;
 
         description = new ArrayList<>();
+        description.add("");
         name = WordUtils.capitalizeFully(field, new char[]{'_'}).replaceAll("_", " ");
     }
 
