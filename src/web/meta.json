@@ -1261,6 +1261,405 @@
     }
   },
   "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+  "effectlib_effects" : {
+    "animated_ball" : {
+      "category" : "",
+      "className" : "AnimatedBallEffect",
+      "description" : [ ],
+      "key" : "animated_ball",
+      "name" : "Animated Ball",
+      "parameters" : [ "particle", "particles", "particles_per_iteration", "size", "x_factor", "x_offset", "x_rotation", "y_factor", "y_offset", "y_rotation", "z_factor", "z_offset", "z_rotation" ],
+      "shortClass" : "AnimatedBall"
+    },
+    "arc" : {
+      "category" : "",
+      "className" : "ArcEffect",
+      "description" : [ ],
+      "key" : "arc",
+      "name" : "Arc",
+      "parameters" : [ "height", "particle", "particles" ],
+      "shortClass" : "Arc"
+    },
+    "atom" : {
+      "category" : "",
+      "className" : "AtomEffect",
+      "description" : [ ],
+      "key" : "atom",
+      "name" : "Atom",
+      "parameters" : [ "angular_velocity", "color_nucleus", "color_orbital", "orbitals", "particle_nucleus", "particle_orbital", "particles_nucleus", "particles_orbital", "radius", "radius_nucleus", "rotation" ],
+      "shortClass" : "Atom"
+    },
+    "big_bang" : {
+      "category" : "",
+      "className" : "BigBangEffect",
+      "description" : [ ],
+      "key" : "big_bang",
+      "name" : "Big Bang",
+      "parameters" : [ "color2", "color3", "explosions", "fade_color", "firework_type", "intensity", "radius", "sound", "sound_interval", "sound_pitch", "sound_volume" ],
+      "shortClass" : "BigBang"
+    },
+    "bleed" : {
+      "category" : "",
+      "className" : "BleedEffect",
+      "description" : [ ],
+      "key" : "bleed",
+      "name" : "Bleed",
+      "parameters" : [ "height", "hurt" ],
+      "shortClass" : "Bleed"
+    },
+    "circle" : {
+      "category" : "",
+      "className" : "CircleEffect",
+      "description" : [ ],
+      "key" : "circle",
+      "name" : "Circle",
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "particle", "particles", "radius", "x_rotation", "x_subtract", "y_rotation", "y_subtract", "z_rotation", "z_subtract" ],
+      "shortClass" : "Circle"
+    },
+    "cloud" : {
+      "category" : "",
+      "className" : "CloudEffect",
+      "description" : [ ],
+      "key" : "cloud",
+      "name" : "Cloud",
+      "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "main_particle", "particle_radius", "y_offset" ],
+      "shortClass" : "Cloud"
+    },
+    "colored_image" : {
+      "category" : "",
+      "className" : "ColoredImageEffect",
+      "description" : [ ],
+      "key" : "colored_image",
+      "name" : "Colored Image",
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
+      "shortClass" : "ColoredImage"
+    },
+    "cone" : {
+      "category" : "",
+      "className" : "ConeEffect",
+      "description" : [ ],
+      "key" : "cone",
+      "name" : "Cone",
+      "parameters" : [ "angular_velocity", "length_grow", "particle", "particles", "particles_cone", "radius_grow", "randomize", "rotation" ],
+      "shortClass" : "Cone"
+    },
+    "cube" : {
+      "category" : "",
+      "className" : "CubeEffect",
+      "description" : [ ],
+      "key" : "cube",
+      "name" : "Cube",
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "edge_length", "enable_rotation", "outline_only", "particle", "particles" ],
+      "shortClass" : "Cube"
+    },
+    "cylinder" : {
+      "category" : "",
+      "className" : "CylinderEffect",
+      "description" : [ ],
+      "key" : "cylinder",
+      "name" : "Cylinder",
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "height", "particle", "particles", "radius", "rotation_x", "rotation_y", "rotation_z", "solid" ],
+      "shortClass" : "Cylinder"
+    },
+    "disco_ball" : {
+      "category" : "",
+      "className" : "DiscoBallEffect",
+      "description" : [ ],
+      "key" : "disco_ball",
+      "name" : "Disco Ball",
+      "parameters" : [ "direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
+      "shortClass" : "DiscoBall"
+    },
+    "dna" : {
+      "category" : "",
+      "className" : "DnaEffect",
+      "description" : [ ],
+      "key" : "dna",
+      "name" : "Dna",
+      "parameters" : [ "base_interval", "color_base1", "color_base2", "color_helix", "grow", "length", "particle_base1", "particle_base2", "particle_helix", "particles_base", "particles_helix", "radials", "radius" ],
+      "shortClass" : "Dna"
+    },
+    "donut" : {
+      "category" : "",
+      "className" : "DonutEffect",
+      "description" : [ ],
+      "key" : "donut",
+      "name" : "Donut",
+      "parameters" : [ "circles", "particle", "particles_circle", "radius_donut", "radius_tube", "x_rotation", "y_rotation", "z_rotation" ],
+      "shortClass" : "Donut"
+    },
+    "dragon" : {
+      "category" : "",
+      "className" : "DragonEffect",
+      "description" : [ ],
+      "key" : "dragon",
+      "name" : "Dragon",
+      "parameters" : [ "arcs", "length", "particle", "particles", "steps_per_iteration" ],
+      "shortClass" : "Dragon"
+    },
+    "earth" : {
+      "category" : "",
+      "className" : "EarthEffect",
+      "description" : [ ],
+      "key" : "earth",
+      "name" : "Earth",
+      "parameters" : [ "mountain_height", "particles", "precision", "radius" ],
+      "shortClass" : "Earth"
+    },
+    "equation" : {
+      "category" : "",
+      "className" : "EquationEffect",
+      "description" : [ ],
+      "key" : "equation",
+      "name" : "Equation",
+      "parameters" : [ "cycle_mini_step", "max_steps", "orient", "orient_pitch", "particle", "particles", "particles2", "variable", "variable2", "x2_equation", "x_equation", "y2_equation", "y_equation", "z2_equation", "z_equation" ],
+      "shortClass" : "Equation"
+    },
+    "explode" : {
+      "category" : "",
+      "className" : "ExplodeEffect",
+      "description" : [ ],
+      "key" : "explode",
+      "name" : "Explode",
+      "parameters" : [ "amount", "sound" ],
+      "shortClass" : "Explode"
+    },
+    "flame" : {
+      "category" : "",
+      "className" : "FlameEffect",
+      "description" : [ ],
+      "key" : "flame",
+      "name" : "Flame",
+      "parameters" : [ ],
+      "shortClass" : "Flame"
+    },
+    "fountain" : {
+      "category" : "",
+      "className" : "FountainEffect",
+      "description" : [ ],
+      "key" : "fountain",
+      "name" : "Fountain",
+      "parameters" : [ "height", "height_spout", "particle", "particles_spout", "particles_strand", "radius", "radius_spout", "rotation", "strands" ],
+      "shortClass" : "Fountain"
+    },
+    "grid" : {
+      "category" : "",
+      "className" : "GridEffect",
+      "description" : [ ],
+      "key" : "grid",
+      "name" : "Grid",
+      "parameters" : [ "columns", "height_cell", "particle", "particles_height", "particles_width", "rotation", "rows", "width_cell" ],
+      "shortClass" : "Grid"
+    },
+    "heart" : {
+      "category" : "",
+      "className" : "HeartEffect",
+      "description" : [ ],
+      "key" : "heart",
+      "name" : "Heart",
+      "parameters" : [ "compilaction", "compress_y_factor_total", "factor_inner_spike", "particle", "particles", "x_factor", "x_rotation", "y_factor", "y_rotation", "z_rotation" ],
+      "shortClass" : "Heart"
+    },
+    "helix" : {
+      "category" : "",
+      "className" : "HelixEffect",
+      "description" : [ ],
+      "key" : "helix",
+      "name" : "Helix",
+      "parameters" : [ "curve", "particle", "particles", "radius", "rotation", "strands" ],
+      "shortClass" : "Helix"
+    },
+    "hill" : {
+      "category" : "",
+      "className" : "HillEffect",
+      "description" : [ ],
+      "key" : "hill",
+      "name" : "Hill",
+      "parameters" : [ "edge_length", "height", "particle", "particles", "y_rotation" ],
+      "shortClass" : "Hill"
+    },
+    "icon" : {
+      "category" : "",
+      "className" : "IconEffect",
+      "description" : [ ],
+      "key" : "icon",
+      "name" : "Icon",
+      "parameters" : [ "particle", "y_offset" ],
+      "shortClass" : "Icon"
+    },
+    "image" : {
+      "category" : "",
+      "className" : "ImageEffect",
+      "description" : [ ],
+      "key" : "image",
+      "name" : "Image",
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "invert", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
+      "shortClass" : "Image"
+    },
+    "jump" : {
+      "category" : "",
+      "className" : "JumpEffect",
+      "description" : [ ],
+      "key" : "jump",
+      "name" : "Jump",
+      "parameters" : [ "power" ],
+      "shortClass" : "Jump"
+    },
+    "line" : {
+      "category" : "",
+      "className" : "LineEffect",
+      "description" : [ ],
+      "key" : "line",
+      "name" : "Line",
+      "parameters" : [ "is_zig_zag", "length", "particle", "particles", "zig_zag_offset", "zig_zags" ],
+      "shortClass" : "Line"
+    },
+    "love" : {
+      "category" : "",
+      "className" : "LoveEffect",
+      "description" : [ ],
+      "key" : "love",
+      "name" : "Love",
+      "parameters" : [ "particle" ],
+      "shortClass" : "Love"
+    },
+    "modified" : {
+      "category" : "",
+      "className" : "ModifiedEffect",
+      "description" : [ ],
+      "key" : "modified",
+      "name" : "Modified",
+      "parameters" : [ "effect", "effect_class", "orient", "orient_pitch", "parameters", "x_equation", "y_equation", "z_equation" ],
+      "shortClass" : "Modified"
+    },
+    "music" : {
+      "category" : "",
+      "className" : "MusicEffect",
+      "description" : [ ],
+      "key" : "music",
+      "name" : "Music",
+      "parameters" : [ "radials_per_step", "radius" ],
+      "shortClass" : "Music"
+    },
+    "plot" : {
+      "category" : "",
+      "className" : "PlotEffect",
+      "description" : [ ],
+      "key" : "plot",
+      "name" : "Plot",
+      "parameters" : [ "particle", "persistent", "x_equation", "x_scale", "y_equation", "y_scale", "z_equation", "z_scale" ],
+      "shortClass" : "Plot"
+    },
+    "shield" : {
+      "category" : "",
+      "className" : "ShieldEffect",
+      "description" : [ ],
+      "key" : "shield",
+      "name" : "Shield",
+      "parameters" : [ "particle", "particles", "radius", "sphere" ],
+      "shortClass" : "Shield"
+    },
+    "sky_rocket" : {
+      "category" : "",
+      "className" : "SkyRocketEffect",
+      "description" : [ ],
+      "key" : "sky_rocket",
+      "name" : "Sky Rocket",
+      "parameters" : [ "power" ],
+      "shortClass" : "SkyRocket"
+    },
+    "smoke" : {
+      "category" : "",
+      "className" : "SmokeEffect",
+      "description" : [ ],
+      "key" : "smoke",
+      "name" : "Smoke",
+      "parameters" : [ "particle" ],
+      "shortClass" : "Smoke"
+    },
+    "sphere" : {
+      "category" : "",
+      "className" : "SphereEffect",
+      "description" : [ ],
+      "key" : "sphere",
+      "name" : "Sphere",
+      "parameters" : [ "particle", "particles", "radius", "radius_increase", "y_offset" ],
+      "shortClass" : "Sphere"
+    },
+    "star" : {
+      "category" : "",
+      "className" : "StarEffect",
+      "description" : [ ],
+      "key" : "star",
+      "name" : "Star",
+      "parameters" : [ "inner_radius", "particle", "particles", "spike_height", "spikes_half" ],
+      "shortClass" : "Star"
+    },
+    "text" : {
+      "category" : "",
+      "className" : "TextEffect",
+      "description" : [ ],
+      "key" : "text",
+      "name" : "Text",
+      "parameters" : [ "font", "invert", "particle", "realtime", "size", "step_x", "step_y", "text" ],
+      "shortClass" : "Text"
+    },
+    "tornado" : {
+      "category" : "",
+      "className" : "TornadoEffect",
+      "description" : [ ],
+      "key" : "tornado",
+      "name" : "Tornado",
+      "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "distance", "max_tornado_radius", "show_cloud", "show_tornado", "tornado_color", "tornado_height", "tornado_particle", "y_offset" ],
+      "shortClass" : "Tornado"
+    },
+    "trace" : {
+      "category" : "",
+      "className" : "TraceEffect",
+      "description" : [ ],
+      "key" : "trace",
+      "name" : "Trace",
+      "parameters" : [ "max_way_points", "particle", "refresh" ],
+      "shortClass" : "Trace"
+    },
+    "turn" : {
+      "category" : "",
+      "className" : "TurnEffect",
+      "description" : [ ],
+      "key" : "turn",
+      "name" : "Turn",
+      "parameters" : [ "step" ],
+      "shortClass" : "Turn"
+    },
+    "vortex" : {
+      "category" : "",
+      "className" : "VortexEffect",
+      "description" : [ ],
+      "key" : "vortex",
+      "name" : "Vortex",
+      "parameters" : [ "circles", "grow", "helixes", "particle", "radials", "radius" ],
+      "shortClass" : "Vortex"
+    },
+    "warp" : {
+      "category" : "",
+      "className" : "WarpEffect",
+      "description" : [ ],
+      "key" : "warp",
+      "name" : "Warp",
+      "parameters" : [ "grow", "particle", "particles", "radius", "rings" ],
+      "shortClass" : "Warp"
+    },
+    "wave" : {
+      "category" : "",
+      "className" : "WaveEffect",
+      "description" : [ ],
+      "key" : "wave",
+      "name" : "Wave",
+      "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity", "width" ],
+      "shortClass" : "Wave"
+    }
+  },
+  "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
   "parameters" : {
     "add_effects" : {
       "category" : "",
@@ -1372,6 +1771,34 @@
       "description" : [ ],
       "field" : "amount",
       "name" : "Amount",
+      "type" : "int"
+    },
+    "angular_velocity" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "angular_velocity",
+      "name" : "Angular Velocity",
+      "type" : "double"
+    },
+    "angular_velocity_x" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "angular_velocity_x",
+      "name" : "Angular Velocity X",
+      "type" : "double"
+    },
+    "angular_velocity_y" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "angular_velocity_y",
+      "name" : "Angular Velocity Y",
+      "type" : "double"
+    },
+    "angular_velocity_z" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "angular_velocity_z",
+      "name" : "Angular Velocity Z",
       "type" : "double"
     },
     "apply_to_wand" : {
@@ -1387,6 +1814,13 @@
       "field" : "apply_velocity",
       "name" : "Apply Velocity",
       "type" : "boolean"
+    },
+    "arcs" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "arcs",
+      "name" : "Arcs",
+      "type" : "int"
     },
     "armor" : {
       "category" : "",
@@ -1465,6 +1899,13 @@
       "name" : "Async",
       "type" : "boolean"
     },
+    "asynchronous" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "asynchronous",
+      "name" : "Asynchronous",
+      "type" : "boolean"
+    },
     "attach_duration" : {
       "category" : "",
       "description" : [ ],
@@ -1477,6 +1918,13 @@
       "description" : [ ],
       "field" : "auto_close",
       "name" : "Auto Close",
+      "type" : "boolean"
+    },
+    "auto_orient" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "auto_orient",
+      "name" : "Auto Orient",
       "type" : "boolean"
     },
     "auto_upgrade" : {
@@ -1506,6 +1954,13 @@
       "field" : "backfire_chance",
       "name" : "Backfire Chance",
       "type" : "double"
+    },
+    "base_interval" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "base_interval",
+      "name" : "Base Interval",
+      "type" : "float"
     },
     "bb" : {
       "category" : "base",
@@ -1878,6 +2333,13 @@
       "name" : "Chestplate Item",
       "type" : "string"
     },
+    "circles" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "circles",
+      "name" : "Circles",
+      "type" : "int"
+    },
     "clear" : {
       "category" : "",
       "description" : [ ],
@@ -1899,12 +2361,96 @@
       "name" : "Close Range",
       "type" : "double"
     },
+    "cloud_color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "cloud_color",
+      "name" : "Cloud Color",
+      "type" : "color"
+    },
+    "cloud_particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "cloud_particle",
+      "name" : "Cloud Particle",
+      "type" : "particle_effect"
+    },
+    "cloud_size" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "cloud_size",
+      "name" : "Cloud Size",
+      "type" : "float"
+    },
+    "color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color",
+      "name" : "Color",
+      "type" : "color"
+    },
+    "color2" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color2",
+      "name" : "Color2",
+      "type" : "color"
+    },
+    "color3" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color3",
+      "name" : "Color3",
+      "type" : "color"
+    },
+    "color_base1" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_base1",
+      "name" : "Color Base1",
+      "type" : "color"
+    },
+    "color_base2" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_base2",
+      "name" : "Color Base2",
+      "type" : "color"
+    },
+    "color_helix" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_helix",
+      "name" : "Color Helix",
+      "type" : "color"
+    },
+    "color_nucleus" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_nucleus",
+      "name" : "Color Nucleus",
+      "type" : "color"
+    },
+    "color_orbital" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "color_orbital",
+      "name" : "Color Orbital",
+      "type" : "color"
+    },
     "color_override" : {
       "category" : "",
       "description" : [ ],
       "field" : "color_override",
       "name" : "Color Override",
       "type" : "string"
+    },
+    "columns" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "columns",
+      "name" : "Columns",
+      "type" : "int"
     },
     "command_block_allowed" : {
       "category" : "base",
@@ -1919,6 +2465,20 @@
       "field" : "commit",
       "name" : "Commit",
       "type" : "boolean"
+    },
+    "compilaction" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "compilaction",
+      "name" : "Compilaction",
+      "type" : "float"
+    },
+    "compress_y_factor_total" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "compress_y_factor_total",
+      "name" : "Compress Y Factor Total",
+      "type" : "double"
     },
     "confirm" : {
       "category" : "",
@@ -2130,6 +2690,20 @@
       "name" : "Currency",
       "type" : "integer"
     },
+    "curve" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "curve",
+      "name" : "Curve",
+      "type" : "float"
+    },
+    "cycle_mini_step" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "cycle_mini_step",
+      "name" : "Cycle Mini Step",
+      "type" : "boolean"
+    },
     "cycle_moon_phase" : {
       "category" : "",
       "description" : [ ],
@@ -2184,7 +2758,7 @@
       "description" : [ ],
       "field" : "delay",
       "name" : "Delay",
-      "type" : "integer"
+      "type" : "int"
     },
     "depth" : {
       "category" : "",
@@ -2192,6 +2766,13 @@
       "field" : "depth",
       "name" : "Depth",
       "type" : "integer"
+    },
+    "depth_front" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "depth_front",
+      "name" : "Depth Front",
+      "type" : "float"
     },
     "description" : {
       "category" : "base",
@@ -2226,13 +2807,27 @@
       "description" : [ ],
       "field" : "direction",
       "name" : "Direction",
-      "type" : "string"
+      "type" : "direction"
     },
     "disable_mana_regeneration" : {
       "category" : "base",
       "description" : [ ],
       "field" : "disable_mana_regeneration",
       "name" : "Disable Mana Regeneration",
+      "type" : "boolean"
+    },
+    "disappear_with_origin_entity" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "disappear_with_origin_entity",
+      "name" : "Disappear With Origin Entity",
+      "type" : "boolean"
+    },
+    "disappear_with_target_entity" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "disappear_with_target_entity",
+      "name" : "Disappear With Target Entity",
       "type" : "boolean"
     },
     "disguise_restricted" : {
@@ -2255,6 +2850,13 @@
       "field" : "display_name",
       "name" : "Display Name",
       "type" : "string"
+    },
+    "distance" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "distance",
+      "name" : "Distance",
+      "type" : "double"
     },
     "distance_weight" : {
       "category" : "",
@@ -2326,11 +2928,25 @@
       "name" : "Earns Sp",
       "type" : "integer"
     },
+    "edge_length" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "edge_length",
+      "name" : "Edge Length",
+      "type" : "float"
+    },
     "effect" : {
       "category" : "",
       "description" : [ ],
       "field" : "effect",
       "name" : "Effect",
+      "type" : "type"
+    },
+    "effect_class" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "effect_class",
+      "name" : "Effect Class",
       "type" : "string"
     },
     "effect_only" : {
@@ -2381,6 +2997,13 @@
       "field" : "elemental_damage",
       "name" : "Elemental Damage",
       "type" : "double"
+    },
+    "enable_rotation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "enable_rotation",
+      "name" : "Enable Rotation",
+      "type" : "boolean"
     },
     "entity_damage" : {
       "category" : "",
@@ -2445,12 +3068,33 @@
       "name" : "Experience",
       "type" : "integer"
     },
+    "explosions" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "explosions",
+      "name" : "Explosions",
+      "type" : "int"
+    },
     "extended_description" : {
       "category" : "base",
       "description" : [ ],
       "field" : "extended_description",
       "name" : "Extended Description",
       "type" : "string"
+    },
+    "factor_inner_spike" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "factor_inner_spike",
+      "name" : "Factor Inner Spike",
+      "type" : "double"
+    },
+    "fade_color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "fade_color",
+      "name" : "Fade Color",
+      "type" : "color"
     },
     "fade_in" : {
       "category" : "",
@@ -2536,6 +3180,13 @@
       "name" : "Field Type",
       "type" : "string"
     },
+    "file_name" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "file_name",
+      "name" : "File Name",
+      "type" : "string"
+    },
     "fill_mana" : {
       "category" : "",
       "description" : [ ],
@@ -2557,6 +3208,13 @@
       "name" : "Fire",
       "type" : "boolean"
     },
+    "firework_type" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "firework_type",
+      "name" : "Firework Type",
+      "type" : "type"
+    },
     "fizzle_chance" : {
       "category" : "base",
       "description" : [ ],
@@ -2570,6 +3228,13 @@
       "field" : "flicker",
       "name" : "Flicker",
       "type" : "boolean"
+    },
+    "font" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "font",
+      "name" : "Font",
+      "type" : "font"
     },
     "force" : {
       "category" : "",
@@ -2591,6 +3256,13 @@
       "field" : "fov_weight",
       "name" : "Fov Weight",
       "type" : "double"
+    },
+    "frame_delay" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "frame_delay",
+      "name" : "Frame Delay",
+      "type" : "int"
     },
     "free" : {
       "category" : "base",
@@ -2669,6 +3341,13 @@
       "name" : "Gravity",
       "type" : "double"
     },
+    "grow" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "grow",
+      "name" : "Grow",
+      "type" : "float"
+    },
     "headshot_effects" : {
       "category" : "",
       "description" : [ ],
@@ -2683,12 +3362,47 @@
       "name" : "Heal Max Distance",
       "type" : "double"
     },
+    "height" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "height",
+      "name" : "Height",
+      "type" : "double"
+    },
+    "height_back" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "height_back",
+      "name" : "Height Back",
+      "type" : "float"
+    },
+    "height_cell" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "height_cell",
+      "name" : "Height Cell",
+      "type" : "float"
+    },
+    "height_spout" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "height_spout",
+      "name" : "Height Spout",
+      "type" : "float"
+    },
     "held_item" : {
       "category" : "",
       "description" : [ ],
       "field" : "held_item",
       "name" : "Held Item",
       "type" : "boolean"
+    },
+    "helixes" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "helixes",
+      "name" : "Helixes",
+      "type" : "int"
     },
     "helmet" : {
       "category" : "",
@@ -2759,6 +3473,13 @@
       "field" : "hitbox_size",
       "name" : "Hitbox Size",
       "type" : "double"
+    },
+    "hurt" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "hurt",
+      "name" : "Hurt",
+      "type" : "boolean"
     },
     "hurts" : {
       "category" : "",
@@ -2851,12 +3572,26 @@
       "name" : "Inherit",
       "type" : "string"
     },
+    "inner_radius" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "inner_radius",
+      "name" : "Inner Radius",
+      "type" : "float"
+    },
     "instant_block_effects" : {
       "category" : "targeting",
       "description" : [ ],
       "field" : "instant_block_effects",
       "name" : "Instant Block Effects",
       "type" : "boolean"
+    },
+    "intensity" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "intensity",
+      "name" : "Intensity",
+      "type" : "int"
     },
     "interact_spell" : {
       "category" : "",
@@ -2872,6 +3607,20 @@
       "name" : "Interval",
       "type" : "integer"
     },
+    "invert" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "invert",
+      "name" : "Invert",
+      "type" : "boolean"
+    },
+    "is_zig_zag" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "is_zig_zag",
+      "name" : "Is Zig Zag",
+      "type" : "boolean"
+    },
     "item" : {
       "category" : "",
       "description" : [ ],
@@ -2885,6 +3634,13 @@
       "field" : "item_speed",
       "name" : "Item Speed",
       "type" : "double"
+    },
+    "iterations" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "iterations",
+      "name" : "Iterations",
+      "type" : "int"
     },
     "jump_controllable" : {
       "category" : "",
@@ -2949,6 +3705,34 @@
       "name" : "Leggings Item",
       "type" : "string"
     },
+    "length" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "length",
+      "name" : "Length",
+      "type" : "float"
+    },
+    "length_back" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "length_back",
+      "name" : "Length Back",
+      "type" : "float"
+    },
+    "length_front" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "length_front",
+      "name" : "Length Front",
+      "type" : "float"
+    },
+    "length_grow" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "length_grow",
+      "name" : "Length Grow",
+      "type" : "float"
+    },
     "level" : {
       "category" : "",
       "description" : [ ],
@@ -2997,6 +3781,27 @@
       "field" : "limit",
       "name" : "Limit",
       "type" : "integer"
+    },
+    "line_color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "line_color",
+      "name" : "Line Color",
+      "type" : "color"
+    },
+    "line_particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "line_particle",
+      "name" : "Line Particle",
+      "type" : "particle_effect"
+    },
+    "line_particles" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "line_particles",
+      "name" : "Line Particles",
+      "type" : "int"
     },
     "living_entity_speed" : {
       "category" : "",
@@ -3061,6 +3866,13 @@
       "name" : "Magic Entity Damage",
       "type" : "boolean"
     },
+    "main_particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "main_particle",
+      "name" : "Main Particle",
+      "type" : "particle_effect"
+    },
     "mana" : {
       "category" : "",
       "description" : [ ],
@@ -3081,6 +3893,20 @@
       "field" : "material",
       "name" : "Material",
       "type" : "material"
+    },
+    "material_data" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "material_data",
+      "name" : "Material Data",
+      "type" : "byte"
+    },
+    "max" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "max",
+      "name" : "Max",
+      "type" : "int"
     },
     "max_acceleration" : {
       "category" : "",
@@ -3131,6 +3957,13 @@
       "name" : "Max Level",
       "type" : "integer"
     },
+    "max_lines" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "max_lines",
+      "name" : "Max Lines",
+      "type" : "int"
+    },
     "max_magnitude" : {
       "category" : "",
       "description" : [ ],
@@ -3151,6 +3984,27 @@
       "field" : "max_speed",
       "name" : "Max Speed",
       "type" : "double"
+    },
+    "max_steps" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "max_steps",
+      "name" : "Max Steps",
+      "type" : "int"
+    },
+    "max_tornado_radius" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "max_tornado_radius",
+      "name" : "Max Tornado Radius",
+      "type" : "float"
+    },
+    "max_way_points" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "max_way_points",
+      "name" : "Max Way Points",
+      "type" : "int"
     },
     "message" : {
       "category" : "",
@@ -3264,6 +4118,13 @@
       "name" : "Mount Wand",
       "type" : "boolean"
     },
+    "mountain_height" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "mountain_height",
+      "name" : "Mountain Height",
+      "type" : "float"
+    },
     "multiply" : {
       "category" : "",
       "description" : [ ],
@@ -3319,6 +4180,13 @@
       "field" : "op",
       "name" : "Op",
       "type" : "boolean"
+    },
+    "orbitals" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "orbitals",
+      "name" : "Orbitals",
+      "type" : "int"
     },
     "orient" : {
       "category" : "",
@@ -3390,6 +4258,13 @@
       "name" : "Outer Probability",
       "type" : "double"
     },
+    "outline_only" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "outline_only",
+      "name" : "Outline Only",
+      "type" : "boolean"
+    },
     "override" : {
       "category" : "",
       "description" : [ ],
@@ -3397,12 +4272,201 @@
       "name" : "Override",
       "type" : "boolean"
     },
+    "parameters" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "parameters",
+      "name" : "Parameters",
+      "type" : "map"
+    },
+    "particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle",
+      "name" : "Particle",
+      "type" : "particle_effect"
+    },
+    "particle_base1" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_base1",
+      "name" : "Particle Base1",
+      "type" : "particle_effect"
+    },
+    "particle_base2" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_base2",
+      "name" : "Particle Base2",
+      "type" : "particle_effect"
+    },
+    "particle_count" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_count",
+      "name" : "Particle Count",
+      "type" : "int"
+    },
+    "particle_helix" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_helix",
+      "name" : "Particle Helix",
+      "type" : "particle_effect"
+    },
+    "particle_nucleus" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_nucleus",
+      "name" : "Particle Nucleus",
+      "type" : "particle_effect"
+    },
+    "particle_offset_x" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_offset_x",
+      "name" : "Particle Offset X",
+      "type" : "float"
+    },
+    "particle_offset_y" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_offset_y",
+      "name" : "Particle Offset Y",
+      "type" : "float"
+    },
+    "particle_offset_z" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_offset_z",
+      "name" : "Particle Offset Z",
+      "type" : "float"
+    },
+    "particle_orbital" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_orbital",
+      "name" : "Particle Orbital",
+      "type" : "particle_effect"
+    },
     "particle_override" : {
       "category" : "",
       "description" : [ ],
       "field" : "particle_override",
       "name" : "Particle Override",
       "type" : "string"
+    },
+    "particle_radius" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particle_radius",
+      "name" : "Particle Radius",
+      "type" : "float"
+    },
+    "particles" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles",
+      "name" : "Particles",
+      "type" : "int"
+    },
+    "particles2" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles2",
+      "name" : "Particles2",
+      "type" : "int"
+    },
+    "particles_back" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_back",
+      "name" : "Particles Back",
+      "type" : "int"
+    },
+    "particles_base" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_base",
+      "name" : "Particles Base",
+      "type" : "int"
+    },
+    "particles_circle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_circle",
+      "name" : "Particles Circle",
+      "type" : "int"
+    },
+    "particles_cone" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_cone",
+      "name" : "Particles Cone",
+      "type" : "int"
+    },
+    "particles_front" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_front",
+      "name" : "Particles Front",
+      "type" : "int"
+    },
+    "particles_height" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_height",
+      "name" : "Particles Height",
+      "type" : "int"
+    },
+    "particles_helix" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_helix",
+      "name" : "Particles Helix",
+      "type" : "int"
+    },
+    "particles_nucleus" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_nucleus",
+      "name" : "Particles Nucleus",
+      "type" : "int"
+    },
+    "particles_orbital" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_orbital",
+      "name" : "Particles Orbital",
+      "type" : "int"
+    },
+    "particles_per_iteration" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_per_iteration",
+      "name" : "Particles Per Iteration",
+      "type" : "int"
+    },
+    "particles_spout" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_spout",
+      "name" : "Particles Spout",
+      "type" : "int"
+    },
+    "particles_strand" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_strand",
+      "name" : "Particles Strand",
+      "type" : "int"
+    },
+    "particles_width" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "particles_width",
+      "name" : "Particles Width",
+      "type" : "int"
     },
     "passenger" : {
       "category" : "",
@@ -3460,6 +4524,13 @@
       "name" : "Percentage",
       "type" : "double"
     },
+    "period" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "period",
+      "name" : "Period",
+      "type" : "int"
+    },
     "permission" : {
       "category" : "",
       "description" : [ ],
@@ -3479,6 +4550,13 @@
       "description" : [ ],
       "field" : "persist_target",
       "name" : "Persist Target",
+      "type" : "boolean"
+    },
+    "persistent" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "persistent",
+      "name" : "Persistent",
       "type" : "boolean"
     },
     "physics" : {
@@ -3514,7 +4592,7 @@
       "description" : [ ],
       "field" : "pitch",
       "name" : "Pitch",
-      "type" : "double"
+      "type" : "float"
     },
     "pitch_controllable" : {
       "category" : "",
@@ -3542,7 +4620,14 @@
       "description" : [ ],
       "field" : "pitch_offset",
       "name" : "Pitch Offset",
-      "type" : "double"
+      "type" : "float"
+    },
+    "plane" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "plane",
+      "name" : "Plane",
+      "type" : "plane"
     },
     "player_damage" : {
       "category" : "",
@@ -3563,7 +4648,14 @@
       "description" : [ ],
       "field" : "power",
       "name" : "Power",
-      "type" : "integer"
+      "type" : "float"
+    },
+    "precision" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "precision",
+      "name" : "Precision",
+      "type" : "int"
     },
     "prevent_passthrough" : {
       "category" : "base",
@@ -3677,12 +4769,54 @@
       "name" : "Quiet",
       "type" : "boolean"
     },
+    "radials" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radials",
+      "name" : "Radials",
+      "type" : "double"
+    },
+    "radials_per_step" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radials_per_step",
+      "name" : "Radials Per Step",
+      "type" : "double"
+    },
     "radius" : {
       "category" : "",
       "description" : [ ],
       "field" : "radius",
       "name" : "Radius",
+      "type" : "float"
+    },
+    "radius_donut" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_donut",
+      "name" : "Radius Donut",
+      "type" : "float"
+    },
+    "radius_grow" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_grow",
+      "name" : "Radius Grow",
+      "type" : "float"
+    },
+    "radius_increase" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_increase",
+      "name" : "Radius Increase",
       "type" : "double"
+    },
+    "radius_nucleus" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_nucleus",
+      "name" : "Radius Nucleus",
+      "type" : "float"
     },
     "radius_on_use" : {
       "category" : "",
@@ -3705,6 +4839,20 @@
       "name" : "Radius Per Tick",
       "type" : "double"
     },
+    "radius_spout" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_spout",
+      "name" : "Radius Spout",
+      "type" : "float"
+    },
+    "radius_tube" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "radius_tube",
+      "name" : "Radius Tube",
+      "type" : "float"
+    },
     "random_source_offset" : {
       "category" : "",
       "description" : [ ],
@@ -3719,6 +4867,13 @@
       "name" : "Random Target Offset",
       "type" : "vector"
     },
+    "randomize" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "randomize",
+      "name" : "Randomize",
+      "type" : "boolean"
+    },
     "range" : {
       "category" : "",
       "description" : [ ],
@@ -3732,6 +4887,13 @@
       "field" : "range_padding",
       "name" : "Range Padding",
       "type" : "double"
+    },
+    "realtime" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "realtime",
+      "name" : "Realtime",
+      "type" : "boolean"
     },
     "reapplication_delay" : {
       "category" : "",
@@ -3816,6 +4978,13 @@
       "field" : "reflective_override",
       "name" : "Reflective Override",
       "type" : "boolean"
+    },
+    "refresh" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "refresh",
+      "name" : "Refresh",
+      "type" : "int"
     },
     "relative_offset" : {
       "category" : "",
@@ -4055,6 +5224,48 @@
       "name" : "Right Arm Item",
       "type" : "string"
     },
+    "rings" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rings",
+      "name" : "Rings",
+      "type" : "int"
+    },
+    "rotation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rotation",
+      "name" : "Rotation",
+      "type" : "double"
+    },
+    "rotation_x" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rotation_x",
+      "name" : "Rotation X",
+      "type" : "double"
+    },
+    "rotation_y" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rotation_y",
+      "name" : "Rotation Y",
+      "type" : "double"
+    },
+    "rotation_z" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rotation_z",
+      "name" : "Rotation Z",
+      "type" : "double"
+    },
+    "rows" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "rows",
+      "name" : "Rows",
+      "type" : "int"
+    },
     "safe" : {
       "category" : "",
       "description" : [ ],
@@ -4118,6 +5329,13 @@
       "name" : "Show Active Icons",
       "type" : "boolean"
     },
+    "show_cloud" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "show_cloud",
+      "name" : "Show Cloud",
+      "type" : "boolean"
+    },
     "show_extra_spells" : {
       "category" : "",
       "description" : [ ],
@@ -4144,6 +5362,13 @@
       "description" : [ ],
       "field" : "show_required_spells",
       "name" : "Show Required Spells",
+      "type" : "boolean"
+    },
+    "show_tornado" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "show_tornado",
+      "name" : "Show Tornado",
       "type" : "boolean"
     },
     "show_unavailable" : {
@@ -4179,7 +5404,7 @@
       "description" : [ ],
       "field" : "size",
       "name" : "Size",
-      "type" : "integer"
+      "type" : "float"
     },
     "skeletons" : {
       "category" : "",
@@ -4194,6 +5419,13 @@
       "field" : "skip",
       "name" : "Skip",
       "type" : "integer"
+    },
+    "solid" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "solid",
+      "name" : "Solid",
+      "type" : "boolean"
     },
     "sound" : {
       "category" : "",
@@ -4214,7 +5446,7 @@
       "description" : [ ],
       "field" : "sound_interval",
       "name" : "Sound Interval",
-      "type" : "integer"
+      "type" : "int"
     },
     "sound_max_pitch" : {
       "category" : "",
@@ -4249,14 +5481,14 @@
       "description" : [ ],
       "field" : "sound_pitch",
       "name" : "Sound Pitch",
-      "type" : "double"
+      "type" : "float"
     },
     "sound_volume" : {
       "category" : "",
       "description" : [ ],
       "field" : "sound_volume",
       "name" : "Sound Volume",
-      "type" : "double"
+      "type" : "float"
     },
     "source_at_target" : {
       "category" : "",
@@ -4354,7 +5586,7 @@
       "description" : [ ],
       "field" : "speed",
       "name" : "Speed",
-      "type" : "double"
+      "type" : "float"
     },
     "speed_max" : {
       "category" : "",
@@ -4383,6 +5615,55 @@
       "field" : "spells",
       "name" : "Spells",
       "type" : "string"
+    },
+    "sphere" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sphere",
+      "name" : "Sphere",
+      "type" : "boolean"
+    },
+    "sphere_color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sphere_color",
+      "name" : "Sphere Color",
+      "type" : "color"
+    },
+    "sphere_particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sphere_particle",
+      "name" : "Sphere Particle",
+      "type" : "particle_effect"
+    },
+    "sphere_particles" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sphere_particles",
+      "name" : "Sphere Particles",
+      "type" : "int"
+    },
+    "sphere_radius" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "sphere_radius",
+      "name" : "Sphere Radius",
+      "type" : "float"
+    },
+    "spike_height" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "spike_height",
+      "name" : "Spike Height",
+      "type" : "float"
+    },
+    "spikes_half" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "spikes_half",
+      "name" : "Spikes Half",
+      "type" : "int"
     },
     "spread" : {
       "category" : "",
@@ -4440,6 +5721,34 @@
       "name" : "Steer Speed",
       "type" : "double"
     },
+    "step" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "step",
+      "name" : "Step",
+      "type" : "float"
+    },
+    "step_x" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "step_x",
+      "name" : "Step X",
+      "type" : "int"
+    },
+    "step_y" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "step_y",
+      "name" : "Step Y",
+      "type" : "int"
+    },
+    "steps_per_iteration" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "steps_per_iteration",
+      "name" : "Steps Per Iteration",
+      "type" : "int"
+    },
     "stop_on_success" : {
       "category" : "",
       "description" : [ ],
@@ -4453,6 +5762,13 @@
       "field" : "strafe_controllable",
       "name" : "Strafe Controllable",
       "type" : "double"
+    },
+    "strands" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "strands",
+      "name" : "Strands",
+      "type" : "int"
     },
     "strength" : {
       "category" : "",
@@ -4657,6 +5973,13 @@
       "name" : "Target Pitch Offset",
       "type" : "double"
     },
+    "target_players" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "target_players",
+      "name" : "Target Players",
+      "type" : "list"
+    },
     "target_relative_direction_pitch_offset" : {
       "category" : "",
       "description" : [ ],
@@ -4762,6 +6085,13 @@
       "name" : "Teleport",
       "type" : "boolean"
     },
+    "text" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "text",
+      "name" : "Text",
+      "type" : "string"
+    },
     "thickness" : {
       "category" : "",
       "description" : [ ],
@@ -4832,6 +6162,27 @@
       "name" : "Toggle",
       "type" : "string"
     },
+    "tornado_color" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "tornado_color",
+      "name" : "Tornado Color",
+      "type" : "color"
+    },
+    "tornado_height" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "tornado_height",
+      "name" : "Tornado Height",
+      "type" : "float"
+    },
+    "tornado_particle" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "tornado_particle",
+      "name" : "Tornado Particle",
+      "type" : "particle_effect"
+    },
     "total_duration" : {
       "category" : "base",
       "description" : [ ],
@@ -4879,6 +6230,13 @@
       "description" : [ ],
       "field" : "trail",
       "name" : "Trail",
+      "type" : "boolean"
+    },
+    "transparency" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "transparency",
+      "name" : "Transparency",
       "type" : "boolean"
     },
     "transparent" : {
@@ -5014,11 +6372,25 @@
       "name" : "Update",
       "type" : "boolean"
     },
+    "update_directions" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "update_directions",
+      "name" : "Update Directions",
+      "type" : "boolean"
+    },
     "update_launch_location" : {
       "category" : "",
       "description" : [ ],
       "field" : "update_launch_location",
       "name" : "Update Launch Location",
+      "type" : "boolean"
+    },
+    "update_locations" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "update_locations",
+      "name" : "Update Locations",
       "type" : "boolean"
     },
     "upgrade" : {
@@ -5147,6 +6519,20 @@
       "name" : "Vanish",
       "type" : "boolean"
     },
+    "variable" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "variable",
+      "name" : "Variable",
+      "type" : "string"
+    },
+    "variable2" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "variable2",
+      "name" : "Variable2",
+      "type" : "string"
+    },
     "variant" : {
       "category" : "",
       "description" : [ ],
@@ -5159,7 +6545,7 @@
       "description" : [ ],
       "field" : "velocity",
       "name" : "Velocity",
-      "type" : "double"
+      "type" : "vector"
     },
     "velocity_max_distance" : {
       "category" : "",
@@ -5188,6 +6574,13 @@
       "field" : "visible_delay_ticks",
       "name" : "Visible Delay Ticks",
       "type" : "integer"
+    },
+    "visible_range" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "visible_range",
+      "name" : "Visible Range",
+      "type" : "float"
     },
     "volume" : {
       "category" : "",
@@ -5245,6 +6638,20 @@
       "name" : "Weather",
       "type" : "weather"
     },
+    "width" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "width",
+      "name" : "Width",
+      "type" : "float"
+    },
+    "width_cell" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "width_cell",
+      "name" : "Width Cell",
+      "type" : "float"
+    },
     "world_border_restricted" : {
       "category" : "base",
       "description" : [ ],
@@ -5266,6 +6673,48 @@
       "name" : "Worth Item",
       "type" : "string"
     },
+    "x2_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x2_equation",
+      "name" : "X2 Equation",
+      "type" : "string"
+    },
+    "x_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_equation",
+      "name" : "X Equation",
+      "type" : "string"
+    },
+    "x_factor" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_factor",
+      "name" : "X Factor",
+      "type" : "float"
+    },
+    "x_offset" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_offset",
+      "name" : "X Offset",
+      "type" : "float"
+    },
+    "x_rotation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_rotation",
+      "name" : "X Rotation",
+      "type" : "double"
+    },
+    "x_scale" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_scale",
+      "name" : "X Scale",
+      "type" : "double"
+    },
     "x_size" : {
       "category" : "",
       "description" : [ ],
@@ -5273,12 +6722,40 @@
       "name" : "X Size",
       "type" : "double"
     },
+    "x_subtract" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "x_subtract",
+      "name" : "X Subtract",
+      "type" : "double"
+    },
+    "y2_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y2_equation",
+      "name" : "Y2 Equation",
+      "type" : "string"
+    },
+    "y_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y_equation",
+      "name" : "Y Equation",
+      "type" : "string"
+    },
+    "y_factor" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y_factor",
+      "name" : "Y Factor",
+      "type" : "float"
+    },
     "y_offset" : {
       "category" : "",
       "description" : [ ],
       "field" : "y_offset",
       "name" : "Y Offset",
-      "type" : "double"
+      "type" : "float"
     },
     "y_radius" : {
       "category" : "",
@@ -5287,12 +6764,40 @@
       "name" : "Y Radius",
       "type" : "integer"
     },
+    "y_rotation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y_rotation",
+      "name" : "Y Rotation",
+      "type" : "double"
+    },
+    "y_scale" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y_scale",
+      "name" : "Y Scale",
+      "type" : "double"
+    },
     "y_size" : {
       "category" : "",
       "description" : [ ],
       "field" : "y_size",
       "name" : "Y Size",
       "type" : "double"
+    },
+    "y_subtract" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "y_subtract",
+      "name" : "Y Subtract",
+      "type" : "double"
+    },
+    "yaw" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "yaw",
+      "name" : "Yaw",
+      "type" : "float"
     },
     "yaw_max" : {
       "category" : "",
@@ -5306,6 +6811,48 @@
       "description" : [ ],
       "field" : "yaw_offset",
       "name" : "Yaw Offset",
+      "type" : "float"
+    },
+    "z2_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z2_equation",
+      "name" : "Z2 Equation",
+      "type" : "string"
+    },
+    "z_equation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_equation",
+      "name" : "Z Equation",
+      "type" : "string"
+    },
+    "z_factor" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_factor",
+      "name" : "Z Factor",
+      "type" : "float"
+    },
+    "z_offset" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_offset",
+      "name" : "Z Offset",
+      "type" : "float"
+    },
+    "z_rotation" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_rotation",
+      "name" : "Z Rotation",
+      "type" : "double"
+    },
+    "z_scale" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_scale",
+      "name" : "Z Scale",
       "type" : "double"
     },
     "z_size" : {
@@ -5314,6 +6861,27 @@
       "field" : "z_size",
       "name" : "Z Size",
       "type" : "double"
+    },
+    "z_subtract" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "z_subtract",
+      "name" : "Z Subtract",
+      "type" : "double"
+    },
+    "zig_zag_offset" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "zig_zag_offset",
+      "name" : "Zig Zag Offset",
+      "type" : "vector"
+    },
+    "zig_zags" : {
+      "category" : "",
+      "description" : [ ],
+      "field" : "zig_zags",
+      "name" : "Zig Zags",
+      "type" : "int"
     }
   },
   "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
@@ -5331,11 +6899,29 @@
       "name" : "Boolean",
       "options" : [ ]
     },
+    "byte" : {
+      "className" : "java.lang.Byte",
+      "description" : [ ],
+      "name" : "Byte",
+      "options" : [ ]
+    },
+    "color" : {
+      "className" : "java.lang.String",
+      "description" : [ ],
+      "name" : "Color",
+      "options" : [ ]
+    },
     "damage_type" : {
       "className" : "java.lang.String",
       "description" : [ ],
       "name" : "Damage Type",
       "options" : [ ]
+    },
+    "direction" : {
+      "className" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
+      "description" : [ ],
+      "name" : "Direction",
+      "options" : [ "both", "down", "up" ]
     },
     "double" : {
       "className" : "java.lang.Double",
@@ -5349,10 +6935,34 @@
       "name" : "Entity Type",
       "options" : [ "area_effect_cloud", "armor_stand", "arrow", "bat", "blaze", "boat", "cave_spider", "chicken", "complex_part", "cow", "creeper", "dragon_fireball", "dropped_item", "egg", "ender_crystal", "ender_dragon", "ender_pearl", "ender_signal", "enderman", "endermite", "experience_orb", "falling_block", "fireball", "firework", "fishing_hook", "ghast", "giant", "guardian", "horse", "iron_golem", "item_frame", "leash_hitch", "lightning", "lingering_potion", "magma_cube", "minecart", "minecart_chest", "minecart_command", "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player", "primed_tnt", "rabbit", "sheep", "shulker", "shulker_bullet", "silverfish", "skeleton", "slime", "small_fireball", "snowball", "snowman", "spectral_arrow", "spider", "splash_potion", "squid", "thrown_exp_bottle", "tipped_arrow", "unknown", "villager", "weather", "witch", "wither", "wither_skull", "wolf", "zombie" ]
     },
+    "float" : {
+      "className" : "float",
+      "description" : [ ],
+      "name" : "Float",
+      "options" : [ ]
+    },
+    "font" : {
+      "className" : "java.awt.Font",
+      "description" : [ ],
+      "name" : "Font",
+      "options" : [ ]
+    },
+    "int" : {
+      "className" : "int",
+      "description" : [ ],
+      "name" : "Int",
+      "options" : [ ]
+    },
     "integer" : {
       "className" : "java.lang.Integer",
       "description" : [ ],
       "name" : "Integer",
+      "options" : [ ]
+    },
+    "list" : {
+      "className" : "java.util.List",
+      "description" : [ ],
+      "name" : "List",
       "options" : [ ]
     },
     "location_type" : {
@@ -5379,6 +6989,18 @@
       "name" : "Material",
       "options" : [ "acacia_door", "acacia_door_item", "acacia_fence", "acacia_fence_gate", "acacia_stairs", "activator_rail", "air", "anvil", "apple", "armor_stand", "arrow", "baked_potato", "banner", "barrier", "beacon", "bed", "bed_block", "bedrock", "beetroot", "beetroot_block", "beetroot_seeds", "beetroot_soup", "birch_door", "birch_door_item", "birch_fence", "birch_fence_gate", "birch_wood_stairs", "blaze_powder", "blaze_rod", "boat", "boat_acacia", "boat_birch", "boat_dark_oak", "boat_jungle", "boat_spruce", "bone", "book", "book_and_quill", "bookshelf", "bow", "bowl", "bread", "brewing_stand", "brewing_stand_item", "brick", "brick_stairs", "brown_mushroom", "bucket", "burning_furnace", "cactus", "cake", "cake_block", "carpet", "carrot", "carrot_item", "carrot_stick", "cauldron", "cauldron_item", "chainmail_boots", "chainmail_chestplate", "chainmail_helmet", "chainmail_leggings", "chest", "chorus_flower", "chorus_fruit", "chorus_fruit_popped", "chorus_plant", "clay", "clay_ball", "clay_brick", "coal", "coal_block", "coal_ore", "cobble_wall", "cobblestone", "cobblestone_stairs", "cocoa", "command", "command_chain", "command_minecart", "command_repeating", "compass", "cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton", "cooked_rabbit", "cookie", "crops", "dark_oak_door", "dark_oak_door_item", "dark_oak_fence", "dark_oak_fence_gate", "dark_oak_stairs", "daylight_detector", "daylight_detector_inverted", "dead_bush", "detector_rail", "diamond", "diamond_axe", "diamond_barding", "diamond_block", "diamond_boots", "diamond_chestplate", "diamond_helmet", "diamond_hoe", "diamond_leggings", "diamond_ore", "diamond_pickaxe", "diamond_spade", "diamond_sword", "diode", "diode_block_off", "diode_block_on", "dirt", "dispenser", "double_plant", "double_step", "double_stone_slab2", "dragon_egg", "dragons_breath", "dropper", "egg", "elytra", "emerald", "emerald_block", "emerald_ore", "empty_map", "enchanted_book", "enchantment_table", "end_bricks", "end_crystal", "end_gateway", "end_rod", "ender_chest", "ender_pearl", "ender_portal", "ender_portal_frame", "ender_stone", "exp_bottle", "explosive_minecart", "eye_of_ender", "feather", "fence", "fence_gate", "fermented_spider_eye", "fire", "fireball", "firework", "firework_charge", "fishing_rod", "flint", "flint_and_steel", "flower_pot", "flower_pot_item", "frosted_ice", "furnace", "ghast_tear", "glass", "glass_bottle", "glowing_redstone_ore", "glowstone", "glowstone_dust", "gold_axe", "gold_barding", "gold_block", "gold_boots", "gold_chestplate", "gold_helmet", "gold_hoe", "gold_ingot", "gold_leggings", "gold_nugget", "gold_ore", "gold_pickaxe", "gold_plate", "gold_record", "gold_spade", "gold_sword", "golden_apple", "golden_carrot", "grass", "grass_path", "gravel", "green_record", "grilled_pork", "hard_clay", "hay_block", "hopper", "hopper_minecart", "huge_mushroom_1", "huge_mushroom_2", "ice", "ink_sack", "iron_axe", "iron_barding", "iron_block", "iron_boots", "iron_chestplate", "iron_door", "iron_door_block", "iron_fence", "iron_helmet", "iron_hoe", "iron_ingot", "iron_leggings", "iron_ore", "iron_pickaxe", "iron_plate", "iron_spade", "iron_sword", "iron_trapdoor", "item_frame", "jack_o_lantern", "jukebox", "jungle_door", "jungle_door_item", "jungle_fence", "jungle_fence_gate", "jungle_wood_stairs", "ladder", "lapis_block", "lapis_ore", "lava", "lava_bucket", "leash", "leather", "leather_boots", "leather_chestplate", "leather_helmet", "leather_leggings", "leaves", "leaves_2", "lever", "lingering_potion", "log", "log_2", "long_grass", "magma_cream", "map", "melon", "melon_block", "melon_seeds", "melon_stem", "milk_bucket", "minecart", "mob_spawner", "monster_egg", "monster_eggs", "mossy_cobblestone", "mushroom_soup", "mutton", "mycel", "name_tag", "nether_brick", "nether_brick_item", "nether_brick_stairs", "nether_fence", "nether_stalk", "nether_star", "nether_warts", "netherrack", "note_block", "obsidian", "packed_ice", "painting", "paper", "piston_base", "piston_extension", "piston_moving_piece", "piston_sticky_base", "poisonous_potato", "pork", "portal", "potato", "potato_item", "potion", "powered_minecart", "powered_rail", "prismarine", "prismarine_crystals", "prismarine_shard", "pumpkin", "pumpkin_pie", "pumpkin_seeds", "pumpkin_stem", "purpur_block", "purpur_double_slab", "purpur_pillar", "purpur_slab", "purpur_stairs", "quartz", "quartz_block", "quartz_ore", "quartz_stairs", "rabbit", "rabbit_foot", "rabbit_hide", "rabbit_stew", "rails", "raw_beef", "raw_chicken", "raw_fish", "record_10", "record_11", "record_12", "record_3", "record_4", "record_5", "record_6", "record_7", "record_8", "record_9", "red_mushroom", "red_rose", "red_sandstone", "red_sandstone_stairs", "redstone", "redstone_block", "redstone_comparator", "redstone_comparator_off", "redstone_comparator_on", "redstone_lamp_off", "redstone_lamp_on", "redstone_ore", "redstone_torch_off", "redstone_torch_on", "redstone_wire", "rotten_flesh", "saddle", "sand", "sandstone", "sandstone_stairs", "sapling", "sea_lantern", "seeds", "shears", "shield", "sign", "sign_post", "skull", "skull_item", "slime_ball", "slime_block", "smooth_brick", "smooth_stairs", "snow", "snow_ball", "snow_block", "soil", "soul_sand", "speckled_melon", "spectral_arrow", "spider_eye", "splash_potion", "sponge", "spruce_door", "spruce_door_item", "spruce_fence", "spruce_fence_gate", "spruce_wood_stairs", "stained_clay", "stained_glass", "stained_glass_pane", "standing_banner", "stationary_lava", "stationary_water", "step", "stick", "stone", "stone_axe", "stone_button", "stone_hoe", "stone_pickaxe", "stone_plate", "stone_slab2", "stone_spade", "stone_sword", "storage_minecart", "string", "structure_block", "sugar", "sugar_cane", "sugar_cane_block", "sulphur", "thin_glass", "tipped_arrow", "tnt", "torch", "trap_door", "trapped_chest", "tripwire", "tripwire_hook", "vine", "wall_banner", "wall_sign", "watch", "water", "water_bucket", "water_lily", "web", "wheat", "wood", "wood_axe", "wood_button", "wood_door", "wood_double_step", "wood_hoe", "wood_pickaxe", "wood_plate", "wood_spade", "wood_stairs", "wood_step", "wood_sword", "wooden_door", "wool", "workbench", "written_book", "yellow_flower" ]
     },
+    "particle_effect" : {
+      "className" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
+      "description" : [ ],
+      "name" : "Particle Effect",
+      "options" : [ "barrier", "block_crack", "block_dust", "cloud", "crit", "crit_magic", "damage_indicator", "dragon_breath", "drip_lava", "drip_water", "enchantment_table", "end_rod", "explosion_huge", "explosion_large", "explosion_normal", "falling_dust", "fireworks_spark", "flame", "footstep", "heart", "item_crack", "item_take", "lava", "mob_appearance", "note", "portal", "redstone", "slime", "smoke_large", "smoke_normal", "snow_shovel", "snowball", "spell", "spell_instant", "spell_mob", "spell_mob_ambient", "spell_witch", "spit", "suspended", "suspended_depth", "sweep_attack", "totem", "town_aura", "villager_angry", "villager_happy", "water_bubble", "water_drop", "water_splash", "water_wake" ]
+    },
+    "plane" : {
+      "className" : "de.slikey.effectlib.util.BaseImageEffect$Plane",
+      "description" : [ ],
+      "name" : "Plane",
+      "options" : [ "x", "xy", "xyz", "xz", "y", "yz", "z" ]
+    },
     "potion_effects" : {
       "className" : "java.util.Map",
       "description" : [ ],
@@ -5396,6 +7018,12 @@
       "description" : [ ],
       "name" : "String",
       "options" : [ ]
+    },
+    "type" : {
+      "className" : "org.bukkit.Effect$Type",
+      "description" : [ ],
+      "name" : "Type",
+      "options" : [ "sound", "visual" ]
     },
     "vector" : {
       "className" : "org.bukkit.util.Vector",

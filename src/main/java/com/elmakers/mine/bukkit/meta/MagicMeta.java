@@ -2,6 +2,8 @@ package com.elmakers.mine.bukkit.meta;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -13,6 +15,7 @@ import java.util.Set;
 
 import javax.annotation.Nonnull;
 
+import org.bukkit.entity.Player;
 import org.reflections.Reflections;
 import com.elmakers.mine.bukkit.action.CastContext;
 import com.elmakers.mine.bukkit.api.action.SpellAction;
@@ -26,16 +29,22 @@ import com.elmakers.mine.bukkit.spell.BlockSpell;
 import com.elmakers.mine.bukkit.spell.BrushSpell;
 import com.elmakers.mine.bukkit.spell.TargetingSpell;
 import com.elmakers.mine.bukkit.spell.UndoableSpell;
+import com.google.common.base.CaseFormat;
+
+import de.slikey.effectlib.Effect;
 
 public class MagicMeta {
     private static final String BUILTIN_SPELL_PACKAGE = "com.elmakers.mine.bukkit.action.builtin";
+    private static final String EFFECTLIB_PACKAGE = "de.slikey.effectlib.effect";
 
     private final Set<String> spellParameters = new HashSet<>();
-    private final Set<String> effectParameters = new HashSet<>();
     private final Set<String> spellProperties = new HashSet<>();
     private final Map<String, Category> categories = new HashMap<>();
     private final Map<String, Parameter> allParameters = new HashMap<>();
     private final Map<String, SpellActionDescription> actions = new HashMap<>();
+    private final Set<String> effectParameters = new HashSet<>();
+    private final Set<String> effectLibParameters = new HashSet<>();
+    private final Map<String, EffectDescription> effects = new HashMap<>();
     private final ParameterTypeStore parameterTypeStore = new ParameterTypeStore();
     private final SortedObjectMapper mapper = new SortedObjectMapper();
 
@@ -79,6 +88,8 @@ public class MagicMeta {
         root.put("actions", actions);
         root.put("categories", categories);
         root.put("effect_parameters", sortCollection(effectParameters));
+        root.put("effectlib_effects", effects);
+        root.put("effectlib_parameters", sortCollection(effectLibParameters));
         root.put("spell_parameters", sortCollection(spellParameters));
         root.put("spell_properties", sortCollection(spellProperties));
         root.put("parameters", allParameters);
@@ -161,7 +172,9 @@ public class MagicMeta {
         context.setSpell(spell);
 
         for (Class<? extends SpellAction> actionClass : allClasses) {
-            if (!actionClass.getPackage().getName().equals(BUILTIN_SPELL_PACKAGE) || actionClass.getAnnotation(Deprecated.class) != null) {
+            if (!actionClass.getPackage().getName().equals(BUILTIN_SPELL_PACKAGE)
+                || actionClass.getAnnotation(Deprecated.class) != null
+                || Modifier.isAbstract(actionClass.getModifiers())) {
                 System.out.println("Skipping " + actionClass.getName());
                 continue;
             }
@@ -198,10 +211,63 @@ public class MagicMeta {
         }
     }
 
+    private Set<Parameter> collectPublicProperties(Class<?> classType) {
+        Set<Parameter> properties = new HashSet<>();
+        Field[] fields = classType.getFields();
+        for (Field field : fields) {
+            if (field.getType() == Player.class || field.getType() == Runnable.class) continue;
+            String key = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field.getName());
+            Parameter parameter = parameterTypeStore.getParameter(key, field.getType());
+            properties.add(parameter);
+        }
+        return properties;
+    }
+
+    private void generateEffectLibMeta() {
+        // First get all base effect parameters
+        System.out.println("Scanning Effect");
+        Set<Parameter> baseEffectParameters = collectPublicProperties(Effect.class);
+        for (Parameter parameter : baseEffectParameters) {
+            allParameters.put(parameter.getKey(), parameter);
+            effectLibParameters.add(parameter.getKey());
+        }
+
+        // Gather all effect classes
+        Reflections reflections = new Reflections(EFFECTLIB_PACKAGE);
+
+        Set<Class<? extends Effect>> allEffects = reflections.getSubTypesOf(Effect.class);
+
+        for (Class<? extends Effect> effectClass : allEffects) {
+            if (effectClass.getAnnotation(Deprecated.class) != null
+                || Modifier.isAbstract(effectClass.getModifiers())) {
+                System.out.println("Skipping " + effectClass.getName());
+                continue;
+            }
+            System.out.println("Scanning " + effectClass.getName());
+            try {
+                Set<Parameter> effectParameters = collectPublicProperties(effectClass);
+
+                // Filter out common parameters
+                effectParameters.removeAll(baseEffectParameters);
+
+                // TODO: Track effects with exceptional parameter types
+                for (Parameter parameter : effectParameters) {
+                    allParameters.put(parameter.getKey(), parameter);
+                }
+
+                EffectDescription effect = new EffectDescription(effectClass, effectParameters);
+                effects.put(effect.getKey(), effect);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void generateMeta() {
         generateSpellMeta();
         generateActionMeta();
         generateEffectsMeta();
+        generateEffectLibMeta();
     }
 
     private Category getCategory(String key) {
