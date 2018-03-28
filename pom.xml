@@ -1,0 +1,126 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.elmakers.mine.bukkit</groupId>
+    <artifactId>MagicMeta</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Magic Meta</name>
+    <url>http://mine.elmakers.com</url>
+
+    <properties>
+        <jackson.version>2.6.5</jackson.version>
+        <findbugs.version>1.3.9</findbugs.version>
+        <bukkit.version>1.9.2-R0.1-SNAPSHOT</bukkit.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
+  
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://jenkins.elmakers.com</url>
+    </ciManagement>
+  
+    <scm>
+        <connection>scm:git:git://github.com/elBukkit/MagicMeta.git</connection>
+        <developerConnection>scm:git:git@github.com:elBukkit/MagicMeta.git</developerConnection>
+        <url>https://github.com/elBukkit/MagicMeta</url>
+        <tag>master</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>maven.elmakers.com</id>
+            <url>http://maven.elmakers.com/repository/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven.elmakers.com</id>
+            <url>http://maven.elmakers.com/repository/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.elmakers.mine.bukkit.plugins</groupId>
+            <artifactId>Magic</artifactId>
+            <version>7.4-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${findbugs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>${bukkit.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+       <repository>
+            <id>elMakers</id>
+            <url>http://maven.elmakers.com/repository/</url>
+       </repository>
+    </repositories>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                  <execution>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                      <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                          <mainClass>com.elmakers.mine.bukkit.meta.MagicMeta</mainClass>
+                        </transformer>
+                      </transformers>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
+        </plugins>
+    </build>
+</project>
