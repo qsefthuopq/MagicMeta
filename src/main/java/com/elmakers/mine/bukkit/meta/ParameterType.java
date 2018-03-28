@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
@@ -18,6 +19,8 @@ public class ParameterType {
     private String className;
     private List<String> description;
     private Set<String> options = new HashSet<>();
+    private ParameterType valueType;
+    private ParameterType keyType;
 
     public ParameterType(@Nonnull String key, @Nonnull Class<?> classType) {
         this.key = key;
@@ -25,6 +28,17 @@ public class ParameterType {
         className = classType.getName();
         description = new ArrayList<>();
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
+    }
+
+    public ParameterType(@Nonnull String key, ParameterType listValueType) {
+        this(key, List.class);
+        valueType = listValueType;
+    }
+
+    public ParameterType(@Nonnull String key, ParameterType mapKeyType, ParameterType mapValueType) {
+        this(key,  Map.class);
+        keyType = mapKeyType;
+        valueType = mapValueType;
     }
 
     @JsonIgnore
@@ -57,5 +71,13 @@ public class ParameterType {
 
     public String getName() {
         return name;
+    }
+
+    public String getValueType() {
+        return valueType == null ? null : valueType.getKey();
+    }
+
+    public String getKeyType() {
+        return keyType == null ? null : keyType.getKey();
     }
 }

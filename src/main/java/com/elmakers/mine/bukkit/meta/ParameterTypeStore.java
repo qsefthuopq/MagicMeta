@@ -9,11 +9,14 @@ import org.bukkit.Effect;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Biome;
 import org.bukkit.entity.EntityType;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import com.elmakers.mine.bukkit.magic.SourceLocation;
 import com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect;
+import com.elmakers.mine.bukkit.wand.WandMode;
 import com.google.common.base.CaseFormat;
 
 public class ParameterTypeStore {
@@ -34,6 +37,26 @@ public class ParameterTypeStore {
         return parameterType;
     }
 
+    public ParameterType getListType(@Nonnull String key, ParameterType valueType) {
+        ParameterType parameterType = typeMap.get(key);
+        if (parameterType == null) {
+            parameterType = new ParameterType(key, valueType);
+            typeMap.put(key, parameterType);
+        }
+
+        return parameterType;
+    }
+
+    public ParameterType getMapType(@Nonnull String key, ParameterType keyType, ParameterType valueType) {
+        ParameterType parameterType = typeMap.get(key);
+        if (parameterType == null) {
+            parameterType = new ParameterType(key, keyType, valueType);
+            typeMap.put(key, parameterType);
+        }
+
+        return parameterType;
+    }
+
     public Map<String, ParameterType> getTypes() {
         return typeMap;
     }
@@ -48,9 +71,33 @@ public class ParameterTypeStore {
         // Easier to do this here then fill it in by hand
         ParameterType parameterType;
         switch (key) {
-            case "add_effects":
+            case "alternate_spell":
+            case "alternate_spell2":
+            case "active_spell":
+            case "cast_spell":
+                parameterType = getParameterType("spell", String.class);
+                break;
             case "remove_effects":
-                parameterType = getParameterType("potion_effects", Map.class);
+                parameterType = getListType("potion_effect_list", getParameterType(PotionEffectType.class));
+                break;
+            case "potion_effects":
+            case "add_effects":
+                parameterType = getMapType("potion_effect_map", getParameterType(PotionEffectType.class), getParameterType(Integer.class));
+                break;
+            case "entity_attributes":
+            case "item_attributes":
+                parameterType = getMapType("attribute_map", getParameterType(Attribute.class), getParameterType(Double.class));
+                break;
+            case "attributes":
+                parameterType = getParameterType("attributes", String.class);
+                break;
+            case "upgrade_required_path":
+            case "path":
+                parameterType = getParameterType("path", String.class);
+                break;
+            case "brush_mode":
+            case "mode":
+                parameterType = getParameterType(WandMode.class);
                 break;
             case "type":
                 parameterType = getParameterType(EntityType.class);
@@ -65,6 +112,15 @@ public class ParameterTypeStore {
             case "damage_type":
                 parameterType = getParameterType("damage_type", String.class);
                 break;
+            case "icon_url":
+                parameterType = getParameterType("texture", String.class);
+                break;
+            case "icon":
+            case "icon_inactive":
+            case "icon_disabled":
+                parameterType = getParameterType("icon", String.class);
+                break;
+            case "active_brush":
             case "material":
             case "brush":
                 parameterType = getParameterType(Material.class);
@@ -72,9 +128,11 @@ public class ParameterTypeStore {
             case "biome":
                 parameterType = getParameterType(Biome.class);
                 break;
+            case "effect_particle":
             case "particle":
                 parameterType = getParameterType(ParticleEffect.class);
                 break;
+            case "effect_sound":
             case "sound":
                 parameterType = getParameterType(Sound.class);
                 break;

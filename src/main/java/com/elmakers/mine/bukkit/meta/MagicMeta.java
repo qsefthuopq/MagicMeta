@@ -12,7 +12,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.annotation.Nonnull;
 
 import org.bukkit.entity.Player;
@@ -21,6 +20,7 @@ import com.elmakers.mine.bukkit.action.CastContext;
 import com.elmakers.mine.bukkit.api.action.SpellAction;
 import com.elmakers.mine.bukkit.effect.EffectPlayer;
 import com.elmakers.mine.bukkit.effect.builtin.EffectSingle;
+import com.elmakers.mine.bukkit.magic.BaseMagicProperties;
 import com.elmakers.mine.bukkit.magic.Mage;
 import com.elmakers.mine.bukkit.magic.MagicController;
 import com.elmakers.mine.bukkit.spell.ActionSpell;
@@ -45,6 +45,8 @@ public class MagicMeta {
     private final Set<String> effectParameters = new HashSet<>();
     private final Set<String> effectLibParameters = new HashSet<>();
     private final Map<String, EffectDescription> effects = new HashMap<>();
+    private final Set<String> wandParameters = new HashSet<>();
+
     private final ParameterTypeStore parameterTypeStore = new ParameterTypeStore();
     private final SortedObjectMapper mapper = new SortedObjectMapper();
 
@@ -92,6 +94,7 @@ public class MagicMeta {
         root.put("effectlib_parameters", sortCollection(effectLibParameters));
         root.put("spell_parameters", sortCollection(spellParameters));
         root.put("spell_properties", sortCollection(spellProperties));
+        root.put("wand_parameters", sortCollection(wandParameters));
         root.put("parameters", allParameters);
         root.put("types", parameterTypeStore.getTypes());
 
@@ -263,11 +266,26 @@ public class MagicMeta {
         }
     }
 
+    private void generateWandMeta() {
+        System.out.println("Adding wand properties");
+
+        // Turns out there's no real way to scan the Wand class using InterrogatingConfiguration because it doesn't
+        // load typed data directly from its configuration.
+        // So we will have to fix up all the types by hand, unfortunately.
+        // I think the most common case is doubles, so that's what we'll default to.
+        for (String property : BaseMagicProperties.PROPERTY_KEYS) {
+            Parameter parameter = parameterTypeStore.getParameter(property, Double.class);
+            allParameters.put(parameter.getKey(), parameter);
+            wandParameters.add(parameter.getKey());
+        }
+    }
+
     private void generateMeta() {
         generateSpellMeta();
         generateActionMeta();
         generateEffectsMeta();
         generateEffectLibMeta();
+        generateWandMeta();
     }
 
     private Category getCategory(String key) {
