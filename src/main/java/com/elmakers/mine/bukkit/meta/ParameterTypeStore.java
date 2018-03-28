@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.annotation.Nonnull;
 
+import org.apache.commons.lang.ClassUtils;
 import org.bukkit.Effect;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
@@ -68,6 +69,10 @@ public class ParameterTypeStore {
     }
 
     public Parameter getParameter(String key, Class<?> defaultClass) {
+        if (defaultClass.isPrimitive()) {
+            defaultClass = ClassUtils.primitiveToWrapper(defaultClass);
+        }
+
         // Easier to do this here then fill it in by hand
         ParameterType parameterType;
         switch (key) {

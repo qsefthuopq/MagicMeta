@@ -1806,7 +1806,7 @@
       "description" : [ "" ],
       "field" : "amount",
       "name" : "Amount",
-      "type" : "int"
+      "type" : "integer"
     },
     "angular_velocity" : {
       "category" : "",
@@ -1855,7 +1855,7 @@
       "description" : [ "" ],
       "field" : "arcs",
       "name" : "Arcs",
-      "type" : "int"
+      "type" : "integer"
     },
     "armor" : {
       "category" : "",
@@ -2485,7 +2485,7 @@
       "description" : [ "" ],
       "field" : "circles",
       "name" : "Circles",
-      "type" : "int"
+      "type" : "integer"
     },
     "class" : {
       "category" : "",
@@ -2611,7 +2611,7 @@
       "description" : [ "" ],
       "field" : "columns",
       "name" : "Columns",
-      "type" : "int"
+      "type" : "integer"
     },
     "command_block_allowed" : {
       "category" : "base",
@@ -2926,7 +2926,7 @@
       "description" : [ "" ],
       "field" : "delay",
       "name" : "Delay",
-      "type" : "int"
+      "type" : "integer"
     },
     "depth" : {
       "category" : "",
@@ -3332,7 +3332,7 @@
       "description" : [ "" ],
       "field" : "explosions",
       "name" : "Explosions",
-      "type" : "int"
+      "type" : "integer"
     },
     "extended_description" : {
       "category" : "base",
@@ -3521,7 +3521,7 @@
       "description" : [ "" ],
       "field" : "frame_delay",
       "name" : "Frame Delay",
-      "type" : "int"
+      "type" : "integer"
     },
     "free" : {
       "category" : "base",
@@ -3668,7 +3668,7 @@
       "description" : [ "" ],
       "field" : "helixes",
       "name" : "Helixes",
-      "type" : "int"
+      "type" : "integer"
     },
     "helmet" : {
       "category" : "",
@@ -3899,7 +3899,7 @@
       "description" : [ "" ],
       "field" : "intensity",
       "name" : "Intensity",
-      "type" : "int"
+      "type" : "integer"
     },
     "interact_spell" : {
       "category" : "",
@@ -3969,7 +3969,7 @@
       "description" : [ "" ],
       "field" : "iterations",
       "name" : "Iterations",
-      "type" : "int"
+      "type" : "integer"
     },
     "jump_controllable" : {
       "category" : "",
@@ -4144,7 +4144,7 @@
       "description" : [ "" ],
       "field" : "line_particles",
       "name" : "Line Particles",
-      "type" : "int"
+      "type" : "integer"
     },
     "living_entity_speed" : {
       "category" : "",
@@ -4291,7 +4291,7 @@
       "description" : [ "" ],
       "field" : "max",
       "name" : "Max",
-      "type" : "int"
+      "type" : "integer"
     },
     "max_acceleration" : {
       "category" : "",
@@ -4354,7 +4354,7 @@
       "description" : [ "" ],
       "field" : "max_lines",
       "name" : "Max Lines",
-      "type" : "int"
+      "type" : "integer"
     },
     "max_magnitude" : {
       "category" : "",
@@ -4382,7 +4382,7 @@
       "description" : [ "" ],
       "field" : "max_steps",
       "name" : "Max Steps",
-      "type" : "int"
+      "type" : "integer"
     },
     "max_tornado_radius" : {
       "category" : "",
@@ -4396,7 +4396,7 @@
       "description" : [ "" ],
       "field" : "max_way_points",
       "name" : "Max Way Points",
-      "type" : "int"
+      "type" : "integer"
     },
     "message" : {
       "category" : "",
@@ -4585,7 +4585,7 @@
       "description" : [ "" ],
       "field" : "orbitals",
       "name" : "Orbitals",
-      "type" : "int"
+      "type" : "integer"
     },
     "orient" : {
       "category" : "",
@@ -4711,7 +4711,7 @@
       "description" : [ "" ],
       "field" : "particle_count",
       "name" : "Particle Count",
-      "type" : "int"
+      "type" : "integer"
     },
     "particle_helix" : {
       "category" : "",
@@ -4774,105 +4774,105 @@
       "description" : [ "" ],
       "field" : "particles",
       "name" : "Particles",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles2" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles2",
       "name" : "Particles2",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_back" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_back",
       "name" : "Particles Back",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_base" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_base",
       "name" : "Particles Base",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_circle" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_circle",
       "name" : "Particles Circle",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_cone" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_cone",
       "name" : "Particles Cone",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_front" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_front",
       "name" : "Particles Front",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_height" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_height",
       "name" : "Particles Height",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_helix" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_helix",
       "name" : "Particles Helix",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_nucleus" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_nucleus",
       "name" : "Particles Nucleus",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_orbital" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_orbital",
       "name" : "Particles Orbital",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_per_iteration" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_per_iteration",
       "name" : "Particles Per Iteration",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_spout" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_spout",
       "name" : "Particles Spout",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_strand" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_strand",
       "name" : "Particles Strand",
-      "type" : "int"
+      "type" : "integer"
     },
     "particles_width" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "particles_width",
       "name" : "Particles Width",
-      "type" : "int"
+      "type" : "integer"
     },
     "passenger" : {
       "category" : "",
@@ -4935,7 +4935,7 @@
       "description" : [ "" ],
       "field" : "period",
       "name" : "Period",
-      "type" : "int"
+      "type" : "integer"
     },
     "permission" : {
       "category" : "",
@@ -5075,7 +5075,7 @@
       "description" : [ "" ],
       "field" : "precision",
       "name" : "Precision",
-      "type" : "int"
+      "type" : "integer"
     },
     "prevent_passthrough" : {
       "category" : "base",
@@ -5411,7 +5411,7 @@
       "description" : [ "" ],
       "field" : "refresh",
       "name" : "Refresh",
-      "type" : "int"
+      "type" : "integer"
     },
     "relative_offset" : {
       "category" : "",
@@ -5677,7 +5677,7 @@
       "description" : [ "" ],
       "field" : "rings",
       "name" : "Rings",
-      "type" : "int"
+      "type" : "integer"
     },
     "rotation" : {
       "category" : "",
@@ -5712,7 +5712,7 @@
       "description" : [ "" ],
       "field" : "rows",
       "name" : "Rows",
-      "type" : "int"
+      "type" : "integer"
     },
     "safe" : {
       "category" : "",
@@ -5901,7 +5901,7 @@
       "description" : [ "" ],
       "field" : "sound_interval",
       "name" : "Sound Interval",
-      "type" : "int"
+      "type" : "integer"
     },
     "sound_max_pitch" : {
       "category" : "",
@@ -6118,7 +6118,7 @@
       "description" : [ "" ],
       "field" : "sphere_particles",
       "name" : "Sphere Particles",
-      "type" : "int"
+      "type" : "integer"
     },
     "sphere_radius" : {
       "category" : "",
@@ -6139,7 +6139,7 @@
       "description" : [ "" ],
       "field" : "spikes_half",
       "name" : "Spikes Half",
-      "type" : "int"
+      "type" : "integer"
     },
     "spread" : {
       "category" : "",
@@ -6216,21 +6216,21 @@
       "description" : [ "" ],
       "field" : "step_x",
       "name" : "Step X",
-      "type" : "int"
+      "type" : "integer"
     },
     "step_y" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "step_y",
       "name" : "Step Y",
-      "type" : "int"
+      "type" : "integer"
     },
     "steps_per_iteration" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "steps_per_iteration",
       "name" : "Steps Per Iteration",
-      "type" : "int"
+      "type" : "integer"
     },
     "stop_on_success" : {
       "category" : "",
@@ -6251,7 +6251,7 @@
       "description" : [ "" ],
       "field" : "strands",
       "name" : "Strands",
-      "type" : "int"
+      "type" : "integer"
     },
     "strength" : {
       "category" : "",
@@ -7420,7 +7420,7 @@
       "description" : [ "" ],
       "field" : "zig_zags",
       "name" : "Zig Zags",
-      "type" : "int"
+      "type" : "integer"
     }
   },
   "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
@@ -7495,7 +7495,7 @@
       "options" : [ "area_effect_cloud", "armor_stand", "arrow", "bat", "blaze", "boat", "cave_spider", "chicken", "complex_part", "cow", "creeper", "dragon_fireball", "dropped_item", "egg", "ender_crystal", "ender_dragon", "ender_pearl", "ender_signal", "enderman", "endermite", "experience_orb", "falling_block", "fireball", "firework", "fishing_hook", "ghast", "giant", "guardian", "horse", "iron_golem", "item_frame", "leash_hitch", "lightning", "lingering_potion", "magma_cube", "minecart", "minecart_chest", "minecart_command", "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player", "primed_tnt", "rabbit", "sheep", "shulker", "shulker_bullet", "silverfish", "skeleton", "slime", "small_fireball", "snowball", "snowman", "spectral_arrow", "spider", "splash_potion", "squid", "thrown_exp_bottle", "tipped_arrow", "unknown", "villager", "weather", "witch", "wither", "wither_skull", "wolf", "zombie" ]
     },
     "float" : {
-      "className" : "float",
+      "className" : "java.lang.Float",
       "description" : [ "" ],
       "name" : "Float",
       "options" : [ ]
@@ -7510,12 +7510,6 @@
       "className" : "java.lang.String",
       "description" : [ "" ],
       "name" : "Icon",
-      "options" : [ ]
-    },
-    "int" : {
-      "className" : "int",
-      "description" : [ "" ],
-      "name" : "Int",
       "options" : [ ]
     },
     "integer" : {
