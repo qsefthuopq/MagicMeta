@@ -1,5 +1,6 @@
 package com.elmakers.mine.bukkit.meta;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.TreeNode;
 import com.fasterxml.jackson.databind.MapperFeature;
@@ -15,6 +16,7 @@ public class SortedObjectMapper extends ObjectMapper {
         super();
         configure(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY, true);
         configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
+        setSerializationInclusion(JsonInclude.Include.NON_NULL);
     }
 
     @Override
