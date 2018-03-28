@@ -1,0 +1,4603 @@
+{
+  "actions" : {
+    "absorb" : {
+      "category" : "",
+      "className" : "AbsorbAction",
+      "description" : "",
+      "key" : "absorb",
+      "name" : "Absorb",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Absorb"
+    },
+    "add_spell" : {
+      "category" : "",
+      "className" : "AddSpellAction",
+      "description" : "",
+      "key" : "add_spell",
+      "name" : "Add Spell",
+      "parameters" : [ "auto_upgrade", "ignore_result", "path", "path_end", "path_exact", "permission", "requires_entity_target", "requires_target", "spell" ],
+      "shortClass" : "AddSpell"
+    },
+    "aggro" : {
+      "category" : "",
+      "className" : "AggroAction",
+      "description" : "",
+      "key" : "aggro",
+      "name" : "Aggro",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Aggro"
+    },
+    "air_supply" : {
+      "category" : "",
+      "className" : "AirSupplyAction",
+      "description" : "",
+      "key" : "air_supply",
+      "name" : "Air Supply",
+      "parameters" : [ "air", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "AirSupply"
+    },
+    "all_entities" : {
+      "category" : "",
+      "className" : "AllEntitiesAction",
+      "description" : "",
+      "key" : "all_entities",
+      "name" : "All Entities",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_all_worlds" ],
+      "shortClass" : "AllEntities"
+    },
+    "animate" : {
+      "category" : "",
+      "className" : "AnimateAction",
+      "description" : "",
+      "key" : "animate",
+      "name" : "Animate",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Animate"
+    },
+    "apply_cooldown" : {
+      "category" : "",
+      "className" : "ApplyCooldownAction",
+      "description" : "",
+      "key" : "apply_cooldown",
+      "name" : "Apply Cooldown",
+      "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "ignore_result", "requires_entity_target", "requires_target", "spells", "target_caster" ],
+      "shortClass" : "ApplyCooldown"
+    },
+    "area_of_effect" : {
+      "category" : "",
+      "className" : "AreaOfEffectAction",
+      "description" : "",
+      "key" : "area_of_effect",
+      "name" : "Area Of Effect",
+      "parameters" : [ "ignore_result", "radius", "requires_entity_target", "requires_target", "stop_on_success", "target_count", "target_source", "y_radius" ],
+      "shortClass" : "AreaOfEffect"
+    },
+    "area_of_effect_cloud" : {
+      "category" : "",
+      "className" : "AreaOfEffectCloudAction",
+      "description" : "",
+      "key" : "area_of_effect_cloud",
+      "name" : "Area Of Effect Cloud",
+      "parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "ignore_result", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "requires_entity_target", "requires_target", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
+      "shortClass" : "AreaOfEffectCloud"
+    },
+    "armor_stand_projectile" : {
+      "category" : "",
+      "className" : "ArmorStandProjectileAction",
+      "description" : "",
+      "key" : "armor_stand_projectile",
+      "name" : "Armor Stand Projectile",
+      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
+      "shortClass" : "ArmorStandProjectile"
+    },
+    "ascend" : {
+      "category" : "",
+      "className" : "AscendAction",
+      "description" : "",
+      "key" : "ascend",
+      "name" : "Ascend",
+      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "shortClass" : "Ascend"
+    },
+    "asynchronous" : {
+      "category" : "",
+      "className" : "AsynchronousAction",
+      "description" : "",
+      "key" : "asynchronous",
+      "name" : "Asynchronous",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Asynchronous"
+    },
+    "block_search" : {
+      "category" : "",
+      "className" : "BlockSearchAction",
+      "description" : "",
+      "key" : "block_search",
+      "name" : "Block Search",
+      "parameters" : [ "direction", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "BlockSearch"
+    },
+    "break_block" : {
+      "category" : "",
+      "className" : "BreakBlockAction",
+      "description" : "",
+      "key" : "break_block",
+      "name" : "Break Block",
+      "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "shortClass" : "BreakBlock"
+    },
+    "brush" : {
+      "category" : "",
+      "className" : "BrushAction",
+      "description" : "",
+      "key" : "brush",
+      "name" : "Brush",
+      "parameters" : [ "brush", "ignore_result", "requires_entity_target", "requires_target", "sample", "stop_on_success" ],
+      "shortClass" : "Brush"
+    },
+    "brush_select" : {
+      "category" : "",
+      "className" : "BrushSelectAction",
+      "description" : "",
+      "key" : "brush_select",
+      "name" : "Brush Select",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "BrushSelect"
+    },
+    "burn" : {
+      "category" : "",
+      "className" : "BurnAction",
+      "description" : "",
+      "key" : "burn",
+      "name" : "Burn",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Burn"
+    },
+    "cancel" : {
+      "category" : "",
+      "className" : "CancelAction",
+      "description" : "",
+      "key" : "cancel",
+      "name" : "Cancel",
+      "parameters" : [ "force", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Cancel"
+    },
+    "capture" : {
+      "category" : "",
+      "className" : "CaptureAction",
+      "description" : "",
+      "key" : "capture",
+      "name" : "Capture",
+      "parameters" : [ "ignore_result", "min_health", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Capture"
+    },
+    "change_biome" : {
+      "category" : "",
+      "className" : "ChangeBiomeAction",
+      "description" : "",
+      "key" : "change_biome",
+      "name" : "Change Biome",
+      "parameters" : [ "biome", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ChangeBiome"
+    },
+    "change_context" : {
+      "category" : "",
+      "className" : "ChangeContextAction",
+      "description" : "",
+      "key" : "change_context",
+      "name" : "Change Context",
+      "parameters" : [ "ignore_result", "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "requires_entity_target", "requires_target", "source_at_target", "source_direction", "source_direction_offset", "source_is_target", "source_location", "source_offset", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "stop_on_success", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_snap", "target_yaw_offset" ],
+      "shortClass" : "ChangeContext"
+    },
+    "change_parameters" : {
+      "category" : "",
+      "className" : "ChangeParametersAction",
+      "description" : "",
+      "key" : "change_parameters",
+      "name" : "Change Parameters",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ChangeParameters"
+    },
+    "change_server" : {
+      "category" : "",
+      "className" : "ChangeServerAction",
+      "description" : "",
+      "key" : "change_server",
+      "name" : "Change Server",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "server" ],
+      "shortClass" : "ChangeServer"
+    },
+    "change_world" : {
+      "category" : "",
+      "className" : "ChangeWorldAction",
+      "description" : "",
+      "key" : "change_world",
+      "name" : "Change World",
+      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "shortClass" : "ChangeWorld"
+    },
+    "check_block" : {
+      "category" : "",
+      "className" : "CheckBlockAction",
+      "description" : "",
+      "key" : "check_block",
+      "name" : "Check Block",
+      "parameters" : [ "allowed", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "CheckBlock"
+    },
+    "check_entity" : {
+      "category" : "",
+      "className" : "CheckEntityAction",
+      "description" : "",
+      "key" : "check_entity",
+      "name" : "Check Entity",
+      "parameters" : [ "allow_caster", "ignore_result", "only_caster", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "CheckEntity"
+    },
+    "check_mana" : {
+      "category" : "",
+      "className" : "CheckManaAction",
+      "description" : "",
+      "key" : "check_mana",
+      "name" : "Check Mana",
+      "parameters" : [ "ignore_result", "require_mana", "require_mana_empty", "require_mana_not_full", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "CheckMana"
+    },
+    "command" : {
+      "category" : "",
+      "className" : "CommandAction",
+      "description" : "",
+      "key" : "command",
+      "name" : "Command",
+      "parameters" : [ "console", "escape_sequence", "ignore_result", "local_echo", "modal", "op", "requires_entity_target", "requires_target", "timeout" ],
+      "shortClass" : "Command"
+    },
+    "cone_of_effect" : {
+      "category" : "",
+      "className" : "ConeOfEffectAction",
+      "description" : "",
+      "key" : "cone_of_effect",
+      "name" : "Cone Of Effect",
+      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "npc_weight", "otworld", "player_weight", "range", "range_padding", "requires_entity_target", "requires_target", "stop_on_success", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
+      "shortClass" : "ConeOfEffect"
+    },
+    "count" : {
+      "category" : "",
+      "className" : "CountAction",
+      "description" : "",
+      "key" : "count",
+      "name" : "Count",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Count"
+    },
+    "cover" : {
+      "category" : "",
+      "className" : "CoverAction",
+      "description" : "",
+      "key" : "cover",
+      "name" : "Cover",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_above" ],
+      "shortClass" : "Cover"
+    },
+    "create_field" : {
+      "category" : "",
+      "className" : "CreateFieldAction",
+      "description" : "",
+      "key" : "create_field",
+      "name" : "Create Field",
+      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "shortClass" : "CreateField"
+    },
+    "create_plot" : {
+      "category" : "",
+      "className" : "CreatePlotAction",
+      "description" : "",
+      "key" : "create_plot",
+      "name" : "Create Plot",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "CreatePlot"
+    },
+    "cure" : {
+      "category" : "",
+      "className" : "CureAction",
+      "description" : "",
+      "key" : "cure",
+      "name" : "Cure",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Cure"
+    },
+    "custom_projectile" : {
+      "category" : "",
+      "className" : "CustomProjectileAction",
+      "description" : "",
+      "key" : "custom_projectile",
+      "name" : "Custom Projectile",
+      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss_effects", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity" ],
+      "shortClass" : "CustomProjectile"
+    },
+    "cycle_block" : {
+      "category" : "",
+      "className" : "CycleBlockAction",
+      "description" : "",
+      "key" : "cycle_block",
+      "name" : "Cycle Block",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "CycleBlock"
+    },
+    "cycle_entity" : {
+      "category" : "",
+      "className" : "CycleEntityAction",
+      "description" : "",
+      "key" : "cycle_entity",
+      "name" : "Cycle Entity",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "CycleEntity"
+    },
+    "cylinder" : {
+      "category" : "",
+      "className" : "CylinderAction",
+      "description" : "",
+      "key" : "cylinder",
+      "name" : "Cylinder",
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Cylinder"
+    },
+    "damage" : {
+      "category" : "",
+      "className" : "DamageAction",
+      "description" : "",
+      "key" : "damage",
+      "name" : "Damage",
+      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "ignore_result", "magic_damage", "magic_entity_damage", "player_damage", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Damage"
+    },
+    "deactivate" : {
+      "category" : "",
+      "className" : "DeactivateAction",
+      "description" : "",
+      "key" : "deactivate",
+      "name" : "Deactivate",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Deactivate"
+    },
+    "debugger" : {
+      "category" : "",
+      "className" : "DebuggerAction",
+      "description" : "",
+      "key" : "debugger",
+      "name" : "Debugger",
+      "parameters" : [ "check", "ignore_result", "level", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Debugger"
+    },
+    "delay" : {
+      "category" : "",
+      "className" : "DelayAction",
+      "description" : "",
+      "key" : "delay",
+      "name" : "Delay",
+      "parameters" : [ "delay", "ignore_result", "requires_entity_target", "requires_target", "warmup" ],
+      "shortClass" : "Delay"
+    },
+    "descend" : {
+      "category" : "",
+      "className" : "DescendAction",
+      "description" : "",
+      "key" : "descend",
+      "name" : "Descend",
+      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "shortClass" : "Descend"
+    },
+    "disable_physics" : {
+      "category" : "",
+      "className" : "DisablePhysicsAction",
+      "description" : "",
+      "key" : "disable_physics",
+      "name" : "Disable Physics",
+      "parameters" : [ "duration", "ignore_result", "physics_buffer", "requires_entity_target", "requires_target", "undo" ],
+      "shortClass" : "DisablePhysics"
+    },
+    "disarm" : {
+      "category" : "",
+      "className" : "DisarmAction",
+      "description" : "",
+      "key" : "disarm",
+      "name" : "Disarm",
+      "parameters" : [ "display_name", "ignore_result", "keep_in_inventory", "max_slot", "min_slot", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Disarm"
+    },
+    "disc" : {
+      "category" : "",
+      "className" : "DiscAction",
+      "description" : "",
+      "key" : "disc",
+      "name" : "Disc",
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Disc"
+    },
+    "disguise" : {
+      "category" : "",
+      "className" : "DisguiseAction",
+      "description" : "",
+      "key" : "disguise",
+      "name" : "Disguise",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Disguise"
+    },
+    "door" : {
+      "category" : "",
+      "className" : "DoorAction",
+      "description" : "",
+      "key" : "door",
+      "name" : "Door",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "type" ],
+      "shortClass" : "Door"
+    },
+    "drop" : {
+      "category" : "",
+      "className" : "DropAction",
+      "description" : "",
+      "key" : "drop",
+      "name" : "Drop",
+      "parameters" : [ "drop_count", "falling", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Drop"
+    },
+    "drop_item" : {
+      "category" : "",
+      "className" : "DropItemAction",
+      "description" : "",
+      "key" : "drop_item",
+      "name" : "Drop Item",
+      "parameters" : [ "ignore_result", "item", "requires_entity_target", "requires_target" ],
+      "shortClass" : "DropItem"
+    },
+    "electrify" : {
+      "category" : "",
+      "className" : "ElectrifyAction",
+      "description" : "",
+      "key" : "electrify",
+      "name" : "Electrify",
+      "parameters" : [ "electrify", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Electrify"
+    },
+    "enchant_wand" : {
+      "category" : "",
+      "className" : "EnchantWandAction",
+      "description" : "",
+      "key" : "enchant_wand",
+      "name" : "Enchant Wand",
+      "parameters" : [ "ignore_result", "levels", "path", "path_exact", "requires", "requires_entity_target", "requires_target", "use_xp" ],
+      "shortClass" : "EnchantWand"
+    },
+    "entity_projectile" : {
+      "category" : "",
+      "className" : "EntityProjectileAction",
+      "description" : "",
+      "key" : "entity_projectile",
+      "name" : "Entity Projectile",
+      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
+      "shortClass" : "EntityProjectile"
+    },
+    "explosion" : {
+      "category" : "",
+      "className" : "ExplosionAction",
+      "description" : "",
+      "key" : "explosion",
+      "name" : "Explosion",
+      "parameters" : [ "break_blocks", "fire", "ignore_result", "requires_entity_target", "requires_target", "size" ],
+      "shortClass" : "Explosion"
+    },
+    "fall_protection" : {
+      "category" : "",
+      "className" : "FallProtectionAction",
+      "description" : "",
+      "key" : "fall_protection",
+      "name" : "Fall Protection",
+      "parameters" : [ "duration", "ignore_result", "protection_count", "requires_entity_target", "requires_target" ],
+      "shortClass" : "FallProtection"
+    },
+    "feed" : {
+      "category" : "",
+      "className" : "FeedAction",
+      "description" : "",
+      "key" : "feed",
+      "name" : "Feed",
+      "parameters" : [ "exhaustion", "feed", "ignore_result", "requires_entity_target", "requires_target", "saturation" ],
+      "shortClass" : "Feed"
+    },
+    "fill_wand" : {
+      "category" : "",
+      "className" : "FillWandAction",
+      "description" : "",
+      "key" : "fill_wand",
+      "name" : "Fill Wand",
+      "parameters" : [ "ignore_result", "max_level", "requires_entity_target", "requires_target" ],
+      "shortClass" : "FillWand"
+    },
+    "firework" : {
+      "category" : "",
+      "className" : "FireworkAction",
+      "description" : "",
+      "key" : "firework",
+      "name" : "Firework",
+      "parameters" : [ "dy_offset", "flicker", "ignore_result", "launch", "lifetime", "power", "projectile_effects", "requires_entity_target", "requires_target", "set_target", "silent", "speed", "start", "stop_on_success", "track_projectile", "trail" ],
+      "shortClass" : "Firework"
+    },
+    "flower" : {
+      "category" : "",
+      "className" : "FlowerAction",
+      "description" : "",
+      "key" : "flower",
+      "name" : "Flower",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Flower"
+    },
+    "freeze" : {
+      "category" : "",
+      "className" : "FreezeAction",
+      "description" : "",
+      "key" : "freeze",
+      "name" : "Freeze",
+      "parameters" : [ "freeze_fire", "freeze_lava", "freeze_water", "ice", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Freeze"
+    },
+    "give_item" : {
+      "category" : "",
+      "className" : "GiveItemAction",
+      "description" : "",
+      "key" : "give_item",
+      "name" : "Give Item",
+      "parameters" : [ "ignore_result", "item", "permission", "requires", "requires_entity_target", "requires_target" ],
+      "shortClass" : "GiveItem"
+    },
+    "glide" : {
+      "category" : "",
+      "className" : "GlideAction",
+      "description" : "",
+      "key" : "glide",
+      "name" : "Glide",
+      "parameters" : [ "ignore_result", "require_elytra", "requires_entity_target", "requires_target", "wait_for_landing" ],
+      "shortClass" : "Glide"
+    },
+    "grow_entity" : {
+      "category" : "",
+      "className" : "GrowEntityAction",
+      "description" : "",
+      "key" : "grow_entity",
+      "name" : "Grow Entity",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "skeletons" ],
+      "shortClass" : "GrowEntity"
+    },
+    "heal" : {
+      "category" : "",
+      "className" : "HealAction",
+      "description" : "",
+      "key" : "heal",
+      "name" : "Heal",
+      "parameters" : [ "amount", "heal_max_distance", "ignore_result", "percentage", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Heal"
+    },
+    "ignite" : {
+      "category" : "",
+      "className" : "IgniteAction",
+      "description" : "",
+      "key" : "ignite",
+      "name" : "Ignite",
+      "parameters" : [ "duration", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Ignite"
+    },
+    "inventory" : {
+      "category" : "",
+      "className" : "InventoryAction",
+      "description" : "",
+      "key" : "inventory",
+      "name" : "Inventory",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "title", "type" ],
+      "shortClass" : "Inventory"
+    },
+    "inventory_close" : {
+      "category" : "",
+      "className" : "InventoryCloseAction",
+      "description" : "",
+      "key" : "inventory_close",
+      "name" : "Inventory Close",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "InventoryClose"
+    },
+    "item_shop" : {
+      "category" : "",
+      "className" : "ItemShopAction",
+      "description" : "",
+      "key" : "item_shop",
+      "name" : "Item Shop",
+      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "ignore_result", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "requires_entity_target", "requires_target", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "shortClass" : "ItemShop"
+    },
+    "kill" : {
+      "category" : "",
+      "className" : "KillAction",
+      "description" : "",
+      "key" : "kill",
+      "name" : "Kill",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Kill"
+    },
+    "light" : {
+      "category" : "",
+      "className" : "LightAction",
+      "description" : "",
+      "key" : "light",
+      "name" : "Light",
+      "parameters" : [ "async", "ignore_result", "level", "requires_entity_target", "requires_target", "update" ],
+      "shortClass" : "Light"
+    },
+    "lightning" : {
+      "category" : "",
+      "className" : "LightningAction",
+      "description" : "",
+      "key" : "lightning",
+      "name" : "Lightning",
+      "parameters" : [ "effect_only", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Lightning"
+    },
+    "line" : {
+      "category" : "",
+      "className" : "LineAction",
+      "description" : "",
+      "key" : "line",
+      "name" : "Line",
+      "parameters" : [ "ignore_result", "increment_data", "reorient", "require_block", "requires_entity_target", "requires_target", "reverse", "size", "start", "start_at_target", "stop_on_success" ],
+      "shortClass" : "Line"
+    },
+    "lock" : {
+      "category" : "",
+      "className" : "LockAction",
+      "description" : "",
+      "key" : "lock",
+      "name" : "Lock",
+      "parameters" : [ "ignore_result", "key_description", "key_icon", "key_name", "override", "requires_entity_target", "requires_target", "type" ],
+      "shortClass" : "Lock"
+    },
+    "message" : {
+      "category" : "",
+      "className" : "MessageAction",
+      "description" : "",
+      "key" : "message",
+      "name" : "Message",
+      "parameters" : [ "fade_in", "fade_out", "ignore_result", "message", "message_target", "message_type", "requires_entity_target", "requires_target", "stay", "sub_message" ],
+      "shortClass" : "Message"
+    },
+    "modify_block" : {
+      "category" : "",
+      "className" : "ModifyBlockAction",
+      "description" : "",
+      "key" : "modify_block",
+      "name" : "Modify Block",
+      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "shortClass" : "ModifyBlock"
+    },
+    "modify_breakable" : {
+      "category" : "",
+      "className" : "ModifyBreakable",
+      "description" : "",
+      "key" : "modify_breakable",
+      "name" : "Modify Breakable",
+      "parameters" : [ "breakable", "ignore_result", "requires_entity_target", "requires_target", "target_air" ],
+      "shortClass" : "ModifyBreakable"
+    },
+    "modify_game_mode" : {
+      "category" : "",
+      "className" : "ModifyGameModeAction",
+      "description" : "",
+      "key" : "modify_game_mode",
+      "name" : "Modify Game Mode",
+      "parameters" : [ "game_mode", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ModifyGameMode"
+    },
+    "modify_mana" : {
+      "category" : "",
+      "className" : "ModifyManaAction",
+      "description" : "",
+      "key" : "modify_mana",
+      "name" : "Modify Mana",
+      "parameters" : [ "fill_mana", "ignore_result", "mana", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ModifyMana"
+    },
+    "modify_properties" : {
+      "category" : "",
+      "className" : "ModifyPropertiesAction",
+      "description" : "",
+      "key" : "modify_properties",
+      "name" : "Modify Properties",
+      "parameters" : [ "ignore_result", "modify_target", "requires_entity_target", "requires_target", "upgrade" ],
+      "shortClass" : "ModifyProperties"
+    },
+    "modify_reflective" : {
+      "category" : "",
+      "className" : "ModifyReflectiveAction",
+      "description" : "",
+      "key" : "modify_reflective",
+      "name" : "Modify Reflective",
+      "parameters" : [ "ignore_result", "reflect_chance", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ModifyReflective"
+    },
+    "modify_s_p" : {
+      "category" : "",
+      "className" : "ModifySPAction",
+      "description" : "",
+      "key" : "modify_s_p",
+      "name" : "Modify SP",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "sp" ],
+      "shortClass" : "ModifySP"
+    },
+    "modify_walk_speed" : {
+      "category" : "",
+      "className" : "ModifyWalkSpeed",
+      "description" : "",
+      "key" : "modify_walk_speed",
+      "name" : "Modify Walk Speed",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ModifyWalkSpeed"
+    },
+    "mount" : {
+      "category" : "",
+      "className" : "MountAction",
+      "description" : "",
+      "key" : "mount",
+      "name" : "Mount",
+      "parameters" : [ "eject", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Mount"
+    },
+    "mount_armor_stand" : {
+      "category" : "",
+      "className" : "MountArmorStandAction",
+      "description" : "",
+      "key" : "mount_armor_stand",
+      "name" : "Mount Armor Stand",
+      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "ignore_result", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "requires_entity_target", "requires_target", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "shortClass" : "MountArmorStand"
+    },
+    "move_block" : {
+      "category" : "",
+      "className" : "MoveBlockAction",
+      "description" : "",
+      "key" : "move_block",
+      "name" : "Move Block",
+      "parameters" : [ "ignore_result", "offset", "requires_entity_target", "requires_target", "set_target" ],
+      "shortClass" : "MoveBlock"
+    },
+    "multiply" : {
+      "category" : "",
+      "className" : "MultiplyAction",
+      "description" : "",
+      "key" : "multiply",
+      "name" : "Multiply",
+      "parameters" : [ "ignore_result", "multiply", "repeat", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Multiply"
+    },
+    "orient" : {
+      "category" : "",
+      "className" : "OrientAction",
+      "description" : "",
+      "key" : "orient",
+      "name" : "Orient",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Orient"
+    },
+    "parallel" : {
+      "category" : "",
+      "className" : "ParallelAction",
+      "description" : "",
+      "key" : "parallel",
+      "name" : "Parallel",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Parallel"
+    },
+    "plane" : {
+      "category" : "",
+      "className" : "PlaneAction",
+      "description" : "",
+      "key" : "plane",
+      "name" : "Plane",
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Plane"
+    },
+    "play_effects" : {
+      "category" : "",
+      "className" : "PlayEffectsAction",
+      "description" : "",
+      "key" : "play_effects",
+      "name" : "Play Effects",
+      "parameters" : [ "effect", "effects", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "PlayEffects"
+    },
+    "play_record" : {
+      "category" : "",
+      "className" : "PlayRecordAction",
+      "description" : "",
+      "key" : "play_record",
+      "name" : "Play Record",
+      "parameters" : [ "ignore_result", "records", "requires_entity_target", "requires_target" ],
+      "shortClass" : "PlayRecord"
+    },
+    "play_sound" : {
+      "category" : "",
+      "className" : "PlaySoundAction",
+      "description" : "",
+      "key" : "play_sound",
+      "name" : "Play Sound",
+      "parameters" : [ "ignore_result", "pitch", "radius", "requires_entity_target", "requires_target", "sound", "volume" ],
+      "shortClass" : "PlaySound"
+    },
+    "player_select" : {
+      "category" : "",
+      "className" : "PlayerSelectAction",
+      "description" : "",
+      "key" : "player_select",
+      "name" : "Player Select",
+      "parameters" : [ "cross_world", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "PlayerSelect"
+    },
+    "potion_effect" : {
+      "category" : "",
+      "className" : "PotionEffectAction",
+      "description" : "",
+      "key" : "potion_effect",
+      "name" : "Potion Effect",
+      "parameters" : [ "add_effects", "effects_ambient", "effects_particles", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "PotionEffect"
+    },
+    "power_block" : {
+      "category" : "",
+      "className" : "PowerBlockAction",
+      "description" : "",
+      "key" : "power_block",
+      "name" : "Power Block",
+      "parameters" : [ "ignore_result", "physics", "requires_entity_target", "requires_target" ],
+      "shortClass" : "PowerBlock"
+    },
+    "probability" : {
+      "category" : "",
+      "className" : "ProbabilityAction",
+      "description" : "",
+      "key" : "probability",
+      "name" : "Probability",
+      "parameters" : [ "ignore_result", "probability", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Probability"
+    },
+    "projectile" : {
+      "category" : "",
+      "className" : "ProjectileAction",
+      "description" : "",
+      "key" : "projectile",
+      "name" : "Projectile",
+      "parameters" : [ "break_blocks", "count", "damage", "fire", "ignore_result", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "size", "source_location", "speed", "spread", "start", "stop_on_success", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "shortClass" : "Projectile"
+    },
+    "random" : {
+      "category" : "",
+      "className" : "RandomAction",
+      "description" : "",
+      "key" : "random",
+      "name" : "Random",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Random"
+    },
+    "recall" : {
+      "category" : "",
+      "className" : "RecallAction",
+      "description" : "",
+      "key" : "recall",
+      "name" : "Recall",
+      "parameters" : [ "allow_cross_world", "friend_key", "ignore_result", "marker_key", "protection_duration", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "unlock_key", "vertical_range" ],
+      "shortClass" : "Recall"
+    },
+    "recurse" : {
+      "category" : "",
+      "className" : "RecurseAction",
+      "description" : "",
+      "key" : "recurse",
+      "name" : "Recurse",
+      "parameters" : [ "checkered", "depth", "ignore_result", "replace", "requires_entity_target", "requires_target", "size", "stop_on_success" ],
+      "shortClass" : "Recurse"
+    },
+    "remove_entity" : {
+      "category" : "",
+      "className" : "RemoveEntityAction",
+      "description" : "",
+      "key" : "remove_entity",
+      "name" : "Remove Entity",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "RemoveEntity"
+    },
+    "repair_item" : {
+      "category" : "",
+      "className" : "RepairItemAction",
+      "description" : "",
+      "key" : "repair_item",
+      "name" : "Repair Item",
+      "parameters" : [ "armor", "held_item", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "RepairItem"
+    },
+    "repeat" : {
+      "category" : "",
+      "className" : "RepeatAction",
+      "description" : "",
+      "key" : "repeat",
+      "name" : "Repeat",
+      "parameters" : [ "ignore_result", "repeat", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Repeat"
+    },
+    "retarget" : {
+      "category" : "",
+      "className" : "RetargetAction",
+      "description" : "",
+      "key" : "retarget",
+      "name" : "Retarget",
+      "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "ignore_result", "range", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Retarget"
+    },
+    "ride_entity" : {
+      "category" : "",
+      "className" : "RideEntityAction",
+      "description" : "",
+      "key" : "ride_entity",
+      "name" : "Ride Entity",
+      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "ignore_result", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "requires_entity_target", "requires_target", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "shortClass" : "RideEntity"
+    },
+    "ring" : {
+      "category" : "",
+      "className" : "RingAction",
+      "description" : "",
+      "key" : "ring",
+      "name" : "Ring",
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Ring"
+    },
+    "selector" : {
+      "category" : "",
+      "className" : "SelectorAction",
+      "description" : "",
+      "key" : "selector",
+      "name" : "Selector",
+      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "confirm", "confirm_filler", "confirm_title", "cost", "cost_type", "currency", "experience", "icon", "ignore_result", "limit", "requires_entity_target", "requires_target", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
+      "shortClass" : "Selector"
+    },
+    "serial" : {
+      "category" : "",
+      "className" : "SerialAction",
+      "description" : "",
+      "key" : "serial",
+      "name" : "Serial",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "shortClass" : "Serial"
+    },
+    "shrink_block" : {
+      "category" : "",
+      "className" : "ShrinkBlockAction",
+      "description" : "",
+      "key" : "shrink_block",
+      "name" : "Shrink Block",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "ShrinkBlock"
+    },
+    "shrink_entity" : {
+      "category" : "",
+      "className" : "ShrinkEntityAction",
+      "description" : "",
+      "key" : "shrink_entity",
+      "name" : "Shrink Entity",
+      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "ignore_result", "magic_damage", "magic_entity_damage", "player_damage", "requires_entity_target", "requires_target", "skeletons" ],
+      "shortClass" : "ShrinkEntity"
+    },
+    "simulate" : {
+      "category" : "",
+      "className" : "SimulateAction",
+      "description" : "",
+      "key" : "simulate",
+      "name" : "Simulate",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Simulate"
+    },
+    "skill_selector" : {
+      "category" : "",
+      "className" : "SkillSelectorAction",
+      "description" : "",
+      "key" : "skill_selector",
+      "name" : "Skill Selector",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "SkillSelector"
+    },
+    "skip" : {
+      "category" : "",
+      "className" : "SkipAction",
+      "description" : "",
+      "key" : "skip",
+      "name" : "Skip",
+      "parameters" : [ "ignore_result", "repeat_skip", "requires_entity_target", "requires_target", "skip", "stop_on_success" ],
+      "shortClass" : "Skip"
+    },
+    "spawn_entity" : {
+      "category" : "",
+      "className" : "SpawnEntityAction",
+      "description" : "",
+      "key" : "spawn_entity",
+      "name" : "Spawn Entity",
+      "parameters" : [ "direction", "dy_offset", "force", "ignore_result", "loot", "repeat_random", "requires_entity_target", "requires_target", "set_target", "speed" ],
+      "shortClass" : "SpawnEntity"
+    },
+    "spell_progress" : {
+      "category" : "",
+      "className" : "SpellProgressAction",
+      "description" : "",
+      "key" : "spell_progress",
+      "name" : "Spell Progress",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "SpellProgress"
+    },
+    "spell_shop" : {
+      "category" : "",
+      "className" : "SpellShopAction",
+      "description" : "",
+      "key" : "spell_shop",
+      "name" : "Spell Shop",
+      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "ignore_result", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "requires_entity_target", "requires_target", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "shortClass" : "SpellShop"
+    },
+    "sphere" : {
+      "category" : "",
+      "className" : "SphereAction",
+      "description" : "",
+      "key" : "sphere",
+      "name" : "Sphere",
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Sphere"
+    },
+    "spread" : {
+      "category" : "",
+      "className" : "SpreadAction",
+      "description" : "",
+      "key" : "spread",
+      "name" : "Spread",
+      "parameters" : [ "center_probability", "ignore_result", "outer_probability", "pitch_max", "probability", "radius", "requires_entity_target", "requires_target", "stop_on_success", "yaw_max" ],
+      "shortClass" : "Spread"
+    },
+    "stash_wand" : {
+      "category" : "",
+      "className" : "StashWandAction",
+      "description" : "",
+      "key" : "stash_wand",
+      "name" : "Stash Wand",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "return_on_finish" ],
+      "shortClass" : "StashWand"
+    },
+    "stop" : {
+      "category" : "",
+      "className" : "StopAction",
+      "description" : "",
+      "key" : "stop",
+      "name" : "Stop",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Stop"
+    },
+    "super_protection" : {
+      "category" : "",
+      "className" : "SuperProtectionAction",
+      "description" : "",
+      "key" : "super_protection",
+      "name" : "Super Protection",
+      "parameters" : [ "duration", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "SuperProtection"
+    },
+    "t_n_t" : {
+      "category" : "",
+      "className" : "TNTAction",
+      "description" : "",
+      "key" : "t_n_t",
+      "name" : "TNT",
+      "parameters" : [ "break_blocks", "count", "fire", "fuse", "ignore_result", "lifetime", "projectile_effects", "requires_entity_target", "requires_target", "set_target", "size", "stop_on_success", "tnt_velocity", "track_projectile" ],
+      "shortClass" : "TNT"
+    },
+    "take_item" : {
+      "category" : "",
+      "className" : "TakeItemAction",
+      "description" : "",
+      "key" : "take_item",
+      "name" : "Take Item",
+      "parameters" : [ "display_name", "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "TakeItem"
+    },
+    "tame" : {
+      "category" : "",
+      "className" : "TameAction",
+      "description" : "",
+      "key" : "tame",
+      "name" : "Tame",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Tame"
+    },
+    "teleport" : {
+      "category" : "",
+      "className" : "TeleportAction",
+      "description" : "",
+      "key" : "teleport",
+      "name" : "Teleport",
+      "parameters" : [ "allow_passthrough", "ignore_result", "ledge_range", "passthrough_range", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "use_target_location", "vertical_range" ],
+      "shortClass" : "Teleport"
+    },
+    "throw_block" : {
+      "category" : "",
+      "className" : "ThrowBlockAction",
+      "description" : "",
+      "key" : "throw_block",
+      "name" : "Throw Block",
+      "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "ignore_result", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "source_location", "speed", "speed_max", "speed_min", "stop_on_success", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "shortClass" : "ThrowBlock"
+    },
+    "throw_item" : {
+      "category" : "",
+      "className" : "ThrowItemAction",
+      "description" : "",
+      "key" : "throw_item",
+      "name" : "Throw Item",
+      "parameters" : [ "age_items", "ignore_result", "item", "lifetime", "orient", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "source_location", "speed", "speed_max", "speed_min", "stop_on_success", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "shortClass" : "ThrowItem"
+    },
+    "tile_entities" : {
+      "category" : "",
+      "className" : "TileEntitiesAction",
+      "description" : "",
+      "key" : "tile_entities",
+      "name" : "Tile Entities",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_all_worlds" ],
+      "shortClass" : "TileEntities"
+    },
+    "time" : {
+      "category" : "",
+      "className" : "TimeAction",
+      "description" : "",
+      "key" : "time",
+      "name" : "Time",
+      "parameters" : [ "cycle_moon_phase", "ignore_result", "requires_entity_target", "requires_target", "time" ],
+      "shortClass" : "Time"
+    },
+    "torch" : {
+      "category" : "",
+      "className" : "TorchAction",
+      "description" : "",
+      "key" : "torch",
+      "name" : "Torch",
+      "parameters" : [ "allow_glowstone", "glowstone_torch", "ignore_result", "not_attachable", "redstone_torch", "requires_entity_target", "requires_target" ],
+      "shortClass" : "Torch"
+    },
+    "tree" : {
+      "category" : "",
+      "className" : "TreeAction",
+      "description" : "",
+      "key" : "tree",
+      "name" : "Tree",
+      "parameters" : [ "ignore_result", "require_sapling", "requires_entity_target", "requires_target", "type" ],
+      "shortClass" : "Tree"
+    },
+    "undo" : {
+      "category" : "",
+      "className" : "UndoAction",
+      "description" : "",
+      "key" : "undo",
+      "name" : "Undo",
+      "parameters" : [ "admin_permission", "cancel", "ignore_result", "requires_entity_target", "requires_target", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
+      "shortClass" : "Undo"
+    },
+    "vanish" : {
+      "category" : "",
+      "className" : "VanishAction",
+      "description" : "",
+      "key" : "vanish",
+      "name" : "Vanish",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "vanish" ],
+      "shortClass" : "Vanish"
+    },
+    "velocity" : {
+      "category" : "",
+      "className" : "VelocityAction",
+      "description" : "",
+      "key" : "velocity",
+      "name" : "Velocity",
+      "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "ignore_result", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "requires_entity_target", "requires_target", "speed", "velocity_max_distance", "y_offset" ],
+      "shortClass" : "Velocity"
+    },
+    "volume" : {
+      "category" : "",
+      "className" : "VolumeAction",
+      "description" : "",
+      "key" : "volume",
+      "name" : "Volume",
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "shortClass" : "Volume"
+    },
+    "wear" : {
+      "category" : "",
+      "className" : "WearAction",
+      "description" : "",
+      "key" : "wear",
+      "name" : "Wear",
+      "parameters" : [ "armor_slot", "ignore_result", "item", "material", "requires_entity_target", "requires_target", "return_on_finish", "unbreakable", "use_item" ],
+      "shortClass" : "Wear"
+    },
+    "weather" : {
+      "category" : "",
+      "className" : "WeatherAction",
+      "description" : "",
+      "key" : "weather",
+      "name" : "Weather",
+      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "weather" ],
+      "shortClass" : "Weather"
+    }
+  },
+  "parameters" : {
+    "add_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "add_effects",
+      "name" : "Add Effects",
+      "type" : "potion_effects"
+    },
+    "additive" : {
+      "category" : "",
+      "description" : "",
+      "field" : "additive",
+      "name" : "Additive",
+      "type" : "boolean"
+    },
+    "admin_permission" : {
+      "category" : "",
+      "description" : "",
+      "field" : "admin_permission",
+      "name" : "Admin Permission",
+      "type" : "string"
+    },
+    "age_items" : {
+      "category" : "",
+      "description" : "",
+      "field" : "age_items",
+      "name" : "Age Items",
+      "type" : "integer"
+    },
+    "aggro" : {
+      "category" : "",
+      "description" : "",
+      "field" : "aggro",
+      "name" : "Aggro",
+      "type" : "boolean"
+    },
+    "ai" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ai",
+      "name" : "Ai",
+      "type" : "boolean"
+    },
+    "air" : {
+      "category" : "",
+      "description" : "",
+      "field" : "air",
+      "name" : "Air",
+      "type" : "integer"
+    },
+    "allow_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allow_caster",
+      "name" : "Allow Caster",
+      "type" : "boolean"
+    },
+    "allow_cross_world" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allow_cross_world",
+      "name" : "Allow Cross World",
+      "type" : "boolean"
+    },
+    "allow_glowstone" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allow_glowstone",
+      "name" : "Allow Glowstone",
+      "type" : "boolean"
+    },
+    "allow_locked" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allow_locked",
+      "name" : "Allow Locked",
+      "type" : "boolean"
+    },
+    "allow_passthrough" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allow_passthrough",
+      "name" : "Allow Passthrough",
+      "type" : "boolean"
+    },
+    "allowed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "allowed",
+      "name" : "Allowed",
+      "type" : "string"
+    },
+    "amount" : {
+      "category" : "",
+      "description" : "",
+      "field" : "amount",
+      "name" : "Amount",
+      "type" : "double"
+    },
+    "apply_to_wand" : {
+      "category" : "",
+      "description" : "",
+      "field" : "apply_to_wand",
+      "name" : "Apply To Wand",
+      "type" : "boolean"
+    },
+    "apply_velocity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "apply_velocity",
+      "name" : "Apply Velocity",
+      "type" : "boolean"
+    },
+    "armor" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor",
+      "name" : "Armor",
+      "type" : "boolean"
+    },
+    "armor_slot" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_slot",
+      "name" : "Armor Slot",
+      "type" : "integer"
+    },
+    "armor_stand_arms" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_arms",
+      "name" : "Armor Stand Arms",
+      "type" : "boolean"
+    },
+    "armor_stand_baseplate" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_baseplate",
+      "name" : "Armor Stand Baseplate",
+      "type" : "boolean"
+    },
+    "armor_stand_gravity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_gravity",
+      "name" : "Armor Stand Gravity",
+      "type" : "boolean"
+    },
+    "armor_stand_invisible" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_invisible",
+      "name" : "Armor Stand Invisible",
+      "type" : "boolean"
+    },
+    "armor_stand_marker" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_marker",
+      "name" : "Armor Stand Marker",
+      "type" : "boolean"
+    },
+    "armor_stand_pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_pitch",
+      "name" : "Armor Stand Pitch",
+      "type" : "double"
+    },
+    "armor_stand_roll" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_roll",
+      "name" : "Armor Stand Roll",
+      "type" : "double"
+    },
+    "armor_stand_small" : {
+      "category" : "",
+      "description" : "",
+      "field" : "armor_stand_small",
+      "name" : "Armor Stand Small",
+      "type" : "boolean"
+    },
+    "async" : {
+      "category" : "",
+      "description" : "",
+      "field" : "async",
+      "name" : "Async",
+      "type" : "boolean"
+    },
+    "attach_duration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "attach_duration",
+      "name" : "Attach Duration",
+      "type" : "integer"
+    },
+    "auto_close" : {
+      "category" : "",
+      "description" : "",
+      "field" : "auto_close",
+      "name" : "Auto Close",
+      "type" : "boolean"
+    },
+    "auto_upgrade" : {
+      "category" : "",
+      "description" : "",
+      "field" : "auto_upgrade",
+      "name" : "Auto Upgrade",
+      "type" : "boolean"
+    },
+    "axis" : {
+      "category" : "",
+      "description" : "",
+      "field" : "axis",
+      "name" : "Axis",
+      "type" : "string"
+    },
+    "baby" : {
+      "category" : "",
+      "description" : "",
+      "field" : "baby",
+      "name" : "Baby",
+      "type" : "boolean"
+    },
+    "biome" : {
+      "category" : "",
+      "description" : "",
+      "field" : "biome",
+      "name" : "Biome",
+      "type" : "string"
+    },
+    "block_hit_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "block_hit_count",
+      "name" : "Block Hit Count",
+      "type" : "integer"
+    },
+    "boots" : {
+      "category" : "",
+      "description" : "",
+      "field" : "boots",
+      "name" : "Boots",
+      "type" : "string"
+    },
+    "boots_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "boots_item",
+      "name" : "Boots Item",
+      "type" : "string"
+    },
+    "braking" : {
+      "category" : "",
+      "description" : "",
+      "field" : "braking",
+      "name" : "Braking",
+      "type" : "double"
+    },
+    "break_blocks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "break_blocks",
+      "name" : "Break Blocks",
+      "type" : "boolean"
+    },
+    "break_durability" : {
+      "category" : "",
+      "description" : "",
+      "field" : "break_durability",
+      "name" : "Break Durability",
+      "type" : "integer"
+    },
+    "breakable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "breakable",
+      "name" : "Breakable",
+      "type" : "double"
+    },
+    "breakable_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "breakable_size",
+      "name" : "Breakable Size",
+      "type" : "integer"
+    },
+    "brush" : {
+      "category" : "",
+      "description" : "",
+      "field" : "brush",
+      "name" : "Brush",
+      "type" : "material"
+    },
+    "brush_axis" : {
+      "category" : "",
+      "description" : "",
+      "field" : "brush_axis",
+      "name" : "Brush Axis",
+      "type" : "string"
+    },
+    "bypass_backfire" : {
+      "category" : "",
+      "description" : "",
+      "field" : "bypass_backfire",
+      "name" : "Bypass Backfire",
+      "type" : "boolean"
+    },
+    "bypass_reduction" : {
+      "category" : "",
+      "description" : "",
+      "field" : "bypass_reduction",
+      "name" : "Bypass Reduction",
+      "type" : "boolean"
+    },
+    "can_pickup_items" : {
+      "category" : "",
+      "description" : "",
+      "field" : "can_pickup_items",
+      "name" : "Can Pickup Items",
+      "type" : "boolean"
+    },
+    "cancel" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cancel",
+      "name" : "Cancel",
+      "type" : "boolean"
+    },
+    "cast_interval" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cast_interval",
+      "name" : "Cast Interval",
+      "type" : "long"
+    },
+    "cast_requires_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cast_requires_item",
+      "name" : "Cast Requires Item",
+      "type" : "string"
+    },
+    "cast_requires_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cast_requires_target",
+      "name" : "Cast Requires Target",
+      "type" : "boolean"
+    },
+    "cast_spell" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cast_spell",
+      "name" : "Cast Spell",
+      "type" : "string"
+    },
+    "cast_spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cast_spells",
+      "name" : "Cast Spells",
+      "type" : "boolean"
+    },
+    "center_probability" : {
+      "category" : "",
+      "description" : "",
+      "field" : "center_probability",
+      "name" : "Center Probability",
+      "type" : "double"
+    },
+    "center_x" : {
+      "category" : "",
+      "description" : "",
+      "field" : "center_x",
+      "name" : "Center X",
+      "type" : "boolean"
+    },
+    "center_y" : {
+      "category" : "",
+      "description" : "",
+      "field" : "center_y",
+      "name" : "Center Y",
+      "type" : "boolean"
+    },
+    "center_z" : {
+      "category" : "",
+      "description" : "",
+      "field" : "center_z",
+      "name" : "Center Z",
+      "type" : "boolean"
+    },
+    "check" : {
+      "category" : "",
+      "description" : "",
+      "field" : "check",
+      "name" : "Check",
+      "type" : "boolean"
+    },
+    "checkered" : {
+      "category" : "",
+      "description" : "",
+      "field" : "checkered",
+      "name" : "Checkered",
+      "type" : "boolean"
+    },
+    "chestplate" : {
+      "category" : "",
+      "description" : "",
+      "field" : "chestplate",
+      "name" : "Chestplate",
+      "type" : "string"
+    },
+    "chestplate_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "chestplate_item",
+      "name" : "Chestplate Item",
+      "type" : "string"
+    },
+    "clear" : {
+      "category" : "",
+      "description" : "",
+      "field" : "clear",
+      "name" : "Clear",
+      "type" : "boolean"
+    },
+    "close_fov" : {
+      "category" : "",
+      "description" : "",
+      "field" : "close_fov",
+      "name" : "Close Fov",
+      "type" : "double"
+    },
+    "close_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "close_range",
+      "name" : "Close Range",
+      "type" : "double"
+    },
+    "commit" : {
+      "category" : "",
+      "description" : "",
+      "field" : "commit",
+      "name" : "Commit",
+      "type" : "boolean"
+    },
+    "confirm" : {
+      "category" : "",
+      "description" : "",
+      "field" : "confirm",
+      "name" : "Confirm",
+      "type" : "boolean"
+    },
+    "confirm_filler" : {
+      "category" : "",
+      "description" : "",
+      "field" : "confirm_filler",
+      "name" : "Confirm Filler",
+      "type" : "string"
+    },
+    "confirm_title" : {
+      "category" : "",
+      "description" : "",
+      "field" : "confirm_title",
+      "name" : "Confirm Title",
+      "type" : "string"
+    },
+    "console" : {
+      "category" : "",
+      "description" : "",
+      "field" : "console",
+      "name" : "Console",
+      "type" : "boolean"
+    },
+    "consume" : {
+      "category" : "",
+      "description" : "",
+      "field" : "consume",
+      "name" : "Consume",
+      "type" : "boolean"
+    },
+    "consume_variants" : {
+      "category" : "",
+      "description" : "",
+      "field" : "consume_variants",
+      "name" : "Consume Variants",
+      "type" : "boolean"
+    },
+    "controllable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "controllable",
+      "name" : "Controllable",
+      "type" : "boolean"
+    },
+    "cost" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cost",
+      "name" : "Cost",
+      "type" : "integer"
+    },
+    "cost_type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cost_type",
+      "name" : "Cost Type",
+      "type" : "string"
+    },
+    "count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "count",
+      "name" : "Count",
+      "type" : "integer"
+    },
+    "crash_braking" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_braking",
+      "name" : "Crash Braking",
+      "type" : "double"
+    },
+    "crash_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_damage",
+      "name" : "Crash Damage",
+      "type" : "double"
+    },
+    "crash_dismount_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_dismount_speed",
+      "name" : "Crash Dismount Speed",
+      "type" : "double"
+    },
+    "crash_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_distance",
+      "name" : "Crash Distance",
+      "type" : "double"
+    },
+    "crash_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_effects",
+      "name" : "Crash Effects",
+      "type" : "map"
+    },
+    "crash_entity_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_entity_damage",
+      "name" : "Crash Entity Damage",
+      "type" : "double"
+    },
+    "crash_entity_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_entity_distance",
+      "name" : "Crash Entity Distance",
+      "type" : "double"
+    },
+    "crash_entity_fov" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_entity_fov",
+      "name" : "Crash Entity Fov",
+      "type" : "double"
+    },
+    "crash_entity_vehicle_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_entity_vehicle_damage",
+      "name" : "Crash Entity Vehicle Damage",
+      "type" : "double"
+    },
+    "crash_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_speed",
+      "name" : "Crash Speed",
+      "type" : "double"
+    },
+    "crash_vehicle_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_vehicle_damage",
+      "name" : "Crash Vehicle Damage",
+      "type" : "double"
+    },
+    "crash_velocity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_velocity",
+      "name" : "Crash Velocity",
+      "type" : "double"
+    },
+    "crash_velocity_y_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "crash_velocity_y_offset",
+      "name" : "Crash Velocity Y Offset",
+      "type" : "double"
+    },
+    "cross_world" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cross_world",
+      "name" : "Cross World",
+      "type" : "boolean"
+    },
+    "currency" : {
+      "category" : "",
+      "description" : "",
+      "field" : "currency",
+      "name" : "Currency",
+      "type" : "integer"
+    },
+    "cycle_moon_phase" : {
+      "category" : "",
+      "description" : "",
+      "field" : "cycle_moon_phase",
+      "name" : "Cycle Moon Phase",
+      "type" : "boolean"
+    },
+    "damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "damage",
+      "name" : "Damage",
+      "type" : "integer"
+    },
+    "damage_max_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "damage_max_distance",
+      "name" : "Damage Max Distance",
+      "type" : "double"
+    },
+    "damage_type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "damage_type",
+      "name" : "Damage Type",
+      "type" : "damage_type"
+    },
+    "damaged" : {
+      "category" : "",
+      "description" : "",
+      "field" : "damaged",
+      "name" : "Damaged",
+      "type" : "boolean"
+    },
+    "default_drops" : {
+      "category" : "",
+      "description" : "",
+      "field" : "default_drops",
+      "name" : "Default Drops",
+      "type" : "boolean"
+    },
+    "delay" : {
+      "category" : "",
+      "description" : "",
+      "field" : "delay",
+      "name" : "Delay",
+      "type" : "integer"
+    },
+    "depth" : {
+      "category" : "",
+      "description" : "",
+      "field" : "depth",
+      "name" : "Depth",
+      "type" : "integer"
+    },
+    "direction" : {
+      "category" : "",
+      "description" : "",
+      "field" : "direction",
+      "name" : "Direction",
+      "type" : "string"
+    },
+    "display_name" : {
+      "category" : "",
+      "description" : "",
+      "field" : "display_name",
+      "name" : "Display Name",
+      "type" : "string"
+    },
+    "distance_weight" : {
+      "category" : "",
+      "description" : "",
+      "field" : "distance_weight",
+      "name" : "Distance Weight",
+      "type" : "double"
+    },
+    "drag" : {
+      "category" : "",
+      "description" : "",
+      "field" : "drag",
+      "name" : "Drag",
+      "type" : "double"
+    },
+    "drop_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "drop_count",
+      "name" : "Drop Count",
+      "type" : "integer"
+    },
+    "durability_max_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "durability_max_distance",
+      "name" : "Durability Max Distance",
+      "type" : "double"
+    },
+    "duration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "duration",
+      "name" : "Duration",
+      "type" : "integer"
+    },
+    "duration_on_use" : {
+      "category" : "",
+      "description" : "",
+      "field" : "duration_on_use",
+      "name" : "Duration On Use",
+      "type" : "integer"
+    },
+    "duration_warning" : {
+      "category" : "",
+      "description" : "",
+      "field" : "duration_warning",
+      "name" : "Duration Warning",
+      "type" : "integer"
+    },
+    "dy_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "dy_offset",
+      "name" : "Dy Offset",
+      "type" : "double"
+    },
+    "effect" : {
+      "category" : "",
+      "description" : "",
+      "field" : "effect",
+      "name" : "Effect",
+      "type" : "string"
+    },
+    "effect_only" : {
+      "category" : "",
+      "description" : "",
+      "field" : "effect_only",
+      "name" : "Effect Only",
+      "type" : "boolean"
+    },
+    "effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "effects",
+      "name" : "Effects",
+      "type" : "string"
+    },
+    "effects_ambient" : {
+      "category" : "",
+      "description" : "",
+      "field" : "effects_ambient",
+      "name" : "Effects Ambient",
+      "type" : "boolean"
+    },
+    "effects_particles" : {
+      "category" : "",
+      "description" : "",
+      "field" : "effects_particles",
+      "name" : "Effects Particles",
+      "type" : "boolean"
+    },
+    "eject" : {
+      "category" : "",
+      "description" : "",
+      "field" : "eject",
+      "name" : "Eject",
+      "type" : "boolean"
+    },
+    "electrify" : {
+      "category" : "",
+      "description" : "",
+      "field" : "electrify",
+      "name" : "Electrify",
+      "type" : "boolean"
+    },
+    "elemental_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "elemental_damage",
+      "name" : "Elemental Damage",
+      "type" : "double"
+    },
+    "entity_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "entity_damage",
+      "name" : "Entity Damage",
+      "type" : "double"
+    },
+    "entity_hit_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "entity_hit_count",
+      "name" : "Entity Hit Count",
+      "type" : "integer"
+    },
+    "entity_weight" : {
+      "category" : "",
+      "description" : "",
+      "field" : "entity_weight",
+      "name" : "Entity Weight",
+      "type" : "integer"
+    },
+    "escape_sequence" : {
+      "category" : "",
+      "description" : "",
+      "field" : "escape_sequence",
+      "name" : "Escape Sequence",
+      "type" : "string"
+    },
+    "exclude_spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "exclude_spells",
+      "name" : "Exclude Spells",
+      "type" : "string"
+    },
+    "exemption_duration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "exemption_duration",
+      "name" : "Exemption Duration",
+      "type" : "integer"
+    },
+    "exhaustion" : {
+      "category" : "",
+      "description" : "",
+      "field" : "exhaustion",
+      "name" : "Exhaustion",
+      "type" : "boolean"
+    },
+    "experience" : {
+      "category" : "",
+      "description" : "",
+      "field" : "experience",
+      "name" : "Experience",
+      "type" : "integer"
+    },
+    "fade_in" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fade_in",
+      "name" : "Fade In",
+      "type" : "integer"
+    },
+    "fade_out" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fade_out",
+      "name" : "Fade Out",
+      "type" : "integer"
+    },
+    "fall_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fall_damage",
+      "name" : "Fall Damage",
+      "type" : "double"
+    },
+    "fall_protection" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fall_protection",
+      "name" : "Fall Protection",
+      "type" : "integer"
+    },
+    "falling" : {
+      "category" : "",
+      "description" : "",
+      "field" : "falling",
+      "name" : "Falling",
+      "type" : "boolean"
+    },
+    "falling_hurts" : {
+      "category" : "",
+      "description" : "",
+      "field" : "falling_hurts",
+      "name" : "Falling Hurts",
+      "type" : "boolean"
+    },
+    "falling_probability" : {
+      "category" : "",
+      "description" : "",
+      "field" : "falling_probability",
+      "name" : "Falling Probability",
+      "type" : "double"
+    },
+    "feed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "feed",
+      "name" : "Feed",
+      "type" : "integer"
+    },
+    "field_rent" : {
+      "category" : "",
+      "description" : "",
+      "field" : "field_rent",
+      "name" : "Field Rent",
+      "type" : "string"
+    },
+    "field_rent_period" : {
+      "category" : "",
+      "description" : "",
+      "field" : "field_rent_period",
+      "name" : "Field Rent Period",
+      "type" : "string"
+    },
+    "field_rent_sign_direction" : {
+      "category" : "",
+      "description" : "",
+      "field" : "field_rent_sign_direction",
+      "name" : "Field Rent Sign Direction",
+      "type" : "integer"
+    },
+    "field_type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "field_type",
+      "name" : "Field Type",
+      "type" : "string"
+    },
+    "fill_mana" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fill_mana",
+      "name" : "Fill Mana",
+      "type" : "boolean"
+    },
+    "filter_bound" : {
+      "category" : "",
+      "description" : "",
+      "field" : "filter_bound",
+      "name" : "Filter Bound",
+      "type" : "boolean"
+    },
+    "fire" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fire",
+      "name" : "Fire",
+      "type" : "boolean"
+    },
+    "flicker" : {
+      "category" : "",
+      "description" : "",
+      "field" : "flicker",
+      "name" : "Flicker",
+      "type" : "boolean"
+    },
+    "force" : {
+      "category" : "",
+      "description" : "",
+      "field" : "force",
+      "name" : "Force",
+      "type" : "boolean"
+    },
+    "fov" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fov",
+      "name" : "Fov",
+      "type" : "double"
+    },
+    "fov_weight" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fov_weight",
+      "name" : "Fov Weight",
+      "type" : "double"
+    },
+    "freeze_fire" : {
+      "category" : "",
+      "description" : "",
+      "field" : "freeze_fire",
+      "name" : "Freeze Fire",
+      "type" : "boolean"
+    },
+    "freeze_lava" : {
+      "category" : "",
+      "description" : "",
+      "field" : "freeze_lava",
+      "name" : "Freeze Lava",
+      "type" : "boolean"
+    },
+    "freeze_water" : {
+      "category" : "",
+      "description" : "",
+      "field" : "freeze_water",
+      "name" : "Freeze Water",
+      "type" : "boolean"
+    },
+    "friend_key" : {
+      "category" : "",
+      "description" : "",
+      "field" : "friend_key",
+      "name" : "Friend Key",
+      "type" : "string"
+    },
+    "fuse" : {
+      "category" : "",
+      "description" : "",
+      "field" : "fuse",
+      "name" : "Fuse",
+      "type" : "integer"
+    },
+    "game_mode" : {
+      "category" : "",
+      "description" : "",
+      "field" : "game_mode",
+      "name" : "Game Mode",
+      "type" : "string"
+    },
+    "glowstone_torch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "glowstone_torch",
+      "name" : "Glowstone Torch",
+      "type" : "boolean"
+    },
+    "gravity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "gravity",
+      "name" : "Gravity",
+      "type" : "double"
+    },
+    "headshot_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "headshot_effects",
+      "name" : "Headshot Effects",
+      "type" : "string"
+    },
+    "heal_max_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "heal_max_distance",
+      "name" : "Heal Max Distance",
+      "type" : "double"
+    },
+    "held_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "held_item",
+      "name" : "Held Item",
+      "type" : "boolean"
+    },
+    "helmet" : {
+      "category" : "",
+      "description" : "",
+      "field" : "helmet",
+      "name" : "Helmet",
+      "type" : "string"
+    },
+    "helmet_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "helmet_item",
+      "name" : "Helmet Item",
+      "type" : "string"
+    },
+    "hit_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hit_count",
+      "name" : "Hit Count",
+      "type" : "integer"
+    },
+    "hit_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hit_effects",
+      "name" : "Hit Effects",
+      "type" : "string"
+    },
+    "hit_on_miss" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hit_on_miss",
+      "name" : "Hit On Miss",
+      "type" : "boolean"
+    },
+    "hit_requires_entity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hit_requires_entity",
+      "name" : "Hit Requires Entity",
+      "type" : "boolean"
+    },
+    "hitbox" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hitbox",
+      "name" : "Hitbox",
+      "type" : "boolean"
+    },
+    "hitbox_block_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hitbox_block_size",
+      "name" : "Hitbox Block Size",
+      "type" : "double"
+    },
+    "hitbox_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hitbox_size",
+      "name" : "Hitbox Size",
+      "type" : "double"
+    },
+    "hurts" : {
+      "category" : "",
+      "description" : "",
+      "field" : "hurts",
+      "name" : "Hurts",
+      "type" : "boolean"
+    },
+    "ice" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ice",
+      "name" : "Ice",
+      "type" : "string"
+    },
+    "icon" : {
+      "category" : "",
+      "description" : "",
+      "field" : "icon",
+      "name" : "Icon",
+      "type" : "string"
+    },
+    "ignore_blocks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ignore_blocks",
+      "name" : "Ignore Blocks",
+      "type" : "boolean"
+    },
+    "ignore_result" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ignore_result",
+      "name" : "Ignore Result",
+      "type" : "boolean"
+    },
+    "ignore_targeting" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ignore_targeting",
+      "name" : "Ignore Targeting",
+      "type" : "boolean"
+    },
+    "increment_data" : {
+      "category" : "",
+      "description" : "",
+      "field" : "increment_data",
+      "name" : "Increment Data",
+      "type" : "boolean"
+    },
+    "interact_spell" : {
+      "category" : "",
+      "description" : "",
+      "field" : "interact_spell",
+      "name" : "Interact Spell",
+      "type" : "string"
+    },
+    "interval" : {
+      "category" : "",
+      "description" : "",
+      "field" : "interval",
+      "name" : "Interval",
+      "type" : "integer"
+    },
+    "item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "item",
+      "name" : "Item",
+      "type" : "string"
+    },
+    "item_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "item_speed",
+      "name" : "Item Speed",
+      "type" : "double"
+    },
+    "jump_controllable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "jump_controllable",
+      "name" : "Jump Controllable",
+      "type" : "double"
+    },
+    "keep_in_inventory" : {
+      "category" : "",
+      "description" : "",
+      "field" : "keep_in_inventory",
+      "name" : "Keep In Inventory",
+      "type" : "boolean"
+    },
+    "key_description" : {
+      "category" : "",
+      "description" : "",
+      "field" : "key_description",
+      "name" : "Key Description",
+      "type" : "string"
+    },
+    "key_icon" : {
+      "category" : "",
+      "description" : "",
+      "field" : "key_icon",
+      "name" : "Key Icon",
+      "type" : "string"
+    },
+    "key_name" : {
+      "category" : "",
+      "description" : "",
+      "field" : "key_name",
+      "name" : "Key Name",
+      "type" : "string"
+    },
+    "launch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "launch",
+      "name" : "Launch",
+      "type" : "boolean"
+    },
+    "ledge_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "ledge_range",
+      "name" : "Ledge Range",
+      "type" : "integer"
+    },
+    "leggings" : {
+      "category" : "",
+      "description" : "",
+      "field" : "leggings",
+      "name" : "Leggings",
+      "type" : "string"
+    },
+    "leggings_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "leggings_item",
+      "name" : "Leggings Item",
+      "type" : "string"
+    },
+    "level" : {
+      "category" : "",
+      "description" : "",
+      "field" : "level",
+      "name" : "Level",
+      "type" : "integer"
+    },
+    "levels" : {
+      "category" : "",
+      "description" : "",
+      "field" : "levels",
+      "name" : "Levels",
+      "type" : "integer"
+    },
+    "lifetime" : {
+      "category" : "",
+      "description" : "",
+      "field" : "lifetime",
+      "name" : "Lifetime",
+      "type" : "integer"
+    },
+    "liftoff_duration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "liftoff_duration",
+      "name" : "Liftoff Duration",
+      "type" : "integer"
+    },
+    "liftoff_thrust" : {
+      "category" : "",
+      "description" : "",
+      "field" : "liftoff_thrust",
+      "name" : "Liftoff Thrust",
+      "type" : "double"
+    },
+    "limit" : {
+      "category" : "",
+      "description" : "",
+      "field" : "limit",
+      "name" : "Limit",
+      "type" : "integer"
+    },
+    "living_entity_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "living_entity_speed",
+      "name" : "Living Entity Speed",
+      "type" : "double"
+    },
+    "local_echo" : {
+      "category" : "",
+      "description" : "",
+      "field" : "local_echo",
+      "name" : "Local Echo",
+      "type" : "boolean"
+    },
+    "location_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "location_offset",
+      "name" : "Location Offset",
+      "type" : "vector"
+    },
+    "loot" : {
+      "category" : "",
+      "description" : "",
+      "field" : "loot",
+      "name" : "Loot",
+      "type" : "boolean"
+    },
+    "mage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mage",
+      "name" : "Mage",
+      "type" : "map"
+    },
+    "magic_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "magic_damage",
+      "name" : "Magic Damage",
+      "type" : "boolean"
+    },
+    "magic_entity_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "magic_entity_damage",
+      "name" : "Magic Entity Damage",
+      "type" : "boolean"
+    },
+    "mana" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mana",
+      "name" : "Mana",
+      "type" : "integer"
+    },
+    "marker_key" : {
+      "category" : "",
+      "description" : "",
+      "field" : "marker_key",
+      "name" : "Marker Key",
+      "type" : "string"
+    },
+    "material" : {
+      "category" : "",
+      "description" : "",
+      "field" : "material",
+      "name" : "Material",
+      "type" : "material"
+    },
+    "max_acceleration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_acceleration",
+      "name" : "Max Acceleration",
+      "type" : "double"
+    },
+    "max_altitude" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_altitude",
+      "name" : "Max Altitude",
+      "type" : "integer"
+    },
+    "max_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_damage",
+      "name" : "Max Damage",
+      "type" : "integer"
+    },
+    "max_deceleration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_deceleration",
+      "name" : "Max Deceleration",
+      "type" : "double"
+    },
+    "max_height" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_height",
+      "name" : "Max Height",
+      "type" : "integer"
+    },
+    "max_height_above_ground" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_height_above_ground",
+      "name" : "Max Height Above Ground",
+      "type" : "integer"
+    },
+    "max_level" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_level",
+      "name" : "Max Level",
+      "type" : "integer"
+    },
+    "max_magnitude" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_magnitude",
+      "name" : "Max Magnitude",
+      "type" : "double"
+    },
+    "max_slot" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_slot",
+      "name" : "Max Slot",
+      "type" : "integer"
+    },
+    "max_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "max_speed",
+      "name" : "Max Speed",
+      "type" : "double"
+    },
+    "message" : {
+      "category" : "",
+      "description" : "",
+      "field" : "message",
+      "name" : "Message",
+      "type" : "string"
+    },
+    "message_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "message_target",
+      "name" : "Message Target",
+      "type" : "boolean"
+    },
+    "message_type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "message_type",
+      "name" : "Message Type",
+      "type" : "string"
+    },
+    "min_block_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "min_block_range",
+      "name" : "Min Block Range",
+      "type" : "double"
+    },
+    "min_entity_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "min_entity_range",
+      "name" : "Min Entity Range",
+      "type" : "double"
+    },
+    "min_health" : {
+      "category" : "",
+      "description" : "",
+      "field" : "min_health",
+      "name" : "Min Health",
+      "type" : "double"
+    },
+    "min_slot" : {
+      "category" : "",
+      "description" : "",
+      "field" : "min_slot",
+      "name" : "Min Slot",
+      "type" : "integer"
+    },
+    "min_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "min_speed",
+      "name" : "Min Speed",
+      "type" : "double"
+    },
+    "miss_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "miss_effects",
+      "name" : "Miss Effects",
+      "type" : "string"
+    },
+    "modal" : {
+      "category" : "",
+      "description" : "",
+      "field" : "modal",
+      "name" : "Modal",
+      "type" : "boolean"
+    },
+    "modify_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "modify_target",
+      "name" : "Modify Target",
+      "type" : "string"
+    },
+    "mount_name" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mount_name",
+      "name" : "Mount Name",
+      "type" : "string"
+    },
+    "mount_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mount_target",
+      "name" : "Mount Target",
+      "type" : "boolean"
+    },
+    "mount_untargetable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mount_untargetable",
+      "name" : "Mount Untargetable",
+      "type" : "boolean"
+    },
+    "mount_wand" : {
+      "category" : "",
+      "description" : "",
+      "field" : "mount_wand",
+      "name" : "Mount Wand",
+      "type" : "boolean"
+    },
+    "multiply" : {
+      "category" : "",
+      "description" : "",
+      "field" : "multiply",
+      "name" : "Multiply",
+      "type" : "integer"
+    },
+    "name" : {
+      "category" : "",
+      "description" : "",
+      "field" : "name",
+      "name" : "Name",
+      "type" : "string"
+    },
+    "no_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "no_target",
+      "name" : "No Target",
+      "type" : "boolean"
+    },
+    "not_attachable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "not_attachable",
+      "name" : "Not Attachable",
+      "type" : "string"
+    },
+    "npc_weight" : {
+      "category" : "",
+      "description" : "",
+      "field" : "npc_weight",
+      "name" : "Npc Weight",
+      "type" : "integer"
+    },
+    "offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "offset",
+      "name" : "Offset",
+      "type" : "vector"
+    },
+    "only_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "only_caster",
+      "name" : "Only Caster",
+      "type" : "boolean"
+    },
+    "op" : {
+      "category" : "",
+      "description" : "",
+      "field" : "op",
+      "name" : "Op",
+      "type" : "boolean"
+    },
+    "orient" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient",
+      "name" : "Orient",
+      "type" : "boolean"
+    },
+    "orient_head" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient_head",
+      "name" : "Orient Head",
+      "type" : "boolean"
+    },
+    "orient_pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient_pitch",
+      "name" : "Orient Pitch",
+      "type" : "boolean"
+    },
+    "orient_pitch_snap" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient_pitch_snap",
+      "name" : "Orient Pitch Snap",
+      "type" : "double"
+    },
+    "orient_right_arm" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient_right_arm",
+      "name" : "Orient Right Arm",
+      "type" : "boolean"
+    },
+    "orient_snap" : {
+      "category" : "",
+      "description" : "",
+      "field" : "orient_snap",
+      "name" : "Orient Snap",
+      "type" : "double"
+    },
+    "otworld" : {
+      "category" : "",
+      "description" : "",
+      "field" : "otworld",
+      "name" : "Otworld",
+      "type" : "string"
+    },
+    "outer_probability" : {
+      "category" : "",
+      "description" : "",
+      "field" : "outer_probability",
+      "name" : "Outer Probability",
+      "type" : "double"
+    },
+    "override" : {
+      "category" : "",
+      "description" : "",
+      "field" : "override",
+      "name" : "Override",
+      "type" : "boolean"
+    },
+    "passenger" : {
+      "category" : "",
+      "description" : "",
+      "field" : "passenger",
+      "name" : "Passenger",
+      "type" : "boolean"
+    },
+    "passthrough_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "passthrough_range",
+      "name" : "Passthrough Range",
+      "type" : "integer"
+    },
+    "path" : {
+      "category" : "",
+      "description" : "",
+      "field" : "path",
+      "name" : "Path",
+      "type" : "string"
+    },
+    "path_end" : {
+      "category" : "",
+      "description" : "",
+      "field" : "path_end",
+      "name" : "Path End",
+      "type" : "string"
+    },
+    "path_exact" : {
+      "category" : "",
+      "description" : "",
+      "field" : "path_exact",
+      "name" : "Path Exact",
+      "type" : "string"
+    },
+    "percentage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "percentage",
+      "name" : "Percentage",
+      "type" : "double"
+    },
+    "permission" : {
+      "category" : "",
+      "description" : "",
+      "field" : "permission",
+      "name" : "Permission",
+      "type" : "string"
+    },
+    "persist_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "persist_caster",
+      "name" : "Persist Caster",
+      "type" : "boolean"
+    },
+    "persist_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "persist_target",
+      "name" : "Persist Target",
+      "type" : "boolean"
+    },
+    "physics" : {
+      "category" : "",
+      "description" : "",
+      "field" : "physics",
+      "name" : "Physics",
+      "type" : "boolean"
+    },
+    "physics_blocks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "physics_blocks",
+      "name" : "Physics Blocks",
+      "type" : "boolean"
+    },
+    "physics_buffer" : {
+      "category" : "",
+      "description" : "",
+      "field" : "physics_buffer",
+      "name" : "Physics Buffer",
+      "type" : "integer"
+    },
+    "pickup" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pickup",
+      "name" : "Pickup",
+      "type" : "string"
+    },
+    "pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pitch",
+      "name" : "Pitch",
+      "type" : "double"
+    },
+    "pitch_controllable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pitch_controllable",
+      "name" : "Pitch Controllable",
+      "type" : "boolean"
+    },
+    "pitch_max" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pitch_max",
+      "name" : "Pitch Max",
+      "type" : "integer"
+    },
+    "pitch_min" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pitch_min",
+      "name" : "Pitch Min",
+      "type" : "integer"
+    },
+    "pitch_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "pitch_offset",
+      "name" : "Pitch Offset",
+      "type" : "double"
+    },
+    "player_damage" : {
+      "category" : "",
+      "description" : "",
+      "field" : "player_damage",
+      "name" : "Player Damage",
+      "type" : "double"
+    },
+    "player_weight" : {
+      "category" : "",
+      "description" : "",
+      "field" : "player_weight",
+      "name" : "Player Weight",
+      "type" : "integer"
+    },
+    "power" : {
+      "category" : "",
+      "description" : "",
+      "field" : "power",
+      "name" : "Power",
+      "type" : "integer"
+    },
+    "probability" : {
+      "category" : "",
+      "description" : "",
+      "field" : "probability",
+      "name" : "Probability",
+      "type" : "double"
+    },
+    "projectile" : {
+      "category" : "",
+      "description" : "",
+      "field" : "projectile",
+      "name" : "Projectile",
+      "type" : "string"
+    },
+    "projectile_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "projectile_effects",
+      "name" : "Projectile Effects",
+      "type" : "map"
+    },
+    "projectile_follow_player" : {
+      "category" : "",
+      "description" : "",
+      "field" : "projectile_follow_player",
+      "name" : "Projectile Follow Player",
+      "type" : "boolean"
+    },
+    "protection" : {
+      "category" : "",
+      "description" : "",
+      "field" : "protection",
+      "name" : "Protection",
+      "type" : "map"
+    },
+    "protection_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "protection_count",
+      "name" : "Protection Count",
+      "type" : "integer"
+    },
+    "protection_duration" : {
+      "category" : "",
+      "description" : "",
+      "field" : "protection_duration",
+      "name" : "Protection Duration",
+      "type" : "integer"
+    },
+    "push" : {
+      "category" : "",
+      "description" : "",
+      "field" : "push",
+      "name" : "Push",
+      "type" : "double"
+    },
+    "put_in_hand" : {
+      "category" : "",
+      "description" : "",
+      "field" : "put_in_hand",
+      "name" : "Put In Hand",
+      "type" : "boolean"
+    },
+    "radius" : {
+      "category" : "",
+      "description" : "",
+      "field" : "radius",
+      "name" : "Radius",
+      "type" : "integer"
+    },
+    "radius_on_use" : {
+      "category" : "",
+      "description" : "",
+      "field" : "radius_on_use",
+      "name" : "Radius On Use",
+      "type" : "double"
+    },
+    "radius_padding" : {
+      "category" : "",
+      "description" : "",
+      "field" : "radius_padding",
+      "name" : "Radius Padding",
+      "type" : "double"
+    },
+    "radius_per_tick" : {
+      "category" : "",
+      "description" : "",
+      "field" : "radius_per_tick",
+      "name" : "Radius Per Tick",
+      "type" : "double"
+    },
+    "random_source_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "random_source_offset",
+      "name" : "Random Source Offset",
+      "type" : "vector"
+    },
+    "random_target_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "random_target_offset",
+      "name" : "Random Target Offset",
+      "type" : "vector"
+    },
+    "range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "range",
+      "name" : "Range",
+      "type" : "integer"
+    },
+    "range_padding" : {
+      "category" : "",
+      "description" : "",
+      "field" : "range_padding",
+      "name" : "Range Padding",
+      "type" : "double"
+    },
+    "reapplication_delay" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reapplication_delay",
+      "name" : "Reapplication Delay",
+      "type" : "integer"
+    },
+    "records" : {
+      "category" : "",
+      "description" : "",
+      "field" : "records",
+      "name" : "Records",
+      "type" : "string"
+    },
+    "redstone_torch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "redstone_torch",
+      "name" : "Redstone Torch",
+      "type" : "boolean"
+    },
+    "reflect_chance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_chance",
+      "name" : "Reflect Chance",
+      "type" : "double"
+    },
+    "reflect_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_count",
+      "name" : "Reflect Count",
+      "type" : "integer"
+    },
+    "reflect_reorient" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_reorient",
+      "name" : "Reflect Reorient",
+      "type" : "boolean"
+    },
+    "reflect_reset_distance_traveled" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_reset_distance_traveled",
+      "name" : "Reflect Reset Distance Traveled",
+      "type" : "boolean"
+    },
+    "reflect_target_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_target_caster",
+      "name" : "Reflect Target Caster",
+      "type" : "boolean"
+    },
+    "reflect_track_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_track_range",
+      "name" : "Reflect Track Range",
+      "type" : "double"
+    },
+    "reflect_track_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reflect_track_target",
+      "name" : "Reflect Track Target",
+      "type" : "boolean"
+    },
+    "relative_source_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "relative_source_offset",
+      "name" : "Relative Source Offset",
+      "type" : "vector"
+    },
+    "relative_target_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "relative_target_offset",
+      "name" : "Relative Target Offset",
+      "type" : "vector"
+    },
+    "reorient" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reorient",
+      "name" : "Reorient",
+      "type" : "boolean"
+    },
+    "repeat" : {
+      "category" : "",
+      "description" : "",
+      "field" : "repeat",
+      "name" : "Repeat",
+      "type" : "string"
+    },
+    "repeat_random" : {
+      "category" : "",
+      "description" : "",
+      "field" : "repeat_random",
+      "name" : "Repeat Random",
+      "type" : "boolean"
+    },
+    "repeat_skip" : {
+      "category" : "",
+      "description" : "",
+      "field" : "repeat_skip",
+      "name" : "Repeat Skip",
+      "type" : "boolean"
+    },
+    "replace" : {
+      "category" : "",
+      "description" : "",
+      "field" : "replace",
+      "name" : "Replace",
+      "type" : "boolean"
+    },
+    "require_block" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_block",
+      "name" : "Require Block",
+      "type" : "boolean"
+    },
+    "require_build" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_build",
+      "name" : "Require Build",
+      "type" : "boolean"
+    },
+    "require_elytra" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_elytra",
+      "name" : "Require Elytra",
+      "type" : "boolean"
+    },
+    "require_exit" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_exit",
+      "name" : "Require Exit",
+      "type" : "boolean"
+    },
+    "require_mana" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_mana",
+      "name" : "Require Mana",
+      "type" : "double"
+    },
+    "require_mana_empty" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_mana_empty",
+      "name" : "Require Mana Empty",
+      "type" : "boolean"
+    },
+    "require_mana_not_full" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_mana_not_full",
+      "name" : "Require Mana Not Full",
+      "type" : "boolean"
+    },
+    "require_sapling" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_sapling",
+      "name" : "Require Sapling",
+      "type" : "boolean"
+    },
+    "require_template" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_template",
+      "name" : "Require Template",
+      "type" : "string"
+    },
+    "require_wand" : {
+      "category" : "",
+      "description" : "",
+      "field" : "require_wand",
+      "name" : "Require Wand",
+      "type" : "boolean"
+    },
+    "requires" : {
+      "category" : "",
+      "description" : "",
+      "field" : "requires",
+      "name" : "Requires",
+      "type" : "string"
+    },
+    "requires_entity_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "requires_entity_target",
+      "name" : "Requires Entity Target",
+      "type" : "boolean"
+    },
+    "requires_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "requires_target",
+      "name" : "Requires Target",
+      "type" : "boolean"
+    },
+    "reset_time_on_path_change" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reset_time_on_path_change",
+      "name" : "Reset Time On Path Change",
+      "type" : "boolean"
+    },
+    "return_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "return_offset",
+      "name" : "Return Offset",
+      "type" : "vector"
+    },
+    "return_on_finish" : {
+      "category" : "",
+      "description" : "",
+      "field" : "return_on_finish",
+      "name" : "Return On Finish",
+      "type" : "boolean"
+    },
+    "return_relative_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "return_relative_offset",
+      "name" : "Return Relative Offset",
+      "type" : "vector"
+    },
+    "return_to_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "return_to_caster",
+      "name" : "Return To Caster",
+      "type" : "boolean"
+    },
+    "reverse" : {
+      "category" : "",
+      "description" : "",
+      "field" : "reverse",
+      "name" : "Reverse",
+      "type" : "boolean"
+    },
+    "rider_untargetable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "rider_untargetable",
+      "name" : "Rider Untargetable",
+      "type" : "boolean"
+    },
+    "riding_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "riding_effects",
+      "name" : "Riding Effects",
+      "type" : "map"
+    },
+    "right_arm_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "right_arm_item",
+      "name" : "Right Arm Item",
+      "type" : "string"
+    },
+    "safe" : {
+      "category" : "",
+      "description" : "",
+      "field" : "safe",
+      "name" : "Safe",
+      "type" : "boolean"
+    },
+    "sample" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sample",
+      "name" : "Sample",
+      "type" : "boolean"
+    },
+    "saturation" : {
+      "category" : "",
+      "description" : "",
+      "field" : "saturation",
+      "name" : "Saturation",
+      "type" : "integer"
+    },
+    "scale" : {
+      "category" : "",
+      "description" : "",
+      "field" : "scale",
+      "name" : "Scale",
+      "type" : "double"
+    },
+    "selected" : {
+      "category" : "",
+      "description" : "",
+      "field" : "selected",
+      "name" : "Selected",
+      "type" : "string"
+    },
+    "sell" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sell",
+      "name" : "Sell",
+      "type" : "boolean"
+    },
+    "server" : {
+      "category" : "",
+      "description" : "",
+      "field" : "server",
+      "name" : "Server",
+      "type" : "string"
+    },
+    "set_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "set_target",
+      "name" : "Set Target",
+      "type" : "boolean"
+    },
+    "show_active_icons" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_active_icons",
+      "name" : "Show Active Icons",
+      "type" : "boolean"
+    },
+    "show_extra_spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_extra_spells",
+      "name" : "Show Extra Spells",
+      "type" : "boolean"
+    },
+    "show_free" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_free",
+      "name" : "Show Free",
+      "type" : "boolean"
+    },
+    "show_path_spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_path_spells",
+      "name" : "Show Path Spells",
+      "type" : "boolean"
+    },
+    "show_required_spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_required_spells",
+      "name" : "Show Required Spells",
+      "type" : "boolean"
+    },
+    "show_unavailable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_unavailable",
+      "name" : "Show Unavailable",
+      "type" : "boolean"
+    },
+    "show_upgrades" : {
+      "category" : "",
+      "description" : "",
+      "field" : "show_upgrades",
+      "name" : "Show Upgrades",
+      "type" : "boolean"
+    },
+    "silent" : {
+      "category" : "",
+      "description" : "",
+      "field" : "silent",
+      "name" : "Silent",
+      "type" : "boolean"
+    },
+    "size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "size",
+      "name" : "Size",
+      "type" : "integer"
+    },
+    "skeletons" : {
+      "category" : "",
+      "description" : "",
+      "field" : "skeletons",
+      "name" : "Skeletons",
+      "type" : "boolean"
+    },
+    "skip" : {
+      "category" : "",
+      "description" : "",
+      "field" : "skip",
+      "name" : "Skip",
+      "type" : "integer"
+    },
+    "sound" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound",
+      "name" : "Sound",
+      "type" : "string"
+    },
+    "sound_interval" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_interval",
+      "name" : "Sound Interval",
+      "type" : "integer"
+    },
+    "sound_max_pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_max_pitch",
+      "name" : "Sound Max Pitch",
+      "type" : "double"
+    },
+    "sound_max_volume" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_max_volume",
+      "name" : "Sound Max Volume",
+      "type" : "double"
+    },
+    "sound_min_pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_min_pitch",
+      "name" : "Sound Min Pitch",
+      "type" : "double"
+    },
+    "sound_min_volume" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_min_volume",
+      "name" : "Sound Min Volume",
+      "type" : "double"
+    },
+    "sound_pitch" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_pitch",
+      "name" : "Sound Pitch",
+      "type" : "double"
+    },
+    "sound_volume" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sound_volume",
+      "name" : "Sound Volume",
+      "type" : "double"
+    },
+    "source_at_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_at_target",
+      "name" : "Source At Target",
+      "type" : "boolean"
+    },
+    "source_direction" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_direction",
+      "name" : "Source Direction",
+      "type" : "string"
+    },
+    "source_direction_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_direction_offset",
+      "name" : "Source Direction Offset",
+      "type" : "vector"
+    },
+    "source_is_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_is_target",
+      "name" : "Source Is Target",
+      "type" : "boolean"
+    },
+    "source_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_location",
+      "name" : "Source Location",
+      "type" : "string"
+    },
+    "source_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_offset",
+      "name" : "Source Offset",
+      "type" : "vector"
+    },
+    "source_pitch_max" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_pitch_max",
+      "name" : "Source Pitch Max",
+      "type" : "integer"
+    },
+    "source_pitch_min" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_pitch_min",
+      "name" : "Source Pitch Min",
+      "type" : "integer"
+    },
+    "source_pitch_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_pitch_offset",
+      "name" : "Source Pitch Offset",
+      "type" : "double"
+    },
+    "source_relative_direction_pitch_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_relative_direction_pitch_offset",
+      "name" : "Source Relative Direction Pitch Offset",
+      "type" : "double"
+    },
+    "source_relative_direction_yaw_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_relative_direction_yaw_offset",
+      "name" : "Source Relative Direction Yaw Offset",
+      "type" : "double"
+    },
+    "source_yaw_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "source_yaw_offset",
+      "name" : "Source Yaw Offset",
+      "type" : "double"
+    },
+    "sp" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sp",
+      "name" : "Sp",
+      "type" : "integer"
+    },
+    "speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "speed",
+      "name" : "Speed",
+      "type" : "double"
+    },
+    "speed_max" : {
+      "category" : "",
+      "description" : "",
+      "field" : "speed_max",
+      "name" : "Speed Max",
+      "type" : "double"
+    },
+    "speed_min" : {
+      "category" : "",
+      "description" : "",
+      "field" : "speed_min",
+      "name" : "Speed Min",
+      "type" : "double"
+    },
+    "spell" : {
+      "category" : "",
+      "description" : "",
+      "field" : "spell",
+      "name" : "Spell",
+      "type" : "string"
+    },
+    "spells" : {
+      "category" : "",
+      "description" : "",
+      "field" : "spells",
+      "name" : "Spells",
+      "type" : "string"
+    },
+    "spread" : {
+      "category" : "",
+      "description" : "",
+      "field" : "spread",
+      "name" : "Spread",
+      "type" : "double"
+    },
+    "spread_movement" : {
+      "category" : "",
+      "description" : "",
+      "field" : "spread_movement",
+      "name" : "Spread Movement",
+      "type" : "double"
+    },
+    "spread_movement_max" : {
+      "category" : "",
+      "description" : "",
+      "field" : "spread_movement_max",
+      "name" : "Spread Movement Max",
+      "type" : "double"
+    },
+    "start" : {
+      "category" : "",
+      "description" : "",
+      "field" : "start",
+      "name" : "Start",
+      "type" : "integer"
+    },
+    "start_at_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "start_at_target",
+      "name" : "Start At Target",
+      "type" : "boolean"
+    },
+    "start_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "start_speed",
+      "name" : "Start Speed",
+      "type" : "double"
+    },
+    "stay" : {
+      "category" : "",
+      "description" : "",
+      "field" : "stay",
+      "name" : "Stay",
+      "type" : "integer"
+    },
+    "steer_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "steer_speed",
+      "name" : "Steer Speed",
+      "type" : "double"
+    },
+    "stop_on_success" : {
+      "category" : "",
+      "description" : "",
+      "field" : "stop_on_success",
+      "name" : "Stop On Success",
+      "type" : "boolean"
+    },
+    "strafe_controllable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "strafe_controllable",
+      "name" : "Strafe Controllable",
+      "type" : "double"
+    },
+    "strength" : {
+      "category" : "",
+      "description" : "",
+      "field" : "strength",
+      "name" : "Strength",
+      "type" : "map"
+    },
+    "sub_message" : {
+      "category" : "",
+      "description" : "",
+      "field" : "sub_message",
+      "name" : "Sub Message",
+      "type" : "string"
+    },
+    "tamed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tamed",
+      "name" : "Tamed",
+      "type" : "boolean"
+    },
+    "target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target",
+      "name" : "Target",
+      "type" : "string"
+    },
+    "target_above" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_above",
+      "name" : "Target Above",
+      "type" : "boolean"
+    },
+    "target_air" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_air",
+      "name" : "Target Air",
+      "type" : "boolean"
+    },
+    "target_all_worlds" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_all_worlds",
+      "name" : "Target All Worlds",
+      "type" : "boolean"
+    },
+    "target_attachment" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_attachment",
+      "name" : "Target Attachment",
+      "type" : "boolean"
+    },
+    "target_block_timeout" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_block_timeout",
+      "name" : "Target Block Timeout",
+      "type" : "integer"
+    },
+    "target_blocks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_blocks",
+      "name" : "Target Blocks",
+      "type" : "boolean"
+    },
+    "target_breakable_depth" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_breakable_depth",
+      "name" : "Target Breakable Depth",
+      "type" : "integer"
+    },
+    "target_breakables" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_breakables",
+      "name" : "Target Breakables",
+      "type" : "double"
+    },
+    "target_caster" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_caster",
+      "name" : "Target Caster",
+      "type" : "boolean"
+    },
+    "target_count" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_count",
+      "name" : "Target Count",
+      "type" : "integer"
+    },
+    "target_direction" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_direction",
+      "name" : "Target Direction",
+      "type" : "string"
+    },
+    "target_direction_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_direction_offset",
+      "name" : "Target Direction Offset",
+      "type" : "vector"
+    },
+    "target_down" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_down",
+      "name" : "Target Down",
+      "type" : "boolean"
+    },
+    "target_entity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_entity",
+      "name" : "Target Entity",
+      "type" : "boolean"
+    },
+    "target_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_location",
+      "name" : "Target Location",
+      "type" : "string"
+    },
+    "target_min_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_min_offset",
+      "name" : "Target Min Offset",
+      "type" : "integer"
+    },
+    "target_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_offset",
+      "name" : "Target Offset",
+      "type" : "vector"
+    },
+    "target_other_blocks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_other_blocks",
+      "name" : "Target Other Blocks",
+      "type" : "boolean"
+    },
+    "target_pitch_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_pitch_offset",
+      "name" : "Target Pitch Offset",
+      "type" : "double"
+    },
+    "target_relative_direction_pitch_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_relative_direction_pitch_offset",
+      "name" : "Target Relative Direction Pitch Offset",
+      "type" : "double"
+    },
+    "target_relative_direction_yaw_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_relative_direction_yaw_offset",
+      "name" : "Target Relative Direction Yaw Offset",
+      "type" : "double"
+    },
+    "target_self_timeout" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_self_timeout",
+      "name" : "Target Self Timeout",
+      "type" : "integer"
+    },
+    "target_snap" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_snap",
+      "name" : "Target Snap",
+      "type" : "integer"
+    },
+    "target_source" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_source",
+      "name" : "Target Source",
+      "type" : "boolean"
+    },
+    "target_spell" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_spell",
+      "name" : "Target Spell",
+      "type" : "string"
+    },
+    "target_timeout" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_timeout",
+      "name" : "Target Timeout",
+      "type" : "integer"
+    },
+    "target_yaw_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "target_yaw_offset",
+      "name" : "Target Yaw Offset",
+      "type" : "double"
+    },
+    "teleport" : {
+      "category" : "",
+      "description" : "",
+      "field" : "teleport",
+      "name" : "Teleport",
+      "type" : "boolean"
+    },
+    "thickness" : {
+      "category" : "",
+      "description" : "",
+      "field" : "thickness",
+      "name" : "Thickness",
+      "type" : "double"
+    },
+    "tick_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tick_effects",
+      "name" : "Tick Effects",
+      "type" : "string"
+    },
+    "tick_increase" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tick_increase",
+      "name" : "Tick Increase",
+      "type" : "integer"
+    },
+    "tick_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tick_size",
+      "name" : "Tick Size",
+      "type" : "double"
+    },
+    "time" : {
+      "category" : "",
+      "description" : "",
+      "field" : "time",
+      "name" : "Time",
+      "type" : "string"
+    },
+    "timeout" : {
+      "category" : "",
+      "description" : "",
+      "field" : "timeout",
+      "name" : "Timeout",
+      "type" : "integer"
+    },
+    "title" : {
+      "category" : "",
+      "description" : "",
+      "field" : "title",
+      "name" : "Title",
+      "type" : "string"
+    },
+    "tmo" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tmo",
+      "name" : "Tmo",
+      "type" : "integer"
+    },
+    "tnt_velocity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "tnt_velocity",
+      "name" : "Tnt Velocity",
+      "type" : "double"
+    },
+    "track_projectile" : {
+      "category" : "",
+      "description" : "",
+      "field" : "track_projectile",
+      "name" : "Track Projectile",
+      "type" : "boolean"
+    },
+    "track_radius" : {
+      "category" : "",
+      "description" : "",
+      "field" : "track_radius",
+      "name" : "Track Radius",
+      "type" : "double"
+    },
+    "track_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "track_range",
+      "name" : "Track Range",
+      "type" : "double"
+    },
+    "track_speed" : {
+      "category" : "",
+      "description" : "",
+      "field" : "track_speed",
+      "name" : "Track Speed",
+      "type" : "double"
+    },
+    "track_target" : {
+      "category" : "",
+      "description" : "",
+      "field" : "track_target",
+      "name" : "Track Target",
+      "type" : "boolean"
+    },
+    "trail" : {
+      "category" : "",
+      "description" : "",
+      "field" : "trail",
+      "name" : "Trail",
+      "type" : "boolean"
+    },
+    "triggers" : {
+      "category" : "",
+      "description" : "",
+      "field" : "triggers",
+      "name" : "Triggers",
+      "type" : "map"
+    },
+    "type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "type",
+      "name" : "Type",
+      "type" : "entity_type"
+    },
+    "unbreakable" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unbreakable",
+      "name" : "Unbreakable",
+      "type" : "boolean"
+    },
+    "unbreakable_items" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unbreakable_items",
+      "name" : "Unbreakable Items",
+      "type" : "boolean"
+    },
+    "undo" : {
+      "category" : "",
+      "description" : "",
+      "field" : "undo",
+      "name" : "Undo",
+      "type" : "integer"
+    },
+    "undo_oldest" : {
+      "category" : "",
+      "description" : "",
+      "field" : "undo_oldest",
+      "name" : "Undo Oldest",
+      "type" : "integer"
+    },
+    "undo_to" : {
+      "category" : "",
+      "description" : "",
+      "field" : "undo_to",
+      "name" : "Undo To",
+      "type" : "integer"
+    },
+    "unlock" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unlock",
+      "name" : "Unlock",
+      "type" : "string"
+    },
+    "unlock_class" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unlock_class",
+      "name" : "Unlock Class",
+      "type" : "string"
+    },
+    "unlock_confirm_title" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unlock_confirm_title",
+      "name" : "Unlock Confirm Title",
+      "type" : "string"
+    },
+    "unlock_key" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unlock_key",
+      "name" : "Unlock Key",
+      "type" : "string"
+    },
+    "unlock_section" : {
+      "category" : "",
+      "description" : "",
+      "field" : "unlock_section",
+      "name" : "Unlock Section",
+      "type" : "string"
+    },
+    "update" : {
+      "category" : "",
+      "description" : "",
+      "field" : "update",
+      "name" : "Update",
+      "type" : "boolean"
+    },
+    "update_launch_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "update_launch_location",
+      "name" : "Update Launch Location",
+      "type" : "boolean"
+    },
+    "upgrade" : {
+      "category" : "",
+      "description" : "",
+      "field" : "upgrade",
+      "name" : "Upgrade",
+      "type" : "boolean"
+    },
+    "upgrade_levels" : {
+      "category" : "",
+      "description" : "",
+      "field" : "upgrade_levels",
+      "name" : "Upgrade Levels",
+      "type" : "integer"
+    },
+    "upgrade_requires_casts" : {
+      "category" : "",
+      "description" : "",
+      "field" : "upgrade_requires_casts",
+      "name" : "Upgrade Requires Casts",
+      "type" : "boolean"
+    },
+    "use_block_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_block_location",
+      "name" : "Use Block Location",
+      "type" : "boolean"
+    },
+    "use_brush_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_brush_size",
+      "name" : "Use Brush Size",
+      "type" : "boolean"
+    },
+    "use_cast_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_cast_location",
+      "name" : "Use Cast Location",
+      "type" : "boolean"
+    },
+    "use_eye_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_eye_location",
+      "name" : "Use Eye Location",
+      "type" : "boolean"
+    },
+    "use_hit_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_hit_location",
+      "name" : "Use Hit Location",
+      "type" : "boolean"
+    },
+    "use_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_item",
+      "name" : "Use Item",
+      "type" : "boolean"
+    },
+    "use_items" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_items",
+      "name" : "Use Items",
+      "type" : "boolean"
+    },
+    "use_sp" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_sp",
+      "name" : "Use Sp",
+      "type" : "boolean"
+    },
+    "use_target_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_target_location",
+      "name" : "Use Target Location",
+      "type" : "boolean"
+    },
+    "use_wand_location" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_wand_location",
+      "name" : "Use Wand Location",
+      "type" : "boolean"
+    },
+    "use_xp" : {
+      "category" : "",
+      "description" : "",
+      "field" : "use_xp",
+      "name" : "Use Xp",
+      "type" : "boolean"
+    },
+    "vanish" : {
+      "category" : "",
+      "description" : "",
+      "field" : "vanish",
+      "name" : "Vanish",
+      "type" : "boolean"
+    },
+    "variant" : {
+      "category" : "",
+      "description" : "",
+      "field" : "variant",
+      "name" : "Variant",
+      "type" : "string"
+    },
+    "velocity" : {
+      "category" : "",
+      "description" : "",
+      "field" : "velocity",
+      "name" : "Velocity",
+      "type" : "double"
+    },
+    "velocity_max_distance" : {
+      "category" : "",
+      "description" : "",
+      "field" : "velocity_max_distance",
+      "name" : "Velocity Max Distance",
+      "type" : "double"
+    },
+    "velocity_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "velocity_offset",
+      "name" : "Velocity Offset",
+      "type" : "vector"
+    },
+    "vertical_range" : {
+      "category" : "",
+      "description" : "",
+      "field" : "vertical_range",
+      "name" : "Vertical Range",
+      "type" : "integer"
+    },
+    "visible_delay_ticks" : {
+      "category" : "",
+      "description" : "",
+      "field" : "visible_delay_ticks",
+      "name" : "Visible Delay Ticks",
+      "type" : "integer"
+    },
+    "volume" : {
+      "category" : "",
+      "description" : "",
+      "field" : "volume",
+      "name" : "Volume",
+      "type" : "double"
+    },
+    "volume_type" : {
+      "category" : "",
+      "description" : "",
+      "field" : "volume_type",
+      "name" : "Volume Type",
+      "type" : "string"
+    },
+    "wait_for_landing" : {
+      "category" : "",
+      "description" : "",
+      "field" : "wait_for_landing",
+      "name" : "Wait For Landing",
+      "type" : "boolean"
+    },
+    "wait_time" : {
+      "category" : "",
+      "description" : "",
+      "field" : "wait_time",
+      "name" : "Wait Time",
+      "type" : "integer"
+    },
+    "warmup" : {
+      "category" : "",
+      "description" : "",
+      "field" : "warmup",
+      "name" : "Warmup",
+      "type" : "integer"
+    },
+    "warning_effects" : {
+      "category" : "",
+      "description" : "",
+      "field" : "warning_effects",
+      "name" : "Warning Effects",
+      "type" : "map"
+    },
+    "weakness" : {
+      "category" : "",
+      "description" : "",
+      "field" : "weakness",
+      "name" : "Weakness",
+      "type" : "map"
+    },
+    "weather" : {
+      "category" : "",
+      "description" : "",
+      "field" : "weather",
+      "name" : "Weather",
+      "type" : "weather"
+    },
+    "worth_item" : {
+      "category" : "",
+      "description" : "",
+      "field" : "worth_item",
+      "name" : "Worth Item",
+      "type" : "string"
+    },
+    "x_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "x_size",
+      "name" : "X Size",
+      "type" : "double"
+    },
+    "y_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "y_offset",
+      "name" : "Y Offset",
+      "type" : "double"
+    },
+    "y_radius" : {
+      "category" : "",
+      "description" : "",
+      "field" : "y_radius",
+      "name" : "Y Radius",
+      "type" : "integer"
+    },
+    "y_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "y_size",
+      "name" : "Y Size",
+      "type" : "double"
+    },
+    "yaw_max" : {
+      "category" : "",
+      "description" : "",
+      "field" : "yaw_max",
+      "name" : "Yaw Max",
+      "type" : "double"
+    },
+    "yaw_offset" : {
+      "category" : "",
+      "description" : "",
+      "field" : "yaw_offset",
+      "name" : "Yaw Offset",
+      "type" : "double"
+    },
+    "z_size" : {
+      "category" : "",
+      "description" : "",
+      "field" : "z_size",
+      "name" : "Z Size",
+      "type" : "double"
+    }
+  },
+  "types" : {
+    "boolean" : {
+      "className" : "java.lang.Boolean",
+      "description" : "",
+      "name" : "Boolean",
+      "options" : [ ]
+    },
+    "damage_type" : {
+      "className" : "java.lang.String",
+      "description" : "",
+      "name" : "Damage Type",
+      "options" : [ ]
+    },
+    "double" : {
+      "className" : "java.lang.Double",
+      "description" : "",
+      "name" : "Double",
+      "options" : [ ]
+    },
+    "entity_type" : {
+      "className" : "org.bukkit.entity.EntityType",
+      "description" : "",
+      "name" : "Entity Type",
+      "options" : [ "area_effect_cloud", "armor_stand", "arrow", "bat", "blaze", "boat", "cave_spider", "chicken", "complex_part", "cow", "creeper", "dragon_fireball", "dropped_item", "egg", "ender_crystal", "ender_dragon", "ender_pearl", "ender_signal", "enderman", "endermite", "experience_orb", "falling_block", "fireball", "firework", "fishing_hook", "ghast", "giant", "guardian", "horse", "iron_golem", "item_frame", "leash_hitch", "lightning", "lingering_potion", "magma_cube", "minecart", "minecart_chest", "minecart_command", "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player", "primed_tnt", "rabbit", "sheep", "shulker", "shulker_bullet", "silverfish", "skeleton", "slime", "small_fireball", "snowball", "snowman", "spectral_arrow", "spider", "splash_potion", "squid", "thrown_exp_bottle", "tipped_arrow", "unknown", "villager", "weather", "witch", "wither", "wither_skull", "wolf", "zombie" ]
+    },
+    "integer" : {
+      "className" : "java.lang.Integer",
+      "description" : "",
+      "name" : "Integer",
+      "options" : [ ]
+    },
+    "long" : {
+      "className" : "java.lang.Long",
+      "description" : "",
+      "name" : "Long",
+      "options" : [ ]
+    },
+    "map" : {
+      "className" : "java.util.Map",
+      "description" : "",
+      "name" : "Map",
+      "options" : [ ]
+    },
+    "material" : {
+      "className" : "org.bukkit.Material",
+      "description" : "",
+      "name" : "Material",
+      "options" : [ "acacia_door", "acacia_door_item", "acacia_fence", "acacia_fence_gate", "acacia_stairs", "activator_rail", "air", "anvil", "apple", "armor_stand", "arrow", "baked_potato", "banner", "barrier", "beacon", "bed", "bed_block", "bedrock", "beetroot", "beetroot_block", "beetroot_seeds", "beetroot_soup", "birch_door", "birch_door_item", "birch_fence", "birch_fence_gate", "birch_wood_stairs", "blaze_powder", "blaze_rod", "boat", "boat_acacia", "boat_birch", "boat_dark_oak", "boat_jungle", "boat_spruce", "bone", "book", "book_and_quill", "bookshelf", "bow", "bowl", "bread", "brewing_stand", "brewing_stand_item", "brick", "brick_stairs", "brown_mushroom", "bucket", "burning_furnace", "cactus", "cake", "cake_block", "carpet", "carrot", "carrot_item", "carrot_stick", "cauldron", "cauldron_item", "chainmail_boots", "chainmail_chestplate", "chainmail_helmet", "chainmail_leggings", "chest", "chorus_flower", "chorus_fruit", "chorus_fruit_popped", "chorus_plant", "clay", "clay_ball", "clay_brick", "coal", "coal_block", "coal_ore", "cobble_wall", "cobblestone", "cobblestone_stairs", "cocoa", "command", "command_chain", "command_minecart", "command_repeating", "compass", "cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton", "cooked_rabbit", "cookie", "crops", "dark_oak_door", "dark_oak_door_item", "dark_oak_fence", "dark_oak_fence_gate", "dark_oak_stairs", "daylight_detector", "daylight_detector_inverted", "dead_bush", "detector_rail", "diamond", "diamond_axe", "diamond_barding", "diamond_block", "diamond_boots", "diamond_chestplate", "diamond_helmet", "diamond_hoe", "diamond_leggings", "diamond_ore", "diamond_pickaxe", "diamond_spade", "diamond_sword", "diode", "diode_block_off", "diode_block_on", "dirt", "dispenser", "double_plant", "double_step", "double_stone_slab2", "dragon_egg", "dragons_breath", "dropper", "egg", "elytra", "emerald", "emerald_block", "emerald_ore", "empty_map", "enchanted_book", "enchantment_table", "end_bricks", "end_crystal", "end_gateway", "end_rod", "ender_chest", "ender_pearl", "ender_portal", "ender_portal_frame", "ender_stone", "exp_bottle", "explosive_minecart", "eye_of_ender", "feather", "fence", "fence_gate", "fermented_spider_eye", "fire", "fireball", "firework", "firework_charge", "fishing_rod", "flint", "flint_and_steel", "flower_pot", "flower_pot_item", "frosted_ice", "furnace", "ghast_tear", "glass", "glass_bottle", "glowing_redstone_ore", "glowstone", "glowstone_dust", "gold_axe", "gold_barding", "gold_block", "gold_boots", "gold_chestplate", "gold_helmet", "gold_hoe", "gold_ingot", "gold_leggings", "gold_nugget", "gold_ore", "gold_pickaxe", "gold_plate", "gold_record", "gold_spade", "gold_sword", "golden_apple", "golden_carrot", "grass", "grass_path", "gravel", "green_record", "grilled_pork", "hard_clay", "hay_block", "hopper", "hopper_minecart", "huge_mushroom_1", "huge_mushroom_2", "ice", "ink_sack", "iron_axe", "iron_barding", "iron_block", "iron_boots", "iron_chestplate", "iron_door", "iron_door_block", "iron_fence", "iron_helmet", "iron_hoe", "iron_ingot", "iron_leggings", "iron_ore", "iron_pickaxe", "iron_plate", "iron_spade", "iron_sword", "iron_trapdoor", "item_frame", "jack_o_lantern", "jukebox", "jungle_door", "jungle_door_item", "jungle_fence", "jungle_fence_gate", "jungle_wood_stairs", "ladder", "lapis_block", "lapis_ore", "lava", "lava_bucket", "leash", "leather", "leather_boots", "leather_chestplate", "leather_helmet", "leather_leggings", "leaves", "leaves_2", "lever", "lingering_potion", "log", "log_2", "long_grass", "magma_cream", "map", "melon", "melon_block", "melon_seeds", "melon_stem", "milk_bucket", "minecart", "mob_spawner", "monster_egg", "monster_eggs", "mossy_cobblestone", "mushroom_soup", "mutton", "mycel", "name_tag", "nether_brick", "nether_brick_item", "nether_brick_stairs", "nether_fence", "nether_stalk", "nether_star", "nether_warts", "netherrack", "note_block", "obsidian", "packed_ice", "painting", "paper", "piston_base", "piston_extension", "piston_moving_piece", "piston_sticky_base", "poisonous_potato", "pork", "portal", "potato", "potato_item", "potion", "powered_minecart", "powered_rail", "prismarine", "prismarine_crystals", "prismarine_shard", "pumpkin", "pumpkin_pie", "pumpkin_seeds", "pumpkin_stem", "purpur_block", "purpur_double_slab", "purpur_pillar", "purpur_slab", "purpur_stairs", "quartz", "quartz_block", "quartz_ore", "quartz_stairs", "rabbit", "rabbit_foot", "rabbit_hide", "rabbit_stew", "rails", "raw_beef", "raw_chicken", "raw_fish", "record_10", "record_11", "record_12", "record_3", "record_4", "record_5", "record_6", "record_7", "record_8", "record_9", "red_mushroom", "red_rose", "red_sandstone", "red_sandstone_stairs", "redstone", "redstone_block", "redstone_comparator", "redstone_comparator_off", "redstone_comparator_on", "redstone_lamp_off", "redstone_lamp_on", "redstone_ore", "redstone_torch_off", "redstone_torch_on", "redstone_wire", "rotten_flesh", "saddle", "sand", "sandstone", "sandstone_stairs", "sapling", "sea_lantern", "seeds", "shears", "shield", "sign", "sign_post", "skull", "skull_item", "slime_ball", "slime_block", "smooth_brick", "smooth_stairs", "snow", "snow_ball", "snow_block", "soil", "soul_sand", "speckled_melon", "spectral_arrow", "spider_eye", "splash_potion", "sponge", "spruce_door", "spruce_door_item", "spruce_fence", "spruce_fence_gate", "spruce_wood_stairs", "stained_clay", "stained_glass", "stained_glass_pane", "standing_banner", "stationary_lava", "stationary_water", "step", "stick", "stone", "stone_axe", "stone_button", "stone_hoe", "stone_pickaxe", "stone_plate", "stone_slab2", "stone_spade", "stone_sword", "storage_minecart", "string", "structure_block", "sugar", "sugar_cane", "sugar_cane_block", "sulphur", "thin_glass", "tipped_arrow", "tnt", "torch", "trap_door", "trapped_chest", "tripwire", "tripwire_hook", "vine", "wall_banner", "wall_sign", "watch", "water", "water_bucket", "water_lily", "web", "wheat", "wood", "wood_axe", "wood_button", "wood_door", "wood_double_step", "wood_hoe", "wood_pickaxe", "wood_plate", "wood_spade", "wood_stairs", "wood_step", "wood_sword", "wooden_door", "wool", "workbench", "written_book", "yellow_flower" ]
+    },
+    "potion_effects" : {
+      "className" : "java.util.Map",
+      "description" : "",
+      "name" : "Potion Effects",
+      "options" : [ ]
+    },
+    "string" : {
+      "className" : "java.lang.String",
+      "description" : "",
+      "name" : "String",
+      "options" : [ ]
+    },
+    "vector" : {
+      "className" : "org.bukkit.util.Vector",
+      "description" : "",
+      "name" : "Vector",
+      "options" : [ ]
+    },
+    "weather" : {
+      "className" : "java.lang.String",
+      "description" : "",
+      "name" : "Weather",
+      "options" : [ ]
+    }
+  }
+}
