@@ -54,13 +54,14 @@ public class MagicMeta {
         MagicMeta meta = new MagicMeta();
         try {
             File metaFile = new File(fileName);
-            System.out.println("Writing metadata to " + metaFile.getAbsolutePath());
             if (!regenerate) {
+                System.out.println("Loading " + metaFile.getAbsolutePath());
                 meta.loadMeta(metaFile);
             } else {
                 System.out.println("Regenerating");
             }
             meta.generateMeta();
+            System.out.println("Saving to " + metaFile.getAbsolutePath());
             meta.saveMeta(metaFile);
         } catch (Exception ex) {
             System.out.println("An error ocurred generating metadata " + ex.getMessage());
