@@ -195,7 +195,7 @@ public class ParameterStore {
                 parameterType = getParameterType(FireworkEffect.Type.class);
                 break;
             case "effect":
-                parameterType = getParameterType(Effect.Type.class);
+                parameterType = getParameterType(Effect.class);
                 break;
             case "source_location":
             case "target_location":

@@ -1265,7 +1265,7 @@
       "name" : "Undo"
     }
   },
-  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample-string", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "effect", "entity_effect", "sound", "custom_sound", "sound_volume", "sound_pitch" ],
+  "effect_parameters" : [ "color_override", "custom_sound", "delay", "effect", "entity_effect", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sample-string", "sound", "sound_broadcast", "sound_pitch", "sound_volume", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
@@ -7595,7 +7595,7 @@
       "class_name" : "org.bukkit.Effect",
       "description" : [ "A vanilla effect" ],
       "name" : "Effect",
-      "options" : [  ]
+      "options" : [ "anvil_break", "anvil_land", "anvil_use", "bat_takeoff", "blaze_shoot", "bow_fire", "brewing_stand_brew", "chorus_flower_death", "chorus_flower_grow", "click1", "click2", "door_close", "door_toggle", "dragon_breath", "end_gateway_spawn", "ender_signal", "enderdragon_growl", "enderdragon_shoot", "endereye_launch", "extinguish", "fence_gate_close", "fence_gate_toggle", "firework_shoot", "ghast_shoot", "ghast_shriek", "iron_door_close", "iron_door_toggle", "iron_trapdoor_close", "iron_trapdoor_toggle", "mobspawner_flames", "portal_travel", "potion_break", "record_play", "smoke", "step_sound", "trapdoor_close", "trapdoor_toggle", "villager_plant_grow", "wither_break_block", "wither_shoot", "zombie_chew_iron_door", "zombie_chew_wooden_door", "zombie_converted_villager", "zombie_destroy_door", "zombie_infect" ]
     },
     "entity_effect" : {
       "class_name" : "org.bukkit.EntityEffect",
