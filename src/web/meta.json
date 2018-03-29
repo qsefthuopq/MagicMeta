@@ -7479,19 +7479,19 @@
   "types" : {
     "actions" : {
       "className" : "java.util.Map",
-      "description" : [ "" ],
+      "description" : [ "An action handler, with lists of actions defined for events such as 'cast'" ],
       "name" : "Actions",
       "options" : [ ]
     },
     "attribute" : {
       "className" : "org.bukkit.attribute.Attribute",
-      "description" : [ "" ],
+      "description" : [ "A vanilla item or entity attributes" ],
       "name" : "Attribute",
       "options" : [ "generic_armor", "generic_attack_damage", "generic_attack_speed", "generic_follow_range", "generic_knockback_resistance", "generic_luck", "generic_max_health", "generic_movement_speed", "horse_jump_strength", "zombie_spawn_reinforcements" ]
     },
     "attribute_map" : {
       "className" : "java.util.Map",
-      "description" : [ "" ],
+      "description" : [ "A map of vanilla item or entity attribute values" ],
       "keyType" : "attribute",
       "name" : "Attribute Map",
       "options" : [ ],
@@ -7499,43 +7499,43 @@
     },
     "attributes" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "Magic attributes as defined in attributes.yml" ],
       "name" : "Attributes",
       "options" : [ ]
     },
     "base_image_effect_plane" : {
       "className" : "de.slikey.effectlib.util.BaseImageEffect$Plane",
-      "description" : [ "" ],
+      "description" : [ "The plane along which to draw an image" ],
       "name" : "Base Image Effect Plane",
       "options" : [ "x", "xy", "xyz", "xz", "y", "yz", "z" ]
     },
     "biome" : {
       "className" : "org.bukkit.block.Biome",
-      "description" : [ "" ],
+      "description" : [ "A vanilla biome type" ],
       "name" : "Biome",
       "options" : [ "beaches", "birch_forest", "birch_forest_hills", "cold_beach", "deep_ocean", "desert", "desert_hills", "extreme_hills", "extreme_hills_with_trees", "forest", "forest_hills", "frozen_ocean", "frozen_river", "hell", "ice_flats", "ice_mountains", "jungle", "jungle_edge", "jungle_hills", "mesa", "mesa_clear_rock", "mesa_rock", "mushroom_island", "mushroom_island_shore", "mutated_birch_forest", "mutated_birch_forest_hills", "mutated_desert", "mutated_extreme_hills", "mutated_extreme_hills_with_trees", "mutated_forest", "mutated_ice_flats", "mutated_jungle", "mutated_jungle_edge", "mutated_mesa", "mutated_mesa_clear_rock", "mutated_mesa_rock", "mutated_plains", "mutated_redwood_taiga", "mutated_redwood_taiga_hills", "mutated_roofed_forest", "mutated_savanna", "mutated_savanna_rock", "mutated_swampland", "mutated_taiga", "mutated_taiga_cold", "ocean", "plains", "redwood_taiga", "redwood_taiga_hills", "river", "roofed_forest", "savanna", "savanna_rock", "sky", "smaller_extreme_hills", "stone_beach", "swampland", "taiga", "taiga_cold", "taiga_cold_hills", "taiga_hills", "void" ]
     },
     "boolean" : {
       "className" : "java.lang.Boolean",
-      "description" : [ "" ],
+      "description" : [ "A true/false value" ],
       "name" : "Boolean",
       "options" : [ "false", "true" ]
     },
     "byte" : {
       "className" : "java.lang.Byte",
-      "description" : [ "" ],
+      "description" : [ "A small number ranging from 0 to 255" ],
       "name" : "Byte",
-      "options" : [ ]
+      "options" : [ "0", "1", "128", "255" ]
     },
     "color" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "A color string using RRGGBB notation" ],
       "name" : "Color",
-      "options" : [ ]
+      "options" : [ "FFFFFF", "010101", "FF0000", "00FF00", "0000FF" ]
     },
     "cost_map" : {
       "className" : "java.util.Map",
-      "description" : [ "" ],
+      "description" : [ "A map of costs" ],
       "keyType" : "cost_type",
       "name" : "Cost Map",
       "options" : [ ],
@@ -7543,19 +7543,19 @@
     },
     "cost_type" : {
       "className" : "com.elmakers.mine.bukkit.item.Cost$Type",
-      "description" : [ "" ],
+      "description" : [ "A type of cost required or consumed by something" ],
       "name" : "Cost Type",
       "options" : [ "currency", "health", "hunger", "item", "levels", "mana", "sp", "xp" ]
     },
     "damage_type" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "A type of damage" ],
       "name" : "Damage Type",
-      "options" : [ ]
+      "options" : [ "overall", "magic", "physical", "projectile", "fall", "fire", "explosion" ]
     },
     "damage_type_map" : {
       "className" : "java.util.Map",
-      "description" : [ "" ],
+      "description" : [ "A map of damage types, where damage type is the key and a multiplier is the value" ],
       "keyType" : "damage_type",
       "name" : "Damage Type Map",
       "options" : [ ],
@@ -7563,57 +7563,57 @@
     },
     "disco_ball_effect_direction" : {
       "className" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
-      "description" : [ "" ],
+      "description" : [ "The direction the disco ball should move" ],
       "name" : "Disco Ball Effect Direction",
       "options" : [ "both", "down", "up" ]
     },
     "double" : {
       "className" : "java.lang.Double",
-      "description" : [ "" ],
+      "description" : [ "A large numeric floating-point number" ],
       "name" : "Double",
-      "options" : [ ]
+      "options" : [ "0", "0.1", "0.5", "-0.5", "1" ]
     },
     "effect_type" : {
       "className" : "org.bukkit.Effect$Type",
-      "description" : [ "" ],
+      "description" : [ "The type of effect" ],
       "name" : "Effect Type",
       "options" : [ "sound", "visual" ]
     },
     "entity_type" : {
       "className" : "org.bukkit.entity.EntityType",
-      "description" : [ "" ],
+      "description" : [ "A type of vanilla entity" ],
       "name" : "Entity Type",
       "options" : [ "area_effect_cloud", "armor_stand", "arrow", "bat", "blaze", "boat", "cave_spider", "chicken", "complex_part", "cow", "creeper", "dragon_fireball", "dropped_item", "egg", "ender_crystal", "ender_dragon", "ender_pearl", "ender_signal", "enderman", "endermite", "experience_orb", "falling_block", "fireball", "firework", "fishing_hook", "ghast", "giant", "guardian", "horse", "iron_golem", "item_frame", "leash_hitch", "lightning", "lingering_potion", "magma_cube", "minecart", "minecart_chest", "minecart_command", "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player", "primed_tnt", "rabbit", "sheep", "shulker", "shulker_bullet", "silverfish", "skeleton", "slime", "small_fireball", "snowball", "snowman", "spectral_arrow", "spider", "splash_potion", "squid", "thrown_exp_bottle", "tipped_arrow", "unknown", "villager", "weather", "witch", "wither", "wither_skull", "wolf", "zombie" ]
     },
     "firework_effect_type" : {
       "className" : "org.bukkit.FireworkEffect$Type",
-      "description" : [ "" ],
+      "description" : [ "The type of firework effect" ],
       "name" : "Firework Effect Type",
       "options" : [ "ball", "ball_large", "burst", "creeper", "star" ]
     },
     "float" : {
       "className" : "java.lang.Float",
-      "description" : [ "" ],
+      "description" : [ "A numeric floating-point number" ],
       "name" : "Float",
-      "options" : [ ]
+      "options" : [ "0", "0.1", "0.5", "-0.5", "1" ]
     },
     "font" : {
       "className" : "java.awt.Font",
-      "description" : [ "" ],
+      "description" : [ "A font name" ],
       "name" : "Font",
       "options" : [ ]
     },
     "icon" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "An icon from a resource pack" ],
       "name" : "Icon",
-      "options" : [ ]
+      "options" : [ "diamond_axe:2", "diamond_hoe:4" ]
     },
     "integer" : {
       "className" : "java.lang.Integer",
-      "description" : [ "" ],
+      "description" : [ "A numeric integer value" ],
       "name" : "Integer",
-      "options" : [ ]
+      "options" : [ "0", "1", "-1", "100" ]
     },
     "list" : {
       "className" : "java.util.List",
@@ -7623,9 +7623,9 @@
     },
     "long" : {
       "className" : "java.lang.Long",
-      "description" : [ "" ],
+      "description" : [ "A large numeric integer value" ],
       "name" : "Long",
-      "options" : [ ]
+      "options" : [ "0", "1", "-1", "100" ]
     },
     "map" : {
       "className" : "java.util.Map",
@@ -7635,32 +7635,32 @@
     },
     "material" : {
       "className" : "org.bukkit.Material",
-      "description" : [ "" ],
+      "description" : [ "An item or block material" ],
       "name" : "Material",
       "options" : [ "acacia_door", "acacia_door_item", "acacia_fence", "acacia_fence_gate", "acacia_stairs", "activator_rail", "air", "anvil", "apple", "armor_stand", "arrow", "baked_potato", "banner", "barrier", "beacon", "bed", "bed_block", "bedrock", "beetroot", "beetroot_block", "beetroot_seeds", "beetroot_soup", "birch_door", "birch_door_item", "birch_fence", "birch_fence_gate", "birch_wood_stairs", "blaze_powder", "blaze_rod", "boat", "boat_acacia", "boat_birch", "boat_dark_oak", "boat_jungle", "boat_spruce", "bone", "book", "book_and_quill", "bookshelf", "bow", "bowl", "bread", "brewing_stand", "brewing_stand_item", "brick", "brick_stairs", "brown_mushroom", "bucket", "burning_furnace", "cactus", "cake", "cake_block", "carpet", "carrot", "carrot_item", "carrot_stick", "cauldron", "cauldron_item", "chainmail_boots", "chainmail_chestplate", "chainmail_helmet", "chainmail_leggings", "chest", "chorus_flower", "chorus_fruit", "chorus_fruit_popped", "chorus_plant", "clay", "clay_ball", "clay_brick", "coal", "coal_block", "coal_ore", "cobble_wall", "cobblestone", "cobblestone_stairs", "cocoa", "command", "command_chain", "command_minecart", "command_repeating", "compass", "cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton", "cooked_rabbit", "cookie", "crops", "dark_oak_door", "dark_oak_door_item", "dark_oak_fence", "dark_oak_fence_gate", "dark_oak_stairs", "daylight_detector", "daylight_detector_inverted", "dead_bush", "detector_rail", "diamond", "diamond_axe", "diamond_barding", "diamond_block", "diamond_boots", "diamond_chestplate", "diamond_helmet", "diamond_hoe", "diamond_leggings", "diamond_ore", "diamond_pickaxe", "diamond_spade", "diamond_sword", "diode", "diode_block_off", "diode_block_on", "dirt", "dispenser", "double_plant", "double_step", "double_stone_slab2", "dragon_egg", "dragons_breath", "dropper", "egg", "elytra", "emerald", "emerald_block", "emerald_ore", "empty_map", "enchanted_book", "enchantment_table", "end_bricks", "end_crystal", "end_gateway", "end_rod", "ender_chest", "ender_pearl", "ender_portal", "ender_portal_frame", "ender_stone", "exp_bottle", "explosive_minecart", "eye_of_ender", "feather", "fence", "fence_gate", "fermented_spider_eye", "fire", "fireball", "firework", "firework_charge", "fishing_rod", "flint", "flint_and_steel", "flower_pot", "flower_pot_item", "frosted_ice", "furnace", "ghast_tear", "glass", "glass_bottle", "glowing_redstone_ore", "glowstone", "glowstone_dust", "gold_axe", "gold_barding", "gold_block", "gold_boots", "gold_chestplate", "gold_helmet", "gold_hoe", "gold_ingot", "gold_leggings", "gold_nugget", "gold_ore", "gold_pickaxe", "gold_plate", "gold_record", "gold_spade", "gold_sword", "golden_apple", "golden_carrot", "grass", "grass_path", "gravel", "green_record", "grilled_pork", "hard_clay", "hay_block", "hopper", "hopper_minecart", "huge_mushroom_1", "huge_mushroom_2", "ice", "ink_sack", "iron_axe", "iron_barding", "iron_block", "iron_boots", "iron_chestplate", "iron_door", "iron_door_block", "iron_fence", "iron_helmet", "iron_hoe", "iron_ingot", "iron_leggings", "iron_ore", "iron_pickaxe", "iron_plate", "iron_spade", "iron_sword", "iron_trapdoor", "item_frame", "jack_o_lantern", "jukebox", "jungle_door", "jungle_door_item", "jungle_fence", "jungle_fence_gate", "jungle_wood_stairs", "ladder", "lapis_block", "lapis_ore", "lava", "lava_bucket", "leash", "leather", "leather_boots", "leather_chestplate", "leather_helmet", "leather_leggings", "leaves", "leaves_2", "lever", "lingering_potion", "log", "log_2", "long_grass", "magma_cream", "map", "melon", "melon_block", "melon_seeds", "melon_stem", "milk_bucket", "minecart", "mob_spawner", "monster_egg", "monster_eggs", "mossy_cobblestone", "mushroom_soup", "mutton", "mycel", "name_tag", "nether_brick", "nether_brick_item", "nether_brick_stairs", "nether_fence", "nether_stalk", "nether_star", "nether_warts", "netherrack", "note_block", "obsidian", "packed_ice", "painting", "paper", "piston_base", "piston_extension", "piston_moving_piece", "piston_sticky_base", "poisonous_potato", "pork", "portal", "potato", "potato_item", "potion", "powered_minecart", "powered_rail", "prismarine", "prismarine_crystals", "prismarine_shard", "pumpkin", "pumpkin_pie", "pumpkin_seeds", "pumpkin_stem", "purpur_block", "purpur_double_slab", "purpur_pillar", "purpur_slab", "purpur_stairs", "quartz", "quartz_block", "quartz_ore", "quartz_stairs", "rabbit", "rabbit_foot", "rabbit_hide", "rabbit_stew", "rails", "raw_beef", "raw_chicken", "raw_fish", "record_10", "record_11", "record_12", "record_3", "record_4", "record_5", "record_6", "record_7", "record_8", "record_9", "red_mushroom", "red_rose", "red_sandstone", "red_sandstone_stairs", "redstone", "redstone_block", "redstone_comparator", "redstone_comparator_off", "redstone_comparator_on", "redstone_lamp_off", "redstone_lamp_on", "redstone_ore", "redstone_torch_off", "redstone_torch_on", "redstone_wire", "rotten_flesh", "saddle", "sand", "sandstone", "sandstone_stairs", "sapling", "sea_lantern", "seeds", "shears", "shield", "sign", "sign_post", "skull", "skull_item", "slime_ball", "slime_block", "smooth_brick", "smooth_stairs", "snow", "snow_ball", "snow_block", "soil", "soul_sand", "speckled_melon", "spectral_arrow", "spider_eye", "splash_potion", "sponge", "spruce_door", "spruce_door_item", "spruce_fence", "spruce_fence_gate", "spruce_wood_stairs", "stained_clay", "stained_glass", "stained_glass_pane", "standing_banner", "stationary_lava", "stationary_water", "step", "stick", "stone", "stone_axe", "stone_button", "stone_hoe", "stone_pickaxe", "stone_plate", "stone_slab2", "stone_spade", "stone_sword", "storage_minecart", "string", "structure_block", "sugar", "sugar_cane", "sugar_cane_block", "sulphur", "thin_glass", "tipped_arrow", "tnt", "torch", "trap_door", "trapped_chest", "tripwire", "tripwire_hook", "vine", "wall_banner", "wall_sign", "watch", "water", "water_bucket", "water_lily", "web", "wheat", "wood", "wood_axe", "wood_button", "wood_door", "wood_double_step", "wood_hoe", "wood_pickaxe", "wood_plate", "wood_spade", "wood_stairs", "wood_step", "wood_sword", "wooden_door", "wool", "workbench", "written_book", "yellow_flower" ]
     },
     "material_list" : {
       "className" : "java.util.List",
-      "description" : [ "" ],
+      "description" : [ "A list of item or block materials" ],
       "name" : "Material List",
       "options" : [ ],
       "valueType" : "material"
     },
     "particle_effect" : {
       "className" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
-      "description" : [ "" ],
+      "description" : [ "A particle type" ],
       "name" : "Particle Effect",
       "options" : [ "barrier", "block_crack", "block_dust", "cloud", "crit", "crit_magic", "damage_indicator", "dragon_breath", "drip_lava", "drip_water", "enchantment_table", "end_rod", "explosion_huge", "explosion_large", "explosion_normal", "falling_dust", "fireworks_spark", "flame", "footstep", "heart", "item_crack", "item_take", "lava", "mob_appearance", "note", "portal", "redstone", "slime", "smoke_large", "smoke_normal", "snow_shovel", "snowball", "spell", "spell_instant", "spell_mob", "spell_mob_ambient", "spell_witch", "spit", "suspended", "suspended_depth", "sweep_attack", "totem", "town_aura", "villager_angry", "villager_happy", "water_bubble", "water_drop", "water_splash", "water_wake" ]
     },
     "path" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "A progression path" ],
       "name" : "Path",
-      "options" : [ ]
+      "options" : [ "beginner", "student", "jedi", "airbender" ]
     },
     "potion_effect_map" : {
       "className" : "java.util.Map",
-      "description" : [ "" ],
+      "description" : [ "A map of potion effects, where the key is a potion effect type and the value is an amplifier" ],
       "keyType" : "potion_effect_type",
       "name" : "Potion Effect Map",
       "options" : [ ],
@@ -7668,64 +7668,64 @@
     },
     "potion_effect_type" : {
       "className" : "org.bukkit.potion.PotionEffectType",
-      "description" : [ "" ],
+      "description" : [ "A vanilla potion effect type" ],
       "name" : "Potion Effect Type",
       "options" : [ "absorption", "blindness", "confusion", "damage_resistance", "fast_digging", "fire_resistance", "glowing", "harm", "heal", "health_boost", "hunger", "increase_damage", "invisibility", "jump", "levitation", "luck", "night_vision", "poison", "regeneration", "saturation", "slow", "slow_digging", "speed", "unluck", "water_breathing", "weakness", "wither" ]
     },
     "sound" : {
       "className" : "org.bukkit.Sound",
-      "description" : [ "" ],
+      "description" : [ "A sound, can be a vanilla Minecraft sound or a custom sound from a resource pack" ],
       "name" : "Sound",
       "options" : [ "ambient_cave", "block_anvil_break", "block_anvil_destroy", "block_anvil_fall", "block_anvil_hit", "block_anvil_land", "block_anvil_place", "block_anvil_step", "block_anvil_use", "block_brewing_stand_brew", "block_chest_close", "block_chest_locked", "block_chest_open", "block_chorus_flower_death", "block_chorus_flower_grow", "block_cloth_break", "block_cloth_fall", "block_cloth_hit", "block_cloth_place", "block_cloth_step", "block_comparator_click", "block_dispenser_dispense", "block_dispenser_fail", "block_dispenser_launch", "block_end_gateway_spawn", "block_enderchest_close", "block_enderchest_open", "block_fence_gate_close", "block_fence_gate_open", "block_fire_ambient", "block_fire_extinguish", "block_furnace_fire_crackle", "block_glass_break", "block_glass_fall", "block_glass_hit", "block_glass_place", "block_glass_step", "block_grass_break", "block_grass_fall", "block_grass_hit", "block_grass_place", "block_grass_step", "block_gravel_break", "block_gravel_fall", "block_gravel_hit", "block_gravel_place", "block_gravel_step", "block_iron_door_close", "block_iron_door_open", "block_iron_trapdoor_close", "block_iron_trapdoor_open", "block_ladder_break", "block_ladder_fall", "block_ladder_hit", "block_ladder_place", "block_ladder_step", "block_lava_ambient", "block_lava_extinguish", "block_lava_pop", "block_lever_click", "block_metal_break", "block_metal_fall", "block_metal_hit", "block_metal_place", "block_metal_pressureplate_click_off", "block_metal_pressureplate_click_on", "block_metal_step", "block_note_basedrum", "block_note_bass", "block_note_harp", "block_note_hat", "block_note_pling", "block_note_snare", "block_piston_contract", "block_piston_extend", "block_portal_ambient", "block_portal_travel", "block_portal_trigger", "block_redstone_torch_burnout", "block_sand_break", "block_sand_fall", "block_sand_hit", "block_sand_place", "block_sand_step", "block_slime_break", "block_slime_fall", "block_slime_hit", "block_slime_place", "block_slime_step", "block_snow_break", "block_snow_fall", "block_snow_hit", "block_snow_place", "block_snow_step", "block_stone_break", "block_stone_button_click_off", "block_stone_button_click_on", "block_stone_fall", "block_stone_hit", "block_stone_place", "block_stone_pressureplate_click_off", "block_stone_pressureplate_click_on", "block_stone_step", "block_tripwire_attach", "block_tripwire_click_off", "block_tripwire_click_on", "block_tripwire_detach", "block_water_ambient", "block_waterlily_place", "block_wood_break", "block_wood_button_click_off", "block_wood_button_click_on", "block_wood_fall", "block_wood_hit", "block_wood_place", "block_wood_pressureplate_click_off", "block_wood_pressureplate_click_on", "block_wood_step", "block_wooden_door_close", "block_wooden_door_open", "block_wooden_trapdoor_close", "block_wooden_trapdoor_open", "enchant_thorns_hit", "entity_armorstand_break", "entity_armorstand_fall", "entity_armorstand_hit", "entity_armorstand_place", "entity_arrow_hit", "entity_arrow_hit_player", "entity_arrow_shoot", "entity_bat_ambient", "entity_bat_death", "entity_bat_hurt", "entity_bat_loop", "entity_bat_takeoff", "entity_blaze_ambient", "entity_blaze_burn", "entity_blaze_death", "entity_blaze_hurt", "entity_blaze_shoot", "entity_bobber_splash", "entity_bobber_throw", "entity_cat_ambient", "entity_cat_death", "entity_cat_hiss", "entity_cat_hurt", "entity_cat_purr", "entity_cat_purreow", "entity_chicken_ambient", "entity_chicken_death", "entity_chicken_egg", "entity_chicken_hurt", "entity_chicken_step", "entity_cow_ambient", "entity_cow_death", "entity_cow_hurt", "entity_cow_milk", "entity_cow_step", "entity_creeper_death", "entity_creeper_hurt", "entity_creeper_primed", "entity_donkey_ambient", "entity_donkey_angry", "entity_donkey_chest", "entity_donkey_death", "entity_donkey_hurt", "entity_egg_throw", "entity_elder_guardian_ambient", "entity_elder_guardian_ambient_land", "entity_elder_guardian_curse", "entity_elder_guardian_death", "entity_elder_guardian_death_land", "entity_elder_guardian_hurt", "entity_elder_guardian_hurt_land", "entity_enderdragon_ambient", "entity_enderdragon_death", "entity_enderdragon_fireball_explode", "entity_enderdragon_flap", "entity_enderdragon_growl", "entity_enderdragon_hurt", "entity_enderdragon_shoot", "entity_endereye_launch", "entity_endermen_ambient", "entity_endermen_death", "entity_endermen_hurt", "entity_endermen_scream", "entity_endermen_stare", "entity_endermen_teleport", "entity_endermite_ambient", "entity_endermite_death", "entity_endermite_hurt", "entity_endermite_step", "entity_enderpearl_throw", "entity_experience_bottle_throw", "entity_experience_orb_pickup", "entity_experience_orb_touch", "entity_firework_blast", "entity_firework_blast_far", "entity_firework_large_blast", "entity_firework_large_blast_far", "entity_firework_launch", "entity_firework_shoot", "entity_firework_twinkle", "entity_firework_twinkle_far", "entity_generic_big_fall", "entity_generic_burn", "entity_generic_death", "entity_generic_drink", "entity_generic_eat", "entity_generic_explode", "entity_generic_extinguish_fire", "entity_generic_hurt", "entity_generic_small_fall", "entity_generic_splash", "entity_generic_swim", "entity_ghast_ambient", "entity_ghast_death", "entity_ghast_hurt", "entity_ghast_scream", "entity_ghast_shoot", "entity_ghast_warn", "entity_guardian_ambient", "entity_guardian_ambient_land", "entity_guardian_attack", "entity_guardian_death", "entity_guardian_death_land", "entity_guardian_flop", "entity_guardian_hurt", "entity_guardian_hurt_land", "entity_horse_ambient", "entity_horse_angry", "entity_horse_armor", "entity_horse_breathe", "entity_horse_death", "entity_horse_eat", "entity_horse_gallop", "entity_horse_hurt", "entity_horse_jump", "entity_horse_land", "entity_horse_saddle", "entity_horse_step", "entity_horse_step_wood", "entity_hostile_big_fall", "entity_hostile_death", "entity_hostile_hurt", "entity_hostile_small_fall", "entity_hostile_splash", "entity_hostile_swim", "entity_irongolem_attack", "entity_irongolem_death", "entity_irongolem_hurt", "entity_irongolem_step", "entity_item_break", "entity_item_pickup", "entity_itemframe_add_item", "entity_itemframe_break", "entity_itemframe_place", "entity_itemframe_remove_item", "entity_itemframe_rotate_item", "entity_leashknot_break", "entity_leashknot_place", "entity_lightning_impact", "entity_lightning_thunder", "entity_lingeringpotion_throw", "entity_magmacube_death", "entity_magmacube_hurt", "entity_magmacube_jump", "entity_magmacube_squish", "entity_minecart_inside", "entity_minecart_riding", "entity_mooshroom_shear", "entity_mule_ambient", "entity_mule_death", "entity_mule_hurt", "entity_painting_break", "entity_painting_place", "entity_pig_ambient", "entity_pig_death", "entity_pig_hurt", "entity_pig_saddle", "entity_pig_step", "entity_player_attack_crit", "entity_player_attack_knockback", "entity_player_attack_nodamage", "entity_player_attack_strong", "entity_player_attack_sweep", "entity_player_attack_weak", "entity_player_big_fall", "entity_player_breath", "entity_player_burp", "entity_player_death", "entity_player_hurt", "entity_player_levelup", "entity_player_small_fall", "entity_player_splash", "entity_player_swim", "entity_rabbit_ambient", "entity_rabbit_attack", "entity_rabbit_death", "entity_rabbit_hurt", "entity_rabbit_jump", "entity_sheep_ambient", "entity_sheep_death", "entity_sheep_hurt", "entity_sheep_shear", "entity_sheep_step", "entity_shulker_ambient", "entity_shulker_bullet_hit", "entity_shulker_bullet_hurt", "entity_shulker_close", "entity_shulker_death", "entity_shulker_hurt", "entity_shulker_hurt_closed", "entity_shulker_open", "entity_shulker_shoot", "entity_shulker_teleport", "entity_silverfish_ambient", "entity_silverfish_death", "entity_silverfish_hurt", "entity_silverfish_step", "entity_skeleton_ambient", "entity_skeleton_death", "entity_skeleton_horse_ambient", "entity_skeleton_horse_death", "entity_skeleton_horse_hurt", "entity_skeleton_hurt", "entity_skeleton_shoot", "entity_skeleton_step", "entity_slime_attack", "entity_slime_death", "entity_slime_hurt", "entity_slime_jump", "entity_slime_squish", "entity_small_magmacube_death", "entity_small_magmacube_hurt", "entity_small_magmacube_squish", "entity_small_slime_death", "entity_small_slime_hurt", "entity_small_slime_jump", "entity_small_slime_squish", "entity_snowball_throw", "entity_snowman_ambient", "entity_snowman_death", "entity_snowman_hurt", "entity_snowman_shoot", "entity_spider_ambient", "entity_spider_death", "entity_spider_hurt", "entity_spider_step", "entity_splash_potion_break", "entity_splash_potion_throw", "entity_squid_ambient", "entity_squid_death", "entity_squid_hurt", "entity_tnt_primed", "entity_villager_ambient", "entity_villager_death", "entity_villager_hurt", "entity_villager_no", "entity_villager_trading", "entity_villager_yes", "entity_witch_ambient", "entity_witch_death", "entity_witch_drink", "entity_witch_hurt", "entity_witch_throw", "entity_wither_ambient", "entity_wither_break_block", "entity_wither_death", "entity_wither_hurt", "entity_wither_shoot", "entity_wither_spawn", "entity_wolf_ambient", "entity_wolf_death", "entity_wolf_growl", "entity_wolf_howl", "entity_wolf_hurt", "entity_wolf_pant", "entity_wolf_shake", "entity_wolf_step", "entity_wolf_whine", "entity_zombie_ambient", "entity_zombie_attack_door_wood", "entity_zombie_attack_iron_door", "entity_zombie_break_door_wood", "entity_zombie_death", "entity_zombie_horse_ambient", "entity_zombie_horse_death", "entity_zombie_horse_hurt", "entity_zombie_hurt", "entity_zombie_infect", "entity_zombie_pig_ambient", "entity_zombie_pig_angry", "entity_zombie_pig_death", "entity_zombie_pig_hurt", "entity_zombie_step", "entity_zombie_villager_ambient", "entity_zombie_villager_converted", "entity_zombie_villager_cure", "entity_zombie_villager_death", "entity_zombie_villager_hurt", "entity_zombie_villager_step", "item_armor_equip_chain", "item_armor_equip_diamond", "item_armor_equip_generic", "item_armor_equip_gold", "item_armor_equip_iron", "item_armor_equip_leather", "item_bottle_fill", "item_bottle_fill_dragonbreath", "item_bucket_empty", "item_bucket_empty_lava", "item_bucket_fill", "item_bucket_fill_lava", "item_chorus_fruit_teleport", "item_elytra_flying", "item_firecharge_use", "item_flintandsteel_use", "item_hoe_till", "item_shield_block", "item_shield_break", "item_shovel_flatten", "music_creative", "music_credits", "music_dragon", "music_end", "music_game", "music_menu", "music_nether", "record_11", "record_13", "record_blocks", "record_cat", "record_chirp", "record_far", "record_mall", "record_mellohi", "record_stal", "record_strad", "record_wait", "record_ward", "ui_button_click", "weather_rain", "weather_rain_above" ]
     },
     "source_location_location_type" : {
       "className" : "com.elmakers.mine.bukkit.magic.SourceLocation$LocationType",
-      "description" : [ "" ],
-      "name" : "Source Location Location Type",
+      "description" : [ "Where an effect should be based" ],
+      "name" : "Location Type",
       "options" : [ "block", "body", "cast", "eyes", "feet", "hit", "wand" ]
     },
     "spell" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "The key name of a spell" ],
       "name" : "Spell",
       "options" : [ ]
     },
     "spell_list" : {
       "className" : "java.util.List",
-      "description" : [ "" ],
+      "description" : [ "A list of spells" ],
       "name" : "Spell List",
       "options" : [ ],
       "valueType" : "spell"
     },
     "string" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "A bit of text" ],
       "name" : "String",
-      "options" : [ ]
+      "options" : [ "Hello", "World" ]
     },
     "texture" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "A texture URL used in a skull icon" ],
       "name" : "Texture",
-      "options" : [ ]
+      "options" : [ "See: http://mine.elmakers.com/#textures" ]
     },
     "vector" : {
       "className" : "org.bukkit.util.Vector",
-      "description" : [ "" ],
+      "description" : [ "A directional vector consisting of x,y,z coordinates" ],
       "name" : "Vector",
-      "options" : [ ]
+      "options" : [ "0,0,0", "0,1,0", "0,-1,0"]
     },
     "wand_mode" : {
       "className" : "com.elmakers.mine.bukkit.wand.WandMode",
-      "description" : [ "" ],
+      "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar"],
       "name" : "Wand Mode",
       "options" : [ "cast", "chest", "cycle", "inventory", "none", "skills" ]
     },
     "weather" : {
       "className" : "java.lang.String",
-      "description" : [ "" ],
+      "description" : [ "What type of weather to set" ],
       "name" : "Weather",
-      "options" : [ ]
+      "options" : [ "storm", "cycle", "clear" ]
     }
   },
   "wand_properties" : [ "active_brush", "active_effects", "active_spell", "alternate_spell", "alternate_spell2", "attributes", "block_chance", "block_cooldown", "block_fov", "block_mage_cooldown", "block_reflect_chance", "boostable", "bound", "brush_inventory", "brush_mode", "brushes", "cast_interval", "cast_location", "cast_min_bowpull", "cast_min_velocity", "cast_parameters", "cast_spell", "cast_velocity_direction", "class", "classes", "consume_reduction", "consume_spell", "cooldown_reduction", "cost_reduction", "drop", "effect_bubbles", "effect_color", "effect_particle", "effect_particle_count", "effect_particle_data", "effect_particle_interval", "effect_particle_min_velocity", "effect_particle_offset", "effect_particle_radius", "effect_sound", "effect_sound_interval", "enchant_count", "force", "has_uses", "heroes", "hotbar", "hotbar_count", "icon", "icon_inactive", "icon_inactive_delay", "immortal", "indestructible", "inventory_rows", "invulnerable", "item_attributes", "keep", "left_click", "locked", "mana", "mana_max", "mana_max_boost", "mana_per_damage", "mana_regeneration", "mana_regeneration_boost", "max_enchant_count", "mode", "overrides", "passive", "path", "potion_effects", "power", "powered", "protected", "protection", "quick_cast", "quiet", "rename", "rename_description", "right_click", "soul", "sp_multiplier", "spell_inventory", "spell_levels", "spells", "stack", "swap", "template", "track", "undroppable", "unique", "unmoveable", "unstashable", "upgrade", "uses" ]
