@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.apache.commons.lang.ClassUtils;
 import org.bukkit.Effect;
@@ -84,6 +85,11 @@ public class ParameterStore {
         for (ParameterType parameterType : parameterTypes.values()) {
             parameterType.update();
         }
+    }
+
+    @Nullable
+    public Parameter getParameter(String key) {
+        return parameters.get(key);
     }
 
     public Parameter getParameter(String field, Class<?> defaultClass) {

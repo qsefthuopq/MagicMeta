@@ -3,7 +3,9 @@ package com.elmakers.mine.bukkit.meta;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.StringUtils;
@@ -96,5 +98,29 @@ public class Configurable {
 
     public void setCategory(String categoryKey) {
         this.category = categoryKey;
+    }
+
+    public void merge(Configurable other, ParameterStore parameterStore) {
+        Map<String, Parameter> fields = new HashMap<>();
+        for (String key : parameters) {
+            Parameter parameter = parameterStore.getParameter(key);
+            if (parameter == null) {
+                System.out.println("Missing parameter: " + key);
+                continue;
+            }
+            fields.put(parameter.getField(), parameter);
+        }
+
+        for (String key : other.getParameters()) {
+            Parameter parameter = parameterStore.getParameter(key);
+            if (parameter == null) {
+                System.out.println("Missing parameter: " + key);
+                continue;
+            }
+            Parameter existing = fields.get(parameter.getField());
+            if (existing == null) {
+                parameters.add(key);
+            }
+        }
     }
 }

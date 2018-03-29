@@ -178,11 +178,22 @@ public class MetaData {
     }
 
     public void addEffect(String key, EffectDescription effect) {
-        effects.put(key, effect);
+        EffectDescription existing = effects.get(key);
+        if (existing != null) {
+            existing.merge(effect, parameterStore);
+        } else {
+            effects.put(key, effect);
+        }
     }
 
     public void addAction(String key, SpellActionDescription action) {
-        actions.put(key, action);
+        // Merge with existing actions
+        SpellActionDescription existing = actions.get(key);
+        if (existing != null) {
+            existing.merge(action, parameterStore);
+        } else {
+            actions.put(key, action);
+        }
     }
 
     public void addMobParameter(String key) {
