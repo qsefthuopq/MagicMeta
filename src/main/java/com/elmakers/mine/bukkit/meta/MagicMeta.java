@@ -117,26 +117,21 @@ public class MagicMeta {
 
         // Check for base spell parameters
         // Do this one class at a time for categorization purposes
-        addSpellParameters(controller, mage, new BaseSpell(), parameters, properties, "base");
-        addSpellParameters(controller, mage, new TargetingSpell(), parameters, properties, "targeting");
-        addSpellParameters(controller, mage, new UndoableSpell(), parameters, properties, "undo");
-        addSpellParameters(controller, mage, new BlockSpell(), parameters, properties, "construction");
-        addSpellParameters(controller, mage, new BrushSpell(), parameters, properties, "brushes");
         addSpellParameters(controller, mage, new ActionSpell(), parameters, properties, "actions");
+        addSpellParameters(controller, mage, new BrushSpell(), parameters, properties, "brushes");
+        addSpellParameters(controller, mage, new BlockSpell(), parameters, properties, "construction");
+        addSpellParameters(controller, mage, new UndoableSpell(), parameters, properties, "undo");
+        addSpellParameters(controller, mage, new TargetingSpell(), parameters, properties, "targeting");
+        addSpellParameters(controller, mage, new BaseSpell(), parameters, properties, "base");
 
         // Gather base spell properties loaded from loadTemplate
         for (Parameter spellProperty : properties) {
-            if (spellProperty.getKey().equals("parameters") || spellProperty.getKey().equals("costs")
-                 || spellProperty.getKey().equals("actions") || spellProperty.getKey().equals("active_costs")) continue;
-
             data.addSpellProperty(spellProperty.getKey());
-            data.addParameter(spellProperty.getKey(), spellProperty);
         }
 
         // Add base spell parameters
         for (Parameter spellParameter : parameters) {
             data.addSpellParameter(spellParameter.getKey());
-            data.addParameter(spellParameter.getKey(), spellParameter);
         }
     }
 
@@ -171,12 +166,7 @@ public class MagicMeta {
                 testAction.initialize(spell, actionConfiguration);
                 testAction.prepare(context, actionConfiguration);
 
-                // TODO: Track spells with exceptional parameter types
                 Collection<Parameter> spellParameters = actionConfiguration.getParameters();
-                for (Parameter parameter : spellParameters) {
-                    data.addParameter(parameter.getKey(), parameter);
-                }
-
                 SpellActionDescription spellAction = new SpellActionDescription(actionClass, spellParameters);
                 data.addAction(spellAction.getKey(), spellAction);
             } catch (Exception e) {
@@ -192,7 +182,6 @@ public class MagicMeta {
         player.load(null, effectConfiguration);
         Collection<Parameter> singleParameters = effectConfiguration.getParameters();
         for (Parameter parameter : singleParameters) {
-            data.addParameter(parameter.getKey(), parameter);
             data.addEffectParameter(parameter.getKey());
         }
     }
@@ -214,7 +203,6 @@ public class MagicMeta {
         System.out.println("Scanning Effect");
         Set<Parameter> baseEffectParameters = collectPublicProperties(Effect.class);
         for (Parameter parameter : baseEffectParameters) {
-            data.addParameter(parameter.getKey(), parameter);
             data.addEffectLibParameter(parameter.getKey());
         }
 
@@ -237,12 +225,6 @@ public class MagicMeta {
 
                 // Filter out common parameters
                 effectParameters.removeAll(baseEffectParameters);
-
-                // TODO: Track effects with exceptional parameter types
-                for (Parameter parameter : effectParameters) {
-                    data.addParameter(parameter.getKey(), parameter);
-                }
-
                 EffectDescription effect = new EffectDescription(effectClass, effectParameters);
                 data.addEffect(effect.getKey(), effect);
             } catch (Exception e) {
@@ -260,7 +242,6 @@ public class MagicMeta {
         // I think the most common case is doubles, so that's what we'll default to.
         for (String property : BaseMagicProperties.PROPERTY_KEYS) {
             Parameter parameter = data.getParameter(property, Double.class);
-            data.addParameter(parameter.getKey(), parameter);
             data.addWandParameter(parameter.getKey());
         }
     }

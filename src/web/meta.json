@@ -1661,12 +1661,26 @@
   },
   "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
   "parameters" : {
+    "actions" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "actions",
+      "name" : "Actions",
+      "type" : "map"
+    },
     "active_brush" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "active_brush",
       "name" : "Active Brush",
       "type" : "material"
+    },
+    "active_costs" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "active_costs",
+      "name" : "Active Costs",
+      "type" : "map"
     },
     "active_effects" : {
       "category" : "",
@@ -2131,7 +2145,7 @@
       "type" : "integer"
     },
     "brush" : {
-      "category" : "",
+      "category" : "brushes",
       "description" : [ "" ],
       "field" : "brush",
       "name" : "Brush",
@@ -2509,14 +2523,14 @@
       "type" : "boolean"
     },
     "close_fov" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "close_fov",
       "name" : "Close Fov",
       "type" : "double"
     },
     "close_range" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "close_range",
       "name" : "Close Range",
@@ -2677,7 +2691,7 @@
       "type" : "boolean"
     },
     "consume_reduction" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "consume_reduction",
       "name" : "Consume Reduction",
@@ -2719,7 +2733,7 @@
       "type" : "integer"
     },
     "cooldown_reduction" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "cooldown_reduction",
       "name" : "Cooldown Reduction",
@@ -2733,7 +2747,7 @@
       "type" : "integer"
     },
     "cost_reduction" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "cost_reduction",
       "name" : "Cost Reduction",
@@ -2745,6 +2759,13 @@
       "field" : "cost_type",
       "name" : "Cost Type",
       "type" : "string"
+    },
+    "costs" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "costs",
+      "name" : "Costs",
+      "type" : "map"
     },
     "count" : {
       "category" : "",
@@ -3027,7 +3048,7 @@
       "type" : "double"
     },
     "distance_weight" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "distance_weight",
       "name" : "Distance Weight",
@@ -3062,7 +3083,7 @@
       "type" : "double"
     },
     "duration" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "duration",
       "name" : "Duration",
@@ -3286,7 +3307,7 @@
       "type" : "boolean"
     },
     "entity_weight" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "entity_weight",
       "name" : "Entity Weight",
@@ -3503,14 +3524,14 @@
       "type" : "double"
     },
     "fov" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "fov",
       "name" : "Fov",
       "type" : "double"
     },
     "fov_weight" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "fov_weight",
       "name" : "Fov Weight",
@@ -3727,21 +3748,21 @@
       "type" : "boolean"
     },
     "hitbox" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "hitbox",
       "name" : "Hitbox",
       "type" : "boolean"
     },
     "hitbox_block_size" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "hitbox_block_size",
       "name" : "Hitbox Block Size",
       "type" : "double"
     },
     "hitbox_size" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "hitbox_size",
       "name" : "Hitbox Size",
@@ -3783,7 +3804,7 @@
       "type" : "string"
     },
     "icon" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "icon",
       "name" : "Icon",
@@ -3832,7 +3853,7 @@
       "type" : "string"
     },
     "ignore_blocks" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "ignore_blocks",
       "name" : "Ignore Blocks",
@@ -3867,7 +3888,7 @@
       "type" : "boolean"
     },
     "indestructible" : {
-      "category" : "",
+      "category" : "construction",
       "description" : [ "" ],
       "field" : "indestructible",
       "name" : "Indestructible",
@@ -4532,7 +4553,7 @@
       "type" : "integer"
     },
     "name" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "name",
       "name" : "Name",
@@ -4553,7 +4574,7 @@
       "type" : "string"
     },
     "npc_weight" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "npc_weight",
       "name" : "Npc Weight",
@@ -4644,7 +4665,7 @@
       "type" : "vector"
     },
     "otworld" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "otworld",
       "name" : "Otworld",
@@ -4679,7 +4700,7 @@
       "type" : "double"
     },
     "parameters" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "parameters",
       "name" : "Parameters",
@@ -4882,7 +4903,7 @@
       "type" : "boolean"
     },
     "passive" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "passive",
       "name" : "Passive",
@@ -5043,7 +5064,7 @@
       "type" : "double"
     },
     "player_weight" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "player_weight",
       "name" : "Player Weight",
@@ -5183,14 +5204,14 @@
       "type" : "string"
     },
     "quick_cast" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "quick_cast",
       "name" : "Quick Cast",
       "type" : "double"
     },
     "quiet" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "quiet",
       "name" : "Quiet",
@@ -5302,14 +5323,14 @@
       "type" : "boolean"
     },
     "range" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "range",
       "name" : "Range",
       "type" : "double"
     },
     "range_padding" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "range_padding",
       "name" : "Range Padding",
@@ -5498,7 +5519,7 @@
       "type" : "boolean"
     },
     "require_build" : {
-      "category" : "",
+      "category" : "actions",
       "description" : [ "" ],
       "field" : "require_build",
       "name" : "Require Build",
@@ -6289,7 +6310,7 @@
       "type" : "boolean"
     },
     "target" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "target",
       "name" : "Target",
@@ -6345,14 +6366,14 @@
       "type" : "boolean"
     },
     "target_breakable_depth" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "target_breakable_depth",
       "name" : "Target Breakable Depth",
       "type" : "integer"
     },
     "target_breakables" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "target_breakables",
       "name" : "Target Breakables",
@@ -6422,7 +6443,7 @@
       "type" : "location_type"
     },
     "target_min_offset" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "target_min_offset",
       "name" : "Target Min Offset",
@@ -6639,7 +6660,7 @@
       "type" : "string"
     },
     "tmo" : {
-      "category" : "",
+      "category" : "targeting",
       "description" : [ "" ],
       "field" : "tmo",
       "name" : "Tmo",
@@ -6793,7 +6814,7 @@
       "type" : "boolean"
     },
     "undo" : {
-      "category" : "",
+      "category" : "undo",
       "description" : [ "" ],
       "field" : "undo",
       "name" : "Undo",
@@ -7101,7 +7122,7 @@
       "type" : "vector"
     },
     "vertical_range" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "vertical_range",
       "name" : "Vertical Range",
@@ -7150,7 +7171,7 @@
       "type" : "integer"
     },
     "warmup" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "warmup",
       "name" : "Warmup",

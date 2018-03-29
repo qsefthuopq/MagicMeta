@@ -82,6 +82,12 @@ public class ParameterStore {
     }
 
     public Parameter getParameter(String key, Class<?> defaultClass) {
+        Parameter parameter = parameters.get(key);
+        if (parameter != null) {
+            // TODO: Handle the case of this not being the right type, need to have multiple variants of the same
+            // parameter key.
+            return parameter;
+        }
         if (defaultClass.isPrimitive()) {
             defaultClass = ClassUtils.primitiveToWrapper(defaultClass);
         }
@@ -184,7 +190,9 @@ public class ParameterStore {
             default:
                 parameterType = getParameterType(defaultClass);
         }
-        return new Parameter(key, parameterType);
+        parameter = new Parameter(key, parameterType);
+        parameters.put(parameter.getKey(), parameter);
+        return parameter;
     }
 
     public void loaded() {
