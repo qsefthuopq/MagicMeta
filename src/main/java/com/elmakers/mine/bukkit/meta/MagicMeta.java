@@ -15,6 +15,7 @@ import javax.annotation.Nonnull;
 import org.bukkit.entity.Player;
 import org.reflections.Reflections;
 import com.elmakers.mine.bukkit.action.CastContext;
+import com.elmakers.mine.bukkit.action.CompoundAction;
 import com.elmakers.mine.bukkit.api.action.SpellAction;
 import com.elmakers.mine.bukkit.effect.EffectPlayer;
 import com.elmakers.mine.bukkit.effect.builtin.EffectSingle;
@@ -152,6 +153,16 @@ public class MagicMeta {
         CastContext context = new CastContext(mage);
         context.setSpell(spell);
 
+        // First get base action parameters
+        SpellAction baseAction = new CompoundAction() {};
+        InterrogatingConfiguration baseConfiguration = new InterrogatingConfiguration(data.getParameterStore());
+        baseAction.initialize(spell, baseConfiguration);
+        baseAction.prepare(context, baseConfiguration);
+        Collection<Parameter> baseParameters = baseConfiguration.getParameters();
+        for (Parameter baseParameter : baseParameters) {
+            data.addActionParameter(baseParameter.getKey());
+        }
+
         for (Class<? extends SpellAction> actionClass : allClasses) {
             if (!actionClass.getPackage().getName().equals(BUILTIN_SPELL_PACKAGE)
                 || actionClass.getAnnotation(Deprecated.class) != null
@@ -167,6 +178,7 @@ public class MagicMeta {
                 testAction.prepare(context, actionConfiguration);
 
                 Collection<Parameter> spellParameters = actionConfiguration.getParameters();
+                spellParameters.removeAll(baseParameters);
                 SpellActionDescription spellAction = new SpellActionDescription(actionClass, spellParameters);
                 data.addAction(spellAction.getKey(), spellAction);
             } catch (Exception e) {

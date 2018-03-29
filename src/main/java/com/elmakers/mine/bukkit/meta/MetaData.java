@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MetaData {
+    private Set<String> actionParameters = new HashSet<>();
     private Set<String> spellParameters = new HashSet<>();
     private Set<String> spellProperties = new HashSet<>();
     private Map<String, Category> categories = new HashMap<>();
@@ -25,11 +26,20 @@ public class MetaData {
 
     @JsonProperty("spell_parameters")
     public List<String> getSpellParameters() {
-        return sortCollection(spellParameters);
+        return sortCollection(actionParameters);
     }
 
     public void setSpellParameters(Set<String> spellParameters) {
         this.spellParameters = spellParameters;
+    }
+
+    @JsonProperty("action_parameters")
+    public List<String> getActionParameters() {
+        return sortCollection(actionParameters);
+    }
+
+    public void setActionParameters(Set<String> actionParameters) {
+        this.actionParameters = actionParameters;
     }
 
     @JsonProperty("spell_properties")
@@ -163,6 +173,10 @@ public class MetaData {
 
     public void addAction(String key, SpellActionDescription action) {
         actions.put(key, action);
+    }
+
+    public void addActionParameter(String key) {
+        actionParameters.add(key);
     }
 
     public void addSpellParameter(String key) {

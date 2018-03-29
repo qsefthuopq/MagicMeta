@@ -1,4 +1,5 @@
 {
+  "action_parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
   "actions" : {
     "absorb" : {
       "category" : "",
@@ -6,7 +7,7 @@
       "description" : [ "" ],
       "key" : "absorb",
       "name" : "Absorb",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Absorb"
     },
     "add_spell" : {
@@ -15,7 +16,7 @@
       "description" : [ "" ],
       "key" : "add_spell",
       "name" : "Add Spell",
-      "parameters" : [ "auto_upgrade", "ignore_result", "path", "path_end", "path_exact", "permission", "requires_entity_target", "requires_target", "spell" ],
+      "parameters" : [ "auto_upgrade", "path", "path_end", "path_exact", "permission", "spell" ],
       "shortClass" : "AddSpell"
     },
     "aggro" : {
@@ -24,7 +25,7 @@
       "description" : [ "" ],
       "key" : "aggro",
       "name" : "Aggro",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Aggro"
     },
     "air_supply" : {
@@ -33,7 +34,7 @@
       "description" : [ "" ],
       "key" : "air_supply",
       "name" : "Air Supply",
-      "parameters" : [ "air", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "air" ],
       "shortClass" : "AirSupply"
     },
     "all_entities" : {
@@ -42,7 +43,7 @@
       "description" : [ "" ],
       "key" : "all_entities",
       "name" : "All Entities",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_all_worlds" ],
+      "parameters" : [ "target_all_worlds" ],
       "shortClass" : "AllEntities"
     },
     "animate" : {
@@ -51,7 +52,7 @@
       "description" : [ "" ],
       "key" : "animate",
       "name" : "Animate",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ ],
       "shortClass" : "Animate"
     },
     "apply_cooldown" : {
@@ -60,7 +61,7 @@
       "description" : [ "" ],
       "key" : "apply_cooldown",
       "name" : "Apply Cooldown",
-      "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "ignore_result", "requires_entity_target", "requires_target", "spells", "target_caster" ],
+      "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "spells", "target_caster" ],
       "shortClass" : "ApplyCooldown"
     },
     "area_of_effect" : {
@@ -69,7 +70,7 @@
       "description" : [ "" ],
       "key" : "area_of_effect",
       "name" : "Area Of Effect",
-      "parameters" : [ "ignore_result", "radius", "requires_entity_target", "requires_target", "stop_on_success", "target_count", "target_source", "y_radius" ],
+      "parameters" : [ "radius", "target_count", "target_source", "y_radius" ],
       "shortClass" : "AreaOfEffect"
     },
     "area_of_effect_cloud" : {
@@ -78,7 +79,7 @@
       "description" : [ "" ],
       "key" : "area_of_effect_cloud",
       "name" : "Area Of Effect Cloud",
-      "parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "ignore_result", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "requires_entity_target", "requires_target", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
+      "parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
       "shortClass" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
@@ -87,7 +88,7 @@
       "description" : [ "" ],
       "key" : "armor_stand_projectile",
       "name" : "Armor Stand Projectile",
-      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
+      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
       "shortClass" : "ArmorStandProjectile"
     },
     "ascend" : {
@@ -96,7 +97,7 @@
       "description" : [ "" ],
       "key" : "ascend",
       "name" : "Ascend",
-      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
       "shortClass" : "Ascend"
     },
     "asynchronous" : {
@@ -105,7 +106,7 @@
       "description" : [ "" ],
       "key" : "asynchronous",
       "name" : "Asynchronous",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ ],
       "shortClass" : "Asynchronous"
     },
     "block_search" : {
@@ -114,7 +115,7 @@
       "description" : [ "" ],
       "key" : "block_search",
       "name" : "Block Search",
-      "parameters" : [ "direction", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "direction" ],
       "shortClass" : "BlockSearch"
     },
     "break_block" : {
@@ -123,7 +124,7 @@
       "description" : [ "" ],
       "key" : "break_block",
       "name" : "Break Block",
-      "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "shortClass" : "BreakBlock"
     },
     "brush" : {
@@ -132,7 +133,7 @@
       "description" : [ "" ],
       "key" : "brush",
       "name" : "Brush",
-      "parameters" : [ "brush", "ignore_result", "requires_entity_target", "requires_target", "sample", "stop_on_success" ],
+      "parameters" : [ "brush", "sample" ],
       "shortClass" : "Brush"
     },
     "brush_select" : {
@@ -141,7 +142,7 @@
       "description" : [ "" ],
       "key" : "brush_select",
       "name" : "Brush Select",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "BrushSelect"
     },
     "burn" : {
@@ -150,7 +151,7 @@
       "description" : [ "" ],
       "key" : "burn",
       "name" : "Burn",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Burn"
     },
     "cancel" : {
@@ -159,7 +160,7 @@
       "description" : [ "" ],
       "key" : "cancel",
       "name" : "Cancel",
-      "parameters" : [ "force", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "force" ],
       "shortClass" : "Cancel"
     },
     "capture" : {
@@ -168,7 +169,7 @@
       "description" : [ "" ],
       "key" : "capture",
       "name" : "Capture",
-      "parameters" : [ "ignore_result", "min_health", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "min_health" ],
       "shortClass" : "Capture"
     },
     "change_biome" : {
@@ -177,7 +178,7 @@
       "description" : [ "" ],
       "key" : "change_biome",
       "name" : "Change Biome",
-      "parameters" : [ "biome", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "biome" ],
       "shortClass" : "ChangeBiome"
     },
     "change_context" : {
@@ -186,7 +187,7 @@
       "description" : [ "" ],
       "key" : "change_context",
       "name" : "Change Context",
-      "parameters" : [ "ignore_result", "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "requires_entity_target", "requires_target", "source_at_target", "source_direction", "source_direction_offset", "source_is_target", "source_location", "source_offset", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "stop_on_success", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_snap", "target_yaw_offset" ],
+      "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_is_target", "source_location", "source_offset", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_snap", "target_yaw_offset" ],
       "shortClass" : "ChangeContext"
     },
     "change_parameters" : {
@@ -195,7 +196,7 @@
       "description" : [ "" ],
       "key" : "change_parameters",
       "name" : "Change Parameters",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "ChangeParameters"
     },
     "change_server" : {
@@ -204,7 +205,7 @@
       "description" : [ "" ],
       "key" : "change_server",
       "name" : "Change Server",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "server" ],
+      "parameters" : [ "server" ],
       "shortClass" : "ChangeServer"
     },
     "change_world" : {
@@ -213,7 +214,7 @@
       "description" : [ "" ],
       "key" : "change_world",
       "name" : "Change World",
-      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
       "shortClass" : "ChangeWorld"
     },
     "check_block" : {
@@ -222,7 +223,7 @@
       "description" : [ "" ],
       "key" : "check_block",
       "name" : "Check Block",
-      "parameters" : [ "allowed", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "allowed" ],
       "shortClass" : "CheckBlock"
     },
     "check_entity" : {
@@ -231,7 +232,7 @@
       "description" : [ "" ],
       "key" : "check_entity",
       "name" : "Check Entity",
-      "parameters" : [ "allow_caster", "ignore_result", "only_caster", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "allow_caster", "only_caster" ],
       "shortClass" : "CheckEntity"
     },
     "check_mana" : {
@@ -240,7 +241,7 @@
       "description" : [ "" ],
       "key" : "check_mana",
       "name" : "Check Mana",
-      "parameters" : [ "ignore_result", "require_mana", "require_mana_empty", "require_mana_not_full", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "require_mana", "require_mana_empty", "require_mana_not_full" ],
       "shortClass" : "CheckMana"
     },
     "command" : {
@@ -249,7 +250,7 @@
       "description" : [ "" ],
       "key" : "command",
       "name" : "Command",
-      "parameters" : [ "console", "escape_sequence", "ignore_result", "local_echo", "modal", "op", "requires_entity_target", "requires_target", "timeout" ],
+      "parameters" : [ "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
       "shortClass" : "Command"
     },
     "cone_of_effect" : {
@@ -258,7 +259,7 @@
       "description" : [ "" ],
       "key" : "cone_of_effect",
       "name" : "Cone Of Effect",
-      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "npc_weight", "otworld", "player_weight", "range", "range_padding", "requires_entity_target", "requires_target", "stop_on_success", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
+      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otworld", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
       "shortClass" : "ConeOfEffect"
     },
     "count" : {
@@ -267,7 +268,7 @@
       "description" : [ "" ],
       "key" : "count",
       "name" : "Count",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Count"
     },
     "cover" : {
@@ -276,7 +277,7 @@
       "description" : [ "" ],
       "key" : "cover",
       "name" : "Cover",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_above" ],
+      "parameters" : [ "target_above" ],
       "shortClass" : "Cover"
     },
     "create_field" : {
@@ -285,7 +286,7 @@
       "description" : [ "" ],
       "key" : "create_field",
       "name" : "Create Field",
-      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "shortClass" : "CreateField"
     },
     "create_plot" : {
@@ -294,7 +295,7 @@
       "description" : [ "" ],
       "key" : "create_plot",
       "name" : "Create Plot",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "CreatePlot"
     },
     "cure" : {
@@ -303,7 +304,7 @@
       "description" : [ "" ],
       "key" : "cure",
       "name" : "Cure",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Cure"
     },
     "custom_projectile" : {
@@ -312,7 +313,7 @@
       "description" : [ "" ],
       "key" : "custom_projectile",
       "name" : "Custom Projectile",
-      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss_effects", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity" ],
+      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss_effects", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity" ],
       "shortClass" : "CustomProjectile"
     },
     "cycle_block" : {
@@ -321,7 +322,7 @@
       "description" : [ "" ],
       "key" : "cycle_block",
       "name" : "Cycle Block",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "CycleBlock"
     },
     "cycle_entity" : {
@@ -330,7 +331,7 @@
       "description" : [ "" ],
       "key" : "cycle_entity",
       "name" : "Cycle Entity",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "CycleEntity"
     },
     "cylinder" : {
@@ -339,7 +340,7 @@
       "description" : [ "" ],
       "key" : "cylinder",
       "name" : "Cylinder",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Cylinder"
     },
     "damage" : {
@@ -348,7 +349,7 @@
       "description" : [ "" ],
       "key" : "damage",
       "name" : "Damage",
-      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "ignore_result", "magic_damage", "magic_entity_damage", "player_damage", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage" ],
       "shortClass" : "Damage"
     },
     "deactivate" : {
@@ -357,7 +358,7 @@
       "description" : [ "" ],
       "key" : "deactivate",
       "name" : "Deactivate",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Deactivate"
     },
     "debugger" : {
@@ -366,7 +367,7 @@
       "description" : [ "" ],
       "key" : "debugger",
       "name" : "Debugger",
-      "parameters" : [ "check", "ignore_result", "level", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "check", "level" ],
       "shortClass" : "Debugger"
     },
     "delay" : {
@@ -375,7 +376,7 @@
       "description" : [ "" ],
       "key" : "delay",
       "name" : "Delay",
-      "parameters" : [ "delay", "ignore_result", "requires_entity_target", "requires_target", "warmup" ],
+      "parameters" : [ "delay", "warmup" ],
       "shortClass" : "Delay"
     },
     "descend" : {
@@ -384,7 +385,7 @@
       "description" : [ "" ],
       "key" : "descend",
       "name" : "Descend",
-      "parameters" : [ "ignore_result", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "vertical_range" ],
+      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
       "shortClass" : "Descend"
     },
     "disable_physics" : {
@@ -393,7 +394,7 @@
       "description" : [ "" ],
       "key" : "disable_physics",
       "name" : "Disable Physics",
-      "parameters" : [ "duration", "ignore_result", "physics_buffer", "requires_entity_target", "requires_target", "undo" ],
+      "parameters" : [ "duration", "physics_buffer", "undo" ],
       "shortClass" : "DisablePhysics"
     },
     "disarm" : {
@@ -402,7 +403,7 @@
       "description" : [ "" ],
       "key" : "disarm",
       "name" : "Disarm",
-      "parameters" : [ "display_name", "ignore_result", "keep_in_inventory", "max_slot", "min_slot", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "display_name", "keep_in_inventory", "max_slot", "min_slot" ],
       "shortClass" : "Disarm"
     },
     "disc" : {
@@ -411,7 +412,7 @@
       "description" : [ "" ],
       "key" : "disc",
       "name" : "Disc",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Disc"
     },
     "disguise" : {
@@ -420,7 +421,7 @@
       "description" : [ "" ],
       "key" : "disguise",
       "name" : "Disguise",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Disguise"
     },
     "door" : {
@@ -429,7 +430,7 @@
       "description" : [ "" ],
       "key" : "door",
       "name" : "Door",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "type" ],
+      "parameters" : [ "type" ],
       "shortClass" : "Door"
     },
     "drop" : {
@@ -438,7 +439,7 @@
       "description" : [ "" ],
       "key" : "drop",
       "name" : "Drop",
-      "parameters" : [ "drop_count", "falling", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "drop_count", "falling" ],
       "shortClass" : "Drop"
     },
     "drop_item" : {
@@ -447,7 +448,7 @@
       "description" : [ "" ],
       "key" : "drop_item",
       "name" : "Drop Item",
-      "parameters" : [ "ignore_result", "item", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "item" ],
       "shortClass" : "DropItem"
     },
     "electrify" : {
@@ -456,7 +457,7 @@
       "description" : [ "" ],
       "key" : "electrify",
       "name" : "Electrify",
-      "parameters" : [ "electrify", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "electrify" ],
       "shortClass" : "Electrify"
     },
     "enchant_wand" : {
@@ -465,7 +466,7 @@
       "description" : [ "" ],
       "key" : "enchant_wand",
       "name" : "Enchant Wand",
-      "parameters" : [ "ignore_result", "levels", "path", "path_exact", "requires", "requires_entity_target", "requires_target", "use_xp" ],
+      "parameters" : [ "levels", "path", "path_exact", "requires", "use_xp" ],
       "shortClass" : "EnchantWand"
     },
     "entity_projectile" : {
@@ -474,7 +475,7 @@
       "description" : [ "" ],
       "key" : "entity_projectile",
       "name" : "Entity Projectile",
-      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
+      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
       "shortClass" : "EntityProjectile"
     },
     "explosion" : {
@@ -483,7 +484,7 @@
       "description" : [ "" ],
       "key" : "explosion",
       "name" : "Explosion",
-      "parameters" : [ "break_blocks", "fire", "ignore_result", "requires_entity_target", "requires_target", "size" ],
+      "parameters" : [ "break_blocks", "fire", "size" ],
       "shortClass" : "Explosion"
     },
     "fall_protection" : {
@@ -492,7 +493,7 @@
       "description" : [ "" ],
       "key" : "fall_protection",
       "name" : "Fall Protection",
-      "parameters" : [ "duration", "ignore_result", "protection_count", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "duration", "protection_count" ],
       "shortClass" : "FallProtection"
     },
     "feed" : {
@@ -501,7 +502,7 @@
       "description" : [ "" ],
       "key" : "feed",
       "name" : "Feed",
-      "parameters" : [ "exhaustion", "feed", "ignore_result", "requires_entity_target", "requires_target", "saturation" ],
+      "parameters" : [ "exhaustion", "feed", "saturation" ],
       "shortClass" : "Feed"
     },
     "fill_wand" : {
@@ -510,7 +511,7 @@
       "description" : [ "" ],
       "key" : "fill_wand",
       "name" : "Fill Wand",
-      "parameters" : [ "ignore_result", "max_level", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "max_level" ],
       "shortClass" : "FillWand"
     },
     "firework" : {
@@ -519,7 +520,7 @@
       "description" : [ "" ],
       "key" : "firework",
       "name" : "Firework",
-      "parameters" : [ "dy_offset", "flicker", "ignore_result", "launch", "lifetime", "power", "projectile_effects", "requires_entity_target", "requires_target", "set_target", "silent", "speed", "start", "stop_on_success", "track_projectile", "trail" ],
+      "parameters" : [ "dy_offset", "flicker", "launch", "lifetime", "power", "projectile_effects", "set_target", "silent", "speed", "start", "track_projectile", "trail" ],
       "shortClass" : "Firework"
     },
     "flower" : {
@@ -528,7 +529,7 @@
       "description" : [ "" ],
       "key" : "flower",
       "name" : "Flower",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Flower"
     },
     "freeze" : {
@@ -537,7 +538,7 @@
       "description" : [ "" ],
       "key" : "freeze",
       "name" : "Freeze",
-      "parameters" : [ "freeze_fire", "freeze_lava", "freeze_water", "ice", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "freeze_fire", "freeze_lava", "freeze_water", "ice" ],
       "shortClass" : "Freeze"
     },
     "give_item" : {
@@ -546,7 +547,7 @@
       "description" : [ "" ],
       "key" : "give_item",
       "name" : "Give Item",
-      "parameters" : [ "ignore_result", "item", "permission", "requires", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "item", "permission", "requires" ],
       "shortClass" : "GiveItem"
     },
     "glide" : {
@@ -555,7 +556,7 @@
       "description" : [ "" ],
       "key" : "glide",
       "name" : "Glide",
-      "parameters" : [ "ignore_result", "require_elytra", "requires_entity_target", "requires_target", "wait_for_landing" ],
+      "parameters" : [ "require_elytra", "wait_for_landing" ],
       "shortClass" : "Glide"
     },
     "grow_entity" : {
@@ -564,7 +565,7 @@
       "description" : [ "" ],
       "key" : "grow_entity",
       "name" : "Grow Entity",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "skeletons" ],
+      "parameters" : [ "skeletons" ],
       "shortClass" : "GrowEntity"
     },
     "heal" : {
@@ -573,7 +574,7 @@
       "description" : [ "" ],
       "key" : "heal",
       "name" : "Heal",
-      "parameters" : [ "amount", "heal_max_distance", "ignore_result", "percentage", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "amount", "heal_max_distance", "percentage" ],
       "shortClass" : "Heal"
     },
     "ignite" : {
@@ -582,7 +583,7 @@
       "description" : [ "" ],
       "key" : "ignite",
       "name" : "Ignite",
-      "parameters" : [ "duration", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "duration" ],
       "shortClass" : "Ignite"
     },
     "inventory" : {
@@ -591,7 +592,7 @@
       "description" : [ "" ],
       "key" : "inventory",
       "name" : "Inventory",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "title", "type" ],
+      "parameters" : [ "title", "type" ],
       "shortClass" : "Inventory"
     },
     "inventory_close" : {
@@ -600,7 +601,7 @@
       "description" : [ "" ],
       "key" : "inventory_close",
       "name" : "Inventory Close",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "InventoryClose"
     },
     "item_shop" : {
@@ -609,7 +610,7 @@
       "description" : [ "" ],
       "key" : "item_shop",
       "name" : "Item Shop",
-      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "ignore_result", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "requires_entity_target", "requires_target", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
       "shortClass" : "ItemShop"
     },
     "kill" : {
@@ -618,7 +619,7 @@
       "description" : [ "" ],
       "key" : "kill",
       "name" : "Kill",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Kill"
     },
     "light" : {
@@ -627,7 +628,7 @@
       "description" : [ "" ],
       "key" : "light",
       "name" : "Light",
-      "parameters" : [ "async", "ignore_result", "level", "requires_entity_target", "requires_target", "update" ],
+      "parameters" : [ "async", "level", "update" ],
       "shortClass" : "Light"
     },
     "lightning" : {
@@ -636,7 +637,7 @@
       "description" : [ "" ],
       "key" : "lightning",
       "name" : "Lightning",
-      "parameters" : [ "effect_only", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "effect_only" ],
       "shortClass" : "Lightning"
     },
     "line" : {
@@ -645,7 +646,7 @@
       "description" : [ "" ],
       "key" : "line",
       "name" : "Line",
-      "parameters" : [ "ignore_result", "increment_data", "reorient", "require_block", "requires_entity_target", "requires_target", "reverse", "size", "start", "start_at_target", "stop_on_success" ],
+      "parameters" : [ "increment_data", "reorient", "require_block", "reverse", "size", "start", "start_at_target" ],
       "shortClass" : "Line"
     },
     "lock" : {
@@ -654,7 +655,7 @@
       "description" : [ "" ],
       "key" : "lock",
       "name" : "Lock",
-      "parameters" : [ "ignore_result", "key_description", "key_icon", "key_name", "override", "requires_entity_target", "requires_target", "type" ],
+      "parameters" : [ "key_description", "key_icon", "key_name", "override", "type" ],
       "shortClass" : "Lock"
     },
     "message" : {
@@ -663,7 +664,7 @@
       "description" : [ "" ],
       "key" : "message",
       "name" : "Message",
-      "parameters" : [ "fade_in", "fade_out", "ignore_result", "message", "message_target", "message_type", "requires_entity_target", "requires_target", "stay", "sub_message" ],
+      "parameters" : [ "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
       "shortClass" : "Message"
     },
     "modify_block" : {
@@ -672,7 +673,7 @@
       "description" : [ "" ],
       "key" : "modify_block",
       "name" : "Modify Block",
-      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "ignore_result", "max_damage", "physics", "physics_blocks", "reflect_chance", "requires_entity_target", "requires_target", "speed" ],
+      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "shortClass" : "ModifyBlock"
     },
     "modify_breakable" : {
@@ -681,7 +682,7 @@
       "description" : [ "" ],
       "key" : "modify_breakable",
       "name" : "Modify Breakable",
-      "parameters" : [ "breakable", "ignore_result", "requires_entity_target", "requires_target", "target_air" ],
+      "parameters" : [ "breakable", "target_air" ],
       "shortClass" : "ModifyBreakable"
     },
     "modify_game_mode" : {
@@ -690,7 +691,7 @@
       "description" : [ "" ],
       "key" : "modify_game_mode",
       "name" : "Modify Game Mode",
-      "parameters" : [ "game_mode", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "game_mode" ],
       "shortClass" : "ModifyGameMode"
     },
     "modify_mana" : {
@@ -699,7 +700,7 @@
       "description" : [ "" ],
       "key" : "modify_mana",
       "name" : "Modify Mana",
-      "parameters" : [ "fill_mana", "ignore_result", "mana", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "fill_mana", "mana" ],
       "shortClass" : "ModifyMana"
     },
     "modify_properties" : {
@@ -708,7 +709,7 @@
       "description" : [ "" ],
       "key" : "modify_properties",
       "name" : "Modify Properties",
-      "parameters" : [ "ignore_result", "modify_target", "requires_entity_target", "requires_target", "upgrade" ],
+      "parameters" : [ "modify_target", "upgrade" ],
       "shortClass" : "ModifyProperties"
     },
     "modify_reflective" : {
@@ -717,7 +718,7 @@
       "description" : [ "" ],
       "key" : "modify_reflective",
       "name" : "Modify Reflective",
-      "parameters" : [ "ignore_result", "reflect_chance", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "reflect_chance" ],
       "shortClass" : "ModifyReflective"
     },
     "modify_s_p" : {
@@ -726,7 +727,7 @@
       "description" : [ "" ],
       "key" : "modify_s_p",
       "name" : "Modify SP",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "sp" ],
+      "parameters" : [ "sp" ],
       "shortClass" : "ModifySP"
     },
     "modify_walk_speed" : {
@@ -735,7 +736,7 @@
       "description" : [ "" ],
       "key" : "modify_walk_speed",
       "name" : "Modify Walk Speed",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "ModifyWalkSpeed"
     },
     "mount" : {
@@ -744,7 +745,7 @@
       "description" : [ "" ],
       "key" : "mount",
       "name" : "Mount",
-      "parameters" : [ "eject", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "eject" ],
       "shortClass" : "Mount"
     },
     "mount_armor_stand" : {
@@ -753,7 +754,7 @@
       "description" : [ "" ],
       "key" : "mount_armor_stand",
       "name" : "Mount Armor Stand",
-      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "ignore_result", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "requires_entity_target", "requires_target", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "shortClass" : "MountArmorStand"
     },
     "move_block" : {
@@ -762,7 +763,7 @@
       "description" : [ "" ],
       "key" : "move_block",
       "name" : "Move Block",
-      "parameters" : [ "ignore_result", "offset", "requires_entity_target", "requires_target", "set_target" ],
+      "parameters" : [ "offset", "set_target" ],
       "shortClass" : "MoveBlock"
     },
     "multiply" : {
@@ -771,7 +772,7 @@
       "description" : [ "" ],
       "key" : "multiply",
       "name" : "Multiply",
-      "parameters" : [ "ignore_result", "multiply", "repeat", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "multiply", "repeat" ],
       "shortClass" : "Multiply"
     },
     "orient" : {
@@ -780,7 +781,7 @@
       "description" : [ "" ],
       "key" : "orient",
       "name" : "Orient",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Orient"
     },
     "parallel" : {
@@ -789,7 +790,7 @@
       "description" : [ "" ],
       "key" : "parallel",
       "name" : "Parallel",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ ],
       "shortClass" : "Parallel"
     },
     "plane" : {
@@ -798,7 +799,7 @@
       "description" : [ "" ],
       "key" : "plane",
       "name" : "Plane",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Plane"
     },
     "play_effects" : {
@@ -807,7 +808,7 @@
       "description" : [ "" ],
       "key" : "play_effects",
       "name" : "Play Effects",
-      "parameters" : [ "effect", "effects", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "effect", "effects" ],
       "shortClass" : "PlayEffects"
     },
     "play_record" : {
@@ -816,7 +817,7 @@
       "description" : [ "" ],
       "key" : "play_record",
       "name" : "Play Record",
-      "parameters" : [ "ignore_result", "records", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "records" ],
       "shortClass" : "PlayRecord"
     },
     "play_sound" : {
@@ -825,7 +826,7 @@
       "description" : [ "" ],
       "key" : "play_sound",
       "name" : "Play Sound",
-      "parameters" : [ "ignore_result", "pitch", "radius", "requires_entity_target", "requires_target", "sound", "volume" ],
+      "parameters" : [ "pitch", "radius", "sound", "volume" ],
       "shortClass" : "PlaySound"
     },
     "player_select" : {
@@ -834,7 +835,7 @@
       "description" : [ "" ],
       "key" : "player_select",
       "name" : "Player Select",
-      "parameters" : [ "cross_world", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "cross_world" ],
       "shortClass" : "PlayerSelect"
     },
     "potion_effect" : {
@@ -843,7 +844,7 @@
       "description" : [ "" ],
       "key" : "potion_effect",
       "name" : "Potion Effect",
-      "parameters" : [ "add_effects", "effects_ambient", "effects_particles", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "add_effects", "effects_ambient", "effects_particles" ],
       "shortClass" : "PotionEffect"
     },
     "power_block" : {
@@ -852,7 +853,7 @@
       "description" : [ "" ],
       "key" : "power_block",
       "name" : "Power Block",
-      "parameters" : [ "ignore_result", "physics", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "physics" ],
       "shortClass" : "PowerBlock"
     },
     "probability" : {
@@ -861,7 +862,7 @@
       "description" : [ "" ],
       "key" : "probability",
       "name" : "Probability",
-      "parameters" : [ "ignore_result", "probability", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "probability" ],
       "shortClass" : "Probability"
     },
     "projectile" : {
@@ -870,7 +871,7 @@
       "description" : [ "" ],
       "key" : "projectile",
       "name" : "Projectile",
-      "parameters" : [ "break_blocks", "count", "damage", "fire", "ignore_result", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "size", "source_location", "speed", "spread", "start", "stop_on_success", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : [ "break_blocks", "count", "damage", "fire", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "set_target", "size", "source_location", "speed", "spread", "start", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "shortClass" : "Projectile"
     },
     "random" : {
@@ -879,7 +880,7 @@
       "description" : [ "" ],
       "key" : "random",
       "name" : "Random",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ ],
       "shortClass" : "Random"
     },
     "recall" : {
@@ -888,7 +889,7 @@
       "description" : [ "" ],
       "key" : "recall",
       "name" : "Recall",
-      "parameters" : [ "allow_cross_world", "friend_key", "ignore_result", "marker_key", "protection_duration", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "unlock_key", "vertical_range" ],
+      "parameters" : [ "allow_cross_world", "friend_key", "marker_key", "protection_duration", "require_build", "require_exit", "safe", "unlock_key", "vertical_range" ],
       "shortClass" : "Recall"
     },
     "recurse" : {
@@ -897,7 +898,7 @@
       "description" : [ "" ],
       "key" : "recurse",
       "name" : "Recurse",
-      "parameters" : [ "checkered", "depth", "ignore_result", "replace", "requires_entity_target", "requires_target", "size", "stop_on_success" ],
+      "parameters" : [ "checkered", "depth", "replace", "size" ],
       "shortClass" : "Recurse"
     },
     "remove_entity" : {
@@ -906,7 +907,7 @@
       "description" : [ "" ],
       "key" : "remove_entity",
       "name" : "Remove Entity",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "RemoveEntity"
     },
     "repair_item" : {
@@ -915,7 +916,7 @@
       "description" : [ "" ],
       "key" : "repair_item",
       "name" : "Repair Item",
-      "parameters" : [ "armor", "held_item", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "armor", "held_item" ],
       "shortClass" : "RepairItem"
     },
     "repeat" : {
@@ -924,7 +925,7 @@
       "description" : [ "" ],
       "key" : "repeat",
       "name" : "Repeat",
-      "parameters" : [ "ignore_result", "repeat", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "repeat" ],
       "shortClass" : "Repeat"
     },
     "retarget" : {
@@ -933,7 +934,7 @@
       "description" : [ "" ],
       "key" : "retarget",
       "name" : "Retarget",
-      "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "ignore_result", "range", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "range" ],
       "shortClass" : "Retarget"
     },
     "ride_entity" : {
@@ -942,7 +943,7 @@
       "description" : [ "" ],
       "key" : "ride_entity",
       "name" : "Ride Entity",
-      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "ignore_result", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "requires_entity_target", "requires_target", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "shortClass" : "RideEntity"
     },
     "ring" : {
@@ -951,7 +952,7 @@
       "description" : [ "" ],
       "key" : "ring",
       "name" : "Ring",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Ring"
     },
     "selector" : {
@@ -960,7 +961,7 @@
       "description" : [ "" ],
       "key" : "selector",
       "name" : "Selector",
-      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "confirm", "confirm_filler", "confirm_title", "cost", "cost_type", "currency", "experience", "icon", "ignore_result", "limit", "requires_entity_target", "requires_target", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
+      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "confirm", "confirm_filler", "confirm_title", "cost", "cost_type", "currency", "experience", "icon", "limit", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
       "shortClass" : "Selector"
     },
     "serial" : {
@@ -969,7 +970,7 @@
       "description" : [ "" ],
       "key" : "serial",
       "name" : "Serial",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+      "parameters" : [ ],
       "shortClass" : "Serial"
     },
     "shrink_block" : {
@@ -978,7 +979,7 @@
       "description" : [ "" ],
       "key" : "shrink_block",
       "name" : "Shrink Block",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "ShrinkBlock"
     },
     "shrink_entity" : {
@@ -987,7 +988,7 @@
       "description" : [ "" ],
       "key" : "shrink_entity",
       "name" : "Shrink Entity",
-      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "ignore_result", "magic_damage", "magic_entity_damage", "player_damage", "requires_entity_target", "requires_target", "skeletons" ],
+      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage", "skeletons" ],
       "shortClass" : "ShrinkEntity"
     },
     "simulate" : {
@@ -996,7 +997,7 @@
       "description" : [ "" ],
       "key" : "simulate",
       "name" : "Simulate",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Simulate"
     },
     "skill_selector" : {
@@ -1005,7 +1006,7 @@
       "description" : [ "" ],
       "key" : "skill_selector",
       "name" : "Skill Selector",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "SkillSelector"
     },
     "skip" : {
@@ -1014,7 +1015,7 @@
       "description" : [ "" ],
       "key" : "skip",
       "name" : "Skip",
-      "parameters" : [ "ignore_result", "repeat_skip", "requires_entity_target", "requires_target", "skip", "stop_on_success" ],
+      "parameters" : [ "repeat_skip", "skip" ],
       "shortClass" : "Skip"
     },
     "spawn_entity" : {
@@ -1023,7 +1024,7 @@
       "description" : [ "" ],
       "key" : "spawn_entity",
       "name" : "Spawn Entity",
-      "parameters" : [ "direction", "dy_offset", "force", "ignore_result", "loot", "repeat_random", "requires_entity_target", "requires_target", "set_target", "speed" ],
+      "parameters" : [ "direction", "dy_offset", "force", "loot", "repeat_random", "set_target", "speed" ],
       "shortClass" : "SpawnEntity"
     },
     "spell_progress" : {
@@ -1032,7 +1033,7 @@
       "description" : [ "" ],
       "key" : "spell_progress",
       "name" : "Spell Progress",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "SpellProgress"
     },
     "spell_shop" : {
@@ -1041,7 +1042,7 @@
       "description" : [ "" ],
       "key" : "spell_shop",
       "name" : "Spell Shop",
-      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "ignore_result", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "requires_entity_target", "requires_target", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
       "shortClass" : "SpellShop"
     },
     "sphere" : {
@@ -1050,7 +1051,7 @@
       "description" : [ "" ],
       "key" : "sphere",
       "name" : "Sphere",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Sphere"
     },
     "spread" : {
@@ -1059,7 +1060,7 @@
       "description" : [ "" ],
       "key" : "spread",
       "name" : "Spread",
-      "parameters" : [ "center_probability", "ignore_result", "outer_probability", "pitch_max", "probability", "radius", "requires_entity_target", "requires_target", "stop_on_success", "yaw_max" ],
+      "parameters" : [ "center_probability", "outer_probability", "pitch_max", "probability", "radius", "yaw_max" ],
       "shortClass" : "Spread"
     },
     "stash_wand" : {
@@ -1068,7 +1069,7 @@
       "description" : [ "" ],
       "key" : "stash_wand",
       "name" : "Stash Wand",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "return_on_finish" ],
+      "parameters" : [ "return_on_finish" ],
       "shortClass" : "StashWand"
     },
     "stop" : {
@@ -1077,7 +1078,7 @@
       "description" : [ "" ],
       "key" : "stop",
       "name" : "Stop",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Stop"
     },
     "super_protection" : {
@@ -1086,7 +1087,7 @@
       "description" : [ "" ],
       "key" : "super_protection",
       "name" : "Super Protection",
-      "parameters" : [ "duration", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "duration" ],
       "shortClass" : "SuperProtection"
     },
     "t_n_t" : {
@@ -1095,7 +1096,7 @@
       "description" : [ "" ],
       "key" : "t_n_t",
       "name" : "TNT",
-      "parameters" : [ "break_blocks", "count", "fire", "fuse", "ignore_result", "lifetime", "projectile_effects", "requires_entity_target", "requires_target", "set_target", "size", "stop_on_success", "tnt_velocity", "track_projectile" ],
+      "parameters" : [ "break_blocks", "count", "fire", "fuse", "lifetime", "projectile_effects", "set_target", "size", "tnt_velocity", "track_projectile" ],
       "shortClass" : "TNT"
     },
     "take_item" : {
@@ -1104,7 +1105,7 @@
       "description" : [ "" ],
       "key" : "take_item",
       "name" : "Take Item",
-      "parameters" : [ "display_name", "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "display_name" ],
       "shortClass" : "TakeItem"
     },
     "tame" : {
@@ -1113,7 +1114,7 @@
       "description" : [ "" ],
       "key" : "tame",
       "name" : "Tame",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target" ],
+      "parameters" : [ ],
       "shortClass" : "Tame"
     },
     "teleport" : {
@@ -1122,7 +1123,7 @@
       "description" : [ "" ],
       "key" : "teleport",
       "name" : "Teleport",
-      "parameters" : [ "allow_passthrough", "ignore_result", "ledge_range", "passthrough_range", "require_build", "require_exit", "requires_entity_target", "requires_target", "safe", "use_target_location", "vertical_range" ],
+      "parameters" : [ "allow_passthrough", "ledge_range", "passthrough_range", "require_build", "require_exit", "safe", "use_target_location", "vertical_range" ],
       "shortClass" : "Teleport"
     },
     "throw_block" : {
@@ -1131,7 +1132,7 @@
       "description" : [ "" ],
       "key" : "throw_block",
       "name" : "Throw Block",
-      "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "ignore_result", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "source_location", "speed", "speed_max", "speed_min", "stop_on_success", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "shortClass" : "ThrowBlock"
     },
     "throw_item" : {
@@ -1140,7 +1141,7 @@
       "description" : [ "" ],
       "key" : "throw_item",
       "name" : "Throw Item",
-      "parameters" : [ "age_items", "ignore_result", "item", "lifetime", "orient", "projectile_effects", "reorient", "requires_entity_target", "requires_target", "set_target", "source_location", "speed", "speed_max", "speed_min", "stop_on_success", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : [ "age_items", "item", "lifetime", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "shortClass" : "ThrowItem"
     },
     "tile_entities" : {
@@ -1149,7 +1150,7 @@
       "description" : [ "" ],
       "key" : "tile_entities",
       "name" : "Tile Entities",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success", "target_all_worlds" ],
+      "parameters" : [ "target_all_worlds" ],
       "shortClass" : "TileEntities"
     },
     "time" : {
@@ -1158,7 +1159,7 @@
       "description" : [ "" ],
       "key" : "time",
       "name" : "Time",
-      "parameters" : [ "cycle_moon_phase", "ignore_result", "requires_entity_target", "requires_target", "time" ],
+      "parameters" : [ "cycle_moon_phase", "time" ],
       "shortClass" : "Time"
     },
     "torch" : {
@@ -1167,7 +1168,7 @@
       "description" : [ "" ],
       "key" : "torch",
       "name" : "Torch",
-      "parameters" : [ "allow_glowstone", "glowstone_torch", "ignore_result", "not_attachable", "redstone_torch", "requires_entity_target", "requires_target" ],
+      "parameters" : [ "allow_glowstone", "glowstone_torch", "not_attachable", "redstone_torch" ],
       "shortClass" : "Torch"
     },
     "tree" : {
@@ -1176,7 +1177,7 @@
       "description" : [ "" ],
       "key" : "tree",
       "name" : "Tree",
-      "parameters" : [ "ignore_result", "require_sapling", "requires_entity_target", "requires_target", "type" ],
+      "parameters" : [ "require_sapling", "type" ],
       "shortClass" : "Tree"
     },
     "undo" : {
@@ -1185,7 +1186,7 @@
       "description" : [ "" ],
       "key" : "undo",
       "name" : "Undo",
-      "parameters" : [ "admin_permission", "cancel", "ignore_result", "requires_entity_target", "requires_target", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
+      "parameters" : [ "admin_permission", "cancel", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
       "shortClass" : "Undo"
     },
     "vanish" : {
@@ -1194,7 +1195,7 @@
       "description" : [ "" ],
       "key" : "vanish",
       "name" : "Vanish",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "vanish" ],
+      "parameters" : [ "vanish" ],
       "shortClass" : "Vanish"
     },
     "velocity" : {
@@ -1203,7 +1204,7 @@
       "description" : [ "" ],
       "key" : "velocity",
       "name" : "Velocity",
-      "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "ignore_result", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "requires_entity_target", "requires_target", "speed", "velocity_max_distance", "y_offset" ],
+      "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "speed", "velocity_max_distance", "y_offset" ],
       "shortClass" : "Velocity"
     },
     "volume" : {
@@ -1212,7 +1213,7 @@
       "description" : [ "" ],
       "key" : "volume",
       "name" : "Volume",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "ignore_result", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "requires_entity_target", "requires_target", "stop_on_success", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "shortClass" : "Volume"
     },
     "wear" : {
@@ -1221,7 +1222,7 @@
       "description" : [ "" ],
       "key" : "wear",
       "name" : "Wear",
-      "parameters" : [ "armor_slot", "ignore_result", "item", "material", "requires_entity_target", "requires_target", "return_on_finish", "unbreakable", "use_item" ],
+      "parameters" : [ "armor_slot", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
       "shortClass" : "Wear"
     },
     "weather" : {
@@ -1230,7 +1231,7 @@
       "description" : [ "" ],
       "key" : "weather",
       "name" : "Weather",
-      "parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "weather" ],
+      "parameters" : [ "weather" ],
       "shortClass" : "Weather"
     }
   },
@@ -7472,7 +7473,7 @@
       "type" : "integer"
     }
   },
-  "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
+  "spell_parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
   "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
   "types" : {
     "actions" : {
