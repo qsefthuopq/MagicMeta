@@ -1661,6 +1661,7 @@
     }
   },
   "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
+  "mob_parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "helmet", "interact_spell", "interval", "item", "leggings", "mage", "name", "protection", "silent", "strength", "tamed", "track_radius", "triggers", "type", "weakness" ],
   "parameters" : {
     "actions" : {
       "category" : "actions",

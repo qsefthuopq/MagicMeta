@@ -19,6 +19,7 @@ import com.elmakers.mine.bukkit.action.CompoundAction;
 import com.elmakers.mine.bukkit.api.action.SpellAction;
 import com.elmakers.mine.bukkit.effect.EffectPlayer;
 import com.elmakers.mine.bukkit.effect.builtin.EffectSingle;
+import com.elmakers.mine.bukkit.entity.EntityData;
 import com.elmakers.mine.bukkit.magic.BaseMagicProperties;
 import com.elmakers.mine.bukkit.magic.Mage;
 import com.elmakers.mine.bukkit.magic.MagicController;
@@ -258,6 +259,16 @@ public class MagicMeta {
         }
     }
 
+    private void generateMobMeta() {
+        System.out.println("Scanning EntityData");
+        InterrogatingConfiguration mobConfiguration = new InterrogatingConfiguration(data.getParameterStore());
+        new EntityData(controller, "interrogator", mobConfiguration);
+        Collection<Parameter> singleParameters = mobConfiguration.getParameters();
+        for (Parameter parameter : singleParameters) {
+            data.addMobParameter(parameter.getKey());
+        }
+    }
+
     private void generateMeta() {
         if (data == null) {
             data = new MetaData();
@@ -267,6 +278,7 @@ public class MagicMeta {
         generateEffectsMeta();
         generateEffectLibMeta();
         generateWandMeta();
+        generateMobMeta();
     }
 
     private Category getCategory(String key) {

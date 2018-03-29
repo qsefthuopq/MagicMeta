@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MetaData {
+    private Set<String> mobParameters = new HashSet<>();
     private Set<String> actionParameters = new HashSet<>();
     private Set<String> spellParameters = new HashSet<>();
     private Set<String> spellProperties = new HashSet<>();
@@ -31,6 +32,15 @@ public class MetaData {
 
     public void setSpellParameters(Set<String> spellParameters) {
         this.spellParameters = spellParameters;
+    }
+
+    @JsonProperty("mob_parameters")
+    public List<String> getMobParameters() {
+        return sortCollection(mobParameters);
+    }
+
+    public void setMobParameters(Set<String> mobParameters) {
+        this.spellParameters = mobParameters;
     }
 
     @JsonProperty("action_parameters")
@@ -173,6 +183,10 @@ public class MetaData {
 
     public void addAction(String key, SpellActionDescription action) {
         actions.put(key, action);
+    }
+
+    public void addMobParameter(String key) {
+        mobParameters.add(key);
     }
 
     public void addActionParameter(String key) {
