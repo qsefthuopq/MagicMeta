@@ -7531,7 +7531,7 @@
       "className" : "java.lang.String",
       "description" : [ "A color string using RRGGBB notation" ],
       "name" : "Color",
-      "options" : [ "FFFFFF", "010101", "FF0000", "00FF00", "0000FF" ]
+      "options" : [ "0000FF", "00FF00", "010101", "FF0000", "FFFFFF" ]
     },
     "cost_map" : {
       "className" : "java.util.Map",
@@ -7551,7 +7551,7 @@
       "className" : "java.lang.String",
       "description" : [ "A type of damage" ],
       "name" : "Damage Type",
-      "options" : [ "overall", "magic", "physical", "projectile", "fall", "fire", "explosion" ]
+      "options" : [ "explosion", "fall", "fire", "magic", "overall", "physical", "projectile" ]
     },
     "damage_type_map" : {
       "className" : "java.util.Map",
@@ -7571,7 +7571,7 @@
       "className" : "java.lang.Double",
       "description" : [ "A large numeric floating-point number" ],
       "name" : "Double",
-      "options" : [ "0", "0.1", "0.5", "-0.5", "1" ]
+      "options" : [ "-0.5", "0", "0.1", "0.5", "1" ]
     },
     "effect_type" : {
       "className" : "org.bukkit.Effect$Type",
@@ -7595,7 +7595,7 @@
       "className" : "java.lang.Float",
       "description" : [ "A numeric floating-point number" ],
       "name" : "Float",
-      "options" : [ "0", "0.1", "0.5", "-0.5", "1" ]
+      "options" : [ "-0.5", "0", "0.1", "0.5", "1" ]
     },
     "font" : {
       "className" : "java.awt.Font",
@@ -7613,7 +7613,7 @@
       "className" : "java.lang.Integer",
       "description" : [ "A numeric integer value" ],
       "name" : "Integer",
-      "options" : [ "0", "1", "-1", "100" ]
+      "options" : [ "-1", "0", "1", "100" ]
     },
     "list" : {
       "className" : "java.util.List",
@@ -7625,7 +7625,7 @@
       "className" : "java.lang.Long",
       "description" : [ "A large numeric integer value" ],
       "name" : "Long",
-      "options" : [ "0", "1", "-1", "100" ]
+      "options" : [ "-1", "0", "1", "100" ]
     },
     "map" : {
       "className" : "java.util.Map",
@@ -7656,7 +7656,7 @@
       "className" : "java.lang.String",
       "description" : [ "A progression path" ],
       "name" : "Path",
-      "options" : [ "beginner", "student", "jedi", "airbender" ]
+      "options" : [ "airbender", "beginner", "jedi", "student" ]
     },
     "potion_effect_map" : {
       "className" : "java.util.Map",
@@ -7713,11 +7713,11 @@
       "className" : "org.bukkit.util.Vector",
       "description" : [ "A directional vector consisting of x,y,z coordinates" ],
       "name" : "Vector",
-      "options" : [ "0,0,0", "0,1,0", "0,-1,0"]
+      "options" : [ "0,-1,0", "0,0,0", "0,1,0" ]
     },
     "wand_mode" : {
       "className" : "com.elmakers.mine.bukkit.wand.WandMode",
-      "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar"],
+      "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar" ],
       "name" : "Wand Mode",
       "options" : [ "cast", "chest", "cycle", "inventory", "none", "skills" ]
     },
@@ -7725,7 +7725,7 @@
       "className" : "java.lang.String",
       "description" : [ "What type of weather to set" ],
       "name" : "Weather",
-      "options" : [ "storm", "cycle", "clear" ]
+      "options" : [ "clear", "cycle", "storm" ]
     }
   },
   "wand_properties" : [ "active_brush", "active_effects", "active_spell", "alternate_spell", "alternate_spell2", "attributes", "block_chance", "block_cooldown", "block_fov", "block_mage_cooldown", "block_reflect_chance", "boostable", "bound", "brush_inventory", "brush_mode", "brushes", "cast_interval", "cast_location", "cast_min_bowpull", "cast_min_velocity", "cast_parameters", "cast_spell", "cast_velocity_direction", "class", "classes", "consume_reduction", "consume_spell", "cooldown_reduction", "cost_reduction", "drop", "effect_bubbles", "effect_color", "effect_particle", "effect_particle_count", "effect_particle_data", "effect_particle_interval", "effect_particle_min_velocity", "effect_particle_offset", "effect_particle_radius", "effect_sound", "effect_sound_interval", "enchant_count", "force", "has_uses", "heroes", "hotbar", "hotbar_count", "icon", "icon_inactive", "icon_inactive_delay", "immortal", "indestructible", "inventory_rows", "invulnerable", "item_attributes", "keep", "left_click", "locked", "mana", "mana_max", "mana_max_boost", "mana_per_damage", "mana_regeneration", "mana_regeneration_boost", "max_enchant_count", "mode", "overrides", "passive", "path", "potion_effects", "power", "powered", "protected", "protection", "quick_cast", "quiet", "rename", "rename_description", "right_click", "soul", "sp_multiplier", "spell_inventory", "spell_levels", "spells", "stack", "swap", "template", "track", "undroppable", "unique", "unmoveable", "unstashable", "upgrade", "uses" ]
