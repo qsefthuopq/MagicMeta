@@ -808,7 +808,7 @@
       "description" : [ "" ],
       "key" : "play_effects",
       "name" : "Play Effects",
-      "parameters" : [ "effect", "effects" ],
+      "parameters" : [ "effect_key", "effects" ],
       "short_class" : "PlayEffects"
     },
     "play_record" : {
@@ -3171,11 +3171,18 @@
       "type" : "string"
     },
     "effect_color" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "effect_color",
       "name" : "Effect Color",
       "type" : "double"
+    },
+    "effect_key" : {
+      "category" : "effects",
+      "description" : [ "The key of an effects blocks to play" ],
+      "field" : "effect",
+      "name" : "Effect",
+      "type" : "string"
     },
     "effect_only" : {
       "category" : "",
