@@ -1666,7 +1666,7 @@
       "description" : [ "" ],
       "field" : "actions",
       "name" : "Actions",
-      "type" : "map"
+      "type" : "actions"
     },
     "active_brush" : {
       "category" : "",
@@ -1680,7 +1680,7 @@
       "description" : [ "" ],
       "field" : "active_costs",
       "name" : "Active Costs",
-      "type" : "map"
+      "type" : "cost_map"
     },
     "active_effects" : {
       "category" : "",
@@ -1820,7 +1820,7 @@
       "description" : [ "" ],
       "field" : "amount",
       "name" : "Amount",
-      "type" : "integer"
+      "type" : "double"
     },
     "angular_velocity" : {
       "category" : "",
@@ -2338,7 +2338,7 @@
       "description" : [ "" ],
       "field" : "cast_interval",
       "name" : "Cast Interval",
-      "type" : "double"
+      "type" : "long"
     },
     "cast_location" : {
       "category" : "",
@@ -2765,7 +2765,7 @@
       "description" : [ "" ],
       "field" : "costs",
       "name" : "Costs",
-      "type" : "map"
+      "type" : "cost_map"
     },
     "count" : {
       "category" : "",
@@ -2996,7 +2996,7 @@
       "description" : [ "" ],
       "field" : "direction",
       "name" : "Direction",
-      "type" : "direction"
+      "type" : "string"
     },
     "disable_mana_regeneration" : {
       "category" : "base",
@@ -3521,7 +3521,7 @@
       "description" : [ "" ],
       "field" : "force",
       "name" : "Force",
-      "type" : "double"
+      "type" : "boolean"
     },
     "fov" : {
       "category" : "targeting",
@@ -3892,7 +3892,7 @@
       "description" : [ "" ],
       "field" : "indestructible",
       "name" : "Indestructible",
-      "type" : "double"
+      "type" : "string"
     },
     "inherit" : {
       "category" : "base",
@@ -3934,7 +3934,7 @@
       "description" : [ "" ],
       "field" : "interval",
       "name" : "Interval",
-      "type" : "integer"
+      "type" : "long"
     },
     "inventory_rows" : {
       "category" : "",
@@ -4074,7 +4074,7 @@
       "description" : [ "" ],
       "field" : "length",
       "name" : "Length",
-      "type" : "double"
+      "type" : "float"
     },
     "length_back" : {
       "category" : "",
@@ -4123,7 +4123,7 @@
       "description" : [ "" ],
       "field" : "lifetime",
       "name" : "Lifetime",
-      "type" : "long"
+      "type" : "integer"
     },
     "liftoff_duration" : {
       "category" : "",
@@ -4249,7 +4249,7 @@
       "description" : [ "" ],
       "field" : "mana",
       "name" : "Mana",
-      "type" : "double"
+      "type" : "integer"
     },
     "mana_max" : {
       "category" : "",
@@ -4907,7 +4907,7 @@
       "description" : [ "" ],
       "field" : "passive",
       "name" : "Passive",
-      "type" : "double"
+      "type" : "boolean"
     },
     "passthrough" : {
       "category" : "base",
@@ -5019,7 +5019,7 @@
       "description" : [ "" ],
       "field" : "pitch",
       "name" : "Pitch",
-      "type" : "float"
+      "type" : "double"
     },
     "pitch_controllable" : {
       "category" : "",
@@ -5033,7 +5033,7 @@
       "description" : [ "" ],
       "field" : "pitch_max",
       "name" : "Pitch Max",
-      "type" : "double"
+      "type" : "integer"
     },
     "pitch_min" : {
       "category" : "",
@@ -5047,7 +5047,7 @@
       "description" : [ "" ],
       "field" : "pitch_offset",
       "name" : "Pitch Offset",
-      "type" : "float"
+      "type" : "double"
     },
     "plane" : {
       "category" : "",
@@ -5082,7 +5082,7 @@
       "description" : [ "" ],
       "field" : "power",
       "name" : "Power",
-      "type" : "double"
+      "type" : "integer"
     },
     "powered" : {
       "category" : "",
@@ -5138,7 +5138,7 @@
       "description" : [ "" ],
       "field" : "projectile_effects",
       "name" : "Projectile Effects",
-      "type" : "string"
+      "type" : "map"
     },
     "projectile_follow_player" : {
       "category" : "",
@@ -5159,7 +5159,7 @@
       "description" : [ "" ],
       "field" : "protection",
       "name" : "Protection",
-      "type" : "double"
+      "type" : "map"
     },
     "protection_count" : {
       "category" : "",
@@ -5208,14 +5208,14 @@
       "description" : [ "" ],
       "field" : "quick_cast",
       "name" : "Quick Cast",
-      "type" : "double"
+      "type" : "boolean"
     },
     "quiet" : {
       "category" : "base",
       "description" : [ "" ],
       "field" : "quiet",
       "name" : "Quiet",
-      "type" : "double"
+      "type" : "boolean"
     },
     "radials" : {
       "category" : "",
@@ -5236,7 +5236,7 @@
       "description" : [ "" ],
       "field" : "radius",
       "name" : "Radius",
-      "type" : "float"
+      "type" : "integer"
     },
     "radius_donut" : {
       "category" : "",
@@ -5481,7 +5481,7 @@
       "description" : [ "" ],
       "field" : "repeat",
       "name" : "Repeat",
-      "type" : "string"
+      "type" : "integer"
     },
     "repeat_random" : {
       "category" : "",
@@ -5747,7 +5747,7 @@
       "description" : [ "" ],
       "field" : "sample",
       "name" : "Sample",
-      "type" : "string"
+      "type" : "boolean"
     },
     "saturation" : {
       "category" : "",
@@ -5873,7 +5873,7 @@
       "description" : [ "" ],
       "field" : "size",
       "name" : "Size",
-      "type" : "float"
+      "type" : "integer"
     },
     "skeletons" : {
       "category" : "",
@@ -5957,14 +5957,14 @@
       "description" : [ "" ],
       "field" : "sound_pitch",
       "name" : "Sound Pitch",
-      "type" : "float"
+      "type" : "double"
     },
     "sound_volume" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "sound_volume",
       "name" : "Sound Volume",
-      "type" : "float"
+      "type" : "double"
     },
     "source_at_target" : {
       "category" : "",
@@ -6069,7 +6069,7 @@
       "description" : [ "" ],
       "field" : "speed",
       "name" : "Speed",
-      "type" : "float"
+      "type" : "double"
     },
     "speed_max" : {
       "category" : "",
@@ -6111,7 +6111,7 @@
       "description" : [ "" ],
       "field" : "spells",
       "name" : "Spells",
-      "type" : "double"
+      "type" : "string"
     },
     "sphere" : {
       "category" : "",
@@ -6951,7 +6951,7 @@
       "description" : [ "" ],
       "field" : "upgrade",
       "name" : "Upgrade",
-      "type" : "double"
+      "type" : "boolean"
     },
     "upgrade_levels" : {
       "category" : "",
@@ -7105,7 +7105,7 @@
       "description" : [ "" ],
       "field" : "velocity",
       "name" : "Velocity",
-      "type" : "vector"
+      "type" : "double"
     },
     "velocity_max_distance" : {
       "category" : "",
@@ -7252,7 +7252,7 @@
       "description" : [ "" ],
       "field" : "x_factor",
       "name" : "X Factor",
-      "type" : "double"
+      "type" : "float"
     },
     "x_offset" : {
       "category" : "",
@@ -7308,7 +7308,7 @@
       "description" : [ "" ],
       "field" : "y_factor",
       "name" : "Y Factor",
-      "type" : "double"
+      "type" : "float"
     },
     "y_offset" : {
       "category" : "",
@@ -7371,7 +7371,7 @@
       "description" : [ "" ],
       "field" : "yaw_offset",
       "name" : "Yaw Offset",
-      "type" : "float"
+      "type" : "double"
     },
     "z2_equation" : {
       "category" : "",
@@ -7445,8 +7445,14 @@
     }
   },
   "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
-  "spell_properties" : [ "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
+  "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
   "types" : {
+    "actions" : {
+      "className" : "java.util.Map",
+      "description" : [ "" ],
+      "name" : "Actions",
+      "options" : [ ]
+    },
     "attribute" : {
       "className" : "org.bukkit.attribute.Attribute",
       "description" : [ "" ],
@@ -7491,17 +7497,19 @@
       "name" : "Color",
       "options" : [ ]
     },
+    "cost_map" : {
+      "className" : "java.util.Map",
+      "description" : [ "" ],
+      "keyType" : "type",
+      "name" : "Cost Map",
+      "options" : [ ],
+      "valueType" : "double"
+    },
     "damage_type" : {
       "className" : "java.lang.String",
       "description" : [ "" ],
       "name" : "Damage Type",
       "options" : [ ]
-    },
-    "direction" : {
-      "className" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
-      "description" : [ "" ],
-      "name" : "Direction",
-      "options" : [ "both", "down", "up" ]
     },
     "double" : {
       "className" : "java.lang.Double",
@@ -7626,10 +7634,10 @@
       "options" : [ ]
     },
     "type" : {
-      "className" : "org.bukkit.Effect$Type",
+      "className" : "com.elmakers.mine.bukkit.item.Cost$Type",
       "description" : [ "" ],
       "name" : "Type",
-      "options" : [ "sound", "visual" ]
+      "options" : [ "currency", "health", "hunger", "item", "levels", "mana", "sp", "xp" ]
     },
     "vector" : {
       "className" : "org.bukkit.util.Vector",

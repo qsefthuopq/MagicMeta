@@ -15,6 +15,7 @@ import org.bukkit.block.Biome;
 import org.bukkit.entity.EntityType;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
+import com.elmakers.mine.bukkit.item.Cost;
 import com.elmakers.mine.bukkit.magic.SourceLocation;
 import com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect;
 import com.elmakers.mine.bukkit.wand.WandMode;
@@ -95,6 +96,13 @@ public class ParameterStore {
         // Easier to do this here then fill it in by hand
         ParameterType parameterType;
         switch (key) {
+            case "actions":
+                parameterType = getParameterType("actions", Map.class);
+                break;
+            case "costs":
+            case "active_costs":
+                parameterType = getMapType("cost_map", getParameterType(Cost.Type.class), getParameterType(Double.class));
+                break;
             case "alternate_spell":
             case "alternate_spell2":
             case "active_spell":
