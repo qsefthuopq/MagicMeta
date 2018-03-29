@@ -90,7 +90,7 @@ public class MagicMeta {
 
     private void addSpellParameters(MagicController controller, Mage mage, BaseSpell spell, Set<Parameter> parameters, Set<Parameter> properties, String categoryKey) {
         Category category = getCategory(categoryKey);
-        InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
+        InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterStore());
 
         spell.initialize(controller);
         spell.setMage(mage);
@@ -103,7 +103,7 @@ public class MagicMeta {
         }
 
         // Gather parameters
-        InterrogatingConfiguration spellConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
+        InterrogatingConfiguration spellConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         spell.processParameters(spellConfiguration);
         for (Parameter parameter : spellConfiguration.getParameters()) {
             parameter.setCategory(category.getKey());
@@ -148,7 +148,7 @@ public class MagicMeta {
         List<Class<? extends SpellAction>> allClasses = new ArrayList<>(classSet);
         Collections.sort(allClasses, new ClassComparator());
 
-        InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
+        InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         ActionSpell spell = new ActionSpell();
         spell.initialize(controller);
         spell.setMage(mage);
@@ -167,7 +167,7 @@ public class MagicMeta {
             System.out.println("Scanning " + actionClass.getName());
             try {
                 SpellAction testAction = actionClass.getConstructor().newInstance();
-                InterrogatingConfiguration actionConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
+                InterrogatingConfiguration actionConfiguration = new InterrogatingConfiguration(data.getParameterStore());
                 testAction.initialize(spell, actionConfiguration);
                 testAction.prepare(context, actionConfiguration);
 
@@ -187,7 +187,7 @@ public class MagicMeta {
 
     private void generateEffectsMeta() {
         System.out.println("Scanning EffectSingle");
-        InterrogatingConfiguration effectConfiguration = new InterrogatingConfiguration(data.getParameterTypeStore());
+        InterrogatingConfiguration effectConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         EffectPlayer player = new EffectSingle();
         player.load(null, effectConfiguration);
         Collection<Parameter> singleParameters = effectConfiguration.getParameters();

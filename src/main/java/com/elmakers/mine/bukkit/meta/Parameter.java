@@ -15,8 +15,8 @@ public class Parameter {
     private String type;
     private String category;
 
-     public Parameter() {
-     }
+    public Parameter() {
+    }
 
     public Parameter(@Nonnull String field, @Nonnull ParameterType type) {
         this.field = field;

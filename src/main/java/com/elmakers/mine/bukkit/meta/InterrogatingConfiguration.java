@@ -17,8 +17,8 @@ public class InterrogatingConfiguration extends InterrogatingConfigurationSectio
 
     private Options options;
 
-    public InterrogatingConfiguration(@Nonnull ParameterTypeStore parameterTypeStore) {
-        super(parameterTypeStore);
+    public InterrogatingConfiguration(@Nonnull ParameterStore parameterStore) {
+        super(parameterStore);
     }
 
     @Nullable

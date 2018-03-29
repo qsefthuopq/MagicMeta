@@ -10,9 +10,9 @@ import org.bukkit.configuration.MemorySection;
 
 public class InterrogatingConfigurationSection extends MemorySection {
     private Set<Parameter> parameters = new HashSet<>();
-    private final ParameterTypeStore parameterStore;
+    private final ParameterStore parameterStore;
 
-    public InterrogatingConfigurationSection(@Nonnull ParameterTypeStore parameterStore) {
+    public InterrogatingConfigurationSection(@Nonnull ParameterStore parameterStore) {
         super();
         this.parameterStore = parameterStore;
     }

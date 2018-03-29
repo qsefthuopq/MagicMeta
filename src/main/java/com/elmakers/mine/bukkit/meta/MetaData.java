@@ -16,13 +16,12 @@ public class MetaData {
     private Set<String> spellParameters = new HashSet<>();
     private Set<String> spellProperties = new HashSet<>();
     private Map<String, Category> categories = new HashMap<>();
-    private Map<String, Parameter> allParameters = new HashMap<>();
     private Map<String, SpellActionDescription> actions = new HashMap<>();
     private Set<String> effectParameters = new HashSet<>();
     private Set<String> effectLibParameters = new HashSet<>();
     private Map<String, EffectDescription> effects = new HashMap<>();
     private Set<String> wandParameters = new HashSet<>();
-    private ParameterTypeStore parameterTypeStore = new ParameterTypeStore();
+    private ParameterStore parameterStore = new ParameterStore();
 
     @JsonProperty("spell_parameters")
     public List<String> getSpellParameters() {
@@ -52,12 +51,12 @@ public class MetaData {
     }
 
     @JsonProperty("parameters")
-    public Map<String, Parameter> getAllParameters() {
-        return allParameters;
+    public Map<String, Parameter> getParameters() {
+        return parameterStore.getParameters();
     }
 
-    public void setAllParameters(Map<String, Parameter> allParameters) {
-        this.allParameters = allParameters;
+    public void setParameters(Map<String, Parameter> allParameters) {
+        this.parameterStore.setParameters(allParameters);
     }
 
     @JsonProperty("actions")
@@ -107,16 +106,20 @@ public class MetaData {
 
     @JsonProperty("types")
     public Map<String, ParameterType> getTypes() {
-        return parameterTypeStore.getTypes();
+        return parameterStore.getTypes();
+    }
+
+    public void setTypes(Map<String, ParameterType> types) {
+        parameterStore.setTypes(types);
     }
 
     @JsonIgnore
-    public ParameterTypeStore getParameterTypeStore() {
-        return parameterTypeStore;
+    public ParameterStore getParameterStore() {
+        return parameterStore;
     }
 
-    public void setParameterTypeStore(ParameterTypeStore parameterTypeStore) {
-        this.parameterTypeStore = parameterTypeStore;
+    public void setParameterStore(ParameterStore parameterStore) {
+        this.parameterStore = parameterStore;
     }
 
     private List<String> sortCollection(Collection<String> unsorted) {
@@ -139,7 +142,7 @@ public class MetaData {
     }
 
     public void addParameter(String key, Parameter parameter) {
-        allParameters.put(key, parameter);
+        parameterStore.addParameter(key, parameter);
     }
 
     public void addEffectLibParameter(String key) {
@@ -151,7 +154,7 @@ public class MetaData {
     }
 
     public Parameter getParameter(String key, Class<?> defaultClass) {
-        return parameterTypeStore.getParameter(key, defaultClass);
+        return parameterStore.getParameter(key, defaultClass);
     }
 
     public void addEffect(String key, EffectDescription effect) {
@@ -171,14 +174,12 @@ public class MetaData {
     }
 
     public void update() {
-        parameterTypeStore.update();
+        parameterStore.update();
     }
 
     public void loaded() {
+        parameterStore.loaded();
         for (Map.Entry<String, Category> entry : categories.entrySet()) {
-            entry.getValue().setKey(entry.getKey());
-        }
-        for (Map.Entry<String, Parameter> entry : allParameters.entrySet()) {
             entry.getValue().setKey(entry.getKey());
         }
         for (Map.Entry<String, SpellActionDescription> entry : actions.entrySet()) {

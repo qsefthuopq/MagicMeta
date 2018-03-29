@@ -20,8 +20,9 @@ import com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect;
 import com.elmakers.mine.bukkit.wand.WandMode;
 import com.google.common.base.CaseFormat;
 
-public class ParameterTypeStore {
-    private final Map<String, ParameterType> typeMap = new HashMap<>();
+public class ParameterStore {
+    private final Map<String, ParameterType> parameterTypes = new HashMap<>();
+    private Map<String, Parameter> parameters = new HashMap<>();
 
     public ParameterType getParameterType(@Nonnull Class<?> classType) {
         String key = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, classType.getSimpleName());
@@ -29,41 +30,53 @@ public class ParameterTypeStore {
     }
 
     public ParameterType getParameterType(@Nonnull String key, @Nonnull Class<?> classType) {
-        ParameterType parameterType = typeMap.get(key);
+        ParameterType parameterType = parameterTypes.get(key);
         if (parameterType == null) {
             parameterType = new ParameterType(key, classType);
-            typeMap.put(key, parameterType);
+            parameterTypes.put(key, parameterType);
         }
 
         return parameterType;
     }
 
     public ParameterType getListType(@Nonnull String key, ParameterType valueType) {
-        ParameterType parameterType = typeMap.get(key);
+        ParameterType parameterType = parameterTypes.get(key);
         if (parameterType == null) {
             parameterType = new ParameterType(key, valueType);
-            typeMap.put(key, parameterType);
+            parameterTypes.put(key, parameterType);
         }
 
         return parameterType;
     }
 
     public ParameterType getMapType(@Nonnull String key, ParameterType keyType, ParameterType valueType) {
-        ParameterType parameterType = typeMap.get(key);
+        ParameterType parameterType = parameterTypes.get(key);
         if (parameterType == null) {
             parameterType = new ParameterType(key, keyType, valueType);
-            typeMap.put(key, parameterType);
+            parameterTypes.put(key, parameterType);
         }
 
         return parameterType;
     }
 
+    public Map<String, Parameter> getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Map<String, Parameter> parameters) {
+        this.parameters.putAll(parameters);
+    }
+
     public Map<String, ParameterType> getTypes() {
-        return typeMap;
+        return parameterTypes;
+    }
+
+    public void setTypes(Map<String, ParameterType> types) {
+        parameterTypes.putAll(types);
     }
 
     public void update() {
-        for (ParameterType parameterType : typeMap.values()) {
+        for (ParameterType parameterType : parameterTypes.values()) {
             parameterType.update();
         }
     }
@@ -172,5 +185,18 @@ public class ParameterTypeStore {
                 parameterType = getParameterType(defaultClass);
         }
         return new Parameter(key, parameterType);
+    }
+
+    public void loaded() {
+        for (Map.Entry<String, ParameterType> entry : parameterTypes.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
+        for (Map.Entry<String, Parameter> entry : parameters.entrySet()) {
+            entry.getValue().setKey(entry.getKey());
+        }
+    }
+
+    public void addParameter(String key, Parameter parameter) {
+        parameters.put(key, parameter);
     }
 }
