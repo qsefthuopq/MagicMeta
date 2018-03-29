@@ -87,7 +87,7 @@
       "description" : [ "" ],
       "key" : "armor_stand_projectile",
       "name" : "Armor Stand Projectile",
-      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
+      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
       "shortClass" : "ArmorStandProjectile"
     },
     "ascend" : {
@@ -474,7 +474,7 @@
       "description" : [ "" ],
       "key" : "entity_projectile",
       "name" : "Entity Projectile",
-      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
+      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_result", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "requires_entity_target", "requires_target", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "stop_on_success", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
       "shortClass" : "EntityProjectile"
     },
     "explosion" : {
@@ -1260,7 +1260,7 @@
       "name" : "Undo"
     }
   },
-  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample-string", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
@@ -1367,7 +1367,7 @@
       "description" : [ "" ],
       "key" : "disco_ball",
       "name" : "Disco Ball",
-      "parameters" : [ "direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
+      "parameters" : [ "direction-direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
       "shortClass" : "DiscoBall"
     },
     "dna" : {
@@ -1655,7 +1655,7 @@
       "description" : [ "" ],
       "key" : "wave",
       "name" : "Wave",
-      "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity", "width" ],
+      "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity-vector", "width" ],
       "shortClass" : "Wave"
     }
   },
@@ -2191,7 +2191,7 @@
       "description" : [ "" ],
       "field" : "brushes",
       "name" : "Brushes",
-      "type" : "double"
+      "type" : "material_list"
     },
     "bu" : {
       "category" : "undo",
@@ -2997,6 +2997,13 @@
       "field" : "direction",
       "name" : "Direction",
       "type" : "string"
+    },
+    "direction-direction" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "direction",
+      "name" : "Direction",
+      "type" : "direction"
     },
     "disable_mana_regeneration" : {
       "category" : "base",
@@ -3892,7 +3899,7 @@
       "description" : [ "" ],
       "field" : "indestructible",
       "name" : "Indestructible",
-      "type" : "string"
+      "type" : "boolean"
     },
     "inherit" : {
       "category" : "base",
@@ -5138,7 +5145,7 @@
       "description" : [ "" ],
       "field" : "projectile_effects",
       "name" : "Projectile Effects",
-      "type" : "map"
+      "type" : "string"
     },
     "projectile_follow_player" : {
       "category" : "",
@@ -5146,6 +5153,13 @@
       "field" : "projectile_follow_player",
       "name" : "Projectile Follow Player",
       "type" : "boolean"
+    },
+    "projectile_potion_effects" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "projectile_potion_effects",
+      "name" : "Projectile Potion Effects",
+      "type" : "potion_effect_map"
     },
     "protected" : {
       "category" : "",
@@ -5159,7 +5173,7 @@
       "description" : [ "" ],
       "field" : "protection",
       "name" : "Protection",
-      "type" : "map"
+      "type" : "damage_type_map"
     },
     "protection_count" : {
       "category" : "",
@@ -5749,6 +5763,13 @@
       "name" : "Sample",
       "type" : "boolean"
     },
+    "sample-string" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "sample",
+      "name" : "Sample",
+      "type" : "string"
+    },
     "saturation" : {
       "category" : "",
       "description" : [ "" ],
@@ -6111,7 +6132,7 @@
       "description" : [ "" ],
       "field" : "spells",
       "name" : "Spells",
-      "type" : "string"
+      "type" : "spell_list"
     },
     "sphere" : {
       "category" : "",
@@ -6279,7 +6300,7 @@
       "description" : [ "" ],
       "field" : "strength",
       "name" : "Strength",
-      "type" : "map"
+      "type" : "damage_type_map"
     },
     "sub_message" : {
       "category" : "",
@@ -7107,6 +7128,13 @@
       "name" : "Velocity",
       "type" : "double"
     },
+    "velocity-vector" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity",
+      "name" : "Velocity",
+      "type" : "vector"
+    },
     "velocity_max_distance" : {
       "category" : "",
       "description" : [ "" ],
@@ -7189,7 +7217,7 @@
       "description" : [ "" ],
       "field" : "weakness",
       "name" : "Weakness",
-      "type" : "map"
+      "type" : "damage_type_map"
     },
     "weather" : {
       "category" : "",
@@ -7511,6 +7539,20 @@
       "name" : "Damage Type",
       "options" : [ ]
     },
+    "damage_type_map" : {
+      "className" : "java.util.Map",
+      "description" : [ "" ],
+      "keyType" : "damage_type",
+      "name" : "Damage Type Map",
+      "options" : [ ],
+      "valueType" : "double"
+    },
+    "direction" : {
+      "className" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
+      "description" : [ "" ],
+      "name" : "Direction",
+      "options" : [ "both", "down", "up" ]
+    },
     "double" : {
       "className" : "java.lang.Double",
       "description" : [ "" ],
@@ -7577,6 +7619,13 @@
       "name" : "Material",
       "options" : [ "acacia_door", "acacia_door_item", "acacia_fence", "acacia_fence_gate", "acacia_stairs", "activator_rail", "air", "anvil", "apple", "armor_stand", "arrow", "baked_potato", "banner", "barrier", "beacon", "bed", "bed_block", "bedrock", "beetroot", "beetroot_block", "beetroot_seeds", "beetroot_soup", "birch_door", "birch_door_item", "birch_fence", "birch_fence_gate", "birch_wood_stairs", "blaze_powder", "blaze_rod", "boat", "boat_acacia", "boat_birch", "boat_dark_oak", "boat_jungle", "boat_spruce", "bone", "book", "book_and_quill", "bookshelf", "bow", "bowl", "bread", "brewing_stand", "brewing_stand_item", "brick", "brick_stairs", "brown_mushroom", "bucket", "burning_furnace", "cactus", "cake", "cake_block", "carpet", "carrot", "carrot_item", "carrot_stick", "cauldron", "cauldron_item", "chainmail_boots", "chainmail_chestplate", "chainmail_helmet", "chainmail_leggings", "chest", "chorus_flower", "chorus_fruit", "chorus_fruit_popped", "chorus_plant", "clay", "clay_ball", "clay_brick", "coal", "coal_block", "coal_ore", "cobble_wall", "cobblestone", "cobblestone_stairs", "cocoa", "command", "command_chain", "command_minecart", "command_repeating", "compass", "cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton", "cooked_rabbit", "cookie", "crops", "dark_oak_door", "dark_oak_door_item", "dark_oak_fence", "dark_oak_fence_gate", "dark_oak_stairs", "daylight_detector", "daylight_detector_inverted", "dead_bush", "detector_rail", "diamond", "diamond_axe", "diamond_barding", "diamond_block", "diamond_boots", "diamond_chestplate", "diamond_helmet", "diamond_hoe", "diamond_leggings", "diamond_ore", "diamond_pickaxe", "diamond_spade", "diamond_sword", "diode", "diode_block_off", "diode_block_on", "dirt", "dispenser", "double_plant", "double_step", "double_stone_slab2", "dragon_egg", "dragons_breath", "dropper", "egg", "elytra", "emerald", "emerald_block", "emerald_ore", "empty_map", "enchanted_book", "enchantment_table", "end_bricks", "end_crystal", "end_gateway", "end_rod", "ender_chest", "ender_pearl", "ender_portal", "ender_portal_frame", "ender_stone", "exp_bottle", "explosive_minecart", "eye_of_ender", "feather", "fence", "fence_gate", "fermented_spider_eye", "fire", "fireball", "firework", "firework_charge", "fishing_rod", "flint", "flint_and_steel", "flower_pot", "flower_pot_item", "frosted_ice", "furnace", "ghast_tear", "glass", "glass_bottle", "glowing_redstone_ore", "glowstone", "glowstone_dust", "gold_axe", "gold_barding", "gold_block", "gold_boots", "gold_chestplate", "gold_helmet", "gold_hoe", "gold_ingot", "gold_leggings", "gold_nugget", "gold_ore", "gold_pickaxe", "gold_plate", "gold_record", "gold_spade", "gold_sword", "golden_apple", "golden_carrot", "grass", "grass_path", "gravel", "green_record", "grilled_pork", "hard_clay", "hay_block", "hopper", "hopper_minecart", "huge_mushroom_1", "huge_mushroom_2", "ice", "ink_sack", "iron_axe", "iron_barding", "iron_block", "iron_boots", "iron_chestplate", "iron_door", "iron_door_block", "iron_fence", "iron_helmet", "iron_hoe", "iron_ingot", "iron_leggings", "iron_ore", "iron_pickaxe", "iron_plate", "iron_spade", "iron_sword", "iron_trapdoor", "item_frame", "jack_o_lantern", "jukebox", "jungle_door", "jungle_door_item", "jungle_fence", "jungle_fence_gate", "jungle_wood_stairs", "ladder", "lapis_block", "lapis_ore", "lava", "lava_bucket", "leash", "leather", "leather_boots", "leather_chestplate", "leather_helmet", "leather_leggings", "leaves", "leaves_2", "lever", "lingering_potion", "log", "log_2", "long_grass", "magma_cream", "map", "melon", "melon_block", "melon_seeds", "melon_stem", "milk_bucket", "minecart", "mob_spawner", "monster_egg", "monster_eggs", "mossy_cobblestone", "mushroom_soup", "mutton", "mycel", "name_tag", "nether_brick", "nether_brick_item", "nether_brick_stairs", "nether_fence", "nether_stalk", "nether_star", "nether_warts", "netherrack", "note_block", "obsidian", "packed_ice", "painting", "paper", "piston_base", "piston_extension", "piston_moving_piece", "piston_sticky_base", "poisonous_potato", "pork", "portal", "potato", "potato_item", "potion", "powered_minecart", "powered_rail", "prismarine", "prismarine_crystals", "prismarine_shard", "pumpkin", "pumpkin_pie", "pumpkin_seeds", "pumpkin_stem", "purpur_block", "purpur_double_slab", "purpur_pillar", "purpur_slab", "purpur_stairs", "quartz", "quartz_block", "quartz_ore", "quartz_stairs", "rabbit", "rabbit_foot", "rabbit_hide", "rabbit_stew", "rails", "raw_beef", "raw_chicken", "raw_fish", "record_10", "record_11", "record_12", "record_3", "record_4", "record_5", "record_6", "record_7", "record_8", "record_9", "red_mushroom", "red_rose", "red_sandstone", "red_sandstone_stairs", "redstone", "redstone_block", "redstone_comparator", "redstone_comparator_off", "redstone_comparator_on", "redstone_lamp_off", "redstone_lamp_on", "redstone_ore", "redstone_torch_off", "redstone_torch_on", "redstone_wire", "rotten_flesh", "saddle", "sand", "sandstone", "sandstone_stairs", "sapling", "sea_lantern", "seeds", "shears", "shield", "sign", "sign_post", "skull", "skull_item", "slime_ball", "slime_block", "smooth_brick", "smooth_stairs", "snow", "snow_ball", "snow_block", "soil", "soul_sand", "speckled_melon", "spectral_arrow", "spider_eye", "splash_potion", "sponge", "spruce_door", "spruce_door_item", "spruce_fence", "spruce_fence_gate", "spruce_wood_stairs", "stained_clay", "stained_glass", "stained_glass_pane", "standing_banner", "stationary_lava", "stationary_water", "step", "stick", "stone", "stone_axe", "stone_button", "stone_hoe", "stone_pickaxe", "stone_plate", "stone_slab2", "stone_spade", "stone_sword", "storage_minecart", "string", "structure_block", "sugar", "sugar_cane", "sugar_cane_block", "sulphur", "thin_glass", "tipped_arrow", "tnt", "torch", "trap_door", "trapped_chest", "tripwire", "tripwire_hook", "vine", "wall_banner", "wall_sign", "watch", "water", "water_bucket", "water_lily", "web", "wheat", "wood", "wood_axe", "wood_button", "wood_door", "wood_double_step", "wood_hoe", "wood_pickaxe", "wood_plate", "wood_spade", "wood_stairs", "wood_step", "wood_sword", "wooden_door", "wool", "workbench", "written_book", "yellow_flower" ]
     },
+    "material_list" : {
+      "className" : "java.util.List",
+      "description" : [ "" ],
+      "name" : "Material List",
+      "options" : [ ],
+      "valueType" : "material"
+    },
     "particle_effect" : {
       "className" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
       "description" : [ "" ],
@@ -7620,6 +7669,13 @@
       "description" : [ "" ],
       "name" : "Spell",
       "options" : [ ]
+    },
+    "spell_list" : {
+      "className" : "java.util.List",
+      "description" : [ "" ],
+      "name" : "Spell List",
+      "options" : [ ],
+      "valueType" : "spell"
     },
     "string" : {
       "className" : "java.lang.String",

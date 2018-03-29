@@ -115,4 +115,9 @@ public class ParameterType {
     public void setKeyType(String keyType) {
         this.keyType = keyType;
     }
+
+    @JsonIgnore
+    public Class<?> getClassType() {
+        return classType;
+    }
 }

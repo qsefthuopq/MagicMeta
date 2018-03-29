@@ -82,22 +82,40 @@ public class ParameterStore {
         }
     }
 
-    public Parameter getParameter(String key, Class<?> defaultClass) {
-        Parameter parameter = parameters.get(key);
-        if (parameter != null) {
-            // TODO: Handle the case of this not being the right type, need to have multiple variants of the same
-            // parameter key.
-            return parameter;
-        }
+    public Parameter getParameter(String field, Class<?> defaultClass) {
         if (defaultClass.isPrimitive()) {
             defaultClass = ClassUtils.primitiveToWrapper(defaultClass);
         }
 
         // Easier to do this here then fill it in by hand
         ParameterType parameterType;
-        switch (key) {
+        switch (field) {
+            case "force":
+            case "indestructible":
+            case "passive":
+            case "quick_cast":
+            case "quiet":
+            case "upgrade":
+                parameterType = getParameterType(Boolean.class);
+                break;
+            case "repeat":
+            case "delay":
+            case "warmup":
+                parameterType = getParameterType(Integer.class);
+                break;
             case "actions":
                 parameterType = getParameterType("actions", Map.class);
+                break;
+            case "spells":
+                parameterType = getListType("spell_list", getParameterType("spell", String.class));
+                break;
+            case "brushes":
+                parameterType = getListType("material_list", getParameterType(Material.class));
+                break;
+            case "protection":
+            case "weakness":
+            case "strength":
+                parameterType = getMapType("damage_type_map", getParameterType("damage_type", String.class), getParameterType(Double.class));
                 break;
             case "costs":
             case "active_costs":
@@ -114,6 +132,7 @@ public class ParameterStore {
                 break;
             case "potion_effects":
             case "add_effects":
+            case "projectile_potion_effects":
                 parameterType = getMapType("potion_effect_map", getParameterType(PotionEffectType.class), getParameterType(Integer.class));
                 break;
             case "entity_attributes":
@@ -198,7 +217,28 @@ public class ParameterStore {
             default:
                 parameterType = getParameterType(defaultClass);
         }
-        parameter = new Parameter(key, parameterType);
+
+        String key = field;
+        Parameter parameter = parameters.get(key);
+        if (parameter != null) {
+            String typeKey = parameter.getType();
+            ParameterType existingType = parameterTypes.get(typeKey);
+
+            if (existingType == null) {
+                System.out.println("Looking up field key " + key + " got type " + typeKey + " that doesn't exit");
+            } else if (!existingType.getKey().equals(parameterType.getKey())) {
+                // Allow numeric types to overap.
+                if (Number.class.isAssignableFrom(parameterType.getClassType()) && Number.class.isAssignableFrom(existingType.getClassType())) {
+                    return parameter;
+                }
+
+                key = field + "-" + parameterType.getKey();
+            } else {
+                return parameter;
+            }
+        }
+
+        parameter = new Parameter(key, field, parameterType);
         parameters.put(parameter.getKey(), parameter);
         return parameter;
     }

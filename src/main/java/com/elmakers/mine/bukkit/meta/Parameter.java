@@ -18,15 +18,20 @@ public class Parameter {
     public Parameter() {
     }
 
-    public Parameter(@Nonnull String field, @Nonnull ParameterType type) {
+    public Parameter(@Nonnull String key, @Nonnull String field, @Nonnull ParameterType type) {
         this.field = field;
-        this.key = field;
+        this.key = key;
         this.type = type.getKey();
         this.category = "";
 
         description = new ArrayList<>();
         description.add("");
         name = WordUtils.capitalizeFully(field, new char[]{'_'}).replaceAll("_", " ");
+
+    }
+
+    public Parameter(@Nonnull String field, @Nonnull ParameterType type) {
+        this(field, field, type);
     }
 
     @Override
