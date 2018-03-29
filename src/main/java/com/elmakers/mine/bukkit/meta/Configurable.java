@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.StringUtils;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.CaseFormat;
 
 public class Configurable {
@@ -38,6 +39,7 @@ public class Configurable {
         }
     }
 
+    @JsonProperty("class_name")
     public String getClassName() {
         return className;
     }
@@ -46,6 +48,7 @@ public class Configurable {
         this.className = className;
     }
 
+    @JsonProperty("short_class")
     public String getShortClass() {
         return shortClass;
     }

@@ -3,1236 +3,1236 @@
   "actions" : {
     "absorb" : {
       "category" : "",
-      "className" : "AbsorbAction",
+      "class_name" : "AbsorbAction",
       "description" : [ "" ],
       "key" : "absorb",
       "name" : "Absorb",
       "parameters" : [ ],
-      "shortClass" : "Absorb"
+      "short_class" : "Absorb"
     },
     "add_spell" : {
       "category" : "",
-      "className" : "AddSpellAction",
+      "class_name" : "AddSpellAction",
       "description" : [ "" ],
       "key" : "add_spell",
       "name" : "Add Spell",
       "parameters" : [ "auto_upgrade", "path", "path_end", "path_exact", "permission", "spell" ],
-      "shortClass" : "AddSpell"
+      "short_class" : "AddSpell"
     },
     "aggro" : {
       "category" : "",
-      "className" : "AggroAction",
+      "class_name" : "AggroAction",
       "description" : [ "" ],
       "key" : "aggro",
       "name" : "Aggro",
       "parameters" : [ ],
-      "shortClass" : "Aggro"
+      "short_class" : "Aggro"
     },
     "air_supply" : {
       "category" : "",
-      "className" : "AirSupplyAction",
+      "class_name" : "AirSupplyAction",
       "description" : [ "" ],
       "key" : "air_supply",
       "name" : "Air Supply",
       "parameters" : [ "air" ],
-      "shortClass" : "AirSupply"
+      "short_class" : "AirSupply"
     },
     "all_entities" : {
       "category" : "",
-      "className" : "AllEntitiesAction",
+      "class_name" : "AllEntitiesAction",
       "description" : [ "" ],
       "key" : "all_entities",
       "name" : "All Entities",
       "parameters" : [ "target_all_worlds" ],
-      "shortClass" : "AllEntities"
+      "short_class" : "AllEntities"
     },
     "animate" : {
       "category" : "",
-      "className" : "AnimateAction",
+      "class_name" : "AnimateAction",
       "description" : [ "" ],
       "key" : "animate",
       "name" : "Animate",
       "parameters" : [ ],
-      "shortClass" : "Animate"
+      "short_class" : "Animate"
     },
     "apply_cooldown" : {
       "category" : "",
-      "className" : "ApplyCooldownAction",
+      "class_name" : "ApplyCooldownAction",
       "description" : [ "" ],
       "key" : "apply_cooldown",
       "name" : "Apply Cooldown",
       "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "spells", "target_caster" ],
-      "shortClass" : "ApplyCooldown"
+      "short_class" : "ApplyCooldown"
     },
     "area_of_effect" : {
       "category" : "",
-      "className" : "AreaOfEffectAction",
+      "class_name" : "AreaOfEffectAction",
       "description" : [ "" ],
       "key" : "area_of_effect",
       "name" : "Area Of Effect",
       "parameters" : [ "radius", "target_count", "target_source", "y_radius" ],
-      "shortClass" : "AreaOfEffect"
+      "short_class" : "AreaOfEffect"
     },
     "area_of_effect_cloud" : {
       "category" : "",
-      "className" : "AreaOfEffectCloudAction",
+      "class_name" : "AreaOfEffectCloudAction",
       "description" : [ "" ],
       "key" : "area_of_effect_cloud",
       "name" : "Area Of Effect Cloud",
       "parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
-      "shortClass" : "AreaOfEffectCloud"
+      "short_class" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
       "category" : "",
-      "className" : "ArmorStandProjectileAction",
+      "class_name" : "ArmorStandProjectileAction",
       "description" : [ "" ],
       "key" : "armor_stand_projectile",
       "name" : "Armor Stand Projectile",
       "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
-      "shortClass" : "ArmorStandProjectile"
+      "short_class" : "ArmorStandProjectile"
     },
     "ascend" : {
       "category" : "",
-      "className" : "AscendAction",
+      "class_name" : "AscendAction",
       "description" : [ "" ],
       "key" : "ascend",
       "name" : "Ascend",
       "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
-      "shortClass" : "Ascend"
+      "short_class" : "Ascend"
     },
     "asynchronous" : {
       "category" : "",
-      "className" : "AsynchronousAction",
+      "class_name" : "AsynchronousAction",
       "description" : [ "" ],
       "key" : "asynchronous",
       "name" : "Asynchronous",
       "parameters" : [ ],
-      "shortClass" : "Asynchronous"
+      "short_class" : "Asynchronous"
     },
     "block_search" : {
       "category" : "",
-      "className" : "BlockSearchAction",
+      "class_name" : "BlockSearchAction",
       "description" : [ "" ],
       "key" : "block_search",
       "name" : "Block Search",
       "parameters" : [ "direction" ],
-      "shortClass" : "BlockSearch"
+      "short_class" : "BlockSearch"
     },
     "break_block" : {
       "category" : "",
-      "className" : "BreakBlockAction",
+      "class_name" : "BreakBlockAction",
       "description" : [ "" ],
       "key" : "break_block",
       "name" : "Break Block",
       "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
-      "shortClass" : "BreakBlock"
+      "short_class" : "BreakBlock"
     },
     "brush" : {
       "category" : "",
-      "className" : "BrushAction",
+      "class_name" : "BrushAction",
       "description" : [ "" ],
       "key" : "brush",
       "name" : "Brush",
       "parameters" : [ "brush", "sample" ],
-      "shortClass" : "Brush"
+      "short_class" : "Brush"
     },
     "brush_select" : {
       "category" : "",
-      "className" : "BrushSelectAction",
+      "class_name" : "BrushSelectAction",
       "description" : [ "" ],
       "key" : "brush_select",
       "name" : "Brush Select",
       "parameters" : [ ],
-      "shortClass" : "BrushSelect"
+      "short_class" : "BrushSelect"
     },
     "burn" : {
       "category" : "",
-      "className" : "BurnAction",
+      "class_name" : "BurnAction",
       "description" : [ "" ],
       "key" : "burn",
       "name" : "Burn",
       "parameters" : [ ],
-      "shortClass" : "Burn"
+      "short_class" : "Burn"
     },
     "cancel" : {
       "category" : "",
-      "className" : "CancelAction",
+      "class_name" : "CancelAction",
       "description" : [ "" ],
       "key" : "cancel",
       "name" : "Cancel",
       "parameters" : [ "force" ],
-      "shortClass" : "Cancel"
+      "short_class" : "Cancel"
     },
     "capture" : {
       "category" : "",
-      "className" : "CaptureAction",
+      "class_name" : "CaptureAction",
       "description" : [ "" ],
       "key" : "capture",
       "name" : "Capture",
       "parameters" : [ "min_health" ],
-      "shortClass" : "Capture"
+      "short_class" : "Capture"
     },
     "change_biome" : {
       "category" : "",
-      "className" : "ChangeBiomeAction",
+      "class_name" : "ChangeBiomeAction",
       "description" : [ "" ],
       "key" : "change_biome",
       "name" : "Change Biome",
       "parameters" : [ "biome" ],
-      "shortClass" : "ChangeBiome"
+      "short_class" : "ChangeBiome"
     },
     "change_context" : {
       "category" : "",
-      "className" : "ChangeContextAction",
+      "class_name" : "ChangeContextAction",
       "description" : [ "" ],
       "key" : "change_context",
       "name" : "Change Context",
       "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_is_target", "source_location", "source_offset", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_snap", "target_yaw_offset" ],
-      "shortClass" : "ChangeContext"
+      "short_class" : "ChangeContext"
     },
     "change_parameters" : {
       "category" : "",
-      "className" : "ChangeParametersAction",
+      "class_name" : "ChangeParametersAction",
       "description" : [ "" ],
       "key" : "change_parameters",
       "name" : "Change Parameters",
       "parameters" : [ ],
-      "shortClass" : "ChangeParameters"
+      "short_class" : "ChangeParameters"
     },
     "change_server" : {
       "category" : "",
-      "className" : "ChangeServerAction",
+      "class_name" : "ChangeServerAction",
       "description" : [ "" ],
       "key" : "change_server",
       "name" : "Change Server",
       "parameters" : [ "server" ],
-      "shortClass" : "ChangeServer"
+      "short_class" : "ChangeServer"
     },
     "change_world" : {
       "category" : "",
-      "className" : "ChangeWorldAction",
+      "class_name" : "ChangeWorldAction",
       "description" : [ "" ],
       "key" : "change_world",
       "name" : "Change World",
       "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
-      "shortClass" : "ChangeWorld"
+      "short_class" : "ChangeWorld"
     },
     "check_block" : {
       "category" : "",
-      "className" : "CheckBlockAction",
+      "class_name" : "CheckBlockAction",
       "description" : [ "" ],
       "key" : "check_block",
       "name" : "Check Block",
       "parameters" : [ "allowed" ],
-      "shortClass" : "CheckBlock"
+      "short_class" : "CheckBlock"
     },
     "check_entity" : {
       "category" : "",
-      "className" : "CheckEntityAction",
+      "class_name" : "CheckEntityAction",
       "description" : [ "" ],
       "key" : "check_entity",
       "name" : "Check Entity",
       "parameters" : [ "allow_caster", "only_caster" ],
-      "shortClass" : "CheckEntity"
+      "short_class" : "CheckEntity"
     },
     "check_mana" : {
       "category" : "",
-      "className" : "CheckManaAction",
+      "class_name" : "CheckManaAction",
       "description" : [ "" ],
       "key" : "check_mana",
       "name" : "Check Mana",
       "parameters" : [ "require_mana", "require_mana_empty", "require_mana_not_full" ],
-      "shortClass" : "CheckMana"
+      "short_class" : "CheckMana"
     },
     "command" : {
       "category" : "",
-      "className" : "CommandAction",
+      "class_name" : "CommandAction",
       "description" : [ "" ],
       "key" : "command",
       "name" : "Command",
       "parameters" : [ "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
-      "shortClass" : "Command"
+      "short_class" : "Command"
     },
     "cone_of_effect" : {
       "category" : "",
-      "className" : "ConeOfEffectAction",
+      "class_name" : "ConeOfEffectAction",
       "description" : [ "" ],
       "key" : "cone_of_effect",
       "name" : "Cone Of Effect",
       "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otworld", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
-      "shortClass" : "ConeOfEffect"
+      "short_class" : "ConeOfEffect"
     },
     "count" : {
       "category" : "",
-      "className" : "CountAction",
+      "class_name" : "CountAction",
       "description" : [ "" ],
       "key" : "count",
       "name" : "Count",
       "parameters" : [ ],
-      "shortClass" : "Count"
+      "short_class" : "Count"
     },
     "cover" : {
       "category" : "",
-      "className" : "CoverAction",
+      "class_name" : "CoverAction",
       "description" : [ "" ],
       "key" : "cover",
       "name" : "Cover",
       "parameters" : [ "target_above" ],
-      "shortClass" : "Cover"
+      "short_class" : "Cover"
     },
     "create_field" : {
       "category" : "",
-      "className" : "CreateFieldAction",
+      "class_name" : "CreateFieldAction",
       "description" : [ "" ],
       "key" : "create_field",
       "name" : "Create Field",
       "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
-      "shortClass" : "CreateField"
+      "short_class" : "CreateField"
     },
     "create_plot" : {
       "category" : "",
-      "className" : "CreatePlotAction",
+      "class_name" : "CreatePlotAction",
       "description" : [ "" ],
       "key" : "create_plot",
       "name" : "Create Plot",
       "parameters" : [ ],
-      "shortClass" : "CreatePlot"
+      "short_class" : "CreatePlot"
     },
     "cure" : {
       "category" : "",
-      "className" : "CureAction",
+      "class_name" : "CureAction",
       "description" : [ "" ],
       "key" : "cure",
       "name" : "Cure",
       "parameters" : [ ],
-      "shortClass" : "Cure"
+      "short_class" : "Cure"
     },
     "custom_projectile" : {
       "category" : "",
-      "className" : "CustomProjectileAction",
+      "class_name" : "CustomProjectileAction",
       "description" : [ "" ],
       "key" : "custom_projectile",
       "name" : "Custom Projectile",
       "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss_effects", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity" ],
-      "shortClass" : "CustomProjectile"
+      "short_class" : "CustomProjectile"
     },
     "cycle_block" : {
       "category" : "",
-      "className" : "CycleBlockAction",
+      "class_name" : "CycleBlockAction",
       "description" : [ "" ],
       "key" : "cycle_block",
       "name" : "Cycle Block",
       "parameters" : [ ],
-      "shortClass" : "CycleBlock"
+      "short_class" : "CycleBlock"
     },
     "cycle_entity" : {
       "category" : "",
-      "className" : "CycleEntityAction",
+      "class_name" : "CycleEntityAction",
       "description" : [ "" ],
       "key" : "cycle_entity",
       "name" : "Cycle Entity",
       "parameters" : [ ],
-      "shortClass" : "CycleEntity"
+      "short_class" : "CycleEntity"
     },
     "cylinder" : {
       "category" : "",
-      "className" : "CylinderAction",
+      "class_name" : "CylinderAction",
       "description" : [ "" ],
       "key" : "cylinder",
       "name" : "Cylinder",
       "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Cylinder"
+      "short_class" : "Cylinder"
     },
     "damage" : {
       "category" : "",
-      "className" : "DamageAction",
+      "class_name" : "DamageAction",
       "description" : [ "" ],
       "key" : "damage",
       "name" : "Damage",
       "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage" ],
-      "shortClass" : "Damage"
+      "short_class" : "Damage"
     },
     "deactivate" : {
       "category" : "",
-      "className" : "DeactivateAction",
+      "class_name" : "DeactivateAction",
       "description" : [ "" ],
       "key" : "deactivate",
       "name" : "Deactivate",
       "parameters" : [ ],
-      "shortClass" : "Deactivate"
+      "short_class" : "Deactivate"
     },
     "debugger" : {
       "category" : "",
-      "className" : "DebuggerAction",
+      "class_name" : "DebuggerAction",
       "description" : [ "" ],
       "key" : "debugger",
       "name" : "Debugger",
       "parameters" : [ "check", "level" ],
-      "shortClass" : "Debugger"
+      "short_class" : "Debugger"
     },
     "delay" : {
       "category" : "",
-      "className" : "DelayAction",
+      "class_name" : "DelayAction",
       "description" : [ "" ],
       "key" : "delay",
       "name" : "Delay",
       "parameters" : [ "delay", "warmup" ],
-      "shortClass" : "Delay"
+      "short_class" : "Delay"
     },
     "descend" : {
       "category" : "",
-      "className" : "DescendAction",
+      "class_name" : "DescendAction",
       "description" : [ "" ],
       "key" : "descend",
       "name" : "Descend",
       "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
-      "shortClass" : "Descend"
+      "short_class" : "Descend"
     },
     "disable_physics" : {
       "category" : "",
-      "className" : "DisablePhysicsAction",
+      "class_name" : "DisablePhysicsAction",
       "description" : [ "" ],
       "key" : "disable_physics",
       "name" : "Disable Physics",
       "parameters" : [ "duration", "physics_buffer", "undo" ],
-      "shortClass" : "DisablePhysics"
+      "short_class" : "DisablePhysics"
     },
     "disarm" : {
       "category" : "",
-      "className" : "DisarmAction",
+      "class_name" : "DisarmAction",
       "description" : [ "" ],
       "key" : "disarm",
       "name" : "Disarm",
       "parameters" : [ "display_name", "keep_in_inventory", "max_slot", "min_slot" ],
-      "shortClass" : "Disarm"
+      "short_class" : "Disarm"
     },
     "disc" : {
       "category" : "",
-      "className" : "DiscAction",
+      "class_name" : "DiscAction",
       "description" : [ "" ],
       "key" : "disc",
       "name" : "Disc",
       "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Disc"
+      "short_class" : "Disc"
     },
     "disguise" : {
       "category" : "",
-      "className" : "DisguiseAction",
+      "class_name" : "DisguiseAction",
       "description" : [ "" ],
       "key" : "disguise",
       "name" : "Disguise",
       "parameters" : [ ],
-      "shortClass" : "Disguise"
+      "short_class" : "Disguise"
     },
     "door" : {
       "category" : "",
-      "className" : "DoorAction",
+      "class_name" : "DoorAction",
       "description" : [ "" ],
       "key" : "door",
       "name" : "Door",
       "parameters" : [ "type" ],
-      "shortClass" : "Door"
+      "short_class" : "Door"
     },
     "drop" : {
       "category" : "",
-      "className" : "DropAction",
+      "class_name" : "DropAction",
       "description" : [ "" ],
       "key" : "drop",
       "name" : "Drop",
       "parameters" : [ "drop_count", "falling" ],
-      "shortClass" : "Drop"
+      "short_class" : "Drop"
     },
     "drop_item" : {
       "category" : "",
-      "className" : "DropItemAction",
+      "class_name" : "DropItemAction",
       "description" : [ "" ],
       "key" : "drop_item",
       "name" : "Drop Item",
       "parameters" : [ "item" ],
-      "shortClass" : "DropItem"
+      "short_class" : "DropItem"
     },
     "electrify" : {
       "category" : "",
-      "className" : "ElectrifyAction",
+      "class_name" : "ElectrifyAction",
       "description" : [ "" ],
       "key" : "electrify",
       "name" : "Electrify",
       "parameters" : [ "electrify" ],
-      "shortClass" : "Electrify"
+      "short_class" : "Electrify"
     },
     "enchant_wand" : {
       "category" : "",
-      "className" : "EnchantWandAction",
+      "class_name" : "EnchantWandAction",
       "description" : [ "" ],
       "key" : "enchant_wand",
       "name" : "Enchant Wand",
       "parameters" : [ "levels", "path", "path_exact", "requires", "use_xp" ],
-      "shortClass" : "EnchantWand"
+      "short_class" : "EnchantWand"
     },
     "entity_projectile" : {
       "category" : "",
-      "className" : "EntityProjectileAction",
+      "class_name" : "EntityProjectileAction",
       "description" : [ "" ],
       "key" : "entity_projectile",
       "name" : "Entity Projectile",
       "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
-      "shortClass" : "EntityProjectile"
+      "short_class" : "EntityProjectile"
     },
     "explosion" : {
       "category" : "",
-      "className" : "ExplosionAction",
+      "class_name" : "ExplosionAction",
       "description" : [ "" ],
       "key" : "explosion",
       "name" : "Explosion",
       "parameters" : [ "break_blocks", "fire", "size" ],
-      "shortClass" : "Explosion"
+      "short_class" : "Explosion"
     },
     "fall_protection" : {
       "category" : "",
-      "className" : "FallProtectionAction",
+      "class_name" : "FallProtectionAction",
       "description" : [ "" ],
       "key" : "fall_protection",
       "name" : "Fall Protection",
       "parameters" : [ "duration", "protection_count" ],
-      "shortClass" : "FallProtection"
+      "short_class" : "FallProtection"
     },
     "feed" : {
       "category" : "",
-      "className" : "FeedAction",
+      "class_name" : "FeedAction",
       "description" : [ "" ],
       "key" : "feed",
       "name" : "Feed",
       "parameters" : [ "exhaustion", "feed", "saturation" ],
-      "shortClass" : "Feed"
+      "short_class" : "Feed"
     },
     "fill_wand" : {
       "category" : "",
-      "className" : "FillWandAction",
+      "class_name" : "FillWandAction",
       "description" : [ "" ],
       "key" : "fill_wand",
       "name" : "Fill Wand",
       "parameters" : [ "max_level" ],
-      "shortClass" : "FillWand"
+      "short_class" : "FillWand"
     },
     "firework" : {
       "category" : "",
-      "className" : "FireworkAction",
+      "class_name" : "FireworkAction",
       "description" : [ "" ],
       "key" : "firework",
       "name" : "Firework",
       "parameters" : [ "dy_offset", "flicker", "launch", "lifetime", "power", "projectile_effects", "set_target", "silent", "speed", "start", "track_projectile", "trail" ],
-      "shortClass" : "Firework"
+      "short_class" : "Firework"
     },
     "flower" : {
       "category" : "",
-      "className" : "FlowerAction",
+      "class_name" : "FlowerAction",
       "description" : [ "" ],
       "key" : "flower",
       "name" : "Flower",
       "parameters" : [ ],
-      "shortClass" : "Flower"
+      "short_class" : "Flower"
     },
     "freeze" : {
       "category" : "",
-      "className" : "FreezeAction",
+      "class_name" : "FreezeAction",
       "description" : [ "" ],
       "key" : "freeze",
       "name" : "Freeze",
       "parameters" : [ "freeze_fire", "freeze_lava", "freeze_water", "ice" ],
-      "shortClass" : "Freeze"
+      "short_class" : "Freeze"
     },
     "give_item" : {
       "category" : "",
-      "className" : "GiveItemAction",
+      "class_name" : "GiveItemAction",
       "description" : [ "" ],
       "key" : "give_item",
       "name" : "Give Item",
       "parameters" : [ "item", "permission", "requires" ],
-      "shortClass" : "GiveItem"
+      "short_class" : "GiveItem"
     },
     "glide" : {
       "category" : "",
-      "className" : "GlideAction",
+      "class_name" : "GlideAction",
       "description" : [ "" ],
       "key" : "glide",
       "name" : "Glide",
       "parameters" : [ "require_elytra", "wait_for_landing" ],
-      "shortClass" : "Glide"
+      "short_class" : "Glide"
     },
     "grow_entity" : {
       "category" : "",
-      "className" : "GrowEntityAction",
+      "class_name" : "GrowEntityAction",
       "description" : [ "" ],
       "key" : "grow_entity",
       "name" : "Grow Entity",
       "parameters" : [ "skeletons" ],
-      "shortClass" : "GrowEntity"
+      "short_class" : "GrowEntity"
     },
     "heal" : {
       "category" : "",
-      "className" : "HealAction",
+      "class_name" : "HealAction",
       "description" : [ "" ],
       "key" : "heal",
       "name" : "Heal",
       "parameters" : [ "amount", "heal_max_distance", "percentage" ],
-      "shortClass" : "Heal"
+      "short_class" : "Heal"
     },
     "ignite" : {
       "category" : "",
-      "className" : "IgniteAction",
+      "class_name" : "IgniteAction",
       "description" : [ "" ],
       "key" : "ignite",
       "name" : "Ignite",
       "parameters" : [ "duration" ],
-      "shortClass" : "Ignite"
+      "short_class" : "Ignite"
     },
     "inventory" : {
       "category" : "",
-      "className" : "InventoryAction",
+      "class_name" : "InventoryAction",
       "description" : [ "" ],
       "key" : "inventory",
       "name" : "Inventory",
       "parameters" : [ "title", "type" ],
-      "shortClass" : "Inventory"
+      "short_class" : "Inventory"
     },
     "inventory_close" : {
       "category" : "",
-      "className" : "InventoryCloseAction",
+      "class_name" : "InventoryCloseAction",
       "description" : [ "" ],
       "key" : "inventory_close",
       "name" : "Inventory Close",
       "parameters" : [ ],
-      "shortClass" : "InventoryClose"
+      "short_class" : "InventoryClose"
     },
     "item_shop" : {
       "category" : "",
-      "className" : "ItemShopAction",
+      "class_name" : "ItemShopAction",
       "description" : [ "" ],
       "key" : "item_shop",
       "name" : "Item Shop",
       "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
-      "shortClass" : "ItemShop"
+      "short_class" : "ItemShop"
     },
     "kill" : {
       "category" : "",
-      "className" : "KillAction",
+      "class_name" : "KillAction",
       "description" : [ "" ],
       "key" : "kill",
       "name" : "Kill",
       "parameters" : [ ],
-      "shortClass" : "Kill"
+      "short_class" : "Kill"
     },
     "light" : {
       "category" : "",
-      "className" : "LightAction",
+      "class_name" : "LightAction",
       "description" : [ "" ],
       "key" : "light",
       "name" : "Light",
       "parameters" : [ "async", "level", "update" ],
-      "shortClass" : "Light"
+      "short_class" : "Light"
     },
     "lightning" : {
       "category" : "",
-      "className" : "LightningAction",
+      "class_name" : "LightningAction",
       "description" : [ "" ],
       "key" : "lightning",
       "name" : "Lightning",
       "parameters" : [ "effect_only" ],
-      "shortClass" : "Lightning"
+      "short_class" : "Lightning"
     },
     "line" : {
       "category" : "",
-      "className" : "LineAction",
+      "class_name" : "LineAction",
       "description" : [ "" ],
       "key" : "line",
       "name" : "Line",
       "parameters" : [ "increment_data", "reorient", "require_block", "reverse", "size", "start", "start_at_target" ],
-      "shortClass" : "Line"
+      "short_class" : "Line"
     },
     "lock" : {
       "category" : "",
-      "className" : "LockAction",
+      "class_name" : "LockAction",
       "description" : [ "" ],
       "key" : "lock",
       "name" : "Lock",
       "parameters" : [ "key_description", "key_icon", "key_name", "override", "type" ],
-      "shortClass" : "Lock"
+      "short_class" : "Lock"
     },
     "message" : {
       "category" : "",
-      "className" : "MessageAction",
+      "class_name" : "MessageAction",
       "description" : [ "" ],
       "key" : "message",
       "name" : "Message",
       "parameters" : [ "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
-      "shortClass" : "Message"
+      "short_class" : "Message"
     },
     "modify_block" : {
       "category" : "",
-      "className" : "ModifyBlockAction",
+      "class_name" : "ModifyBlockAction",
       "description" : [ "" ],
       "key" : "modify_block",
       "name" : "Modify Block",
       "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
-      "shortClass" : "ModifyBlock"
+      "short_class" : "ModifyBlock"
     },
     "modify_breakable" : {
       "category" : "",
-      "className" : "ModifyBreakable",
+      "class_name" : "ModifyBreakable",
       "description" : [ "" ],
       "key" : "modify_breakable",
       "name" : "Modify Breakable",
       "parameters" : [ "breakable", "target_air" ],
-      "shortClass" : "ModifyBreakable"
+      "short_class" : "ModifyBreakable"
     },
     "modify_game_mode" : {
       "category" : "",
-      "className" : "ModifyGameModeAction",
+      "class_name" : "ModifyGameModeAction",
       "description" : [ "" ],
       "key" : "modify_game_mode",
       "name" : "Modify Game Mode",
       "parameters" : [ "game_mode" ],
-      "shortClass" : "ModifyGameMode"
+      "short_class" : "ModifyGameMode"
     },
     "modify_mana" : {
       "category" : "",
-      "className" : "ModifyManaAction",
+      "class_name" : "ModifyManaAction",
       "description" : [ "" ],
       "key" : "modify_mana",
       "name" : "Modify Mana",
       "parameters" : [ "fill_mana", "mana" ],
-      "shortClass" : "ModifyMana"
+      "short_class" : "ModifyMana"
     },
     "modify_properties" : {
       "category" : "",
-      "className" : "ModifyPropertiesAction",
+      "class_name" : "ModifyPropertiesAction",
       "description" : [ "" ],
       "key" : "modify_properties",
       "name" : "Modify Properties",
       "parameters" : [ "modify_target", "upgrade" ],
-      "shortClass" : "ModifyProperties"
+      "short_class" : "ModifyProperties"
     },
     "modify_reflective" : {
       "category" : "",
-      "className" : "ModifyReflectiveAction",
+      "class_name" : "ModifyReflectiveAction",
       "description" : [ "" ],
       "key" : "modify_reflective",
       "name" : "Modify Reflective",
       "parameters" : [ "reflect_chance" ],
-      "shortClass" : "ModifyReflective"
+      "short_class" : "ModifyReflective"
     },
     "modify_s_p" : {
       "category" : "",
-      "className" : "ModifySPAction",
+      "class_name" : "ModifySPAction",
       "description" : [ "" ],
       "key" : "modify_s_p",
       "name" : "Modify SP",
       "parameters" : [ "sp" ],
-      "shortClass" : "ModifySP"
+      "short_class" : "ModifySP"
     },
     "modify_walk_speed" : {
       "category" : "",
-      "className" : "ModifyWalkSpeed",
+      "class_name" : "ModifyWalkSpeed",
       "description" : [ "" ],
       "key" : "modify_walk_speed",
       "name" : "Modify Walk Speed",
       "parameters" : [ ],
-      "shortClass" : "ModifyWalkSpeed"
+      "short_class" : "ModifyWalkSpeed"
     },
     "mount" : {
       "category" : "",
-      "className" : "MountAction",
+      "class_name" : "MountAction",
       "description" : [ "" ],
       "key" : "mount",
       "name" : "Mount",
       "parameters" : [ "eject" ],
-      "shortClass" : "Mount"
+      "short_class" : "Mount"
     },
     "mount_armor_stand" : {
       "category" : "",
-      "className" : "MountArmorStandAction",
+      "class_name" : "MountArmorStandAction",
       "description" : [ "" ],
       "key" : "mount_armor_stand",
       "name" : "Mount Armor Stand",
       "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
-      "shortClass" : "MountArmorStand"
+      "short_class" : "MountArmorStand"
     },
     "move_block" : {
       "category" : "",
-      "className" : "MoveBlockAction",
+      "class_name" : "MoveBlockAction",
       "description" : [ "" ],
       "key" : "move_block",
       "name" : "Move Block",
       "parameters" : [ "offset", "set_target" ],
-      "shortClass" : "MoveBlock"
+      "short_class" : "MoveBlock"
     },
     "multiply" : {
       "category" : "",
-      "className" : "MultiplyAction",
+      "class_name" : "MultiplyAction",
       "description" : [ "" ],
       "key" : "multiply",
       "name" : "Multiply",
       "parameters" : [ "multiply", "repeat" ],
-      "shortClass" : "Multiply"
+      "short_class" : "Multiply"
     },
     "orient" : {
       "category" : "",
-      "className" : "OrientAction",
+      "class_name" : "OrientAction",
       "description" : [ "" ],
       "key" : "orient",
       "name" : "Orient",
       "parameters" : [ ],
-      "shortClass" : "Orient"
+      "short_class" : "Orient"
     },
     "parallel" : {
       "category" : "",
-      "className" : "ParallelAction",
+      "class_name" : "ParallelAction",
       "description" : [ "" ],
       "key" : "parallel",
       "name" : "Parallel",
       "parameters" : [ ],
-      "shortClass" : "Parallel"
+      "short_class" : "Parallel"
     },
     "plane" : {
       "category" : "",
-      "className" : "PlaneAction",
+      "class_name" : "PlaneAction",
       "description" : [ "" ],
       "key" : "plane",
       "name" : "Plane",
       "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Plane"
+      "short_class" : "Plane"
     },
     "play_effects" : {
       "category" : "",
-      "className" : "PlayEffectsAction",
+      "class_name" : "PlayEffectsAction",
       "description" : [ "" ],
       "key" : "play_effects",
       "name" : "Play Effects",
       "parameters" : [ "effect", "effects" ],
-      "shortClass" : "PlayEffects"
+      "short_class" : "PlayEffects"
     },
     "play_record" : {
       "category" : "",
-      "className" : "PlayRecordAction",
+      "class_name" : "PlayRecordAction",
       "description" : [ "" ],
       "key" : "play_record",
       "name" : "Play Record",
       "parameters" : [ "records" ],
-      "shortClass" : "PlayRecord"
+      "short_class" : "PlayRecord"
     },
     "play_sound" : {
       "category" : "",
-      "className" : "PlaySoundAction",
+      "class_name" : "PlaySoundAction",
       "description" : [ "" ],
       "key" : "play_sound",
       "name" : "Play Sound",
       "parameters" : [ "pitch", "radius", "sound", "volume" ],
-      "shortClass" : "PlaySound"
+      "short_class" : "PlaySound"
     },
     "player_select" : {
       "category" : "",
-      "className" : "PlayerSelectAction",
+      "class_name" : "PlayerSelectAction",
       "description" : [ "" ],
       "key" : "player_select",
       "name" : "Player Select",
       "parameters" : [ "cross_world" ],
-      "shortClass" : "PlayerSelect"
+      "short_class" : "PlayerSelect"
     },
     "potion_effect" : {
       "category" : "",
-      "className" : "PotionEffectAction",
+      "class_name" : "PotionEffectAction",
       "description" : [ "" ],
       "key" : "potion_effect",
       "name" : "Potion Effect",
       "parameters" : [ "add_effects", "effects_ambient", "effects_particles" ],
-      "shortClass" : "PotionEffect"
+      "short_class" : "PotionEffect"
     },
     "power_block" : {
       "category" : "",
-      "className" : "PowerBlockAction",
+      "class_name" : "PowerBlockAction",
       "description" : [ "" ],
       "key" : "power_block",
       "name" : "Power Block",
       "parameters" : [ "physics" ],
-      "shortClass" : "PowerBlock"
+      "short_class" : "PowerBlock"
     },
     "probability" : {
       "category" : "",
-      "className" : "ProbabilityAction",
+      "class_name" : "ProbabilityAction",
       "description" : [ "" ],
       "key" : "probability",
       "name" : "Probability",
       "parameters" : [ "probability" ],
-      "shortClass" : "Probability"
+      "short_class" : "Probability"
     },
     "projectile" : {
       "category" : "",
-      "className" : "ProjectileAction",
+      "class_name" : "ProjectileAction",
       "description" : [ "" ],
       "key" : "projectile",
       "name" : "Projectile",
       "parameters" : [ "break_blocks", "count", "damage", "fire", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "set_target", "size", "source_location", "speed", "spread", "start", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
-      "shortClass" : "Projectile"
+      "short_class" : "Projectile"
     },
     "random" : {
       "category" : "",
-      "className" : "RandomAction",
+      "class_name" : "RandomAction",
       "description" : [ "" ],
       "key" : "random",
       "name" : "Random",
       "parameters" : [ ],
-      "shortClass" : "Random"
+      "short_class" : "Random"
     },
     "recall" : {
       "category" : "",
-      "className" : "RecallAction",
+      "class_name" : "RecallAction",
       "description" : [ "" ],
       "key" : "recall",
       "name" : "Recall",
       "parameters" : [ "allow_cross_world", "friend_key", "marker_key", "protection_duration", "require_build", "require_exit", "safe", "unlock_key", "vertical_range" ],
-      "shortClass" : "Recall"
+      "short_class" : "Recall"
     },
     "recurse" : {
       "category" : "",
-      "className" : "RecurseAction",
+      "class_name" : "RecurseAction",
       "description" : [ "" ],
       "key" : "recurse",
       "name" : "Recurse",
       "parameters" : [ "checkered", "depth", "replace", "size" ],
-      "shortClass" : "Recurse"
+      "short_class" : "Recurse"
     },
     "remove_entity" : {
       "category" : "",
-      "className" : "RemoveEntityAction",
+      "class_name" : "RemoveEntityAction",
       "description" : [ "" ],
       "key" : "remove_entity",
       "name" : "Remove Entity",
       "parameters" : [ ],
-      "shortClass" : "RemoveEntity"
+      "short_class" : "RemoveEntity"
     },
     "repair_item" : {
       "category" : "",
-      "className" : "RepairItemAction",
+      "class_name" : "RepairItemAction",
       "description" : [ "" ],
       "key" : "repair_item",
       "name" : "Repair Item",
       "parameters" : [ "armor", "held_item" ],
-      "shortClass" : "RepairItem"
+      "short_class" : "RepairItem"
     },
     "repeat" : {
       "category" : "",
-      "className" : "RepeatAction",
+      "class_name" : "RepeatAction",
       "description" : [ "" ],
       "key" : "repeat",
       "name" : "Repeat",
       "parameters" : [ "repeat" ],
-      "shortClass" : "Repeat"
+      "short_class" : "Repeat"
     },
     "retarget" : {
       "category" : "",
-      "className" : "RetargetAction",
+      "class_name" : "RetargetAction",
       "description" : [ "" ],
       "key" : "retarget",
       "name" : "Retarget",
       "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "range" ],
-      "shortClass" : "Retarget"
+      "short_class" : "Retarget"
     },
     "ride_entity" : {
       "category" : "",
-      "className" : "RideEntityAction",
+      "class_name" : "RideEntityAction",
       "description" : [ "" ],
       "key" : "ride_entity",
       "name" : "Ride Entity",
       "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
-      "shortClass" : "RideEntity"
+      "short_class" : "RideEntity"
     },
     "ring" : {
       "category" : "",
-      "className" : "RingAction",
+      "class_name" : "RingAction",
       "description" : [ "" ],
       "key" : "ring",
       "name" : "Ring",
       "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Ring"
+      "short_class" : "Ring"
     },
     "selector" : {
       "category" : "",
-      "className" : "SelectorAction",
+      "class_name" : "SelectorAction",
       "description" : [ "" ],
       "key" : "selector",
       "name" : "Selector",
       "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "confirm", "confirm_filler", "confirm_title", "cost", "cost_type", "currency", "experience", "icon", "limit", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
-      "shortClass" : "Selector"
+      "short_class" : "Selector"
     },
     "serial" : {
       "category" : "",
-      "className" : "SerialAction",
+      "class_name" : "SerialAction",
       "description" : [ "" ],
       "key" : "serial",
       "name" : "Serial",
       "parameters" : [ ],
-      "shortClass" : "Serial"
+      "short_class" : "Serial"
     },
     "shrink_block" : {
       "category" : "",
-      "className" : "ShrinkBlockAction",
+      "class_name" : "ShrinkBlockAction",
       "description" : [ "" ],
       "key" : "shrink_block",
       "name" : "Shrink Block",
       "parameters" : [ ],
-      "shortClass" : "ShrinkBlock"
+      "short_class" : "ShrinkBlock"
     },
     "shrink_entity" : {
       "category" : "",
-      "className" : "ShrinkEntityAction",
+      "class_name" : "ShrinkEntityAction",
       "description" : [ "" ],
       "key" : "shrink_entity",
       "name" : "Shrink Entity",
       "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage", "skeletons" ],
-      "shortClass" : "ShrinkEntity"
+      "short_class" : "ShrinkEntity"
     },
     "simulate" : {
       "category" : "",
-      "className" : "SimulateAction",
+      "class_name" : "SimulateAction",
       "description" : [ "" ],
       "key" : "simulate",
       "name" : "Simulate",
       "parameters" : [ ],
-      "shortClass" : "Simulate"
+      "short_class" : "Simulate"
     },
     "skill_selector" : {
       "category" : "",
-      "className" : "SkillSelectorAction",
+      "class_name" : "SkillSelectorAction",
       "description" : [ "" ],
       "key" : "skill_selector",
       "name" : "Skill Selector",
       "parameters" : [ ],
-      "shortClass" : "SkillSelector"
+      "short_class" : "SkillSelector"
     },
     "skip" : {
       "category" : "",
-      "className" : "SkipAction",
+      "class_name" : "SkipAction",
       "description" : [ "" ],
       "key" : "skip",
       "name" : "Skip",
       "parameters" : [ "repeat_skip", "skip" ],
-      "shortClass" : "Skip"
+      "short_class" : "Skip"
     },
     "spawn_entity" : {
       "category" : "",
-      "className" : "SpawnEntityAction",
+      "class_name" : "SpawnEntityAction",
       "description" : [ "" ],
       "key" : "spawn_entity",
       "name" : "Spawn Entity",
       "parameters" : [ "direction", "dy_offset", "force", "loot", "repeat_random", "set_target", "speed" ],
-      "shortClass" : "SpawnEntity"
+      "short_class" : "SpawnEntity"
     },
     "spell_progress" : {
       "category" : "",
-      "className" : "SpellProgressAction",
+      "class_name" : "SpellProgressAction",
       "description" : [ "" ],
       "key" : "spell_progress",
       "name" : "Spell Progress",
       "parameters" : [ ],
-      "shortClass" : "SpellProgress"
+      "short_class" : "SpellProgress"
     },
     "spell_shop" : {
       "category" : "",
-      "className" : "SpellShopAction",
+      "class_name" : "SpellShopAction",
       "description" : [ "" ],
       "key" : "spell_shop",
       "name" : "Spell Shop",
       "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
-      "shortClass" : "SpellShop"
+      "short_class" : "SpellShop"
     },
     "sphere" : {
       "category" : "",
-      "className" : "SphereAction",
+      "class_name" : "SphereAction",
       "description" : [ "" ],
       "key" : "sphere",
       "name" : "Sphere",
       "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Sphere"
+      "short_class" : "Sphere"
     },
     "spread" : {
       "category" : "",
-      "className" : "SpreadAction",
+      "class_name" : "SpreadAction",
       "description" : [ "" ],
       "key" : "spread",
       "name" : "Spread",
       "parameters" : [ "center_probability", "outer_probability", "pitch_max", "probability", "radius", "yaw_max" ],
-      "shortClass" : "Spread"
+      "short_class" : "Spread"
     },
     "stash_wand" : {
       "category" : "",
-      "className" : "StashWandAction",
+      "class_name" : "StashWandAction",
       "description" : [ "" ],
       "key" : "stash_wand",
       "name" : "Stash Wand",
       "parameters" : [ "return_on_finish" ],
-      "shortClass" : "StashWand"
+      "short_class" : "StashWand"
     },
     "stop" : {
       "category" : "",
-      "className" : "StopAction",
+      "class_name" : "StopAction",
       "description" : [ "" ],
       "key" : "stop",
       "name" : "Stop",
       "parameters" : [ ],
-      "shortClass" : "Stop"
+      "short_class" : "Stop"
     },
     "super_protection" : {
       "category" : "",
-      "className" : "SuperProtectionAction",
+      "class_name" : "SuperProtectionAction",
       "description" : [ "" ],
       "key" : "super_protection",
       "name" : "Super Protection",
       "parameters" : [ "duration" ],
-      "shortClass" : "SuperProtection"
+      "short_class" : "SuperProtection"
     },
     "t_n_t" : {
       "category" : "",
-      "className" : "TNTAction",
+      "class_name" : "TNTAction",
       "description" : [ "" ],
       "key" : "t_n_t",
       "name" : "TNT",
       "parameters" : [ "break_blocks", "count", "fire", "fuse", "lifetime", "projectile_effects", "set_target", "size", "tnt_velocity", "track_projectile" ],
-      "shortClass" : "TNT"
+      "short_class" : "TNT"
     },
     "take_item" : {
       "category" : "",
-      "className" : "TakeItemAction",
+      "class_name" : "TakeItemAction",
       "description" : [ "" ],
       "key" : "take_item",
       "name" : "Take Item",
       "parameters" : [ "display_name" ],
-      "shortClass" : "TakeItem"
+      "short_class" : "TakeItem"
     },
     "tame" : {
       "category" : "",
-      "className" : "TameAction",
+      "class_name" : "TameAction",
       "description" : [ "" ],
       "key" : "tame",
       "name" : "Tame",
       "parameters" : [ ],
-      "shortClass" : "Tame"
+      "short_class" : "Tame"
     },
     "teleport" : {
       "category" : "",
-      "className" : "TeleportAction",
+      "class_name" : "TeleportAction",
       "description" : [ "" ],
       "key" : "teleport",
       "name" : "Teleport",
       "parameters" : [ "allow_passthrough", "ledge_range", "passthrough_range", "require_build", "require_exit", "safe", "use_target_location", "vertical_range" ],
-      "shortClass" : "Teleport"
+      "short_class" : "Teleport"
     },
     "throw_block" : {
       "category" : "",
-      "className" : "ThrowBlockAction",
+      "class_name" : "ThrowBlockAction",
       "description" : [ "" ],
       "key" : "throw_block",
       "name" : "Throw Block",
       "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
-      "shortClass" : "ThrowBlock"
+      "short_class" : "ThrowBlock"
     },
     "throw_item" : {
       "category" : "",
-      "className" : "ThrowItemAction",
+      "class_name" : "ThrowItemAction",
       "description" : [ "" ],
       "key" : "throw_item",
       "name" : "Throw Item",
       "parameters" : [ "age_items", "item", "lifetime", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
-      "shortClass" : "ThrowItem"
+      "short_class" : "ThrowItem"
     },
     "tile_entities" : {
       "category" : "",
-      "className" : "TileEntitiesAction",
+      "class_name" : "TileEntitiesAction",
       "description" : [ "" ],
       "key" : "tile_entities",
       "name" : "Tile Entities",
       "parameters" : [ "target_all_worlds" ],
-      "shortClass" : "TileEntities"
+      "short_class" : "TileEntities"
     },
     "time" : {
       "category" : "",
-      "className" : "TimeAction",
+      "class_name" : "TimeAction",
       "description" : [ "" ],
       "key" : "time",
       "name" : "Time",
       "parameters" : [ "cycle_moon_phase", "time" ],
-      "shortClass" : "Time"
+      "short_class" : "Time"
     },
     "torch" : {
       "category" : "",
-      "className" : "TorchAction",
+      "class_name" : "TorchAction",
       "description" : [ "" ],
       "key" : "torch",
       "name" : "Torch",
       "parameters" : [ "allow_glowstone", "glowstone_torch", "not_attachable", "redstone_torch" ],
-      "shortClass" : "Torch"
+      "short_class" : "Torch"
     },
     "tree" : {
       "category" : "",
-      "className" : "TreeAction",
+      "class_name" : "TreeAction",
       "description" : [ "" ],
       "key" : "tree",
       "name" : "Tree",
       "parameters" : [ "require_sapling", "type" ],
-      "shortClass" : "Tree"
+      "short_class" : "Tree"
     },
     "undo" : {
       "category" : "",
-      "className" : "UndoAction",
+      "class_name" : "UndoAction",
       "description" : [ "" ],
       "key" : "undo",
       "name" : "Undo",
       "parameters" : [ "admin_permission", "cancel", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
-      "shortClass" : "Undo"
+      "short_class" : "Undo"
     },
     "vanish" : {
       "category" : "",
-      "className" : "VanishAction",
+      "class_name" : "VanishAction",
       "description" : [ "" ],
       "key" : "vanish",
       "name" : "Vanish",
       "parameters" : [ "vanish" ],
-      "shortClass" : "Vanish"
+      "short_class" : "Vanish"
     },
     "velocity" : {
       "category" : "",
-      "className" : "VelocityAction",
+      "class_name" : "VelocityAction",
       "description" : [ "" ],
       "key" : "velocity",
       "name" : "Velocity",
       "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "speed", "velocity_max_distance", "y_offset" ],
-      "shortClass" : "Velocity"
+      "short_class" : "Velocity"
     },
     "volume" : {
       "category" : "",
-      "className" : "VolumeAction",
+      "class_name" : "VolumeAction",
       "description" : [ "" ],
       "key" : "volume",
       "name" : "Volume",
       "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
-      "shortClass" : "Volume"
+      "short_class" : "Volume"
     },
     "wear" : {
       "category" : "",
-      "className" : "WearAction",
+      "class_name" : "WearAction",
       "description" : [ "" ],
       "key" : "wear",
       "name" : "Wear",
       "parameters" : [ "armor_slot", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
-      "shortClass" : "Wear"
+      "short_class" : "Wear"
     },
     "weather" : {
       "category" : "",
-      "className" : "WeatherAction",
+      "class_name" : "WeatherAction",
       "description" : [ "" ],
       "key" : "weather",
       "name" : "Weather",
       "parameters" : [ "weather" ],
-      "shortClass" : "Weather"
+      "short_class" : "Weather"
     }
   },
   "categories" : {
@@ -1265,399 +1265,399 @@
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
-      "className" : "AnimatedBallEffect",
+      "class_name" : "AnimatedBallEffect",
       "description" : [ "" ],
       "key" : "animated_ball",
       "name" : "Animated Ball",
       "parameters" : [ "particle", "particles", "particles_per_iteration", "size", "x_factor", "x_offset", "x_rotation", "y_factor", "y_offset", "y_rotation", "z_factor", "z_offset", "z_rotation" ],
-      "shortClass" : "AnimatedBall"
+      "short_class" : "AnimatedBall"
     },
     "arc" : {
       "category" : "",
-      "className" : "ArcEffect",
+      "class_name" : "ArcEffect",
       "description" : [ "" ],
       "key" : "arc",
       "name" : "Arc",
       "parameters" : [ "height", "particle", "particles" ],
-      "shortClass" : "Arc"
+      "short_class" : "Arc"
     },
     "atom" : {
       "category" : "",
-      "className" : "AtomEffect",
+      "class_name" : "AtomEffect",
       "description" : [ "" ],
       "key" : "atom",
       "name" : "Atom",
       "parameters" : [ "angular_velocity", "color_nucleus", "color_orbital", "orbitals", "particle_nucleus", "particle_orbital", "particles_nucleus", "particles_orbital", "radius", "radius_nucleus", "rotation" ],
-      "shortClass" : "Atom"
+      "short_class" : "Atom"
     },
     "big_bang" : {
       "category" : "",
-      "className" : "BigBangEffect",
+      "class_name" : "BigBangEffect",
       "description" : [ "" ],
       "key" : "big_bang",
       "name" : "Big Bang",
       "parameters" : [ "color2", "color3", "explosions", "fade_color", "firework_type", "intensity", "radius", "sound", "sound_interval", "sound_pitch", "sound_volume" ],
-      "shortClass" : "BigBang"
+      "short_class" : "BigBang"
     },
     "bleed" : {
       "category" : "",
-      "className" : "BleedEffect",
+      "class_name" : "BleedEffect",
       "description" : [ "" ],
       "key" : "bleed",
       "name" : "Bleed",
       "parameters" : [ "height", "hurt" ],
-      "shortClass" : "Bleed"
+      "short_class" : "Bleed"
     },
     "circle" : {
       "category" : "",
-      "className" : "CircleEffect",
+      "class_name" : "CircleEffect",
       "description" : [ "" ],
       "key" : "circle",
       "name" : "Circle",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "particle", "particles", "radius", "x_rotation", "x_subtract", "y_rotation", "y_subtract", "z_rotation", "z_subtract" ],
-      "shortClass" : "Circle"
+      "short_class" : "Circle"
     },
     "cloud" : {
       "category" : "",
-      "className" : "CloudEffect",
+      "class_name" : "CloudEffect",
       "description" : [ "" ],
       "key" : "cloud",
       "name" : "Cloud",
       "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "main_particle", "particle_radius", "y_offset" ],
-      "shortClass" : "Cloud"
+      "short_class" : "Cloud"
     },
     "colored_image" : {
       "category" : "",
-      "className" : "ColoredImageEffect",
+      "class_name" : "ColoredImageEffect",
       "description" : [ "" ],
       "key" : "colored_image",
       "name" : "Colored Image",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
-      "shortClass" : "ColoredImage"
+      "short_class" : "ColoredImage"
     },
     "cone" : {
       "category" : "",
-      "className" : "ConeEffect",
+      "class_name" : "ConeEffect",
       "description" : [ "" ],
       "key" : "cone",
       "name" : "Cone",
       "parameters" : [ "angular_velocity", "length_grow", "particle", "particles", "particles_cone", "radius_grow", "randomize", "rotation" ],
-      "shortClass" : "Cone"
+      "short_class" : "Cone"
     },
     "cube" : {
       "category" : "",
-      "className" : "CubeEffect",
+      "class_name" : "CubeEffect",
       "description" : [ "" ],
       "key" : "cube",
       "name" : "Cube",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "edge_length", "enable_rotation", "outline_only", "particle", "particles" ],
-      "shortClass" : "Cube"
+      "short_class" : "Cube"
     },
     "cylinder" : {
       "category" : "",
-      "className" : "CylinderEffect",
+      "class_name" : "CylinderEffect",
       "description" : [ "" ],
       "key" : "cylinder",
       "name" : "Cylinder",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "height", "particle", "particles", "radius", "rotation_x", "rotation_y", "rotation_z", "solid" ],
-      "shortClass" : "Cylinder"
+      "short_class" : "Cylinder"
     },
     "disco_ball" : {
       "category" : "",
-      "className" : "DiscoBallEffect",
+      "class_name" : "DiscoBallEffect",
       "description" : [ "" ],
       "key" : "disco_ball",
       "name" : "Disco Ball",
       "parameters" : [ "direction-disco_ball_effect_direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
-      "shortClass" : "DiscoBall"
+      "short_class" : "DiscoBall"
     },
     "dna" : {
       "category" : "",
-      "className" : "DnaEffect",
+      "class_name" : "DnaEffect",
       "description" : [ "" ],
       "key" : "dna",
       "name" : "Dna",
       "parameters" : [ "base_interval", "color_base1", "color_base2", "color_helix", "grow", "length", "particle_base1", "particle_base2", "particle_helix", "particles_base", "particles_helix", "radials", "radius" ],
-      "shortClass" : "Dna"
+      "short_class" : "Dna"
     },
     "donut" : {
       "category" : "",
-      "className" : "DonutEffect",
+      "class_name" : "DonutEffect",
       "description" : [ "" ],
       "key" : "donut",
       "name" : "Donut",
       "parameters" : [ "circles", "particle", "particles_circle", "radius_donut", "radius_tube", "x_rotation", "y_rotation", "z_rotation" ],
-      "shortClass" : "Donut"
+      "short_class" : "Donut"
     },
     "dragon" : {
       "category" : "",
-      "className" : "DragonEffect",
+      "class_name" : "DragonEffect",
       "description" : [ "" ],
       "key" : "dragon",
       "name" : "Dragon",
       "parameters" : [ "arcs", "length", "particle", "particles", "steps_per_iteration" ],
-      "shortClass" : "Dragon"
+      "short_class" : "Dragon"
     },
     "earth" : {
       "category" : "",
-      "className" : "EarthEffect",
+      "class_name" : "EarthEffect",
       "description" : [ "" ],
       "key" : "earth",
       "name" : "Earth",
       "parameters" : [ "mountain_height", "particles", "precision", "radius" ],
-      "shortClass" : "Earth"
+      "short_class" : "Earth"
     },
     "equation" : {
       "category" : "",
-      "className" : "EquationEffect",
+      "class_name" : "EquationEffect",
       "description" : [ "" ],
       "key" : "equation",
       "name" : "Equation",
       "parameters" : [ "cycle_mini_step", "max_steps", "orient", "orient_pitch", "particle", "particles", "particles2", "variable", "variable2", "x2_equation", "x_equation", "y2_equation", "y_equation", "z2_equation", "z_equation" ],
-      "shortClass" : "Equation"
+      "short_class" : "Equation"
     },
     "explode" : {
       "category" : "",
-      "className" : "ExplodeEffect",
+      "class_name" : "ExplodeEffect",
       "description" : [ "" ],
       "key" : "explode",
       "name" : "Explode",
       "parameters" : [ "amount", "sound" ],
-      "shortClass" : "Explode"
+      "short_class" : "Explode"
     },
     "flame" : {
       "category" : "",
-      "className" : "FlameEffect",
+      "class_name" : "FlameEffect",
       "description" : [ "" ],
       "key" : "flame",
       "name" : "Flame",
       "parameters" : [ ],
-      "shortClass" : "Flame"
+      "short_class" : "Flame"
     },
     "fountain" : {
       "category" : "",
-      "className" : "FountainEffect",
+      "class_name" : "FountainEffect",
       "description" : [ "" ],
       "key" : "fountain",
       "name" : "Fountain",
       "parameters" : [ "height", "height_spout", "particle", "particles_spout", "particles_strand", "radius", "radius_spout", "rotation", "strands" ],
-      "shortClass" : "Fountain"
+      "short_class" : "Fountain"
     },
     "grid" : {
       "category" : "",
-      "className" : "GridEffect",
+      "class_name" : "GridEffect",
       "description" : [ "" ],
       "key" : "grid",
       "name" : "Grid",
       "parameters" : [ "columns", "height_cell", "particle", "particles_height", "particles_width", "rotation", "rows", "width_cell" ],
-      "shortClass" : "Grid"
+      "short_class" : "Grid"
     },
     "heart" : {
       "category" : "",
-      "className" : "HeartEffect",
+      "class_name" : "HeartEffect",
       "description" : [ "" ],
       "key" : "heart",
       "name" : "Heart",
       "parameters" : [ "compilaction", "compress_y_factor_total", "factor_inner_spike", "particle", "particles", "x_factor", "x_rotation", "y_factor", "y_rotation", "z_rotation" ],
-      "shortClass" : "Heart"
+      "short_class" : "Heart"
     },
     "helix" : {
       "category" : "",
-      "className" : "HelixEffect",
+      "class_name" : "HelixEffect",
       "description" : [ "" ],
       "key" : "helix",
       "name" : "Helix",
       "parameters" : [ "curve", "particle", "particles", "radius", "rotation", "strands" ],
-      "shortClass" : "Helix"
+      "short_class" : "Helix"
     },
     "hill" : {
       "category" : "",
-      "className" : "HillEffect",
+      "class_name" : "HillEffect",
       "description" : [ "" ],
       "key" : "hill",
       "name" : "Hill",
       "parameters" : [ "edge_length", "height", "particle", "particles", "y_rotation" ],
-      "shortClass" : "Hill"
+      "short_class" : "Hill"
     },
     "icon" : {
       "category" : "",
-      "className" : "IconEffect",
+      "class_name" : "IconEffect",
       "description" : [ "" ],
       "key" : "icon",
       "name" : "Icon",
       "parameters" : [ "particle", "y_offset" ],
-      "shortClass" : "Icon"
+      "short_class" : "Icon"
     },
     "image" : {
       "category" : "",
-      "className" : "ImageEffect",
+      "class_name" : "ImageEffect",
       "description" : [ "" ],
       "key" : "image",
       "name" : "Image",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "invert", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
-      "shortClass" : "Image"
+      "short_class" : "Image"
     },
     "jump" : {
       "category" : "",
-      "className" : "JumpEffect",
+      "class_name" : "JumpEffect",
       "description" : [ "" ],
       "key" : "jump",
       "name" : "Jump",
       "parameters" : [ "power" ],
-      "shortClass" : "Jump"
+      "short_class" : "Jump"
     },
     "line" : {
       "category" : "",
-      "className" : "LineEffect",
+      "class_name" : "LineEffect",
       "description" : [ "" ],
       "key" : "line",
       "name" : "Line",
       "parameters" : [ "is_zig_zag", "length", "particle", "particles", "zig_zag_offset", "zig_zags" ],
-      "shortClass" : "Line"
+      "short_class" : "Line"
     },
     "love" : {
       "category" : "",
-      "className" : "LoveEffect",
+      "class_name" : "LoveEffect",
       "description" : [ "" ],
       "key" : "love",
       "name" : "Love",
       "parameters" : [ "particle" ],
-      "shortClass" : "Love"
+      "short_class" : "Love"
     },
     "modified" : {
       "category" : "",
-      "className" : "ModifiedEffect",
+      "class_name" : "ModifiedEffect",
       "description" : [ "" ],
       "key" : "modified",
       "name" : "Modified",
       "parameters" : [ "effect", "effect_class", "orient", "orient_pitch", "parameters", "x_equation", "y_equation", "z_equation" ],
-      "shortClass" : "Modified"
+      "short_class" : "Modified"
     },
     "music" : {
       "category" : "",
-      "className" : "MusicEffect",
+      "class_name" : "MusicEffect",
       "description" : [ "" ],
       "key" : "music",
       "name" : "Music",
       "parameters" : [ "radials_per_step", "radius" ],
-      "shortClass" : "Music"
+      "short_class" : "Music"
     },
     "plot" : {
       "category" : "",
-      "className" : "PlotEffect",
+      "class_name" : "PlotEffect",
       "description" : [ "" ],
       "key" : "plot",
       "name" : "Plot",
       "parameters" : [ "particle", "persistent", "x_equation", "x_scale", "y_equation", "y_scale", "z_equation", "z_scale" ],
-      "shortClass" : "Plot"
+      "short_class" : "Plot"
     },
     "shield" : {
       "category" : "",
-      "className" : "ShieldEffect",
+      "class_name" : "ShieldEffect",
       "description" : [ "" ],
       "key" : "shield",
       "name" : "Shield",
       "parameters" : [ "particle", "particles", "radius", "sphere" ],
-      "shortClass" : "Shield"
+      "short_class" : "Shield"
     },
     "sky_rocket" : {
       "category" : "",
-      "className" : "SkyRocketEffect",
+      "class_name" : "SkyRocketEffect",
       "description" : [ "" ],
       "key" : "sky_rocket",
       "name" : "Sky Rocket",
       "parameters" : [ "power" ],
-      "shortClass" : "SkyRocket"
+      "short_class" : "SkyRocket"
     },
     "smoke" : {
       "category" : "",
-      "className" : "SmokeEffect",
+      "class_name" : "SmokeEffect",
       "description" : [ "" ],
       "key" : "smoke",
       "name" : "Smoke",
       "parameters" : [ "particle" ],
-      "shortClass" : "Smoke"
+      "short_class" : "Smoke"
     },
     "sphere" : {
       "category" : "",
-      "className" : "SphereEffect",
+      "class_name" : "SphereEffect",
       "description" : [ "" ],
       "key" : "sphere",
       "name" : "Sphere",
       "parameters" : [ "particle", "particles", "radius", "radius_increase", "y_offset" ],
-      "shortClass" : "Sphere"
+      "short_class" : "Sphere"
     },
     "star" : {
       "category" : "",
-      "className" : "StarEffect",
+      "class_name" : "StarEffect",
       "description" : [ "" ],
       "key" : "star",
       "name" : "Star",
       "parameters" : [ "inner_radius", "particle", "particles", "spike_height", "spikes_half" ],
-      "shortClass" : "Star"
+      "short_class" : "Star"
     },
     "text" : {
       "category" : "",
-      "className" : "TextEffect",
+      "class_name" : "TextEffect",
       "description" : [ "" ],
       "key" : "text",
       "name" : "Text",
       "parameters" : [ "font", "invert", "particle", "realtime", "size", "step_x", "step_y", "text" ],
-      "shortClass" : "Text"
+      "short_class" : "Text"
     },
     "tornado" : {
       "category" : "",
-      "className" : "TornadoEffect",
+      "class_name" : "TornadoEffect",
       "description" : [ "" ],
       "key" : "tornado",
       "name" : "Tornado",
       "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "distance", "max_tornado_radius", "show_cloud", "show_tornado", "tornado_color", "tornado_height", "tornado_particle", "y_offset" ],
-      "shortClass" : "Tornado"
+      "short_class" : "Tornado"
     },
     "trace" : {
       "category" : "",
-      "className" : "TraceEffect",
+      "class_name" : "TraceEffect",
       "description" : [ "" ],
       "key" : "trace",
       "name" : "Trace",
       "parameters" : [ "max_way_points", "particle", "refresh" ],
-      "shortClass" : "Trace"
+      "short_class" : "Trace"
     },
     "turn" : {
       "category" : "",
-      "className" : "TurnEffect",
+      "class_name" : "TurnEffect",
       "description" : [ "" ],
       "key" : "turn",
       "name" : "Turn",
       "parameters" : [ "step" ],
-      "shortClass" : "Turn"
+      "short_class" : "Turn"
     },
     "vortex" : {
       "category" : "",
-      "className" : "VortexEffect",
+      "class_name" : "VortexEffect",
       "description" : [ "" ],
       "key" : "vortex",
       "name" : "Vortex",
       "parameters" : [ "circles", "grow", "helixes", "particle", "radials", "radius" ],
-      "shortClass" : "Vortex"
+      "short_class" : "Vortex"
     },
     "warp" : {
       "category" : "",
-      "className" : "WarpEffect",
+      "class_name" : "WarpEffect",
       "description" : [ "" ],
       "key" : "warp",
       "name" : "Warp",
       "parameters" : [ "grow", "particle", "particles", "radius", "rings" ],
-      "shortClass" : "Warp"
+      "short_class" : "Warp"
     },
     "wave" : {
       "category" : "",
-      "className" : "WaveEffect",
+      "class_name" : "WaveEffect",
       "description" : [ "" ],
       "key" : "wave",
       "name" : "Wave",
       "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity-vector", "width" ],
-      "shortClass" : "Wave"
+      "short_class" : "Wave"
     }
   },
   "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
@@ -2021,6 +2021,7 @@
       "type" : "float"
     },
     "bb" : {
+      "alias" : "bypass_build",
       "category" : "base",
       "description" : [ "" ],
       "field" : "bb",
@@ -2105,6 +2106,7 @@
       "type" : "double"
     },
     "bp" : {
+      "alias" : "bypass_pvp",
       "category" : "base",
       "description" : [ "" ],
       "field" : "bp",
@@ -2196,6 +2198,7 @@
       "type" : "material_list"
     },
     "bu" : {
+      "alias" : "bypass_undo",
       "category" : "undo",
       "description" : [ "" ],
       "field" : "bu",
@@ -2420,6 +2423,7 @@
       "type" : "string"
     },
     "cd" : {
+      "alias" : "check_destructible",
       "category" : "construction",
       "description" : [ "" ],
       "field" : "cd",
@@ -2721,6 +2725,7 @@
       "type" : "boolean"
     },
     "cool" : {
+      "alias" : "cooldown",
       "category" : "base",
       "description" : [ "" ],
       "field" : "cool",
@@ -3855,6 +3860,7 @@
       "type" : "texture"
     },
     "id" : {
+      "alias" : "indestructible",
       "category" : "construction",
       "description" : [ "" ],
       "field" : "id",
@@ -6816,6 +6822,7 @@
       "type" : "entity_type"
     },
     "u" : {
+      "alias" : "undo",
       "category" : "undo",
       "description" : [ "" ],
       "field" : "u",
@@ -7478,251 +7485,251 @@
   "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
   "types" : {
     "actions" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "An action handler, with lists of actions defined for events such as 'cast'" ],
       "name" : "Actions",
       "options" : [ ]
     },
     "attribute" : {
-      "className" : "org.bukkit.attribute.Attribute",
+      "class_name" : "org.bukkit.attribute.Attribute",
       "description" : [ "A vanilla item or entity attributes" ],
       "name" : "Attribute",
       "options" : [ "generic_armor", "generic_attack_damage", "generic_attack_speed", "generic_follow_range", "generic_knockback_resistance", "generic_luck", "generic_max_health", "generic_movement_speed", "horse_jump_strength", "zombie_spawn_reinforcements" ]
     },
     "attribute_map" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "A map of vanilla item or entity attribute values" ],
-      "keyType" : "attribute",
+      "key_type" : "attribute",
       "name" : "Attribute Map",
       "options" : [ ],
-      "valueType" : "double"
+      "value_type" : "double"
     },
     "attributes" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "Magic attributes as defined in attributes.yml" ],
       "name" : "Attributes",
       "options" : [ ]
     },
     "base_image_effect_plane" : {
-      "className" : "de.slikey.effectlib.util.BaseImageEffect$Plane",
+      "class_name" : "de.slikey.effectlib.util.BaseImageEffect$Plane",
       "description" : [ "The plane along which to draw an image" ],
       "name" : "Base Image Effect Plane",
       "options" : [ "x", "xy", "xyz", "xz", "y", "yz", "z" ]
     },
     "biome" : {
-      "className" : "org.bukkit.block.Biome",
+      "class_name" : "org.bukkit.block.Biome",
       "description" : [ "A vanilla biome type" ],
       "name" : "Biome",
       "options" : [ "beaches", "birch_forest", "birch_forest_hills", "cold_beach", "deep_ocean", "desert", "desert_hills", "extreme_hills", "extreme_hills_with_trees", "forest", "forest_hills", "frozen_ocean", "frozen_river", "hell", "ice_flats", "ice_mountains", "jungle", "jungle_edge", "jungle_hills", "mesa", "mesa_clear_rock", "mesa_rock", "mushroom_island", "mushroom_island_shore", "mutated_birch_forest", "mutated_birch_forest_hills", "mutated_desert", "mutated_extreme_hills", "mutated_extreme_hills_with_trees", "mutated_forest", "mutated_ice_flats", "mutated_jungle", "mutated_jungle_edge", "mutated_mesa", "mutated_mesa_clear_rock", "mutated_mesa_rock", "mutated_plains", "mutated_redwood_taiga", "mutated_redwood_taiga_hills", "mutated_roofed_forest", "mutated_savanna", "mutated_savanna_rock", "mutated_swampland", "mutated_taiga", "mutated_taiga_cold", "ocean", "plains", "redwood_taiga", "redwood_taiga_hills", "river", "roofed_forest", "savanna", "savanna_rock", "sky", "smaller_extreme_hills", "stone_beach", "swampland", "taiga", "taiga_cold", "taiga_cold_hills", "taiga_hills", "void" ]
     },
     "boolean" : {
-      "className" : "java.lang.Boolean",
+      "class_name" : "java.lang.Boolean",
       "description" : [ "A true/false value" ],
       "name" : "Boolean",
       "options" : [ "false", "true" ]
     },
     "byte" : {
-      "className" : "java.lang.Byte",
+      "class_name" : "java.lang.Byte",
       "description" : [ "A small number ranging from 0 to 255" ],
       "name" : "Byte",
       "options" : [ "0", "1", "128", "255" ]
     },
     "color" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "A color string using RRGGBB notation" ],
       "name" : "Color",
       "options" : [ "0000FF", "00FF00", "010101", "FF0000", "FFFFFF" ]
     },
     "cost_map" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "A map of costs" ],
-      "keyType" : "cost_type",
+      "key_type" : "cost_type",
       "name" : "Cost Map",
       "options" : [ ],
-      "valueType" : "double"
+      "value_type" : "double"
     },
     "cost_type" : {
-      "className" : "com.elmakers.mine.bukkit.item.Cost$Type",
+      "class_name" : "com.elmakers.mine.bukkit.item.Cost$Type",
       "description" : [ "A type of cost required or consumed by something" ],
       "name" : "Cost Type",
       "options" : [ "currency", "health", "hunger", "item", "levels", "mana", "sp", "xp" ]
     },
     "damage_type" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "A type of damage" ],
       "name" : "Damage Type",
       "options" : [ "explosion", "fall", "fire", "magic", "overall", "physical", "projectile" ]
     },
     "damage_type_map" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "A map of damage types, where damage type is the key and a multiplier is the value" ],
-      "keyType" : "damage_type",
+      "key_type" : "damage_type",
       "name" : "Damage Type Map",
       "options" : [ ],
-      "valueType" : "double"
+      "value_type" : "double"
     },
     "disco_ball_effect_direction" : {
-      "className" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
+      "class_name" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
       "description" : [ "The direction the disco ball should move" ],
       "name" : "Disco Ball Effect Direction",
       "options" : [ "both", "down", "up" ]
     },
     "double" : {
-      "className" : "java.lang.Double",
+      "class_name" : "java.lang.Double",
       "description" : [ "A large numeric floating-point number" ],
       "name" : "Double",
       "options" : [ "-0.5", "0", "0.1", "0.5", "1" ]
     },
     "effect_type" : {
-      "className" : "org.bukkit.Effect$Type",
+      "class_name" : "org.bukkit.Effect$Type",
       "description" : [ "The type of effect" ],
       "name" : "Effect Type",
       "options" : [ "sound", "visual" ]
     },
     "entity_type" : {
-      "className" : "org.bukkit.entity.EntityType",
+      "class_name" : "org.bukkit.entity.EntityType",
       "description" : [ "A type of vanilla entity" ],
       "name" : "Entity Type",
       "options" : [ "area_effect_cloud", "armor_stand", "arrow", "bat", "blaze", "boat", "cave_spider", "chicken", "complex_part", "cow", "creeper", "dragon_fireball", "dropped_item", "egg", "ender_crystal", "ender_dragon", "ender_pearl", "ender_signal", "enderman", "endermite", "experience_orb", "falling_block", "fireball", "firework", "fishing_hook", "ghast", "giant", "guardian", "horse", "iron_golem", "item_frame", "leash_hitch", "lightning", "lingering_potion", "magma_cube", "minecart", "minecart_chest", "minecart_command", "minecart_furnace", "minecart_hopper", "minecart_mob_spawner", "minecart_tnt", "mushroom_cow", "ocelot", "painting", "pig", "pig_zombie", "player", "primed_tnt", "rabbit", "sheep", "shulker", "shulker_bullet", "silverfish", "skeleton", "slime", "small_fireball", "snowball", "snowman", "spectral_arrow", "spider", "splash_potion", "squid", "thrown_exp_bottle", "tipped_arrow", "unknown", "villager", "weather", "witch", "wither", "wither_skull", "wolf", "zombie" ]
     },
     "firework_effect_type" : {
-      "className" : "org.bukkit.FireworkEffect$Type",
+      "class_name" : "org.bukkit.FireworkEffect$Type",
       "description" : [ "The type of firework effect" ],
       "name" : "Firework Effect Type",
       "options" : [ "ball", "ball_large", "burst", "creeper", "star" ]
     },
     "float" : {
-      "className" : "java.lang.Float",
+      "class_name" : "java.lang.Float",
       "description" : [ "A numeric floating-point number" ],
       "name" : "Float",
       "options" : [ "-0.5", "0", "0.1", "0.5", "1" ]
     },
     "font" : {
-      "className" : "java.awt.Font",
+      "class_name" : "java.awt.Font",
       "description" : [ "A font name" ],
       "name" : "Font",
       "options" : [ ]
     },
     "icon" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "An icon from a resource pack" ],
       "name" : "Icon",
       "options" : [ "diamond_axe:2", "diamond_hoe:4" ]
     },
     "integer" : {
-      "className" : "java.lang.Integer",
+      "class_name" : "java.lang.Integer",
       "description" : [ "A numeric integer value" ],
       "name" : "Integer",
       "options" : [ "-1", "0", "1", "100" ]
     },
     "list" : {
-      "className" : "java.util.List",
+      "class_name" : "java.util.List",
       "description" : [ "" ],
       "name" : "List",
       "options" : [ ]
     },
     "long" : {
-      "className" : "java.lang.Long",
+      "class_name" : "java.lang.Long",
       "description" : [ "A large numeric integer value" ],
       "name" : "Long",
       "options" : [ "-1", "0", "1", "100" ]
     },
     "map" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "" ],
       "name" : "Map",
       "options" : [ ]
     },
     "material" : {
-      "className" : "org.bukkit.Material",
+      "class_name" : "org.bukkit.Material",
       "description" : [ "An item or block material" ],
       "name" : "Material",
       "options" : [ "acacia_door", "acacia_door_item", "acacia_fence", "acacia_fence_gate", "acacia_stairs", "activator_rail", "air", "anvil", "apple", "armor_stand", "arrow", "baked_potato", "banner", "barrier", "beacon", "bed", "bed_block", "bedrock", "beetroot", "beetroot_block", "beetroot_seeds", "beetroot_soup", "birch_door", "birch_door_item", "birch_fence", "birch_fence_gate", "birch_wood_stairs", "blaze_powder", "blaze_rod", "boat", "boat_acacia", "boat_birch", "boat_dark_oak", "boat_jungle", "boat_spruce", "bone", "book", "book_and_quill", "bookshelf", "bow", "bowl", "bread", "brewing_stand", "brewing_stand_item", "brick", "brick_stairs", "brown_mushroom", "bucket", "burning_furnace", "cactus", "cake", "cake_block", "carpet", "carrot", "carrot_item", "carrot_stick", "cauldron", "cauldron_item", "chainmail_boots", "chainmail_chestplate", "chainmail_helmet", "chainmail_leggings", "chest", "chorus_flower", "chorus_fruit", "chorus_fruit_popped", "chorus_plant", "clay", "clay_ball", "clay_brick", "coal", "coal_block", "coal_ore", "cobble_wall", "cobblestone", "cobblestone_stairs", "cocoa", "command", "command_chain", "command_minecart", "command_repeating", "compass", "cooked_beef", "cooked_chicken", "cooked_fish", "cooked_mutton", "cooked_rabbit", "cookie", "crops", "dark_oak_door", "dark_oak_door_item", "dark_oak_fence", "dark_oak_fence_gate", "dark_oak_stairs", "daylight_detector", "daylight_detector_inverted", "dead_bush", "detector_rail", "diamond", "diamond_axe", "diamond_barding", "diamond_block", "diamond_boots", "diamond_chestplate", "diamond_helmet", "diamond_hoe", "diamond_leggings", "diamond_ore", "diamond_pickaxe", "diamond_spade", "diamond_sword", "diode", "diode_block_off", "diode_block_on", "dirt", "dispenser", "double_plant", "double_step", "double_stone_slab2", "dragon_egg", "dragons_breath", "dropper", "egg", "elytra", "emerald", "emerald_block", "emerald_ore", "empty_map", "enchanted_book", "enchantment_table", "end_bricks", "end_crystal", "end_gateway", "end_rod", "ender_chest", "ender_pearl", "ender_portal", "ender_portal_frame", "ender_stone", "exp_bottle", "explosive_minecart", "eye_of_ender", "feather", "fence", "fence_gate", "fermented_spider_eye", "fire", "fireball", "firework", "firework_charge", "fishing_rod", "flint", "flint_and_steel", "flower_pot", "flower_pot_item", "frosted_ice", "furnace", "ghast_tear", "glass", "glass_bottle", "glowing_redstone_ore", "glowstone", "glowstone_dust", "gold_axe", "gold_barding", "gold_block", "gold_boots", "gold_chestplate", "gold_helmet", "gold_hoe", "gold_ingot", "gold_leggings", "gold_nugget", "gold_ore", "gold_pickaxe", "gold_plate", "gold_record", "gold_spade", "gold_sword", "golden_apple", "golden_carrot", "grass", "grass_path", "gravel", "green_record", "grilled_pork", "hard_clay", "hay_block", "hopper", "hopper_minecart", "huge_mushroom_1", "huge_mushroom_2", "ice", "ink_sack", "iron_axe", "iron_barding", "iron_block", "iron_boots", "iron_chestplate", "iron_door", "iron_door_block", "iron_fence", "iron_helmet", "iron_hoe", "iron_ingot", "iron_leggings", "iron_ore", "iron_pickaxe", "iron_plate", "iron_spade", "iron_sword", "iron_trapdoor", "item_frame", "jack_o_lantern", "jukebox", "jungle_door", "jungle_door_item", "jungle_fence", "jungle_fence_gate", "jungle_wood_stairs", "ladder", "lapis_block", "lapis_ore", "lava", "lava_bucket", "leash", "leather", "leather_boots", "leather_chestplate", "leather_helmet", "leather_leggings", "leaves", "leaves_2", "lever", "lingering_potion", "log", "log_2", "long_grass", "magma_cream", "map", "melon", "melon_block", "melon_seeds", "melon_stem", "milk_bucket", "minecart", "mob_spawner", "monster_egg", "monster_eggs", "mossy_cobblestone", "mushroom_soup", "mutton", "mycel", "name_tag", "nether_brick", "nether_brick_item", "nether_brick_stairs", "nether_fence", "nether_stalk", "nether_star", "nether_warts", "netherrack", "note_block", "obsidian", "packed_ice", "painting", "paper", "piston_base", "piston_extension", "piston_moving_piece", "piston_sticky_base", "poisonous_potato", "pork", "portal", "potato", "potato_item", "potion", "powered_minecart", "powered_rail", "prismarine", "prismarine_crystals", "prismarine_shard", "pumpkin", "pumpkin_pie", "pumpkin_seeds", "pumpkin_stem", "purpur_block", "purpur_double_slab", "purpur_pillar", "purpur_slab", "purpur_stairs", "quartz", "quartz_block", "quartz_ore", "quartz_stairs", "rabbit", "rabbit_foot", "rabbit_hide", "rabbit_stew", "rails", "raw_beef", "raw_chicken", "raw_fish", "record_10", "record_11", "record_12", "record_3", "record_4", "record_5", "record_6", "record_7", "record_8", "record_9", "red_mushroom", "red_rose", "red_sandstone", "red_sandstone_stairs", "redstone", "redstone_block", "redstone_comparator", "redstone_comparator_off", "redstone_comparator_on", "redstone_lamp_off", "redstone_lamp_on", "redstone_ore", "redstone_torch_off", "redstone_torch_on", "redstone_wire", "rotten_flesh", "saddle", "sand", "sandstone", "sandstone_stairs", "sapling", "sea_lantern", "seeds", "shears", "shield", "sign", "sign_post", "skull", "skull_item", "slime_ball", "slime_block", "smooth_brick", "smooth_stairs", "snow", "snow_ball", "snow_block", "soil", "soul_sand", "speckled_melon", "spectral_arrow", "spider_eye", "splash_potion", "sponge", "spruce_door", "spruce_door_item", "spruce_fence", "spruce_fence_gate", "spruce_wood_stairs", "stained_clay", "stained_glass", "stained_glass_pane", "standing_banner", "stationary_lava", "stationary_water", "step", "stick", "stone", "stone_axe", "stone_button", "stone_hoe", "stone_pickaxe", "stone_plate", "stone_slab2", "stone_spade", "stone_sword", "storage_minecart", "string", "structure_block", "sugar", "sugar_cane", "sugar_cane_block", "sulphur", "thin_glass", "tipped_arrow", "tnt", "torch", "trap_door", "trapped_chest", "tripwire", "tripwire_hook", "vine", "wall_banner", "wall_sign", "watch", "water", "water_bucket", "water_lily", "web", "wheat", "wood", "wood_axe", "wood_button", "wood_door", "wood_double_step", "wood_hoe", "wood_pickaxe", "wood_plate", "wood_spade", "wood_stairs", "wood_step", "wood_sword", "wooden_door", "wool", "workbench", "written_book", "yellow_flower" ]
     },
     "material_list" : {
-      "className" : "java.util.List",
+      "class_name" : "java.util.List",
       "description" : [ "A list of item or block materials" ],
       "name" : "Material List",
       "options" : [ ],
-      "valueType" : "material"
+      "value_type" : "material"
     },
     "particle_effect" : {
-      "className" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
+      "class_name" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
       "description" : [ "A particle type" ],
       "name" : "Particle Effect",
       "options" : [ "barrier", "block_crack", "block_dust", "cloud", "crit", "crit_magic", "damage_indicator", "dragon_breath", "drip_lava", "drip_water", "enchantment_table", "end_rod", "explosion_huge", "explosion_large", "explosion_normal", "falling_dust", "fireworks_spark", "flame", "footstep", "heart", "item_crack", "item_take", "lava", "mob_appearance", "note", "portal", "redstone", "slime", "smoke_large", "smoke_normal", "snow_shovel", "snowball", "spell", "spell_instant", "spell_mob", "spell_mob_ambient", "spell_witch", "spit", "suspended", "suspended_depth", "sweep_attack", "totem", "town_aura", "villager_angry", "villager_happy", "water_bubble", "water_drop", "water_splash", "water_wake" ]
     },
     "path" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "A progression path" ],
       "name" : "Path",
       "options" : [ "airbender", "beginner", "jedi", "student" ]
     },
     "potion_effect_map" : {
-      "className" : "java.util.Map",
+      "class_name" : "java.util.Map",
       "description" : [ "A map of potion effects, where the key is a potion effect type and the value is an amplifier" ],
-      "keyType" : "potion_effect_type",
+      "key_type" : "potion_effect_type",
       "name" : "Potion Effect Map",
       "options" : [ ],
-      "valueType" : "integer"
+      "value_type" : "integer"
     },
     "potion_effect_type" : {
-      "className" : "org.bukkit.potion.PotionEffectType",
+      "class_name" : "org.bukkit.potion.PotionEffectType",
       "description" : [ "A vanilla potion effect type" ],
       "name" : "Potion Effect Type",
       "options" : [ "absorption", "blindness", "confusion", "damage_resistance", "fast_digging", "fire_resistance", "glowing", "harm", "heal", "health_boost", "hunger", "increase_damage", "invisibility", "jump", "levitation", "luck", "night_vision", "poison", "regeneration", "saturation", "slow", "slow_digging", "speed", "unluck", "water_breathing", "weakness", "wither" ]
     },
     "sound" : {
-      "className" : "org.bukkit.Sound",
+      "class_name" : "org.bukkit.Sound",
       "description" : [ "A sound, can be a vanilla Minecraft sound or a custom sound from a resource pack" ],
       "name" : "Sound",
       "options" : [ "ambient_cave", "block_anvil_break", "block_anvil_destroy", "block_anvil_fall", "block_anvil_hit", "block_anvil_land", "block_anvil_place", "block_anvil_step", "block_anvil_use", "block_brewing_stand_brew", "block_chest_close", "block_chest_locked", "block_chest_open", "block_chorus_flower_death", "block_chorus_flower_grow", "block_cloth_break", "block_cloth_fall", "block_cloth_hit", "block_cloth_place", "block_cloth_step", "block_comparator_click", "block_dispenser_dispense", "block_dispenser_fail", "block_dispenser_launch", "block_end_gateway_spawn", "block_enderchest_close", "block_enderchest_open", "block_fence_gate_close", "block_fence_gate_open", "block_fire_ambient", "block_fire_extinguish", "block_furnace_fire_crackle", "block_glass_break", "block_glass_fall", "block_glass_hit", "block_glass_place", "block_glass_step", "block_grass_break", "block_grass_fall", "block_grass_hit", "block_grass_place", "block_grass_step", "block_gravel_break", "block_gravel_fall", "block_gravel_hit", "block_gravel_place", "block_gravel_step", "block_iron_door_close", "block_iron_door_open", "block_iron_trapdoor_close", "block_iron_trapdoor_open", "block_ladder_break", "block_ladder_fall", "block_ladder_hit", "block_ladder_place", "block_ladder_step", "block_lava_ambient", "block_lava_extinguish", "block_lava_pop", "block_lever_click", "block_metal_break", "block_metal_fall", "block_metal_hit", "block_metal_place", "block_metal_pressureplate_click_off", "block_metal_pressureplate_click_on", "block_metal_step", "block_note_basedrum", "block_note_bass", "block_note_harp", "block_note_hat", "block_note_pling", "block_note_snare", "block_piston_contract", "block_piston_extend", "block_portal_ambient", "block_portal_travel", "block_portal_trigger", "block_redstone_torch_burnout", "block_sand_break", "block_sand_fall", "block_sand_hit", "block_sand_place", "block_sand_step", "block_slime_break", "block_slime_fall", "block_slime_hit", "block_slime_place", "block_slime_step", "block_snow_break", "block_snow_fall", "block_snow_hit", "block_snow_place", "block_snow_step", "block_stone_break", "block_stone_button_click_off", "block_stone_button_click_on", "block_stone_fall", "block_stone_hit", "block_stone_place", "block_stone_pressureplate_click_off", "block_stone_pressureplate_click_on", "block_stone_step", "block_tripwire_attach", "block_tripwire_click_off", "block_tripwire_click_on", "block_tripwire_detach", "block_water_ambient", "block_waterlily_place", "block_wood_break", "block_wood_button_click_off", "block_wood_button_click_on", "block_wood_fall", "block_wood_hit", "block_wood_place", "block_wood_pressureplate_click_off", "block_wood_pressureplate_click_on", "block_wood_step", "block_wooden_door_close", "block_wooden_door_open", "block_wooden_trapdoor_close", "block_wooden_trapdoor_open", "enchant_thorns_hit", "entity_armorstand_break", "entity_armorstand_fall", "entity_armorstand_hit", "entity_armorstand_place", "entity_arrow_hit", "entity_arrow_hit_player", "entity_arrow_shoot", "entity_bat_ambient", "entity_bat_death", "entity_bat_hurt", "entity_bat_loop", "entity_bat_takeoff", "entity_blaze_ambient", "entity_blaze_burn", "entity_blaze_death", "entity_blaze_hurt", "entity_blaze_shoot", "entity_bobber_splash", "entity_bobber_throw", "entity_cat_ambient", "entity_cat_death", "entity_cat_hiss", "entity_cat_hurt", "entity_cat_purr", "entity_cat_purreow", "entity_chicken_ambient", "entity_chicken_death", "entity_chicken_egg", "entity_chicken_hurt", "entity_chicken_step", "entity_cow_ambient", "entity_cow_death", "entity_cow_hurt", "entity_cow_milk", "entity_cow_step", "entity_creeper_death", "entity_creeper_hurt", "entity_creeper_primed", "entity_donkey_ambient", "entity_donkey_angry", "entity_donkey_chest", "entity_donkey_death", "entity_donkey_hurt", "entity_egg_throw", "entity_elder_guardian_ambient", "entity_elder_guardian_ambient_land", "entity_elder_guardian_curse", "entity_elder_guardian_death", "entity_elder_guardian_death_land", "entity_elder_guardian_hurt", "entity_elder_guardian_hurt_land", "entity_enderdragon_ambient", "entity_enderdragon_death", "entity_enderdragon_fireball_explode", "entity_enderdragon_flap", "entity_enderdragon_growl", "entity_enderdragon_hurt", "entity_enderdragon_shoot", "entity_endereye_launch", "entity_endermen_ambient", "entity_endermen_death", "entity_endermen_hurt", "entity_endermen_scream", "entity_endermen_stare", "entity_endermen_teleport", "entity_endermite_ambient", "entity_endermite_death", "entity_endermite_hurt", "entity_endermite_step", "entity_enderpearl_throw", "entity_experience_bottle_throw", "entity_experience_orb_pickup", "entity_experience_orb_touch", "entity_firework_blast", "entity_firework_blast_far", "entity_firework_large_blast", "entity_firework_large_blast_far", "entity_firework_launch", "entity_firework_shoot", "entity_firework_twinkle", "entity_firework_twinkle_far", "entity_generic_big_fall", "entity_generic_burn", "entity_generic_death", "entity_generic_drink", "entity_generic_eat", "entity_generic_explode", "entity_generic_extinguish_fire", "entity_generic_hurt", "entity_generic_small_fall", "entity_generic_splash", "entity_generic_swim", "entity_ghast_ambient", "entity_ghast_death", "entity_ghast_hurt", "entity_ghast_scream", "entity_ghast_shoot", "entity_ghast_warn", "entity_guardian_ambient", "entity_guardian_ambient_land", "entity_guardian_attack", "entity_guardian_death", "entity_guardian_death_land", "entity_guardian_flop", "entity_guardian_hurt", "entity_guardian_hurt_land", "entity_horse_ambient", "entity_horse_angry", "entity_horse_armor", "entity_horse_breathe", "entity_horse_death", "entity_horse_eat", "entity_horse_gallop", "entity_horse_hurt", "entity_horse_jump", "entity_horse_land", "entity_horse_saddle", "entity_horse_step", "entity_horse_step_wood", "entity_hostile_big_fall", "entity_hostile_death", "entity_hostile_hurt", "entity_hostile_small_fall", "entity_hostile_splash", "entity_hostile_swim", "entity_irongolem_attack", "entity_irongolem_death", "entity_irongolem_hurt", "entity_irongolem_step", "entity_item_break", "entity_item_pickup", "entity_itemframe_add_item", "entity_itemframe_break", "entity_itemframe_place", "entity_itemframe_remove_item", "entity_itemframe_rotate_item", "entity_leashknot_break", "entity_leashknot_place", "entity_lightning_impact", "entity_lightning_thunder", "entity_lingeringpotion_throw", "entity_magmacube_death", "entity_magmacube_hurt", "entity_magmacube_jump", "entity_magmacube_squish", "entity_minecart_inside", "entity_minecart_riding", "entity_mooshroom_shear", "entity_mule_ambient", "entity_mule_death", "entity_mule_hurt", "entity_painting_break", "entity_painting_place", "entity_pig_ambient", "entity_pig_death", "entity_pig_hurt", "entity_pig_saddle", "entity_pig_step", "entity_player_attack_crit", "entity_player_attack_knockback", "entity_player_attack_nodamage", "entity_player_attack_strong", "entity_player_attack_sweep", "entity_player_attack_weak", "entity_player_big_fall", "entity_player_breath", "entity_player_burp", "entity_player_death", "entity_player_hurt", "entity_player_levelup", "entity_player_small_fall", "entity_player_splash", "entity_player_swim", "entity_rabbit_ambient", "entity_rabbit_attack", "entity_rabbit_death", "entity_rabbit_hurt", "entity_rabbit_jump", "entity_sheep_ambient", "entity_sheep_death", "entity_sheep_hurt", "entity_sheep_shear", "entity_sheep_step", "entity_shulker_ambient", "entity_shulker_bullet_hit", "entity_shulker_bullet_hurt", "entity_shulker_close", "entity_shulker_death", "entity_shulker_hurt", "entity_shulker_hurt_closed", "entity_shulker_open", "entity_shulker_shoot", "entity_shulker_teleport", "entity_silverfish_ambient", "entity_silverfish_death", "entity_silverfish_hurt", "entity_silverfish_step", "entity_skeleton_ambient", "entity_skeleton_death", "entity_skeleton_horse_ambient", "entity_skeleton_horse_death", "entity_skeleton_horse_hurt", "entity_skeleton_hurt", "entity_skeleton_shoot", "entity_skeleton_step", "entity_slime_attack", "entity_slime_death", "entity_slime_hurt", "entity_slime_jump", "entity_slime_squish", "entity_small_magmacube_death", "entity_small_magmacube_hurt", "entity_small_magmacube_squish", "entity_small_slime_death", "entity_small_slime_hurt", "entity_small_slime_jump", "entity_small_slime_squish", "entity_snowball_throw", "entity_snowman_ambient", "entity_snowman_death", "entity_snowman_hurt", "entity_snowman_shoot", "entity_spider_ambient", "entity_spider_death", "entity_spider_hurt", "entity_spider_step", "entity_splash_potion_break", "entity_splash_potion_throw", "entity_squid_ambient", "entity_squid_death", "entity_squid_hurt", "entity_tnt_primed", "entity_villager_ambient", "entity_villager_death", "entity_villager_hurt", "entity_villager_no", "entity_villager_trading", "entity_villager_yes", "entity_witch_ambient", "entity_witch_death", "entity_witch_drink", "entity_witch_hurt", "entity_witch_throw", "entity_wither_ambient", "entity_wither_break_block", "entity_wither_death", "entity_wither_hurt", "entity_wither_shoot", "entity_wither_spawn", "entity_wolf_ambient", "entity_wolf_death", "entity_wolf_growl", "entity_wolf_howl", "entity_wolf_hurt", "entity_wolf_pant", "entity_wolf_shake", "entity_wolf_step", "entity_wolf_whine", "entity_zombie_ambient", "entity_zombie_attack_door_wood", "entity_zombie_attack_iron_door", "entity_zombie_break_door_wood", "entity_zombie_death", "entity_zombie_horse_ambient", "entity_zombie_horse_death", "entity_zombie_horse_hurt", "entity_zombie_hurt", "entity_zombie_infect", "entity_zombie_pig_ambient", "entity_zombie_pig_angry", "entity_zombie_pig_death", "entity_zombie_pig_hurt", "entity_zombie_step", "entity_zombie_villager_ambient", "entity_zombie_villager_converted", "entity_zombie_villager_cure", "entity_zombie_villager_death", "entity_zombie_villager_hurt", "entity_zombie_villager_step", "item_armor_equip_chain", "item_armor_equip_diamond", "item_armor_equip_generic", "item_armor_equip_gold", "item_armor_equip_iron", "item_armor_equip_leather", "item_bottle_fill", "item_bottle_fill_dragonbreath", "item_bucket_empty", "item_bucket_empty_lava", "item_bucket_fill", "item_bucket_fill_lava", "item_chorus_fruit_teleport", "item_elytra_flying", "item_firecharge_use", "item_flintandsteel_use", "item_hoe_till", "item_shield_block", "item_shield_break", "item_shovel_flatten", "music_creative", "music_credits", "music_dragon", "music_end", "music_game", "music_menu", "music_nether", "record_11", "record_13", "record_blocks", "record_cat", "record_chirp", "record_far", "record_mall", "record_mellohi", "record_stal", "record_strad", "record_wait", "record_ward", "ui_button_click", "weather_rain", "weather_rain_above" ]
     },
     "source_location_location_type" : {
-      "className" : "com.elmakers.mine.bukkit.magic.SourceLocation$LocationType",
+      "class_name" : "com.elmakers.mine.bukkit.magic.SourceLocation$LocationType",
       "description" : [ "Where an effect should be based" ],
       "name" : "Location Type",
       "options" : [ "block", "body", "cast", "eyes", "feet", "hit", "wand" ]
     },
     "spell" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "The key name of a spell" ],
       "name" : "Spell",
       "options" : [ ]
     },
     "spell_list" : {
-      "className" : "java.util.List",
+      "class_name" : "java.util.List",
       "description" : [ "A list of spells" ],
       "name" : "Spell List",
       "options" : [ ],
-      "valueType" : "spell"
+      "value_type" : "spell"
     },
     "string" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "A bit of text" ],
       "name" : "String",
       "options" : [ "Hello", "World" ]
     },
     "texture" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "A texture URL used in a skull icon" ],
       "name" : "Texture",
       "options" : [ "See: http://mine.elmakers.com/#textures" ]
     },
     "vector" : {
-      "className" : "org.bukkit.util.Vector",
+      "class_name" : "org.bukkit.util.Vector",
       "description" : [ "A directional vector consisting of x,y,z coordinates" ],
       "name" : "Vector",
       "options" : [ "0,-1,0", "0,0,0", "0,1,0" ]
     },
     "wand_mode" : {
-      "className" : "com.elmakers.mine.bukkit.wand.WandMode",
+      "class_name" : "com.elmakers.mine.bukkit.wand.WandMode",
       "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar" ],
       "name" : "Wand Mode",
       "options" : [ "cast", "chest", "cycle", "inventory", "none", "skills" ]
     },
     "weather" : {
-      "className" : "java.lang.String",
+      "class_name" : "java.lang.String",
       "description" : [ "What type of weather to set" ],
       "name" : "Weather",
       "options" : [ "clear", "cycle", "storm" ]

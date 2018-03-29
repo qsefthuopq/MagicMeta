@@ -12,6 +12,7 @@ import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.WordUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ParameterType {
     private Class<?> classType;
@@ -54,6 +55,7 @@ public class ParameterType {
         this.key = key;
     }
 
+    @JsonProperty("class_name")
     public String getClassName() {
         return this.classType.getName();
     }
@@ -115,6 +117,7 @@ public class ParameterType {
         return valueType;
     }
 
+    @JsonProperty("value_type")
     public void setValueType(String valueType) {
         this.valueType = valueType;
     }
@@ -123,6 +126,7 @@ public class ParameterType {
         return keyType;
     }
 
+    @JsonProperty("key_type")
     public void setKeyType(String keyType) {
         this.keyType = keyType;
     }
