@@ -1,12 +1,13 @@
 package com.elmakers.mine.bukkit.meta;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.WordUtils;
@@ -70,6 +71,16 @@ public class ParameterType {
             Object[] enums = classType.getEnumConstants();
             for (Object enumConstant : enums) {
                 options.add(enumConstant.toString().toLowerCase());
+            }
+        } else {
+            // This covers PotionEffectType, which as it turns out is a huge pain.
+            Field[] values = classType.getFields();
+            for (Field field : values) {
+                if (Modifier.isStatic(field.getModifiers())
+                    && Modifier.isFinal(field.getModifiers())
+                    && field.getType() == classType) {
+                    options.add(field.getName().toLowerCase());
+                }
             }
         }
     }

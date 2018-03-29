@@ -7519,7 +7519,7 @@
       "className" : "java.lang.Boolean",
       "description" : [ "" ],
       "name" : "Boolean",
-      "options" : [ ]
+      "options" : [ "false", "true" ]
     },
     "byte" : {
       "className" : "java.lang.Byte",
@@ -7670,7 +7670,7 @@
       "className" : "org.bukkit.potion.PotionEffectType",
       "description" : [ "" ],
       "name" : "Potion Effect Type",
-      "options" : [ ]
+      "options" : [ "absorption", "blindness", "confusion", "damage_resistance", "fast_digging", "fire_resistance", "glowing", "harm", "heal", "health_boost", "hunger", "increase_damage", "invisibility", "jump", "levitation", "luck", "night_vision", "poison", "regeneration", "saturation", "slow", "slow_digging", "speed", "unluck", "water_breathing", "weakness", "wither" ]
     },
     "sound" : {
       "className" : "org.bukkit.Sound",
