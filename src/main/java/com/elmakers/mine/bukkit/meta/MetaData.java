@@ -27,7 +27,7 @@ public class MetaData {
 
     @JsonProperty("spell_parameters")
     public List<String> getSpellParameters() {
-        return sortCollection(actionParameters);
+        return sortCollection(spellParameters);
     }
 
     public void setSpellParameters(Set<String> spellParameters) {
@@ -44,7 +44,7 @@ public class MetaData {
     }
 
     @JsonProperty("action_parameters")
-    public List<String> getActionParameters() {
+    public List<String> getActiongetActionParaParameters() {
         return sortCollection(actionParameters);
     }
 
