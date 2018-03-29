@@ -34,7 +34,7 @@ public class MetaData {
         this.spellParameters = spellParameters;
     }
 
-    @JsonProperty("mob_parameters")
+    @JsonProperty("mob_properties")
     public List<String> getMobParameters() {
         return sortCollection(mobParameters);
     }
@@ -70,7 +70,7 @@ public class MetaData {
         this.categories = categories;
     }
 
-    @JsonProperty("parameters")
+    @JsonProperty("properties")
     public Map<String, Parameter> getParameters() {
         return parameterStore.getParameters();
     }
@@ -115,7 +115,7 @@ public class MetaData {
         this.effects = effects;
     }
 
-    @JsonProperty("wand_parameters")
+    @JsonProperty("wand_properties")
     public List<String> getWandParameters() {
         return sortCollection(wandParameters);
     }
