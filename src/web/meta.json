@@ -1252,6 +1252,10 @@
       "description" : [ "" ],
       "name" : "Construction"
     },
+    "effects" : {
+      "description" : [ "" ],
+      "name" : "Effects"
+    },
     "targeting" : {
       "description" : [ "" ],
       "name" : "Targeting"
@@ -1261,7 +1265,7 @@
       "name" : "Undo"
     }
   },
-  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample-string", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+  "effect_parameters" : [ "color_override", "delay", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample-string", "sound_broadcast", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "effect", "entity_effect", "sound", "custom_sound", "sound_volume", "sound_pitch" ],
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
@@ -3150,7 +3154,7 @@
       "description" : [ "" ],
       "field" : "effect",
       "name" : "Effect",
-      "type" : "effect_type"
+      "type" : "effect"
     },
     "effect_bubbles" : {
       "category" : "",
@@ -3305,6 +3309,13 @@
       "field" : "entity_damage",
       "name" : "Entity Damage",
       "type" : "double"
+    },
+    "entity_effect" : {
+      "category" : "effects",
+      "description" : [ "A vanilla entity effect, such as HURT" ],
+      "field" : "entity_effect",
+      "name" : "Entity Effect",
+      "type" : "entity_effect"
     },
     "entity_hit_count" : {
       "category" : "",
@@ -4722,29 +4733,29 @@
       "type" : "map"
     },
     "particle" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The type of particle to use in this effect" ],
       "field" : "particle",
       "name" : "Particle",
       "type" : "particle_effect"
     },
     "particle_base1" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The type of particle to use for the first base of this effect" ],
       "field" : "particle_base1",
       "name" : "Particle Base1",
       "type" : "particle_effect"
     },
     "particle_base2" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The type of particle to use for the second base of this effect" ],
       "field" : "particle_base2",
       "name" : "Particle Base2",
       "type" : "particle_effect"
     },
     "particle_count" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The number of particles to spawn with each particle packet", "Use this with particle_offset_x,y,z to spawn a dense or sparse group of particles while sending only a single packet to the client" ],
       "field" : "particle_count",
       "name" : "Particle Count",
       "type" : "integer"
@@ -4765,28 +4776,28 @@
     },
     "particle_offset_x" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A random spread of particles along the x-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_x",
       "name" : "Particle Offset X",
       "type" : "float"
     },
     "particle_offset_y" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A random spread of particles along the y-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_y",
       "name" : "Particle Offset Y",
       "type" : "float"
     },
     "particle_offset_z" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A random spread of particles along the z-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_z",
       "name" : "Particle Offset Z",
       "type" : "float"
     },
     "particle_orbital" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The particle to use in the orbital of this effect" ],
       "field" : "particle_orbital",
       "name" : "Particle Orbital",
       "type" : "particle_effect"
@@ -4807,7 +4818,7 @@
     },
     "particles" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The number of particles to spawn with each iteration of this effect" ],
       "field" : "particles",
       "name" : "Particles",
       "type" : "integer"
@@ -7580,11 +7591,17 @@
       "name" : "Double",
       "options" : [ "-0.5", "0", "0.1", "0.5", "1" ]
     },
-    "effect_type" : {
-      "class_name" : "org.bukkit.Effect$Type",
-      "description" : [ "The type of effect" ],
-      "name" : "Effect Type",
-      "options" : [ "sound", "visual" ]
+    "effect" : {
+      "class_name" : "org.bukkit.Effect",
+      "description" : [ "A vanilla effect" ],
+      "name" : "Effect",
+      "options" : [  ]
+    },
+    "entity_effect" : {
+      "class_name" : "org.bukkit.EntityEffect",
+      "description" : [ "A vanilla entity effect" ],
+      "name" : "Entity Effect Type",
+      "options" : [ "death", "firework_explode", "hurt", "iron_golem_rose", "sheep_eat", "villager_angry", "villager_happy", "villager_heart", "witch_magic", "wolf_hearts", "wolf_shake", "wolf_smoke", "zombie_transform" ]
     },
     "entity_type" : {
       "class_name" : "org.bukkit.entity.EntityType",
