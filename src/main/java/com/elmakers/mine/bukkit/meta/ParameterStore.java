@@ -27,6 +27,10 @@ public class ParameterStore {
 
     public ParameterType getParameterType(@Nonnull Class<?> classType) {
         String key = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, classType.getSimpleName());
+        Class<?> outerClass = classType.getDeclaringClass();
+        if (outerClass != null) {
+            key = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, outerClass.getSimpleName()) + "_" + key;
+        }
         return getParameterType(key, classType);
     }
 
