@@ -79,7 +79,7 @@
       "description" : [ "" ],
       "key" : "area_of_effect_cloud",
       "name" : "Area Of Effect Cloud",
-      "parameters" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
+      "parameters" : [ "direction", "duration", "duration_on_use", "interval", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random" ],
       "short_class" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
@@ -1024,7 +1024,7 @@
       "description" : [ "" ],
       "key" : "spawn_entity",
       "name" : "Spawn Entity",
-      "parameters" : [ "direction", "dy_offset", "force", "loot", "repeat_random", "set_target", "speed" ],
+      "parameters" : [ "direction", "dy_offset", "force", "loot", "repeat_random", "set_target", "speed", "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
       "short_class" : "SpawnEntity"
     },
     "spell_progress" : {
@@ -2089,14 +2089,14 @@
       "description" : [ "" ],
       "field" : "boots",
       "name" : "Boots",
-      "type" : "string"
+      "type" : "material"
     },
     "boots_item" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "boots_item",
       "name" : "Boots Item",
-      "type" : "string"
+      "type" : "material"
     },
     "bound" : {
       "category" : "",
@@ -2491,14 +2491,14 @@
       "description" : [ "" ],
       "field" : "chestplate",
       "name" : "Chestplate",
-      "type" : "string"
+      "type" : "material"
     },
     "chestplate_item" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "chestplate_item",
       "name" : "Chestplate Item",
-      "type" : "string"
+      "type" : "material"
     },
     "circles" : {
       "category" : "",
@@ -3710,14 +3710,14 @@
       "description" : [ "" ],
       "field" : "helmet",
       "name" : "Helmet",
-      "type" : "string"
+      "type" : "material"
     },
     "helmet_item" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "helmet_item",
       "name" : "Helmet Item",
-      "type" : "string"
+      "type" : "material"
     },
     "heroes" : {
       "category" : "",
@@ -3984,7 +3984,7 @@
       "description" : [ "" ],
       "field" : "item",
       "name" : "Item",
-      "type" : "string"
+      "type" : "material"
     },
     "item_attributes" : {
       "category" : "",
@@ -4075,14 +4075,14 @@
       "description" : [ "" ],
       "field" : "leggings",
       "name" : "Leggings",
-      "type" : "string"
+      "type" : "material"
     },
     "leggings_item" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "leggings_item",
       "name" : "Leggings Item",
-      "type" : "string"
+      "type" : "material"
     },
     "length" : {
       "category" : "",
