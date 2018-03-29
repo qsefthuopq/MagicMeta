@@ -1,11 +1,14 @@
 package com.elmakers.mine.bukkit.meta;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nonnull;
 
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.MemoryConfiguration;
 import org.bukkit.configuration.MemorySection;
 
 public class InterrogatingConfigurationSection extends MemorySection {
@@ -38,13 +41,30 @@ public class InterrogatingConfigurationSection extends MemorySection {
     @Override
     public ConfigurationSection getConfigurationSection(String path) {
         parameters.add(parameterStore.getParameter(path, Map.class));
-        return super.getConfigurationSection(path);
+        ConfigurationSection section = super.getConfigurationSection(path);
+
+        // Don't return null since we're lying with contains()
+        return section == null ? new MemoryConfiguration() : section;
     }
 
     @Override
     public String getString(String path, String def) {
         parameters.add(parameterStore.getParameter(path, String.class));
-        return super.getString(path, def);
+        String value = super.getString(path, def);
+        return value == null ? "" : value;
+    }
+
+    @Override
+    public List<?> getList(String path) {
+        parameters.add(parameterStore.getParameter(path, List.class));
+        List<?> list = super.getList(path);
+        return list == null ? new ArrayList<String>() : list;
+    }
+
+    @Override
+    public Object get(String path) {
+        parameters.add(parameterStore.getParameter(path, String.class));
+        return super.get(path);
     }
 
     @Override
@@ -53,20 +73,13 @@ public class InterrogatingConfigurationSection extends MemorySection {
         return super.getBoolean(path, def);
     }
 
-    /*
-
-    I was hoping this would catch cases like PotionEffectAction's list of effect_ parameters,
-    but for some reason it does not.
-
-    I was then worried it would cause parameters to show up incorrectly as Strings, so basically
-    just avoiding this for now.
-
+    /**
+     * Explore branches we'd otherwise ignore...
+     */
     @Override
     public boolean contains(String path) {
-        parameters.add(parameterStore.getParameter(path, String.class));
-        return super.contains(path);
+        return true;
     }
-    */
 
     @Nonnull
     public Set<Parameter> getParameters() {

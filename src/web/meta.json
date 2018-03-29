@@ -1,5 +1,5 @@
 {
-  "action_parameters" : [ "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+  "action_parameters" : [ "actions", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
   "actions" : {
     "absorb" : {
       "category" : "",
@@ -79,7 +79,7 @@
       "description" : [ "" ],
       "key" : "area_of_effect_cloud",
       "name" : "Area Of Effect Cloud",
-      "parameters" : [ "direction", "duration", "duration_on_use", "interval", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random" ],
+      "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "base_potion_type", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "color", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "duration", "duration_on_use", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "particle", "potion_effects", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness", "xp" ],
       "short_class" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
@@ -88,7 +88,7 @@
       "description" : [ "" ],
       "key" : "armor_stand_projectile",
       "name" : "Armor Stand Projectile",
-      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "visible_delay_ticks" ],
+      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "body_transform", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "head_transform", "headshot", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "left_arm_transform", "left_leg_transform", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "right_arm_transform", "right_leg_transform", "source_location", "spawn_reason", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "teleport", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "velocity_transform-map", "visible_delay_ticks" ],
       "short_class" : "ArmorStandProjectile"
     },
     "ascend" : {
@@ -133,7 +133,7 @@
       "description" : [ "" ],
       "key" : "brush",
       "name" : "Brush",
-      "parameters" : [ "brush", "sample" ],
+      "parameters" : [ "brush", "brushes", "sample" ],
       "short_class" : "Brush"
     },
     "brush_select" : {
@@ -160,7 +160,7 @@
       "description" : [ "" ],
       "key" : "cancel",
       "name" : "Cancel",
-      "parameters" : [ "force" ],
+      "parameters" : [ "force", "spells" ],
       "short_class" : "Cancel"
     },
     "capture" : {
@@ -187,7 +187,7 @@
       "description" : [ "" ],
       "key" : "change_context",
       "name" : "Change Context",
-      "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_is_target", "source_location", "source_offset", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_snap", "target_yaw_offset" ],
+      "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_direction_speed", "source_is_target", "source_location", "source_offset", "source_pitch", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_direction_speed", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_self", "target_snap", "target_yaw_offset" ],
       "short_class" : "ChangeContext"
     },
     "change_parameters" : {
@@ -232,7 +232,7 @@
       "description" : [ "" ],
       "key" : "check_entity",
       "name" : "Check Entity",
-      "parameters" : [ "allow_caster", "only_caster" ],
+      "parameters" : [ "allow_caster", "allowed_entities", "denied_entities", "only_caster" ],
       "short_class" : "CheckEntity"
     },
     "check_mana" : {
@@ -250,7 +250,7 @@
       "description" : [ "" ],
       "key" : "command",
       "name" : "Command",
-      "parameters" : [ "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
+      "parameters" : [ "command", "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
       "short_class" : "Command"
     },
     "cone_of_effect" : {
@@ -259,7 +259,7 @@
       "description" : [ "" ],
       "key" : "cone_of_effect",
       "name" : "Cone Of Effect",
-      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otworld", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
+      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
       "short_class" : "ConeOfEffect"
     },
     "count" : {
@@ -295,7 +295,7 @@
       "description" : [ "" ],
       "key" : "create_plot",
       "name" : "Create Plot",
-      "parameters" : [ ],
+      "parameters" : [ "price" ],
       "short_class" : "CreatePlot"
     },
     "cure" : {
@@ -313,7 +313,7 @@
       "description" : [ "" ],
       "key" : "custom_projectile",
       "name" : "Custom Projectile",
-      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss_effects", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity" ],
+      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss", "miss_effects", "npc_weight", "orient", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity", "velocity_transform-map" ],
       "short_class" : "CustomProjectile"
     },
     "cycle_block" : {
@@ -322,7 +322,7 @@
       "description" : [ "" ],
       "key" : "cycle_block",
       "name" : "Cycle Block",
-      "parameters" : [ ],
+      "parameters" : [ "materials" ],
       "short_class" : "CycleBlock"
     },
     "cycle_entity" : {
@@ -349,7 +349,7 @@
       "description" : [ "" ],
       "key" : "damage",
       "name" : "Damage",
-      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage" ],
+      "parameters" : [ "damage", "damage_max_distance", "damage_multiplier", "damage_type", "elemental_damage", "entity_damage", "knockback_resistance", "magic_damage", "magic_entity_damage", "percentage", "player_damage" ],
       "short_class" : "Damage"
     },
     "deactivate" : {
@@ -421,7 +421,7 @@
       "description" : [ "" ],
       "key" : "disguise",
       "name" : "Disguise",
-      "parameters" : [ ],
+      "parameters" : [ "disguise-map" ],
       "short_class" : "Disguise"
     },
     "door" : {
@@ -475,7 +475,7 @@
       "description" : [ "" ],
       "key" : "entity_projectile",
       "name" : "Entity Projectile",
-      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss_effects", "no_target", "npc_weight", "orient", "otworld", "pitch_max", "pitch_min", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self_timeout", "teleport", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset" ],
+      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss", "miss_effects", "no_target", "npc_weight", "orient", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "spawn_reason", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "teleport", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "velocity_transform-map" ],
       "short_class" : "EntityProjectile"
     },
     "explosion" : {
@@ -520,7 +520,7 @@
       "description" : [ "" ],
       "key" : "firework",
       "name" : "Firework",
-      "parameters" : [ "dy_offset", "flicker", "launch", "lifetime", "power", "projectile_effects", "set_target", "silent", "speed", "start", "track_projectile", "trail" ],
+      "parameters" : [ "color", "color2", "dy_offset", "expected_lifespan", "firework", "flicker", "launch", "lifetime", "power", "projectile_effects", "set_target", "silent", "speed", "start", "ticks_flown", "track_projectile", "trail" ],
       "short_class" : "Firework"
     },
     "flower" : {
@@ -529,7 +529,7 @@
       "description" : [ "" ],
       "key" : "flower",
       "name" : "Flower",
-      "parameters" : [ ],
+      "parameters" : [ "flowers", "tall_flowers" ],
       "short_class" : "Flower"
     },
     "freeze" : {
@@ -610,7 +610,7 @@
       "description" : [ "" ],
       "key" : "item_shop",
       "name" : "Item Shop",
-      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "items", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
       "short_class" : "ItemShop"
     },
     "kill" : {
@@ -664,7 +664,7 @@
       "description" : [ "" ],
       "key" : "message",
       "name" : "Message",
-      "parameters" : [ "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
+      "parameters" : [ "equation", "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
       "short_class" : "Message"
     },
     "modify_block" : {
@@ -709,7 +709,7 @@
       "description" : [ "" ],
       "key" : "modify_properties",
       "name" : "Modify Properties",
-      "parameters" : [ "modify_target", "upgrade" ],
+      "parameters" : [ "modify", "modify_target", "upgrade" ],
       "short_class" : "ModifyProperties"
     },
     "modify_reflective" : {
@@ -736,7 +736,7 @@
       "description" : [ "" ],
       "key" : "modify_walk_speed",
       "name" : "Modify Walk Speed",
-      "parameters" : [ ],
+      "parameters" : [ "speed" ],
       "short_class" : "ModifyWalkSpeed"
     },
     "mount" : {
@@ -754,7 +754,7 @@
       "description" : [ "" ],
       "key" : "mount_armor_stand",
       "name" : "Mount Armor Stand",
-      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_reason", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "short_class" : "MountArmorStand"
     },
     "move_block" : {
@@ -781,7 +781,7 @@
       "description" : [ "" ],
       "key" : "orient",
       "name" : "Orient",
-      "parameters" : [ ],
+      "parameters" : [ "pitch", "pitch_offset", "yaw", "yaw_offset" ],
       "short_class" : "Orient"
     },
     "parallel" : {
@@ -844,7 +844,7 @@
       "description" : [ "" ],
       "key" : "potion_effect",
       "name" : "Potion Effect",
-      "parameters" : [ "add_effects", "effects_ambient", "effects_particles" ],
+      "parameters" : [ "add_effects", "duration", "duration_multiplier", "effects_ambient", "effects_particles", "remove_effects" ],
       "short_class" : "PotionEffect"
     },
     "power_block" : {
@@ -898,7 +898,7 @@
       "description" : [ "" ],
       "key" : "recurse",
       "name" : "Recurse",
-      "parameters" : [ "checkered", "depth", "replace", "size" ],
+      "parameters" : [ "checkered", "depth", "faces", "replace", "size" ],
       "short_class" : "Recurse"
     },
     "remove_entity" : {
@@ -943,7 +943,7 @@
       "description" : [ "" ],
       "key" : "ride_entity",
       "name" : "Ride Entity",
-      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "short_class" : "RideEntity"
     },
     "ring" : {
@@ -961,7 +961,7 @@
       "description" : [ "" ],
       "key" : "selector",
       "name" : "Selector",
-      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "confirm", "confirm_filler", "confirm_title", "cost", "cost_type", "currency", "experience", "icon", "limit", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
+      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "commands", "confirm", "confirm_filler", "confirm_title", "cost", "cost_modifiers", "cost_type", "costs", "currency", "experience", "icon", "item", "items-list", "limit", "options", "requirements", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
       "short_class" : "Selector"
     },
     "serial" : {
@@ -988,7 +988,7 @@
       "description" : [ "" ],
       "key" : "shrink_entity",
       "name" : "Shrink Entity",
-      "parameters" : [ "damage", "damage_max_distance", "damage_type", "elemental_damage", "entity_damage", "magic_damage", "magic_entity_damage", "player_damage", "skeletons" ],
+      "parameters" : [ "damage", "damage_max_distance", "damage_multiplier", "damage_type", "elemental_damage", "entity_damage", "knockback_resistance", "magic_damage", "magic_entity_damage", "percentage", "player_damage", "skeletons" ],
       "short_class" : "ShrinkEntity"
     },
     "simulate" : {
@@ -1024,7 +1024,7 @@
       "description" : [ "" ],
       "key" : "spawn_entity",
       "name" : "Spawn Entity",
-      "parameters" : [ "direction", "dy_offset", "force", "loot", "repeat_random", "set_target", "speed", "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "duration", "duration_on_use", "dy_offset", "force", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "name", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "repeat_random", "set_target", "silent", "speed", "strength", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness" ],
+      "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "potion_effects", "protection", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
       "short_class" : "SpawnEntity"
     },
     "spell_progress" : {
@@ -1042,7 +1042,7 @@
       "description" : [ "" ],
       "key" : "spell_shop",
       "name" : "Spell Shop",
-      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "spells", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
       "short_class" : "SpellShop"
     },
     "sphere" : {
@@ -1177,7 +1177,7 @@
       "description" : [ "" ],
       "key" : "tree",
       "name" : "Tree",
-      "parameters" : [ "require_sapling", "type" ],
+      "parameters" : [ "biomes-map", "require_sapling", "type" ],
       "short_class" : "Tree"
     },
     "undo" : {
@@ -1222,7 +1222,7 @@
       "description" : [ "" ],
       "key" : "wear",
       "name" : "Wear",
-      "parameters" : [ "armor_slot", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
+      "parameters" : [ "armor_slot", "enchantments-map", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
       "short_class" : "Wear"
     },
     "weather" : {
@@ -1265,7 +1265,7 @@
       "name" : "Undo"
     }
   },
-  "effect_parameters" : [ "color_override", "custom_sound", "delay", "effect", "entity_effect", "location", "material", "offset", "orient", "origin_offset", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sample-string", "sound", "sound_broadcast", "sound_pitch", "sound_volume", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+  "effect_parameters" : [ "color", "color2", "color_override", "custom_sound", "delay", "effect", "entity_effect", "firework", "firework_flicker", "firework_power", "firework_silent", "location", "material", "offset", "orient", "origin_offset", "particle", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sample-string", "sound", "sound_broadcast", "sound_pitch", "sound_volume", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
@@ -1665,7 +1665,7 @@
     }
   },
   "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
-  "mob_properties" : [ "aggro", "ai", "baby", "boots", "can_pickup_items", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "helmet", "interact_spell", "interval", "item", "leggings", "mage", "name", "protection", "silent", "strength", "tamed", "track_radius", "triggers", "type", "weakness" ],
+  "mob_properties" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "disguise-map", "drop_xp", "drops", "entity_attributes", "health", "helmet", "interact_spell", "interval", "item", "leggings", "mage", "max_health", "name", "potion_effects", "protection", "silent", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
   "properties" : {
     "actions" : {
       "category" : "actions",
@@ -1807,6 +1807,13 @@
       "name" : "Allowed",
       "type" : "string"
     },
+    "allowed_entities" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "allowed_entities",
+      "name" : "Allowed Entities",
+      "type" : "list"
+    },
     "alternate_spell" : {
       "category" : "",
       "description" : [ "" ],
@@ -1933,6 +1940,13 @@
       "name" : "Armor Stand Pitch",
       "type" : "double"
     },
+    "armor_stand_reason" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "armor_stand_reason",
+      "name" : "Armor Stand Reason",
+      "type" : "string"
+    },
     "armor_stand_roll" : {
       "category" : "",
       "description" : [ "" ],
@@ -2024,6 +2038,13 @@
       "name" : "Base Interval",
       "type" : "float"
     },
+    "base_potion_type" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "base_potion_type",
+      "name" : "Base Potion Type",
+      "type" : "string"
+    },
     "bb" : {
       "alias" : "bypass_build",
       "category" : "base",
@@ -2038,6 +2059,20 @@
       "field" : "biome",
       "name" : "Biome",
       "type" : "biome"
+    },
+    "biomes" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "biomes",
+      "name" : "Biomes",
+      "type" : "string"
+    },
+    "biomes-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "biomes",
+      "name" : "Biomes",
+      "type" : "map"
     },
     "block_chance" : {
       "category" : "",
@@ -2080,6 +2115,13 @@
       "field" : "block_reflect_chance",
       "name" : "Block Reflect Chance",
       "type" : "double"
+    },
+    "body_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "body_transform",
+      "name" : "Body Transform",
+      "type" : "string"
     },
     "boostable" : {
       "category" : "",
@@ -2342,6 +2384,13 @@
       "name" : "Cancellable",
       "type" : "boolean"
     },
+    "cast" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cast",
+      "name" : "Cast",
+      "type" : "map"
+    },
     "cast_interval" : {
       "category" : "",
       "description" : [ "" ],
@@ -2568,7 +2617,7 @@
       "type" : "float"
     },
     "color" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "color",
       "name" : "Color",
@@ -2637,12 +2686,26 @@
       "name" : "Columns",
       "type" : "integer"
     },
+    "command" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "command",
+      "name" : "Command",
+      "type" : "string"
+    },
     "command_block_allowed" : {
       "category" : "base",
       "description" : [ "" ],
       "field" : "command_block_allowed",
       "name" : "Command Block Allowed",
       "type" : "boolean"
+    },
+    "commands" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "commands",
+      "name" : "Commands",
+      "type" : "list"
     },
     "commit" : {
       "category" : "",
@@ -2757,6 +2820,13 @@
       "name" : "Cost",
       "type" : "integer"
     },
+    "cost_modifiers" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cost_modifiers",
+      "name" : "Cost Modifiers",
+      "type" : "list"
+    },
     "cost_reduction" : {
       "category" : "base",
       "description" : [ "" ],
@@ -2848,6 +2918,13 @@
       "name" : "Crash Entity Vehicle Damage",
       "type" : "double"
     },
+    "crash_into" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "crash_into",
+      "name" : "Crash Into",
+      "type" : "string"
+    },
     "crash_speed" : {
       "category" : "",
       "description" : [ "" ],
@@ -2925,6 +3002,13 @@
       "name" : "Damage Max Distance",
       "type" : "double"
     },
+    "damage_multiplier" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "damage_multiplier",
+      "name" : "Damage Multiplier",
+      "type" : "double"
+    },
     "damage_resistance_protection" : {
       "category" : "targeting",
       "description" : [ "" ],
@@ -2959,6 +3043,13 @@
       "field" : "delay",
       "name" : "Delay",
       "type" : "integer"
+    },
+    "denied_entities" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "denied_entities",
+      "name" : "Denied Entities",
+      "type" : "list"
     },
     "depth" : {
       "category" : "",
@@ -3016,6 +3107,13 @@
       "name" : "Direction",
       "type" : "disco_ball_effect_direction"
     },
+    "direction_y" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "direction_y",
+      "name" : "Direction Y",
+      "type" : "double"
+    },
     "disable_mana_regeneration" : {
       "category" : "base",
       "description" : [ "" ],
@@ -3036,6 +3134,20 @@
       "field" : "disappear_with_target_entity",
       "name" : "Disappear With Target Entity",
       "type" : "boolean"
+    },
+    "disguise" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "disguise",
+      "name" : "Disguise",
+      "type" : "string"
+    },
+    "disguise-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "disguise",
+      "name" : "Disguise",
+      "type" : "map"
     },
     "disguise_restricted" : {
       "category" : "base",
@@ -3093,6 +3205,20 @@
       "name" : "Drop Count",
       "type" : "integer"
     },
+    "drop_xp" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "drop_xp",
+      "name" : "Drop Xp",
+      "type" : "integer"
+    },
+    "drops" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "drops",
+      "name" : "Drops",
+      "type" : "list"
+    },
     "durability_max_distance" : {
       "category" : "",
       "description" : [ "" ],
@@ -3106,6 +3232,13 @@
       "field" : "duration",
       "name" : "Duration",
       "type" : "integer"
+    },
+    "duration_multiplier" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "duration_multiplier",
+      "name" : "Duration Multiplier",
+      "type" : "double"
     },
     "duration_on_use" : {
       "category" : "",
@@ -3261,6 +3394,13 @@
       "name" : "Effects",
       "type" : "string"
     },
+    "effects-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "effects",
+      "name" : "Effects",
+      "type" : "map"
+    },
     "effects_ambient" : {
       "category" : "",
       "description" : [ "" ],
@@ -3310,6 +3450,27 @@
       "name" : "Enchant Count",
       "type" : "double"
     },
+    "enchantments" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "enchantments",
+      "name" : "Enchantments",
+      "type" : "string"
+    },
+    "enchantments-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "enchantments",
+      "name" : "Enchantments",
+      "type" : "map"
+    },
+    "entity_attributes" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "entity_attributes",
+      "name" : "Entity Attributes",
+      "type" : "attribute_map"
+    },
     "entity_damage" : {
       "category" : "",
       "description" : [ "" ],
@@ -3331,6 +3492,20 @@
       "name" : "Entity Hit Count",
       "type" : "integer"
     },
+    "entity_types" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "entity_types",
+      "name" : "Entity Types",
+      "type" : "string"
+    },
+    "entity_types-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "entity_types",
+      "name" : "Entity Types",
+      "type" : "map"
+    },
     "entity_undo" : {
       "category" : "undo",
       "description" : [ "" ],
@@ -3338,12 +3513,26 @@
       "name" : "Entity Undo",
       "type" : "boolean"
     },
+    "entity_undo_types" : {
+      "category" : "undo",
+      "description" : [ "" ],
+      "field" : "entity_undo_types",
+      "name" : "Entity Undo Types",
+      "type" : "list"
+    },
     "entity_weight" : {
       "category" : "targeting",
       "description" : [ "" ],
       "field" : "entity_weight",
       "name" : "Entity Weight",
       "type" : "integer"
+    },
+    "equation" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "equation",
+      "name" : "Equation",
+      "type" : "double"
     },
     "escape_sequence" : {
       "category" : "",
@@ -3373,6 +3562,13 @@
       "name" : "Exhaustion",
       "type" : "boolean"
     },
+    "expected_lifespan" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "expected_lifespan",
+      "name" : "Expected Lifespan",
+      "type" : "integer"
+    },
     "experience" : {
       "category" : "",
       "description" : [ "" ],
@@ -3393,6 +3589,20 @@
       "field" : "extended_description",
       "name" : "Extended Description",
       "type" : "string"
+    },
+    "faces" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "faces",
+      "name" : "Faces",
+      "type" : "string"
+    },
+    "faces-list" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "faces",
+      "name" : "Faces",
+      "type" : "list"
     },
     "factor_inner_spike" : {
       "category" : "",
@@ -3520,6 +3730,34 @@
       "name" : "Fire",
       "type" : "boolean"
     },
+    "firework" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "firework",
+      "name" : "Firework",
+      "type" : "firework_effect_type"
+    },
+    "firework_flicker" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "firework_flicker",
+      "name" : "Firework Flicker",
+      "type" : "boolean"
+    },
+    "firework_power" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "firework_power",
+      "name" : "Firework Power",
+      "type" : "integer"
+    },
+    "firework_silent" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "firework_silent",
+      "name" : "Firework Silent",
+      "type" : "boolean"
+    },
     "firework_type" : {
       "category" : "",
       "description" : [ "" ],
@@ -3540,6 +3778,13 @@
       "field" : "flicker",
       "name" : "Flicker",
       "type" : "boolean"
+    },
+    "flowers" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "flowers",
+      "name" : "Flowers",
+      "type" : "list"
     },
     "font" : {
       "category" : "",
@@ -3667,6 +3912,20 @@
       "name" : "Has Uses",
       "type" : "double"
     },
+    "head_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "head_transform",
+      "name" : "Head Transform",
+      "type" : "string"
+    },
+    "headshot" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "headshot",
+      "name" : "Headshot",
+      "type" : "string"
+    },
     "headshot_effects" : {
       "category" : "",
       "description" : [ "" ],
@@ -3679,6 +3938,13 @@
       "description" : [ "" ],
       "field" : "heal_max_distance",
       "name" : "Heal Max Distance",
+      "type" : "double"
+    },
+    "health" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "health",
+      "name" : "Health",
       "type" : "double"
     },
     "height" : {
@@ -3906,6 +4172,13 @@
       "name" : "Ignore Targeting",
       "type" : "boolean"
     },
+    "ignore_types" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "ignore_types",
+      "name" : "Ignore Types",
+      "type" : "list"
+    },
     "immortal" : {
       "category" : "",
       "description" : [ "" ],
@@ -4018,6 +4291,20 @@
       "name" : "Item Speed",
       "type" : "double"
     },
+    "items" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "items",
+      "name" : "Items",
+      "type" : "string"
+    },
+    "items-list" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "items",
+      "name" : "Items",
+      "type" : "list"
+    },
     "iterations" : {
       "category" : "",
       "description" : [ "" ],
@@ -4067,6 +4354,13 @@
       "name" : "Key Name",
       "type" : "string"
     },
+    "knockback_resistance" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "knockback_resistance",
+      "name" : "Knockback Resistance",
+      "type" : "double"
+    },
     "launch" : {
       "category" : "",
       "description" : [ "" ],
@@ -4081,12 +4375,26 @@
       "name" : "Ledge Range",
       "type" : "integer"
     },
+    "left_arm_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "left_arm_transform",
+      "name" : "Left Arm Transform",
+      "type" : "string"
+    },
     "left_click" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "left_click",
       "name" : "Left Click",
       "type" : "double"
+    },
+    "left_leg_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "left_leg_transform",
+      "name" : "Left Leg Transform",
+      "type" : "string"
     },
     "leggings" : {
       "category" : "",
@@ -4340,6 +4648,13 @@
       "name" : "Material Data",
       "type" : "byte"
     },
+    "materials" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "materials",
+      "name" : "Materials",
+      "type" : "list"
+    },
     "max" : {
       "category" : "",
       "description" : [ "" ],
@@ -4380,6 +4695,13 @@
       "description" : [ "" ],
       "field" : "max_enchant_count",
       "name" : "Max Enchant Count",
+      "type" : "double"
+    },
+    "max_health" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "max_health",
+      "name" : "Max Health",
       "type" : "double"
     },
     "max_height" : {
@@ -4515,6 +4837,13 @@
       "name" : "Min Speed",
       "type" : "double"
     },
+    "miss" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "miss",
+      "name" : "Miss",
+      "type" : "string"
+    },
     "miss_effects" : {
       "category" : "",
       "description" : [ "" ],
@@ -4535,6 +4864,20 @@
       "field" : "mode",
       "name" : "Mode",
       "type" : "wand_mode"
+    },
+    "modify" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "modify",
+      "name" : "Modify",
+      "type" : "string"
+    },
+    "modify-list" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "modify",
+      "name" : "Modify",
+      "type" : "list"
     },
     "modify_target" : {
       "category" : "",
@@ -4634,6 +4977,13 @@
       "name" : "Op",
       "type" : "boolean"
     },
+    "options" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "options",
+      "name" : "Options",
+      "type" : "list"
+    },
     "orbitals" : {
       "category" : "",
       "description" : [ "" ],
@@ -4697,11 +5047,53 @@
       "name" : "Origin Offset",
       "type" : "vector"
     },
+    "otdx" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "otdx",
+      "name" : "Otdx",
+      "type" : "string"
+    },
+    "otdy" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "otdy",
+      "name" : "Otdy",
+      "type" : "string"
+    },
+    "otdz" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "otdz",
+      "name" : "Otdz",
+      "type" : "string"
+    },
     "otworld" : {
       "category" : "targeting",
       "description" : [ "" ],
       "field" : "otworld",
       "name" : "Otworld",
+      "type" : "string"
+    },
+    "otx" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "otx",
+      "name" : "Otx",
+      "type" : "string"
+    },
+    "oty" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "oty",
+      "name" : "Oty",
+      "type" : "string"
+    },
+    "otz" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "otz",
+      "name" : "Otz",
       "type" : "string"
     },
     "outer_probability" : {
@@ -5082,6 +5474,13 @@
       "name" : "Pitch Offset",
       "type" : "double"
     },
+    "plan" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "plan",
+      "name" : "Plan",
+      "type" : "list"
+    },
     "plane" : {
       "category" : "",
       "description" : [ "" ],
@@ -5137,6 +5536,13 @@
       "field" : "prevent_passthrough",
       "name" : "Prevent Passthrough",
       "type" : "string"
+    },
+    "price" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "price",
+      "name" : "Price",
+      "type" : "double"
     },
     "probability" : {
       "category" : "",
@@ -5390,6 +5796,13 @@
       "name" : "Reapplication Delay",
       "type" : "integer"
     },
+    "reason" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "reason",
+      "name" : "Reason",
+      "type" : "string"
+    },
     "records" : {
       "category" : "",
       "description" : [ "" ],
@@ -5494,6 +5907,20 @@
       "field" : "relative_target_offset",
       "name" : "Relative Target Offset",
       "type" : "vector"
+    },
+    "remove_effects" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "remove_effects",
+      "name" : "Remove Effects",
+      "type" : "potion_effect_list"
+    },
+    "removes_spells" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "removes_spells",
+      "name" : "Removes Spells",
+      "type" : "list"
     },
     "rename" : {
       "category" : "",
@@ -5628,6 +6055,13 @@
       "name" : "Require Wand",
       "type" : "boolean"
     },
+    "requirements" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "requirements",
+      "name" : "Requirements",
+      "type" : "list"
+    },
     "requires" : {
       "category" : "",
       "description" : [ "" ],
@@ -5726,12 +6160,26 @@
       "name" : "Right Arm Item",
       "type" : "string"
     },
+    "right_arm_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "right_arm_transform",
+      "name" : "Right Arm Transform",
+      "type" : "string"
+    },
     "right_click" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "right_click",
       "name" : "Right Click",
       "type" : "double"
+    },
+    "right_leg_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "right_leg_transform",
+      "name" : "Right Leg Transform",
+      "type" : "string"
     },
     "rings" : {
       "category" : "",
@@ -6034,6 +6482,13 @@
       "name" : "Source Direction Offset",
       "type" : "vector"
     },
+    "source_direction_speed" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "source_direction_speed",
+      "name" : "Source Direction Speed",
+      "type" : "double"
+    },
     "source_is_target" : {
       "category" : "",
       "description" : [ "" ],
@@ -6054,6 +6509,13 @@
       "field" : "source_offset",
       "name" : "Source Offset",
       "type" : "vector"
+    },
+    "source_pitch" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "source_pitch",
+      "name" : "Source Pitch",
+      "type" : "string"
     },
     "source_pitch_max" : {
       "category" : "",
@@ -6110,6 +6572,13 @@
       "field" : "sp_multiplier",
       "name" : "Sp Multiplier",
       "type" : "double"
+    },
+    "spawn_reason" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "spawn_reason",
+      "name" : "Spawn Reason",
+      "type" : "string"
     },
     "speed" : {
       "category" : "",
@@ -6349,6 +6818,20 @@
       "name" : "T2world",
       "type" : "string"
     },
+    "tags" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "tags",
+      "name" : "Tags",
+      "type" : "list"
+    },
+    "tall_flowers" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "tall_flowers",
+      "name" : "Tall Flowers",
+      "type" : "list"
+    },
     "tamed" : {
       "category" : "",
       "description" : [ "" ],
@@ -6460,6 +6943,13 @@
       "field" : "target_direction_offset",
       "name" : "Target Direction Offset",
       "type" : "vector"
+    },
+    "target_direction_speed" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "target_direction_speed",
+      "name" : "Target Direction Speed",
+      "type" : "double"
     },
     "target_down" : {
       "category" : "",
@@ -6601,6 +7091,13 @@
       "name" : "Target Timeout",
       "type" : "integer"
     },
+    "target_type" : {
+      "category" : "targeting",
+      "description" : [ "" ],
+      "field" : "target_type",
+      "name" : "Target Type",
+      "type" : "string"
+    },
     "target_underwater" : {
       "category" : "targeting",
       "description" : [ "" ],
@@ -6664,6 +7161,13 @@
       "name" : "Thickness",
       "type" : "double"
     },
+    "tick" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "tick",
+      "name" : "Tick",
+      "type" : "string"
+    },
     "tick_effects" : {
       "category" : "",
       "description" : [ "" ],
@@ -6684,6 +7188,13 @@
       "field" : "tick_size",
       "name" : "Tick Size",
       "type" : "double"
+    },
+    "ticks_flown" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "ticks_flown",
+      "name" : "Ticks Flown",
+      "type" : "integer"
     },
     "time" : {
       "category" : "",
@@ -7022,6 +7533,13 @@
       "name" : "Upgrade Required Path",
       "type" : "path"
     },
+    "upgrade_required_path_tags" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "upgrade_required_path_tags",
+      "name" : "Upgrade Required Path Tags",
+      "type" : "list"
+    },
     "upgrade_requires_casts" : {
       "category" : "",
       "description" : [ "" ],
@@ -7176,6 +7694,20 @@
       "name" : "Velocity Offset",
       "type" : "vector"
     },
+    "velocity_transform" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity_transform",
+      "name" : "Velocity Transform",
+      "type" : "string"
+    },
+    "velocity_transform-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity_transform",
+      "name" : "Velocity Transform",
+      "type" : "map"
+    },
     "vertical_range" : {
       "category" : "base",
       "description" : [ "" ],
@@ -7288,6 +7820,13 @@
       "name" : "Worth Item",
       "type" : "string"
     },
+    "worth_sp" : {
+      "category" : "base",
+      "description" : [ "" ],
+      "field" : "worth_sp",
+      "name" : "Worth Sp",
+      "type" : "double"
+    },
     "x2_equation" : {
       "category" : "",
       "description" : [ "" ],
@@ -7343,6 +7882,13 @@
       "field" : "x_subtract",
       "name" : "X Subtract",
       "type" : "double"
+    },
+    "xp" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "xp",
+      "name" : "Xp",
+      "type" : "integer"
     },
     "y2_equation" : {
       "category" : "",
@@ -7499,8 +8045,8 @@
       "type" : "integer"
     }
   },
-  "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otworld", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
-  "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "require_break", "require_build", "require_health_percentage", "show_undoable", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "uses_brush", "world_border_restricted", "worth" ],
+  "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_undo_types", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "ignore_types", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_type", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
+  "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "color", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "effects-map", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "removes_spells", "require_break", "require_build", "require_health_percentage", "requirements", "show_undoable", "tags", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "upgrade_required_path_tags", "uses_brush", "world_border_restricted", "worth", "worth_sp" ],
   "types" : {
     "actions" : {
       "class_name" : "java.util.Map",
@@ -7688,6 +8234,13 @@
       "description" : [ "A progression path" ],
       "name" : "Path",
       "options" : [ "airbender", "beginner", "jedi", "student" ]
+    },
+    "potion_effect_list" : {
+      "class_name" : "java.util.List",
+      "description" : [ "" ],
+      "name" : "Potion Effect List",
+      "options" : [ ],
+      "value_type" : "potion_effect_type"
     },
     "potion_effect_map" : {
       "class_name" : "java.util.Map",
