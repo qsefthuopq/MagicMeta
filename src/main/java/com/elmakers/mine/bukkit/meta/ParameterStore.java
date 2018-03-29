@@ -228,9 +228,10 @@ public class ParameterStore {
             String typeKey = parameter.getType();
             ParameterType existingType = parameterTypes.get(typeKey);
 
+            // Allow strings to overlap
             if (existingType == null) {
                 System.out.println("Looking up field key " + key + " got type " + typeKey + " that doesn't exit");
-            } else if (!existingType.getKey().equals(parameterType.getKey())) {
+            } else if (parameterType.getClassType() != String.class && !existingType.getKey().equals(parameterType.getKey())) {
                 // Allow numeric types to overap.
                 if (Number.class.isAssignableFrom(parameterType.getClassType()) && Number.class.isAssignableFrom(existingType.getClassType())) {
                     return parameter;
