@@ -14,6 +14,7 @@ public class Parameter {
     private List<String> description;
     private String type;
     private String category;
+    private String alias;
 
     public Parameter() {
     }
@@ -91,5 +92,13 @@ public class Parameter {
 
     public void setCategory(String categoryKey) {
         this.category = categoryKey;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 }

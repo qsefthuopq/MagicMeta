@@ -6820,7 +6820,8 @@
       "description" : [ "" ],
       "field" : "u",
       "name" : "U",
-      "type" : "integer"
+      "type" : "integer",
+      "alias" : "undo"
     },
     "unbreakable" : {
       "category" : "",
