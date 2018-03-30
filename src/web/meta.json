@@ -1671,7 +1671,7 @@
       "short_class" : "Wave"
     }
   },
-  "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
+  "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "effect_type", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
   "mob_properties" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "disguise-map", "drop_xp", "drops", "entity_attributes", "health", "helmet", "interact_spell", "interval", "item", "leggings", "mage", "max_health", "name", "potion_effects", "protection", "silent", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
   "properties" : {
     "actions" : {
@@ -3393,6 +3393,13 @@
       "field" : "effect_sound_interval",
       "name" : "Effect Sound Interval",
       "type" : "double"
+    },
+    "effect_type" : {
+      "category" : "effects",
+      "description" : [ "The type of effect" ],
+      "field" : "type",
+      "name" : "Effect Type",
+      "type" : "effect_type"
     },
     "effects" : {
       "category" : "",
@@ -5696,7 +5703,7 @@
       "description" : [ "" ],
       "field" : "radius",
       "name" : "Radius",
-      "type" : "integer"
+      "type" : "double"
     },
     "radius_donut" : {
       "category" : "",
@@ -7944,7 +7951,7 @@
       "description" : [ "" ],
       "field" : "y_radius",
       "name" : "Y Radius",
-      "type" : "integer"
+      "type" : "double"
     },
     "y_rotation" : {
       "category" : "",
@@ -8170,6 +8177,12 @@
       "description" : [ "A vanilla effect" ],
       "name" : "Effect",
       "options" : [ "anvil_break", "anvil_land", "anvil_use", "bat_takeoff", "blaze_shoot", "bow_fire", "brewing_stand_brew", "chorus_flower_death", "chorus_flower_grow", "click1", "click2", "door_close", "door_toggle", "dragon_breath", "end_gateway_spawn", "ender_signal", "enderdragon_growl", "enderdragon_shoot", "endereye_launch", "extinguish", "fence_gate_close", "fence_gate_toggle", "firework_shoot", "ghast_shoot", "ghast_shriek", "iron_door_close", "iron_door_toggle", "iron_trapdoor_close", "iron_trapdoor_toggle", "mobspawner_flames", "portal_travel", "potion_break", "record_play", "smoke", "step_sound", "trapdoor_close", "trapdoor_toggle", "villager_plant_grow", "wither_break_block", "wither_shoot", "zombie_chew_iron_door", "zombie_chew_wooden_door", "zombie_converted_villager", "zombie_destroy_door", "zombie_infect" ]
+    },
+    "effect_type" : {
+      "class_name" : "de.slikey.effectlib.EffectType",
+      "description" : [ "The type of effect" ],
+      "name" : "Effect Type",
+      "options" : [ "delayed", "instant", "repeating" ]
     },
     "entity_effect" : {
       "class_name" : "org.bukkit.EntityEffect",
