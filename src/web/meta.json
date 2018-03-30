@@ -1,5 +1,11 @@
 {
-  "action_parameters" : [ "actions", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
+  "action_parameters" : {
+    "actions" : null,
+    "ignore_result" : "false",
+    "requires_entity_target" : "false",
+    "requires_target" : "false",
+    "stop_on_success" : "false"
+  },
   "actions" : {
     "absorb" : {
       "category" : "construction",
@@ -7,7 +13,7 @@
       "description" : [ "Absorb a block as a brush into your brush inventory" ],
       "examples" : [ "absorb" ],
       "name" : "Absorb",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Absorb"
     },
     "add_spell" : {
@@ -16,7 +22,14 @@
       "description" : [ "Add a spell to a player or wand" ],
       "examples" : [ "addspell" ],
       "name" : "Add Spell",
-      "parameters" : [ "auto_upgrade", "path", "path_end", "path_exact", "permission", "spell" ],
+      "parameters" : {
+        "auto_upgrade" : "true",
+        "path" : null,
+        "path_end" : null,
+        "path_exact" : null,
+        "permission" : null,
+        "spell" : null
+      },
       "short_class" : "AddSpell"
     },
     "aggro" : {
@@ -25,7 +38,7 @@
       "description" : [ "Force a mob to focus on the caster" ],
       "examples" : [ "curse" ],
       "name" : "Aggro",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Aggro"
     },
     "air_supply" : {
@@ -34,7 +47,9 @@
       "description" : [ "Increase an entity's air supply" ],
       "examples" : [ "gasp" ],
       "name" : "Air Supply",
-      "parameters" : [ "air" ],
+      "parameters" : {
+        "air" : "0"
+      },
       "short_class" : "AirSupply"
     },
     "all_entities" : {
@@ -43,7 +58,9 @@
       "description" : [ "Target all entities in the current world, or optionally in all worlds" ],
       "examples" : [ "count", "debugger" ],
       "name" : "All Entities",
-      "parameters" : [ "target_all_worlds" ],
+      "parameters" : {
+        "target_all_worlds" : "false"
+      },
       "short_class" : "AllEntities"
     },
     "animate" : {
@@ -52,7 +69,7 @@
       "description" : [ "Experimental incomplete action, do not use." ],
       "examples" : [ ],
       "name" : "Animate",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Animate"
     },
     "apply_cooldown" : {
@@ -61,7 +78,14 @@
       "description" : [ "Apply or clear cooldowns on one or more of a player's spells" ],
       "examples" : [ "cure", "silence" ],
       "name" : "Apply Cooldown",
-      "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "spells", "target_caster" ],
+      "parameters" : {
+        "bypass_reduction" : "false",
+        "clear" : "false",
+        "duration" : "0",
+        "exclude_spells" : null,
+        "spells" : null,
+        "target_caster" : "false"
+      },
       "short_class" : "ApplyCooldown"
     },
     "area_of_effect" : {
@@ -70,7 +94,12 @@
       "description" : [ "Target all entities within a radius" ],
       "examples" : [ "blessing", "grab", "holylight" ],
       "name" : "Area Of Effect",
-      "parameters" : [ "radius", "target_count", "target_source", "y_radius" ],
+      "parameters" : {
+        "radius" : "8",
+        "target_count" : "-1",
+        "target_source" : "true",
+        "y_radius" : "8"
+      },
       "short_class" : "AreaOfEffect"
     },
     "area_of_effect_cloud" : {
@@ -79,7 +108,64 @@
       "description" : [ "Create an area of effect cloud entity. Shortcut for the SpawnEntity action." ],
       "examples" : [ "arrow_poison" ],
       "name" : "Area Of Effect Cloud",
-      "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "base_potion_type", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "color", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "duration", "duration_on_use", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "particle", "potion_effects", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness", "xp" ],
+      "parameters" : {
+        "aggro" : "true",
+        "ai" : "true",
+        "amount" : "1",
+        "attributes" : null,
+        "baby" : "false",
+        "base_potion_type" : null,
+        "boots" : null,
+        "can_pickup_items" : "false",
+        "cast" : null,
+        "cast_interval" : "0",
+        "cast_requires_item" : null,
+        "cast_requires_target" : "true",
+        "chestplate" : null,
+        "color" : null,
+        "default_drops" : "true",
+        "direction" : null,
+        "disguise-map" : null,
+        "drop_xp" : "0",
+        "drops" : null,
+        "duration" : "2000",
+        "duration_on_use" : "0",
+        "dy_offset" : "0.0",
+        "entity_attributes" : null,
+        "entity_types-map" : null,
+        "force" : "false",
+        "health" : "1.0",
+        "helmet" : null,
+        "interact_spell" : null,
+        "interval" : "0",
+        "item" : null,
+        "leggings" : null,
+        "loot" : "false",
+        "mage" : null,
+        "max_health" : "1.0",
+        "name" : null,
+        "particle" : null,
+        "potion_effects" : null,
+        "protection" : null,
+        "radius" : "5.0",
+        "radius_on_use" : "0.0",
+        "radius_per_tick" : "0.0",
+        "reapplication_delay" : "0",
+        "reason" : null,
+        "repeat_random" : "true",
+        "set_target" : "false",
+        "silent" : "false",
+        "speed" : "0.0",
+        "strength" : null,
+        "tags" : null,
+        "tamed" : "false",
+        "track_radius" : "128.0",
+        "triggers" : null,
+        "type" : null,
+        "wait_time" : "0",
+        "weakness" : null,
+        "xp" : "0"
+      },
       "short_class" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
@@ -88,7 +174,126 @@
       "description" : [ "Create a projectile that uses an armor stand.", "This can be used with invisible armor stands holding items from a custom resource pack for detailed custom 3D projectiles." ],
       "examples" : [ "chop", "throwsword" ],
       "name" : "Armor Stand Projectile",
-      "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "body_transform", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "head_transform", "headshot", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "left_arm_transform", "left_leg_transform", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "right_arm_transform", "right_leg_transform", "source_location", "spawn_reason", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "teleport", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "velocity_transform-map", "visible_delay_ticks" ],
+      "parameters" : {
+        "apply_velocity" : "true",
+        "armor_stand_arms" : "true",
+        "armor_stand_baseplate" : "false",
+        "armor_stand_gravity" : "false",
+        "armor_stand_invisible" : "true",
+        "armor_stand_marker" : "true",
+        "armor_stand_small" : "false",
+        "attach_duration" : "0",
+        "block_hit_count" : "1",
+        "body_transform" : null,
+        "boots_item" : null,
+        "break_blocks" : "true",
+        "breakable_size" : "1",
+        "bypass_backfire" : "false",
+        "chestplate_item" : null,
+        "close_fov" : "0.5",
+        "close_range" : "0.0",
+        "distance_weight" : "1.0",
+        "drag" : "0.0",
+        "entity_hit_count" : "1",
+        "entity_weight" : "3",
+        "fov" : "0.3",
+        "fov_weight" : "4.0",
+        "gravity" : "0.0",
+        "head_transform" : null,
+        "headshot" : null,
+        "headshot_effects" : "headshot",
+        "helmet_item" : null,
+        "hit_count" : "1",
+        "hit_effects" : "hit",
+        "hit_on_miss" : "false",
+        "hit_requires_entity" : "false",
+        "hitbox" : "false",
+        "hitbox_block_size" : "0.0",
+        "hitbox_size" : "0.0",
+        "ignore_blocks" : "false",
+        "ignore_targeting" : "false",
+        "interval" : "30",
+        "left_arm_transform" : null,
+        "left_leg_transform" : null,
+        "leggings_item" : null,
+        "lifetime" : "8000",
+        "location_offset" : null,
+        "min_block_range" : "0.0",
+        "min_entity_range" : "0.0",
+        "miss" : null,
+        "miss_effects" : "miss",
+        "no_target" : "true",
+        "npc_weight" : "-1",
+        "orient" : "false",
+        "orient_head" : "false",
+        "orient_right_arm" : "false",
+        "otdx" : null,
+        "otdy" : null,
+        "otdz" : null,
+        "otworld" : null,
+        "otx" : null,
+        "oty" : null,
+        "otz" : null,
+        "pitch_max" : "-90",
+        "pitch_min" : "90",
+        "plan" : null,
+        "player_weight" : "4",
+        "projectile_effects" : "projectile",
+        "projectile_follow_player" : "false",
+        "projectile_potion_effects" : null,
+        "range" : "0",
+        "range_padding" : "1.0",
+        "reflect_count" : "-1",
+        "reflect_reorient" : "false",
+        "reflect_reset_distance_traveled" : "true",
+        "reflect_target_caster" : "true",
+        "reflect_track_range" : "0.0",
+        "reflect_track_target" : "false",
+        "reorient" : "false",
+        "reset_time_on_path_change" : "false",
+        "return_offset" : null,
+        "return_relative_offset" : null,
+        "return_to_caster" : "false",
+        "reverse" : "false",
+        "right_arm_item" : null,
+        "right_arm_transform" : null,
+        "right_leg_transform" : null,
+        "source_location" : "",
+        "spawn_reason" : null,
+        "speed" : "1.0",
+        "spread" : "0.0",
+        "spread_movement" : "0.0",
+        "spread_movement_max" : "0.0",
+        "start" : "0",
+        "target" : null,
+        "target_breakable_depth" : "2",
+        "target_breakables" : "1.0",
+        "target_min_offset" : "0",
+        "target_self" : "false",
+        "target_self_timeout" : "0",
+        "teleport" : "true",
+        "tick" : null,
+        "tick_effects" : "tick",
+        "tick_size" : "0.5",
+        "tmo" : "0",
+        "track_range" : "0.0",
+        "track_speed" : "0.0",
+        "track_target" : "false",
+        "type" : null,
+        "unbreakable_items" : "false",
+        "update_launch_location" : "false",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true",
+        "variant" : null,
+        "velocity" : "20.0",
+        "velocity_offset" : null,
+        "velocity_transform-map" : null,
+        "visible_delay_ticks" : "1"
+      },
       "short_class" : "ArmorStandProjectile"
     },
     "ascend" : {
@@ -97,7 +302,12 @@
       "description" : [ "Move up through blocks above the player" ],
       "examples" : [ "blink" ],
       "name" : "Ascend",
-      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
+      "parameters" : {
+        "require_build" : "false",
+        "require_exit" : "true",
+        "safe" : "true",
+        "vertical_range" : "8"
+      },
       "short_class" : "Ascend"
     },
     "asynchronous" : {
@@ -106,7 +316,7 @@
       "description" : [ "Performs its sub-actions outside of the flow of the rest of the action list", "This can be used to launch several projectiles without waiting for them to hit, for instance." ],
       "examples" : [ "arrow_light", "chainlightning", "fury", "gatling" ],
       "name" : "Asynchronous",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Asynchronous"
     },
     "block_search" : {
@@ -115,7 +325,9 @@
       "description" : [ "Looks in a specific direction for blocks matching the destructible list" ],
       "examples" : [ "bridge", "pillar" ],
       "name" : "Block Search",
-      "parameters" : [ "direction" ],
+      "parameters" : {
+        "direction" : "up"
+      },
       "short_class" : "BlockSearch"
     },
     "break_block" : {
@@ -124,7 +336,24 @@
       "description" : [ "Breaks a block naturally", "Can be configured to only break blocks below a certain vanilla durability", "Applies packet-based block breaking effects before fully destroying a block", "If the player does not have break permission, the visual breaking effects will still be applied but the block will not fully break" ],
       "examples" : [ "blast", "laser", "missile" ],
       "name" : "Break Block",
-      "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
+      "parameters" : {
+        "break_durability" : "1",
+        "breakable" : "0.0",
+        "commit" : "false",
+        "consume" : "false",
+        "consume_variants" : "true",
+        "damage" : "0",
+        "durability_max_distance" : "0.0",
+        "fall_damage" : "0.0",
+        "falling" : "false",
+        "falling_hurts" : "false",
+        "falling_probability" : "1.0",
+        "max_damage" : "0",
+        "physics" : "false",
+        "physics_blocks" : "false",
+        "reflect_chance" : "0.0",
+        "speed" : "0.0"
+      },
       "short_class" : "BreakBlock"
     },
     "brush" : {
@@ -133,7 +362,11 @@
       "description" : [ "Change the brush used for contained actions", "Capable of choosing a random brush from a 'brushes' proability map" ],
       "examples" : [ "pollinate", "projector" ],
       "name" : "Brush",
-      "parameters" : [ "brush", "brushes", "sample" ],
+      "parameters" : {
+        "brush" : null,
+        "brushes" : null,
+        "sample" : "false"
+      },
       "short_class" : "Brush"
     },
     "brush_select" : {
@@ -142,7 +375,7 @@
       "description" : [ "Open the brush selector GUI" ],
       "examples" : [ "brushelect" ],
       "name" : "Brush Select",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "BrushSelect"
     },
     "burn" : {
@@ -151,7 +384,7 @@
       "description" : [ "Light the target block on fire" ],
       "examples" : [ "fire" ],
       "name" : "Burn",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Burn"
     },
     "cancel" : {
@@ -160,7 +393,10 @@
       "description" : [ "Cancel any active spells, or specific spells, for the target player" ],
       "examples" : [ ],
       "name" : "Cancel",
-      "parameters" : [ "force", "spells" ],
+      "parameters" : {
+        "force" : "false",
+        "spells" : null
+      },
       "short_class" : "Cancel"
     },
     "capture" : {
@@ -169,7 +405,9 @@
       "description" : [ "Remove the target entity and replace it with a spawn egg that will respawn the entity" ],
       "examples" : [ "capture" ],
       "name" : "Capture",
-      "parameters" : [ "min_health" ],
+      "parameters" : {
+        "min_health" : "-1.0"
+      },
       "short_class" : "Capture"
     },
     "change_biome" : {
@@ -178,7 +416,9 @@
       "description" : [ "Change the biome of the target block" ],
       "examples" : [ "permafrost" ],
       "name" : "Change Biome",
-      "parameters" : [ "biome" ],
+      "parameters" : {
+        "biome" : ""
+      },
       "short_class" : "ChangeBiome"
     },
     "change_context" : {
@@ -187,7 +427,43 @@
       "description" : [ "A complicated compound action that can be used to run sub-actions using a modified context", "The action context includes things such as the source and target locations and entities" ],
       "examples" : [ "anvil", "boomstown", "bridge", "meteor", "push", "randomtp", "sandblast" ],
       "name" : "Change Context",
-      "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_direction_speed", "source_is_target", "source_location", "source_offset", "source_pitch", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_direction_speed", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_self", "target_snap", "target_yaw_offset" ],
+      "parameters" : {
+        "orient_pitch" : "true",
+        "persist_caster" : "false",
+        "persist_target" : "false",
+        "random_source_offset" : null,
+        "random_target_offset" : null,
+        "relative_source_offset" : null,
+        "relative_target_offset" : null,
+        "source_at_target" : "false",
+        "source_direction" : null,
+        "source_direction_offset" : null,
+        "source_direction_speed" : "0.0",
+        "source_is_target" : "false",
+        "source_location" : null,
+        "source_offset" : null,
+        "source_pitch" : null,
+        "source_pitch_max" : "-90",
+        "source_pitch_min" : "90",
+        "source_pitch_offset" : "0.0",
+        "source_relative_direction_pitch_offset" : "0.0",
+        "source_relative_direction_yaw_offset" : "0.0",
+        "source_yaw_offset" : "0.0",
+        "target_attachment" : "false",
+        "target_caster" : "false",
+        "target_direction" : null,
+        "target_direction_offset" : null,
+        "target_direction_speed" : "0.0",
+        "target_entity" : "false",
+        "target_location" : null,
+        "target_offset" : null,
+        "target_pitch_offset" : "0.0",
+        "target_relative_direction_pitch_offset" : "0.0",
+        "target_relative_direction_yaw_offset" : "0.0",
+        "target_self" : "false",
+        "target_snap" : "0",
+        "target_yaw_offset" : "0.0"
+      },
       "short_class" : "ChangeContext"
     },
     "change_parameters" : {
@@ -196,7 +472,7 @@
       "description" : [ "Change the parameters of a spell mid-cast" ],
       "examples" : [ ],
       "name" : "Change Parameters",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "ChangeParameters"
     },
     "change_server" : {
@@ -205,7 +481,9 @@
       "description" : [ "Move a player to another server", "Requires a BungeCord server network" ],
       "examples" : [ ],
       "name" : "Change Server",
-      "parameters" : [ "server" ],
+      "parameters" : {
+        "server" : ""
+      },
       "short_class" : "ChangeServer"
     },
     "change_world" : {
@@ -214,7 +492,12 @@
       "description" : [ "Move the player to a different world, but with the same coordinate as in their current world", "Can be configured with a set of worlds and scales, for instance to mimic nether:overworld 1:8 scale" ],
       "examples" : [ "phase" ],
       "name" : "Change World",
-      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
+      "parameters" : {
+        "require_build" : "false",
+        "require_exit" : "true",
+        "safe" : "true",
+        "vertical_range" : "8"
+      },
       "short_class" : "ChangeWorld"
     },
     "check_block" : {
@@ -223,7 +506,9 @@
       "description" : [ "Test if a block is in the destructible list", "Only runs its sub-actions if the block passes the destructible check." ],
       "examples" : [ "breach", "laser" ],
       "name" : "Check Block",
-      "parameters" : [ "allowed" ],
+      "parameters" : {
+        "allowed" : null
+      },
       "short_class" : "CheckBlock"
     },
     "check_entity" : {
@@ -232,7 +517,12 @@
       "description" : [ "Test if an entity is allowed to target", "Only runs its sub-actions if the entity passes the checks." ],
       "examples" : [ "holylight" ],
       "name" : "Check Entity",
-      "parameters" : [ "allow_caster", "allowed_entities", "denied_entities", "only_caster" ],
+      "parameters" : {
+        "allow_caster" : "true",
+        "allowed_entities" : null,
+        "denied_entities" : null,
+        "only_caster" : "false"
+      },
       "short_class" : "CheckEntity"
     },
     "check_mana" : {
@@ -241,7 +531,11 @@
       "description" : [ "Test if a player has or does not have an amount of mana", "Only runs its sub-actions if player's mana is as required." ],
       "examples" : [ ],
       "name" : "Check Mana",
-      "parameters" : [ "require_mana", "require_mana_empty", "require_mana_not_full" ],
+      "parameters" : {
+        "require_mana" : "0.0",
+        "require_mana_empty" : "false",
+        "require_mana_not_full" : "false"
+      },
       "short_class" : "CheckMana"
     },
     "command" : {
@@ -250,7 +544,15 @@
       "description" : [ "Run one or more commands", "Support the following variables: @spell, @pd (caster display name), @p, @pn (same as @p, caster name), @uuid, @world, @x, @y, @z, @tworld, @tx, @ty, @tz (target location), @td (target display name), @t, @tn (same as @t, target name), @tuuid" ],
       "examples" : [ "gather", "ledger", "respawn" ],
       "name" : "Command",
-      "parameters" : [ "command", "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
+      "parameters" : {
+        "command" : null,
+        "console" : "false",
+        "escape_sequence" : "",
+        "local_echo" : "true",
+        "modal" : "false",
+        "op" : "false",
+        "timeout" : "0"
+      },
       "short_class" : "Command"
     },
     "cone_of_effect" : {
@@ -259,7 +561,34 @@
       "description" : [ "Target all entities within a cone in front of the caster" ],
       "examples" : [ "laser", "push" ],
       "name" : "Cone Of Effect",
-      "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
+      "parameters" : {
+        "close_fov" : "0.5",
+        "close_range" : "0.0",
+        "distance_weight" : "1.0",
+        "entity_weight" : "3",
+        "fov" : "0.3",
+        "fov_weight" : "4.0",
+        "hitbox" : "false",
+        "hitbox_block_size" : "0.0",
+        "hitbox_size" : "0.0",
+        "ignore_blocks" : "false",
+        "npc_weight" : "-1",
+        "otdx" : null,
+        "otdy" : null,
+        "otdz" : null,
+        "otworld" : null,
+        "otx" : null,
+        "oty" : null,
+        "otz" : null,
+        "player_weight" : "4",
+        "range" : "16.0",
+        "range_padding" : "1.0",
+        "target" : null,
+        "target_breakable_depth" : "2",
+        "target_count" : "-1",
+        "target_min_offset" : "0",
+        "tmo" : "0"
+      },
       "short_class" : "ConeOfEffect"
     },
     "count" : {
@@ -268,7 +597,7 @@
       "description" : [ "Count up the number of blocks or entities targeted and message the count to the caster" ],
       "examples" : [ "counter" ],
       "name" : "Count",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Count"
     },
     "cover" : {
@@ -277,7 +606,9 @@
       "description" : [ "Target the first solid block below the current target" ],
       "examples" : [ "fire", "frost" ],
       "name" : "Cover",
-      "parameters" : [ "target_above" ],
+      "parameters" : {
+        "target_above" : "false"
+      },
       "short_class" : "Cover"
     },
     "create_field" : {
@@ -286,7 +617,26 @@
       "description" : [ "Create a PreciousStones field" ],
       "examples" : [ ],
       "name" : "Create Field",
-      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
+      "parameters" : {
+        "breakable" : "0.0",
+        "commit" : "false",
+        "consume" : "false",
+        "consume_variants" : "true",
+        "damage" : "0",
+        "fall_damage" : "0.0",
+        "falling" : "false",
+        "falling_hurts" : "false",
+        "falling_probability" : "1.0",
+        "field_rent" : "",
+        "field_rent_period" : "",
+        "field_rent_sign_direction" : "0",
+        "field_type" : null,
+        "max_damage" : "0",
+        "physics" : "false",
+        "physics_blocks" : "false",
+        "reflect_chance" : "0.0",
+        "speed" : "0.0"
+      },
       "short_class" : "CreateField"
     },
     "create_plot" : {
@@ -295,7 +645,9 @@
       "description" : [ "Create a Towny plot" ],
       "examples" : [ ],
       "name" : "Create Plot",
-      "parameters" : [ "price" ],
+      "parameters" : {
+        "price" : "0.0"
+      },
       "short_class" : "CreatePlot"
     },
     "custom_projectile" : {
@@ -304,7 +656,96 @@
       "description" : [ "A flexible custom projectile", "This projectile can be made to reflect off surfaces, hit multiple entities or blocks, run spell actions as it travels, and more.", "It is able to mimic a gravity-bound projectile, home in on a target, and perform staged animations", "This is the base class for AmorStandProjectile and EntityProjectile" ],
       "examples" : [ "fury", "missile", "railgun" ],
       "name" : "Custom Projectile",
-      "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss", "miss_effects", "npc_weight", "orient", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity", "velocity_transform-map" ],
+      "parameters" : {
+        "attach_duration" : "0",
+        "block_hit_count" : "1",
+        "break_blocks" : "true",
+        "breakable_size" : "1",
+        "bypass_backfire" : "false",
+        "close_fov" : "0.5",
+        "close_range" : "0.0",
+        "distance_weight" : "1.0",
+        "drag" : "0.0",
+        "entity_hit_count" : "1",
+        "entity_weight" : "3",
+        "fov" : "0.3",
+        "fov_weight" : "4.0",
+        "gravity" : "0.0",
+        "headshot" : null,
+        "headshot_effects" : "headshot",
+        "hit_count" : "1",
+        "hit_effects" : "hit",
+        "hit_on_miss" : "false",
+        "hit_requires_entity" : "false",
+        "hitbox" : "false",
+        "hitbox_block_size" : "0.0",
+        "hitbox_size" : "0.0",
+        "ignore_blocks" : "false",
+        "ignore_targeting" : "false",
+        "interval" : "30",
+        "lifetime" : "8000",
+        "min_block_range" : "0.0",
+        "min_entity_range" : "0.0",
+        "miss" : null,
+        "miss_effects" : "miss",
+        "npc_weight" : "-1",
+        "orient" : "true",
+        "otdx" : null,
+        "otdy" : null,
+        "otdz" : null,
+        "otworld" : null,
+        "otx" : null,
+        "oty" : null,
+        "otz" : null,
+        "pitch_max" : "-90",
+        "pitch_min" : "90",
+        "plan" : null,
+        "player_weight" : "4",
+        "projectile_effects" : "projectile",
+        "projectile_follow_player" : "false",
+        "range" : "0",
+        "range_padding" : "1.0",
+        "reflect_count" : "-1",
+        "reflect_reorient" : "false",
+        "reflect_reset_distance_traveled" : "true",
+        "reflect_target_caster" : "true",
+        "reflect_track_range" : "0.0",
+        "reflect_track_target" : "false",
+        "reorient" : "false",
+        "reset_time_on_path_change" : "false",
+        "return_offset" : null,
+        "return_relative_offset" : null,
+        "return_to_caster" : "false",
+        "reverse" : "false",
+        "source_location" : "",
+        "speed" : "1.0",
+        "spread" : "0.0",
+        "spread_movement" : "0.0",
+        "spread_movement_max" : "0.0",
+        "start" : "0",
+        "target" : null,
+        "target_breakable_depth" : "2",
+        "target_breakables" : "1.0",
+        "target_min_offset" : "0",
+        "target_self" : "false",
+        "target_self_timeout" : "0",
+        "tick" : null,
+        "tick_effects" : "tick",
+        "tick_size" : "0.5",
+        "tmo" : "0",
+        "track_range" : "0.0",
+        "track_speed" : "0.0",
+        "track_target" : "false",
+        "update_launch_location" : "false",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true",
+        "velocity" : "20.0",
+        "velocity_transform-map" : null
+      },
       "short_class" : "CustomProjectile"
     },
     "cycle_block" : {
@@ -313,7 +754,9 @@
       "description" : [ "Change blocks to other blocks using a mapping list" ],
       "examples" : [ "alter" ],
       "name" : "Cycle Block",
-      "parameters" : [ "materials" ],
+      "parameters" : {
+        "materials" : null
+      },
       "short_class" : "CycleBlock"
     },
     "cycle_entity" : {
@@ -322,7 +765,7 @@
       "description" : [ "Change entities to other entity types using a mapping list" ],
       "examples" : [ "alter" ],
       "name" : "Cycle Entity",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "CycleEntity"
     },
     "cylinder" : {
@@ -331,7 +774,28 @@
       "description" : [ "Target all blocks in a cylinder" ],
       "examples" : [ "walls" ],
       "name" : "Cylinder",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Cylinder"
     },
     "damage" : {
@@ -340,7 +804,19 @@
       "description" : [ "Damage the target entity" ],
       "examples" : [ "missile", "wound" ],
       "name" : "Damage",
-      "parameters" : [ "damage", "damage_max_distance", "damage_multiplier", "damage_type", "elemental_damage", "entity_damage", "knockback_resistance", "magic_damage", "magic_entity_damage", "percentage", "player_damage" ],
+      "parameters" : {
+        "damage" : "1.0",
+        "damage_max_distance" : "0.0",
+        "damage_multiplier" : "0.0",
+        "damage_type" : null,
+        "elemental_damage" : "1.0",
+        "entity_damage" : "1.0",
+        "knockback_resistance" : "0.0",
+        "magic_damage" : "true",
+        "magic_entity_damage" : "true",
+        "percentage" : "0.0",
+        "player_damage" : "1.0"
+      },
       "short_class" : "Damage"
     },
     "deactivate" : {
@@ -349,7 +825,7 @@
       "description" : [ "Deactivate active spells for the target" ],
       "examples" : [ "curse", "silence", "stun" ],
       "name" : "Deactivate",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Deactivate"
     },
     "debugger" : {
@@ -358,7 +834,10 @@
       "description" : [ "Turn on the spell debugger" ],
       "examples" : [ "debugger" ],
       "name" : "Debugger",
-      "parameters" : [ "check", "level" ],
+      "parameters" : {
+        "check" : "false",
+        "level" : "1"
+      },
       "short_class" : "Debugger"
     },
     "delay" : {
@@ -367,7 +846,10 @@
       "description" : [ "Don't proceed to the next action until some amount of time has passed", "Can be used at the beginning of a spell for a 'warmup' period, and will advertise the warmup in spell lore if the warmup parameter is used." ],
       "examples" : [ "day", "gatling", "kill", "night" ],
       "name" : "Delay",
-      "parameters" : [ "delay", "warmup" ],
+      "parameters" : {
+        "delay" : "",
+        "warmup" : "1"
+      },
       "short_class" : "Delay"
     },
     "descend" : {
@@ -376,7 +858,12 @@
       "description" : [ "Move down through the blocks underneath the caster" ],
       "examples" : [ "blink" ],
       "name" : "Descend",
-      "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
+      "parameters" : {
+        "require_build" : "false",
+        "require_exit" : "true",
+        "safe" : "true",
+        "vertical_range" : "8"
+      },
       "short_class" : "Descend"
     },
     "disable_physics" : {
@@ -385,7 +872,11 @@
       "description" : [ "Temporarily disable block physics updates" ],
       "examples" : [ "portal" ],
       "name" : "Disable Physics",
-      "parameters" : [ "duration", "physics_buffer", "undo" ],
+      "parameters" : {
+        "duration" : "1",
+        "physics_buffer" : "1000",
+        "undo" : "0"
+      },
       "short_class" : "DisablePhysics"
     },
     "disarm" : {
@@ -394,7 +885,12 @@
       "description" : [ "Remove the item the target is holding", "For target players will optionally move the item into their inventory instead of throwing it on the ground." ],
       "examples" : [ "arrow_shock", "disarm" ],
       "name" : "Disarm",
-      "parameters" : [ "display_name", "keep_in_inventory", "max_slot", "min_slot" ],
+      "parameters" : {
+        "display_name" : null,
+        "keep_in_inventory" : "false",
+        "max_slot" : "35",
+        "min_slot" : "9"
+      },
       "short_class" : "Disarm"
     },
     "disc" : {
@@ -403,7 +899,30 @@
       "description" : [ "Target all blocks within a 2D circular disc" ],
       "examples" : [ "frost", "permafrost", "reflect" ],
       "name" : "Disc",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "axis" : null,
+        "brush_axis" : null,
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Disc"
     },
     "disguise" : {
@@ -412,7 +931,9 @@
       "description" : [ "Apply a disguise to an entity", "Requires the ProtocolLib and LibsDisguises plugins" ],
       "examples" : [ "polymorph" ],
       "name" : "Disguise",
-      "parameters" : [ "disguise-map" ],
+      "parameters" : {
+        "disguise-map" : null
+      },
       "short_class" : "Disguise"
     },
     "door" : {
@@ -421,7 +942,9 @@
       "description" : [ "Open or close a door" ],
       "examples" : [ "admission" ],
       "name" : "Door",
-      "parameters" : [ "type" ],
+      "parameters" : {
+        "type" : "open"
+      },
       "short_class" : "Door"
     },
     "drop" : {
@@ -430,7 +953,10 @@
       "description" : [ "Destroy blocks and drop items as if they were broken naturally" ],
       "examples" : [ "chop", "mine" ],
       "name" : "Drop",
-      "parameters" : [ "drop_count", "falling" ],
+      "parameters" : {
+        "drop_count" : "-1",
+        "falling" : "true"
+      },
       "short_class" : "Drop"
     },
     "drop_item" : {
@@ -439,7 +965,9 @@
       "description" : [ "Drop an item on the ground" ],
       "examples" : [ ],
       "name" : "Drop Item",
-      "parameters" : [ "item" ],
+      "parameters" : {
+        "item" : null
+      },
       "short_class" : "DropItem"
     },
     "electrify" : {
@@ -448,7 +976,9 @@
       "description" : [ "Cause a target creeper to be electrified" ],
       "examples" : [ "arrow_shock", "chainlightning" ],
       "name" : "Electrify",
-      "parameters" : [ "electrify" ],
+      "parameters" : {
+        "electrify" : "true"
+      },
       "short_class" : "Electrify"
     },
     "enchant_wand" : {
@@ -457,7 +987,13 @@
       "description" : [ "Randomly upgrade a wand, as if enchanted via the old enchanting system", "Will add spells and other properties to a wand randomly, as determined by its current path configuration" ],
       "examples" : [ "enchantwand" ],
       "name" : "Enchant Wand",
-      "parameters" : [ "levels", "path", "path_exact", "requires", "use_xp" ],
+      "parameters" : {
+        "levels" : "1",
+        "path" : null,
+        "path_exact" : null,
+        "requires" : null,
+        "use_xp" : "false"
+      },
       "short_class" : "EnchantWand"
     },
     "entity_projectile" : {
@@ -466,7 +1002,105 @@
       "description" : [ "A CustonmProjectile with an entity attached", "Ever want to attack someone using a flying llama?" ],
       "examples" : [ ],
       "name" : "Entity Projectile",
-      "parameters" : [ "apply_velocity", "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss", "miss_effects", "no_target", "npc_weight", "orient", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "spawn_reason", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "teleport", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "velocity_transform-map" ],
+      "parameters" : {
+        "apply_velocity" : "true",
+        "attach_duration" : "0",
+        "block_hit_count" : "1",
+        "break_blocks" : "true",
+        "breakable_size" : "1",
+        "bypass_backfire" : "false",
+        "close_fov" : "0.5",
+        "close_range" : "0.0",
+        "distance_weight" : "1.0",
+        "drag" : "0.0",
+        "entity_hit_count" : "1",
+        "entity_weight" : "3",
+        "fov" : "0.3",
+        "fov_weight" : "4.0",
+        "gravity" : "0.0",
+        "headshot" : null,
+        "headshot_effects" : "headshot",
+        "hit_count" : "1",
+        "hit_effects" : "hit",
+        "hit_on_miss" : "false",
+        "hit_requires_entity" : "false",
+        "hitbox" : "false",
+        "hitbox_block_size" : "0.0",
+        "hitbox_size" : "0.0",
+        "ignore_blocks" : "false",
+        "ignore_targeting" : "false",
+        "interval" : "30",
+        "lifetime" : "8000",
+        "location_offset" : null,
+        "min_block_range" : "0.0",
+        "min_entity_range" : "0.0",
+        "miss" : null,
+        "miss_effects" : "miss",
+        "no_target" : "true",
+        "npc_weight" : "-1",
+        "orient" : "false",
+        "otdx" : null,
+        "otdy" : null,
+        "otdz" : null,
+        "otworld" : null,
+        "otx" : null,
+        "oty" : null,
+        "otz" : null,
+        "pitch_max" : "-90",
+        "pitch_min" : "90",
+        "plan" : null,
+        "player_weight" : "4",
+        "projectile_effects" : "projectile",
+        "projectile_follow_player" : "false",
+        "projectile_potion_effects" : null,
+        "range" : "0",
+        "range_padding" : "1.0",
+        "reflect_count" : "-1",
+        "reflect_reorient" : "false",
+        "reflect_reset_distance_traveled" : "true",
+        "reflect_target_caster" : "true",
+        "reflect_track_range" : "0.0",
+        "reflect_track_target" : "false",
+        "reorient" : "false",
+        "reset_time_on_path_change" : "false",
+        "return_offset" : null,
+        "return_relative_offset" : null,
+        "return_to_caster" : "false",
+        "reverse" : "false",
+        "source_location" : "",
+        "spawn_reason" : null,
+        "speed" : "1.0",
+        "spread" : "0.0",
+        "spread_movement" : "0.0",
+        "spread_movement_max" : "0.0",
+        "start" : "0",
+        "target" : null,
+        "target_breakable_depth" : "2",
+        "target_breakables" : "1.0",
+        "target_min_offset" : "0",
+        "target_self" : "false",
+        "target_self_timeout" : "0",
+        "teleport" : "true",
+        "tick" : null,
+        "tick_effects" : "tick",
+        "tick_size" : "0.5",
+        "tmo" : "0",
+        "track_range" : "0.0",
+        "track_speed" : "0.0",
+        "track_target" : "false",
+        "type" : null,
+        "update_launch_location" : "false",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true",
+        "variant" : null,
+        "velocity" : "20.0",
+        "velocity_offset" : null,
+        "velocity_transform-map" : null
+      },
       "short_class" : "EntityProjectile"
     },
     "explosion" : {
@@ -475,7 +1109,11 @@
       "description" : [ "Create a vanilla explosion", "Due to the exponential fall-off used by vanilla Minecraft for calculating explosion damage to entities, use of this action is discouraged.", "Explosions can be easily gamed by wise players in PvP situations once they learn the exact distance to cast from to get the center on top of the target entity." ],
       "examples" : [ "boom" ],
       "name" : "Explosion",
-      "parameters" : [ "break_blocks", "fire", "size" ],
+      "parameters" : {
+        "break_blocks" : "true",
+        "fire" : "false",
+        "size" : "1"
+      },
       "short_class" : "Explosion"
     },
     "fall_protection" : {
@@ -484,7 +1122,10 @@
       "description" : [ "Apply protection from falling to a target entity for a period of time." ],
       "examples" : [ "fling" ],
       "name" : "Fall Protection",
-      "parameters" : [ "duration", "protection_count" ],
+      "parameters" : {
+        "duration" : "5000",
+        "protection_count" : "2147483647"
+      },
       "short_class" : "FallProtection"
     },
     "feed" : {
@@ -493,7 +1134,11 @@
       "description" : [ "Fill the target's hunger bars" ],
       "examples" : [ "cure" ],
       "name" : "Feed",
-      "parameters" : [ "exhaustion", "feed", "saturation" ],
+      "parameters" : {
+        "exhaustion" : "true",
+        "feed" : "20",
+        "saturation" : "20"
+      },
       "short_class" : "Feed"
     },
     "fill_wand" : {
@@ -502,7 +1147,9 @@
       "description" : [ "Fills a wand with all available spells" ],
       "examples" : [ "fillwand" ],
       "name" : "Fill Wand",
-      "parameters" : [ "max_level" ],
+      "parameters" : {
+        "max_level" : "0"
+      },
       "short_class" : "FillWand"
     },
     "firework" : {
@@ -511,7 +1158,25 @@
       "description" : [ "Launch a vanilla firework", "Can work like a projectile, running actions when the firework explodes." ],
       "examples" : [ "stun" ],
       "name" : "Firework",
-      "parameters" : [ "color", "color2", "dy_offset", "expected_lifespan", "firework", "flicker", "launch", "lifetime", "power", "projectile_effects", "set_target", "silent", "speed", "start", "ticks_flown", "track_projectile", "trail" ],
+      "parameters" : {
+        "color" : null,
+        "color2" : null,
+        "dy_offset" : "0.0",
+        "expected_lifespan" : "0",
+        "firework" : null,
+        "flicker" : "false",
+        "launch" : "false",
+        "lifetime" : "10000",
+        "power" : "1",
+        "projectile_effects" : "projectile",
+        "set_target" : "false",
+        "silent" : "false",
+        "speed" : "0.1",
+        "start" : "0",
+        "ticks_flown" : "0",
+        "track_projectile" : "false",
+        "trail" : "false"
+      },
       "short_class" : "Firework"
     },
     "flower" : {
@@ -520,7 +1185,10 @@
       "description" : [ "Grow flowers", "Can randomly select flowers from a probability map" ],
       "examples" : [ "pollinate" ],
       "name" : "Flower",
-      "parameters" : [ "flowers", "tall_flowers" ],
+      "parameters" : {
+        "flowers" : null,
+        "tall_flowers" : null
+      },
       "short_class" : "Flower"
     },
     "freeze" : {
@@ -529,7 +1197,12 @@
       "description" : [ "Freeze a block", "Turns air blocks into snow, increases height of snow blocks, turns water into ice and lava into stone, and puts out fires." ],
       "examples" : [ "frost" ],
       "name" : "Freeze",
-      "parameters" : [ "freeze_fire", "freeze_lava", "freeze_water", "ice" ],
+      "parameters" : {
+        "freeze_fire" : "true",
+        "freeze_lava" : "true",
+        "freeze_water" : "true",
+        "ice" : null
+      },
       "short_class" : "Freeze"
     },
     "give_item" : {
@@ -538,7 +1211,11 @@
       "description" : [ "Give an item directly to a player" ],
       "examples" : [ "giveitem" ],
       "name" : "Give Item",
-      "parameters" : [ "item", "permission", "requires" ],
+      "parameters" : {
+        "item" : null,
+        "permission" : null,
+        "requires" : null
+      },
       "short_class" : "GiveItem"
     },
     "glide" : {
@@ -547,7 +1224,10 @@
       "description" : [ "Force a player to glide", "Does not necessarily require that the player is wearing an elytra" ],
       "examples" : [ "glide" ],
       "name" : "Glide",
-      "parameters" : [ "require_elytra", "wait_for_landing" ],
+      "parameters" : {
+        "require_elytra" : "false",
+        "wait_for_landing" : "true"
+      },
       "short_class" : "Glide"
     },
     "grow_entity" : {
@@ -556,7 +1236,9 @@
       "description" : [ "Turn baby entities into adults, zombies into giants, and optionally skeletons into wither skeletons" ],
       "examples" : [ "grow" ],
       "name" : "Grow Entity",
-      "parameters" : [ "skeletons" ],
+      "parameters" : {
+        "skeletons" : "false"
+      },
       "short_class" : "GrowEntity"
     },
     "heal" : {
@@ -565,7 +1247,11 @@
       "description" : [ "Restore an entity's health.", "Can restore a specific amount of health, or a percentage of max health" ],
       "examples" : [ "heal" ],
       "name" : "Heal",
-      "parameters" : [ "amount", "heal_max_distance", "percentage" ],
+      "parameters" : {
+        "amount" : "20.0",
+        "heal_max_distance" : "0.0",
+        "percentage" : "0.0"
+      },
       "short_class" : "Heal"
     },
     "ignite" : {
@@ -574,7 +1260,9 @@
       "description" : [ "Light an entity on fire, or put out a fire" ],
       "examples" : [ "arrow_fire", "extinguish" ],
       "name" : "Ignite",
-      "parameters" : [ "duration" ],
+      "parameters" : {
+        "duration" : "5000"
+      },
       "short_class" : "Ignite"
     },
     "inventory" : {
@@ -583,7 +1271,10 @@
       "description" : [ "Show a player a specific inventory", "Can be used to view the player's ender chest, show them a disposable chest inventory, or the inventory of the target container" ],
       "examples" : [ "disposal", "snoop", "stash" ],
       "name" : "Inventory",
-      "parameters" : [ "title", "type" ],
+      "parameters" : {
+        "title" : null,
+        "type" : "ender_chest"
+      },
       "short_class" : "Inventory"
     },
     "inventory_close" : {
@@ -592,7 +1283,7 @@
       "description" : [ "Close the target player's inventory" ],
       "examples" : [ ],
       "name" : "Inventory Close",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "InventoryClose"
     },
     "item_shop" : {
@@ -601,7 +1292,31 @@
       "description" : [ "Create a GUI shop that can sell vanilla or magic items", "The shop is also capable of casting spells on players" ],
       "examples" : [ "bank", "bookshop", "itemshop", "magicitemshop", "tweakshop" ],
       "name" : "Item Shop",
-      "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "items", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : {
+        "apply_to_wand" : "true",
+        "auto_close" : "true",
+        "auto_upgrade" : "false",
+        "cast_spells" : "false",
+        "confirm" : "true",
+        "confirm_filler" : null,
+        "filter_bound" : "false",
+        "items" : null,
+        "path" : null,
+        "path_end" : null,
+        "path_exact" : null,
+        "permission" : null,
+        "put_in_hand" : "true",
+        "require_template" : null,
+        "require_wand" : "false",
+        "scale" : "1.0",
+        "sell" : "false",
+        "show_active_icons" : "false",
+        "upgrade_levels" : "0",
+        "use_items" : "false",
+        "use_sp" : "false",
+        "use_xp" : "false",
+        "worth_item" : ""
+      },
       "short_class" : "ItemShop"
     },
     "kill" : {
@@ -610,7 +1325,7 @@
       "description" : [ "Kill the target entity", "Deals 100 x the entity's max health in damage, just to be safe." ],
       "examples" : [ "kill" ],
       "name" : "Kill",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Kill"
     },
     "light" : {
@@ -619,7 +1334,11 @@
       "description" : [ "Modify the light level of the target block", "Requires the LightAPI plugin", "Do to issues with LightAPI, lighting changes do not reliably undo!" ],
       "examples" : [ "light" ],
       "name" : "Light",
-      "parameters" : [ "async", "level", "update" ],
+      "parameters" : {
+        "async" : "false",
+        "level" : "15",
+        "update" : "true"
+      },
       "short_class" : "Light"
     },
     "lightning" : {
@@ -628,7 +1347,9 @@
       "description" : [ "Strike lighting at the target", "Can spawn a fully active lightning bolt, or just the visual effect" ],
       "examples" : [ "lightning", "smite" ],
       "name" : "Lightning",
-      "parameters" : [ "effect_only" ],
+      "parameters" : {
+        "effect_only" : "false"
+      },
       "short_class" : "Lightning"
     },
     "line" : {
@@ -637,7 +1358,15 @@
       "description" : [ "Target all blocks along a single line" ],
       "examples" : [ "iterate", "laser", "lava", "line" ],
       "name" : "Line",
-      "parameters" : [ "increment_data", "reorient", "require_block", "reverse", "size", "start", "start_at_target" ],
+      "parameters" : {
+        "increment_data" : "false",
+        "reorient" : "false",
+        "require_block" : "false",
+        "reverse" : "false",
+        "size" : "16",
+        "start" : "2",
+        "start_at_target" : "false"
+      },
       "short_class" : "Line"
     },
     "lock" : {
@@ -646,7 +1375,13 @@
       "description" : [ "Apply a vanilla lock to a container", "Will give the caster a key item they may use to unlock the container", "The key and lock will use the caster's UUID, the item name is obfuscated with the enchantment text decoration", "Can also be used to unlock a container" ],
       "examples" : [ "lockpick", "secure" ],
       "name" : "Lock",
-      "parameters" : [ "key_description", "key_icon", "key_name", "lock_type", "override" ],
+      "parameters" : {
+        "key_description" : "",
+        "key_icon" : null,
+        "key_name" : "",
+        "lock_type" : "lock",
+        "override" : "false"
+      },
       "short_class" : "Lock"
     },
     "message" : {
@@ -655,7 +1390,16 @@
       "description" : [ "Send a chat, action bar or title message to the target player or caster" ],
       "examples" : [ "homing", "kill", "magichat" ],
       "name" : "Message",
-      "parameters" : [ "equation", "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
+      "parameters" : {
+        "equation" : "0.0",
+        "fade_in" : "-1",
+        "fade_out" : "-1",
+        "message" : "",
+        "message_target" : "false",
+        "message_type" : null,
+        "stay" : "-1",
+        "sub_message" : ""
+      },
       "short_class" : "Message"
     },
     "modify_block" : {
@@ -664,7 +1408,22 @@
       "description" : [ "Modify a block by changing its type", "Can also be used to spawn falling blocks in the place of a block that was removed", "Falling blocks can be given velocity for explosion type block effects" ],
       "examples" : [ "blast", "collapse" ],
       "name" : "Modify Block",
-      "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
+      "parameters" : {
+        "breakable" : "0.0",
+        "commit" : "false",
+        "consume" : "false",
+        "consume_variants" : "true",
+        "damage" : "0",
+        "fall_damage" : "0.0",
+        "falling" : "false",
+        "falling_hurts" : "false",
+        "falling_probability" : "1.0",
+        "max_damage" : "0",
+        "physics" : "false",
+        "physics_blocks" : "false",
+        "reflect_chance" : "0.0",
+        "speed" : "0.0"
+      },
       "short_class" : "ModifyBlock"
     },
     "modify_breakable" : {
@@ -673,7 +1432,10 @@
       "description" : [ "Tag a block as breakable so that other spells can break the block" ],
       "examples" : [ "freeze" ],
       "name" : "Modify Breakable",
-      "parameters" : [ "breakable", "target_air" ],
+      "parameters" : {
+        "breakable" : "1.0",
+        "target_air" : "false"
+      },
       "short_class" : "ModifyBreakable"
     },
     "modify_game_mode" : {
@@ -682,7 +1444,9 @@
       "description" : [ "Change the player's game mode" ],
       "examples" : [ "gamemodechange" ],
       "name" : "Modify Game Mode",
-      "parameters" : [ "game_mode" ],
+      "parameters" : {
+        "game_mode" : null
+      },
       "short_class" : "ModifyGameMode"
     },
     "modify_mana" : {
@@ -691,7 +1455,10 @@
       "description" : [ "Add or remove mana from a player or wand" ],
       "examples" : [ ],
       "name" : "Modify Mana",
-      "parameters" : [ "fill_mana", "mana" ],
+      "parameters" : {
+        "fill_mana" : "false",
+        "mana" : "1"
+      },
       "short_class" : "ModifyMana"
     },
     "modify_properties" : {
@@ -700,7 +1467,11 @@
       "description" : [ "Modify the properties of a player or wand" ],
       "examples" : [ "wandbuffs" ],
       "name" : "Modify Properties",
-      "parameters" : [ "modify", "modify_target", "upgrade" ],
+      "parameters" : {
+        "modify" : null,
+        "modify_target" : "wand",
+        "upgrade" : "false"
+      },
       "short_class" : "ModifyProperties"
     },
     "modify_reflective" : {
@@ -709,7 +1480,9 @@
       "description" : [ "Change a block so that it will reflect spells" ],
       "examples" : [ ],
       "name" : "Modify Reflective",
-      "parameters" : [ "reflect_chance" ],
+      "parameters" : {
+        "reflect_chance" : "1.0"
+      },
       "short_class" : "ModifyReflective"
     },
     "modify_s_p" : {
@@ -718,7 +1491,9 @@
       "description" : [ "Add or remove Spell Points" ],
       "examples" : [ "addsp" ],
       "name" : "Modify SP",
-      "parameters" : [ "sp" ],
+      "parameters" : {
+        "sp" : "1"
+      },
       "short_class" : "ModifySP"
     },
     "modify_walk_speed" : {
@@ -727,7 +1502,9 @@
       "description" : [ "Modify the walk speed attribute of the target" ],
       "examples" : [ ],
       "name" : "Modify Walk Speed",
-      "parameters" : [ "speed" ],
+      "parameters" : {
+        "speed" : "0.0"
+      },
       "short_class" : "ModifyWalkSpeed"
     },
     "mount" : {
@@ -736,7 +1513,9 @@
       "description" : [ "Force the caster to mount the target entity" ],
       "examples" : [ "boomstown", "horse", "mount" ],
       "name" : "Mount",
-      "parameters" : [ "eject" ],
+      "parameters" : {
+        "eject" : "false"
+      },
       "short_class" : "Mount"
     },
     "mount_armor_stand" : {
@@ -745,7 +1524,68 @@
       "description" : [ "Mount an armor stand, optionally creating and removing the armor stand", "This is the action that powers broomsticks and other vehicles", "Using custom resource pack models, this can be used to implement driveable cars, planes or just about anything by applying velocity to the armor stand when mounted", "It has many parameters for handling crashing, hovering, and other options" ],
       "examples" : [ "airscooter", "broom" ],
       "name" : "Mount Armor Stand",
-      "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_reason", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : {
+        "armor_stand_gravity" : "true",
+        "armor_stand_invisible" : "true",
+        "armor_stand_marker" : "true",
+        "armor_stand_pitch" : "0.0",
+        "armor_stand_reason" : null,
+        "armor_stand_roll" : "0.0",
+        "armor_stand_small" : "false",
+        "braking" : "0.0",
+        "controllable" : "false",
+        "crash_braking" : "0.0",
+        "crash_damage" : "0.0",
+        "crash_dismount_speed" : "0.0",
+        "crash_distance" : "0.0",
+        "crash_effects" : null,
+        "crash_entity_damage" : "0.0",
+        "crash_entity_distance" : "2.0",
+        "crash_entity_fov" : "0.3",
+        "crash_entity_vehicle_damage" : "0.0",
+        "crash_into" : null,
+        "crash_speed" : "0.0",
+        "crash_vehicle_damage" : "0.0",
+        "crash_velocity" : "0.0",
+        "crash_velocity_y_offset" : "0.0",
+        "direction_y" : "0.0",
+        "duration" : "0",
+        "duration_warning" : "0",
+        "exemption_duration" : "0",
+        "fall_protection" : "0",
+        "helmet_item" : null,
+        "jump_controllable" : "0.0",
+        "liftoff_duration" : "0",
+        "liftoff_thrust" : "0.0",
+        "max_acceleration" : "0.0",
+        "max_deceleration" : "0.0",
+        "max_height" : "0",
+        "max_height_above_ground" : "-1",
+        "max_speed" : "0.0",
+        "min_speed" : "0.0",
+        "mount_name" : null,
+        "mount_target" : "false",
+        "mount_untargetable" : "true",
+        "mount_wand" : "false",
+        "passenger" : "false",
+        "pitch_controllable" : "true",
+        "pitch_offset" : "0.0",
+        "rider_untargetable" : "false",
+        "riding_effects" : null,
+        "sound" : null,
+        "sound_interval" : "1000",
+        "sound_max_pitch" : "1.0",
+        "sound_max_volume" : "1.0",
+        "sound_min_pitch" : "1.0",
+        "sound_min_volume" : "1.0",
+        "sound_pitch" : "1.0",
+        "sound_volume" : "1.0",
+        "start_speed" : "0.0",
+        "steer_speed" : "0.0",
+        "strafe_controllable" : "0.0",
+        "warning_effects" : null,
+        "yaw_offset" : "0.0"
+      },
       "short_class" : "MountArmorStand"
     },
     "move_block" : {
@@ -754,7 +1594,10 @@
       "description" : [ "Move a block from one location to another" ],
       "examples" : [ "lift" ],
       "name" : "Move Block",
-      "parameters" : [ "offset", "set_target" ],
+      "parameters" : {
+        "offset" : null,
+        "set_target" : "false"
+      },
       "short_class" : "MoveBlock"
     },
     "multiply" : {
@@ -763,7 +1606,10 @@
       "description" : [ "Repeat a set of actions mulitple times in parallel", "Will fall back to using the 'repeat' parameter if 'multiply' is not specified" ],
       "examples" : [ "bomb", "cluster", "meteor", "volley" ],
       "name" : "Multiply",
-      "parameters" : [ "multiply", "repeat" ],
+      "parameters" : {
+        "multiply" : "2",
+        "repeat" : "2"
+      },
       "short_class" : "Multiply"
     },
     "orient" : {
@@ -772,7 +1618,12 @@
       "description" : [ "Force the target entity to face a specific direction" ],
       "examples" : [ "tracking" ],
       "name" : "Orient",
-      "parameters" : [ "pitch", "pitch_offset", "yaw", "yaw_offset" ],
+      "parameters" : {
+        "pitch" : "0.0",
+        "pitch_offset" : "0.0",
+        "yaw" : "0.0",
+        "yaw_offset" : "0.0"
+      },
       "short_class" : "Orient"
     },
     "parallel" : {
@@ -781,7 +1632,7 @@
       "description" : [ "Runs each action in the list of sub-actions in parallel, rather than sequentially" ],
       "examples" : [ "earthquake", "nuke" ],
       "name" : "Parallel",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Parallel"
     },
     "plane" : {
@@ -790,7 +1641,30 @@
       "description" : [ "Target all blocks in a 2D plane" ],
       "examples" : [ ],
       "name" : "Plane",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "axis" : null,
+        "brush_axis" : null,
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Plane"
     },
     "play_effects" : {
@@ -799,7 +1673,10 @@
       "description" : [ "Play a specific set of effects from the spell's effects list" ],
       "examples" : [ "disintegrate", "fxdemo", "holylight", "laser", "nuke" ],
       "name" : "Play Effects",
-      "parameters" : [ "effect_key", "effects" ],
+      "parameters" : {
+        "effect_key" : null,
+        "effects" : ""
+      },
       "short_class" : "PlayEffects"
     },
     "play_record" : {
@@ -808,7 +1685,9 @@
       "description" : [ "Play music from a vanilla record disc to the target player" ],
       "examples" : [ "music" ],
       "name" : "Play Record",
-      "parameters" : [ "records" ],
+      "parameters" : {
+        "records" : "records"
+      },
       "short_class" : "PlayRecord"
     },
     "play_sound" : {
@@ -817,7 +1696,12 @@
       "description" : [ "Play a sound to the target player", "Can be used with vanilla sounds or custom sounds from a resource pack" ],
       "examples" : [ "flashbang", "music_notes" ],
       "name" : "Play Sound",
-      "parameters" : [ "pitch", "radius", "sound", "volume" ],
+      "parameters" : {
+        "pitch" : "1.0",
+        "radius" : "32",
+        "sound" : null,
+        "volume" : "1.0"
+      },
       "short_class" : "PlaySound"
     },
     "player_select" : {
@@ -826,7 +1710,9 @@
       "description" : [ "Show the caster a GUI with heads for all players on the server, allowing them to choose a player who will be the target of the sub-action list" ],
       "examples" : [ "gather" ],
       "name" : "Player Select",
-      "parameters" : [ "cross_world" ],
+      "parameters" : {
+        "cross_world" : "true"
+      },
       "short_class" : "PlayerSelect"
     },
     "potion_effect" : {
@@ -835,7 +1721,14 @@
       "description" : [ "Apply or remove vanilla potion effects from the target" ],
       "examples" : [ "arrow_poison", "blessing", "cure", "curse", "frost", "poison", "wither" ],
       "name" : "Potion Effect",
-      "parameters" : [ "add_effects", "duration", "duration_multiplier", "effects_ambient", "effects_particles", "remove_effects" ],
+      "parameters" : {
+        "add_effects" : null,
+        "duration" : "500",
+        "duration_multiplier" : "0.0",
+        "effects_ambient" : "true",
+        "effects_particles" : "true",
+        "remove_effects" : null
+      },
       "short_class" : "PotionEffect"
     },
     "power_block" : {
@@ -844,7 +1737,9 @@
       "description" : [ "Change the state of redstone blocks such as levers and buttons" ],
       "examples" : [ "emp" ],
       "name" : "Power Block",
-      "parameters" : [ "physics" ],
+      "parameters" : {
+        "physics" : "false"
+      },
       "short_class" : "PowerBlock"
     },
     "probability" : {
@@ -853,7 +1748,9 @@
       "description" : [ "Execute or skip sub-actions based on a random chance" ],
       "examples" : [ ],
       "name" : "Probability",
-      "parameters" : [ "probability" ],
+      "parameters" : {
+        "probability" : "0.5"
+      },
       "short_class" : "Probability"
     },
     "projectile" : {
@@ -862,7 +1759,32 @@
       "description" : [ "Launch a vanilla projectile" ],
       "examples" : [ "arrow", "arrowrain", "dragonball", "fireball", "wither" ],
       "name" : "Projectile",
-      "parameters" : [ "break_blocks", "count", "damage", "fire", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "set_target", "size", "source_location", "speed", "spread", "start", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : {
+        "break_blocks" : "false",
+        "count" : "1",
+        "damage" : "0.0",
+        "fire" : "false",
+        "lifetime" : "10000",
+        "orient" : "true",
+        "pickup" : null,
+        "projectile" : "TippedArrow",
+        "projectile_effects" : "projectile",
+        "reorient" : "false",
+        "set_target" : "false",
+        "size" : "1",
+        "source_location" : "",
+        "speed" : "0.6000000238418579",
+        "spread" : "12.0",
+        "start" : "0",
+        "tick_increase" : "1180",
+        "track_projectile" : "true",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true"
+      },
       "short_class" : "Projectile"
     },
     "random" : {
@@ -871,7 +1793,7 @@
       "description" : [ "Randomly choose one from the set of sub-actions to execute" ],
       "examples" : [ "magichat" ],
       "name" : "Random",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Random"
     },
     "recall" : {
@@ -880,7 +1802,17 @@
       "description" : [ "Show a customizeable GUI of warps and other locations", "Can be used with warps created by Essentials or CommandBook" ],
       "examples" : [ "recall" ],
       "name" : "Recall",
-      "parameters" : [ "allow_cross_world", "friend_key", "marker_key", "protection_duration", "require_build", "require_exit", "safe", "unlock_key", "vertical_range" ],
+      "parameters" : {
+        "allow_cross_world" : "true",
+        "friend_key" : "recall_friends",
+        "marker_key" : "recall_marker",
+        "protection_duration" : "0",
+        "require_build" : "false",
+        "require_exit" : "true",
+        "safe" : "true",
+        "unlock_key" : "recall_warps",
+        "vertical_range" : "8"
+      },
       "short_class" : "Recall"
     },
     "recurse" : {
@@ -889,7 +1821,13 @@
       "description" : [ "Recursively follows blocks that match the spell's destructible list", "Can be configured to only follow a specific list of block faces, such as only filling downward" ],
       "examples" : [ "chop", "floodfill", "mine", "recurse", "rubberize" ],
       "name" : "Recurse",
-      "parameters" : [ "checkered", "depth", "faces", "replace", "size" ],
+      "parameters" : {
+        "checkered" : "false",
+        "depth" : "32",
+        "faces" : null,
+        "replace" : "false",
+        "size" : "32"
+      },
       "short_class" : "Recurse"
     },
     "remove_entity" : {
@@ -898,7 +1836,7 @@
       "description" : [ "Remove an entity from the world completely, without killing it or having it drop loot" ],
       "examples" : [ ],
       "name" : "Remove Entity",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "RemoveEntity"
     },
     "repair_item" : {
@@ -907,7 +1845,10 @@
       "description" : [ "Repair the target item, or items in the target player's inventory" ],
       "examples" : [ "repairequipment", "repairitem" ],
       "name" : "Repair Item",
-      "parameters" : [ "armor", "held_item" ],
+      "parameters" : {
+        "armor" : "false",
+        "held_item" : "false"
+      },
       "short_class" : "RepairItem"
     },
     "repeat" : {
@@ -916,7 +1857,9 @@
       "description" : [ "Repeat sub-actions a number of times in sequence" ],
       "examples" : [ "forest", "grab", "lightning", "push" ],
       "name" : "Repeat",
-      "parameters" : [ "repeat" ],
+      "parameters" : {
+        "repeat" : "2"
+      },
       "short_class" : "Repeat"
     },
     "retarget" : {
@@ -925,7 +1868,13 @@
       "description" : [ "Performs targeting as normal, passing the new target to its sub-actions" ],
       "examples" : [ "gatling", "laser" ],
       "name" : "Retarget",
-      "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "range" ],
+      "parameters" : {
+        "close_fov" : "0.5",
+        "close_range" : "1.0",
+        "fov" : "0.3",
+        "hitbox" : "false",
+        "range" : "32.0"
+      },
       "short_class" : "Retarget"
     },
     "ride_entity" : {
@@ -934,7 +1883,57 @@
       "description" : [ "Mount and control the target entity", "This is the base action for MountArmorStand" ],
       "examples" : [ "ride" ],
       "name" : "Ride Entity",
-      "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
+      "parameters" : {
+        "braking" : "0.0",
+        "controllable" : "false",
+        "crash_braking" : "0.0",
+        "crash_damage" : "0.0",
+        "crash_dismount_speed" : "0.0",
+        "crash_distance" : "0.0",
+        "crash_effects" : null,
+        "crash_entity_damage" : "0.0",
+        "crash_entity_distance" : "2.0",
+        "crash_entity_fov" : "0.3",
+        "crash_entity_vehicle_damage" : "0.0",
+        "crash_into" : null,
+        "crash_speed" : "0.0",
+        "crash_vehicle_damage" : "0.0",
+        "crash_velocity" : "0.0",
+        "crash_velocity_y_offset" : "0.0",
+        "direction_y" : "0.0",
+        "duration" : "0",
+        "duration_warning" : "0",
+        "exemption_duration" : "0",
+        "fall_protection" : "0",
+        "jump_controllable" : "0.0",
+        "liftoff_duration" : "0",
+        "liftoff_thrust" : "0.0",
+        "max_acceleration" : "0.0",
+        "max_deceleration" : "0.0",
+        "max_height" : "0",
+        "max_height_above_ground" : "-1",
+        "max_speed" : "0.0",
+        "min_speed" : "0.0",
+        "mount_untargetable" : "true",
+        "passenger" : "false",
+        "pitch_controllable" : "true",
+        "pitch_offset" : "0.0",
+        "rider_untargetable" : "false",
+        "riding_effects" : null,
+        "sound" : null,
+        "sound_interval" : "1000",
+        "sound_max_pitch" : "1.0",
+        "sound_max_volume" : "1.0",
+        "sound_min_pitch" : "1.0",
+        "sound_min_volume" : "1.0",
+        "sound_pitch" : "1.0",
+        "sound_volume" : "1.0",
+        "start_speed" : "0.0",
+        "steer_speed" : "0.0",
+        "strafe_controllable" : "0.0",
+        "warning_effects" : null,
+        "yaw_offset" : "0.0"
+      },
       "short_class" : "RideEntity"
     },
     "ring" : {
@@ -943,7 +1942,30 @@
       "description" : [ "Target all blocks in a ring" ],
       "examples" : [ ],
       "name" : "Ring",
-      "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "axis" : null,
+        "brush_axis" : null,
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Ring"
     },
     "selector" : {
@@ -952,7 +1974,36 @@
       "description" : [ "Show the caster a customizeable GUI", "This gui can be used to sell items, or cast spells", "This is similar to ItemShop but more customizeable, allowing for requirements for each item, different costs or a mix of items and spells." ],
       "examples" : [ "appearanceshop", "colorshop", "effectshop", "progressmenu", "wandbuffs" ],
       "name" : "Selector",
-      "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "commands", "confirm", "confirm_filler", "confirm_title", "cost", "cost_modifiers", "cost_type", "costs", "currency", "experience", "icon", "item", "items-list", "limit", "options", "requirements", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
+      "parameters" : {
+        "apply_to_wand" : "false",
+        "auto_close" : "true",
+        "cast_spell" : null,
+        "commands" : null,
+        "confirm" : "false",
+        "confirm_filler" : null,
+        "confirm_title" : null,
+        "cost" : "0",
+        "cost_modifiers" : null,
+        "cost_type" : "currency",
+        "costs" : null,
+        "currency" : "0",
+        "experience" : "0",
+        "icon" : null,
+        "item" : null,
+        "items-list" : null,
+        "limit" : "0",
+        "options" : null,
+        "requirements" : null,
+        "scale" : "1.0",
+        "selected" : null,
+        "show_unavailable" : "false",
+        "sp" : "0",
+        "title" : null,
+        "unlock" : null,
+        "unlock_class" : null,
+        "unlock_confirm_title" : null,
+        "unlock_section" : "unlocked"
+      },
       "short_class" : "Selector"
     },
     "serial" : {
@@ -961,7 +2012,7 @@
       "description" : [ "Group a set of actions together and run them in serial", "This is mainly useful inside of actions like Random or Parallel, to group a set of actions together as a single option for the parent action." ],
       "examples" : [ "magichat", "nuke" ],
       "name" : "Serial",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Serial"
     },
     "shrink_block" : {
@@ -970,7 +2021,7 @@
       "description" : [ "Remove a block and replace it with a skull item representation of the block", "Only works on a very limited set of blocks, the ones for which Mojang has provided MHF skins." ],
       "examples" : [ ],
       "name" : "Shrink Block",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "ShrinkBlock"
     },
     "shrink_entity" : {
@@ -979,7 +2030,20 @@
       "description" : [ "Change entities to baby entities", "can apply damage to entities and drop skulls for them when killed" ],
       "examples" : [ "shrink" ],
       "name" : "Shrink Entity",
-      "parameters" : [ "damage", "damage_max_distance", "damage_multiplier", "damage_type", "elemental_damage", "entity_damage", "knockback_resistance", "magic_damage", "magic_entity_damage", "percentage", "player_damage", "skeletons" ],
+      "parameters" : {
+        "damage" : "1.0",
+        "damage_max_distance" : "0.0",
+        "damage_multiplier" : "0.0",
+        "damage_type" : null,
+        "elemental_damage" : "1.0",
+        "entity_damage" : "1.0",
+        "knockback_resistance" : "0.0",
+        "magic_damage" : "true",
+        "magic_entity_damage" : "true",
+        "percentage" : "0.0",
+        "player_damage" : "1.0",
+        "skeletons" : "true"
+      },
       "short_class" : "ShrinkEntity"
     },
     "simulate" : {
@@ -988,7 +2052,7 @@
       "description" : [ "This action is not complete, do not use. It is intended to replace SimulateSpell", "Runs a simulation of <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life\">Conway's game of life</a>", "The simulation can have custom rules, and can be run in 2D or 3D" ],
       "examples" : [ ],
       "name" : "Simulate",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Simulate"
     },
     "skill_selector" : {
@@ -997,7 +2061,7 @@
       "description" : [ "Show the skill selection GUI to the caster", "This is the same GUI that a player would get if using the /mskills command" ],
       "examples" : [ "skills" ],
       "name" : "Skill Selector",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "SkillSelector"
     },
     "skip" : {
@@ -1006,7 +2070,10 @@
       "description" : [ "Runs its sub actions every N iterations, skipping them the rest of the time", "This is most often used to slow down a spell in chunks, by skipping a Delay sub-action", "This can be used for block animations to allow ModifyBlock to run N times per tick with a delay in between" ],
       "examples" : [ "earthquake", "lift", "nuke", "rainbow", "tendril", "walls" ],
       "name" : "Skip",
-      "parameters" : [ "repeat_skip", "skip" ],
+      "parameters" : {
+        "repeat_skip" : "true",
+        "skip" : "1"
+      },
       "short_class" : "Skip"
     },
     "spawn_entity" : {
@@ -1015,7 +2082,54 @@
       "description" : [ "Spawn a new entity in the world", "Can be used with a magic mob, a full custom mob config, a simple vanilla mob or a random probability table of mobs" ],
       "examples" : [ "familiar", "farm", "ghast", "horse", "magichat", "mob", "monster", "testdummy" ],
       "name" : "Spawn Entity",
-      "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "potion_effects", "protection", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
+      "parameters" : {
+        "aggro" : "true",
+        "ai" : "true",
+        "amount" : "1",
+        "attributes" : null,
+        "baby" : "false",
+        "boots" : null,
+        "can_pickup_items" : "false",
+        "cast" : null,
+        "cast_interval" : "0",
+        "cast_requires_item" : null,
+        "cast_requires_target" : "true",
+        "chestplate" : null,
+        "default_drops" : "true",
+        "direction" : null,
+        "disguise-map" : null,
+        "drop_xp" : "0",
+        "drops" : null,
+        "dy_offset" : "0.0",
+        "entity_attributes" : null,
+        "entity_types-map" : null,
+        "force" : "false",
+        "health" : "1.0",
+        "helmet" : null,
+        "interact_spell" : null,
+        "interval" : "0",
+        "item" : null,
+        "leggings" : null,
+        "loot" : "false",
+        "mage" : null,
+        "max_health" : "1.0",
+        "name" : null,
+        "potion_effects" : null,
+        "protection" : null,
+        "reason" : null,
+        "repeat_random" : "true",
+        "set_target" : "false",
+        "silent" : "false",
+        "speed" : "0.0",
+        "strength" : null,
+        "tags" : null,
+        "tamed" : "false",
+        "track_radius" : "128.0",
+        "triggers" : null,
+        "type" : null,
+        "weakness" : null,
+        "xp" : "0"
+      },
       "short_class" : "SpawnEntity"
     },
     "spell_progress" : {
@@ -1024,7 +2138,7 @@
       "description" : [ "Show the caster the spell progress GUI, which will show them spells they have that are upgradeable, and the requirements to upgrade them." ],
       "examples" : [ "upgrades" ],
       "name" : "Spell Progress",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "SpellProgress"
     },
     "spell_shop" : {
@@ -1033,7 +2147,38 @@
       "description" : [ "A spell-specific variant of ItemShop", "Can be used to spell a specific set of spells, cast spells on the buyer, or automatically show players the spells available to them at their current path.", "This is the main method of progression for players that is available via the enchantment table GUI" ],
       "examples" : [ "architectshop", "engineershop", "spellshop", "tpshop" ],
       "name" : "Spell Shop",
-      "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "spells", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
+      "parameters" : {
+        "allow_locked" : "false",
+        "apply_to_wand" : "true",
+        "auto_close" : "true",
+        "auto_upgrade" : "false",
+        "cast_spells" : "false",
+        "confirm" : "true",
+        "confirm_filler" : null,
+        "filter_bound" : "false",
+        "path" : null,
+        "path_end" : null,
+        "path_exact" : null,
+        "permission" : null,
+        "put_in_hand" : "true",
+        "require_template" : null,
+        "require_wand" : "false",
+        "scale" : "1.0",
+        "sell" : "false",
+        "show_active_icons" : "false",
+        "show_extra_spells" : "true",
+        "show_free" : "false",
+        "show_path_spells" : "true",
+        "show_required_spells" : "false",
+        "show_upgrades" : "false",
+        "spells" : null,
+        "upgrade_levels" : "0",
+        "upgrade_requires_casts" : "false",
+        "use_items" : "false",
+        "use_sp" : "false",
+        "use_xp" : "false",
+        "worth_item" : ""
+      },
       "short_class" : "SpellShop"
     },
     "sphere" : {
@@ -1042,7 +2187,28 @@
       "description" : [ "Target all blocks in a sphere" ],
       "examples" : [ "blob", "shell" ],
       "name" : "Sphere",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Sphere"
     },
     "spread" : {
@@ -1051,7 +2217,14 @@
       "description" : [ "Randomly modify the target location or source direction" ],
       "examples" : [ "cluster", "forest", "lightning", "pollinate", "volley" ],
       "name" : "Spread",
-      "parameters" : [ "center_probability", "outer_probability", "pitch_max", "probability", "radius", "yaw_max" ],
+      "parameters" : {
+        "center_probability" : "1.0",
+        "outer_probability" : "1.0",
+        "pitch_max" : "0.0",
+        "probability" : "1.0",
+        "radius" : "2",
+        "yaw_max" : "0.0"
+      },
       "short_class" : "Spread"
     },
     "stash_wand" : {
@@ -1060,7 +2233,9 @@
       "description" : [ "Temporarily remove the player's wand and return it on undo" ],
       "examples" : [ ],
       "name" : "Stash Wand",
-      "parameters" : [ "return_on_finish" ],
+      "parameters" : {
+        "return_on_finish" : "false"
+      },
       "short_class" : "StashWand"
     },
     "stop" : {
@@ -1069,7 +2244,7 @@
       "description" : [ "Stop running the spell and finish it immediately" ],
       "examples" : [ ],
       "name" : "Stop",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Stop"
     },
     "super_protection" : {
@@ -1078,7 +2253,9 @@
       "description" : [ "Apply super protection to a player, as if they were holding a wand with the 'protected' property", "A super protected player can't be damaged in any way or targeted by any spells" ],
       "examples" : [ ],
       "name" : "Super Protection",
-      "parameters" : [ "duration" ],
+      "parameters" : {
+        "duration" : "0"
+      },
       "short_class" : "SuperProtection"
     },
     "t_n_t" : {
@@ -1087,7 +2264,18 @@
       "description" : [ "Spawn a primed TNT entity", "Can run a set of actions when the TNT detonates" ],
       "examples" : [ "bomb", "cluster", "grenade" ],
       "name" : "TNT",
-      "parameters" : [ "break_blocks", "count", "fire", "fuse", "lifetime", "projectile_effects", "set_target", "size", "tnt_velocity", "track_projectile" ],
+      "parameters" : {
+        "break_blocks" : "true",
+        "count" : "1",
+        "fire" : "false",
+        "fuse" : "80",
+        "lifetime" : "10000",
+        "projectile_effects" : "projectile",
+        "set_target" : "false",
+        "size" : "6",
+        "tnt_velocity" : "1.0",
+        "track_projectile" : "true"
+      },
       "short_class" : "TNT"
     },
     "take_item" : {
@@ -1096,7 +2284,9 @@
       "description" : [ "Remove items from the player's inventory" ],
       "examples" : [ ],
       "name" : "Take Item",
-      "parameters" : [ "display_name" ],
+      "parameters" : {
+        "display_name" : null
+      },
       "short_class" : "TakeItem"
     },
     "tame" : {
@@ -1105,7 +2295,7 @@
       "description" : [ "Tame the target entity and set its owner as the caster" ],
       "examples" : [ "tame" ],
       "name" : "Tame",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Tame"
     },
     "teleport" : {
@@ -1114,7 +2304,16 @@
       "description" : [ "Teleport the caster to the target location" ],
       "examples" : [ "arrow_blink", "backflip", "blink", "evade", "randomtp" ],
       "name" : "Teleport",
-      "parameters" : [ "allow_passthrough", "ledge_range", "passthrough_range", "require_build", "require_exit", "safe", "use_target_location", "vertical_range" ],
+      "parameters" : {
+        "allow_passthrough" : "true",
+        "ledge_range" : "2",
+        "passthrough_range" : "4",
+        "require_build" : "false",
+        "require_exit" : "true",
+        "safe" : "true",
+        "use_target_location" : "false",
+        "vertical_range" : "8"
+      },
       "short_class" : "Teleport"
     },
     "throw_block" : {
@@ -1123,7 +2322,30 @@
       "description" : [ "Throw a falling block entity", "Can run a set of actions when the block lands" ],
       "examples" : [ "toss", "volley" ],
       "name" : "Throw Block",
-      "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : {
+        "consume" : "false",
+        "consume_variants" : "true",
+        "damage" : "0",
+        "fall_damage" : "0.0",
+        "hurts" : "true",
+        "lifetime" : "10000",
+        "max_damage" : "0",
+        "orient" : "true",
+        "projectile_effects" : "projectile",
+        "reorient" : "false",
+        "set_target" : "false",
+        "source_location" : "",
+        "speed" : "0.6000000238418579",
+        "speed_max" : "0.6000000238418579",
+        "speed_min" : "0.6000000238418579",
+        "track_projectile" : "false",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true"
+      },
       "short_class" : "ThrowBlock"
     },
     "throw_item" : {
@@ -1132,7 +2354,27 @@
       "description" : [ "Throw an item", "Can run a set of actions when the item despawns" ],
       "examples" : [ "pollinate" ],
       "name" : "Throw Item",
-      "parameters" : [ "age_items", "item", "lifetime", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+      "parameters" : {
+        "age_items" : "5500",
+        "item" : null,
+        "lifetime" : "10000",
+        "orient" : "true",
+        "projectile_effects" : "projectile",
+        "reorient" : "false",
+        "set_target" : "false",
+        "source_location" : "",
+        "speed" : "1.0",
+        "speed_max" : "1.0",
+        "speed_min" : "1.0",
+        "track_projectile" : "false",
+        "unbreakable" : "false",
+        "use_block_location" : "false",
+        "use_cast_location" : "false",
+        "use_eye_location" : "false",
+        "use_hit_location" : "false",
+        "use_target_location" : "true",
+        "use_wand_location" : "true"
+      },
       "short_class" : "ThrowItem"
     },
     "tile_entities" : {
@@ -1141,7 +2383,9 @@
       "description" : [ "Target all loaded tile entities" ],
       "examples" : [ "count" ],
       "name" : "Tile Entities",
-      "parameters" : [ "target_all_worlds" ],
+      "parameters" : {
+        "target_all_worlds" : "false"
+      },
       "short_class" : "TileEntities"
     },
     "time" : {
@@ -1150,7 +2394,10 @@
       "description" : [ "Change the time of the target world", "Can also change the phase of the moon" ],
       "examples" : [ "day", "night" ],
       "name" : "Time",
-      "parameters" : [ "cycle_moon_phase", "time" ],
+      "parameters" : {
+        "cycle_moon_phase" : "false",
+        "time" : "day"
+      },
       "short_class" : "Time"
     },
     "torch" : {
@@ -1159,7 +2406,12 @@
       "description" : [ "Attach a torch to the target block" ],
       "examples" : [ "supertorch", "torch" ],
       "name" : "Torch",
-      "parameters" : [ "allow_glowstone", "glowstone_torch", "not_attachable", "redstone_torch" ],
+      "parameters" : {
+        "allow_glowstone" : "false",
+        "glowstone_torch" : "false",
+        "not_attachable" : "not_attachable",
+        "redstone_torch" : "false"
+      },
       "short_class" : "Torch"
     },
     "tree" : {
@@ -1168,7 +2420,11 @@
       "description" : [ "Grow a tree at the target location", "This uses the vanilla tree generation algorithm and is not undoable", "Can be made to choose the type of tree based on the biome of the target block" ],
       "examples" : [ "forest", "tree" ],
       "name" : "Tree",
-      "parameters" : [ "biomes-map", "require_sapling", "type" ],
+      "parameters" : {
+        "biomes-map" : null,
+        "require_sapling" : "false",
+        "type" : ""
+      },
       "short_class" : "Tree"
     },
     "undo" : {
@@ -1177,7 +2433,19 @@
       "description" : [ "Undoes spells", "Can undo the last spell cast by the caster, the last spell cast by the target, or the last spell to have affected the target block.", "May require that the spell was cast recently or was cast by the caster of the undoing spell.", "Can also be used to undo changes performed in the current spell, including only undoing a limit set of changes in FIFO order. This can be used to create complex animations within a single spell." ],
       "examples" : [ "counterspell", "rollback", "stream" ],
       "name" : "Undo",
-      "parameters" : [ "admin_permission", "cancel", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
+      "parameters" : {
+        "admin_permission" : null,
+        "cancel" : "true",
+        "target_block_timeout" : "0",
+        "target_blocks" : "true",
+        "target_caster" : "false",
+        "target_down" : "false",
+        "target_other_blocks" : "false",
+        "target_spell" : null,
+        "target_timeout" : "0",
+        "undo_oldest" : "0",
+        "undo_to" : "0"
+      },
       "short_class" : "Undo"
     },
     "vanish" : {
@@ -1186,7 +2454,9 @@
       "description" : [ "Vanish the target player, making them completely invisible to other players" ],
       "examples" : [ ],
       "name" : "Vanish",
-      "parameters" : [ "vanish" ],
+      "parameters" : {
+        "vanish" : "true"
+      },
       "short_class" : "Vanish"
     },
     "velocity" : {
@@ -1195,7 +2465,22 @@
       "description" : [ "Apply velocity to the target entity", "Can be used to push or pull the entity away or towards the caster", "Can modify the velicity applied based on the target's distance from the ground, for a spell that applies a higher speed when up in the air" ],
       "examples" : [ "fling", "grab", "pull", "push", "tornado" ],
       "name" : "Velocity",
-      "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "speed", "velocity_max_distance", "y_offset" ],
+      "parameters" : {
+        "additive" : "false",
+        "damaged" : "true",
+        "direction" : null,
+        "exemption_duration" : "0",
+        "item_speed" : "1.0",
+        "living_entity_speed" : "1.0",
+        "max_altitude" : "64",
+        "max_magnitude" : "0.0",
+        "max_speed" : "0.0",
+        "min_speed" : "0.0",
+        "push" : "0.0",
+        "speed" : "1.0",
+        "velocity_max_distance" : "0.0",
+        "y_offset" : "0.0"
+      },
       "short_class" : "Velocity"
     },
     "volume" : {
@@ -1204,7 +2489,28 @@
       "description" : [ "Target all blocks within a cuboid volume" ],
       "examples" : [ "bubble", "rainbow", "tendril", "tornado", "wave" ],
       "name" : "Volume",
-      "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
+      "parameters" : {
+        "center_probability" : "1.0",
+        "center_x" : "true",
+        "center_y" : "true",
+        "center_z" : "true",
+        "orient" : "false",
+        "orient_pitch" : "false",
+        "orient_pitch_snap" : "0.0",
+        "orient_snap" : "0.0",
+        "outer_probability" : "1.0",
+        "probability" : "1.0",
+        "radius" : "2.0",
+        "radius_padding" : "0.25",
+        "reorient" : "true",
+        "replace" : "false",
+        "thickness" : "0.0",
+        "use_brush_size" : "false",
+        "volume_type" : null,
+        "x_size" : "2.0",
+        "y_size" : "2.0",
+        "z_size" : "2.0"
+      },
       "short_class" : "Volume"
     },
     "wear" : {
@@ -1213,7 +2519,15 @@
       "description" : [ "Force the target to wear a specific block or item on their head", "Can also be used to force the caster to wear the target block" ],
       "examples" : [ ],
       "name" : "Wear",
-      "parameters" : [ "armor_slot", "enchantments-map", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
+      "parameters" : {
+        "armor_slot" : "3",
+        "enchantments-map" : null,
+        "item" : null,
+        "material" : null,
+        "return_on_finish" : "false",
+        "unbreakable" : "true",
+        "use_item" : "false"
+      },
       "short_class" : "Wear"
     },
     "weather" : {
@@ -1222,7 +2536,9 @@
       "description" : [ "Change the weather in the target world" ],
       "examples" : [ "day", "night", "weather" ],
       "name" : "Weather",
-      "parameters" : [ "weather" ],
+      "parameters" : {
+        "weather" : ""
+      },
       "short_class" : "Weather"
     }
   },
@@ -1272,7 +2588,68 @@
       "name" : "Undo"
     }
   },
-  "effect_parameters" : [ "color", "color2", "color_override", "custom_sound", "delay", "effect", "entity_effect", "firework", "firework_flicker", "firework_power", "firework_silent", "location", "material", "offset", "orient", "origin_offset", "particle", "particle_override", "relative_offset", "relative_target_offset", "reorient", "requires_entity", "requires_entity_target", "sample", "sample-string", "sound", "sound_broadcast", "sound_pitch", "sound_volume", "source_location", "target_location", "target_offset", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
+  "effect_parameters" : {
+    "asynchronous" : "true",
+    "auto_orient" : "false",
+    "color" : null,
+    "color2" : null,
+    "color_override" : null,
+    "custom_sound" : null,
+    "delay" : "0",
+    "disappear_with_origin_entity" : "false",
+    "disappear_with_target_entity" : "false",
+    "duration" : null,
+    "effect" : null,
+    "entity_effect" : null,
+    "firework" : null,
+    "firework_flicker" : "false",
+    "firework_power" : "1",
+    "firework_silent" : "true",
+    "iterations" : "0",
+    "location" : "origin",
+    "material" : null,
+    "material_data" : null,
+    "offset" : null,
+    "orient" : "false",
+    "origin_offset" : null,
+    "particle" : null,
+    "particle_count" : "1",
+    "particle_offset_x" : "0.0",
+    "particle_offset_y" : "0.0",
+    "particle_offset_z" : "0.0",
+    "particle_override" : null,
+    "period" : "1",
+    "pitch" : null,
+    "pitch_offset" : "0.0",
+    "relative_offset" : null,
+    "relative_target_offset" : null,
+    "reorient" : "false",
+    "requires_entity" : "false",
+    "requires_entity_target" : "false",
+    "sample" : "",
+    "sample-string" : null,
+    "sound" : null,
+    "sound_broadcast" : "true",
+    "sound_pitch" : "1.0",
+    "sound_volume" : "1.0",
+    "source_location" : "",
+    "speed" : "0.0",
+    "target_location" : "",
+    "target_offset" : null,
+    "target_players" : null,
+    "type" : "INSTANT",
+    "update_directions" : "true",
+    "update_locations" : "true",
+    "use_block_location" : "false",
+    "use_cast_location" : "false",
+    "use_eye_location" : "false",
+    "use_hit_location" : "true",
+    "use_target_location" : "false",
+    "use_wand_location" : "false",
+    "visible_range" : "32.0",
+    "yaw" : null,
+    "yaw_offset" : "0.0"
+  },
   "effectlib_effects" : {
     "animated_ball" : {
       "category" : "",
@@ -1280,7 +2657,21 @@
       "description" : [ "An animated swirl that follows the shape of a sphere" ],
       "examples" : [ ],
       "name" : "Animated Ball",
-      "parameters" : [ "particle", "particles", "particles_per_iteration", "size", "x_factor", "x_offset", "x_rotation", "y_factor", "y_offset", "y_rotation", "z_factor", "z_offset", "z_rotation" ],
+      "parameters" : {
+        "particle" : "SPELL_WITCH",
+        "particles" : "150",
+        "particles_per_iteration" : "10",
+        "size" : "1.0",
+        "x_factor" : "1.0",
+        "x_offset" : "0.0",
+        "x_rotation" : "0.0",
+        "y_factor" : "2.0",
+        "y_offset" : "0.8",
+        "y_rotation" : "0.0",
+        "z_factor" : "1.0",
+        "z_offset" : "0.0",
+        "z_rotation" : "0.0"
+      },
       "short_class" : "AnimatedBall"
     },
     "arc" : {
@@ -1289,7 +2680,11 @@
       "description" : [ "An arc that extends from the source location to the target location" ],
       "examples" : [ ],
       "name" : "Arc",
-      "parameters" : [ "height", "particle", "particles" ],
+      "parameters" : {
+        "height" : "2.0",
+        "particle" : "FLAME",
+        "particles" : "100"
+      },
       "short_class" : "Arc"
     },
     "atom" : {
@@ -1298,7 +2693,19 @@
       "description" : [ "A model of an atom with a nuclues and one or more orbitals" ],
       "examples" : [ ],
       "name" : "Atom",
-      "parameters" : [ "angular_velocity", "color_nucleus", "color_orbital", "orbitals", "particle_nucleus", "particle_orbital", "particles_nucleus", "particles_orbital", "radius", "radius_nucleus", "rotation" ],
+      "parameters" : {
+        "angular_velocity" : "0.039269908169872414",
+        "color_nucleus" : null,
+        "color_orbital" : null,
+        "orbitals" : "3",
+        "particle_nucleus" : "DRIP_WATER",
+        "particle_orbital" : "DRIP_LAVA",
+        "particles_nucleus" : "10",
+        "particles_orbital" : "10",
+        "radius" : "3.0",
+        "radius_nucleus" : "0.2",
+        "rotation" : "0.0"
+      },
       "short_class" : "Atom"
     },
     "big_bang" : {
@@ -1307,7 +2714,19 @@
       "description" : [ "A big explosion with loud sounds" ],
       "examples" : [ ],
       "name" : "Big Bang",
-      "parameters" : [ "color2", "color3", "explosions", "fade_color", "firework_type", "intensity", "radius", "sound", "sound_interval", "sound_pitch", "sound_volume" ],
+      "parameters" : {
+        "color2" : "Color:[rgb0xFFA50]",
+        "color3" : "Color:[rgb0x000]",
+        "explosions" : "10",
+        "fade_color" : "Color:[rgb0x000]",
+        "firework_type" : "BURST",
+        "intensity" : "2",
+        "radius" : "2.0",
+        "sound" : "ENTITY_GENERIC_EXPLODE",
+        "sound_interval" : "5",
+        "sound_pitch" : "1.0",
+        "sound_volume" : "100.0"
+      },
       "short_class" : "BigBang"
     },
     "bleed" : {
@@ -1316,7 +2735,10 @@
       "description" : [ "Make it look like a player is bleeding, an optionally apply the hurt effect" ],
       "examples" : [ ],
       "name" : "Bleed",
-      "parameters" : [ "height", "hurt" ],
+      "parameters" : {
+        "height" : "1.75",
+        "hurt" : "true"
+      },
       "short_class" : "Bleed"
     },
     "circle" : {
@@ -1325,7 +2747,22 @@
       "description" : [ "A 2D circle" ],
       "examples" : [ ],
       "name" : "Circle",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "particle", "particles", "radius", "whole_circle", "x_rotation", "x_subtract", "y_rotation", "y_subtract", "z_rotation", "z_subtract" ],
+      "parameters" : {
+        "angular_velocity_x" : "0.015707963267948967",
+        "angular_velocity_y" : "0.018479956785822312",
+        "angular_velocity_z" : "0.02026833970057931",
+        "enable_rotation" : "true",
+        "particle" : "VILLAGER_HAPPY",
+        "particles" : "20",
+        "radius" : "0.4",
+        "whole_circle" : "false",
+        "x_rotation" : "0.0",
+        "x_subtract" : "0.0",
+        "y_rotation" : "0.0",
+        "y_subtract" : "0.0",
+        "z_rotation" : "0.0",
+        "z_subtract" : "0.0"
+      },
       "short_class" : "Circle"
     },
     "cloud" : {
@@ -1334,7 +2771,14 @@
       "description" : [ "A puffy cloud" ],
       "examples" : [ ],
       "name" : "Cloud",
-      "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "main_particle", "particle_radius", "y_offset" ],
+      "parameters" : {
+        "cloud_color" : null,
+        "cloud_particle" : "CLOUD",
+        "cloud_size" : "0.7",
+        "main_particle" : "DRIP_WATER",
+        "particle_radius" : "0.59999996",
+        "y_offset" : "0.8"
+      },
       "short_class" : "Cloud"
     },
     "colored_image" : {
@@ -1343,7 +2787,20 @@
       "description" : [ "Draw an image or animated gif using redstone or other colored particles" ],
       "examples" : [ ],
       "name" : "Colored Image",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
+      "parameters" : {
+        "angular_velocity_x" : "0.015707963267948967",
+        "angular_velocity_y" : "0.018479956785822312",
+        "angular_velocity_z" : "0.02026833970057931",
+        "enable_rotation" : "true",
+        "file_name" : null,
+        "frame_delay" : "5",
+        "particle" : "REDSTONE",
+        "plane" : "XYZ",
+        "size" : "0.025",
+        "step_x" : "10",
+        "step_y" : "10",
+        "transparency" : "false"
+      },
       "short_class" : "ColoredImage"
     },
     "cone" : {
@@ -1352,7 +2809,16 @@
       "description" : [ "A swirly cone extending out from the source location" ],
       "examples" : [ ],
       "name" : "Cone",
-      "parameters" : [ "angular_velocity", "length_grow", "particle", "particles", "particles_cone", "radius_grow", "randomize", "rotation" ],
+      "parameters" : {
+        "angular_velocity" : "0.19634954084936207",
+        "length_grow" : "0.05",
+        "particle" : "FLAME",
+        "particles" : "10",
+        "particles_cone" : "180",
+        "radius_grow" : "0.006",
+        "randomize" : "false",
+        "rotation" : "0.0"
+      },
       "short_class" : "Cone"
     },
     "cube" : {
@@ -1361,7 +2827,16 @@
       "description" : [ "A wireframe cube" ],
       "examples" : [ ],
       "name" : "Cube",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "edge_length", "enable_rotation", "outline_only", "particle", "particles" ],
+      "parameters" : {
+        "angular_velocity_x" : "0.015707963267948967",
+        "angular_velocity_y" : "0.018479956785822312",
+        "angular_velocity_z" : "0.02026833970057931",
+        "edge_length" : "3.0",
+        "enable_rotation" : "true",
+        "outline_only" : "true",
+        "particle" : "FLAME",
+        "particles" : "8"
+      },
       "short_class" : "Cube"
     },
     "cylinder" : {
@@ -1370,7 +2845,20 @@
       "description" : [ "A cylinder that may be hollow or solid" ],
       "examples" : [ ],
       "name" : "Cylinder",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "height", "particle", "particles", "radius", "rotation_x", "rotation_y", "rotation_z", "solid" ],
+      "parameters" : {
+        "angular_velocity_x" : "0.015707963267948967",
+        "angular_velocity_y" : "0.018479956785822312",
+        "angular_velocity_z" : "0.02026833970057931",
+        "enable_rotation" : "true",
+        "height" : "3.0",
+        "particle" : "FLAME",
+        "particles" : "100",
+        "radius" : "1.0",
+        "rotation_x" : "0.0",
+        "rotation_y" : "0.0",
+        "rotation_z" : "0.0",
+        "solid" : "false"
+      },
       "short_class" : "Cylinder"
     },
     "disco_ball" : {
@@ -1379,7 +2867,18 @@
       "description" : [ "A shiny disco ball in the sky" ],
       "examples" : [ ],
       "name" : "Disco Ball",
-      "parameters" : [ "direction-disco_ball_effect_direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
+      "parameters" : {
+        "direction-disco_ball_effect_direction" : "DOWN",
+        "line_color" : null,
+        "line_particle" : "REDSTONE",
+        "line_particles" : "100",
+        "max" : "15",
+        "max_lines" : "7",
+        "sphere_color" : null,
+        "sphere_particle" : "FLAME",
+        "sphere_particles" : "50",
+        "sphere_radius" : "0.6"
+      },
       "short_class" : "DiscoBall"
     },
     "dna" : {
@@ -1388,7 +2887,21 @@
       "description" : [ "Extends a strand of DNA with helixes rotating around a base" ],
       "examples" : [ ],
       "name" : "Dna",
-      "parameters" : [ "base_interval", "color_base1", "color_base2", "color_helix", "grow", "length", "particle_base1", "particle_base2", "particle_helix", "particles_base", "particles_helix", "radials", "radius" ],
+      "parameters" : {
+        "base_interval" : "10.0",
+        "color_base1" : null,
+        "color_base2" : null,
+        "color_helix" : null,
+        "grow" : "0.2",
+        "length" : "15.0",
+        "particle_base1" : "WATER_WAKE",
+        "particle_base2" : "REDSTONE",
+        "particle_helix" : "FLAME",
+        "particles_base" : "15",
+        "particles_helix" : "3",
+        "radials" : "0.10471975511965977",
+        "radius" : "1.5"
+      },
       "short_class" : "Dna"
     },
     "donut" : {
@@ -1397,7 +2910,16 @@
       "description" : [ "A torus shape" ],
       "examples" : [ ],
       "name" : "Donut",
-      "parameters" : [ "circles", "particle", "particles_circle", "radius_donut", "radius_tube", "x_rotation", "y_rotation", "z_rotation" ],
+      "parameters" : {
+        "circles" : "36",
+        "particle" : "FLAME",
+        "particles_circle" : "10",
+        "radius_donut" : "2.0",
+        "radius_tube" : "0.5",
+        "x_rotation" : "0.0",
+        "y_rotation" : "0.0",
+        "z_rotation" : "0.0"
+      },
       "short_class" : "Donut"
     },
     "dragon" : {
@@ -1406,7 +2928,13 @@
       "description" : [ "Strands of fire that shoot out in arcs" ],
       "examples" : [ ],
       "name" : "Dragon",
-      "parameters" : [ "arcs", "length", "particle", "particles", "steps_per_iteration" ],
+      "parameters" : {
+        "arcs" : "20",
+        "length" : "4.0",
+        "particle" : "FLAME",
+        "particles" : "30",
+        "steps_per_iteration" : "2"
+      },
       "short_class" : "Dragon"
     },
     "earth" : {
@@ -1415,7 +2943,12 @@
       "description" : [ "A sphere that resembles the earth" ],
       "examples" : [ ],
       "name" : "Earth",
-      "parameters" : [ "mountain_height", "particles", "precision", "radius" ],
+      "parameters" : {
+        "mountain_height" : "0.5",
+        "particles" : "500",
+        "precision" : "100",
+        "radius" : "1.0"
+      },
       "short_class" : "Earth"
     },
     "equation" : {
@@ -1424,7 +2957,23 @@
       "description" : [ "Uses equations to render a particle each tick.", "Is capable of parametric equations, rendering multiple particles per tick.", "Equations use a 't' variable by default to represent the current tick, this variable starts at zero and counts up." ],
       "examples" : [ ],
       "name" : "Equation",
-      "parameters" : [ "cycle_mini_step", "max_steps", "orient", "orient_pitch", "particle", "particles", "particles2", "variable", "variable2", "x2_equation", "x_equation", "y2_equation", "y_equation", "z2_equation", "z_equation" ],
+      "parameters" : {
+        "cycle_mini_step" : "true",
+        "max_steps" : "0",
+        "orient" : "true",
+        "orient_pitch" : "true",
+        "particle" : "REDSTONE",
+        "particles" : "1",
+        "particles2" : "0",
+        "variable" : "t",
+        "variable2" : "t2",
+        "x2_equation" : null,
+        "x_equation" : "t",
+        "y2_equation" : null,
+        "y_equation" : "0",
+        "z2_equation" : null,
+        "z_equation" : "0"
+      },
       "short_class" : "Equation"
     },
     "explode" : {
@@ -1433,7 +2982,10 @@
       "description" : [ "A large explosion" ],
       "examples" : [ ],
       "name" : "Explode",
-      "parameters" : [ "amount", "sound" ],
+      "parameters" : {
+        "amount" : "25",
+        "sound" : "ENTITY_GENERIC_EXPLODE"
+      },
       "short_class" : "Explode"
     },
     "flame" : {
@@ -1442,7 +2994,7 @@
       "description" : [ "Make something look like it's on fire" ],
       "examples" : [ ],
       "name" : "Flame",
-      "parameters" : [ ],
+      "parameters" : { },
       "short_class" : "Flame"
     },
     "fountain" : {
@@ -1451,7 +3003,17 @@
       "description" : [ "A fountain of particles shooting up in the sky" ],
       "examples" : [ ],
       "name" : "Fountain",
-      "parameters" : [ "height", "height_spout", "particle", "particles_spout", "particles_strand", "radius", "radius_spout", "rotation", "strands" ],
+      "parameters" : {
+        "height" : "3.0",
+        "height_spout" : "7.0",
+        "particle" : "WATER_SPLASH",
+        "particles_spout" : "200",
+        "particles_strand" : "150",
+        "radius" : "5.0",
+        "radius_spout" : "0.1",
+        "rotation" : "0.7853981633974483",
+        "strands" : "10"
+      },
       "short_class" : "Fountain"
     },
     "grid" : {
@@ -1460,7 +3022,16 @@
       "description" : [ "Create a 2D wireframe grid" ],
       "examples" : [ ],
       "name" : "Grid",
-      "parameters" : [ "columns", "height_cell", "particle", "particles_height", "particles_width", "rotation", "rows", "width_cell" ],
+      "parameters" : {
+        "columns" : "10",
+        "height_cell" : "1.0",
+        "particle" : "FLAME",
+        "particles_height" : "3",
+        "particles_width" : "4",
+        "rotation" : "0.0",
+        "rows" : "5",
+        "width_cell" : "1.0"
+      },
       "short_class" : "Grid"
     },
     "heart" : {
@@ -1469,7 +3040,18 @@
       "description" : [ "Creates a 2D heart in 3D space" ],
       "examples" : [ ],
       "name" : "Heart",
-      "parameters" : [ "compilaction", "compress_y_factor_total", "factor_inner_spike", "particle", "particles", "x_factor", "x_rotation", "y_factor", "y_rotation", "z_rotation" ],
+      "parameters" : {
+        "compilaction" : "2.0",
+        "compress_y_factor_total" : "2.0",
+        "factor_inner_spike" : "0.8",
+        "particle" : "CRIT_MAGIC",
+        "particles" : "50",
+        "x_factor" : "1.0",
+        "x_rotation" : "0.0",
+        "y_factor" : "1.0",
+        "y_rotation" : "0.0",
+        "z_rotation" : "0.0"
+      },
       "short_class" : "Heart"
     },
     "helix" : {
@@ -1478,7 +3060,14 @@
       "description" : [ "A flat spiralling helix" ],
       "examples" : [ ],
       "name" : "Helix",
-      "parameters" : [ "curve", "particle", "particles", "radius", "rotation", "strands" ],
+      "parameters" : {
+        "curve" : "10.0",
+        "particle" : "FLAME",
+        "particles" : "80",
+        "radius" : "10.0",
+        "rotation" : "0.7853981633974483",
+        "strands" : "8"
+      },
       "short_class" : "Helix"
     },
     "hill" : {
@@ -1487,7 +3076,13 @@
       "description" : [ "Waving hills" ],
       "examples" : [ ],
       "name" : "Hill",
-      "parameters" : [ "edge_length", "height", "particle", "particles", "y_rotation" ],
+      "parameters" : {
+        "edge_length" : "6.5",
+        "height" : "2.5",
+        "particle" : "FLAME",
+        "particles" : "30.0",
+        "y_rotation" : "0.4487989505128276"
+      },
       "short_class" : "Hill"
     },
     "icon" : {
@@ -1496,7 +3091,10 @@
       "description" : [ "A single particle appears above the target" ],
       "examples" : [ ],
       "name" : "Icon",
-      "parameters" : [ "particle", "y_offset" ],
+      "parameters" : {
+        "particle" : "VILLAGER_ANGRY",
+        "y_offset" : "2"
+      },
       "short_class" : "Icon"
     },
     "image" : {
@@ -1505,7 +3103,21 @@
       "description" : [ "Render a monochrome image from an image file or animated gif.", "Black pixels will be skipped, all other pixels display as the selected particle type" ],
       "examples" : [ ],
       "name" : "Image",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "invert", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
+      "parameters" : {
+        "angular_velocity_x" : "0.015707963267948967",
+        "angular_velocity_y" : "0.018479956785822312",
+        "angular_velocity_z" : "0.02026833970057931",
+        "enable_rotation" : "true",
+        "file_name" : null,
+        "frame_delay" : "5",
+        "invert" : "false",
+        "particle" : "REDSTONE",
+        "plane" : "XYZ",
+        "size" : "0.025",
+        "step_x" : "10",
+        "step_y" : "10",
+        "transparency" : "false"
+      },
       "short_class" : "Image"
     },
     "jump" : {
@@ -1514,7 +3126,9 @@
       "description" : [ "Apply velocity to the target entity" ],
       "examples" : [ ],
       "name" : "Jump",
-      "parameters" : [ "power" ],
+      "parameters" : {
+        "power" : "0.5"
+      },
       "short_class" : "Jump"
     },
     "line" : {
@@ -1523,7 +3137,14 @@
       "description" : [ "Extend a line from the source to the target" ],
       "examples" : [ ],
       "name" : "Line",
-      "parameters" : [ "is_zig_zag", "length", "particle", "particles", "zig_zag_offset", "zig_zags" ],
+      "parameters" : {
+        "is_zig_zag" : "false",
+        "length" : "0.0",
+        "particle" : "FLAME",
+        "particles" : "100",
+        "zig_zag_offset" : "0.0,0.1,0.0",
+        "zig_zags" : "10"
+      },
       "short_class" : "Line"
     },
     "love" : {
@@ -1532,7 +3153,9 @@
       "description" : [ "Make hearts bubble out of the target" ],
       "examples" : [ ],
       "name" : "Love",
-      "parameters" : [ "particle" ],
+      "parameters" : {
+        "particle" : "HEART"
+      },
       "short_class" : "Love"
     },
     "modified" : {
@@ -1541,7 +3164,16 @@
       "description" : [ "Modify any other effect using equations", "Equations can be applied to any parameter of the contained effect.", "Equations can also be used to move the entire effect around." ],
       "examples" : [ "day" ],
       "name" : "Modified",
-      "parameters" : [ "effect", "effect_class", "orient", "orient_pitch", "parameters", "x_equation", "y_equation", "z_equation" ],
+      "parameters" : {
+        "effect" : null,
+        "effect_class" : null,
+        "orient" : "true",
+        "orient_pitch" : "false",
+        "parameters" : "{}",
+        "x_equation" : null,
+        "y_equation" : null,
+        "z_equation" : null
+      },
       "short_class" : "Modified"
     },
     "music" : {
@@ -1550,7 +3182,10 @@
       "description" : [ "A ring of musical notes" ],
       "examples" : [ ],
       "name" : "Music",
-      "parameters" : [ "radials_per_step", "radius" ],
+      "parameters" : {
+        "radials_per_step" : "0.39269908169872414",
+        "radius" : "0.4"
+      },
       "short_class" : "Music"
     },
     "plot" : {
@@ -1559,7 +3194,16 @@
       "description" : [ "Create a simple graph of an equation using separate x and y equations.", "This is primarily intended for testing equations, and not really meant to be used for in-game effects" ],
       "examples" : [ ],
       "name" : "Plot",
-      "parameters" : [ "particle", "persistent", "x_equation", "x_scale", "y_equation", "y_scale", "z_equation", "z_scale" ],
+      "parameters" : {
+        "particle" : "REDSTONE",
+        "persistent" : "true",
+        "x_equation" : null,
+        "x_scale" : "1.0",
+        "y_equation" : null,
+        "y_scale" : "1.0",
+        "z_equation" : null,
+        "z_scale" : "1.0"
+      },
       "short_class" : "Plot"
     },
     "shield" : {
@@ -1568,7 +3212,12 @@
       "description" : [ "Creat a dome around the target" ],
       "examples" : [ ],
       "name" : "Shield",
-      "parameters" : [ "particle", "particles", "radius", "sphere" ],
+      "parameters" : {
+        "particle" : "FLAME",
+        "particles" : "50",
+        "radius" : "3.0",
+        "sphere" : "false"
+      },
       "short_class" : "Shield"
     },
     "sky_rocket" : {
@@ -1577,7 +3226,9 @@
       "description" : [ "Send the target entity flying into the sky" ],
       "examples" : [ ],
       "name" : "Sky Rocket",
-      "parameters" : [ "power" ],
+      "parameters" : {
+        "power" : "10.0"
+      },
       "short_class" : "SkyRocket"
     },
     "smoke" : {
@@ -1586,7 +3237,9 @@
       "description" : [ "Make it appear as though the target is smoldering" ],
       "examples" : [ ],
       "name" : "Smoke",
-      "parameters" : [ "particle" ],
+      "parameters" : {
+        "particle" : "SMOKE_NORMAL"
+      },
       "short_class" : "Smoke"
     },
     "sphere" : {
@@ -1595,7 +3248,13 @@
       "description" : [ "Create a 3D sphere" ],
       "examples" : [ ],
       "name" : "Sphere",
-      "parameters" : [ "particle", "particles", "radius", "radius_increase", "y_offset" ],
+      "parameters" : {
+        "particle" : "SPELL_MOB",
+        "particles" : "50",
+        "radius" : "0.6",
+        "radius_increase" : "0.0",
+        "y_offset" : "0.0"
+      },
       "short_class" : "Sphere"
     },
     "star" : {
@@ -1604,7 +3263,13 @@
       "description" : [ "Create a 2D star" ],
       "examples" : [ ],
       "name" : "Star",
-      "parameters" : [ "inner_radius", "particle", "particles", "spike_height", "spikes_half" ],
+      "parameters" : {
+        "inner_radius" : "0.5",
+        "particle" : "FLAME",
+        "particles" : "50",
+        "spike_height" : "3.5",
+        "spikes_half" : "3"
+      },
       "short_class" : "Star"
     },
     "text" : {
@@ -1613,7 +3278,16 @@
       "description" : [ "Render text in the air using particles" ],
       "examples" : [ ],
       "name" : "Text",
-      "parameters" : [ "font", "invert", "particle", "realtime", "size", "step_x", "step_y", "text" ],
+      "parameters" : {
+        "font" : "java.awt.Font[family=Tahoma,name=Tahoma,style=plain,size=16]",
+        "invert" : "false",
+        "particle" : "FIREWORKS_SPARK",
+        "realtime" : "false",
+        "size" : "0.2",
+        "step_x" : "1",
+        "step_y" : "1",
+        "text" : "Text"
+      },
       "short_class" : "Text"
     },
     "tornado" : {
@@ -1622,7 +3296,19 @@
       "description" : [ "A swirling tornado of particles" ],
       "examples" : [ ],
       "name" : "Tornado",
-      "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "distance", "max_tornado_radius", "show_cloud", "show_tornado", "tornado_color", "tornado_height", "tornado_particle", "y_offset" ],
+      "parameters" : {
+        "cloud_color" : null,
+        "cloud_particle" : "CLOUD",
+        "cloud_size" : "2.5",
+        "distance" : "0.375",
+        "max_tornado_radius" : "5.0",
+        "show_cloud" : "true",
+        "show_tornado" : "true",
+        "tornado_color" : null,
+        "tornado_height" : "5.0",
+        "tornado_particle" : "FLAME",
+        "y_offset" : "0.8"
+      },
       "short_class" : "Tornado"
     },
     "trace" : {
@@ -1631,7 +3317,11 @@
       "description" : [ "Trail particles behind the target entity" ],
       "examples" : [ ],
       "name" : "Trace",
-      "parameters" : [ "max_way_points", "particle", "refresh" ],
+      "parameters" : {
+        "max_way_points" : "30",
+        "particle" : "FLAME",
+        "refresh" : "5"
+      },
       "short_class" : "Trace"
     },
     "turn" : {
@@ -1640,7 +3330,9 @@
       "description" : [ "Make the target entity change directions" ],
       "examples" : [ ],
       "name" : "Turn",
-      "parameters" : [ "step" ],
+      "parameters" : {
+        "step" : "11.25"
+      },
       "short_class" : "Turn"
     },
     "vortex" : {
@@ -1649,7 +3341,14 @@
       "description" : [ "Create a swirling vortex" ],
       "examples" : [ ],
       "name" : "Vortex",
-      "parameters" : [ "circles", "grow", "helixes", "particle", "radials", "radius" ],
+      "parameters" : {
+        "circles" : "3",
+        "grow" : "0.05",
+        "helixes" : "4",
+        "particle" : "FLAME",
+        "radials" : "0.19634954084936207",
+        "radius" : "2.0"
+      },
       "short_class" : "Vortex"
     },
     "warp" : {
@@ -1658,7 +3357,13 @@
       "description" : [ "Rings that descend around the target, as if they had stepped on a teleporter pad" ],
       "examples" : [ ],
       "name" : "Warp",
-      "parameters" : [ "grow", "particle", "particles", "radius", "rings" ],
+      "parameters" : {
+        "grow" : "0.2",
+        "particle" : "FIREWORKS_SPARK",
+        "particles" : "20",
+        "radius" : "1.0",
+        "rings" : "12"
+      },
       "short_class" : "Warp"
     },
     "wave" : {
@@ -1667,12 +3372,94 @@
       "description" : [ "Create a wavy horizontal plane" ],
       "examples" : [ ],
       "name" : "Wave",
-      "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity-vector", "width" ],
+      "parameters" : {
+        "cloud_color" : null,
+        "cloud_particle" : "CLOUD",
+        "depth_front" : "1.0",
+        "height" : "2.0",
+        "height_back" : "0.5",
+        "length_back" : "3.0",
+        "length_front" : "1.5",
+        "particle" : "DRIP_WATER",
+        "particles_back" : "10",
+        "particles_front" : "10",
+        "rows" : "20",
+        "velocity-vector" : "0.0,0.0,0.0",
+        "width" : "5.0"
+      },
       "short_class" : "Wave"
     }
   },
-  "effectlib_parameters" : [ "asynchronous", "auto_orient", "color", "delay", "disappear_with_origin_entity", "disappear_with_target_entity", "duration", "effect_type", "iterations", "material", "material_data", "offset", "particle_count", "particle_offset_x", "particle_offset_y", "particle_offset_z", "period", "pitch", "pitch_offset", "relative_offset", "speed", "target_offset", "target_players", "type", "update_directions", "update_locations", "visible_range", "yaw", "yaw_offset" ],
-  "mob_properties" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "disguise-map", "drop_xp", "drops", "entity_attributes", "health", "helmet", "interact_spell", "interval", "item", "leggings", "mage", "max_health", "name", "potion_effects", "protection", "silent", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
+  "effectlib_parameters" : {
+    "asynchronous" : null,
+    "auto_orient" : null,
+    "color" : null,
+    "delay" : null,
+    "disappear_with_origin_entity" : null,
+    "disappear_with_target_entity" : null,
+    "duration" : null,
+    "effect_type" : null,
+    "iterations" : null,
+    "material" : null,
+    "material_data" : null,
+    "offset" : null,
+    "particle_count" : null,
+    "particle_offset_x" : null,
+    "particle_offset_y" : null,
+    "particle_offset_z" : null,
+    "period" : null,
+    "pitch" : null,
+    "pitch_offset" : null,
+    "relative_offset" : null,
+    "speed" : null,
+    "target_offset" : null,
+    "target_players" : null,
+    "type" : null,
+    "update_directions" : null,
+    "update_locations" : null,
+    "visible_range" : null,
+    "yaw" : null,
+    "yaw_offset" : null
+  },
+  "mob_properties" : {
+    "aggro" : "true",
+    "ai" : "true",
+    "amount" : "1",
+    "attributes" : null,
+    "baby" : "false",
+    "boots" : null,
+    "can_pickup_items" : "false",
+    "cast" : null,
+    "cast_interval" : "0",
+    "cast_requires_item" : null,
+    "cast_requires_target" : "true",
+    "chestplate" : null,
+    "default_drops" : "true",
+    "disguise-map" : null,
+    "drop_xp" : "0",
+    "drops" : null,
+    "entity_attributes" : null,
+    "health" : "1.0",
+    "helmet" : null,
+    "interact_spell" : null,
+    "interval" : "0",
+    "item" : null,
+    "leggings" : null,
+    "mage" : null,
+    "max_health" : "1.0",
+    "name" : null,
+    "potion_effects" : null,
+    "protection" : null,
+    "silent" : "false",
+    "strength" : null,
+    "tags" : null,
+    "tamed" : "false",
+    "track_radius" : "128.0",
+    "triggers" : null,
+    "type" : null,
+    "weakness" : null,
+    "xp" : "0"
+  },
   "properties" : {
     "actions" : {
       "category" : "actions",
@@ -3402,7 +5189,7 @@
       "type" : "effect_type"
     },
     "effects" : {
-      "category" : "",
+      "category" : "base",
       "description" : [ "" ],
       "field" : "effects",
       "name" : "Effects",
@@ -8073,8 +9860,160 @@
       "type" : "integer"
     }
   },
-  "spell_parameters" : [ "allow_max_range", "backfire_chance", "bb", "bp", "brush", "bu", "bypass", "bypass_break", "bypass_build", "bypass_deactivate", "bypass_mage_cooldown", "bypass_permissions", "bypass_protection", "bypass_pvp", "bypass_undo", "cancel_on_cast_other", "cancel_on_damage", "cancel_on_no_permission", "cancel_on_no_wand", "cd", "check_destructible", "check_protection", "close_fov", "close_range", "command_block_allowed", "consume_reduction", "cool", "cooldown", "cooldown_reduction", "cost_reduction", "damage_resistance_protection", "destructible", "destructible_durability", "destructible_override", "display_cooldown", "distance_weight", "duration", "entity_undo", "entity_undo_types", "entity_weight", "fizzle_chance", "fov", "fov_weight", "free", "hitbox", "hitbox_block_size", "hitbox_size", "id", "ignore_blocks", "ignore_types", "indestructible", "instant_block_effects", "loud", "message_targets", "npc_weight", "origin_at_target", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "passive", "passthrough", "player_weight", "prevent_passthrough", "pworld", "quiet", "range", "range_padding", "reflective", "reflective_override", "reverse_targeting", "t2world", "target", "target_armor_stand", "target_breakable_depth", "target_breakables", "target_contents", "target_invisible", "target_min_offset", "target_name", "target_npc", "target_self", "target_tamed", "target_type", "target_underwater", "target_unknown", "target_vanished", "targetable", "tmo", "total_duration", "transparent", "tworld", "u", "undo", "undo_speed", "unsafe", "vertical_range", "warmup" ],
-  "spell_properties" : [ "actions", "active_costs", "alias", "brush_effects", "brush_selection", "cancel_effects", "cancellable", "cast_on_no_target", "category", "color", "costs", "description", "disable_mana_regeneration", "disguise_restricted", "earns_cooldown", "earns_sp", "effects-map", "extended_description", "glide_exclusive", "glide_restricted", "hidden", "icon", "icon_disabled", "icon_disabled_url", "icon_url", "inherit", "level_description", "name", "parameters", "progress_description", "progress_levels", "pvp_restricted", "quick_cast", "removes_spells", "require_break", "require_build", "require_health_percentage", "requirements", "show_undoable", "tags", "toggle", "undoable", "upgrade_required_casts", "upgrade_required_path", "upgrade_required_path_tags", "uses_brush", "world_border_restricted", "worth", "worth_sp" ],
+  "spell_parameters" : {
+    "allow_max_range" : "false",
+    "backfire_chance" : "0.0",
+    "bb" : "false",
+    "bp" : "false",
+    "brush" : null,
+    "bu" : "false",
+    "bypass" : "false",
+    "bypass_break" : "false",
+    "bypass_build" : "false",
+    "bypass_deactivate" : "false",
+    "bypass_mage_cooldown" : "false",
+    "bypass_permissions" : "false",
+    "bypass_protection" : "false",
+    "bypass_pvp" : "false",
+    "bypass_undo" : "false",
+    "cancel_on_cast_other" : "false",
+    "cancel_on_damage" : "0.0",
+    "cancel_on_no_permission" : "false",
+    "cancel_on_no_wand" : "false",
+    "cd" : "true",
+    "check_destructible" : "true",
+    "check_protection" : "false",
+    "close_fov" : "0.5",
+    "close_range" : "0.0",
+    "command_block_allowed" : "true",
+    "consume_reduction" : "0.0",
+    "cool" : "0",
+    "cooldown" : "0",
+    "cooldown_reduction" : "0.0",
+    "cost_reduction" : "0.0",
+    "damage_resistance_protection" : "0",
+    "destructible" : null,
+    "destructible_durability" : "0.0",
+    "destructible_override" : "false",
+    "display_cooldown" : "-1",
+    "distance_weight" : "1.0",
+    "duration" : "0",
+    "entity_undo" : "false",
+    "entity_undo_types" : null,
+    "entity_weight" : "3",
+    "fizzle_chance" : "0.0",
+    "fov" : "0.3",
+    "fov_weight" : "4.0",
+    "free" : "false",
+    "hitbox" : "false",
+    "hitbox_block_size" : "0.0",
+    "hitbox_size" : "0.0",
+    "id" : null,
+    "ignore_blocks" : "false",
+    "ignore_types" : null,
+    "indestructible" : null,
+    "instant_block_effects" : "false",
+    "loud" : "false",
+    "message_targets" : "true",
+    "npc_weight" : "-1",
+    "origin_at_target" : "false",
+    "otdx" : null,
+    "otdy" : null,
+    "otdz" : null,
+    "otworld" : null,
+    "otx" : null,
+    "oty" : null,
+    "otz" : null,
+    "passive" : "false",
+    "passthrough" : null,
+    "player_weight" : "4",
+    "prevent_passthrough" : null,
+    "pworld" : null,
+    "quiet" : "false",
+    "range" : "0.0",
+    "range_padding" : "1.0",
+    "reflective" : null,
+    "reflective_override" : "true",
+    "reverse_targeting" : "false",
+    "t2world" : null,
+    "target" : null,
+    "target_armor_stand" : "false",
+    "target_breakable_depth" : "2",
+    "target_breakables" : "1.0",
+    "target_contents" : null,
+    "target_invisible" : "true",
+    "target_min_offset" : "0",
+    "target_name" : null,
+    "target_npc" : "false",
+    "target_self" : "false",
+    "target_tamed" : "true",
+    "target_type" : null,
+    "target_underwater" : "true",
+    "target_unknown" : "true",
+    "target_vanished" : "false",
+    "targetable" : null,
+    "tmo" : "0",
+    "total_duration" : "0",
+    "transparent" : null,
+    "tworld" : null,
+    "u" : "0",
+    "undo" : "0",
+    "undo_speed" : "0.0",
+    "unsafe" : null,
+    "vertical_range" : "8",
+    "warmup" : "0"
+  },
+  "spell_properties" : {
+    "actions" : null,
+    "active_costs" : null,
+    "alias" : "",
+    "brush_effects" : "true",
+    "brush_selection" : "false",
+    "cancel_effects" : "false",
+    "cancellable" : "true",
+    "cast_on_no_target" : "true",
+    "category" : null,
+    "color" : null,
+    "costs" : null,
+    "description" : "",
+    "disable_mana_regeneration" : "false",
+    "disguise_restricted" : "false",
+    "earns_cooldown" : "0",
+    "earns_sp" : "0",
+    "effects-map" : null,
+    "extended_description" : "",
+    "glide_exclusive" : "false",
+    "glide_restricted" : "false",
+    "hidden" : "false",
+    "icon" : null,
+    "icon_disabled" : null,
+    "icon_disabled_url" : null,
+    "icon_url" : null,
+    "inherit" : null,
+    "level_description" : "",
+    "name" : "interrogator",
+    "parameters" : null,
+    "progress_description" : "",
+    "progress_levels" : null,
+    "pvp_restricted" : "false",
+    "quick_cast" : "false",
+    "removes_spells" : null,
+    "require_break" : "false",
+    "require_build" : "false",
+    "require_health_percentage" : "0.0",
+    "requirements" : null,
+    "show_undoable" : "true",
+    "tags" : null,
+    "toggle" : "NONE",
+    "undoable" : "false",
+    "upgrade_required_casts" : "0",
+    "upgrade_required_path" : null,
+    "upgrade_required_path_tags" : null,
+    "uses_brush" : "false",
+    "world_border_restricted" : "false",
+    "worth" : "0.0",
+    "worth_sp" : "0.0"
+  },
   "types" : {
     "actions" : {
       "class_name" : "java.util.Map",
@@ -8364,5 +10303,100 @@
       "options" : [ "clear", "cycle", "storm" ]
     }
   },
-  "wand_properties" : [ "active_brush", "active_effects", "active_spell", "alternate_spell", "alternate_spell2", "attributes", "block_chance", "block_cooldown", "block_fov", "block_mage_cooldown", "block_reflect_chance", "boostable", "bound", "brush_inventory", "brush_mode", "brushes", "cast_interval", "cast_location", "cast_min_bowpull", "cast_min_velocity", "cast_parameters", "cast_spell", "cast_velocity_direction", "class", "classes", "consume_reduction", "consume_spell", "cooldown_reduction", "cost_reduction", "drop", "effect_bubbles", "effect_color", "effect_particle", "effect_particle_count", "effect_particle_data", "effect_particle_interval", "effect_particle_min_velocity", "effect_particle_offset", "effect_particle_radius", "effect_sound", "effect_sound_interval", "enchant_count", "force", "has_uses", "heroes", "hotbar", "hotbar_count", "icon", "icon_inactive", "icon_inactive_delay", "immortal", "indestructible", "inventory_rows", "invulnerable", "item_attributes", "keep", "left_click", "locked", "mana", "mana_max", "mana_max_boost", "mana_per_damage", "mana_regeneration", "mana_regeneration_boost", "max_enchant_count", "mode", "overrides", "passive", "path", "potion_effects", "power", "powered", "protected", "protection", "quick_cast", "quiet", "rename", "rename_description", "right_click", "soul", "sp_multiplier", "spell_inventory", "spell_levels", "spells", "stack", "swap", "template", "track", "undroppable", "unique", "unmoveable", "unstashable", "upgrade", "uses" ]
+  "wand_properties" : {
+    "active_brush" : null,
+    "active_effects" : null,
+    "active_spell" : null,
+    "alternate_spell" : null,
+    "alternate_spell2" : null,
+    "attributes" : null,
+    "block_chance" : null,
+    "block_cooldown" : null,
+    "block_fov" : null,
+    "block_mage_cooldown" : null,
+    "block_reflect_chance" : null,
+    "boostable" : null,
+    "bound" : null,
+    "brush_inventory" : null,
+    "brush_mode" : null,
+    "brushes" : null,
+    "cast_interval" : null,
+    "cast_location" : null,
+    "cast_min_bowpull" : null,
+    "cast_min_velocity" : null,
+    "cast_parameters" : null,
+    "cast_spell" : null,
+    "cast_velocity_direction" : null,
+    "class" : null,
+    "classes" : null,
+    "consume_reduction" : null,
+    "consume_spell" : null,
+    "cooldown_reduction" : null,
+    "cost_reduction" : null,
+    "drop" : null,
+    "effect_bubbles" : null,
+    "effect_color" : null,
+    "effect_particle" : null,
+    "effect_particle_count" : null,
+    "effect_particle_data" : null,
+    "effect_particle_interval" : null,
+    "effect_particle_min_velocity" : null,
+    "effect_particle_offset" : null,
+    "effect_particle_radius" : null,
+    "effect_sound" : null,
+    "effect_sound_interval" : null,
+    "enchant_count" : null,
+    "force" : null,
+    "has_uses" : null,
+    "heroes" : null,
+    "hotbar" : null,
+    "hotbar_count" : null,
+    "icon" : null,
+    "icon_inactive" : null,
+    "icon_inactive_delay" : null,
+    "immortal" : null,
+    "indestructible" : null,
+    "inventory_rows" : null,
+    "invulnerable" : null,
+    "item_attributes" : null,
+    "keep" : null,
+    "left_click" : null,
+    "locked" : null,
+    "mana" : null,
+    "mana_max" : null,
+    "mana_max_boost" : null,
+    "mana_per_damage" : null,
+    "mana_regeneration" : null,
+    "mana_regeneration_boost" : null,
+    "max_enchant_count" : null,
+    "mode" : null,
+    "overrides" : null,
+    "passive" : null,
+    "path" : null,
+    "potion_effects" : null,
+    "power" : null,
+    "powered" : null,
+    "protected" : null,
+    "protection" : null,
+    "quick_cast" : null,
+    "quiet" : null,
+    "rename" : null,
+    "rename_description" : null,
+    "right_click" : null,
+    "soul" : null,
+    "sp_multiplier" : null,
+    "spell_inventory" : null,
+    "spell_levels" : null,
+    "spells" : null,
+    "stack" : null,
+    "swap" : null,
+    "template" : null,
+    "track" : null,
+    "undroppable" : null,
+    "unique" : null,
+    "unmoveable" : null,
+    "unstashable" : null,
+    "upgrade" : null,
+    "uses" : null
+  }
 }
