@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,52 +12,52 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MetaData {
-    private Set<String> mobParameters = new HashSet<>();
-    private Set<String> actionParameters = new HashSet<>();
-    private Set<String> spellParameters = new HashSet<>();
-    private Set<String> spellProperties = new HashSet<>();
+    private ParameterList mobParameters = new ParameterList();
+    private ParameterList actionParameters = new ParameterList();
+    private ParameterList spellParameters = new ParameterList();
+    private ParameterList spellProperties = new ParameterList();
     private Map<String, Category> categories = new HashMap<>();
     private Map<String, SpellActionDescription> actions = new HashMap<>();
-    private Set<String> effectParameters = new HashSet<>();
-    private Set<String> effectLibParameters = new HashSet<>();
+    private ParameterList effectParameters = new ParameterList();
+    private ParameterList effectLibParameters = new ParameterList();
     private Map<String, EffectDescription> effects = new HashMap<>();
-    private Set<String> wandParameters = new HashSet<>();
+    private ParameterList wandParameters = new ParameterList();
     private ParameterStore parameterStore = new ParameterStore();
 
     @JsonProperty("spell_parameters")
-    public List<String> getSpellParameters() {
-        return sortCollection(spellParameters);
+    public ParameterList getSpellParameters() {
+        return spellParameters;
     }
 
     public void setSpellParameters(Set<String> spellParameters) {
-        this.spellParameters = spellParameters;
+        this.spellParameters.add(spellParameters);
     }
 
     @JsonProperty("mob_properties")
-    public List<String> getMobParameters() {
-        return sortCollection(mobParameters);
+    public ParameterList getMobParameters() {
+        return mobParameters;
     }
 
     public void setMobParameters(Set<String> mobParameters) {
-        this.spellParameters = mobParameters;
+        this.mobParameters.add(mobParameters);
     }
 
     @JsonProperty("action_parameters")
-    public List<String> getActiongetActionParaParameters() {
-        return sortCollection(actionParameters);
+    public ParameterList getActionParameters() {
+        return actionParameters;
     }
 
     public void setActionParameters(Set<String> actionParameters) {
-        this.actionParameters = actionParameters;
+        this.actionParameters.add(actionParameters);
     }
 
     @JsonProperty("spell_properties")
-    public List<String> getSpellProperties() {
-        return sortCollection(spellProperties);
+    public ParameterList getSpellProperties() {
+        return spellProperties;
     }
 
     public void setSpellProperties(Set<String> spellProperties) {
-        this.spellProperties = spellProperties;
+        this.spellProperties.add(spellProperties);
     }
 
     @JsonProperty("categories")
@@ -89,21 +88,21 @@ public class MetaData {
     }
 
     @JsonProperty("effect_parameters")
-    public List<String> getEffectParameters() {
-        return sortCollection(effectParameters);
+    public ParameterList getEffectParameters() {
+        return effectParameters;
     }
 
     public void setEffectParameters(Set<String> effectParameters) {
-        this.effectParameters = effectParameters;
+        this.effectParameters.add(effectParameters);
     }
 
     @JsonProperty("effectlib_parameters")
-    public List<String> getEffectLibParameters() {
-        return sortCollection(effectLibParameters);
+    public ParameterList getEffectLibParameters() {
+        return effectLibParameters;
     }
 
     public void setEffectLibParameters(Set<String> effectLibParameters) {
-        this.effectLibParameters = effectLibParameters;
+        this.effectLibParameters.add(effectLibParameters);
     }
 
     @JsonProperty("effectlib_effects")
@@ -116,12 +115,12 @@ public class MetaData {
     }
 
     @JsonProperty("wand_properties")
-    public List<String> getWandParameters() {
-        return sortCollection(wandParameters);
+    public ParameterList getWandParameters() {
+        return wandParameters;
     }
 
     public void setWandParameters(Set<String> wandParameters) {
-        this.wandParameters = wandParameters;
+        this.wandParameters.add(wandParameters);
     }
 
     @JsonProperty("types")
@@ -157,20 +156,32 @@ public class MetaData {
         return category;
     }
 
-    public void addWandParameter(String key) {
-        wandParameters.add(key);
+    public void addWandParameters(ParameterList parameters) {
+        wandParameters.merge(parameters, parameterStore);
     }
 
-    public void addParameter(String key, Parameter parameter) {
-        parameterStore.addParameter(key, parameter);
+    public void addEffectLibParameters(ParameterList parameters) {
+        effectLibParameters.merge(parameters, parameterStore);
     }
 
-    public void addEffectLibParameter(String key) {
-        effectLibParameters.add(key);
+    public void addEffectParameters(ParameterList parameters) {
+        effectParameters.merge(parameters, parameterStore);
     }
 
-    public void addEffectParameter(String key) {
-        effectParameters.add(key);
+    public void addMobParameters(ParameterList parameters) {
+        mobParameters.merge(parameters, parameterStore);
+    }
+
+    public void addActionParameters(ParameterList parameters) {
+        actionParameters.merge(parameters, parameterStore);
+    }
+
+    public void addSpellParameters(ParameterList parameters) {
+        spellParameters.merge(parameters, parameterStore);
+    }
+
+    public void addSpellProperties(ParameterList parameters) {
+        spellProperties.merge(parameters, parameterStore);
     }
 
     public Parameter getParameter(String key, Class<?> defaultClass) {
@@ -194,22 +205,6 @@ public class MetaData {
         } else {
             actions.put(key, action);
         }
-    }
-
-    public void addMobParameter(String key) {
-        mobParameters.add(key);
-    }
-
-    public void addActionParameter(String key) {
-        actionParameters.add(key);
-    }
-
-    public void addSpellParameter(String key) {
-        spellParameters.add(key);
-    }
-
-    public void addSpellProperty(String key) {
-        spellProperties.add(key);
     }
 
     public void update() {

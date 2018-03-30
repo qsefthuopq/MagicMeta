@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nonnull;
@@ -33,6 +31,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.base.CaseFormat;
 
 import de.slikey.effectlib.Effect;
+import de.slikey.effectlib.EffectManager;
+import de.slikey.effectlib.util.ParticleEffect;
 
 public class MagicMeta {
     private static final String BUILTIN_SPELL_PACKAGE = "com.elmakers.mine.bukkit.action.builtin";
@@ -90,32 +90,31 @@ public class MagicMeta {
         mapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, data);
     }
 
-    private void addSpellParameters(MagicController controller, Mage mage, BaseSpell spell, Set<Parameter> parameters, Set<Parameter> properties, String categoryKey) {
+    private void addSpellParameters(MagicController controller, Mage mage, BaseSpell spell, ParameterList parameters, ParameterList properties, String categoryKey) {
         Category category = getCategory(categoryKey);
         InterrogatingConfiguration templateConfiguration = new InterrogatingConfiguration(data.getParameterStore());
+        ParameterStore parameterStore = data.getParameterStore();
 
         spell.initialize(controller);
         spell.setMage(mage);
 
         // Gather base properties
         spell.loadTemplate("interrogator", templateConfiguration);
-        for (Parameter parameter : templateConfiguration.getParameters()) {
-            parameter.setCategory(category.getKey());
-            properties.add(parameter);
-        }
+        ParameterList spellProperties = templateConfiguration.getParameters();
+        spellProperties.setCategory(category.getKey(), parameterStore);
+        properties.merge(spellProperties, parameterStore);
 
         // Gather parameters
         InterrogatingConfiguration spellConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         spell.processParameters(spellConfiguration);
-        for (Parameter parameter : spellConfiguration.getParameters()) {
-            parameter.setCategory(category.getKey());
-            parameters.add(parameter);
-        }
+        ParameterList spellParameters = spellConfiguration.getParameters();
+        spellParameters.setCategory(category.getKey(), parameterStore);
+        parameters.merge(spellParameters, parameterStore);
     }
 
     private void generateSpellMeta() {
-        Set<Parameter> parameters = new HashSet<>();
-        Set<Parameter> properties = new HashSet<>();
+        ParameterList parameters = new ParameterList();
+        ParameterList properties = new ParameterList();
 
         // Check for base spell parameters
         // Do this one class at a time for categorization purposes
@@ -127,14 +126,8 @@ public class MagicMeta {
         addSpellParameters(controller, mage, new BaseSpell(), parameters, properties, "base");
 
         // Gather base spell properties loaded from loadTemplate
-        for (Parameter spellProperty : properties) {
-            data.addSpellProperty(spellProperty.getKey());
-        }
-
-        // Add base spell parameters
-        for (Parameter spellParameter : parameters) {
-            data.addSpellParameter(spellParameter.getKey());
-        }
+        data.addSpellProperties(properties);
+        data.addSpellParameters(parameters);
     }
 
     private void generateActionMeta() {
@@ -159,10 +152,8 @@ public class MagicMeta {
         InterrogatingConfiguration baseConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         baseAction.initialize(spell, baseConfiguration);
         baseAction.prepare(context, baseConfiguration);
-        Collection<Parameter> baseParameters = baseConfiguration.getParameters();
-        for (Parameter baseParameter : baseParameters) {
-            data.addActionParameter(baseParameter.getKey());
-        }
+        ParameterList baseParameters = baseConfiguration.getParameters();
+        data.addActionParameters(baseParameters);
 
         for (Class<? extends SpellAction> actionClass : allClasses) {
             if (!actionClass.getPackage().getName().equals(BUILTIN_SPELL_PACKAGE)
@@ -178,7 +169,7 @@ public class MagicMeta {
                 testAction.initialize(spell, actionConfiguration);
                 testAction.prepare(context, actionConfiguration);
 
-                Collection<Parameter> spellParameters = actionConfiguration.getParameters();
+                ParameterList spellParameters = actionConfiguration.getParameters();
                 spellParameters.removeAll(baseParameters);
                 SpellActionDescription spellAction = new SpellActionDescription(actionClass, spellParameters);
                 if (CompoundAction.class.isAssignableFrom(actionClass)) {
@@ -196,31 +187,53 @@ public class MagicMeta {
         InterrogatingConfiguration effectConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         EffectPlayer player = new EffectSingle();
         player.load(null, effectConfiguration);
-        Collection<Parameter> singleParameters = effectConfiguration.getParameters();
-        for (Parameter parameter : singleParameters) {
-            data.addEffectParameter(parameter.getKey());
-        }
+        ParameterList singleParameters = effectConfiguration.getParameters();
+        data.addEffectParameters(singleParameters);
     }
 
-    private Set<Parameter> collectPublicProperties(Class<?> classType) {
-        Set<Parameter> properties = new HashSet<>();
+    private ParameterList collectEffectProperties(Class<? extends Effect> classType, EffectManager manager, Effect instance) {
+        if (instance == null) {
+            try {
+                instance = classType.getConstructor(EffectManager.class).newInstance(manager);
+            } catch (Exception ex) {
+                System.err.println("Error instantiating " + classType.getName());
+                ex.printStackTrace();
+            }
+        }
+        ParameterList properties = new ParameterList();
         Field[] fields = classType.getFields();
         for (Field field : fields) {
             if (field.getType() == Player.class || field.getType() == Runnable.class) continue;
             String key = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, field.getName());
             Parameter parameter = data.getParameter(key, field.getType());
-            properties.add(parameter);
+            Object defaultValue = null;
+            if (instance != null) {
+                try {
+                    defaultValue = field.get(instance);
+                } catch (IllegalAccessException e) {
+                    System.err.println("Error reading " + field.getName() + " of " + classType.getName());
+                    e.printStackTrace();
+                }
+            }
+            properties.add(parameter, defaultValue);
         }
         return properties;
     }
 
     private void generateEffectLibMeta() {
+        // Create a dummy effect manager
+        ParticleEffect.ParticlePacket.skipInitialization();
+        EffectManager manager = new EffectManager(null);
         // First get all base effect parameters
         System.out.println("Scanning Effect");
-        Set<Parameter> baseEffectParameters = collectPublicProperties(Effect.class);
-        for (Parameter parameter : baseEffectParameters) {
-            data.addEffectLibParameter(parameter.getKey());
-        }
+        Effect baseEffect = new Effect(manager) {
+            @Override
+            public void onRun() {
+
+            }
+        };
+        ParameterList baseEffectParameters = collectEffectProperties(Effect.class, manager, baseEffect);
+        data.addEffectParameters(baseEffectParameters);
 
         // Gather all effect classes
         Reflections reflections = new Reflections(EFFECTLIB_PACKAGE);
@@ -237,7 +250,7 @@ public class MagicMeta {
             }
             System.out.println("Scanning " + effectClass.getName());
             try {
-                Set<Parameter> effectParameters = collectPublicProperties(effectClass);
+                ParameterList effectParameters = collectEffectProperties(effectClass, manager, null);
 
                 // Filter out common parameters
                 effectParameters.removeAll(baseEffectParameters);
@@ -256,20 +269,20 @@ public class MagicMeta {
         // load typed data directly from its configuration.
         // So we will have to fix up all the types by hand, unfortunately.
         // I think the most common case is doubles, so that's what we'll default to.
+        ParameterList wandParameters = new ParameterList();
         for (String property : BaseMagicProperties.PROPERTY_KEYS) {
             Parameter parameter = data.getParameter(property, Double.class);
-            data.addWandParameter(parameter.getKey());
+            wandParameters.add(parameter, null);
         }
+        data.addWandParameters(wandParameters);
     }
 
     private void generateMobMeta() {
         System.out.println("Scanning EntityData");
         InterrogatingConfiguration mobConfiguration = new InterrogatingConfiguration(data.getParameterStore());
         new EntityData(controller, "interrogator", mobConfiguration);
-        Collection<Parameter> singleParameters = mobConfiguration.getParameters();
-        for (Parameter parameter : singleParameters) {
-            data.addMobParameter(parameter.getKey());
-        }
+        ParameterList mobParameters = mobConfiguration.getParameters();
+        data.addMobParameters(mobParameters);
     }
 
     private void generateMeta() {
