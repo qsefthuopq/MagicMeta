@@ -13,6 +13,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Biome;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
@@ -148,6 +149,9 @@ public class ParameterStore {
             case "entity_attributes":
             case "item_attributes":
                 parameterType = getMapType("attribute_map", getParameterType(Attribute.class), getParameterType(Double.class));
+                break;
+            case "enchantments":
+                parameterType = getMapType("enchantment_map", getParameterType(Enchantment.class), getParameterType(Integer.class));
                 break;
             case "attributes":
                 parameterType = getParameterType("attributes", String.class);
