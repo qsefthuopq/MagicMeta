@@ -3978,7 +3978,7 @@
       "description" : [ "A cooldown on blocking spells with this wand" ],
       "field" : "block_cooldown",
       "name" : "Block Cooldown",
-      "type" : "int"
+      "type" : "integer"
     },
     "block_fov" : {
       "category" : "wand",
@@ -3999,7 +3999,7 @@
       "description" : [ "Apply a global cooldown when using this wand to block a spell" ],
       "field" : "block_mage_cooldown",
       "name" : "Block Mage Cooldown",
-      "type" : "int"
+      "type" : "integer"
     },
     "block_reflect_chance" : {
       "category" : "wand",
@@ -5235,21 +5235,21 @@
       "description" : [ "Number of particles to spawn if effect_particle and effect_particle_interval are set" ],
       "field" : "effect_particle_count",
       "name" : "Effect Particle Count",
-      "type" : "int"
+      "type" : "integer"
     },
     "effect_particle_data" : {
       "category" : "effects",
       "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
       "field" : "effect_particle_data",
       "name" : "Effect Particle Data",
-      "type" : "int"
+      "type" : "integer"
     },
     "effect_particle_interval" : {
       "category" : "wand",
       "description" : [ "Spawn a ring around the player if effect_particle is set.", "This value is in milliseconds" ],
       "field" : "effect_particle_interval",
       "name" : "Effect Particle Interval",
-      "type" : "int"
+      "type" : "integer"
     },
     "effect_particle_min_velocity" : {
       "category" : "wand",
@@ -5354,7 +5354,7 @@
       "description" : [ "The maximum number of times this wand can be enchanted, using the legacy enchanting system" ],
       "field" : "enchant_count",
       "name" : "Enchant Count",
-      "type" : "int"
+      "type" : "integer"
     },
     "enchantments" : {
       "category" : "wand",
@@ -10243,6 +10243,12 @@
       "name" : "Effect Type",
       "options" : [ "delayed", "instant", "repeating" ]
     },
+    "enchantment" : {
+      "class_name" : "org.bukkit.enchantments.Enchantment",
+      "description" : [ "A vanilla item enchantment" ],
+      "name" : "Enchantment Type",
+      "options" : [ "arrow_damage", "arrow_fire", "arrow_infinite", "arrow_knockback", "damage_all", "damage_arthropods", "damage_undead", "depth_strider", "dig_speed", "durability", "fire_aspect", "frost_walker", "knockback", "loot_bonus_blocks", "loot_bonus_mobs", "luck", "lure", "mending", "oxygen", "protection_environmental", "protection_explosions", "protection_fall", "protection_fire", "protection_projectile", "silk_touch", "thorns", "water_worker" ]
+    },
     "enchantment_map" : {
       "class_name" : "java.util.Map",
       "description" : [ "A map of enchantments, where the key is an enchantment type and the value is the level" ],
@@ -10250,12 +10256,6 @@
       "name" : "Enchantment Map",
       "options" : [ ],
       "value_type" : "integer"
-    },
-    "enchantment" : {
-      "class_name" : "org.bukkit.enchantments.Enchantment",
-      "description" : [ "A vanilla item enchantment" ],
-      "name" : "Enchantment Type",
-      "options" : [  ]
     },
     "entity_effect" : {
       "class_name" : "org.bukkit.EntityEffect",
@@ -10345,9 +10345,9 @@
     "material_map" : {
       "class_name" : "java.util.Map",
       "description" : [ "A map of item or block materials" ],
+      "key_type" : "material",
       "name" : "Material  Map",
       "options" : [ ],
-      "key_type" : "material",
       "value_type" : "int"
     },
     "message_type" : {
