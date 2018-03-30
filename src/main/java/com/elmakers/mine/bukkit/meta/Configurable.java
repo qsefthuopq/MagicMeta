@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.StringUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.CaseFormat;
 
@@ -65,6 +66,7 @@ public class Configurable {
         return key;
     }
 
+    @JsonIgnore
     public void setKey(String key) {
         this.key = key;
     }
