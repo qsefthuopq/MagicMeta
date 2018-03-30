@@ -22,7 +22,7 @@ public class ParameterList extends HashMap<String, String> {
     }
 
     public void add(Parameter parameter, Object defaultValue) {
-        put(parameter.getKey(), defaultValue == null ? null : defaultValue.toString());
+        put(parameter.getKey(), defaultValue == null ? null : defaultValue.toString().toLowerCase());
     }
 
     public void merge(ParameterList other, ParameterStore parameterStore) {
