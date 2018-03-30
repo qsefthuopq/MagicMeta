@@ -271,7 +271,7 @@ public class MagicMeta {
         // I think the most common case is doubles, so that's what we'll default to.
         ParameterList wandParameters = new ParameterList();
         for (String property : BaseMagicProperties.PROPERTY_KEYS) {
-            Parameter parameter = data.getParameter(property, Double.class);
+            Parameter parameter = data.getParameter(property, String.class);
             wandParameters.add(parameter, null);
         }
         data.addWandParameters(wandParameters);
