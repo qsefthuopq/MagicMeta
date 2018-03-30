@@ -233,7 +233,7 @@ public class MagicMeta {
             }
         };
         ParameterList baseEffectParameters = collectEffectProperties(Effect.class, manager, baseEffect);
-        data.addEffectParameters(baseEffectParameters);
+        data.addEffectLibParameters(baseEffectParameters);
 
         // Gather all effect classes
         Reflections reflections = new Reflections(EFFECTLIB_PACKAGE);

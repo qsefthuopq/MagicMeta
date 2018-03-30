@@ -29,8 +29,8 @@ public class MetaData {
         return spellParameters;
     }
 
-    public void setSpellParameters(Set<String> spellParameters) {
-        this.spellParameters.add(spellParameters);
+    public void setSpellParameters(ParameterList spellParameters) {
+        this.spellParameters = spellParameters;
     }
 
     @JsonProperty("mob_properties")
@@ -38,8 +38,8 @@ public class MetaData {
         return mobParameters;
     }
 
-    public void setMobParameters(Set<String> mobParameters) {
-        this.mobParameters.add(mobParameters);
+    public void setMobParameters(ParameterList mobParameters) {
+        this.mobParameters = mobParameters;
     }
 
     @JsonProperty("action_parameters")
@@ -47,8 +47,8 @@ public class MetaData {
         return actionParameters;
     }
 
-    public void setActionParameters(Set<String> actionParameters) {
-        this.actionParameters.add(actionParameters);
+    public void setActionParameters(ParameterList actionParameters) {
+        this.actionParameters = actionParameters;
     }
 
     @JsonProperty("spell_properties")
@@ -56,8 +56,8 @@ public class MetaData {
         return spellProperties;
     }
 
-    public void setSpellProperties(Set<String> spellProperties) {
-        this.spellProperties.add(spellProperties);
+    public void setSpellProperties(ParameterList spellProperties) {
+        this.spellProperties = spellProperties;
     }
 
     @JsonProperty("categories")
@@ -92,8 +92,8 @@ public class MetaData {
         return effectParameters;
     }
 
-    public void setEffectParameters(Set<String> effectParameters) {
-        this.effectParameters.add(effectParameters);
+    public void setEffectParameters(ParameterList effectParameters) {
+        this.effectParameters = effectParameters;
     }
 
     @JsonProperty("effectlib_parameters")
@@ -101,8 +101,8 @@ public class MetaData {
         return effectLibParameters;
     }
 
-    public void setEffectLibParameters(Set<String> effectLibParameters) {
-        this.effectLibParameters.add(effectLibParameters);
+    public void setEffectLibParameters(ParameterList effectLibParameters) {
+        this.effectLibParameters = effectLibParameters;
     }
 
     @JsonProperty("effectlib_effects")
@@ -119,8 +119,8 @@ public class MetaData {
         return wandParameters;
     }
 
-    public void setWandParameters(Set<String> wandParameters) {
-        this.wandParameters.add(wandParameters);
+    public void setWandParameters(ParameterList wandParameters) {
+        this.wandParameters = wandParameters;
     }
 
     @JsonProperty("types")
@@ -135,16 +135,6 @@ public class MetaData {
     @JsonIgnore
     public ParameterStore getParameterStore() {
         return parameterStore;
-    }
-
-    public void setParameterStore(ParameterStore parameterStore) {
-        this.parameterStore = parameterStore;
-    }
-
-    private List<String> sortCollection(Collection<String> unsorted) {
-        List<String> sorted = new ArrayList<>(unsorted);
-        Collections.sort(sorted);
-        return sorted;
     }
 
     public Category getCategory(String key) {

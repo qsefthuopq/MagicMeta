@@ -83,8 +83,8 @@ public class Configurable {
         return parameters;
     }
 
-    public void setParameters(List<String> parameters) {
-        this.parameters = new ParameterList(parameters);
+    public void setParameters(ParameterList parameters) {
+        this.parameters = parameters;
     }
 
     public String getCategory() {
