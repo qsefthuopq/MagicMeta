@@ -2634,10 +2634,12 @@
       "examples" : [ ],
       "name" : "Animated Ball",
       "parameters" : {
+        "iterations" : "500",
         "particle" : "SPELL_WITCH",
         "particles" : "150",
         "particles_per_iteration" : "10",
         "size" : "1.0",
+        "type" : "REPEATING",
         "x_factor" : "1.0",
         "x_offset" : "0.0",
         "x_rotation" : "0.0",
@@ -2658,8 +2660,10 @@
       "name" : "Arc",
       "parameters" : {
         "height" : "2.0",
+        "iterations" : "200",
         "particle" : "FLAME",
-        "particles" : "100"
+        "particles" : "100",
+        "type" : "REPEATING"
       },
       "short_class" : "Arc"
     },
@@ -2673,14 +2677,17 @@
         "angular_velocity" : "0.039269908169872414",
         "color_nucleus" : null,
         "color_orbital" : null,
+        "iterations" : "200",
         "orbitals" : "3",
         "particle_nucleus" : "DRIP_WATER",
         "particle_orbital" : "DRIP_LAVA",
         "particles_nucleus" : "10",
         "particles_orbital" : "10",
+        "period" : "2",
         "radius" : "3.0",
         "radius_nucleus" : "0.2",
-        "rotation" : "0.0"
+        "rotation" : "0.0",
+        "type" : "REPEATING"
       },
       "short_class" : "Atom"
     },
@@ -2691,17 +2698,22 @@
       "examples" : [ ],
       "name" : "Big Bang",
       "parameters" : {
+        "asynchronous" : "false",
+        "color" : "Color:[rgb0xFF00]",
         "color2" : "Color:[rgb0xFFA50]",
         "color3" : "Color:[rgb0x000]",
         "explosions" : "10",
         "fade_color" : "Color:[rgb0x000]",
         "firework_type" : "BURST",
         "intensity" : "2",
+        "iterations" : "400",
+        "period" : "2",
         "radius" : "2.0",
         "sound" : "ENTITY_GENERIC_EXPLODE",
         "sound_interval" : "5",
         "sound_pitch" : "1.0",
-        "sound_volume" : "100.0"
+        "sound_volume" : "100.0",
+        "type" : "REPEATING"
       },
       "short_class" : "BigBang"
     },
@@ -2713,7 +2725,10 @@
       "name" : "Bleed",
       "parameters" : {
         "height" : "1.75",
-        "hurt" : "true"
+        "hurt" : "true",
+        "iterations" : "25",
+        "period" : "4",
+        "type" : "REPEATING"
       },
       "short_class" : "Bleed"
     },
@@ -2728,9 +2743,12 @@
         "angular_velocity_y" : "0.018479956785822312",
         "angular_velocity_z" : "0.02026833970057931",
         "enable_rotation" : "true",
+        "iterations" : "50",
         "particle" : "VILLAGER_HAPPY",
         "particles" : "20",
+        "period" : "2",
         "radius" : "0.4",
+        "type" : "REPEATING",
         "whole_circle" : "false",
         "x_rotation" : "0.0",
         "x_subtract" : "0.0",
@@ -2751,8 +2769,11 @@
         "cloud_color" : null,
         "cloud_particle" : "CLOUD",
         "cloud_size" : "0.7",
+        "iterations" : "50",
         "main_particle" : "DRIP_WATER",
         "particle_radius" : "0.59999996",
+        "period" : "5",
+        "type" : "REPEATING",
         "y_offset" : "0.8"
       },
       "short_class" : "Cloud"
@@ -2770,12 +2791,15 @@
         "enable_rotation" : "true",
         "file_name" : null,
         "frame_delay" : "5",
+        "iterations" : "200",
         "particle" : "REDSTONE",
+        "period" : "2",
         "plane" : "XYZ",
         "size" : "0.025",
         "step_x" : "10",
         "step_y" : "10",
-        "transparency" : "false"
+        "transparency" : "false",
+        "type" : "REPEATING"
       },
       "short_class" : "ColoredImage"
     },
@@ -2787,13 +2811,15 @@
       "name" : "Cone",
       "parameters" : {
         "angular_velocity" : "0.19634954084936207",
+        "iterations" : "200",
         "length_grow" : "0.05",
         "particle" : "FLAME",
         "particles" : "10",
         "particles_cone" : "180",
         "radius_grow" : "0.006",
         "randomize" : "false",
-        "rotation" : "0.0"
+        "rotation" : "0.0",
+        "type" : "REPEATING"
       },
       "short_class" : "Cone"
     },
@@ -2809,9 +2835,12 @@
         "angular_velocity_z" : "0.02026833970057931",
         "edge_length" : "3.0",
         "enable_rotation" : "true",
+        "iterations" : "200",
         "outline_only" : "true",
         "particle" : "FLAME",
-        "particles" : "8"
+        "particles" : "8",
+        "period" : "5",
+        "type" : "REPEATING"
       },
       "short_class" : "Cube"
     },
@@ -2827,13 +2856,16 @@
         "angular_velocity_z" : "0.02026833970057931",
         "enable_rotation" : "true",
         "height" : "3.0",
+        "iterations" : "200",
         "particle" : "FLAME",
         "particles" : "100",
+        "period" : "2",
         "radius" : "1.0",
         "rotation_x" : "0.0",
         "rotation_y" : "0.0",
         "rotation_z" : "0.0",
-        "solid" : "false"
+        "solid" : "false",
+        "type" : "REPEATING"
       },
       "short_class" : "Cylinder"
     },
@@ -2845,15 +2877,18 @@
       "name" : "Disco Ball",
       "parameters" : {
         "direction-disco_ball_effect_direction" : "DOWN",
+        "iterations" : "500",
         "line_color" : null,
         "line_particle" : "REDSTONE",
         "line_particles" : "100",
         "max" : "15",
         "max_lines" : "7",
+        "period" : "7",
         "sphere_color" : null,
         "sphere_particle" : "FLAME",
         "sphere_particles" : "50",
-        "sphere_radius" : "0.6"
+        "sphere_radius" : "0.6",
+        "type" : "REPEATING"
       },
       "short_class" : "DiscoBall"
     },
@@ -2869,6 +2904,7 @@
         "color_base2" : null,
         "color_helix" : null,
         "grow" : "0.2",
+        "iterations" : "500",
         "length" : "15.0",
         "particle_base1" : "WATER_WAKE",
         "particle_base2" : "REDSTONE",
@@ -2876,7 +2912,8 @@
         "particles_base" : "15",
         "particles_helix" : "3",
         "radials" : "0.10471975511965977",
-        "radius" : "1.5"
+        "radius" : "1.5",
+        "type" : "REPEATING"
       },
       "short_class" : "Dna"
     },
@@ -2888,10 +2925,13 @@
       "name" : "Donut",
       "parameters" : {
         "circles" : "36",
+        "iterations" : "20",
         "particle" : "FLAME",
         "particles_circle" : "10",
+        "period" : "10",
         "radius_donut" : "2.0",
         "radius_tube" : "0.5",
+        "type" : "REPEATING",
         "x_rotation" : "0.0",
         "y_rotation" : "0.0",
         "z_rotation" : "0.0"
@@ -2906,10 +2946,13 @@
       "name" : "Dragon",
       "parameters" : {
         "arcs" : "20",
+        "iterations" : "200",
         "length" : "4.0",
         "particle" : "FLAME",
         "particles" : "30",
-        "steps_per_iteration" : "2"
+        "period" : "2",
+        "steps_per_iteration" : "2",
+        "type" : "REPEATING"
       },
       "short_class" : "Dragon"
     },
@@ -2920,10 +2963,13 @@
       "examples" : [ ],
       "name" : "Earth",
       "parameters" : {
+        "iterations" : "200",
         "mountain_height" : "0.5",
         "particles" : "500",
+        "period" : "5",
         "precision" : "100",
-        "radius" : "1.0"
+        "radius" : "1.0",
+        "type" : "REPEATING"
       },
       "short_class" : "Earth"
     },
@@ -2935,12 +2981,14 @@
       "name" : "Equation",
       "parameters" : {
         "cycle_mini_step" : "true",
+        "iterations" : "100",
         "max_steps" : "0",
         "orient" : "true",
         "orient_pitch" : "true",
         "particle" : "REDSTONE",
         "particles" : "1",
         "particles2" : "0",
+        "type" : "REPEATING",
         "variable" : "t",
         "variable2" : "t2",
         "x2_equation" : null,
@@ -2960,7 +3008,8 @@
       "name" : "Explode",
       "parameters" : {
         "amount" : "25",
-        "sound" : "ENTITY_GENERIC_EXPLODE"
+        "sound" : "ENTITY_GENERIC_EXPLODE",
+        "speed" : "0.5"
       },
       "short_class" : "Explode"
     },
@@ -2970,7 +3019,10 @@
       "description" : [ "Make something look like it's on fire" ],
       "examples" : [ ],
       "name" : "Flame",
-      "parameters" : { },
+      "parameters" : {
+        "iterations" : "600",
+        "type" : "REPEATING"
+      },
       "short_class" : "Flame"
     },
     "fountain" : {
@@ -2982,13 +3034,16 @@
       "parameters" : {
         "height" : "3.0",
         "height_spout" : "7.0",
+        "iterations" : "100",
         "particle" : "WATER_SPLASH",
         "particles_spout" : "200",
         "particles_strand" : "150",
+        "period" : "2",
         "radius" : "5.0",
         "radius_spout" : "0.1",
         "rotation" : "0.7853981633974483",
-        "strands" : "10"
+        "strands" : "10",
+        "type" : "REPEATING"
       },
       "short_class" : "Fountain"
     },
@@ -3001,9 +3056,11 @@
       "parameters" : {
         "columns" : "10",
         "height_cell" : "1.0",
+        "iterations" : "50",
         "particle" : "FLAME",
         "particles_height" : "3",
         "particles_width" : "4",
+        "period" : "5",
         "rotation" : "0.0",
         "rows" : "5",
         "width_cell" : "1.0"
@@ -3038,11 +3095,14 @@
       "name" : "Helix",
       "parameters" : {
         "curve" : "10.0",
+        "iterations" : "8",
         "particle" : "FLAME",
         "particles" : "80",
+        "period" : "10",
         "radius" : "10.0",
         "rotation" : "0.7853981633974483",
-        "strands" : "8"
+        "strands" : "8",
+        "type" : "REPEATING"
       },
       "short_class" : "Helix"
     },
@@ -3055,8 +3115,11 @@
       "parameters" : {
         "edge_length" : "6.5",
         "height" : "2.5",
+        "iterations" : "20",
         "particle" : "FLAME",
         "particles" : "30.0",
+        "period" : "10",
+        "type" : "REPEATING",
         "y_rotation" : "0.4487989505128276"
       },
       "short_class" : "Hill"
@@ -3068,7 +3131,10 @@
       "examples" : [ ],
       "name" : "Icon",
       "parameters" : {
+        "iterations" : "25",
         "particle" : "VILLAGER_ANGRY",
+        "period" : "4",
+        "type" : "REPEATING",
         "y_offset" : "2"
       },
       "short_class" : "Icon"
@@ -3087,12 +3153,15 @@
         "file_name" : null,
         "frame_delay" : "5",
         "invert" : "false",
+        "iterations" : "200",
         "particle" : "REDSTONE",
+        "period" : "2",
         "plane" : "XYZ",
         "size" : "0.025",
         "step_x" : "10",
         "step_y" : "10",
-        "transparency" : "false"
+        "transparency" : "false",
+        "type" : "REPEATING"
       },
       "short_class" : "Image"
     },
@@ -3103,6 +3172,9 @@
       "examples" : [ ],
       "name" : "Jump",
       "parameters" : {
+        "asynchronous" : "false",
+        "iterations" : "1",
+        "period" : "20",
         "power" : "0.5"
       },
       "short_class" : "Jump"
@@ -3115,9 +3187,11 @@
       "name" : "Line",
       "parameters" : {
         "is_zig_zag" : "false",
+        "iterations" : "1",
         "length" : "0.0",
         "particle" : "FLAME",
         "particles" : "100",
+        "type" : "REPEATING",
         "zig_zag_offset" : "0.0,0.1,0.0",
         "zig_zags" : "10"
       },
@@ -3130,7 +3204,10 @@
       "examples" : [ ],
       "name" : "Love",
       "parameters" : {
-        "particle" : "HEART"
+        "iterations" : "600",
+        "particle" : "HEART",
+        "period" : "2",
+        "type" : "REPEATING"
       },
       "short_class" : "Love"
     },
@@ -3143,9 +3220,11 @@
       "parameters" : {
         "effect" : null,
         "effect_class" : null,
+        "iterations" : "100",
         "orient" : "true",
         "orient_pitch" : "false",
         "parameters" : "{}",
+        "type" : "REPEATING",
         "x_equation" : null,
         "y_equation" : null,
         "z_equation" : null
@@ -3159,8 +3238,10 @@
       "examples" : [ ],
       "name" : "Music",
       "parameters" : {
+        "iterations" : "400",
         "radials_per_step" : "0.39269908169872414",
-        "radius" : "0.4"
+        "radius" : "0.4",
+        "type" : "REPEATING"
       },
       "short_class" : "Music"
     },
@@ -3171,8 +3252,10 @@
       "examples" : [ ],
       "name" : "Plot",
       "parameters" : {
+        "iterations" : "100",
         "particle" : "REDSTONE",
         "persistent" : "true",
+        "type" : "REPEATING",
         "x_equation" : null,
         "x_scale" : "1.0",
         "y_equation" : null,
@@ -3189,10 +3272,12 @@
       "examples" : [ ],
       "name" : "Shield",
       "parameters" : {
+        "iterations" : "500",
         "particle" : "FLAME",
         "particles" : "50",
         "radius" : "3.0",
-        "sphere" : "false"
+        "sphere" : "false",
+        "type" : "REPEATING"
       },
       "short_class" : "Shield"
     },
@@ -3203,6 +3288,9 @@
       "examples" : [ ],
       "name" : "Sky Rocket",
       "parameters" : {
+        "asynchronous" : "false",
+        "iterations" : "1",
+        "period" : "20",
         "power" : "10.0"
       },
       "short_class" : "SkyRocket"
@@ -3214,7 +3302,9 @@
       "examples" : [ ],
       "name" : "Smoke",
       "parameters" : {
-        "particle" : "SMOKE_NORMAL"
+        "iterations" : "300",
+        "particle" : "SMOKE_NORMAL",
+        "type" : "REPEATING"
       },
       "short_class" : "Smoke"
     },
@@ -3225,10 +3315,12 @@
       "examples" : [ ],
       "name" : "Sphere",
       "parameters" : {
+        "iterations" : "500",
         "particle" : "SPELL_MOB",
         "particles" : "50",
         "radius" : "0.6",
         "radius_increase" : "0.0",
+        "type" : "REPEATING",
         "y_offset" : "0.0"
       },
       "short_class" : "Sphere"
@@ -3241,10 +3333,13 @@
       "name" : "Star",
       "parameters" : {
         "inner_radius" : "0.5",
+        "iterations" : "50",
         "particle" : "FLAME",
         "particles" : "50",
+        "period" : "4",
         "spike_height" : "3.5",
-        "spikes_half" : "3"
+        "spikes_half" : "3",
+        "type" : "REPEATING"
       },
       "short_class" : "Star"
     },
@@ -3257,12 +3352,15 @@
       "parameters" : {
         "font" : "java.awt.Font[family=Tahoma,name=Tahoma,style=plain,size=16]",
         "invert" : "false",
+        "iterations" : "20",
         "particle" : "FIREWORKS_SPARK",
+        "period" : "40",
         "realtime" : "false",
         "size" : "0.2",
         "step_x" : "1",
         "step_y" : "1",
-        "text" : "Text"
+        "text" : "Text",
+        "type" : "REPEATING"
       },
       "short_class" : "Text"
     },
@@ -3277,12 +3375,15 @@
         "cloud_particle" : "CLOUD",
         "cloud_size" : "2.5",
         "distance" : "0.375",
+        "iterations" : "20",
         "max_tornado_radius" : "5.0",
+        "period" : "5",
         "show_cloud" : "true",
         "show_tornado" : "true",
         "tornado_color" : null,
         "tornado_height" : "5.0",
         "tornado_particle" : "FLAME",
+        "type" : "REPEATING",
         "y_offset" : "0.8"
       },
       "short_class" : "Tornado"
@@ -3294,9 +3395,11 @@
       "examples" : [ ],
       "name" : "Trace",
       "parameters" : {
+        "iterations" : "600",
         "max_way_points" : "30",
         "particle" : "FLAME",
-        "refresh" : "5"
+        "refresh" : "5",
+        "type" : "REPEATING"
       },
       "short_class" : "Trace"
     },
@@ -3307,7 +3410,10 @@
       "examples" : [ ],
       "name" : "Turn",
       "parameters" : {
-        "step" : "11.25"
+        "asynchronous" : "false",
+        "iterations" : "160",
+        "step" : "11.25",
+        "type" : "REPEATING"
       },
       "short_class" : "Turn"
     },
@@ -3321,9 +3427,11 @@
         "circles" : "3",
         "grow" : "0.05",
         "helixes" : "4",
+        "iterations" : "200",
         "particle" : "FLAME",
         "radials" : "0.19634954084936207",
-        "radius" : "2.0"
+        "radius" : "2.0",
+        "type" : "REPEATING"
       },
       "short_class" : "Vortex"
     },
@@ -3335,10 +3443,13 @@
       "name" : "Warp",
       "parameters" : {
         "grow" : "0.2",
+        "iterations" : "12",
         "particle" : "FIREWORKS_SPARK",
         "particles" : "20",
+        "period" : "2",
         "radius" : "1.0",
-        "rings" : "12"
+        "rings" : "12",
+        "type" : "REPEATING"
       },
       "short_class" : "Warp"
     },
@@ -3354,12 +3465,15 @@
         "depth_front" : "1.0",
         "height" : "2.0",
         "height_back" : "0.5",
+        "iterations" : "50",
         "length_back" : "3.0",
         "length_front" : "1.5",
         "particle" : "DRIP_WATER",
         "particles_back" : "10",
         "particles_front" : "10",
+        "period" : "5",
         "rows" : "20",
+        "type" : "REPEATING",
         "velocity-vector" : "0.0,0.0,0.0",
         "width" : "5.0"
       },

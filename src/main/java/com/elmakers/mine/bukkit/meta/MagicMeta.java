@@ -170,7 +170,7 @@ public class MagicMeta {
                 testAction.prepare(context, actionConfiguration);
 
                 ParameterList spellParameters = actionConfiguration.getParameters();
-                spellParameters.removeAll(baseParameters);
+                spellParameters.removeDefaults(baseParameters);
                 SpellActionDescription spellAction = new SpellActionDescription(actionClass, spellParameters);
                 if (CompoundAction.class.isAssignableFrom(actionClass)) {
                     spellAction.setCategory(getCategory("compound").getKey());
@@ -253,7 +253,7 @@ public class MagicMeta {
                 ParameterList effectParameters = collectEffectProperties(effectClass, manager, null);
 
                 // Filter out common parameters
-                effectParameters.removeAll(baseEffectParameters);
+                effectParameters.removeDefaults(baseEffectParameters);
                 EffectDescription effect = new EffectDescription(effectClass, effectParameters);
                 data.addEffect(effect.getKey(), effect);
             } catch (Exception e) {

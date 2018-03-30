@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ParameterList extends HashMap<String, String> {
     public ParameterList() {
@@ -54,9 +55,13 @@ public class ParameterList extends HashMap<String, String> {
         }
     }
 
-    public void removeAll(ParameterList other) {
-        for (String key : other.keySet()) {
-            remove(key);
+    public void removeDefaults(ParameterList other) {
+        for (Map.Entry<String, String> entry : other.entrySet()) {
+            String otherDefault = entry.getValue();
+            String thisDefault = get(entry.getKey());
+            if (Objects.equals(otherDefault, thisDefault)) {
+                remove(entry.getKey());
+            }
         }
     }
 
