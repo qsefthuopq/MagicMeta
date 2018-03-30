@@ -713,46 +713,46 @@
       "short_class" : "ModifyReflective"
     },
     "modify_s_p" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifySPAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Add or remove Spell Points" ],
+      "examples" : [ "addsp" ],
       "name" : "Modify SP",
       "parameters" : [ "sp" ],
       "short_class" : "ModifySP"
     },
     "modify_walk_speed" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifyWalkSpeed",
-      "description" : [ "" ],
+      "description" : [ "Modify the walk speed attribute of the target" ],
       "examples" : [ ],
       "name" : "Modify Walk Speed",
       "parameters" : [ "speed" ],
       "short_class" : "ModifyWalkSpeed"
     },
     "mount" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "MountAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Force the caster to mount the target entity" ],
+      "examples" : [ "boomstown", "horse", "mount" ],
       "name" : "Mount",
       "parameters" : [ "eject" ],
       "short_class" : "Mount"
     },
     "mount_armor_stand" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "MountArmorStandAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Mount an armor stand, optionally creating and removing the armor stand", "This is the action that powers broomsticks and other vehicles", "Using custom resource pack models, this can be used to implement driveable cars, planes or just about anything by applying velocity to the armor stand when mounted", "It has many parameters for handling crashing, hovering, and other options" ],
+      "examples" : [ "airscooter", "broom" ],
       "name" : "Mount Armor Stand",
       "parameters" : [ "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_pitch", "armor_stand_reason", "armor_stand_roll", "armor_stand_small", "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "helmet_item", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_name", "mount_target", "mount_untargetable", "mount_wand", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "short_class" : "MountArmorStand"
     },
     "move_block" : {
-      "category" : "",
+      "category" : "constructoin",
       "class_name" : "MoveBlockAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Move a block from one location to another" ],
+      "examples" : [ "lift" ],
       "name" : "Move Block",
       "parameters" : [ "offset", "set_target" ],
       "short_class" : "MoveBlock"
@@ -760,17 +760,17 @@
     "multiply" : {
       "category" : "compound",
       "class_name" : "MultiplyAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Repeat a set of actions mulitple times in parallel", "Will fall back to using the 'repeat' parameter if 'multiply' is not specified" ],
+      "examples" : [ "bomb", "cluster", "meteor", "volley" ],
       "name" : "Multiply",
       "parameters" : [ "multiply", "repeat" ],
       "short_class" : "Multiply"
     },
     "orient" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "OrientAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Force the target entity to face a specific direction" ],
+      "examples" : [ "tracking" ],
       "name" : "Orient",
       "parameters" : [ "pitch", "pitch_offset", "yaw", "yaw_offset" ],
       "short_class" : "Orient"
@@ -778,8 +778,8 @@
     "parallel" : {
       "category" : "compound",
       "class_name" : "ParallelAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Runs each action in the list of sub-actions in parallel, rather than sequentially" ],
+      "examples" : [ "earthquake", "nuke" ],
       "name" : "Parallel",
       "parameters" : [ ],
       "short_class" : "Parallel"
@@ -787,35 +787,35 @@
     "plane" : {
       "category" : "compound",
       "class_name" : "PlaneAction",
-      "description" : [ "" ],
+      "description" : [ "Target all blocks in a 2D plane" ],
       "examples" : [ ],
       "name" : "Plane",
       "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "short_class" : "Plane"
     },
     "play_effects" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "PlayEffectsAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Play a specific set of effects from the spell's effects list" ],
+      "examples" : [ "disintegrate", "fxdemo", "holylight", "laser", "nuke" ],
       "name" : "Play Effects",
       "parameters" : [ "effect_key", "effects" ],
       "short_class" : "PlayEffects"
     },
     "play_record" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "PlayRecordAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Play music from a vanilla record disc to the target player" ],
+      "examples" : [ "music" ],
       "name" : "Play Record",
       "parameters" : [ "records" ],
       "short_class" : "PlayRecord"
     },
     "play_sound" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "PlaySoundAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Play a sound to the target player", "Can be used with vanilla sounds or custom sounds from a resource pack" ],
+      "examples" : [ "flashbang", "music_notes" ],
       "name" : "Play Sound",
       "parameters" : [ "pitch", "radius", "sound", "volume" ],
       "short_class" : "PlaySound"
@@ -823,26 +823,26 @@
     "player_select" : {
       "category" : "compound",
       "class_name" : "PlayerSelectAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Show the caster a GUI with heads for all players on the server, allowing them to choose a player who will be the target of the sub-action list" ],
+      "examples" : [ "gather" ],
       "name" : "Player Select",
       "parameters" : [ "cross_world" ],
       "short_class" : "PlayerSelect"
     },
     "potion_effect" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "PotionEffectAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Apply or remove vanilla potion effects from the target" ],
+      "examples" : [ "arrow_poison", "blessing", "cure", "curse", "frost", "poison", "wither" ],
       "name" : "Potion Effect",
       "parameters" : [ "add_effects", "duration", "duration_multiplier", "effects_ambient", "effects_particles", "remove_effects" ],
       "short_class" : "PotionEffect"
     },
     "power_block" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "PowerBlockAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Change the state of redstone blocks such as levers and buttons" ],
+      "examples" : [ "emp" ],
       "name" : "Power Block",
       "parameters" : [ "physics" ],
       "short_class" : "PowerBlock"
@@ -850,7 +850,7 @@
     "probability" : {
       "category" : "compound",
       "class_name" : "ProbabilityAction",
-      "description" : [ "" ],
+      "description" : [ "Execute or skip sub-actions based on a random chance" ],
       "examples" : [ ],
       "name" : "Probability",
       "parameters" : [ "probability" ],
@@ -859,8 +859,8 @@
     "projectile" : {
       "category" : "compound",
       "class_name" : "ProjectileAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Launch a vanilla projectile" ],
+      "examples" : [ "arrow", "arrowrain", "dragonball", "fireball", "wither" ],
       "name" : "Projectile",
       "parameters" : [ "break_blocks", "count", "damage", "fire", "lifetime", "orient", "pickup", "projectile", "projectile_effects", "reorient", "set_target", "size", "source_location", "speed", "spread", "start", "tick_increase", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "short_class" : "Projectile"
@@ -868,17 +868,17 @@
     "random" : {
       "category" : "compound",
       "class_name" : "RandomAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Randomly choose one from the set of sub-actions to execute" ],
+      "examples" : [ "magichat" ],
       "name" : "Random",
       "parameters" : [ ],
       "short_class" : "Random"
     },
     "recall" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "RecallAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Show a customizeable GUI of warps and other locations", "Can be used with warps created by Essentials or CommandBook" ],
+      "examples" : [ "recall" ],
       "name" : "Recall",
       "parameters" : [ "allow_cross_world", "friend_key", "marker_key", "protection_duration", "require_build", "require_exit", "safe", "unlock_key", "vertical_range" ],
       "short_class" : "Recall"
@@ -886,26 +886,26 @@
     "recurse" : {
       "category" : "compound",
       "class_name" : "RecurseAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Recursively follows blocks that match the spell's destructible list", "Can be configured to only follow a specific list of block faces, such as only filling downward" ],
+      "examples" : [ "chop", "floodfill", "mine", "recurse", "rubberize" ],
       "name" : "Recurse",
       "parameters" : [ "checkered", "depth", "faces", "replace", "size" ],
       "short_class" : "Recurse"
     },
     "remove_entity" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "RemoveEntityAction",
-      "description" : [ "" ],
+      "description" : [ "Remove an entity from the world completely, without killing it or having it drop loot" ],
       "examples" : [ ],
       "name" : "Remove Entity",
       "parameters" : [ ],
       "short_class" : "RemoveEntity"
     },
     "repair_item" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "RepairItemAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Repair the target item, or items in the target player's inventory" ],
+      "examples" : [ "repairequipment", "repairitem" ],
       "name" : "Repair Item",
       "parameters" : [ "armor", "held_item" ],
       "short_class" : "RepairItem"
@@ -913,8 +913,8 @@
     "repeat" : {
       "category" : "compound",
       "class_name" : "RepeatAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Repeat sub-actions a number of times in sequence" ],
+      "examples" : [ "forest", "grab", "lightning", "push" ],
       "name" : "Repeat",
       "parameters" : [ "repeat" ],
       "short_class" : "Repeat"
@@ -922,17 +922,17 @@
     "retarget" : {
       "category" : "compound",
       "class_name" : "RetargetAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Performs targeting as normal, passing the new target to its sub-actions" ],
+      "examples" : [ "gatling", "laser" ],
       "name" : "Retarget",
       "parameters" : [ "close_fov", "close_range", "fov", "hitbox", "range" ],
       "short_class" : "Retarget"
     },
     "ride_entity" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "RideEntityAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Mount and control the target entity", "This is the base action for MountArmorStand" ],
+      "examples" : [ "ride" ],
       "name" : "Ride Entity",
       "parameters" : [ "braking", "controllable", "crash_braking", "crash_damage", "crash_dismount_speed", "crash_distance", "crash_effects", "crash_entity_damage", "crash_entity_distance", "crash_entity_fov", "crash_entity_vehicle_damage", "crash_into", "crash_speed", "crash_vehicle_damage", "crash_velocity", "crash_velocity_y_offset", "direction_y", "duration", "duration_warning", "exemption_duration", "fall_protection", "jump_controllable", "liftoff_duration", "liftoff_thrust", "max_acceleration", "max_deceleration", "max_height", "max_height_above_ground", "max_speed", "min_speed", "mount_untargetable", "passenger", "pitch_controllable", "pitch_offset", "rider_untargetable", "riding_effects", "sound", "sound_interval", "sound_max_pitch", "sound_max_volume", "sound_min_pitch", "sound_min_volume", "sound_pitch", "sound_volume", "start_speed", "steer_speed", "strafe_controllable", "warning_effects", "yaw_offset" ],
       "short_class" : "RideEntity"
@@ -940,17 +940,17 @@
     "ring" : {
       "category" : "compound",
       "class_name" : "RingAction",
-      "description" : [ "" ],
+      "description" : [ "Target all blocks in a ring" ],
       "examples" : [ ],
       "name" : "Ring",
       "parameters" : [ "axis", "brush_axis", "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "short_class" : "Ring"
     },
     "selector" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "SelectorAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Show the caster a customizeable GUI", "This gui can be used to sell items, or cast spells", "This is similar to ItemShop but more customizeable, allowing for requirements for each item, different costs or a mix of items and spells." ],
+      "examples" : [ "appearanceshop", "colorshop", "effectshop", "progressmenu", "wandbuffs" ],
       "name" : "Selector",
       "parameters" : [ "apply_to_wand", "auto_close", "cast_spell", "commands", "confirm", "confirm_filler", "confirm_title", "cost", "cost_modifiers", "cost_type", "costs", "currency", "experience", "icon", "item", "items-list", "limit", "options", "requirements", "scale", "selected", "show_unavailable", "sp", "title", "unlock", "unlock_class", "unlock_confirm_title", "unlock_section" ],
       "short_class" : "Selector"
@@ -958,44 +958,44 @@
     "serial" : {
       "category" : "compound",
       "class_name" : "SerialAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Group a set of actions together and run them in serial", "This is mainly useful inside of actions like Random or Parallel, to group a set of actions together as a single option for the parent action." ],
+      "examples" : [ "magichat", "nuke" ],
       "name" : "Serial",
       "parameters" : [ ],
       "short_class" : "Serial"
     },
     "shrink_block" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "ShrinkBlockAction",
-      "description" : [ "" ],
+      "description" : [ "Remove a block and replace it with a skull item representation of the block", "Only works on a very limited set of blocks, the ones for which Mojang has provided MHF skins." ],
       "examples" : [ ],
       "name" : "Shrink Block",
       "parameters" : [ ],
       "short_class" : "ShrinkBlock"
     },
     "shrink_entity" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "ShrinkEntityAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Change entities to baby entities", "can apply damage to entities and drop skulls for them when killed" ],
+      "examples" : [ "shrink" ],
       "name" : "Shrink Entity",
       "parameters" : [ "damage", "damage_max_distance", "damage_multiplier", "damage_type", "elemental_damage", "entity_damage", "knockback_resistance", "magic_damage", "magic_entity_damage", "percentage", "player_damage", "skeletons" ],
       "short_class" : "ShrinkEntity"
     },
     "simulate" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "SimulateAction",
-      "description" : [ "" ],
+      "description" : [ "This action is not complete, do not use. It is intended to replace SimulateSpell", "Runs a simulation of <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life\">Conway's game of life</a>", "The simulation can have custom rules, and can be run in 2D or 3D" ],
       "examples" : [ ],
       "name" : "Simulate",
       "parameters" : [ ],
       "short_class" : "Simulate"
     },
     "skill_selector" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "SkillSelectorAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Show the skill selection GUI to the caster", "This is the same GUI that a player would get if using the /mskills command" ],
+      "examples" : [ "skills" ],
       "name" : "Skill Selector",
       "parameters" : [ ],
       "short_class" : "SkillSelector"
@@ -1003,35 +1003,35 @@
     "skip" : {
       "category" : "compound",
       "class_name" : "SkipAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Runs its sub actions every N iterations, skipping them the rest of the time", "This is most often used to slow down a spell in chunks, by skipping a Delay sub-action", "This can be used for block animations to allow ModifyBlock to run N times per tick with a delay in between" ],
+      "examples" : [ "earthquake", "lift", "nuke", "rainbow", "tendril", "walls" ],
       "name" : "Skip",
       "parameters" : [ "repeat_skip", "skip" ],
       "short_class" : "Skip"
     },
     "spawn_entity" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "SpawnEntityAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Spawn a new entity in the world", "Can be used with a magic mob, a full custom mob config, a simple vanilla mob or a random probability table of mobs" ],
+      "examples" : [ "familiar", "farm", "ghast", "horse", "magichat", "mob", "monster", "testdummy" ],
       "name" : "Spawn Entity",
       "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "potion_effects", "protection", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "weakness", "xp" ],
       "short_class" : "SpawnEntity"
     },
     "spell_progress" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "SpellProgressAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Show the caster the spell progress GUI, which will show them spells they have that are upgradeable, and the requirements to upgrade them." ],
+      "examples" : [ "upgrades" ],
       "name" : "Spell Progress",
       "parameters" : [ ],
       "short_class" : "SpellProgress"
     },
     "spell_shop" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "SpellShopAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "A spell-specific variant of ItemShop", "Can be used to spell a specific set of spells, cast spells on the buyer, or automatically show players the spells available to them at their current path.", "This is the main method of progression for players that is available via the enchantment table GUI" ],
+      "examples" : [ "architectshop", "engineershop", "spellshop", "tpshop" ],
       "name" : "Spell Shop",
       "parameters" : [ "allow_locked", "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "show_extra_spells", "show_free", "show_path_spells", "show_required_spells", "show_upgrades", "spells", "upgrade_levels", "upgrade_requires_casts", "use_items", "use_sp", "use_xp", "worth_item" ],
       "short_class" : "SpellShop"
@@ -1039,8 +1039,8 @@
     "sphere" : {
       "category" : "compound",
       "class_name" : "SphereAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Target all blocks in a sphere" ],
+      "examples" : [ "blob", "shell" ],
       "name" : "Sphere",
       "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "short_class" : "Sphere"
@@ -1048,34 +1048,34 @@
     "spread" : {
       "category" : "compound",
       "class_name" : "SpreadAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Randomly modify the target location or source direction" ],
+      "examples" : [ "cluster", "forest", "lightning", "pollinate", "volley" ],
       "name" : "Spread",
       "parameters" : [ "center_probability", "outer_probability", "pitch_max", "probability", "radius", "yaw_max" ],
       "short_class" : "Spread"
     },
     "stash_wand" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "StashWandAction",
-      "description" : [ "" ],
+      "description" : [ "Temporarily remove the player's wand and return it on undo" ],
       "examples" : [ ],
       "name" : "Stash Wand",
       "parameters" : [ "return_on_finish" ],
       "short_class" : "StashWand"
     },
     "stop" : {
-      "category" : "",
+      "category" : "control",
       "class_name" : "StopAction",
-      "description" : [ "" ],
+      "description" : [ "Stop running the spell and finish it immediately" ],
       "examples" : [ ],
       "name" : "Stop",
       "parameters" : [ ],
       "short_class" : "Stop"
     },
     "super_protection" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "SuperProtectionAction",
-      "description" : [ "" ],
+      "description" : [ "Apply super protection to a player, as if they were holding a wand with the 'protected' property", "A super protected player can't be damaged in any way or targeted by any spells" ],
       "examples" : [ ],
       "name" : "Super Protection",
       "parameters" : [ "duration" ],
@@ -1084,35 +1084,35 @@
     "t_n_t" : {
       "category" : "compound",
       "class_name" : "TNTAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Spawn a primed TNT entity", "Can run a set of actions when the TNT detonates" ],
+      "examples" : [ "bomb", "cluster", "grenade" ],
       "name" : "TNT",
       "parameters" : [ "break_blocks", "count", "fire", "fuse", "lifetime", "projectile_effects", "set_target", "size", "tnt_velocity", "track_projectile" ],
       "short_class" : "TNT"
     },
     "take_item" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "TakeItemAction",
-      "description" : [ "" ],
+      "description" : [ "Remove items from the player's inventory" ],
       "examples" : [ ],
       "name" : "Take Item",
       "parameters" : [ "display_name" ],
       "short_class" : "TakeItem"
     },
     "tame" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "TameAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Tame the target entity and set its owner as the caster" ],
+      "examples" : [ "tame" ],
       "name" : "Tame",
       "parameters" : [ ],
       "short_class" : "Tame"
     },
     "teleport" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "TeleportAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Teleport the caster to the target location" ],
+      "examples" : [ "arrow_blink", "backflip", "blink", "evade", "randomtp" ],
       "name" : "Teleport",
       "parameters" : [ "allow_passthrough", "ledge_range", "passthrough_range", "require_build", "require_exit", "safe", "use_target_location", "vertical_range" ],
       "short_class" : "Teleport"
@@ -1120,8 +1120,8 @@
     "throw_block" : {
       "category" : "compound",
       "class_name" : "ThrowBlockAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Throw a falling block entity", "Can run a set of actions when the block lands" ],
+      "examples" : [ "toss", "volley" ],
       "name" : "Throw Block",
       "parameters" : [ "consume", "consume_variants", "damage", "fall_damage", "hurts", "lifetime", "max_damage", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "short_class" : "ThrowBlock"
@@ -1129,8 +1129,8 @@
     "throw_item" : {
       "category" : "compound",
       "class_name" : "ThrowItemAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Throw an item", "Can run a set of actions when the item despawns" ],
+      "examples" : [ "pollinate" ],
       "name" : "Throw Item",
       "parameters" : [ "age_items", "item", "lifetime", "orient", "projectile_effects", "reorient", "set_target", "source_location", "speed", "speed_max", "speed_min", "track_projectile", "unbreakable", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location" ],
       "short_class" : "ThrowItem"
@@ -1138,62 +1138,62 @@
     "tile_entities" : {
       "category" : "compound",
       "class_name" : "TileEntitiesAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Target all loaded tile entities" ],
+      "examples" : [ "count" ],
       "name" : "Tile Entities",
       "parameters" : [ "target_all_worlds" ],
       "short_class" : "TileEntities"
     },
     "time" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "TimeAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Change the time of the target world", "Can also change the phase of the moon" ],
+      "examples" : [ "day", "night" ],
       "name" : "Time",
       "parameters" : [ "cycle_moon_phase", "time" ],
       "short_class" : "Time"
     },
     "torch" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "TorchAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Attach a torch to the target block" ],
+      "examples" : [ "supertorch", "torch" ],
       "name" : "Torch",
       "parameters" : [ "allow_glowstone", "glowstone_torch", "not_attachable", "redstone_torch" ],
       "short_class" : "Torch"
     },
     "tree" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "TreeAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Grow a tree at the target location", "This uses the vanilla tree generation algorithm and is not undoable", "Can be made to choose the type of tree based on the biome of the target block" ],
+      "examples" : [ "forest", "tree" ],
       "name" : "Tree",
       "parameters" : [ "biomes-map", "require_sapling", "type" ],
       "short_class" : "Tree"
     },
     "undo" : {
-      "category" : "",
+      "category" : "control",
       "class_name" : "UndoAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Undoes spells", "Can undo the last spell cast by the caster, the last spell cast by the target, or the last spell to have affected the target block.", "May require that the spell was cast recently or was cast by the caster of the undoing spell.", "Can also be used to undo changes performed in the current spell, including only undoing a limit set of changes in FIFO order. This can be used to create complex animations within a single spell." ],
+      "examples" : [ "counterspell", "rollback", "stream" ],
       "name" : "Undo",
       "parameters" : [ "admin_permission", "cancel", "target_block_timeout", "target_blocks", "target_caster", "target_down", "target_other_blocks", "target_spell", "target_timeout", "undo_oldest", "undo_to" ],
       "short_class" : "Undo"
     },
     "vanish" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "VanishAction",
-      "description" : [ "" ],
+      "description" : [ "Vanish the target player, making them completely invisible to other players" ],
       "examples" : [ ],
       "name" : "Vanish",
       "parameters" : [ "vanish" ],
       "short_class" : "Vanish"
     },
     "velocity" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "VelocityAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Apply velocity to the target entity", "Can be used to push or pull the entity away or towards the caster", "Can modify the velicity applied based on the target's distance from the ground, for a spell that applies a higher speed when up in the air" ],
+      "examples" : [ "fling", "grab", "pull", "push", "tornado" ],
       "name" : "Velocity",
       "parameters" : [ "additive", "damaged", "direction", "exemption_duration", "item_speed", "living_entity_speed", "max_altitude", "max_magnitude", "max_speed", "min_speed", "push", "speed", "velocity_max_distance", "y_offset" ],
       "short_class" : "Velocity"
@@ -1201,26 +1201,26 @@
     "volume" : {
       "category" : "compound",
       "class_name" : "VolumeAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Target all blocks within a cuboid volume" ],
+      "examples" : [ "bubble", "rainbow", "tendril", "tornado", "wave" ],
       "name" : "Volume",
       "parameters" : [ "center_probability", "center_x", "center_y", "center_z", "orient", "orient_pitch", "orient_pitch_snap", "orient_snap", "outer_probability", "probability", "radius", "radius_padding", "reorient", "replace", "thickness", "use_brush_size", "volume_type", "x_size", "y_size", "z_size" ],
       "short_class" : "Volume"
     },
     "wear" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "WearAction",
-      "description" : [ "" ],
+      "description" : [ "Force the target to wear a specific block or item on their head", "Can also be used to force the caster to wear the target block" ],
       "examples" : [ ],
       "name" : "Wear",
       "parameters" : [ "armor_slot", "enchantments-map", "item", "material", "return_on_finish", "unbreakable", "use_item" ],
       "short_class" : "Wear"
     },
     "weather" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "WeatherAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Change the weather in the target world" ],
+      "examples" : [ "day", "night", "weather" ],
       "name" : "Weather",
       "parameters" : [ "weather" ],
       "short_class" : "Weather"
