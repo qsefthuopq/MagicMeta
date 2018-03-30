@@ -122,5 +122,9 @@ public class Configurable {
                 parameters.add(key);
             }
         }
+
+        if (category == null || category.isEmpty()) {
+            category = other.getCategory();
+        }
     }
 }

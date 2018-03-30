@@ -181,6 +181,9 @@ public class MagicMeta {
                 Collection<Parameter> spellParameters = actionConfiguration.getParameters();
                 spellParameters.removeAll(baseParameters);
                 SpellActionDescription spellAction = new SpellActionDescription(actionClass, spellParameters);
+                if (CompoundAction.class.isAssignableFrom(actionClass)) {
+                    spellAction.setCategory(getCategory("compound").getKey());
+                }
                 data.addAction(spellAction.getKey(), spellAction);
             } catch (Exception e) {
                 e.printStackTrace();
