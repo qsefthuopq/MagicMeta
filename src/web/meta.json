@@ -2,9 +2,9 @@
   "action_parameters" : [ "actions", "ignore_result", "requires_entity_target", "requires_target", "stop_on_success" ],
   "actions" : {
     "absorb" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "AbsorbAction",
-      "description" : [ "" ],
+      "description" : [ "Absorb a block as a brush into your brush inventory" ],
       "key" : "absorb",
       "name" : "Absorb",
       "parameters" : [ ],
@@ -13,43 +13,43 @@
     "add_spell" : {
       "category" : "",
       "class_name" : "AddSpellAction",
-      "description" : [ "" ],
+      "description" : [ "Add a spell to a player or wand" ],
       "key" : "add_spell",
       "name" : "Add Spell",
       "parameters" : [ "auto_upgrade", "path", "path_end", "path_exact", "permission", "spell" ],
       "short_class" : "AddSpell"
     },
     "aggro" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "AggroAction",
-      "description" : [ "" ],
+      "description" : [ "Force a mob to focus on the caster" ],
       "key" : "aggro",
       "name" : "Aggro",
       "parameters" : [ ],
       "short_class" : "Aggro"
     },
     "air_supply" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "AirSupplyAction",
-      "description" : [ "" ],
+      "description" : [ "Increase an entity's air supply" ],
       "key" : "air_supply",
       "name" : "Air Supply",
       "parameters" : [ "air" ],
       "short_class" : "AirSupply"
     },
     "all_entities" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "AllEntitiesAction",
-      "description" : [ "" ],
+      "description" : [ "Target all entities in the current world, or optionally in all worlds" ],
       "key" : "all_entities",
       "name" : "All Entities",
       "parameters" : [ "target_all_worlds" ],
       "short_class" : "AllEntities"
     },
     "animate" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "AnimateAction",
-      "description" : [ "" ],
+      "description" : [ "... experimental incomplete action, do not use." ],
       "key" : "animate",
       "name" : "Animate",
       "parameters" : [ ],
@@ -58,79 +58,79 @@
     "apply_cooldown" : {
       "category" : "",
       "class_name" : "ApplyCooldownAction",
-      "description" : [ "" ],
+      "description" : [ "Apply cooldowns to one or more of a player's spells" ],
       "key" : "apply_cooldown",
       "name" : "Apply Cooldown",
       "parameters" : [ "bypass_reduction", "clear", "duration", "exclude_spells", "spells", "target_caster" ],
       "short_class" : "ApplyCooldown"
     },
     "area_of_effect" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "AreaOfEffectAction",
-      "description" : [ "" ],
+      "description" : [ "Target all entities within a radius" ],
       "key" : "area_of_effect",
       "name" : "Area Of Effect",
       "parameters" : [ "radius", "target_count", "target_source", "y_radius" ],
       "short_class" : "AreaOfEffect"
     },
     "area_of_effect_cloud" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "AreaOfEffectCloudAction",
-      "description" : [ "" ],
+      "description" : [ "Create an area of effect cloud entity. Shortcut for the SpawnEntity action." ],
       "key" : "area_of_effect_cloud",
       "name" : "Area Of Effect Cloud",
       "parameters" : [ "aggro", "ai", "amount", "attributes", "baby", "base_potion_type", "boots", "can_pickup_items", "cast", "cast_interval", "cast_requires_item", "cast_requires_target", "chestplate", "color", "default_drops", "direction", "disguise-map", "drop_xp", "drops", "duration", "duration_on_use", "dy_offset", "entity_attributes", "entity_types-map", "force", "health", "helmet", "interact_spell", "interval", "item", "leggings", "loot", "mage", "max_health", "name", "particle", "potion_effects", "protection", "radius", "radius_on_use", "radius_per_tick", "reapplication_delay", "reason", "repeat_random", "set_target", "silent", "speed", "strength", "tags", "tamed", "track_radius", "triggers", "type", "wait_time", "weakness", "xp" ],
       "short_class" : "AreaOfEffectCloud"
     },
     "armor_stand_projectile" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ArmorStandProjectileAction",
-      "description" : [ "" ],
+      "description" : [ "Create a projectile that uses an armor stand.", "This can be used with invisible armor stands holding items from a custom resource pack for detailed custom 3D projectiles." ],
       "key" : "armor_stand_projectile",
       "name" : "Armor Stand Projectile",
       "parameters" : [ "apply_velocity", "armor_stand_arms", "armor_stand_baseplate", "armor_stand_gravity", "armor_stand_invisible", "armor_stand_marker", "armor_stand_small", "attach_duration", "block_hit_count", "body_transform", "boots_item", "break_blocks", "breakable_size", "bypass_backfire", "chestplate_item", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "head_transform", "headshot", "headshot_effects", "helmet_item", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "left_arm_transform", "left_leg_transform", "leggings_item", "lifetime", "location_offset", "min_block_range", "min_entity_range", "miss", "miss_effects", "no_target", "npc_weight", "orient", "orient_head", "orient_right_arm", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "projectile_potion_effects", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "right_arm_item", "right_arm_transform", "right_leg_transform", "source_location", "spawn_reason", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "teleport", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "type", "unbreakable_items", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "variant", "velocity", "velocity_offset", "velocity_transform-map", "visible_delay_ticks" ],
       "short_class" : "ArmorStandProjectile"
     },
     "ascend" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "AscendAction",
-      "description" : [ "" ],
+      "description" : [ "Move up through blocks above the player" ],
       "key" : "ascend",
       "name" : "Ascend",
       "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
       "short_class" : "Ascend"
     },
     "asynchronous" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "AsynchronousAction",
-      "description" : [ "" ],
+      "description" : [ "Performs its sub-actions outside of the flow of the rest of the action list", "This can be used to launch several projectiles without waiting for them to hit, for instance." ],
       "key" : "asynchronous",
       "name" : "Asynchronous",
       "parameters" : [ ],
       "short_class" : "Asynchronous"
     },
     "block_search" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "BlockSearchAction",
-      "description" : [ "" ],
+      "description" : [ "Looks in a specific direction for blocks matching the destructible list" ],
       "key" : "block_search",
       "name" : "Block Search",
       "parameters" : [ "direction" ],
       "short_class" : "BlockSearch"
     },
     "break_block" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "BreakBlockAction",
-      "description" : [ "" ],
+      "description" : [ "Breaks a block naturally", "Can be configured to only break blocks below a certain vanilla durability", "Applies packet-based block breaking effects before fully destroying a block", "If the player does not have break permission, the visual breaking effects will still be applied but the block will not fully break" ],
       "key" : "break_block",
       "name" : "Break Block",
       "parameters" : [ "break_durability", "breakable", "commit", "consume", "consume_variants", "damage", "durability_max_distance", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "short_class" : "BreakBlock"
     },
     "brush" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "BrushAction",
-      "description" : [ "" ],
+      "description" : [ "Change the brush used for contained actions", "Capable of choosing a random brush from a 'brushes' proability map" ],
       "key" : "brush",
       "name" : "Brush",
       "parameters" : [ "brush", "brushes", "sample" ],
@@ -139,16 +139,16 @@
     "brush_select" : {
       "category" : "",
       "class_name" : "BrushSelectAction",
-      "description" : [ "" ],
+      "description" : [ "Open the brush selector GUI" ],
       "key" : "brush_select",
       "name" : "Brush Select",
       "parameters" : [ ],
       "short_class" : "BrushSelect"
     },
     "burn" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "BurnAction",
-      "description" : [ "" ],
+      "description" : [ "Light the target block on fire" ],
       "key" : "burn",
       "name" : "Burn",
       "parameters" : [ ],
@@ -157,34 +157,34 @@
     "cancel" : {
       "category" : "",
       "class_name" : "CancelAction",
-      "description" : [ "" ],
+      "description" : [ "Cancel any active spells, or specific spells, for the target player" ],
       "key" : "cancel",
       "name" : "Cancel",
       "parameters" : [ "force", "spells" ],
       "short_class" : "Cancel"
     },
     "capture" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "CaptureAction",
-      "description" : [ "" ],
+      "description" : [ "Remove the target entity and replace it with a spawn egg that will respawn the entity" ],
       "key" : "capture",
       "name" : "Capture",
       "parameters" : [ "min_health" ],
       "short_class" : "Capture"
     },
     "change_biome" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "ChangeBiomeAction",
-      "description" : [ "" ],
+      "description" : [ "Change the biome of the target block" ],
       "key" : "change_biome",
       "name" : "Change Biome",
       "parameters" : [ "biome" ],
       "short_class" : "ChangeBiome"
     },
     "change_context" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ChangeContextAction",
-      "description" : [ "" ],
+      "description" : [ "A complicated compound action that can be used to run sub-actions using a modified context", "The action context includes things such as the source and target locations and entities" ],
       "key" : "change_context",
       "name" : "Change Context",
       "parameters" : [ "orient_pitch", "persist_caster", "persist_target", "random_source_offset", "random_target_offset", "relative_source_offset", "relative_target_offset", "source_at_target", "source_direction", "source_direction_offset", "source_direction_speed", "source_is_target", "source_location", "source_offset", "source_pitch", "source_pitch_max", "source_pitch_min", "source_pitch_offset", "source_relative_direction_pitch_offset", "source_relative_direction_yaw_offset", "source_yaw_offset", "target_attachment", "target_caster", "target_direction", "target_direction_offset", "target_direction_speed", "target_entity", "target_location", "target_offset", "target_pitch_offset", "target_relative_direction_pitch_offset", "target_relative_direction_yaw_offset", "target_self", "target_snap", "target_yaw_offset" ],
@@ -193,7 +193,7 @@
     "change_parameters" : {
       "category" : "",
       "class_name" : "ChangeParametersAction",
-      "description" : [ "" ],
+      "description" : [ "Change the parameters of a spell mid-cast" ],
       "key" : "change_parameters",
       "name" : "Change Parameters",
       "parameters" : [ ],
@@ -202,43 +202,43 @@
     "change_server" : {
       "category" : "",
       "class_name" : "ChangeServerAction",
-      "description" : [ "" ],
+      "description" : [ "Move a player to another server", "Requires a BungeCord server network" ],
       "key" : "change_server",
       "name" : "Change Server",
       "parameters" : [ "server" ],
       "short_class" : "ChangeServer"
     },
     "change_world" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "ChangeWorldAction",
-      "description" : [ "" ],
+      "description" : [ "Move the player to a different world, but with the same coordinate as in their current world", "Can be configured with a set of worlds and scales, for instance to mimic nether:overworld 1:8 scale" ],
       "key" : "change_world",
       "name" : "Change World",
       "parameters" : [ "require_build", "require_exit", "safe", "vertical_range" ],
       "short_class" : "ChangeWorld"
     },
     "check_block" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CheckBlockAction",
-      "description" : [ "" ],
+      "description" : [ "Test if a block is in the destructible list", "Only runs its sub-actions if the block passes the destructible check." ],
       "key" : "check_block",
       "name" : "Check Block",
       "parameters" : [ "allowed" ],
       "short_class" : "CheckBlock"
     },
     "check_entity" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CheckEntityAction",
-      "description" : [ "" ],
+      "description" : [ "Test if an entity is allowed to target", "Only runs its sub-actions if the entity passes the checks." ],
       "key" : "check_entity",
       "name" : "Check Entity",
       "parameters" : [ "allow_caster", "allowed_entities", "denied_entities", "only_caster" ],
       "short_class" : "CheckEntity"
     },
     "check_mana" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CheckManaAction",
-      "description" : [ "" ],
+      "description" : [ "Test if a player has or does not have an amount of mana", "Only runs its sub-actions if player's mana is as required." ],
       "key" : "check_mana",
       "name" : "Check Mana",
       "parameters" : [ "require_mana", "require_mana_empty", "require_mana_not_full" ],
@@ -247,16 +247,16 @@
     "command" : {
       "category" : "",
       "class_name" : "CommandAction",
-      "description" : [ "" ],
+      "description" : [ "Run one or more commands", "Support the following variables: @spell, @pd (caster display name), @p, @pn (same as @p, caster name), @uuid, @world, @x, @y, @z, @tworld, @tx, @ty, @tz (target location), @td (target display name), @t, @tn (same as @t, target name), @tuuid" ],
       "key" : "command",
       "name" : "Command",
       "parameters" : [ "command", "console", "escape_sequence", "local_echo", "modal", "op", "timeout" ],
       "short_class" : "Command"
     },
     "cone_of_effect" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ConeOfEffectAction",
-      "description" : [ "" ],
+      "description" : [ "Target all entities within a cone in front of the caster" ],
       "key" : "cone_of_effect",
       "name" : "Cone Of Effect",
       "parameters" : [ "close_fov", "close_range", "distance_weight", "entity_weight", "fov", "fov_weight", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "npc_weight", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "player_weight", "range", "range_padding", "target", "target_breakable_depth", "target_count", "target_min_offset", "tmo" ],
@@ -265,61 +265,52 @@
     "count" : {
       "category" : "",
       "class_name" : "CountAction",
-      "description" : [ "" ],
+      "description" : [ "Count up the number of blocks or entities targeted and message the count to the caster" ],
       "key" : "count",
       "name" : "Count",
       "parameters" : [ ],
       "short_class" : "Count"
     },
     "cover" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CoverAction",
-      "description" : [ "" ],
+      "description" : [ "Target the first solid block below the current target" ],
       "key" : "cover",
       "name" : "Cover",
       "parameters" : [ "target_above" ],
       "short_class" : "Cover"
     },
     "create_field" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "CreateFieldAction",
-      "description" : [ "" ],
+      "description" : [ "Create a PreciousStones field" ],
       "key" : "create_field",
       "name" : "Create Field",
       "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "field_rent", "field_rent_period", "field_rent_sign_direction", "field_type", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "short_class" : "CreateField"
     },
     "create_plot" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "CreatePlotAction",
-      "description" : [ "" ],
+      "description" : [ "Create a Towny plot" ],
       "key" : "create_plot",
       "name" : "Create Plot",
       "parameters" : [ "price" ],
       "short_class" : "CreatePlot"
     },
-    "cure" : {
-      "category" : "",
-      "class_name" : "CureAction",
-      "description" : [ "" ],
-      "key" : "cure",
-      "name" : "Cure",
-      "parameters" : [ ],
-      "short_class" : "Cure"
-    },
     "custom_projectile" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CustomProjectileAction",
-      "description" : [ "" ],
+      "description" : [ "A flexible custom projectile", "This projectile can be made to reflect off surfaces, hit multiple entities or blocks, run spell actions as it travels, and more.", "It is able to mimic a gravity-bound projectile, home in on a target, and perform staged animations", "This is the base class for AmorStandProjectile and EntityProjectile" ],
       "key" : "custom_projectile",
       "name" : "Custom Projectile",
       "parameters" : [ "attach_duration", "block_hit_count", "break_blocks", "breakable_size", "bypass_backfire", "close_fov", "close_range", "distance_weight", "drag", "entity_hit_count", "entity_weight", "fov", "fov_weight", "gravity", "headshot", "headshot_effects", "hit_count", "hit_effects", "hit_on_miss", "hit_requires_entity", "hitbox", "hitbox_block_size", "hitbox_size", "ignore_blocks", "ignore_targeting", "interval", "lifetime", "min_block_range", "min_entity_range", "miss", "miss_effects", "npc_weight", "orient", "otdx", "otdy", "otdz", "otworld", "otx", "oty", "otz", "pitch_max", "pitch_min", "plan", "player_weight", "projectile_effects", "projectile_follow_player", "range", "range_padding", "reflect_count", "reflect_reorient", "reflect_reset_distance_traveled", "reflect_target_caster", "reflect_track_range", "reflect_track_target", "reorient", "reset_time_on_path_change", "return_offset", "return_relative_offset", "return_to_caster", "reverse", "source_location", "speed", "spread", "spread_movement", "spread_movement_max", "start", "target", "target_breakable_depth", "target_breakables", "target_min_offset", "target_self", "target_self_timeout", "tick", "tick_effects", "tick_size", "tmo", "track_range", "track_speed", "track_target", "update_launch_location", "use_block_location", "use_cast_location", "use_eye_location", "use_hit_location", "use_target_location", "use_wand_location", "velocity", "velocity_transform-map" ],
       "short_class" : "CustomProjectile"
     },
     "cycle_block" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "CycleBlockAction",
-      "description" : [ "" ],
+      "description" : [ "Change blocks to other blocks using a mapping list" ],
       "key" : "cycle_block",
       "name" : "Cycle Block",
       "parameters" : [ "materials" ],
@@ -328,14 +319,14 @@
     "cycle_entity" : {
       "category" : "",
       "class_name" : "CycleEntityAction",
-      "description" : [ "" ],
+      "description" : [ "Change entities to other entity types using a mapping list" ],
       "key" : "cycle_entity",
       "name" : "Cycle Entity",
       "parameters" : [ ],
       "short_class" : "CycleEntity"
     },
     "cylinder" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "CylinderAction",
       "description" : [ "" ],
       "key" : "cylinder",
@@ -407,7 +398,7 @@
       "short_class" : "Disarm"
     },
     "disc" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "DiscAction",
       "description" : [ "" ],
       "key" : "disc",
@@ -470,7 +461,7 @@
       "short_class" : "EnchantWand"
     },
     "entity_projectile" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "EntityProjectileAction",
       "description" : [ "" ],
       "key" : "entity_projectile",
@@ -515,7 +506,7 @@
       "short_class" : "FillWand"
     },
     "firework" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "FireworkAction",
       "description" : [ "" ],
       "key" : "firework",
@@ -641,7 +632,7 @@
       "short_class" : "Lightning"
     },
     "line" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "LineAction",
       "description" : [ "" ],
       "key" : "line",
@@ -767,7 +758,7 @@
       "short_class" : "MoveBlock"
     },
     "multiply" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "MultiplyAction",
       "description" : [ "" ],
       "key" : "multiply",
@@ -785,7 +776,7 @@
       "short_class" : "Orient"
     },
     "parallel" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ParallelAction",
       "description" : [ "" ],
       "key" : "parallel",
@@ -794,7 +785,7 @@
       "short_class" : "Parallel"
     },
     "plane" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "PlaneAction",
       "description" : [ "" ],
       "key" : "plane",
@@ -830,7 +821,7 @@
       "short_class" : "PlaySound"
     },
     "player_select" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "PlayerSelectAction",
       "description" : [ "" ],
       "key" : "player_select",
@@ -857,7 +848,7 @@
       "short_class" : "PowerBlock"
     },
     "probability" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ProbabilityAction",
       "description" : [ "" ],
       "key" : "probability",
@@ -866,7 +857,7 @@
       "short_class" : "Probability"
     },
     "projectile" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ProjectileAction",
       "description" : [ "" ],
       "key" : "projectile",
@@ -875,7 +866,7 @@
       "short_class" : "Projectile"
     },
     "random" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "RandomAction",
       "description" : [ "" ],
       "key" : "random",
@@ -893,7 +884,7 @@
       "short_class" : "Recall"
     },
     "recurse" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "RecurseAction",
       "description" : [ "" ],
       "key" : "recurse",
@@ -920,7 +911,7 @@
       "short_class" : "RepairItem"
     },
     "repeat" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "RepeatAction",
       "description" : [ "" ],
       "key" : "repeat",
@@ -929,7 +920,7 @@
       "short_class" : "Repeat"
     },
     "retarget" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "RetargetAction",
       "description" : [ "" ],
       "key" : "retarget",
@@ -947,7 +938,7 @@
       "short_class" : "RideEntity"
     },
     "ring" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "RingAction",
       "description" : [ "" ],
       "key" : "ring",
@@ -965,7 +956,7 @@
       "short_class" : "Selector"
     },
     "serial" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "SerialAction",
       "description" : [ "" ],
       "key" : "serial",
@@ -1010,7 +1001,7 @@
       "short_class" : "SkillSelector"
     },
     "skip" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "SkipAction",
       "description" : [ "" ],
       "key" : "skip",
@@ -1046,7 +1037,7 @@
       "short_class" : "SpellShop"
     },
     "sphere" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "SphereAction",
       "description" : [ "" ],
       "key" : "sphere",
@@ -1055,7 +1046,7 @@
       "short_class" : "Sphere"
     },
     "spread" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "SpreadAction",
       "description" : [ "" ],
       "key" : "spread",
@@ -1091,7 +1082,7 @@
       "short_class" : "SuperProtection"
     },
     "t_n_t" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "TNTAction",
       "description" : [ "" ],
       "key" : "t_n_t",
@@ -1127,7 +1118,7 @@
       "short_class" : "Teleport"
     },
     "throw_block" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ThrowBlockAction",
       "description" : [ "" ],
       "key" : "throw_block",
@@ -1136,7 +1127,7 @@
       "short_class" : "ThrowBlock"
     },
     "throw_item" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "ThrowItemAction",
       "description" : [ "" ],
       "key" : "throw_item",
@@ -1145,7 +1136,7 @@
       "short_class" : "ThrowItem"
     },
     "tile_entities" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "TileEntitiesAction",
       "description" : [ "" ],
       "key" : "tile_entities",
@@ -1208,7 +1199,7 @@
       "short_class" : "Velocity"
     },
     "volume" : {
-      "category" : "",
+      "category" : "compound",
       "class_name" : "VolumeAction",
       "description" : [ "" ],
       "key" : "volume",
@@ -1248,6 +1239,10 @@
       "description" : [ "" ],
       "name" : "Brushes"
     },
+    "compound" : {
+      "description" : [ "Actions that contain other actions" ],
+      "name" : "Compound"
+    },
     "construction" : {
       "description" : [ "" ],
       "name" : "Construction"
@@ -1255,6 +1250,10 @@
     "effects" : {
       "description" : [ "" ],
       "name" : "Effects"
+    },
+    "entity" : {
+      "description" : [ "Actions that effect entities" ],
+      "name" : "Entity"
     },
     "targeting" : {
       "description" : [ "" ],
@@ -1270,7 +1269,7 @@
     "animated_ball" : {
       "category" : "",
       "class_name" : "AnimatedBallEffect",
-      "description" : [ "" ],
+      "description" : [ "An animated swirl that follows the shape of a sphere" ],
       "key" : "animated_ball",
       "name" : "Animated Ball",
       "parameters" : [ "particle", "particles", "particles_per_iteration", "size", "x_factor", "x_offset", "x_rotation", "y_factor", "y_offset", "y_rotation", "z_factor", "z_offset", "z_rotation" ],
@@ -1279,7 +1278,7 @@
     "arc" : {
       "category" : "",
       "class_name" : "ArcEffect",
-      "description" : [ "" ],
+      "description" : [ "An arc that extends from the source location to the target location" ],
       "key" : "arc",
       "name" : "Arc",
       "parameters" : [ "height", "particle", "particles" ],
@@ -1288,7 +1287,7 @@
     "atom" : {
       "category" : "",
       "class_name" : "AtomEffect",
-      "description" : [ "" ],
+      "description" : [ "A model of an atom with a nuclues and one or more orbitals" ],
       "key" : "atom",
       "name" : "Atom",
       "parameters" : [ "angular_velocity", "color_nucleus", "color_orbital", "orbitals", "particle_nucleus", "particle_orbital", "particles_nucleus", "particles_orbital", "radius", "radius_nucleus", "rotation" ],
@@ -1297,7 +1296,7 @@
     "big_bang" : {
       "category" : "",
       "class_name" : "BigBangEffect",
-      "description" : [ "" ],
+      "description" : [ "A big explosion with loud sounds" ],
       "key" : "big_bang",
       "name" : "Big Bang",
       "parameters" : [ "color2", "color3", "explosions", "fade_color", "firework_type", "intensity", "radius", "sound", "sound_interval", "sound_pitch", "sound_volume" ],
@@ -1306,7 +1305,7 @@
     "bleed" : {
       "category" : "",
       "class_name" : "BleedEffect",
-      "description" : [ "" ],
+      "description" : [ "Make it look like a player is bleeding, an optionally apply the hurt effect" ],
       "key" : "bleed",
       "name" : "Bleed",
       "parameters" : [ "height", "hurt" ],
@@ -1315,16 +1314,16 @@
     "circle" : {
       "category" : "",
       "class_name" : "CircleEffect",
-      "description" : [ "" ],
+      "description" : [ "A 2D circle" ],
       "key" : "circle",
       "name" : "Circle",
-      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "particle", "particles", "radius", "x_rotation", "x_subtract", "y_rotation", "y_subtract", "z_rotation", "z_subtract" ],
+      "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "particle", "particles", "radius", "whole_circle", "x_rotation", "x_subtract", "y_rotation", "y_subtract", "z_rotation", "z_subtract" ],
       "short_class" : "Circle"
     },
     "cloud" : {
       "category" : "",
       "class_name" : "CloudEffect",
-      "description" : [ "" ],
+      "description" : [ "A puffy cloud" ],
       "key" : "cloud",
       "name" : "Cloud",
       "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "main_particle", "particle_radius", "y_offset" ],
@@ -1333,7 +1332,7 @@
     "colored_image" : {
       "category" : "",
       "class_name" : "ColoredImageEffect",
-      "description" : [ "" ],
+      "description" : [ "Draw an image or animated gif using redstone or other colored particles" ],
       "key" : "colored_image",
       "name" : "Colored Image",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
@@ -1342,7 +1341,7 @@
     "cone" : {
       "category" : "",
       "class_name" : "ConeEffect",
-      "description" : [ "" ],
+      "description" : [ "A swirly cone extending out from the source location" ],
       "key" : "cone",
       "name" : "Cone",
       "parameters" : [ "angular_velocity", "length_grow", "particle", "particles", "particles_cone", "radius_grow", "randomize", "rotation" ],
@@ -1351,7 +1350,7 @@
     "cube" : {
       "category" : "",
       "class_name" : "CubeEffect",
-      "description" : [ "" ],
+      "description" : [ "A wireframe cube" ],
       "key" : "cube",
       "name" : "Cube",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "edge_length", "enable_rotation", "outline_only", "particle", "particles" ],
@@ -1360,7 +1359,7 @@
     "cylinder" : {
       "category" : "",
       "class_name" : "CylinderEffect",
-      "description" : [ "" ],
+      "description" : [ "A cylinder that may be hollow or solid" ],
       "key" : "cylinder",
       "name" : "Cylinder",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "height", "particle", "particles", "radius", "rotation_x", "rotation_y", "rotation_z", "solid" ],
@@ -1369,7 +1368,7 @@
     "disco_ball" : {
       "category" : "",
       "class_name" : "DiscoBallEffect",
-      "description" : [ "" ],
+      "description" : [ "A shiny disco ball in the sky" ],
       "key" : "disco_ball",
       "name" : "Disco Ball",
       "parameters" : [ "direction-disco_ball_effect_direction", "line_color", "line_particle", "line_particles", "max", "max_lines", "sphere_color", "sphere_particle", "sphere_particles", "sphere_radius" ],
@@ -1378,7 +1377,7 @@
     "dna" : {
       "category" : "",
       "class_name" : "DnaEffect",
-      "description" : [ "" ],
+      "description" : [ "Extends a strand of DNA with helixes rotating around a base" ],
       "key" : "dna",
       "name" : "Dna",
       "parameters" : [ "base_interval", "color_base1", "color_base2", "color_helix", "grow", "length", "particle_base1", "particle_base2", "particle_helix", "particles_base", "particles_helix", "radials", "radius" ],
@@ -1387,7 +1386,7 @@
     "donut" : {
       "category" : "",
       "class_name" : "DonutEffect",
-      "description" : [ "" ],
+      "description" : [ "A torus shape" ],
       "key" : "donut",
       "name" : "Donut",
       "parameters" : [ "circles", "particle", "particles_circle", "radius_donut", "radius_tube", "x_rotation", "y_rotation", "z_rotation" ],
@@ -1396,7 +1395,7 @@
     "dragon" : {
       "category" : "",
       "class_name" : "DragonEffect",
-      "description" : [ "" ],
+      "description" : [ "Strands of fire that shoot out in arcs" ],
       "key" : "dragon",
       "name" : "Dragon",
       "parameters" : [ "arcs", "length", "particle", "particles", "steps_per_iteration" ],
@@ -1405,7 +1404,7 @@
     "earth" : {
       "category" : "",
       "class_name" : "EarthEffect",
-      "description" : [ "" ],
+      "description" : [ "A sphere that resembles the earth" ],
       "key" : "earth",
       "name" : "Earth",
       "parameters" : [ "mountain_height", "particles", "precision", "radius" ],
@@ -1414,7 +1413,7 @@
     "equation" : {
       "category" : "",
       "class_name" : "EquationEffect",
-      "description" : [ "" ],
+      "description" : [ "Uses equations to render a particle each tick.", "Is capable of parametric equations, rendering multiple particles per tick.", "Equations use a 't' variable by default to represent the current tick, this variable starts at zero and counts up." ],
       "key" : "equation",
       "name" : "Equation",
       "parameters" : [ "cycle_mini_step", "max_steps", "orient", "orient_pitch", "particle", "particles", "particles2", "variable", "variable2", "x2_equation", "x_equation", "y2_equation", "y_equation", "z2_equation", "z_equation" ],
@@ -1423,7 +1422,7 @@
     "explode" : {
       "category" : "",
       "class_name" : "ExplodeEffect",
-      "description" : [ "" ],
+      "description" : [ "A large explosion" ],
       "key" : "explode",
       "name" : "Explode",
       "parameters" : [ "amount", "sound" ],
@@ -1432,7 +1431,7 @@
     "flame" : {
       "category" : "",
       "class_name" : "FlameEffect",
-      "description" : [ "" ],
+      "description" : [ "Make something look like it's on fire" ],
       "key" : "flame",
       "name" : "Flame",
       "parameters" : [ ],
@@ -1441,7 +1440,7 @@
     "fountain" : {
       "category" : "",
       "class_name" : "FountainEffect",
-      "description" : [ "" ],
+      "description" : [ "A fountain of particles shooting up in the sky" ],
       "key" : "fountain",
       "name" : "Fountain",
       "parameters" : [ "height", "height_spout", "particle", "particles_spout", "particles_strand", "radius", "radius_spout", "rotation", "strands" ],
@@ -1450,7 +1449,7 @@
     "grid" : {
       "category" : "",
       "class_name" : "GridEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a 2D wireframe grid" ],
       "key" : "grid",
       "name" : "Grid",
       "parameters" : [ "columns", "height_cell", "particle", "particles_height", "particles_width", "rotation", "rows", "width_cell" ],
@@ -1459,7 +1458,7 @@
     "heart" : {
       "category" : "",
       "class_name" : "HeartEffect",
-      "description" : [ "" ],
+      "description" : [ "Creates a 2D heart in 3D space" ],
       "key" : "heart",
       "name" : "Heart",
       "parameters" : [ "compilaction", "compress_y_factor_total", "factor_inner_spike", "particle", "particles", "x_factor", "x_rotation", "y_factor", "y_rotation", "z_rotation" ],
@@ -1468,7 +1467,7 @@
     "helix" : {
       "category" : "",
       "class_name" : "HelixEffect",
-      "description" : [ "" ],
+      "description" : [ "A flat spiralling helix" ],
       "key" : "helix",
       "name" : "Helix",
       "parameters" : [ "curve", "particle", "particles", "radius", "rotation", "strands" ],
@@ -1477,7 +1476,7 @@
     "hill" : {
       "category" : "",
       "class_name" : "HillEffect",
-      "description" : [ "" ],
+      "description" : [ "Waving hills" ],
       "key" : "hill",
       "name" : "Hill",
       "parameters" : [ "edge_length", "height", "particle", "particles", "y_rotation" ],
@@ -1486,7 +1485,7 @@
     "icon" : {
       "category" : "",
       "class_name" : "IconEffect",
-      "description" : [ "" ],
+      "description" : [ "A single particle appears above the target" ],
       "key" : "icon",
       "name" : "Icon",
       "parameters" : [ "particle", "y_offset" ],
@@ -1495,7 +1494,7 @@
     "image" : {
       "category" : "",
       "class_name" : "ImageEffect",
-      "description" : [ "" ],
+      "description" : [ "Render a monochrome image from an image file or animated gif.", "Black pixels will be skipped, all other pixels display as the selected particle type" ],
       "key" : "image",
       "name" : "Image",
       "parameters" : [ "angular_velocity_x", "angular_velocity_y", "angular_velocity_z", "enable_rotation", "file_name", "frame_delay", "invert", "particle", "plane", "size", "step_x", "step_y", "transparency" ],
@@ -1504,7 +1503,7 @@
     "jump" : {
       "category" : "",
       "class_name" : "JumpEffect",
-      "description" : [ "" ],
+      "description" : [ "Apply velocity to the target entity" ],
       "key" : "jump",
       "name" : "Jump",
       "parameters" : [ "power" ],
@@ -1513,7 +1512,7 @@
     "line" : {
       "category" : "",
       "class_name" : "LineEffect",
-      "description" : [ "" ],
+      "description" : [ "Extend a line from the source to the target" ],
       "key" : "line",
       "name" : "Line",
       "parameters" : [ "is_zig_zag", "length", "particle", "particles", "zig_zag_offset", "zig_zags" ],
@@ -1522,7 +1521,7 @@
     "love" : {
       "category" : "",
       "class_name" : "LoveEffect",
-      "description" : [ "" ],
+      "description" : [ "Make hearts bubble out of the target" ],
       "key" : "love",
       "name" : "Love",
       "parameters" : [ "particle" ],
@@ -1531,7 +1530,7 @@
     "modified" : {
       "category" : "",
       "class_name" : "ModifiedEffect",
-      "description" : [ "" ],
+      "description" : [ "Modify any other effect using equations", "Equations can be applied to any parameter of the contained effect.", "Equations can also be used to move the entire effect around." ],
       "key" : "modified",
       "name" : "Modified",
       "parameters" : [ "effect", "effect_class", "orient", "orient_pitch", "parameters", "x_equation", "y_equation", "z_equation" ],
@@ -1540,7 +1539,7 @@
     "music" : {
       "category" : "",
       "class_name" : "MusicEffect",
-      "description" : [ "" ],
+      "description" : [ "A ring of musical notes" ],
       "key" : "music",
       "name" : "Music",
       "parameters" : [ "radials_per_step", "radius" ],
@@ -1549,7 +1548,7 @@
     "plot" : {
       "category" : "",
       "class_name" : "PlotEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a simple graph of an equation using separate x and y equations.", "This is primarily intended for testing equations, and not really meant to be used for in-game effects" ],
       "key" : "plot",
       "name" : "Plot",
       "parameters" : [ "particle", "persistent", "x_equation", "x_scale", "y_equation", "y_scale", "z_equation", "z_scale" ],
@@ -1558,7 +1557,7 @@
     "shield" : {
       "category" : "",
       "class_name" : "ShieldEffect",
-      "description" : [ "" ],
+      "description" : [ "Creat a dome around the target" ],
       "key" : "shield",
       "name" : "Shield",
       "parameters" : [ "particle", "particles", "radius", "sphere" ],
@@ -1567,7 +1566,7 @@
     "sky_rocket" : {
       "category" : "",
       "class_name" : "SkyRocketEffect",
-      "description" : [ "" ],
+      "description" : [ "Send the target entity flying into the sky" ],
       "key" : "sky_rocket",
       "name" : "Sky Rocket",
       "parameters" : [ "power" ],
@@ -1576,7 +1575,7 @@
     "smoke" : {
       "category" : "",
       "class_name" : "SmokeEffect",
-      "description" : [ "" ],
+      "description" : [ "Make it appear as though the target is smoldering" ],
       "key" : "smoke",
       "name" : "Smoke",
       "parameters" : [ "particle" ],
@@ -1585,7 +1584,7 @@
     "sphere" : {
       "category" : "",
       "class_name" : "SphereEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a 3D sphere" ],
       "key" : "sphere",
       "name" : "Sphere",
       "parameters" : [ "particle", "particles", "radius", "radius_increase", "y_offset" ],
@@ -1594,7 +1593,7 @@
     "star" : {
       "category" : "",
       "class_name" : "StarEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a 2D star" ],
       "key" : "star",
       "name" : "Star",
       "parameters" : [ "inner_radius", "particle", "particles", "spike_height", "spikes_half" ],
@@ -1603,7 +1602,7 @@
     "text" : {
       "category" : "",
       "class_name" : "TextEffect",
-      "description" : [ "" ],
+      "description" : [ "Render text in the air using particles" ],
       "key" : "text",
       "name" : "Text",
       "parameters" : [ "font", "invert", "particle", "realtime", "size", "step_x", "step_y", "text" ],
@@ -1612,7 +1611,7 @@
     "tornado" : {
       "category" : "",
       "class_name" : "TornadoEffect",
-      "description" : [ "" ],
+      "description" : [ "A swirling tornado of particles" ],
       "key" : "tornado",
       "name" : "Tornado",
       "parameters" : [ "cloud_color", "cloud_particle", "cloud_size", "distance", "max_tornado_radius", "show_cloud", "show_tornado", "tornado_color", "tornado_height", "tornado_particle", "y_offset" ],
@@ -1621,7 +1620,7 @@
     "trace" : {
       "category" : "",
       "class_name" : "TraceEffect",
-      "description" : [ "" ],
+      "description" : [ "Trail particles behind the target entity" ],
       "key" : "trace",
       "name" : "Trace",
       "parameters" : [ "max_way_points", "particle", "refresh" ],
@@ -1630,7 +1629,7 @@
     "turn" : {
       "category" : "",
       "class_name" : "TurnEffect",
-      "description" : [ "" ],
+      "description" : [ "Make the target entity change directions" ],
       "key" : "turn",
       "name" : "Turn",
       "parameters" : [ "step" ],
@@ -1639,7 +1638,7 @@
     "vortex" : {
       "category" : "",
       "class_name" : "VortexEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a swirling vortex" ],
       "key" : "vortex",
       "name" : "Vortex",
       "parameters" : [ "circles", "grow", "helixes", "particle", "radials", "radius" ],
@@ -1648,7 +1647,7 @@
     "warp" : {
       "category" : "",
       "class_name" : "WarpEffect",
-      "description" : [ "" ],
+      "description" : [ "Rings that descend around the target, as if they had stepped on a teleporter pad" ],
       "key" : "warp",
       "name" : "Warp",
       "parameters" : [ "grow", "particle", "particles", "radius", "rings" ],
@@ -1657,7 +1656,7 @@
     "wave" : {
       "category" : "",
       "class_name" : "WaveEffect",
-      "description" : [ "" ],
+      "description" : [ "Create a wavy horizontal plane" ],
       "key" : "wave",
       "name" : "Wave",
       "parameters" : [ "cloud_color", "cloud_particle", "depth_front", "height", "height_back", "length_back", "length_front", "particle", "particles_back", "particles_front", "rows", "velocity-vector", "width" ],
@@ -1739,9 +1738,9 @@
     },
     "ai" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Whether or not this mob has 'AI'. A mob with AI turned off will not move or react, and also can not be pushed by velocity." ],
       "field" : "ai",
-      "name" : "Ai",
+      "name" : "AI",
       "type" : "boolean"
     },
     "air" : {
@@ -7784,6 +7783,13 @@
       "field" : "weather",
       "name" : "Weather",
       "type" : "weather"
+    },
+    "whole_circle" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "whole_circle",
+      "name" : "Whole Circle",
+      "type" : "boolean"
     },
     "width" : {
       "category" : "",
