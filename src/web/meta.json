@@ -2521,7 +2521,7 @@
       "name" : "Wear",
       "parameters" : {
         "armor_slot" : "3",
-        "enchantments-map" : null,
+        "enchantments" : null,
         "item" : null,
         "material" : null,
         "return_on_finish" : "false",
@@ -2574,6 +2574,10 @@
     "entity" : {
       "description" : [ "Actions that effect entities" ],
       "name" : "Entity"
+    },
+    "mob" : {
+      "description" : [ "Properties of magic mobs" ],
+      "name" : "Mob"
     },
     "player" : {
       "description" : [ "Actions that effect only players" ],
@@ -3354,13 +3358,13 @@
       "examples" : [ ],
       "name" : "Text",
       "parameters" : {
-        "font" : "java.awt.font[family=tahoma,name=tahoma,style=plain,size=16]",
+        "font" : "Tahoma 16",
+        "font_size" : "0.2",
         "invert" : "false",
         "iterations" : "20",
         "particle" : "fireworks_spark",
         "period" : "40",
         "realtime" : "false",
-        "font_size" : "0.2",
         "step_x" : "1",
         "step_y" : "1",
         "text" : "text",
@@ -3501,11 +3505,11 @@
     "particle_offset_x" : "0.0",
     "particle_offset_y" : "0.0",
     "particle_offset_z" : "0.0",
+    "particle_speed" : "0.0",
     "period" : "1",
     "pitch" : null,
     "pitch_offset" : "0.0",
     "relative_offset" : null,
-    "particle_speed" : "0.0",
     "target_offset" : null,
     "target_players" : null,
     "type" : null,
@@ -3563,15 +3567,15 @@
       "type" : "actions"
     },
     "active_brush" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The currently active brush, used with engineering magic" ],
       "field" : "active_brush",
       "name" : "Active Brush",
       "type" : "material"
     },
     "active_costs" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A list of costs to be deducted every second this spell is active" ],
       "field" : "active_costs",
       "name" : "Active Costs",
       "type" : "cost_map"
@@ -3584,8 +3588,8 @@
       "type" : "double"
     },
     "active_spell" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The currently active spell for this wand, which will be cast when performing a bound cast action" ],
       "field" : "active_spell",
       "name" : "Active Spell",
       "type" : "spell"
@@ -3703,15 +3707,15 @@
       "type" : "list"
     },
     "alternate_spell" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The spell to cast when performing the action bound to alt_cast on this wand" ],
       "field" : "alternate_spell",
       "name" : "Alternate Spell",
       "type" : "spell"
     },
     "alternate_spell2" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The spell to cast when performing the action bound to alt_cast2 on this wand" ],
       "field" : "alternate_spell2",
       "name" : "Alternate Spell2",
       "type" : "spell"
@@ -3871,8 +3875,8 @@
       "type" : "integer"
     },
     "attributes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Attributes to apply to the player when holding this wand", "If set to passive the attributes will be applied when worn", "If set to stack, attributes will add to the player's current attributes" ],
       "field" : "attributes",
       "name" : "Attributes",
       "type" : "attributes"
@@ -3963,43 +3967,43 @@
       "type" : "map"
     },
     "block_chance" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The chance of cancelling a spell when blocking with this wand" ],
       "field" : "block_chance",
       "name" : "Block Chance",
       "type" : "double"
     },
     "block_cooldown" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A cooldown on blocking spells with this wand" ],
       "field" : "block_cooldown",
       "name" : "Block Cooldown",
-      "type" : "double"
+      "type" : "int"
     },
     "block_fov" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "An angle in radians for blocking", "The player must be facing the source of a spell in order to block it" ],
       "field" : "block_fov",
       "name" : "Block Fov",
       "type" : "double"
     },
     "block_hit_count" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "How many blocks this projectile can hit before stopping", "Generall the projectile would need to have actions on hit that will remove blocks, otherwise it will continue to hit the same block immediately until it reaches its hit count." ],
       "field" : "block_hit_count",
       "name" : "Block Hit Count",
       "type" : "integer"
     },
     "block_mage_cooldown" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Apply a global cooldown when using this wand to block a spell" ],
       "field" : "block_mage_cooldown",
       "name" : "Block Mage Cooldown",
-      "type" : "double"
+      "type" : "int"
     },
     "block_reflect_chance" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A percent chance that a spell blocked with this wand will be reflected" ],
       "field" : "block_reflect_chance",
       "name" : "Block Reflect Chance",
       "type" : "double"
@@ -4033,11 +4037,11 @@
       "type" : "material"
     },
     "bound" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, the wand will bind to a player when they hold it", "A bound wand may not be used or taken out of a container by any other player" ],
       "field" : "bound",
       "name" : "Bound",
-      "type" : "double"
+      "type" : "boolean"
     },
     "bp" : {
       "alias" : "bypass_pvp",
@@ -4104,15 +4108,15 @@
       "type" : "boolean"
     },
     "brush_inventory" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Where each brush is located in the player's inventory", "This is generally only set directly in items or class data, and does not need to be added to a configuration" ],
       "field" : "brush_inventory",
       "name" : "Brush Inventory",
-      "type" : "double"
+      "type" : "material_map"
     },
     "brush_mode" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How the brushes used for engineering will display in this wand", "By default brushes will appear in a separate chest inventory, but brush_mode can be set to 'inventory' to have them mixed in with the spell inventory" ],
       "field" : "brush_mode",
       "name" : "Brush Mode",
       "type" : "wand_mode"
@@ -4125,8 +4129,8 @@
       "type" : "boolean"
     },
     "brushes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The engineering brushes this wand can use" ],
       "field" : "brushes",
       "name" : "Brushes",
       "type" : "material_list"
@@ -4280,64 +4284,64 @@
       "type" : "map"
     },
     "cast_interval" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How often, in milliseconds, to auto-cast the cast_spell set on this wand" ],
       "field" : "cast_interval",
       "name" : "Cast Interval",
       "type" : "long"
     },
     "cast_location" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Offset the source location for spells cast by this wand" ],
       "field" : "cast_location",
       "name" : "Cast Location",
-      "type" : "double"
+      "type" : "vector"
     },
     "cast_min_bowpull" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "For bow wands, require that the bow be pulled back at least this far before a spell will cast", "This is a value from 0 to 1, where 1 is pulled fully back", "If not pulled back far enough, the wand will fire a normal arrow, unless the spell inventory is open in which case nothing will fire" ],
       "field" : "cast_min_bowpull",
       "name" : "Cast Min Bowpull",
       "type" : "double"
     },
     "cast_min_velocity" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The minimum speed of a player required before the cast_spell on this wand will be cast", "This can be used to make a wand or armor with a spell that only activates while a player is moving, or if used with cast_velocity_direction, when a player jumps" ],
       "field" : "cast_min_velocity",
       "name" : "Cast Min Velocity",
       "type" : "double"
     },
     "cast_on_no_target" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "If set to false, a spell will not consume mana or incur cooldown if it was not successfully cast" ],
       "field" : "cast_on_no_target",
       "name" : "Cast On No Target",
       "type" : "boolean"
     },
     "cast_parameters" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Parameters to apply to cast_spell when casting", "Does not apply to wands cast via a spell in the normal manner, see overrides for that." ],
       "field" : "cast_parameters",
       "name" : "Cast Parameters",
-      "type" : "double"
+      "type" : "string_list"
     },
     "cast_requires_item" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "An item the mob must be holding in order to cast spells" ],
       "field" : "cast_requires_item",
       "name" : "Cast Requires Item",
-      "type" : "string"
+      "type" : "material"
     },
     "cast_requires_target" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "If true, the mob will only cast spells if it has targeted an entity" ],
       "field" : "cast_requires_target",
       "name" : "Cast Requires Target",
       "type" : "boolean"
     },
     "cast_spell" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A spell this wand will cast at regular intervals while held", "If set to passive, the wand will only cast if worn as armor" ],
       "field" : "cast_spell",
       "name" : "Cast Spell",
       "type" : "spell"
@@ -4449,18 +4453,18 @@
       "type" : "integer"
     },
     "class" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The class this wand uses", "If set this will be a class-bound wand, meaning it may store some of its properties in a player's class data rather than on the wand item", "This can be used to create wands that show spells and mana that a player has, so a player may change wands without losing progress", "A player must have access to this class to use the wand, if the class is locked it will need to be unlocked before the player may activate this wand" ],
       "field" : "class",
       "name" : "Class",
-      "type" : "double"
+      "type" : "string"
     },
     "classes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A set of classes that this wand may attach to", "The wand will use the first unlocked class from this list it finds on the player", "If the player has none of these classes unlocked they may not activate or use this wand" ],
       "field" : "classes",
       "name" : "Classes",
-      "type" : "double"
+      "type" : "string_list"
     },
     "clear" : {
       "category" : "",
@@ -4652,18 +4656,18 @@
       "type" : "boolean"
     },
     "consume_reduction" : {
-      "category" : "base",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A percent reduction used for engineering spells that consume blocks when cast", "Currently only the values 1 and 0 are supported, where 1 means the player may use engineering magic without spending blocks", "This will appear on the wand lore as 'Manifestation'" ],
       "field" : "consume_reduction",
       "name" : "Consume Reduction",
       "type" : "double"
     },
     "consume_spell" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A spell to cast when this wand is consumed", "Used for making custom potions or food" ],
       "field" : "consume_spell",
       "name" : "Consume Spell",
-      "type" : "double"
+      "type" : "spell"
     },
     "consume_variants" : {
       "category" : "",
@@ -4717,21 +4721,21 @@
     },
     "cost_reduction" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A percent reduction for costs in spells cast by this wand" ],
       "field" : "cost_reduction",
       "name" : "Cost Reduction",
       "type" : "double"
     },
     "cost_type" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The type of costs options in this selector use, if none is specified on the option itself" ],
       "field" : "cost_type",
       "name" : "Cost Type",
-      "type" : "string"
+      "type" : "cost_type"
     },
     "costs" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "The costs for casting this spell" ],
       "field" : "costs",
       "name" : "Costs",
       "type" : "cost_map"
@@ -5185,11 +5189,11 @@
       "type" : "effect"
     },
     "effect_bubbles" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, the player will have potion effect bubbles on them while holding this wand", "The bubbles will appear in the wand's color" ],
       "field" : "effect_bubbles",
       "name" : "Effect Bubbles",
-      "type" : "double"
+      "type" : "boolean"
     },
     "effect_class" : {
       "category" : "",
@@ -5200,10 +5204,10 @@
     },
     "effect_color" : {
       "category" : "effects",
-      "description" : [ "" ],
+      "description" : [ "A special color applied to this wand", "This color is used in wand particle effects if effect_bubbles is set to true", "Many spells also use the wand's color for colored particle effects, via effectlib color_override parameters or single particle spawning." ],
       "field" : "effect_color",
       "name" : "Effect Color",
-      "type" : "double"
+      "type" : "color"
     },
     "effect_key" : {
       "category" : "effects",
@@ -5220,64 +5224,64 @@
       "type" : "boolean"
     },
     "effect_particle" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A custom particle set on this wand", "If effect_particle_interval is set, this partile will spawn in a ring around the player at a fixed interval", "Some spell effects may also use this custom particle via the particle_override parameter" ],
       "field" : "effect_particle",
       "name" : "Effect Particle",
       "type" : "particle_effect"
     },
     "effect_particle_count" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Number of particles to spawn if effect_particle and effect_particle_interval are set" ],
       "field" : "effect_particle_count",
       "name" : "Effect Particle Count",
-      "type" : "double"
+      "type" : "int"
     },
     "effect_particle_data" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
       "field" : "effect_particle_data",
       "name" : "Effect Particle Data",
-      "type" : "double"
+      "type" : "int"
     },
     "effect_particle_interval" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Spawn a ring around the player if effect_particle is set.", "This value is in milliseconds" ],
       "field" : "effect_particle_interval",
       "name" : "Effect Particle Interval",
-      "type" : "double"
+      "type" : "int"
     },
     "effect_particle_min_velocity" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The minimum velocity the player must be moving for particle effects to show" ],
       "field" : "effect_particle_min_velocity",
       "name" : "Effect Particle Min Velocity",
       "type" : "double"
     },
     "effect_particle_offset" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The vertical offset of particles spawned by this wand, if effect_particle and effect_particle_interval are set" ],
       "field" : "effect_particle_offset",
       "name" : "Effect Particle Offset",
       "type" : "double"
     },
     "effect_particle_radius" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The radius of the ring of particles spawned by this wand, if effect_particle and effect_particle_interval are set" ],
       "field" : "effect_particle_radius",
       "name" : "Effect Particle Radius",
       "type" : "double"
     },
     "effect_sound" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A sound to play at an interval while holding this wand" ],
       "field" : "effect_sound",
       "name" : "Effect Sound",
       "type" : "sound"
     },
     "effect_sound_interval" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How often, in milliseconds, to play the effect_sound attached to this wand while a player is holding it" ],
       "field" : "effect_sound_interval",
       "name" : "Effect Sound Interval",
       "type" : "double"
@@ -5346,25 +5350,18 @@
       "type" : "boolean"
     },
     "enchant_count" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The maximum number of times this wand can be enchanted, using the legacy enchanting system" ],
       "field" : "enchant_count",
       "name" : "Enchant Count",
-      "type" : "double"
+      "type" : "int"
     },
     "enchantments" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Enchantments to apply to this item" ],
       "field" : "enchantments",
       "name" : "Enchantments",
-      "type" : "string"
-    },
-    "enchantments-map" : {
-      "category" : "",
-      "description" : [ "" ],
-      "field" : "enchantments",
-      "name" : "Enchantments",
-      "type" : "map"
+      "type" : "enchantment_map"
     },
     "entity_attributes" : {
       "category" : "",
@@ -5694,6 +5691,13 @@
       "field" : "font",
       "name" : "Font",
       "type" : "font"
+    },
+    "font_size" : {
+      "category" : "effects",
+      "description" : [ "Can be used to scale the text size down" ],
+      "field" : "size",
+      "name" : "Size",
+      "type" : "integer"
     },
     "force" : {
       "category" : "",
@@ -6082,36 +6086,36 @@
       "type" : "list"
     },
     "immortal" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Prevent this wand from despawning when dropped on the ground" ],
       "field" : "immortal",
       "name" : "Immortal",
       "type" : "double"
     },
     "increment_data" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "constructor",
+      "description" : [ "Increment the data value of blocks while iterating", "This can be used with water or lava to taper the blocks off, lowering their height each iteration" ],
       "field" : "increment_data",
       "name" : "Increment Data",
       "type" : "boolean"
     },
     "indestructible" : {
       "category" : "wand",
-      "description" : [ "Whether or not this wand takes damage like a normal item", "This generally has to be set on a wand if using custom resource pack icons, to prevent the durability from changing" ],
+      "description" : [ "Sets the unbreakable tag on the wand item", "This generally has to be set on a wand if using custom resource pack icons, to prevent the durability from changing" ],
       "field" : "indestructible",
       "name" : "Indestructible",
       "type" : "boolean"
     },
     "indestructible_materials" : {
       "category" : "construction",
-      "description" : [ "" ],
+      "description" : [ "A list of materials that can not be modified by this spell" ],
       "field" : "indestructible",
       "name" : "Indestructible",
       "type" : "material_list"
     },
     "inherit" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Can be used to inherit from another template" ],
       "field" : "inherit",
       "name" : "Inherit",
       "type" : "string"
@@ -6125,7 +6129,7 @@
     },
     "instant_block_effects" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Whether to use reflect and break effects for instant (non-projectile) spells" ],
       "field" : "instant_block_effects",
       "name" : "Instant Block Effects",
       "type" : "boolean"
@@ -6138,22 +6142,22 @@
       "type" : "integer"
     },
     "interact_spell" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "entity",
+      "description" : [ "A spell to cast when a player interacts with (right-clicks on) this mob" ],
       "field" : "interact_spell",
       "name" : "Interact Spell",
       "type" : "string"
     },
     "interval" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "How often to update the projectile location" ],
       "field" : "interval",
       "name" : "Interval",
       "type" : "long"
     },
     "inventory_rows" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How many rows to show in the spell inventory in chest and skills mobde" ],
       "field" : "inventory_rows",
       "name" : "Inventory Rows",
       "type" : "double"
@@ -6166,8 +6170,8 @@
       "type" : "boolean"
     },
     "invulnerable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "This wand will not take damage from any source, and can not be destroyed" ],
       "field" : "invulnerable",
       "name" : "Invulnerable",
       "type" : "double"
@@ -7130,6 +7134,13 @@
       "field" : "particle_radius",
       "name" : "Particle Radius",
       "type" : "float"
+    },
+    "particle_speed" : {
+      "category" : "effects",
+      "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
+      "field" : "speed",
+      "name" : "Particle Speed",
+      "type" : "double"
     },
     "particles" : {
       "category" : "effects",
@@ -8286,13 +8297,6 @@
       "name" : "Size",
       "type" : "integer"
     },
-    "font_size" : {
-      "category" : "effects",
-      "description" : [ "Can be used to scale the text size down" ],
-      "field" : "size",
-      "name" : "Size",
-      "type" : "integer"
-    },
     "skeletons" : {
       "category" : "",
       "description" : [ "" ],
@@ -8502,13 +8506,6 @@
       "field" : "spawn_reason",
       "name" : "Spawn Reason",
       "type" : "string"
-    },
-    "particle_speed" : {
-      "category" : "effects",
-      "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
-      "field" : "speed",
-      "name" : "Particle Speed",
-      "type" : "double"
     },
     "speed" : {
       "category" : "",
@@ -9388,22 +9385,22 @@
       "type" : "string"
     },
     "unmoveable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Prevent the player from moving this wand in their inventory, it will be bound to a specific slot" ],
       "field" : "unmoveable",
       "name" : "Unmoveable",
       "type" : "double"
     },
     "unsafe" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Allow teleporting to unsafe locations" ],
       "field" : "unsafe",
       "name" : "Unsafe",
       "type" : "string"
     },
     "unstashable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Prevent this wand from being put in a container" ],
       "field" : "unstashable",
       "name" : "Unstashable",
       "type" : "double"
@@ -10246,6 +10243,20 @@
       "name" : "Effect Type",
       "options" : [ "delayed", "instant", "repeating" ]
     },
+    "enchantment_map" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "A map of enchantments, where the key is an enchantment type and the value is the level" ],
+      "key_type" : "enchantment",
+      "name" : "Enchantment Map",
+      "options" : [ ],
+      "value_type" : "integer"
+    },
+    "enchantment" : {
+      "class_name" : "org.bukkit.enchantments.Enchantment",
+      "description" : [ "A vanilla item enchantment" ],
+      "name" : "Enchantment Type",
+      "options" : [  ]
+    },
     "entity_effect" : {
       "class_name" : "org.bukkit.EntityEffect",
       "description" : [ "A vanilla entity effect" ],
@@ -10331,6 +10342,14 @@
       "options" : [ ],
       "value_type" : "material"
     },
+    "material_map" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "A map of item or block materials" ],
+      "name" : "Material  Map",
+      "options" : [ ],
+      "key_type" : "material",
+      "value_type" : "int"
+    },
     "message_type" : {
       "class_name" : "com.elmakers.mine.bukkit.action.builtin.MessageAction$MessageType",
       "description" : [ "A target UI area to send a message" ],
@@ -10407,6 +10426,13 @@
       "name" : "String",
       "options" : [ "Hello", "World" ]
     },
+    "string_list" : {
+      "class_name" : "java.util.List",
+      "description" : [ "A list of strings" ],
+      "name" : "String List",
+      "options" : [ ],
+      "value_type" : "string"
+    },
     "texture" : {
       "class_name" : "java.lang.String",
       "description" : [ "A texture URL used in a skull icon" ],
@@ -10423,7 +10449,7 @@
       "class_name" : "com.elmakers.mine.bukkit.api.wand.WandAction",
       "description" : [ "An action a wand can perform on user input", "There are bound to swap, right_click, left_click, and drop to customize a wand's controls" ],
       "name" : "Wand Mode",
-      "options" : [ "none", "cast", "toggle", "cycle", "cycle_reverse", "cycle_hotbar", "cycle_hotbar_reverse", "alt_cast", "alt_cast2" ]
+      "options" : [ "alt_cast", "alt_cast2", "cast", "cycle", "cycle_hotbar", "cycle_hotbar_reverse", "cycle_reverse", "none", "toggle" ]
     },
     "wand_mode" : {
       "class_name" : "com.elmakers.mine.bukkit.wand.WandMode",
@@ -10445,92 +10471,93 @@
     "alternate_spell" : null,
     "alternate_spell2" : null,
     "attributes" : null,
-    "block_chance" : 0,
-    "block_cooldown" : 0,
-    "block_fov" : 0,
-    "block_mage_cooldown" : 0,
-    "block_reflect_chance" : 0,
-    "boostable" : true,
-    "bound" : false,
+    "block_chance" : "0",
+    "block_cooldown" : "0",
+    "block_fov" : "0",
+    "block_mage_cooldown" : "0",
+    "block_reflect_chance" : "0",
+    "boostable" : "true",
+    "bound" : "false",
     "brush_inventory" : null,
     "brush_mode" : "none",
     "brushes" : null,
-    "cast_interval" : 0,
+    "cast_interval" : "0",
     "cast_location" : null,
-    "cast_min_bowpull" : 0,
-    "cast_min_velocity" : 0,
+    "cast_min_bowpull" : "0",
+    "cast_min_velocity" : "0",
     "cast_parameters" : null,
     "cast_spell" : null,
     "cast_velocity_direction" : null,
     "class" : null,
     "classes" : null,
-    "consume_reduction" : 0,
+    "consume_reduction" : "0",
     "consume_spell" : null,
-    "cooldown_reduction" : 0,
-    "cost_reduction" : 0,
+    "cooldown_reduction" : "0",
+    "cost_reduction" : "0",
     "drop" : "none",
-    "effect_bubbles" : false,
+    "effect_bubbles" : "false",
     "effect_color" : null,
     "effect_particle" : null,
-    "effect_particle_count" : 0,
-    "effect_particle_data" : 0,
-    "effect_particle_interval" : 0,
-    "effect_particle_min_velocity" : 0,
+    "effect_particle_count" : "0",
+    "effect_particle_data" : "0",
+    "effect_particle_interval" : "0",
+    "effect_particle_min_velocity" : "0",
     "effect_particle_offset" : null,
-    "effect_particle_radius" : 0,
+    "effect_particle_radius" : "0",
     "effect_sound" : null,
-    "effect_sound_interval" : 0,
-    "enchant_count" : 0,
-    "force" : false,
-    "has_uses" : false,
-    "heroes" : false,
-    "hotbar" : 0,
-    "hotbar_count" : 1,
+    "effect_sound_interval" : "0",
+    "enchant_count" : "0",
+    "enchantments" : null,
+    "force" : "false",
+    "has_uses" : "false",
+    "heroes" : "false",
+    "hotbar" : "0",
+    "hotbar_count" : "1",
     "icon" : null,
     "icon_inactive" : null,
     "icon_inactive_delay" : null,
-    "immortal" : false,
-    "indestructible" : false,
-    "inventory_rows" : 5,
-    "invulnerable" : false,
+    "immortal" : "false",
+    "indestructible" : "false",
+    "inventory_rows" : "5",
+    "invulnerable" : "false",
     "item_attributes" : null,
-    "keep" : false,
+    "keep" : "false",
     "left_click" : "none",
-    "locked" : false,
-    "mana" : 0,
-    "mana_max" : 0,
-    "mana_max_boost" : 0,
-    "mana_per_damage" : 0,
-    "mana_regeneration" : 0,
-    "mana_regeneration_boost" : 0,
-    "max_enchant_count" : 0,
+    "locked" : "false",
+    "mana" : "0",
+    "mana_max" : "0",
+    "mana_max_boost" : "0",
+    "mana_per_damage" : "0",
+    "mana_regeneration" : "0",
+    "mana_regeneration_boost" : "0",
+    "max_enchant_count" : "0",
     "mode" : "none",
     "overrides" : null,
-    "passive" : false,
+    "passive" : "false",
     "path" : null,
     "potion_effects" : null,
-    "power" : 0,
-    "powered" : false,
-    "protected" : false,
+    "power" : "0",
+    "powered" : "false",
+    "protected" : "false",
     "protection" : null,
     "quick_cast" : null,
-    "quiet" : false,
-    "rename" : false,
-    "rename_description" : false,
+    "quiet" : "false",
+    "rename" : "false",
+    "rename_description" : "false",
     "right_click" : "none",
-    "sp_multiplier" : 0,
+    "sp_multiplier" : "0",
     "spell_inventory" : null,
     "spell_levels" : null,
     "spells" : null,
-    "stack" : false,
+    "stack" : "false",
     "swap" : "none",
     "template" : null,
-    "track" : false,
-    "undroppable" : false,
-    "unique" : false,
-    "unmoveable" : false,
-    "unstashable" : false,
-    "upgrade" : false,
+    "track" : "false",
+    "undroppable" : "false",
+    "unique" : "false",
+    "unmoveable" : "false",
+    "unstashable" : "false",
+    "upgrade" : "false",
     "uses" : null
   }
 }
