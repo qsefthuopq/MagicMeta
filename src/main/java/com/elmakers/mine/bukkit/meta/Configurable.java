@@ -131,6 +131,7 @@ public class Configurable {
     }
 
     public List<String> getExamples() {
+        Collections.sort(examples);
         return examples;
     }
 
