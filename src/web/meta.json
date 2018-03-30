@@ -2586,6 +2586,10 @@
     "undo" : {
       "description" : [ "" ],
       "name" : "Undo"
+    },
+    "wand" : {
+      "description" : [ "Wand properties" ],
+      "name" : "Wand"
     }
   },
   "effect_parameters" : {
@@ -2699,11 +2703,11 @@
       "name" : "Big Bang",
       "parameters" : {
         "asynchronous" : "false",
-        "color" : "color:[rgb0xff00]",
-        "color2" : "color:[rgb0xffa50]",
-        "color3" : "color:[rgb0x000]",
+        "color" : "FF0000",
+        "color2" : "FFA500]",
+        "color3" : "000000",
         "explosions" : "10",
-        "fade_color" : "color:[rgb0x000]",
+        "fade_color" : "000000",
         "firework_type" : "burst",
         "intensity" : "2",
         "iterations" : "400",
@@ -3356,7 +3360,7 @@
         "particle" : "fireworks_spark",
         "period" : "40",
         "realtime" : "false",
-        "size" : "0.2",
+        "font_size" : "0.2",
         "step_x" : "1",
         "step_y" : "1",
         "text" : "text",
@@ -3484,7 +3488,7 @@
     "asynchronous" : "true",
     "auto_orient" : "false",
     "color" : null,
-    "delay" : "0",
+    "delay_ticks" : "0",
     "disappear_with_origin_entity" : "false",
     "disappear_with_target_entity" : "false",
     "duration" : null,
@@ -3501,7 +3505,7 @@
     "pitch" : null,
     "pitch_offset" : "0.0",
     "relative_offset" : null,
-    "speed" : "0.0",
+    "particle_speed" : "0.0",
     "target_offset" : null,
     "target_players" : null,
     "type" : null,
@@ -3721,49 +3725,49 @@
     },
     "angular_velocity" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Angular velocity of the effect" ],
       "field" : "angular_velocity",
       "name" : "Angular Velocity",
       "type" : "double"
     },
     "angular_velocity_x" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Turns the effect by this angle each iteration around the x-axis" ],
       "field" : "angular_velocity_x",
       "name" : "Angular Velocity X",
       "type" : "double"
     },
     "angular_velocity_y" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Turns the effect by this angle each iteration around the y-axis" ],
       "field" : "angular_velocity_y",
       "name" : "Angular Velocity Y",
       "type" : "double"
     },
     "angular_velocity_z" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Turns the effect by this angle each iteration around the z-axis" ],
       "field" : "angular_velocity_z",
       "name" : "Angular Velocity Z",
       "type" : "double"
     },
     "apply_to_wand" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Whether the purchased item should apply directly to the player's wand" ],
       "field" : "apply_to_wand",
       "name" : "Apply To Wand",
       "type" : "boolean"
     },
     "apply_velocity" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Whether or not to apply velocity to spawned falling blocks" ],
       "field" : "apply_velocity",
       "name" : "Apply Velocity",
       "type" : "boolean"
     },
     "arcs" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Arcs to build the breath" ],
       "field" : "arcs",
       "name" : "Arcs",
       "type" : "integer"
@@ -3853,8 +3857,8 @@
       "type" : "boolean"
     },
     "asynchronous" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Whether this effect should run in a separate thread", "Running in a separate thread is better for performance, but can not be used with any effects that do something other than show particle effects", "Each effect sets this flag accordingly and generally you should not change it" ],
       "field" : "asynchronous",
       "name" : "Asynchronous",
       "type" : "boolean"
@@ -3882,7 +3886,7 @@
     },
     "auto_orient" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set to true, and this effect has a target location, the two locations will orient to face one another" ],
       "field" : "auto_orient",
       "name" : "Auto Orient",
       "type" : "boolean"
@@ -4501,113 +4505,113 @@
       "type" : "float"
     },
     "color" : {
-      "category" : "base",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Can be used to color particles and firework effects" ],
       "field" : "color",
       "name" : "Color",
       "type" : "color"
     },
     "color2" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "A secondary color for an effect", "This is used in firework effects as the secondary color" ],
       "field" : "color2",
       "name" : "Color2",
       "type" : "color"
     },
     "color3" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "A tertiary color for an effect" ],
       "field" : "color3",
       "name" : "Color3",
       "type" : "color"
     },
     "color_base1" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The color used for particles of the first base of the effect" ],
       "field" : "color_base1",
       "name" : "Color Base1",
       "type" : "color"
     },
     "color_base2" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The color used for particles of the second base of the effect" ],
       "field" : "color_base2",
       "name" : "Color Base2",
       "type" : "color"
     },
     "color_helix" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The color used for the particles in the helix of the effect" ],
       "field" : "color_helix",
       "name" : "Color Helix",
       "type" : "color"
     },
     "color_nucleus" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The color used for the particles in the nucleus of the effect" ],
       "field" : "color_nucleus",
       "name" : "Color Nucleus",
       "type" : "color"
     },
     "color_orbital" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The color used for the particles in the orbital of the effect" ],
       "field" : "color_orbital",
       "name" : "Color Orbital",
       "type" : "color"
     },
     "color_override" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "A field in the effectlib effect to replace with the current cast color, which is generally determined by the casting wand", "For example if set to 'color', the 'color' parameter of the contained effectlib effect will be automatically set to the cast color" ],
       "field" : "color_override",
       "name" : "Color Override",
       "type" : "string"
     },
     "columns" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of columns in the grid" ],
       "field" : "columns",
       "name" : "Columns",
       "type" : "integer"
     },
     "command" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The command to execute" ],
       "field" : "command",
       "name" : "Command",
       "type" : "string"
     },
     "command_block_allowed" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Whether this spell can be cast via a command block" ],
       "field" : "command_block_allowed",
       "name" : "Command Block Allowed",
       "type" : "boolean"
     },
     "commands" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A list of commands to execute" ],
       "field" : "commands",
       "name" : "Commands",
       "type" : "list"
     },
     "commit" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If changes made by this action should auto-commit, so that they are not undoable" ],
       "field" : "commit",
       "name" : "Commit",
       "type" : "boolean"
     },
     "compilaction" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Compilation of the heart." ],
       "field" : "compilaction",
       "name" : "Compilaction",
       "type" : "float"
     },
     "compress_y_factor_total" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Compresses the heart along the y axis" ],
       "field" : "compress_y_factor_total",
       "name" : "Compress Y Factor Total",
       "type" : "double"
@@ -4881,7 +4885,7 @@
     },
     "damage_max_distance" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Set this to scale the amount of damage dealt linearly with the distance to the source", "This can be used with an AreaOfEffect to damage targets more the closer they were to the cast target", "Set this to the maximum distance, at which the damage amount will drop off to zero" ],
       "field" : "damage_max_distance",
       "name" : "Damage Max Distance",
       "type" : "double"
@@ -4922,8 +4926,15 @@
       "type" : "boolean"
     },
     "delay" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "control",
+      "description" : [ "Delay to wait before continuing, in milliseconds" ],
+      "field" : "delay",
+      "name" : "Delay",
+      "type" : "integer"
+    },
+    "delay_ticks" : {
+      "category" : "effects",
+      "description" : [ "Delay to wait before starting the effect, in ticks" ],
       "field" : "delay",
       "name" : "Delay",
       "type" : "integer"
@@ -5000,21 +5011,21 @@
     },
     "disable_mana_regeneration" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "If true, this spell will disable mana regeneration for the caster while the spell is active", "This can be used with toggleable spells that have active costs, to preven the caster's mana regeneration rate from overcoming the cost drain." ],
       "field" : "disable_mana_regeneration",
       "name" : "Disable Mana Regeneration",
       "type" : "boolean"
     },
     "disappear_with_origin_entity" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Should this effect stop playing if the origin entity becomes invalid?" ],
       "field" : "disappear_with_origin_entity",
       "name" : "Disappear With Origin Entity",
       "type" : "boolean"
     },
     "disappear_with_target_entity" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Should this effect stop playing if the target entity becomes invalid?" ],
       "field" : "disappear_with_target_entity",
       "name" : "Disappear With Target Entity",
       "type" : "boolean"
@@ -5077,10 +5088,10 @@
     },
     "drop" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Which action the wand should perform when the player uses the drop (Q by default) key" ],
       "field" : "drop",
-      "name" : "Drop",
-      "type" : "double"
+      "name" : "Drop Key Binding",
+      "type" : "wand_action"
     },
     "drop_count" : {
       "category" : "",
@@ -5105,14 +5116,14 @@
     },
     "durability_max_distance" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Set this to scale the amount of block damage done linearly with the distance to the source", "This can be used with an AreaOfEffect to damage blocks more the closer they were to the cast target", "Set this to the maximum distance, at which the damage amount will drop off to zero" ],
       "field" : "durability_max_distance",
       "name" : "Durability Max Distance",
       "type" : "double"
     },
     "duration" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "How long an effect or spell should last, in milliseconds" ],
       "field" : "duration",
       "name" : "Duration",
       "type" : "integer"
@@ -5224,7 +5235,7 @@
     },
     "effect_particle_data" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
       "field" : "effect_particle_data",
       "name" : "Effect Particle Data",
       "type" : "double"
@@ -5455,7 +5466,7 @@
     },
     "expected_lifespan" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Used to control the expected lifespan of the firework, possibly detonating it early" ],
       "field" : "expected_lifespan",
       "name" : "Expected Lifespan",
       "type" : "integer"
@@ -5469,7 +5480,7 @@
     },
     "explosions" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Number of explosions per iteration" ],
       "field" : "explosions",
       "name" : "Explosions",
       "type" : "integer"
@@ -5497,7 +5508,7 @@
     },
     "factor_inner_spike" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Defines the size of the that inner sting  \\/" ],
       "field" : "factor_inner_spike",
       "name" : "Factor Inner Spike",
       "type" : "double"
@@ -5826,35 +5837,35 @@
     },
     "heal_max_distance" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Set this to scale the amount of health healed linearly with the distance to the source", "This can be used with an AreaOfEffect to heal targets more the closer they were to the cast target", "Set this to the maximum distance, at which the heal amount will drop off to zero" ],
       "field" : "heal_max_distance",
       "name" : "Heal Max Distance",
       "type" : "double"
     },
     "health" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Amount of health to heal" ],
       "field" : "health",
       "name" : "Health",
       "type" : "double"
     },
     "height" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Height of an effect" ],
       "field" : "height",
       "name" : "Height",
       "type" : "float"
     },
     "height_back" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Height of the parabola arc forming the back" ],
       "field" : "height_back",
       "name" : "Height Back",
       "type" : "float"
     },
     "height_cell" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Height per cell in blocks" ],
       "field" : "height_cell",
       "name" : "Height Cell",
       "type" : "float"
@@ -6035,7 +6046,7 @@
       "type" : "texture"
     },
     "id" : {
-      "alias" : "indestructible",
+      "alias" : "indestructible_materials",
       "category" : "construction",
       "description" : [ "" ],
       "field" : "id",
@@ -6085,11 +6096,18 @@
       "type" : "boolean"
     },
     "indestructible" : {
+      "category" : "wand",
+      "description" : [ "Whether or not this wand takes damage like a normal item", "This generally has to be set on a wand if using custom resource pack icons, to prevent the durability from changing" ],
+      "field" : "indestructible",
+      "name" : "Indestructible",
+      "type" : "boolean"
+    },
+    "indestructible_materials" : {
       "category" : "construction",
       "description" : [ "" ],
       "field" : "indestructible",
       "name" : "Indestructible",
-      "type" : "boolean"
+      "type" : "material_list"
     },
     "inherit" : {
       "category" : "base",
@@ -6197,8 +6215,8 @@
       "type" : "list"
     },
     "iterations" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of times to repeat the effect" ],
       "field" : "iterations",
       "name" : "Iterations",
       "type" : "integer"
@@ -6275,10 +6293,10 @@
     },
     "left_click" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "What action the wand should perform when the player uses the swing (left-click by default) button" ],
       "field" : "left_click",
-      "name" : "Left Click",
-      "type" : "double"
+      "name" : "Left Click Binding",
+      "type" : "wand_action"
     },
     "left_leg_transform" : {
       "category" : "",
@@ -6541,7 +6559,7 @@
     },
     "material_data" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The data value of the material being used" ],
       "field" : "material_data",
       "name" : "Material Data",
       "type" : "byte"
@@ -6666,8 +6684,8 @@
       "type" : "float"
     },
     "max_way_points" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Maximum amount of way points" ],
       "field" : "max_way_points",
       "name" : "Max Way Points",
       "type" : "integer"
@@ -6856,7 +6874,7 @@
     },
     "offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the original location" ],
       "field" : "offset",
       "name" : "Offset",
       "type" : "vector"
@@ -6884,7 +6902,7 @@
     },
     "orbitals" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Number of orbitals around the nucleus" ],
       "field" : "orbitals",
       "name" : "Orbitals",
       "type" : "integer"
@@ -7037,182 +7055,182 @@
       "type" : "particle_effect"
     },
     "particle_base1" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "The type of particle to use for the first base of this effect" ],
       "field" : "particle_base1",
       "name" : "Particle Base1",
       "type" : "particle_effect"
     },
     "particle_base2" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "The type of particle to use for the second base of this effect" ],
       "field" : "particle_base2",
       "name" : "Particle Base2",
       "type" : "particle_effect"
     },
     "particle_count" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "The number of particles to spawn with each particle packet", "Use this with particle_offset_x,y,z to spawn a dense or sparse group of particles while sending only a single packet to the client" ],
       "field" : "particle_count",
       "name" : "Particle Count",
       "type" : "integer"
     },
     "particle_helix" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The particle to use in the helix of this effect" ],
       "field" : "particle_helix",
       "name" : "Particle Helix",
       "type" : "particle_effect"
     },
     "particle_nucleus" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The particle to use in the nucleus of this effect" ],
       "field" : "particle_nucleus",
       "name" : "Particle Nucleus",
       "type" : "particle_effect"
     },
     "particle_offset_x" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "A random spread of particles along the x-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_x",
       "name" : "Particle Offset X",
       "type" : "float"
     },
     "particle_offset_y" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "A random spread of particles along the y-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_y",
       "name" : "Particle Offset Y",
       "type" : "float"
     },
     "particle_offset_z" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "A random spread of particles along the z-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_z",
       "name" : "Particle Offset Z",
       "type" : "float"
     },
     "particle_orbital" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "The particle to use in the orbital of this effect" ],
       "field" : "particle_orbital",
       "name" : "Particle Orbital",
       "type" : "particle_effect"
     },
     "particle_override" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "A field to set in the contained effectlib effect, replacing a particle type with the casting particle type", "Generally this comes from a wand, which are capable of having a custom particle type attached", "For example, if set to 'particle', the 'particle' parameter of the contained effectlib effect will be automatically replaced with the particle set on the wand, if one is set." ],
       "field" : "particle_override",
       "name" : "Particle Override",
       "type" : "string"
     },
     "particle_radius" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Radius of the rain/snow" ],
       "field" : "particle_radius",
       "name" : "Particle Radius",
       "type" : "float"
     },
     "particles" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "The number of particles to spawn with each iteration of this effect" ],
       "field" : "particles",
       "name" : "Particles",
       "type" : "integer"
     },
     "particles2" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The number of particles to spawn with each iteration of the inner effect" ],
       "field" : "particles2",
       "name" : "Particles2",
       "type" : "integer"
     },
     "particles_back" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_back",
       "name" : "Particles Back",
       "type" : "integer"
     },
     "particles_base" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_base",
       "name" : "Particles Base",
       "type" : "integer"
     },
     "particles_circle" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_circle",
       "name" : "Particles Circle",
       "type" : "integer"
     },
     "particles_cone" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_cone",
       "name" : "Particles Cone",
       "type" : "integer"
     },
     "particles_front" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_front",
       "name" : "Particles Front",
       "type" : "integer"
     },
     "particles_height" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_height",
       "name" : "Particles Height",
       "type" : "integer"
     },
     "particles_helix" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of particles to be spawned in the helix per iteration" ],
       "field" : "particles_helix",
       "name" : "Particles Helix",
       "type" : "integer"
     },
     "particles_nucleus" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of particles to be spawned in the nucleus per iteration" ],
       "field" : "particles_nucleus",
       "name" : "Particles Nucleus",
       "type" : "integer"
     },
     "particles_orbital" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of particles to be spawned in the orbital per iteration" ],
       "field" : "particles_orbital",
       "name" : "Particles Orbital",
       "type" : "integer"
     },
     "particles_per_iteration" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "The amount of particles, displayed in one iteration" ],
       "field" : "particles_per_iteration",
       "name" : "Particles Per Iteration",
       "type" : "integer"
     },
     "particles_spout" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_spout",
       "name" : "Particles Spout",
       "type" : "integer"
     },
     "particles_strand" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_strand",
       "name" : "Particles Strand",
       "type" : "integer"
     },
     "particles_width" : {
-      "category" : "",
+      "category" : "effects",
       "description" : [ "" ],
       "field" : "particles_width",
       "name" : "Particles Width",
@@ -7275,8 +7293,8 @@
       "type" : "double"
     },
     "period" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "How long to wait, in ticks, between each iteration" ],
       "field" : "period",
       "name" : "Period",
       "type" : "integer"
@@ -7339,7 +7357,7 @@
     },
     "pitch" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Specify the pitch of the source direction" ],
       "field" : "pitch",
       "name" : "Pitch",
       "type" : "double"
@@ -7367,7 +7385,7 @@
     },
     "pitch_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "An offset to apply to the pitch of the source direction" ],
       "field" : "pitch_offset",
       "name" : "Pitch Offset",
       "type" : "double"
@@ -7604,8 +7622,8 @@
       "type" : "double"
     },
     "radius_nucleus" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Radius of the nucleus as a fraction of the atom-radius" ],
       "field" : "radius_nucleus",
       "name" : "Radius Nucleus",
       "type" : "float"
@@ -7779,36 +7797,36 @@
       "type" : "boolean"
     },
     "refresh" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Iterations to wait before refreshing particles" ],
       "field" : "refresh",
       "name" : "Refresh",
       "type" : "integer"
     },
     "relative_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the source location based on the direction of that location" ],
       "field" : "relative_offset",
       "name" : "Relative Offset",
       "type" : "vector"
     },
     "relative_source_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the source location based on the direction of that location" ],
       "field" : "relative_source_offset",
       "name" : "Relative Source Offset",
       "type" : "vector"
     },
     "relative_target_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the target location based on the direction of that location" ],
       "field" : "relative_target_offset",
       "name" : "Relative Target Offset",
       "type" : "vector"
     },
     "remove_effects" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A list of potion effects to remove from the target" ],
       "field" : "remove_effects",
       "name" : "Remove Effects",
       "type" : "potion_effect_list"
@@ -8067,10 +8085,10 @@
     },
     "right_click" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "What action the wand should perform when the player uses the interact (right-click by default) button" ],
       "field" : "right_click",
-      "name" : "Right Click",
-      "type" : "double"
+      "name" : "Right Click Binding",
+      "type" : "wand_action"
     },
     "right_leg_transform" : {
       "category" : "",
@@ -8088,7 +8106,7 @@
     },
     "rotation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Rotation around the Y-axis" ],
       "field" : "rotation",
       "name" : "Rotation",
       "type" : "double"
@@ -8256,14 +8274,21 @@
     },
     "silent" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The silent flag of the mob, to prevent it from making any sounds" ],
       "field" : "silent",
       "name" : "Silent",
       "type" : "boolean"
     },
     "size" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Size of the effect" ],
+      "field" : "size",
+      "name" : "Size",
+      "type" : "integer"
+    },
+    "font_size" : {
+      "category" : "effects",
+      "description" : [ "Can be used to scale the text size down" ],
       "field" : "size",
       "name" : "Size",
       "type" : "integer"
@@ -8478,6 +8503,13 @@
       "name" : "Spawn Reason",
       "type" : "string"
     },
+    "particle_speed" : {
+      "category" : "effects",
+      "description" : [ "This can be used to give particles a set speed when spawned", "The behavior varies between particle types", "This will not work with colored particles" ],
+      "field" : "speed",
+      "name" : "Particle Speed",
+      "type" : "double"
+    },
     "speed" : {
       "category" : "",
       "description" : [ "" ],
@@ -8641,28 +8673,28 @@
     },
     "step" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Angular movement per iteration" ],
       "field" : "step",
       "name" : "Step",
       "type" : "float"
     },
     "step_x" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Each stepX pixel will be shown. Saves packets for lower fontsizes." ],
       "field" : "step_x",
       "name" : "Step X",
       "type" : "integer"
     },
     "step_y" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Each stepY pixel will be shown. Saves packets for lower fontsizes." ],
       "field" : "step_y",
       "name" : "Step Y",
       "type" : "integer"
     },
     "steps_per_iteration" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Number of steps to take per overall iteration" ],
       "field" : "steps_per_iteration",
       "name" : "Steps Per Iteration",
       "type" : "integer"
@@ -8704,10 +8736,10 @@
     },
     "swap" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "What action the wand should perform when the player uses the swap (F by default) button" ],
       "field" : "swap",
-      "name" : "Swap",
-      "type" : "double"
+      "name" : "Swap Binding",
+      "type" : "wand_action"
     },
     "t2world" : {
       "category" : "targeting",
@@ -8977,7 +9009,7 @@
     },
     "target_tamed" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Whether or not this spell is allowed to target tamed entities" ],
       "field" : "target_tamed",
       "name" : "Target Tamed",
       "type" : "boolean"
@@ -8991,35 +9023,35 @@
     },
     "target_type" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "The type of entity this spell can target" ],
       "field" : "target_type",
       "name" : "Target Type",
-      "type" : "string"
+      "type" : "entity_type"
     },
     "target_underwater" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Whether this spell can be used on underwater targets" ],
       "field" : "target_underwater",
       "name" : "Target Underwater",
       "type" : "boolean"
     },
     "target_unknown" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Whether or not this spell may target unknown entities", "This can be used to avoid targeting custom entities, which are generally pets from a pet plugin" ],
       "field" : "target_unknown",
       "name" : "Target Unknown",
       "type" : "boolean"
     },
     "target_vanished" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Whether or not this spell may target vanished players" ],
       "field" : "target_vanished",
       "name" : "Target Vanished",
       "type" : "boolean"
     },
     "target_yaw_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the yaw of the target" ],
       "field" : "target_yaw_offset",
       "name" : "Target Yaw Offset",
       "type" : "double"
@@ -9385,7 +9417,7 @@
     },
     "update_directions" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set to false, Entity-bound directions will not update during the Effect" ],
       "field" : "update_directions",
       "name" : "Update Directions",
       "type" : "boolean"
@@ -9398,8 +9430,8 @@
       "type" : "boolean"
     },
     "update_locations" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "If set to false, Entity-bound locations will not update during the Effect" ],
       "field" : "update_locations",
       "name" : "Update Locations",
       "type" : "boolean"
@@ -9622,8 +9654,8 @@
       "type" : "integer"
     },
     "visible_range" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Display particles to players within this radius" ],
       "field" : "visible_range",
       "name" : "Visible Range",
       "type" : "float"
@@ -9735,133 +9767,133 @@
     },
     "x2_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the x location of the inner effect" ],
       "field" : "x2_equation",
       "name" : "X2 Equation",
       "type" : "string"
     },
     "x_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the x location of the effect" ],
       "field" : "x_equation",
       "name" : "X Equation",
       "type" : "string"
     },
     "x_factor" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Stretch/Compress factor along the x axis" ],
       "field" : "x_factor",
       "name" : "X Factor",
       "type" : "float"
     },
     "x_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the x component of the location" ],
       "field" : "x_offset",
       "name" : "X Offset",
       "type" : "float"
     },
     "x_rotation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Rotation across the x axis" ],
       "field" : "x_rotation",
       "name" : "X Rotation",
       "type" : "double"
     },
     "x_scale" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Scale along the x axis" ],
       "field" : "x_scale",
       "name" : "X Scale",
       "type" : "double"
     },
     "x_size" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Size along the x axis" ],
       "field" : "x_size",
       "name" : "X Size",
       "type" : "double"
     },
     "x_subtract" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Subtract from the x component of the location" ],
       "field" : "x_subtract",
       "name" : "X Subtract",
       "type" : "double"
     },
     "xp" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Amount of experience a mob should drop on death" ],
       "field" : "xp",
       "name" : "Xp",
       "type" : "integer"
     },
     "y2_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the y location of the inner effect" ],
       "field" : "y2_equation",
       "name" : "Y2 Equation",
       "type" : "string"
     },
     "y_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the y location of the effect" ],
       "field" : "y_equation",
       "name" : "Y Equation",
       "type" : "string"
     },
     "y_factor" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Stretch/Compress factor along the y axis" ],
       "field" : "y_factor",
       "name" : "Y Factor",
       "type" : "float"
     },
     "y_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the y component of the location" ],
       "field" : "y_offset",
       "name" : "Y Offset",
       "type" : "double"
     },
     "y_radius" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Specify a different radius that only effects the y location", "Can be used to adjust targeting to avoid entities that are not in the same plane as the caster" ],
       "field" : "y_radius",
       "name" : "Y Radius",
       "type" : "double"
     },
     "y_rotation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Rotation across the y axis" ],
       "field" : "y_rotation",
       "name" : "Y Rotation",
       "type" : "double"
     },
     "y_scale" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Scale along the y axis" ],
       "field" : "y_scale",
       "name" : "Y Scale",
       "type" : "double"
     },
     "y_size" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Size along the y axis" ],
       "field" : "y_size",
       "name" : "Y Size",
       "type" : "double"
     },
     "y_subtract" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Subtract from the y component of the location" ],
       "field" : "y_subtract",
       "name" : "Y Subtract",
       "type" : "double"
     },
     "yaw" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Specify the yaw of the source direction" ],
       "field" : "yaw",
       "name" : "Yaw",
       "type" : "float"
@@ -9875,77 +9907,77 @@
     },
     "yaw_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "An offset to apply to the yaw of the source direction" ],
       "field" : "yaw_offset",
       "name" : "Yaw Offset",
       "type" : "double"
     },
     "z2_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the z location of the inner effect" ],
       "field" : "z2_equation",
       "name" : "Z2 Equation",
       "type" : "string"
     },
     "z_equation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The equation used to calculate the z location of the effect" ],
       "field" : "z_equation",
       "name" : "Z Equation",
       "type" : "string"
     },
     "z_factor" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Stretch/Compress factor along the z axis" ],
       "field" : "z_factor",
       "name" : "Z Factor",
       "type" : "float"
     },
     "z_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the z component of the location" ],
       "field" : "z_offset",
       "name" : "Z Offset",
       "type" : "float"
     },
     "z_rotation" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Rotation across the z axis" ],
       "field" : "z_rotation",
       "name" : "Z Rotation",
       "type" : "double"
     },
     "z_scale" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Scale along the z axis" ],
       "field" : "z_scale",
       "name" : "Z Scale",
       "type" : "double"
     },
     "z_size" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Size along the z axis" ],
       "field" : "z_size",
       "name" : "Z Size",
       "type" : "double"
     },
     "z_subtract" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Subtract from the z component of the location" ],
       "field" : "z_subtract",
       "name" : "Z Subtract",
       "type" : "double"
     },
     "zig_zag_offset" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Direction of zig-zags" ],
       "field" : "zig_zag_offset",
       "name" : "Zig Zag Offset",
       "type" : "vector"
     },
     "zig_zags" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Number of zig zags in the line" ],
       "field" : "zig_zags",
       "name" : "Zig Zags",
       "type" : "integer"
@@ -10002,7 +10034,7 @@
     "id" : null,
     "ignore_blocks" : "false",
     "ignore_types" : null,
-    "indestructible" : null,
+    "indestructible_materials" : null,
     "instant_block_effects" : "false",
     "loud" : "false",
     "message_targets" : "true",
@@ -10158,7 +10190,7 @@
     },
     "color" : {
       "class_name" : "java.lang.String",
-      "description" : [ "A color string using RRGGBB notation" ],
+      "description" : [ "A color string using RRGGBB notation", "Only certain particles can be colored, as of 1.8 this includes spell_mob_ambient, spell_mob and redstone" ],
       "name" : "Color",
       "options" : [ "0000FF", "00FF00", "010101", "FF0000", "FFFFFF" ]
     },
@@ -10387,6 +10419,12 @@
       "name" : "Vector",
       "options" : [ "0,-1,0", "0,0,0", "0,1,0" ]
     },
+    "wand_action" : {
+      "class_name" : "com.elmakers.mine.bukkit.api.wand.WandAction",
+      "description" : [ "An action a wand can perform on user input", "There are bound to swap, right_click, left_click, and drop to customize a wand's controls" ],
+      "name" : "Wand Mode",
+      "options" : [ "none", "cast", "toggle", "cycle", "cycle_reverse", "cycle_hotbar", "cycle_hotbar_reverse", "alt_cast", "alt_cast2" ]
+    },
     "wand_mode" : {
       "class_name" : "com.elmakers.mine.bukkit.wand.WandMode",
       "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar" ],
@@ -10407,93 +10445,92 @@
     "alternate_spell" : null,
     "alternate_spell2" : null,
     "attributes" : null,
-    "block_chance" : null,
-    "block_cooldown" : null,
-    "block_fov" : null,
-    "block_mage_cooldown" : null,
-    "block_reflect_chance" : null,
-    "boostable" : null,
-    "bound" : null,
+    "block_chance" : 0,
+    "block_cooldown" : 0,
+    "block_fov" : 0,
+    "block_mage_cooldown" : 0,
+    "block_reflect_chance" : 0,
+    "boostable" : true,
+    "bound" : false,
     "brush_inventory" : null,
-    "brush_mode" : null,
+    "brush_mode" : "none",
     "brushes" : null,
-    "cast_interval" : null,
+    "cast_interval" : 0,
     "cast_location" : null,
-    "cast_min_bowpull" : null,
-    "cast_min_velocity" : null,
+    "cast_min_bowpull" : 0,
+    "cast_min_velocity" : 0,
     "cast_parameters" : null,
     "cast_spell" : null,
     "cast_velocity_direction" : null,
     "class" : null,
     "classes" : null,
-    "consume_reduction" : null,
+    "consume_reduction" : 0,
     "consume_spell" : null,
-    "cooldown_reduction" : null,
-    "cost_reduction" : null,
-    "drop" : null,
-    "effect_bubbles" : null,
+    "cooldown_reduction" : 0,
+    "cost_reduction" : 0,
+    "drop" : "none",
+    "effect_bubbles" : false,
     "effect_color" : null,
     "effect_particle" : null,
-    "effect_particle_count" : null,
-    "effect_particle_data" : null,
-    "effect_particle_interval" : null,
-    "effect_particle_min_velocity" : null,
+    "effect_particle_count" : 0,
+    "effect_particle_data" : 0,
+    "effect_particle_interval" : 0,
+    "effect_particle_min_velocity" : 0,
     "effect_particle_offset" : null,
-    "effect_particle_radius" : null,
+    "effect_particle_radius" : 0,
     "effect_sound" : null,
-    "effect_sound_interval" : null,
-    "enchant_count" : null,
-    "force" : null,
-    "has_uses" : null,
-    "heroes" : null,
-    "hotbar" : null,
-    "hotbar_count" : null,
+    "effect_sound_interval" : 0,
+    "enchant_count" : 0,
+    "force" : false,
+    "has_uses" : false,
+    "heroes" : false,
+    "hotbar" : 0,
+    "hotbar_count" : 1,
     "icon" : null,
     "icon_inactive" : null,
     "icon_inactive_delay" : null,
-    "immortal" : null,
-    "indestructible" : null,
-    "inventory_rows" : null,
-    "invulnerable" : null,
+    "immortal" : false,
+    "indestructible" : false,
+    "inventory_rows" : 5,
+    "invulnerable" : false,
     "item_attributes" : null,
-    "keep" : null,
-    "left_click" : null,
-    "locked" : null,
-    "mana" : null,
-    "mana_max" : null,
-    "mana_max_boost" : null,
-    "mana_per_damage" : null,
-    "mana_regeneration" : null,
-    "mana_regeneration_boost" : null,
-    "max_enchant_count" : null,
-    "mode" : null,
+    "keep" : false,
+    "left_click" : "none",
+    "locked" : false,
+    "mana" : 0,
+    "mana_max" : 0,
+    "mana_max_boost" : 0,
+    "mana_per_damage" : 0,
+    "mana_regeneration" : 0,
+    "mana_regeneration_boost" : 0,
+    "max_enchant_count" : 0,
+    "mode" : "none",
     "overrides" : null,
-    "passive" : null,
+    "passive" : false,
     "path" : null,
     "potion_effects" : null,
-    "power" : null,
-    "powered" : null,
-    "protected" : null,
+    "power" : 0,
+    "powered" : false,
+    "protected" : false,
     "protection" : null,
     "quick_cast" : null,
-    "quiet" : null,
-    "rename" : null,
-    "rename_description" : null,
-    "right_click" : null,
-    "soul" : null,
-    "sp_multiplier" : null,
+    "quiet" : false,
+    "rename" : false,
+    "rename_description" : false,
+    "right_click" : "none",
+    "sp_multiplier" : 0,
     "spell_inventory" : null,
     "spell_levels" : null,
     "spells" : null,
-    "stack" : null,
-    "swap" : null,
+    "stack" : false,
+    "swap" : "none",
     "template" : null,
-    "track" : null,
-    "undroppable" : null,
-    "unique" : null,
-    "unmoveable" : null,
-    "unstashable" : null,
-    "upgrade" : null,
+    "track" : false,
+    "undroppable" : false,
+    "unique" : false,
+    "unmoveable" : false,
+    "unstashable" : false,
+    "upgrade" : false,
     "uses" : null
   }
 }
