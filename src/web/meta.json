@@ -652,9 +652,9 @@
       "short_class" : "Inventory"
     },
     "inventory_close" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "InventoryCloseAction",
-      "description" : [ "" ],
+      "description" : [ "Close the target player's inventory" ],
       "examples" : [ ],
       "key" : "inventory_close",
       "name" : "Inventory Close",
@@ -662,40 +662,40 @@
       "short_class" : "InventoryClose"
     },
     "item_shop" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ItemShopAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Create a GUI shop that can sell vanilla or magic items", "The shop is also capable of casting spells on players" ],
+      "examples" : [ "itemshop", "bank", "magicitemshop", "tweakshop", "bookshop" ],
       "key" : "item_shop",
       "name" : "Item Shop",
       "parameters" : [ "apply_to_wand", "auto_close", "auto_upgrade", "cast_spells", "confirm", "confirm_filler", "filter_bound", "items", "path", "path_end", "path_exact", "permission", "put_in_hand", "require_template", "require_wand", "scale", "sell", "show_active_icons", "upgrade_levels", "use_items", "use_sp", "use_xp", "worth_item" ],
       "short_class" : "ItemShop"
     },
     "kill" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "KillAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Kill the target entity", "Deals 100 x the entity's max health in damage, just to be safe." ],
+      "examples" : [ "kill" ],
       "key" : "kill",
       "name" : "Kill",
       "parameters" : [ ],
       "short_class" : "Kill"
     },
     "light" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "LightAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Modify the light level of the target block", "Requires the LightAPI plugin", "Do to issues with LightAPI, lighting changes do not reliably undo!" ],
+      "examples" : [ "light" ],
       "key" : "light",
       "name" : "Light",
       "parameters" : [ "async", "level", "update" ],
       "short_class" : "Light"
     },
     "lightning" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "LightningAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Strike lighting at the target", "Can spawn a fully active lightning bolt, or just the visual effect" ],
+      "examples" : [ "lightning", "smite" ],
       "key" : "lightning",
       "name" : "Lightning",
       "parameters" : [ "effect_only" ],
@@ -704,67 +704,67 @@
     "line" : {
       "category" : "compound",
       "class_name" : "LineAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Target all blocks along a single line" ],
+      "examples" : [ "lava", "iterate", "line", "laser" ],
       "key" : "line",
       "name" : "Line",
       "parameters" : [ "increment_data", "reorient", "require_block", "reverse", "size", "start", "start_at_target" ],
       "short_class" : "Line"
     },
     "lock" : {
-      "category" : "",
+      "category" : "Construction",
       "class_name" : "LockAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Apply a vanilla lock to a container", "Will give the caster a key item they may use to unlock the container", "The key and lock will use the caster's UUID, the item name is obfuscated with the enchantment text decoration", "Can also be used to unlock a container" ],
+      "examples" : [ "secure", "lockpick" ],
       "key" : "lock",
       "name" : "Lock",
-      "parameters" : [ "key_description", "key_icon", "key_name", "override", "type" ],
+      "parameters" : [ "key_description", "key_icon", "key_name", "lock_type", "override" ],
       "short_class" : "Lock"
     },
     "message" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "MessageAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Send a chat, action bar or title message to the target player or caster" ],
+      "examples" : [ "homing", "kill", "magichat" ],
       "key" : "message",
       "name" : "Message",
       "parameters" : [ "equation", "fade_in", "fade_out", "message", "message_target", "message_type", "stay", "sub_message" ],
       "short_class" : "Message"
     },
     "modify_block" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "ModifyBlockAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Modify a block by changing its type", "Can also be used to spawn falling blocks in the place of a block that was removed", "Falling blocks can be given velocity for explosion type block effects" ],
+      "examples" : [ "blast", "collapse" ],
       "key" : "modify_block",
       "name" : "Modify Block",
       "parameters" : [ "breakable", "commit", "consume", "consume_variants", "damage", "fall_damage", "falling", "falling_hurts", "falling_probability", "max_damage", "physics", "physics_blocks", "reflect_chance", "speed" ],
       "short_class" : "ModifyBlock"
     },
     "modify_breakable" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "ModifyBreakable",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Tag a block as breakable so that other spells can break the block" ],
+      "examples" : [ "freeze" ],
       "key" : "modify_breakable",
       "name" : "Modify Breakable",
       "parameters" : [ "breakable", "target_air" ],
       "short_class" : "ModifyBreakable"
     },
     "modify_game_mode" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifyGameModeAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Change the player's game mode" ],
+      "examples" : [ "gamemodechange" ],
       "key" : "modify_game_mode",
       "name" : "Modify Game Mode",
       "parameters" : [ "game_mode" ],
       "short_class" : "ModifyGameMode"
     },
     "modify_mana" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifyManaAction",
-      "description" : [ "" ],
+      "description" : [ "Add or remove mana from a player or wand" ],
       "examples" : [ ],
       "key" : "modify_mana",
       "name" : "Modify Mana",
@@ -772,19 +772,19 @@
       "short_class" : "ModifyMana"
     },
     "modify_properties" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifyPropertiesAction",
-      "description" : [ "" ],
-      "examples" : [ ],
+      "description" : [ "Modify the properties of a player or wand" ],
+      "examples" : [ "wandbuffs" ],
       "key" : "modify_properties",
       "name" : "Modify Properties",
       "parameters" : [ "modify", "modify_target", "upgrade" ],
       "short_class" : "ModifyProperties"
     },
     "modify_reflective" : {
-      "category" : "",
+      "category" : "construction",
       "class_name" : "ModifyReflectiveAction",
-      "description" : [ "" ],
+      "description" : [ "Change a block so that it will reflect spells" ],
       "examples" : [ ],
       "key" : "modify_reflective",
       "name" : "Modify Reflective",
@@ -4055,7 +4055,7 @@
       "description" : [ "" ],
       "field" : "game_mode",
       "name" : "Game Mode",
-      "type" : "string"
+      "type" : "game_mode"
     },
     "glide_exclusive" : {
       "category" : "base",
@@ -4723,6 +4723,13 @@
       "name" : "Location Offset",
       "type" : "vector"
     },
+    "lock_type" : {
+      "category" : "construction",
+      "description" : [ "The type of lock action to perform" ],
+      "field" : "type",
+      "name" : "Lock Type",
+      "type" : "lock_type"
+    },
     "locked" : {
       "category" : "",
       "description" : [ "" ],
@@ -4983,11 +4990,11 @@
       "type" : "boolean"
     },
     "message_type" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "player",
+      "description" : [ "What type of message to send" ],
       "field" : "message_type",
       "name" : "Message Type",
-      "type" : "string"
+      "type" : "message_type"
     },
     "min_block_range" : {
       "category" : "",
@@ -8374,6 +8381,12 @@
       "name" : "Font",
       "options" : [ ]
     },
+    "game_mode" : {
+      "class_name" : "org.bukkit.GameMode",
+      "description" : [ "A vanilla game mode" ],
+      "name" : "Game Mode",
+      "options" : [ "adventure", "creative", "spectator", "survival" ]
+    },
     "icon" : {
       "class_name" : "java.lang.String",
       "description" : [ "An icon from a resource pack" ],
@@ -8391,6 +8404,12 @@
       "description" : [ "" ],
       "name" : "List",
       "options" : [ ]
+    },
+    "lock_type" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "An action to perform on a container" ],
+      "name" : "Lock Type",
+      "options" : [ "key", "lock", "unlock" ]
     },
     "long" : {
       "class_name" : "java.lang.Long",
@@ -8416,6 +8435,12 @@
       "name" : "Material List",
       "options" : [ ],
       "value_type" : "material"
+    },
+    "message_type" : {
+      "class_name" : "com.elmakers.mine.bukkit.action.builtin.MessageAction$MessageType",
+      "description" : [ "A target UI area to send a message" ],
+      "name" : "Message Type",
+      "options" : [ "action_bar", "chat", "title" ]
     },
     "particle_effect" : {
       "class_name" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
