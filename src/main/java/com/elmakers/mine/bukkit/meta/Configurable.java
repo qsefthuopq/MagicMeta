@@ -20,6 +20,7 @@ public class Configurable {
     private List<String> description;
     private List<String> parameters;
     private String category;
+    private List<String> examples;
 
     protected Configurable() {
 
@@ -29,6 +30,7 @@ public class Configurable {
         description = new ArrayList<>();
         description.add("");
         category = "";
+        examples = new ArrayList<>();
         className = classType.getSimpleName();
         shortClass = className.replace(classSuffix, "");
         name = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(shortClass), ' ');
@@ -126,5 +128,13 @@ public class Configurable {
         if (category == null || category.isEmpty()) {
             category = other.getCategory();
         }
+    }
+
+    public List<String> getExamples() {
+        return examples;
+    }
+
+    public void setExamples(List<String> examples) {
+        this.examples = examples;
     }
 }
