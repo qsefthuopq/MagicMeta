@@ -68,7 +68,7 @@ public class ParameterList extends HashMap<String, String> {
     public void setCategory(String categoryKey, ParameterStore parameterStore) {
         for (String key : keySet()) {
             Parameter parameter = parameterStore.getParameter(key);
-            if (parameter != null) {
+            if (parameter != null && parameter.getCategory().isEmpty()) {
                 parameter.setCategory(categoryKey);
             }
         }
