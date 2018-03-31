@@ -7436,13 +7436,6 @@
       "name" : "Power",
       "type" : "integer"
     },
-    "wand_power" : {
-      "category" : "wand",
-      "description" : [ "A multiplier that can affect spell damage, size and range, defined by properties in config.yml" ],
-      "field" : "power",
-      "name" : "Power",
-      "type" : "percentage_level"
-    },
     "powered" : {
       "category" : "wand",
       "description" : [ "If set, the holder of this wand will bypass many checks, allowing them to undo other player's spells, destroy normally indestructible blocks, and target normally untargable players.", "Does not bypass the Super Protected setting", "Requires the Magic.wand.use.powered permission to use" ],
@@ -9685,6 +9678,13 @@
       "name" : "Wait Time",
       "type" : "integer"
     },
+    "wand_power" : {
+      "category" : "wand",
+      "description" : [ "A multiplier that can affect spell damage, size and range, defined by properties in config.yml" ],
+      "field" : "power",
+      "name" : "Power",
+      "type" : "percentage_level"
+    },
     "warmup" : {
       "category" : "base",
       "description" : [ "" ],
@@ -11879,7 +11879,6 @@
     "passive" : "false",
     "path" : null,
     "potion_effects" : null,
-    "wand_power" : "0",
     "powered" : "false",
     "protected" : "false",
     "protection" : null,
@@ -11901,6 +11900,7 @@
     "unmoveable" : "false",
     "unstashable" : "false",
     "upgrade" : "false",
-    "uses" : null
+    "uses" : null,
+    "wand_power" : "0"
   }
 }
