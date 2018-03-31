@@ -3,8 +3,7 @@ package com.elmakers.mine.bukkit.meta;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -19,7 +18,7 @@ public class ParameterType {
     private String key;
     private String name;
     private List<String> description;
-    private Set<String> options = new HashSet<>();
+    private Map<String, String> options;
     private String valueType;
     private String keyType;
 
@@ -32,6 +31,7 @@ public class ParameterType {
         this.classType = classType;
         description = new ArrayList<>();
         description.add("");
+        options = new HashMap<>();
         name = WordUtils.capitalizeFully(key, new char[]{'_'}).replaceAll("_", " ");
     }
 
@@ -68,11 +68,17 @@ public class ParameterType {
         }
     }
 
+    private void addOption(String option) {
+        if (!options.containsKey(option)) {
+            options.put(option, null);
+        }
+    }
+
     public void update() {
         if (classType.isEnum()) {
             Object[] enums = classType.getEnumConstants();
             for (Object enumConstant : enums) {
-                options.add(enumConstant.toString().toLowerCase());
+                addOption(enumConstant.toString().toLowerCase());
             }
         } else {
             // This covers PotionEffectType, which as it turns out is a huge pain.
@@ -81,20 +87,21 @@ public class ParameterType {
                 if (Modifier.isStatic(field.getModifiers())
                     && Modifier.isFinal(field.getModifiers())
                     && field.getType() == classType) {
-                    options.add(field.getName().toLowerCase());
+                    addOption(field.getName().toLowerCase());
                 }
             }
         }
     }
 
-    public List<String> getOptions() {
-        List<String> optionsList = new ArrayList<>(options);
-        Collections.sort(optionsList);
-        return optionsList;
+    public Map<String, String> getOptions() {
+        return options;
     }
 
     public void setOptions(Set<String> options) {
-        this.options = options;
+        this.options = new HashMap<>();
+        for (String option : options) {
+            this.options.put(option, null);
+        }
     }
 
     public List<String> getDescription() {
