@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import javax.annotation.Nonnull;
 
 import org.apache.commons.lang.WordUtils;
@@ -97,11 +96,8 @@ public class ParameterType {
         return options;
     }
 
-    public void setOptions(Set<String> options) {
-        this.options = new HashMap<>();
-        for (String option : options) {
-            this.options.put(option, null);
-        }
+    public void setOptions(Map<String, String> options) {
+        this.options = options;
     }
 
     public List<String> getDescription() {
