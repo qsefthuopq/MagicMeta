@@ -1990,7 +1990,7 @@
         "experience" : "0",
         "icon" : null,
         "item" : null,
-        "items-list" : null,
+        "items" : null,
         "limit" : "0",
         "options" : null,
         "requirements" : null,
@@ -6160,7 +6160,7 @@
       "description" : [ "How many rows to show in the spell inventory in chest and skills mobde" ],
       "field" : "inventory_rows",
       "name" : "Inventory Rows",
-      "type" : "int"
+      "type" : "integer"
     },
     "invert" : {
       "category" : "effects",
@@ -6205,13 +6205,6 @@
       "type" : "double"
     },
     "items" : {
-      "category" : "",
-      "description" : [ "The items to display" ],
-      "field" : "items",
-      "name" : "Items",
-      "type" : "string"
-    },
-    "items-list" : {
       "category" : "",
       "description" : [ "The items to display" ],
       "field" : "items",
