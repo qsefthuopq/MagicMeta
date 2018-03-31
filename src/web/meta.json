@@ -1103,6 +1103,18 @@
       },
       "short_class" : "EntityProjectile"
     },
+    "entity_select" : {
+      "category" : "compound",
+      "class_name" : "EntitySelectAction",
+      "description" : [ "Show a GUI allowing the player to select nearby entities to target", "Will run its sub-actions with the selected entity as the target" ],
+      "examples" : [ "airstrike" ],
+      "name" : "Entity Select",
+      "parameters" : {
+        "limit" : "64",
+        "radius" : "32.0"
+      },
+      "short_class" : "EntitySelect"
+    },
     "explosion" : {
       "category" : "construction",
       "class_name" : "ExplosionAction",
