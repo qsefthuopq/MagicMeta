@@ -5351,7 +5351,7 @@
     },
     "enchant_count" : {
       "category" : "wand",
-      "description" : [ "The maximum number of times this wand can be enchanted, using the legacy enchanting system" ],
+      "description" : [ "The number of times this wand has been enchanted", "This is tracked internally and should generally not be used in configurations" ],
       "field" : "enchant_count",
       "name" : "Enchant Count",
       "type" : "integer"
@@ -5364,15 +5364,15 @@
       "type" : "enchantment_map"
     },
     "entity_attributes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Vanilla entity attributes to apply to the mob" ],
       "field" : "entity_attributes",
       "name" : "Entity Attributes",
       "type" : "attribute_map"
     },
     "entity_damage" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "entity",
+      "description" : [ "The amount of damage to apply to non-player targets" ],
       "field" : "entity_damage",
       "name" : "Entity Damage",
       "type" : "double"
@@ -5700,8 +5700,8 @@
       "type" : "integer"
     },
     "force" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "For upgrade items, this will force all properties in the upgrade template to apply to the target wand, even if they are a downgrade" ],
       "field" : "force",
       "name" : "Force",
       "type" : "boolean"
@@ -5812,8 +5812,8 @@
       "type" : "float"
     },
     "has_uses" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Whether or not the wand has uses", "This is an internal property, you should not need to set it. It will be determined by the uses property being non-zero" ],
       "field" : "has_uses",
       "name" : "Has Uses",
       "type" : "double"
@@ -5910,134 +5910,134 @@
       "type" : "material"
     },
     "heroes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Make this wand a Heroes wand", "If the Heroes plugin is installed, this wand will automatically fill its spell inventory with all of the Heroes skills the player has, and will display Heroes mana instead of Magic mana" ],
       "field" : "heroes",
       "name" : "Heroes",
       "type" : "double"
     },
     "hidden" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell or wand template will not show up in lists", "This is generally used for templates not meant for player use" ],
       "field" : "hidden",
       "name" : "Hidden",
       "type" : "boolean"
     },
     "hit_count" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "How many entities the projectile can hit before expiring" ],
       "field" : "hit_count",
       "name" : "Hit Count",
       "type" : "integer"
     },
     "hit_effects" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Which effects to play on hit" ],
       "field" : "hit_effects",
       "name" : "Hit Effects",
       "type" : "string"
     },
     "hit_on_miss" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set to true, hit effects and actions will still execute on a miss" ],
       "field" : "hit_on_miss",
       "name" : "Hit On Miss",
       "type" : "boolean"
     },
     "hit_requires_entity" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set to true, hitting a block will count as a miss" ],
       "field" : "hit_requires_entity",
       "name" : "Hit Requires Entity",
       "type" : "boolean"
     },
     "hitbox" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "If true, hitbox targeting will be used", "This will use the vanilla (or custom) hitboxes of target entities with projectile raycasts for line/box intersection tests", "The exact hit location can be determined and used in effects, and special behavior can be given to headshots" ],
       "field" : "hitbox",
       "name" : "Hitbox",
       "type" : "boolean"
     },
     "hitbox_block_size" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Can be used to expand a projectile's hitbox when determining block collisions" ],
       "field" : "hitbox_block_size",
       "name" : "Hitbox Block Size",
       "type" : "double"
     },
     "hitbox_size" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Can be used to expand a projectile's hitbox when determining entity collisions" ],
       "field" : "hitbox_size",
       "name" : "Hitbox Size",
       "type" : "double"
     },
     "hotbar" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The currently selected hotbar", "Does not generally need to be set in a configuration" ],
       "field" : "hotbar",
       "name" : "Hotbar",
       "type" : "double"
     },
     "hotbar_count" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The number of hotbars this wand has", "Hotbars can be cycled using controls bound to the cycle_hotbar or cycle_hotbar_reverse actions" ],
       "field" : "hotbar_count",
       "name" : "Hotbar Count",
       "type" : "double"
     },
     "hurt" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Whether to play the hurt effect on the target, which will shake a player and turn their screen red" ],
       "field" : "hurt",
       "name" : "Hurt",
       "type" : "boolean"
     },
     "hurts" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "entity",
+      "description" : [ "Whether a falling block will damage entities it falls on" ],
       "field" : "hurts",
       "name" : "Hurts",
       "type" : "boolean"
     },
     "ice" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "construction",
+      "description" : [ "The material to use when freezing water into ice" ],
       "field" : "ice",
       "name" : "Ice",
-      "type" : "string"
+      "type" : "material"
     },
     "icon" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "An icon that represents a spell or wand", "These can be vanilla items, or custom items from a resource pack" ],
       "field" : "icon",
       "name" : "Icon",
       "type" : "icon"
     },
     "icon_disabled" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "An icon used when a spell is not available, due to permissions, cooldown, or insufficient resources" ],
       "field" : "icon_disabled",
-      "name" : "Icon Disabled",
+      "name" : "Disabled Icon",
       "type" : "icon"
     },
     "icon_disabled_url" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A URL icon used when a spell is not available, due to permissions, cooldown, or insufficient resources" ],
       "field" : "icon_disabled_url",
-      "name" : "Icon Disabled Url",
-      "type" : "string"
+      "name" : "Disabled Icon Url",
+      "type" : "texture"
     },
     "icon_inactive" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, this wand will show a different icon when inactive versus when held, or for wands with a spell inventory, when the inventory is open" ],
       "field" : "icon_inactive",
-      "name" : "Icon Inactive",
+      "name" : "Inactive Icon",
       "type" : "icon"
     },
     "icon_inactive_delay" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "An amount of time, in milliseconds, to wait before swapping the wand's active and inactive icons" ],
       "field" : "icon_inactive_delay",
       "name" : "Icon Inactive Delay",
       "type" : "double"
@@ -6160,11 +6160,11 @@
       "description" : [ "How many rows to show in the spell inventory in chest and skills mobde" ],
       "field" : "inventory_rows",
       "name" : "Inventory Rows",
-      "type" : "double"
+      "type" : "int"
     },
     "invert" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Invert the text" ],
       "field" : "invert",
       "name" : "Invert",
       "type" : "boolean"
@@ -6174,46 +6174,46 @@
       "description" : [ "This wand will not take damage from any source, and can not be destroyed" ],
       "field" : "invulnerable",
       "name" : "Invulnerable",
-      "type" : "double"
+      "type" : "boolean"
     },
     "is_zig_zag" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Whether or not this line zig zags" ],
       "field" : "is_zig_zag",
       "name" : "Is Zig Zag",
       "type" : "boolean"
     },
     "item" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The item to use or show" ],
       "field" : "item",
       "name" : "Item",
       "type" : "material"
     },
     "item_attributes" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Vanilla attributes to apply to this wand item" ],
       "field" : "item_attributes",
       "name" : "Item Attributes",
       "type" : "attribute_map"
     },
     "item_speed" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Velocity to apply to dropped items", "This generally nees to be set lower than velocity applied to living entities, or items will get thrown around too far" ],
       "field" : "item_speed",
       "name" : "Item Speed",
       "type" : "double"
     },
     "items" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The items to display" ],
       "field" : "items",
       "name" : "Items",
       "type" : "string"
     },
     "items-list" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The items to display" ],
       "field" : "items",
       "name" : "Items",
       "type" : "list"
@@ -6227,21 +6227,21 @@
     },
     "jump_controllable" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "An amount of velocity to apply to this mount when the rider presses the jump key (space bar by default)" ],
       "field" : "jump_controllable",
       "name" : "Jump Controllable",
       "type" : "double"
     },
     "keep" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, this wand will not be dropped on death" ],
       "field" : "keep",
       "name" : "Keep",
-      "type" : "double"
+      "type" : "boolean"
     },
     "keep_in_inventory" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If targeting a player, their wand will not be dropped on the ground but will be moved into their inventory", "It will be put back on undo" ],
       "field" : "keep_in_inventory",
       "name" : "Keep In Inventory",
       "type" : "boolean"
@@ -6457,11 +6457,11 @@
       "type" : "lock_type"
     },
     "locked" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, this wand can not be modified" ],
       "field" : "locked",
       "name" : "Locked",
-      "type" : "double"
+      "type" : "boolean"
     },
     "loot" : {
       "category" : "",
@@ -6506,57 +6506,57 @@
       "type" : "particle_effect"
     },
     "mana" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The amount of mana this wand currently has", "Can be used in a configuration to make a wand start out with mana, rather than waiting to regenerate" ],
       "field" : "mana",
       "name" : "Mana",
       "type" : "integer"
     },
     "mana_max" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The maximum amount of mana this wand can hold" ],
       "field" : "mana_max",
       "name" : "Mana Max",
       "type" : "double"
     },
     "mana_max_boost" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A percentage increase to give to a player's maximum mana when holding or wearing this wand" ],
       "field" : "mana_max_boost",
       "name" : "Mana Max Boost",
       "type" : "double"
     },
     "mana_per_damage" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How much mana should be recovered for each point of damage done by the holder" ],
       "field" : "mana_per_damage",
       "name" : "Mana Per Damage",
       "type" : "double"
     },
     "mana_regeneration" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Mana regeneration rate, in mana per second" ],
       "field" : "mana_regeneration",
       "name" : "Mana Regeneration",
       "type" : "double"
     },
     "mana_regeneration_boost" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A percentage increase to give to a player's mana regeneration rate when holding or wearing this wand" ],
       "field" : "mana_regeneration_boost",
       "name" : "Mana Regeneration Boost",
       "type" : "double"
     },
     "marker_key" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Where in player data should their marker location be saved", "Can be used to have different spells track different marker locations" ],
       "field" : "marker_key",
       "name" : "Marker Key",
       "type" : "string"
     },
     "material" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The material to use" ],
       "field" : "material",
       "name" : "Material",
       "type" : "material"
@@ -6570,7 +6570,7 @@
     },
     "materials" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A list of materials to use" ],
       "field" : "materials",
       "name" : "Materials",
       "type" : "list"
@@ -6611,11 +6611,11 @@
       "type" : "double"
     },
     "max_enchant_count" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "The maximum number of times this wand can be enchanted, using the legacy enchanting system" ],
       "field" : "max_enchant_count",
       "name" : "Max Enchant Count",
-      "type" : "double"
+      "type" : "integer"
     },
     "max_health" : {
       "category" : "",
@@ -6779,8 +6779,8 @@
       "type" : "boolean"
     },
     "mode" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "How this wand will present its spell inventory to the player" ],
       "field" : "mode",
       "name" : "Mode",
       "type" : "wand_mode"
@@ -7038,11 +7038,11 @@
       "type" : "boolean"
     },
     "overrides" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Parameters to apply to spells cast with this wand", "Parameters can be global, or prefixed with a spell name such as 'blink.range 20' to apply only to a specific spell", "Overrides can be manipulated in-game using the '/wand override' command" ],
       "field" : "overrides",
       "name" : "Overrides",
-      "type" : "double"
+      "type" : "string_list"
     },
     "parameters" : {
       "category" : "base",
@@ -7255,8 +7255,8 @@
       "type" : "boolean"
     },
     "passive" : {
-      "category" : "base",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, a wand will not activate when held", "Instead, it will apply its affects when worn. Generally to be used with magic armor" ],
       "field" : "passive",
       "name" : "Passive",
       "type" : "boolean"
@@ -7276,8 +7276,8 @@
       "type" : "integer"
     },
     "path" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "A progression path that a wand will follow", "When enchanting or using the spellshop, a path will determine what spells are available to a player", "Paths may upgrade to other paths in a progression, when a player learns all of the spells available on their current path they will progress to the next." ],
       "field" : "path",
       "name" : "Path",
       "type" : "path"
