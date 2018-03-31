@@ -4660,7 +4660,7 @@
       "description" : [ "A percent reduction used for engineering spells that consume blocks when cast", "Currently only the values 1 and 0 are supported, where 1 means the player may use engineering magic without spending blocks", "This will appear on the wand lore as 'Manifestation'" ],
       "field" : "consume_reduction",
       "name" : "Consume Reduction",
-      "type" : "double"
+      "type" : "percentage_level"
     },
     "consume_spell" : {
       "category" : "wand",
@@ -4703,7 +4703,7 @@
       "description" : [ "" ],
       "field" : "cooldown_reduction",
       "name" : "Cooldown Reduction",
-      "type" : "double"
+      "type" : "percentage_level"
     },
     "cost" : {
       "category" : "",
@@ -4724,7 +4724,7 @@
       "description" : [ "A percent reduction for costs in spells cast by this wand" ],
       "field" : "cost_reduction",
       "name" : "Cost Reduction",
-      "type" : "double"
+      "type" : "percentage_level"
     },
     "cost_type" : {
       "category" : "",
@@ -7436,12 +7436,19 @@
       "name" : "Power",
       "type" : "integer"
     },
+    "wand_power" : {
+      "category" : "wand",
+      "description" : [ "A multiplier that can affect spell damage, size and range, defined by properties in config.yml" ],
+      "field" : "power",
+      "name" : "Power",
+      "type" : "percentage_level"
+    },
     "powered" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, the holder of this wand will bypass many checks, allowing them to undo other player's spells, destroy normally indestructible blocks, and target normally untargable players.", "Does not bypass the Super Protected setting", "Requires the Magic.wand.use.powered permission to use" ],
       "field" : "powered",
-      "name" : "Powered",
-      "type" : "double"
+      "name" : "Super Powered",
+      "type" : "boolean"
     },
     "precision" : {
       "category" : "",
@@ -7514,15 +7521,15 @@
       "type" : "potion_effect_map"
     },
     "protected" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, the holder of this wand will be completly invincible and untargetable by all spells", "Magic.wand.use.protected permission to use" ],
       "field" : "protected",
-      "name" : "Protected",
-      "type" : "double"
+      "name" : "Super Protected",
+      "type" : "boolean"
     },
     "protection" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Protection from specific damage types" ],
       "field" : "protection",
       "name" : "Protection",
       "type" : "damage_type_map"
@@ -8173,10 +8180,10 @@
     },
     "scale" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Can be used to scale all costs for a shop up and down" ],
       "field" : "scale",
       "name" : "Scale",
-      "type" : "double"
+      "type" : "percentage"
     },
     "selected" : {
       "category" : "",
@@ -8187,7 +8194,7 @@
     },
     "sell" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "True to make this a sell shop, where players earn money by selling items" ],
       "field" : "sell",
       "name" : "Sell",
       "type" : "boolean"
@@ -8712,7 +8719,7 @@
     },
     "strength" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Gives damage bonuses to specific damage types" ],
       "field" : "strength",
       "name" : "Strength",
       "type" : "damage_type_map"
@@ -9693,8 +9700,8 @@
       "type" : "map"
     },
     "weakness" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Weakness to specific damage types" ],
       "field" : "weakness",
       "name" : "Weakness",
       "type" : "damage_type_map"
@@ -10273,11 +10280,11 @@
       "description" : [ "A color string using RRGGBB notation", "Only certain particles can be colored, as of 1.8 this includes spell_mob_ambient, spell_mob and redstone" ],
       "name" : "Color",
       "options" : {
-        "0000FF" : null,
-        "00FF00" : null,
-        "010101" : null,
-        "FF0000" : null,
-        "FFFFFF" : null
+        "0000FF" : "blue",
+        "00FF00" : "green",
+        "010101" : "dark grey",
+        "FF0000" : "red",
+        "FFFFFF" : "white"
       }
     },
     "cost_map" : {
@@ -10293,11 +10300,11 @@
       "description" : [ "A type of cost required or consumed by something" ],
       "name" : "Cost Type",
       "options" : {
-        "currency" : null,
+        "currency" : "Vault currency",
         "health" : null,
         "hunger" : null,
-        "item" : null,
-        "levels" : null,
+        "item" : "The currency_item defined in config.yml",
+        "levels" : "Experience levels",
         "mana" : null,
         "sp" : null,
         "xp" : null
@@ -10323,7 +10330,7 @@
       "key_type" : "damage_type",
       "name" : "Damage Type Map",
       "options" : { },
-      "value_type" : "double"
+      "value_type" : "percentage_level"
     },
     "disco_ball_effect_direction" : {
       "class_name" : "de.slikey.effectlib.effect.DiscoBallEffect$Direction",
@@ -11091,9 +11098,9 @@
       "description" : [ "A target UI area to send a message" ],
       "name" : "Message Type",
       "options" : {
-        "action_bar" : null,
-        "chat" : null,
-        "title" : null
+        "action_bar" : "The action bar",
+        "chat" : "Player chat",
+        "title" : "A screen title"
       }
     },
     "particle_effect" : {
@@ -11161,6 +11168,32 @@
         "beginner" : null,
         "jedi" : null,
         "student" : null
+      }
+    },
+    "percentage" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number from 0 to 1 representing a percentage amount" ],
+      "name" : "Percentage",
+      "options" : {
+        "0" : "0%",
+        "0.1" : "10%",
+        "0.24" : "25%",
+        "0.5" : "50%",
+        "0.75" : "75%",
+        "1" : "100%"
+      }
+    },
+    "percentage_level" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number from 0 to 1 representing a percentage amount", "This amount is generally a percentage of a global value configured in config.yml", "The default formatting for these numbers is to use roman notation to mimic vanilla enchantment levels" ],
+      "name" : "Percentage Level",
+      "options" : {
+        "0" : "(None)",
+        "0.2" : "I",
+        "0.4" : "II",
+        "0.6" : "III",
+        "0.8" : "IV",
+        "1" : "V"
       }
     },
     "potion_effect_list" : {
@@ -11668,13 +11701,13 @@
       "description" : [ "Where an effect should be based" ],
       "name" : "Location Type",
       "options" : {
-        "block" : null,
-        "body" : null,
-        "cast" : null,
-        "eyes" : null,
-        "feet" : null,
-        "hit" : null,
-        "wand" : null
+        "block" : "The block location (0,0,0 corner)",
+        "body" : "The center of the target entity, halfway between feet and eyes",
+        "cast" : "The cast location, defaults to wand location or player handss",
+        "eyes" : "The target's eyes",
+        "feet" : "The target's feet",
+        "hit" : "The exact hit location",
+        "wand" : "The wand location"
       }
     },
     "spell" : {
@@ -11695,9 +11728,9 @@
       "description" : [ "Options for how to toggle a spell off" ],
       "name" : "Spell List",
       "options" : {
-        "cancel" : null,
-        "none" : null,
-        "undo" : null
+        "cancel" : "Cancel spell on toggle off",
+        "none" : "No toggling",
+        "undo" : "Cancel and undo spell on toggle off"
       }
     },
     "string" : {
@@ -11737,30 +11770,30 @@
     "wand_action" : {
       "class_name" : "com.elmakers.mine.bukkit.api.wand.WandAction",
       "description" : [ "An action a wand can perform on user input", "There are bound to swap, right_click, left_click, and drop to customize a wand's controls" ],
-      "name" : "Wand Mode",
+      "name" : "Wand Control Action",
       "options" : {
-        "alt_cast" : null,
-        "alt_cast2" : null,
-        "cast" : null,
-        "cycle" : null,
-        "cycle_hotbar" : null,
-        "cycle_hotbar_reverse" : null,
-        "cycle_reverse" : null,
-        "none" : null,
-        "toggle" : null
+        "alt_cast" : "Cast the alternate_spell assigned to the wand",
+        "alt_cast2" : "Cast the alternate_spell2 assigned to the wand",
+        "cast" : "Cast the wand's currently active spell",
+        "cycle" : "Cycle through spells (cycle mode)",
+        "cycle_hotbar" : "Go to the next hotbar (inventory mode)",
+        "cycle_hotbar_reverse" : "Go to the previous hotbar (inventory mode)",
+        "cycle_reverse" : "Cycle through spells in reverse order  (cycle mode)",
+        "none" : "Do nothing",
+        "toggle" : "Toggle the spell inventory on/off (inventory mode), open the spell inventory (chest and skill modes), cycle spells (cycle mode)"
       }
     },
     "wand_mode" : {
       "class_name" : "com.elmakers.mine.bukkit.wand.WandMode",
-      "description" : [ "How the wand will show its spell inventory.", "none: No inventory (The Default)", "cast: No inventory, but pre-configure for casting on left-click", "cycle: Cycle through spells", "inventory: Replace the player's inventory will spells, activate spells with hotbar buttons", "chest: Pop up a chest inventory, active spells by clicking", "skills: Show a chest inventory with spell icons the player can take out and use from their hotbar" ],
+      "description" : [ "How the wand will show its spell inventory." ],
       "name" : "Wand Mode",
       "options" : {
-        "cast" : null,
-        "chest" : null,
-        "cycle" : null,
-        "inventory" : null,
-        "none" : null,
-        "skills" : null
+        "cast" : "No inventory, and pre-configured for casting on left-click or right-click",
+        "chest" : "Pop up a chest inventory, active spells by clicking",
+        "cycle" : "Cycle through spells, no inventory GUI",
+        "inventory" : "Replace the player's inventory will spells, activate spells with hotbar buttons",
+        "none" : "No inventory (the default)",
+        "skills" : "Show a chest inventory with spell icons the player can take out and use from their hotbar"
       }
     },
     "weather" : {
@@ -11768,9 +11801,9 @@
       "description" : [ "What type of weather to set" ],
       "name" : "Weather",
       "options" : {
-        "clear" : null,
-        "cycle" : null,
-        "storm" : null
+        "clear" : "Clear rain or snow",
+        "cycle" : "Cycle from storming to clear",
+        "storm" : "Start raining or snowing"
       }
     }
   },
@@ -11846,7 +11879,7 @@
     "passive" : "false",
     "path" : null,
     "potion_effects" : null,
-    "power" : "0",
+    "wand_power" : "0",
     "powered" : "false",
     "protected" : "false",
     "protection" : null,
