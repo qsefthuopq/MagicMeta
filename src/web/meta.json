@@ -1,6 +1,7 @@
 {
   "action_parameters" : {
     "actions" : null,
+    "code_class" : null,
     "ignore_result" : "false",
     "requires_entity_target" : "false",
     "requires_target" : "false",
@@ -56,7 +57,7 @@
       "category" : "compound",
       "class_name" : "AllEntitiesAction",
       "description" : [ "Target all entities in the current world, or optionally in all worlds" ],
-      "examples" : [ "count", "debugger" ],
+      "examples" : [ "count", "debugger", "nobabies" ],
       "name" : "All Entities",
       "parameters" : {
         "target_all_worlds" : "false"
@@ -542,7 +543,7 @@
       "category" : "control",
       "class_name" : "CommandAction",
       "description" : [ "Run one or more commands", "Support the following variables: @spell, @pd (caster display name), @p, @pn (same as @p, caster name), @uuid, @world, @x, @y, @z, @tworld, @tx, @ty, @tz (target location), @td (target display name), @t, @tn (same as @t, target name), @tuuid" ],
-      "examples" : [ "gather", "ledger", "respawn" ],
+      "examples" : [ "gather", "ledger", "respawn", "mute" ],
       "name" : "Command",
       "parameters" : {
         "command" : null,
@@ -3503,6 +3504,7 @@
   "effectlib_parameters" : {
     "asynchronous" : "true",
     "auto_orient" : "false",
+    "code_class" : null,
     "color" : null,
     "delay_ticks" : "0",
     "disappear_with_origin_entity" : "false",
@@ -3573,7 +3575,7 @@
   "properties" : {
     "actions" : {
       "category" : "actions",
-      "description" : [ "" ],
+      "description" : [ "A map of events to actions to run. The most comment event used by all spells is 'cast'", "Actions determine the behavior of a spell, defining what it does" ],
       "field" : "actions",
       "name" : "Actions",
       "type" : "actions"
@@ -3608,7 +3610,7 @@
     },
     "add_effects" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A map of potion effects to add to the target" ],
       "field" : "add_effects",
       "name" : "Add Effects",
       "type" : "potion_effect_map"
@@ -3692,7 +3694,7 @@
     },
     "allow_max_range" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "If set to true, this spell will cast as normal if it misses, meaning it reaches max range without hitting a block or entity" ],
       "field" : "allow_max_range",
       "name" : "Allow Max Range",
       "type" : "boolean"
@@ -3930,10 +3932,10 @@
     },
     "backfire_chance" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "The percent change that this spell will backfire, targeting the caster instead of the intended target" ],
       "field" : "backfire_chance",
       "name" : "Backfire Chance",
-      "type" : "double"
+      "type" : "percentage"
     },
     "base_interval" : {
       "category" : "",
@@ -4100,7 +4102,7 @@
     },
     "brush" : {
       "category" : "brushes",
-      "description" : [ "" ],
+      "description" : [ "A material or brush to use in this spell", "For non-engineering spells this determines the type of block build with actions such as ModifyBlock", "Engineering spells generally omit this parameter and use the player's selected brush" ],
       "field" : "brush",
       "name" : "Brush",
       "type" : "material"
@@ -4157,140 +4159,140 @@
     },
     "bypass" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Bypass all build, break and pvp checks.", "This is a shortcut for all of the other bypass flags" ],
       "field" : "bypass",
       "name" : "Bypass",
       "type" : "boolean"
     },
     "bypass_backfire" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "base",
+      "description" : [ "This spell will not reflect off of reflective blocks" ],
       "field" : "bypass_backfire",
       "name" : "Bypass Backfire",
       "type" : "boolean"
     },
     "bypass_break" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Allows a spell to break blocks in regions that deny breaking" ],
       "field" : "bypass_break",
       "name" : "Bypass Break",
       "type" : "boolean"
     },
     "bypass_build" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Allows a spell to build blocks in regions that deny building" ],
       "field" : "bypass_build",
       "name" : "Bypass Build",
       "type" : "boolean"
     },
     "bypass_deactivate" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell can not be deactivated by other spells" ],
       "field" : "bypass_deactivate",
       "name" : "Bypass Deactivate",
       "type" : "boolean"
     },
     "bypass_mage_cooldown" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell can be cast even if the mage has a global cooldown in effect" ],
       "field" : "bypass_mage_cooldown",
       "name" : "Bypass Mage Cooldown",
       "type" : "boolean"
     },
     "bypass_permissions" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell can be cast even if a player would not normally have permission to do so" ],
       "field" : "bypass_permissions",
       "name" : "Bypass Permissions",
       "type" : "boolean"
     },
     "bypass_protection" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell will bypass friendly fire and super protection restrictions" ],
       "field" : "bypass_protection",
       "name" : "Bypass Protection",
       "type" : "boolean"
     },
     "bypass_pvp" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This allos a spell to bypass pvp checks, so it can target players in pvp-restricted areas." ],
       "field" : "bypass_pvp",
       "name" : "Bypass Pvp",
       "type" : "boolean"
     },
     "bypass_reduction" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Don't take cooldown reduction into affect when applying cooldowns" ],
       "field" : "bypass_reduction",
       "name" : "Bypass Reduction",
       "type" : "boolean"
     },
     "bypass_undo" : {
       "category" : "undo",
-      "description" : [ "" ],
+      "description" : [ "This spell will not add its changes to the undo queue and cannot be undo" ],
       "field" : "bypass_undo",
       "name" : "Bypass Undo",
       "type" : "boolean"
     },
     "can_pickup_items" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Whether or not the mob will be allowed to pick up items" ],
       "field" : "can_pickup_items",
       "name" : "Can Pickup Items",
       "type" : "boolean"
     },
     "cancel" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "undo",
+      "description" : [ "Current spells in progress will be cancelled before undoing" ],
       "field" : "cancel",
       "name" : "Cancel",
       "type" : "boolean"
     },
     "cancel_effects" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "If the spell should cancel any running effects it started when the spell ends" ],
       "field" : "cancel_effects",
       "name" : "Cancel Effects",
       "type" : "boolean"
     },
     "cancel_on_cast_other" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell will be cancelled if the caster casts another spell while this one is in progress" ],
       "field" : "cancel_on_cast_other",
       "name" : "Cancel On Cast Other",
       "type" : "boolean"
     },
     "cancel_on_damage" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell will be cancelled if the caster is damaged while this spell is on progress" ],
       "field" : "cancel_on_damage",
       "name" : "Cancel On Damage",
       "type" : "double"
     },
     "cancel_on_no_permission" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Check for permission changes while the spell is running and cancel if the player has no permission", "Can be used for brooms, levitate or other lasting effects that should cancel if a player moves into a restricted area" ],
       "field" : "cancel_on_no_permission",
       "name" : "Cancel On No Permission",
       "type" : "boolean"
     },
     "cancel_on_no_wand" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This spell with cancel if the player lets go of their wand" ],
       "field" : "cancel_on_no_wand",
       "name" : "Cancel On No Wand",
       "type" : "boolean"
     },
     "cancellable" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "If set to false, this spell can not be cancelled by other spells" ],
       "field" : "cancellable",
       "name" : "Cancellable",
       "type" : "boolean"
     },
     "cast" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "A probability table of spells to cast", "This parameter is deprecated, it is better to use the triggers map" ],
       "field" : "cast",
       "name" : "Cast",
       "type" : "map"
@@ -4374,7 +4376,7 @@
     },
     "category" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Used for wand organization and grouping spells in spell lists and spell books" ],
       "field" : "category",
       "name" : "Category",
       "type" : "string"
@@ -4424,7 +4426,7 @@
     },
     "check_destructible" : {
       "category" : "construction",
-      "description" : [ "" ],
+      "description" : [ "If set to false, this spell will not check its destructible list at all and can modify any block type" ],
       "field" : "check_destructible",
       "name" : "Check Destructible",
       "type" : "boolean"
@@ -4467,6 +4469,13 @@
     "class" : {
       "category" : "wand",
       "description" : [ "The class this wand uses", "If set this will be a class-bound wand, meaning it may store some of its properties in a player's class data rather than on the wand item", "This can be used to create wands that show spells and mana that a player has, so a player may change wands without losing progress", "A player must have access to this class to use the wand, if the class is locked it will need to be unlocked before the player may activate this wand" ],
+      "field" : "class",
+      "name" : "Class",
+      "type" : "string"
+    },
+    "code_class" : {
+      "category" : "base",
+      "description" : [ "The class this effect or action uses", "This determines the type of effect or action that will be performed" ],
       "field" : "class",
       "name" : "Class",
       "type" : "string"
@@ -4705,7 +4714,14 @@
     },
     "cooldown" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "How long, in milliseconds, a player has to wait before casting this spell again" ],
+      "field" : "cooldown",
+      "name" : "Cooldown",
+      "type" : "integer"
+    },
+    "cooldown_mage" : {
+      "category" : "base",
+      "description" : [ "How long, in milliseconds, a player has to wait before casting this any spells after having cast this one" ],
       "field" : "cooldown",
       "name" : "Cooldown",
       "type" : "integer"
@@ -4908,7 +4924,7 @@
     },
     "damage_multiplier" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A multiplier to apply to the damage done by this action", "This can be used with spell levels or headshot parameters, to make it easy to scale up damage while still being able to tweak the base damage value" ],
       "field" : "damage_multiplier",
       "name" : "Damage Multiplier",
       "type" : "double"
@@ -4932,6 +4948,13 @@
       "description" : [ "" ],
       "field" : "damaged",
       "name" : "Damaged",
+      "type" : "boolean"
+    },
+    "enabled" : {
+      "category" : "base",
+      "description" : [ "This can be used to enable a spell that was disabled via config.yml, or to disable specific default" ],
+      "field" : "enabled",
+      "name" : "Enabled",
       "type" : "boolean"
     },
     "default_drops" : {
@@ -4978,7 +5001,7 @@
     },
     "description" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A description of this wand or spell to show in-game, in the item lore", "Can be added directly on the wand or spell config, but it is often better to put all language in the messages.yml file so it can be easily edited and translated." ],
       "field" : "description",
       "name" : "Description",
       "type" : "string"
@@ -5146,7 +5169,7 @@
     },
     "duration_multiplier" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A multiplier to apply to the duration of a spell or effect", "This can be used with spell levels or headshot parameters, to make it easy to scale up duration while still being able to tweak the base duration" ],
       "field" : "duration_multiplier",
       "name" : "Duration Multiplier",
       "type" : "double"
@@ -5307,28 +5330,28 @@
     },
     "effects" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "Which effects to playe" ],
       "field" : "effects",
       "name" : "Effects",
       "type" : "string"
     },
     "effects-map" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "base",
+      "description" : [ "A map of events to effects to play when those events occur", "The most common event used by all spells is 'cast', but projectiles also use several other common events such as 'hit', 'miss', 'hit_entity', 'hit_block' and 'headshot'" ],
       "field" : "effects",
       "name" : "Effects",
       "type" : "map"
     },
     "effects_ambient" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If true, the particles produced by these potion effects will be 'ambient', meaning slightly transparent and less noticable" ],
       "field" : "effects_ambient",
       "name" : "Effects Ambient",
       "type" : "boolean"
     },
     "effects_particles" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If false, the potion effects applied will not show as bubble particles" ],
       "field" : "effects_particles",
       "name" : "Effects Particles",
       "type" : "boolean"
@@ -5678,10 +5701,10 @@
     },
     "fizzle_chance" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "The percent chance that this spell will fizzle", "Fizzling means failing to cast while still consuming costs and incurring a cooldown" ],
       "field" : "fizzle_chance",
       "name" : "Fizzle Chance",
-      "type" : "double"
+      "type" : "percentage"
     },
     "flicker" : {
       "category" : "",
@@ -6077,8 +6100,8 @@
       "type" : "boolean"
     },
     "ignore_result" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "base",
+      "description" : [ "Set this to have the result of this action (and all sub-actions) ignored for the purposes of the overall spell result", "This can be used to include some set of actions that are not deemed crucial to the success of the spell", "It is commonly used on PlayEffects actions or BreakBlock actions when those are not the primary goal of the spell", "This effects when a spell earns a cast for upgrade purposes and when it will earn SP" ],
       "field" : "ignore_result",
       "name" : "Ignore Result",
       "type" : "boolean"
@@ -6855,7 +6878,7 @@
     },
     "name" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "The display name of this wand or spell to show in-game", "Can be added directly on the wand or spell config, but it is often better to put all language in the messages.yml file so it can be easily edited and translated." ],
       "field" : "name",
       "name" : "Name",
       "type" : "string"
@@ -7464,10 +7487,10 @@
     },
     "prevent_passthrough" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A list of materials that can not be passed through", "Mainly used in Teleport actions that allow passthrough, such as high level blink" ],
       "field" : "prevent_passthrough",
       "name" : "Prevent Passthrough",
-      "type" : "string"
+      "type" : "matrial_list"
     },
     "price" : {
       "category" : "",
@@ -7569,7 +7592,7 @@
     },
     "pvp_restricted" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "If set to true, this spell will not be castable at all in a pvp-restricted area", "By default all spells will not target other players in pvp-restricted areas, but some spells like Fire can still be used to grief and so they are marked pvp_restricted: true to be unavailable in a no-pvp zone." ],
       "field" : "pvp_restricted",
       "name" : "Pvp Restricted",
       "type" : "boolean"
@@ -7702,7 +7725,7 @@
     },
     "range" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "How far, in blocks, this spell can reach before counting as a miss", "This can apply to a base spell, which will do instant raycast targeting, or to a CustomProjectile which will travel over time until it reaches this distance" ],
       "field" : "range",
       "name" : "Range",
       "type" : "double"
@@ -8010,14 +8033,14 @@
     },
     "requires_entity_target" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If true, this action will not run unless the spell has targeted an entity", "Most spells that require entities will do this automatically, but occasionally you may with to turn off an entire branch of a spell because of there being no entity target." ],
       "field" : "requires_entity_target",
       "name" : "Requires Entity Target",
       "type" : "boolean"
     },
     "requires_target" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If true, this action will not run unless the spell has missed completely.", "Missing usually means reaching max range or duration before hitting a solid block or entity", "Most spells that require targets will do this automatically, but occasionally you may with to turn off an entire branch of a spell because of there being no target." ],
       "field" : "requires_target",
       "name" : "Requires Target",
       "type" : "boolean"
@@ -8702,8 +8725,8 @@
       "type" : "integer"
     },
     "stop_on_success" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "control",
+      "description" : [ "If set to true, and this action returns a successful result, the spell will stop after this action has finished", "Can be used to make some simple control flows in a spell" ],
       "field" : "stop_on_success",
       "name" : "Stop On Success",
       "type" : "boolean"
@@ -8773,10 +8796,10 @@
     },
     "target" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "How this spell should perform its targeting", "This only affects the initial targeting, not any projectiles that are launched" ],
       "field" : "target",
       "name" : "Target",
-      "type" : "string"
+      "type" : "target_type"
     },
     "target_above" : {
       "category" : "",
@@ -8927,14 +8950,14 @@
     },
     "target_npc" : {
       "category" : "targeting",
-      "description" : [ "" ],
+      "description" : [ "Set to true to allow this spell to target NPCs" ],
       "field" : "target_npc",
       "name" : "Target Npc",
       "type" : "boolean"
     },
     "target_offset" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Offset the target location" ],
       "field" : "target_offset",
       "name" : "Target Offset",
       "type" : "vector"
@@ -9025,10 +9048,17 @@
     },
     "target_type" : {
       "category" : "targeting",
-      "description" : [ "The type of entity this spell can target" ],
+      "description" : [ "The class of entity this spell can target", "This parameter does not use the normal EntityType enum, it refers directly to classes", "This is so that it can be used with base classes like LivingEntity or Damageable to easily target a particular set of entity types", "Use the target_types parameter if you instead want to target one or more EntityTypes specifically" ],
       "field" : "target_type",
       "name" : "Target Type",
-      "type" : "entity_type"
+      "type" : "entity_class"
+    },
+    "target_typs" : {
+      "category" : "targeting",
+      "description" : [ "One or more specific entity types for this spell to target. The spell will ignore any entities not on this list" ],
+      "field" : "target_types",
+      "name" : "Target Types",
+      "type" : "entity_type_list"
     },
     "target_underwater" : {
       "category" : "targeting",
@@ -9263,7 +9293,7 @@
       "type" : "string"
     },
     "triggers" : {
-      "category" : "",
+      "category" : "mob",
       "description" : [ "" ],
       "field" : "triggers",
       "name" : "Triggers",
@@ -9307,28 +9337,28 @@
     },
     "undo" : {
       "category" : "undo",
-      "description" : [ "" ],
+      "description" : [ "How long to wait, in milliseconds, before this spell will undo.", "The timer starts when the spell finishes completely" ],
       "field" : "undo",
       "name" : "Undo",
       "type" : "integer"
     },
     "undo_oldest" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set, only the onldest N changes will be undone", "This can be used to create undo animations where blocks build while the tail end is undone" ],
       "field" : "undo_oldest",
       "name" : "Undo Oldest",
       "type" : "integer"
     },
     "undo_speed" : {
       "category" : "undo",
-      "description" : [ "" ],
+      "description" : [ "If set, undo will happen over the course of several ticks", "This is in terms of changes (blocks) per second" ],
       "field" : "undo_speed",
       "name" : "Undo Speed",
       "type" : "double"
     },
     "undo_to" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "If set, will trigger undo until the queue is has only N changes remaining", "This can be used to create animations, such as in the Straem spell, where only the most recent few block changes are shown, and the rest are undone as the spell goes along." ],
       "field" : "undo_to",
       "name" : "Undo To",
       "type" : "integer"
@@ -9341,15 +9371,15 @@
       "type" : "boolean"
     },
     "undroppable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, the wand will not be able to be dropped on the ground by the player" ],
       "field" : "undroppable",
       "name" : "Undroppable",
       "type" : "double"
     },
     "unique" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "If set, this wand will be given a unique id to prevent it from stacking" ],
       "field" : "unique",
       "name" : "Unique",
       "type" : "double"
@@ -10021,6 +10051,7 @@
     "consume_reduction" : "0.0",
     "cool" : "0",
     "cooldown" : "0",
+    "cooldown_mage" : "0",
     "cooldown_reduction" : "0.0",
     "cost_reduction" : "0.0",
     "damage_resistance_protection" : "0",
@@ -10114,6 +10145,7 @@
     "earns_sp" : "0",
     "effects-map" : null,
     "extended_description" : "",
+    "enabled" : "true",
     "glide_exclusive" : "false",
     "glide_restricted" : "false",
     "hidden" : "false",
@@ -10490,6 +10522,13 @@
         "zombie_transform" : null
       }
     },
+    "entity_type_list" : {
+      "class_name" : "java.util.List",
+      "description" : [ "A list of entity types" ],
+      "name" : "Entity Type List",
+      "options" : {  },
+      "value_type" : "entity_type"
+    },
     "entity_type" : {
       "class_name" : "org.bukkit.entity.EntityType",
       "description" : [ "A type of vanilla entity" ],
@@ -10618,6 +10657,18 @@
       "options" : {
         "diamond_axe:2" : null,
         "diamond_hoe:4" : null
+      }
+    },
+    "entity_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A Bukkit class that extends the Entity class" ],
+      "name" : "Icon",
+      "options" : {
+        "Living Entity" : "All living entities",
+        "Player" : "Players",
+        "Damageable" : "Any damageable entity",
+        "DroppedItem" : "Items dropped on the ground",
+        "Creature" : "Mobs that can attack"
       }
     },
     "integer" : {
@@ -11092,9 +11143,9 @@
     },
     "material_list" : {
       "class_name" : "java.util.List",
-      "description" : [ "A list of item or block materials" ],
+      "description" : [ "A list of item or block materials", "Included in this list can be pre-defined material lists from materials.yml", "Several builtin material sets are defined in the default configs and are used in default spells for things like which blocks spell can target through ('transparent') or which block are considered 'solid'" ],
       "name" : "Material List",
-      "options" : { },
+      "options" : { "transparent": "The list of blocks spell consider transparent and can target through", "destructible" : "What block types can be modified by spells by default", "solid" : "Which blocks are considered solid" },
       "value_type" : "material"
     },
     "material_map" : {
@@ -11817,6 +11868,12 @@
         "cycle" : "Cycle from storming to clear",
         "storm" : "Start raining or snowing"
       }
+    },
+    "target_type" : {
+      "class_name" : "com.elmakers.mine.bukkit.api.spell.TargetType",
+      "description" : [ "Different options for the initial targeting of a spell." ],
+      "name" : "Targeting Type",
+      "options" : {}
     }
   },
   "wand_properties" : {
