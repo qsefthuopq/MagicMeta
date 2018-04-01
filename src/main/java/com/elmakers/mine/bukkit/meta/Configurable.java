@@ -19,6 +19,7 @@ public class Configurable {
     private ParameterList parameters;
     private String category;
     private List<String> examples;
+    private int importance;
 
     protected Configurable() {
 
@@ -28,6 +29,7 @@ public class Configurable {
         description = new ArrayList<>();
         description.add("");
         category = "";
+        importance = 0;
         examples = new ArrayList<>();
         className = classType.getSimpleName();
         shortClass = className.replace(classSuffix, "");
@@ -110,5 +112,13 @@ public class Configurable {
 
     public void setExamples(List<String> examples) {
         this.examples = examples;
+    }
+
+    public int getImportance() {
+        return importance;
+    }
+
+    public void setImportance(int importance) {
+        this.importance = importance;
     }
 }

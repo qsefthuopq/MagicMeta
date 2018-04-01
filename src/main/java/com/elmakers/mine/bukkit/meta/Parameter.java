@@ -15,6 +15,7 @@ public class Parameter {
     private String type;
     private String category;
     private String alias;
+    private int importance;
 
     public Parameter() {
     }
@@ -24,6 +25,7 @@ public class Parameter {
         this.key = key;
         this.type = type.getKey();
         this.category = "";
+        this.importance = 0;
 
         description = new ArrayList<>();
         description.add("");
@@ -100,5 +102,13 @@ public class Parameter {
 
     public void setAlias(String alias) {
         this.alias = alias;
+    }
+
+    public int getImportance() {
+        return importance;
+    }
+
+    public void setImportance(int importance) {
+        this.importance = importance;
     }
 }
