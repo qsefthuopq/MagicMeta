@@ -543,7 +543,7 @@
       "category" : "control",
       "class_name" : "CommandAction",
       "description" : [ "Run one or more commands", "Support the following variables: @spell, @pd (caster display name), @p, @pn (same as @p, caster name), @uuid, @world, @x, @y, @z, @tworld, @tx, @ty, @tz (target location), @td (target display name), @t, @tn (same as @t, target name), @tuuid" ],
-      "examples" : [ "gather", "ledger", "respawn", "mute" ],
+      "examples" : [ "gather", "ledger", "mute", "respawn" ],
       "name" : "Command",
       "parameters" : {
         "command" : null,
@@ -4473,13 +4473,6 @@
       "name" : "Class",
       "type" : "string"
     },
-    "code_class" : {
-      "category" : "base",
-      "description" : [ "The class this effect or action uses", "This determines the type of effect or action that will be performed" ],
-      "field" : "class",
-      "name" : "Class",
-      "type" : "string"
-    },
     "classes" : {
       "category" : "wand",
       "description" : [ "A set of classes that this wand may attach to", "The wand will use the first unlocked class from this list it finds on the player", "If the player has none of these classes unlocked they may not activate or use this wand" ],
@@ -4528,6 +4521,13 @@
       "field" : "cloud_size",
       "name" : "Cloud Size",
       "type" : "float"
+    },
+    "code_class" : {
+      "category" : "base",
+      "description" : [ "The class this effect or action uses", "This determines the type of effect or action that will be performed" ],
+      "field" : "class",
+      "name" : "Class",
+      "type" : "string"
     },
     "color" : {
       "category" : "effects",
@@ -4950,13 +4950,6 @@
       "name" : "Damaged",
       "type" : "boolean"
     },
-    "enabled" : {
-      "category" : "base",
-      "description" : [ "This can be used to enable a spell that was disabled via config.yml, or to disable specific default" ],
-      "field" : "enabled",
-      "name" : "Enabled",
-      "type" : "boolean"
-    },
     "default_drops" : {
       "category" : "",
       "description" : [ "" ],
@@ -5336,8 +5329,8 @@
       "type" : "string"
     },
     "effects-map" : {
-      "category" : "base",
-      "description" : [ "A map of events to effects to play when those events occur", "The most common event used by all spells is 'cast', but projectiles also use several other common events such as 'hit', 'miss', 'hit_entity', 'hit_block' and 'headshot'" ],
+      "category" : "",
+      "description" : [ "" ],
       "field" : "effects",
       "name" : "Effects",
       "type" : "map"
@@ -5382,6 +5375,13 @@
       "description" : [ "" ],
       "field" : "enable_rotation",
       "name" : "Enable Rotation",
+      "type" : "boolean"
+    },
+    "enabled" : {
+      "category" : "base",
+      "description" : [ "This can be used to enable a spell that was disabled via config.yml, or to disable specific default" ],
+      "field" : "enabled",
+      "name" : "Enabled",
       "type" : "boolean"
     },
     "enchant_count" : {
@@ -7486,11 +7486,11 @@
       "type" : "integer"
     },
     "prevent_passthrough" : {
-      "category" : "base",
-      "description" : [ "A list of materials that can not be passed through", "Mainly used in Teleport actions that allow passthrough, such as high level blink" ],
+      "category" : "actions",
+      "description" : [ "" ],
       "field" : "prevent_passthrough",
       "name" : "Prevent Passthrough",
-      "type" : "matrial_list"
+      "type" : "string"
     },
     "price" : {
       "category" : "",
@@ -10144,8 +10144,8 @@
     "earns_cooldown" : "0",
     "earns_sp" : "0",
     "effects-map" : null,
-    "extended_description" : "",
     "enabled" : "true",
+    "extended_description" : "",
     "glide_exclusive" : "false",
     "glide_restricted" : "false",
     "hidden" : "false",
@@ -10502,6 +10502,18 @@
       "options" : { },
       "value_type" : "integer"
     },
+    "entity_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A Bukkit class that extends the Entity class" ],
+      "name" : "Icon",
+      "options" : {
+        "Creature" : "Mobs that can attack",
+        "Damageable" : "Any damageable entity",
+        "DroppedItem" : "Items dropped on the ground",
+        "Living Entity" : "All living entities",
+        "Player" : "Players"
+      }
+    },
     "entity_effect" : {
       "class_name" : "org.bukkit.EntityEffect",
       "description" : [ "A vanilla entity effect" ],
@@ -10521,13 +10533,6 @@
         "wolf_smoke" : null,
         "zombie_transform" : null
       }
-    },
-    "entity_type_list" : {
-      "class_name" : "java.util.List",
-      "description" : [ "A list of entity types" ],
-      "name" : "Entity Type List",
-      "options" : {  },
-      "value_type" : "entity_type"
     },
     "entity_type" : {
       "class_name" : "org.bukkit.entity.EntityType",
@@ -10609,6 +10614,13 @@
         "zombie" : null
       }
     },
+    "entity_type_list" : {
+      "class_name" : "java.util.List",
+      "description" : [ "A list of entity types" ],
+      "name" : "Entity Type List",
+      "options" : { },
+      "value_type" : "entity_type"
+    },
     "firework_effect_type" : {
       "class_name" : "org.bukkit.FireworkEffect$Type",
       "description" : [ "The type of firework effect" ],
@@ -10657,18 +10669,6 @@
       "options" : {
         "diamond_axe:2" : null,
         "diamond_hoe:4" : null
-      }
-    },
-    "entity_class" : {
-      "class_name" : "java.lang.String",
-      "description" : [ "A Bukkit class that extends the Entity class" ],
-      "name" : "Icon",
-      "options" : {
-        "Living Entity" : "All living entities",
-        "Player" : "Players",
-        "Damageable" : "Any damageable entity",
-        "DroppedItem" : "Items dropped on the ground",
-        "Creature" : "Mobs that can attack"
       }
     },
     "integer" : {
@@ -11145,7 +11145,11 @@
       "class_name" : "java.util.List",
       "description" : [ "A list of item or block materials", "Included in this list can be pre-defined material lists from materials.yml", "Several builtin material sets are defined in the default configs and are used in default spells for things like which blocks spell can target through ('transparent') or which block are considered 'solid'" ],
       "name" : "Material List",
-      "options" : { "transparent": "The list of blocks spell consider transparent and can target through", "destructible" : "What block types can be modified by spells by default", "solid" : "Which blocks are considered solid" },
+      "options" : {
+        "destructible" : "What block types can be modified by spells by default",
+        "solid" : "Which blocks are considered solid",
+        "transparent" : "The list of blocks spell consider transparent and can target through"
+      },
       "value_type" : "material"
     },
     "material_map" : {
@@ -11812,6 +11816,22 @@
       "options" : { },
       "value_type" : "string"
     },
+    "target_type" : {
+      "class_name" : "com.elmakers.mine.bukkit.api.spell.TargetType",
+      "description" : [ "Different options for the initial targeting of a spell." ],
+      "name" : "Targeting Type",
+      "options" : {
+        "any" : null,
+        "any_entity" : null,
+        "block" : null,
+        "none" : null,
+        "other" : null,
+        "other_entity" : null,
+        "select" : null,
+        "select_entity" : null,
+        "self" : null
+      }
+    },
     "texture" : {
       "class_name" : "java.lang.String",
       "description" : [ "A texture URL used in a skull icon" ],
@@ -11868,12 +11888,6 @@
         "cycle" : "Cycle from storming to clear",
         "storm" : "Start raining or snowing"
       }
-    },
-    "target_type" : {
-      "class_name" : "com.elmakers.mine.bukkit.api.spell.TargetType",
-      "description" : [ "Different options for the initial targeting of a spell." ],
-      "name" : "Targeting Type",
-      "options" : {}
     }
   },
   "wand_properties" : {
