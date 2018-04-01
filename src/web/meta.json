@@ -101,7 +101,7 @@
       "class_name" : "AreaOfEffectAction",
       "description" : [ "Target all entities within a radius" ],
       "examples" : [ "blessing", "grab", "holylight" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Area Of Effect",
       "parameters" : {
         "radius" : "8",
@@ -128,7 +128,6 @@
         "boots" : null,
         "can_pickup_items" : "false",
         "cast" : null,
-        "cast_interval" : "0",
         "cast_requires_item" : null,
         "cast_requires_target" : "true",
         "chestplate" : null,
@@ -147,12 +146,13 @@
         "health" : "1.0",
         "helmet" : null,
         "interact_spell" : null,
-        "interval" : "0",
         "item" : null,
         "leggings" : null,
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
+        "mob_cast_interval" : "0",
+        "mob_interval" : "0",
         "name" : null,
         "particle" : null,
         "potion_effects" : null,
@@ -183,7 +183,7 @@
       "class_name" : "ArmorStandProjectileAction",
       "description" : [ "Create a projectile that uses an armor stand.", "This can be used with invisible armor stands holding items from a custom resource pack for detailed custom 3D projectiles." ],
       "examples" : [ "chop", "throwsword" ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Armor Stand Projectile",
       "parameters" : {
         "apply_velocity" : "true",
@@ -327,7 +327,7 @@
       "class_name" : "AsynchronousAction",
       "description" : [ "Performs its sub-actions outside of the flow of the rest of the action list", "This can be used to launch several projectiles without waiting for them to hit, for instance." ],
       "examples" : [ "arrow_light", "chainlightning", "fury", "gatling" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Asynchronous",
       "parameters" : { },
       "short_class" : "Asynchronous"
@@ -337,7 +337,7 @@
       "class_name" : "BlockSearchAction",
       "description" : [ "Looks in a specific direction for blocks matching the destructible list" ],
       "examples" : [ "bridge", "pillar" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Block Search",
       "parameters" : {
         "direction" : "up"
@@ -349,7 +349,7 @@
       "class_name" : "BreakBlockAction",
       "description" : [ "Breaks a block naturally", "Can be configured to only break blocks below a certain vanilla durability", "Applies packet-based block breaking effects before fully destroying a block", "If the player does not have break permission, the visual breaking effects will still be applied but the block will not fully break" ],
       "examples" : [ "blast", "laser", "missile" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Break Block",
       "parameters" : {
         "break_durability" : "1",
@@ -376,7 +376,7 @@
       "class_name" : "BrushAction",
       "description" : [ "Change the brush used for contained actions", "Capable of choosing a random brush from a 'brushes' proability map" ],
       "examples" : [ "pollinate", "projector" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Brush",
       "parameters" : {
         "brush" : null,
@@ -400,7 +400,7 @@
       "class_name" : "BurnAction",
       "description" : [ "Light the target block on fire" ],
       "examples" : [ "fire" ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Burn",
       "parameters" : { },
       "short_class" : "Burn"
@@ -447,7 +447,7 @@
       "class_name" : "ChangeContextAction",
       "description" : [ "A complicated compound action that can be used to run sub-actions using a modified context", "The action context includes things such as the source and target locations and entities" ],
       "examples" : [ "anvil", "boomstown", "bridge", "meteor", "push", "randomtp", "sandblast" ],
-      "importance" : 0,
+      "importance" : 40,
       "name" : "Change Context",
       "parameters" : {
         "orient_pitch" : "true",
@@ -530,7 +530,7 @@
       "class_name" : "CheckBlockAction",
       "description" : [ "Test if a block is in the destructible list", "Only runs its sub-actions if the block passes the destructible check." ],
       "examples" : [ "breach", "laser" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Check Block",
       "parameters" : {
         "allowed" : null
@@ -542,7 +542,7 @@
       "class_name" : "CheckEntityAction",
       "description" : [ "Test if an entity is allowed to target", "Only runs its sub-actions if the entity passes the checks." ],
       "examples" : [ "holylight" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Check Entity",
       "parameters" : {
         "allow_caster" : "true",
@@ -557,7 +557,7 @@
       "class_name" : "CheckManaAction",
       "description" : [ "Test if a player has or does not have an amount of mana", "Only runs its sub-actions if player's mana is as required." ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Check Mana",
       "parameters" : {
         "require_mana" : "0.0",
@@ -571,7 +571,7 @@
       "class_name" : "CommandAction",
       "description" : [ "Run one or more commands", "Support the following variables: @spell, @pd (caster display name), @p, @pn (same as @p, caster name), @uuid, @world, @x, @y, @z, @tworld, @tx, @ty, @tz (target location), @td (target display name), @t, @tn (same as @t, target name), @tuuid" ],
       "examples" : [ "gather", "ledger", "mute", "respawn" ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Command",
       "parameters" : {
         "command" : null,
@@ -589,7 +589,7 @@
       "class_name" : "ConeOfEffectAction",
       "description" : [ "Target all entities within a cone in front of the caster" ],
       "examples" : [ "laser", "push" ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Cone Of Effect",
       "parameters" : {
         "close_fov" : "0.5",
@@ -636,7 +636,7 @@
       "class_name" : "CoverAction",
       "description" : [ "Target the first solid block below the current target" ],
       "examples" : [ "fire", "frost" ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Cover",
       "parameters" : {
         "target_above" : "false"
@@ -689,7 +689,7 @@
       "class_name" : "CustomProjectileAction",
       "description" : [ "A flexible custom projectile", "This projectile can be made to reflect off surfaces, hit multiple entities or blocks, run spell actions as it travels, and more.", "It is able to mimic a gravity-bound projectile, home in on a target, and perform staged animations", "This is the base class for AmorStandProjectile and EntityProjectile" ],
       "examples" : [ "fury", "missile", "railgun" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Custom Projectile",
       "parameters" : {
         "attach_duration" : "0",
@@ -841,7 +841,7 @@
       "class_name" : "DamageAction",
       "description" : [ "Damage the target entity" ],
       "examples" : [ "missile", "wound" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Damage",
       "parameters" : {
         "damage" : "1.0",
@@ -886,7 +886,7 @@
       "class_name" : "DelayAction",
       "description" : [ "Don't proceed to the next action until some amount of time has passed", "Can be used at the beginning of a spell for a 'warmup' period, and will advertise the warmup in spell lore if the warmup parameter is used." ],
       "examples" : [ "day", "gatling", "kill", "night" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Delay",
       "parameters" : {
         "delay" : "",
@@ -928,7 +928,7 @@
       "class_name" : "DisarmAction",
       "description" : [ "Remove the item the target is holding", "For target players will optionally move the item into their inventory instead of throwing it on the ground." ],
       "examples" : [ "arrow_shock", "disarm" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Disarm",
       "parameters" : {
         "display_name" : null,
@@ -943,7 +943,7 @@
       "class_name" : "DiscAction",
       "description" : [ "Target all blocks within a 2D circular disc" ],
       "examples" : [ "frost", "permafrost", "reflect" ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Disc",
       "parameters" : {
         "axis" : null,
@@ -1000,7 +1000,7 @@
       "class_name" : "DropAction",
       "description" : [ "Destroy blocks and drop items as if they were broken naturally" ],
       "examples" : [ "chop", "mine" ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Drop",
       "parameters" : {
         "drop_count" : "-1",
@@ -1053,7 +1053,7 @@
       "class_name" : "EntityProjectileAction",
       "description" : [ "A CustonmProjectile with an entity attached", "Ever want to attack someone using a flying llama?" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 40,
       "name" : "Entity Projectile",
       "parameters" : {
         "apply_velocity" : "true",
@@ -1188,7 +1188,7 @@
       "class_name" : "FallProtectionAction",
       "description" : [ "Apply protection from falling to a target entity for a period of time." ],
       "examples" : [ "fling" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Fall Protection",
       "parameters" : {
         "duration" : "5000",
@@ -1201,7 +1201,7 @@
       "class_name" : "FeedAction",
       "description" : [ "Fill the target's hunger bars" ],
       "examples" : [ "cure" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Feed",
       "parameters" : {
         "exhaustion" : "true",
@@ -1227,7 +1227,7 @@
       "class_name" : "FireworkAction",
       "description" : [ "Launch a vanilla firework", "Can work like a projectile, running actions when the firework explodes." ],
       "examples" : [ "stun" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Firework",
       "parameters" : {
         "color" : null,
@@ -1268,7 +1268,7 @@
       "class_name" : "FreezeAction",
       "description" : [ "Freeze a block", "Turns air blocks into snow, increases height of snow blocks, turns water into ice and lava into stone, and puts out fires." ],
       "examples" : [ "frost" ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Freeze",
       "parameters" : {
         "freeze_fire" : "true",
@@ -1297,7 +1297,7 @@
       "class_name" : "GlideAction",
       "description" : [ "Force a player to glide", "Does not necessarily require that the player is wearing an elytra" ],
       "examples" : [ "glide" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Glide",
       "parameters" : {
         "require_elytra" : "false",
@@ -1322,7 +1322,7 @@
       "class_name" : "HealAction",
       "description" : [ "Restore an entity's health.", "Can restore a specific amount of health, or a percentage of max health" ],
       "examples" : [ "heal" ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Heal",
       "parameters" : {
         "amount" : "20.0",
@@ -1336,7 +1336,7 @@
       "class_name" : "IgniteAction",
       "description" : [ "Light an entity on fire, or put out a fire" ],
       "examples" : [ "arrow_fire", "extinguish" ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Ignite",
       "parameters" : {
         "duration" : "5000"
@@ -1348,7 +1348,7 @@
       "class_name" : "InventoryAction",
       "description" : [ "Show a player a specific inventory", "Can be used to view the player's ender chest, show them a disposable chest inventory, or the inventory of the target container" ],
       "examples" : [ "disposal", "snoop", "stash" ],
-      "importance" : 0,
+      "importance" : 40,
       "name" : "Inventory",
       "parameters" : {
         "title" : null,
@@ -1405,7 +1405,7 @@
       "class_name" : "KillAction",
       "description" : [ "Kill the target entity", "Deals 100 x the entity's max health in damage, just to be safe." ],
       "examples" : [ "kill" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Kill",
       "parameters" : { },
       "short_class" : "Kill"
@@ -1429,7 +1429,7 @@
       "class_name" : "LightningAction",
       "description" : [ "Strike lighting at the target", "Can spawn a fully active lightning bolt, or just the visual effect" ],
       "examples" : [ "lightning", "smite" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Lightning",
       "parameters" : {
         "effect_only" : "false"
@@ -1441,7 +1441,7 @@
       "class_name" : "LineAction",
       "description" : [ "Target all blocks along a single line" ],
       "examples" : [ "iterate", "laser", "lava", "line" ],
-      "importance" : 0,
+      "importance" : 40,
       "name" : "Line",
       "parameters" : {
         "increment_data" : "false",
@@ -1475,7 +1475,7 @@
       "class_name" : "MessageAction",
       "description" : [ "Send a chat, action bar or title message to the target player or caster" ],
       "examples" : [ "homing", "kill", "magichat" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Message",
       "parameters" : {
         "equation" : "0.0",
@@ -1494,7 +1494,7 @@
       "class_name" : "ModifyBlockAction",
       "description" : [ "Modify a block by changing its type", "Can also be used to spawn falling blocks in the place of a block that was removed", "Falling blocks can be given velocity for explosion type block effects" ],
       "examples" : [ "blast", "collapse" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Modify Block",
       "parameters" : {
         "breakable" : "0.0",
@@ -1544,7 +1544,7 @@
       "class_name" : "ModifyManaAction",
       "description" : [ "Add or remove mana from a player or wand" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Modify Mana",
       "parameters" : {
         "fill_mana" : "false",
@@ -1557,7 +1557,7 @@
       "class_name" : "ModifyPropertiesAction",
       "description" : [ "Modify the properties of a player or wand" ],
       "examples" : [ "wandbuffs" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Modify Properties",
       "parameters" : {
         "modify" : null,
@@ -1619,7 +1619,7 @@
       "class_name" : "MountArmorStandAction",
       "description" : [ "Mount an armor stand, optionally creating and removing the armor stand", "This is the action that powers broomsticks and other vehicles", "Using custom resource pack models, this can be used to implement driveable cars, planes or just about anything by applying velocity to the armor stand when mounted", "It has many parameters for handling crashing, hovering, and other options" ],
       "examples" : [ "airscooter", "broom" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Mount Armor Stand",
       "parameters" : {
         "armor_stand_gravity" : "true",
@@ -1703,7 +1703,7 @@
       "class_name" : "MultiplyAction",
       "description" : [ "Repeat a set of actions mulitple times in parallel", "Will fall back to using the 'repeat' parameter if 'multiply' is not specified" ],
       "examples" : [ "bomb", "cluster", "meteor", "volley" ],
-      "importance" : 0,
+      "importance" : 60,
       "name" : "Multiply",
       "parameters" : {
         "multiply" : "2",
@@ -1716,7 +1716,7 @@
       "class_name" : "OrientAction",
       "description" : [ "Force the target entity to face a specific direction" ],
       "examples" : [ "tracking" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Orient",
       "parameters" : {
         "pitch" : "0.0",
@@ -1731,7 +1731,7 @@
       "class_name" : "ParallelAction",
       "description" : [ "Runs each action in the list of sub-actions in parallel, rather than sequentially" ],
       "examples" : [ "earthquake", "nuke" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Parallel",
       "parameters" : { },
       "short_class" : "Parallel"
@@ -1774,7 +1774,7 @@
       "class_name" : "PlayEffectsAction",
       "description" : [ "Play a specific set of effects from the spell's effects list" ],
       "examples" : [ "disintegrate", "fxdemo", "holylight", "laser", "nuke" ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Play Effects",
       "parameters" : {
         "effect_key" : null,
@@ -1799,7 +1799,7 @@
       "class_name" : "PlaySoundAction",
       "description" : [ "Play a sound to the target player", "Can be used with vanilla sounds or custom sounds from a resource pack" ],
       "examples" : [ "flashbang", "music_notes" ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Play Sound",
       "parameters" : {
         "pitch" : "1.0",
@@ -1826,7 +1826,7 @@
       "class_name" : "PotionEffectAction",
       "description" : [ "Apply or remove vanilla potion effects from the target" ],
       "examples" : [ "arrow_poison", "blessing", "cure", "curse", "frost", "poison", "wither" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Potion Effect",
       "parameters" : {
         "add_effects" : null,
@@ -1855,7 +1855,7 @@
       "class_name" : "ProbabilityAction",
       "description" : [ "Execute or skip sub-actions based on a random chance" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Probability",
       "parameters" : {
         "probability" : "0.5"
@@ -1867,7 +1867,7 @@
       "class_name" : "ProjectileAction",
       "description" : [ "Launch a vanilla projectile" ],
       "examples" : [ "arrow", "arrowrain", "dragonball", "fireball", "wither" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Projectile",
       "parameters" : {
         "break_blocks" : "false",
@@ -1902,7 +1902,7 @@
       "class_name" : "RandomAction",
       "description" : [ "Randomly choose one from the set of sub-actions to execute" ],
       "examples" : [ "magichat" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Random",
       "parameters" : { },
       "short_class" : "Random"
@@ -1932,7 +1932,7 @@
       "class_name" : "RecurseAction",
       "description" : [ "Recursively follows blocks that match the spell's destructible list", "Can be configured to only follow a specific list of block faces, such as only filling downward" ],
       "examples" : [ "chop", "floodfill", "mine", "recurse", "rubberize" ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Recurse",
       "parameters" : {
         "checkered" : "false",
@@ -1971,7 +1971,7 @@
       "class_name" : "RepeatAction",
       "description" : [ "Repeat sub-actions a number of times in sequence" ],
       "examples" : [ "forest", "grab", "lightning", "push" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Repeat",
       "parameters" : {
         "repeat" : "2"
@@ -1983,7 +1983,7 @@
       "class_name" : "RetargetAction",
       "description" : [ "Performs targeting as normal, passing the new target to its sub-actions" ],
       "examples" : [ "gatling", "laser" ],
-      "importance" : 0,
+      "importance" : 60,
       "name" : "Retarget",
       "parameters" : {
         "close_fov" : "0.5",
@@ -2059,7 +2059,7 @@
       "class_name" : "RingAction",
       "description" : [ "Target all blocks in a ring" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Ring",
       "parameters" : {
         "axis" : null,
@@ -2092,7 +2092,7 @@
       "class_name" : "SelectorAction",
       "description" : [ "Show the caster a customizeable GUI", "This gui can be used to sell items, or cast spells", "This is similar to ItemShop but more customizeable, allowing for requirements for each item, different costs or a mix of items and spells." ],
       "examples" : [ "appearanceshop", "colorshop", "effectshop", "progressmenu", "wandbuffs" ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Selector",
       "parameters" : {
         "apply_to_wand" : "false",
@@ -2131,7 +2131,7 @@
       "class_name" : "SerialAction",
       "description" : [ "Group a set of actions together and run them in serial", "This is mainly useful inside of actions like Random or Parallel, to group a set of actions together as a single option for the parent action." ],
       "examples" : [ "magichat", "nuke" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Serial",
       "parameters" : { },
       "short_class" : "Serial"
@@ -2194,7 +2194,7 @@
       "class_name" : "SkipAction",
       "description" : [ "Runs its sub actions every N iterations, skipping them the rest of the time", "This is most often used to slow down a spell in chunks, by skipping a Delay sub-action", "This can be used for block animations to allow ModifyBlock to run N times per tick with a delay in between" ],
       "examples" : [ "earthquake", "lift", "nuke", "rainbow", "tendril", "walls" ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Skip",
       "parameters" : {
         "repeat_skip" : "true",
@@ -2207,7 +2207,7 @@
       "class_name" : "SpawnEntityAction",
       "description" : [ "Spawn a new entity in the world", "Can be used with a magic mob, a full custom mob config, a simple vanilla mob or a random probability table of mobs" ],
       "examples" : [ "familiar", "farm", "ghast", "horse", "magichat", "mob", "monster", "testdummy" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Spawn Entity",
       "parameters" : {
         "aggro" : "true",
@@ -2218,7 +2218,6 @@
         "boots" : null,
         "can_pickup_items" : "false",
         "cast" : null,
-        "cast_interval" : "0",
         "cast_requires_item" : null,
         "cast_requires_target" : "true",
         "chestplate" : null,
@@ -2234,12 +2233,13 @@
         "health" : "1.0",
         "helmet" : null,
         "interact_spell" : null,
-        "interval" : "0",
         "item" : null,
         "leggings" : null,
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
+        "mob_cast_interval" : "0",
+        "mob_interval" : "0",
         "name" : null,
         "potion_effects" : null,
         "protection" : null,
@@ -2315,7 +2315,7 @@
       "class_name" : "SphereAction",
       "description" : [ "Target all blocks in a sphere" ],
       "examples" : [ "blob", "shell" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Sphere",
       "parameters" : {
         "center_probability" : "1.0",
@@ -2346,7 +2346,7 @@
       "class_name" : "SpreadAction",
       "description" : [ "Randomly modify the target location or source direction" ],
       "examples" : [ "cluster", "forest", "lightning", "pollinate", "volley" ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Spread",
       "parameters" : {
         "center_probability" : "1.0",
@@ -2375,7 +2375,7 @@
       "class_name" : "StopAction",
       "description" : [ "Stop running the spell and finish it immediately" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Stop",
       "parameters" : { },
       "short_class" : "Stop"
@@ -2397,7 +2397,7 @@
       "class_name" : "TNTAction",
       "description" : [ "Spawn a primed TNT entity", "Can run a set of actions when the TNT detonates" ],
       "examples" : [ "bomb", "cluster", "grenade" ],
-      "importance" : 0,
+      "importance" : 60,
       "name" : "TNT",
       "parameters" : {
         "break_blocks" : "true",
@@ -2440,7 +2440,7 @@
       "class_name" : "TeleportAction",
       "description" : [ "Teleport the caster to the target location" ],
       "examples" : [ "arrow_blink", "backflip", "blink", "evade", "randomtp" ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Teleport",
       "parameters" : {
         "allow_passthrough" : "true",
@@ -2459,7 +2459,7 @@
       "class_name" : "ThrowBlockAction",
       "description" : [ "Throw a falling block entity", "Can run a set of actions when the block lands" ],
       "examples" : [ "toss", "volley" ],
-      "importance" : 0,
+      "importance" : 40,
       "name" : "Throw Block",
       "parameters" : {
         "consume" : "false",
@@ -2492,7 +2492,7 @@
       "class_name" : "ThrowItemAction",
       "description" : [ "Throw an item", "Can run a set of actions when the item despawns" ],
       "examples" : [ "pollinate" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Throw Item",
       "parameters" : {
         "age_items" : "5500",
@@ -2534,7 +2534,7 @@
       "class_name" : "TimeAction",
       "description" : [ "Change the time of the target world", "Can also change the phase of the moon" ],
       "examples" : [ "day", "night" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Time",
       "parameters" : {
         "cycle_moon_phase" : "false",
@@ -2547,7 +2547,7 @@
       "class_name" : "TorchAction",
       "description" : [ "Attach a torch to the target block" ],
       "examples" : [ "supertorch", "torch" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Torch",
       "parameters" : {
         "allow_glowstone" : "false",
@@ -2562,7 +2562,7 @@
       "class_name" : "TreeAction",
       "description" : [ "Grow a tree at the target location", "This uses the vanilla tree generation algorithm and is not undoable", "Can be made to choose the type of tree based on the biome of the target block" ],
       "examples" : [ "forest", "tree" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Tree",
       "parameters" : {
         "biomes-map" : null,
@@ -2576,7 +2576,7 @@
       "class_name" : "UndoAction",
       "description" : [ "Undoes spells", "Can undo the last spell cast by the caster, the last spell cast by the target, or the last spell to have affected the target block.", "May require that the spell was cast recently or was cast by the caster of the undoing spell.", "Can also be used to undo changes performed in the current spell, including only undoing a limit set of changes in FIFO order. This can be used to create complex animations within a single spell." ],
       "examples" : [ "counterspell", "rollback", "stream" ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Undo",
       "parameters" : {
         "admin_permission" : null,
@@ -2610,7 +2610,7 @@
       "class_name" : "VelocityAction",
       "description" : [ "Apply velocity to the target entity", "Can be used to push or pull the entity away or towards the caster", "Can modify the velicity applied based on the target's distance from the ground, for a spell that applies a higher speed when up in the air" ],
       "examples" : [ "fling", "grab", "pull", "push", "tornado" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Velocity",
       "parameters" : {
         "additive" : "false",
@@ -2635,7 +2635,7 @@
       "class_name" : "VolumeAction",
       "description" : [ "Target all blocks within a cuboid volume" ],
       "examples" : [ "bubble", "rainbow", "tendril", "tornado", "wave" ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Volume",
       "parameters" : {
         "center_probability" : "1.0",
@@ -2684,7 +2684,7 @@
       "class_name" : "WeatherAction",
       "description" : [ "Change the weather in the target world" ],
       "examples" : [ "day", "night", "weather" ],
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Weather",
       "parameters" : {
         "weather" : ""
@@ -2752,6 +2752,7 @@
     "color_override" : null,
     "delay" : "0",
     "effect" : null,
+    "effectlib" : null,
     "entity_effect" : null,
     "firework" : null,
     "firework_flicker" : "false",
@@ -2790,7 +2791,7 @@
       "class_name" : "AnimatedBallEffect",
       "description" : [ "An animated swirl that follows the shape of a sphere" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Animated Ball",
       "parameters" : {
         "iterations" : "500",
@@ -2816,7 +2817,7 @@
       "class_name" : "ArcEffect",
       "description" : [ "An arc that extends from the source location to the target location" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Arc",
       "parameters" : {
         "height" : "2.0",
@@ -2832,7 +2833,7 @@
       "class_name" : "AtomEffect",
       "description" : [ "A model of an atom with a nuclues and one or more orbitals" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Atom",
       "parameters" : {
         "angular_velocity" : "0.039269908169872414",
@@ -2900,7 +2901,7 @@
       "class_name" : "CircleEffect",
       "description" : [ "A 2D circle" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Circle",
       "parameters" : {
         "angular_velocity_x" : "0.015707963267948967",
@@ -2928,7 +2929,7 @@
       "class_name" : "CloudEffect",
       "description" : [ "A puffy cloud" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Cloud",
       "parameters" : {
         "cloud_color" : null,
@@ -2948,7 +2949,7 @@
       "class_name" : "ColoredImageEffect",
       "description" : [ "Draw an image or animated gif using redstone or other colored particles" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Colored Image",
       "parameters" : {
         "angular_velocity_x" : "0.015707963267948967",
@@ -2974,7 +2975,7 @@
       "class_name" : "ConeEffect",
       "description" : [ "A swirly cone extending out from the source location" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Cone",
       "parameters" : {
         "angular_velocity" : "0.19634954084936207",
@@ -2995,7 +2996,7 @@
       "class_name" : "CubeEffect",
       "description" : [ "A wireframe cube" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Cube",
       "parameters" : {
         "angular_velocity_x" : "0.015707963267948967",
@@ -3017,7 +3018,7 @@
       "class_name" : "CylinderEffect",
       "description" : [ "A cylinder that may be hollow or solid" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Cylinder",
       "parameters" : {
         "angular_velocity_x" : "0.015707963267948967",
@@ -3067,7 +3068,7 @@
       "class_name" : "DnaEffect",
       "description" : [ "Extends a strand of DNA with helixes rotating around a base" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Dna",
       "parameters" : {
         "base_interval" : "10.0",
@@ -3093,7 +3094,7 @@
       "class_name" : "DonutEffect",
       "description" : [ "A torus shape" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Donut",
       "parameters" : {
         "circles" : "36",
@@ -3115,7 +3116,7 @@
       "class_name" : "DragonEffect",
       "description" : [ "Strands of fire that shoot out in arcs" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Dragon",
       "parameters" : {
         "arcs" : "20",
@@ -3152,7 +3153,7 @@
       "class_name" : "EquationEffect",
       "description" : [ "Uses equations to render a particle each tick.", "Is capable of parametric equations, rendering multiple particles per tick.", "Equations use a 't' variable by default to represent the current tick, this variable starts at zero and counts up." ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Equation",
       "parameters" : {
         "cycle_mini_step" : "true",
@@ -3180,7 +3181,7 @@
       "class_name" : "ExplodeEffect",
       "description" : [ "A large explosion" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Explode",
       "parameters" : {
         "amount" : "25",
@@ -3194,7 +3195,7 @@
       "class_name" : "FlameEffect",
       "description" : [ "Make something look like it's on fire" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Flame",
       "parameters" : {
         "iterations" : "600",
@@ -3207,7 +3208,7 @@
       "class_name" : "FountainEffect",
       "description" : [ "A fountain of particles shooting up in the sky" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Fountain",
       "parameters" : {
         "height" : "3.0",
@@ -3230,7 +3231,7 @@
       "class_name" : "GridEffect",
       "description" : [ "Create a 2D wireframe grid" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Grid",
       "parameters" : {
         "columns" : "10",
@@ -3251,7 +3252,7 @@
       "class_name" : "HeartEffect",
       "description" : [ "Creates a 2D heart in 3D space" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Heart",
       "parameters" : {
         "compilaction" : "2.0",
@@ -3272,7 +3273,7 @@
       "class_name" : "HelixEffect",
       "description" : [ "A flat spiralling helix" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Helix",
       "parameters" : {
         "curve" : "10.0",
@@ -3292,7 +3293,7 @@
       "class_name" : "HillEffect",
       "description" : [ "Waving hills" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Hill",
       "parameters" : {
         "edge_length" : "6.5",
@@ -3311,7 +3312,7 @@
       "class_name" : "IconEffect",
       "description" : [ "A single particle appears above the target" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Icon",
       "parameters" : {
         "iterations" : "25",
@@ -3327,7 +3328,7 @@
       "class_name" : "ImageEffect",
       "description" : [ "Render a monochrome image from an image file or animated gif.", "Black pixels will be skipped, all other pixels display as the selected particle type" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Image",
       "parameters" : {
         "angular_velocity_x" : "0.015707963267948967",
@@ -3369,7 +3370,7 @@
       "class_name" : "LineEffect",
       "description" : [ "Extend a line from the source to the target" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Line",
       "parameters" : {
         "is_zig_zag" : "false",
@@ -3388,7 +3389,7 @@
       "class_name" : "LoveEffect",
       "description" : [ "Make hearts bubble out of the target" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Love",
       "parameters" : {
         "iterations" : "600",
@@ -3403,7 +3404,7 @@
       "class_name" : "ModifiedEffect",
       "description" : [ "Modify any other effect using equations", "Equations can be applied to any parameter of the contained effect.", "Equations can also be used to move the entire effect around." ],
       "examples" : [ "day" ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Modified",
       "parameters" : {
         "effect" : null,
@@ -3424,7 +3425,7 @@
       "class_name" : "MusicEffect",
       "description" : [ "A ring of musical notes" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Music",
       "parameters" : {
         "iterations" : "400",
@@ -3460,7 +3461,7 @@
       "class_name" : "ShieldEffect",
       "description" : [ "Creat a dome around the target" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Shield",
       "parameters" : {
         "iterations" : "500",
@@ -3492,7 +3493,7 @@
       "class_name" : "SmokeEffect",
       "description" : [ "Make it appear as though the target is smoldering" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Smoke",
       "parameters" : {
         "iterations" : "300",
@@ -3506,7 +3507,7 @@
       "class_name" : "SphereEffect",
       "description" : [ "Create a 3D sphere" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Sphere",
       "parameters" : {
         "iterations" : "500",
@@ -3524,7 +3525,7 @@
       "class_name" : "StarEffect",
       "description" : [ "Create a 2D star" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Star",
       "parameters" : {
         "inner_radius" : "0.5",
@@ -3543,7 +3544,7 @@
       "class_name" : "TextEffect",
       "description" : [ "Render text in the air using particles" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Text",
       "parameters" : {
         "font" : "Tahoma 16",
@@ -3565,7 +3566,7 @@
       "class_name" : "TornadoEffect",
       "description" : [ "A swirling tornado of particles" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Tornado",
       "parameters" : {
         "cloud_color" : null,
@@ -3590,7 +3591,7 @@
       "class_name" : "TraceEffect",
       "description" : [ "Trail particles behind the target entity" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Trace",
       "parameters" : {
         "iterations" : "600",
@@ -3621,7 +3622,7 @@
       "class_name" : "VortexEffect",
       "description" : [ "Create a swirling vortex" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Vortex",
       "parameters" : {
         "circles" : "3",
@@ -3640,7 +3641,7 @@
       "class_name" : "WarpEffect",
       "description" : [ "Rings that descend around the target, as if they had stepped on a teleporter pad" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Warp",
       "parameters" : {
         "grow" : "0.2",
@@ -3659,7 +3660,7 @@
       "class_name" : "WaveEffect",
       "description" : [ "Create a wavy horizontal plane" ],
       "examples" : [ ],
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Wave",
       "parameters" : {
         "cloud_color" : null,
@@ -3723,7 +3724,6 @@
     "boots" : null,
     "can_pickup_items" : "false",
     "cast" : null,
-    "cast_interval" : "0",
     "cast_requires_item" : null,
     "cast_requires_target" : "true",
     "chestplate" : null,
@@ -3735,12 +3735,13 @@
     "health" : "1.0",
     "helmet" : null,
     "interact_spell" : null,
-    "interval" : "0",
     "item" : null,
     "leggings" : null,
     "mage" : null,
     "max_health" : "1.0",
-    "name" : null,
+    "mob_cast_interval" : "0",
+    "mob_interval" : "0",
+    "mob_name" : null,
     "potion_effects" : null,
     "protection" : null,
     "silent" : "false",
@@ -3758,7 +3759,7 @@
       "category" : "actions",
       "description" : [ "A map of events to actions to run. The most comment event used by all spells is 'cast'", "Actions determine the behavior of a spell, defining what it does" ],
       "field" : "actions",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Actions",
       "type" : "actions"
     },
@@ -3790,7 +3791,7 @@
       "category" : "wand",
       "description" : [ "The currently active spell for this wand, which will be cast when performing a bound cast action" ],
       "field" : "active_spell",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Active Spell",
       "type" : "spell"
     },
@@ -3798,7 +3799,7 @@
       "category" : "",
       "description" : [ "A map of potion effects to add to the target" ],
       "field" : "add_effects",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Add Effects",
       "type" : "potion_effect_map"
     },
@@ -3894,7 +3895,7 @@
       "category" : "targeting",
       "description" : [ "If set to true, this spell will cast as normal if it misses, meaning it reaches max range without hitting a block or entity" ],
       "field" : "allow_max_range",
-      "importance" : 0,
+      "importance" : 75,
       "name" : "Allow Max Range",
       "type" : "boolean"
     },
@@ -3926,7 +3927,7 @@
       "category" : "wand",
       "description" : [ "The spell to cast when performing the action bound to alt_cast on this wand" ],
       "field" : "alternate_spell",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Alternate Spell",
       "type" : "spell"
     },
@@ -3934,8 +3935,8 @@
       "category" : "wand",
       "description" : [ "The spell to cast when performing the action bound to alt_cast2 on this wand" ],
       "field" : "alternate_spell2",
-      "importance" : 0,
-      "name" : "Alternate Spell2",
+      "importance" : 40,
+      "name" : "Alternate Spell 2",
       "type" : "spell"
     },
     "amount" : {
@@ -4276,12 +4277,12 @@
       "type" : "string"
     },
     "boostable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Set to false to make this wand ignore mana boosts from magic armor" ],
       "field" : "boostable",
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Boostable",
-      "type" : "double"
+      "type" : "boolean"
     },
     "boots" : {
       "category" : "",
@@ -4303,7 +4304,7 @@
       "category" : "wand",
       "description" : [ "If set, the wand will bind to a player when they hold it", "A bound wand may not be used or taken out of a container by any other player" ],
       "field" : "bound",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Bound",
       "type" : "boolean"
     },
@@ -4360,7 +4361,7 @@
       "category" : "brushes",
       "description" : [ "A material or brush to use in this spell", "For non-engineering spells this determines the type of block build with actions such as ModifyBlock", "Engineering spells generally omit this parameter and use the player's selected brush" ],
       "field" : "brush",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Brush",
       "type" : "material"
     },
@@ -4408,7 +4409,7 @@
       "category" : "wand",
       "description" : [ "The engineering brushes this wand can use" ],
       "field" : "brushes",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Brushes",
       "type" : "material_list"
     },
@@ -4441,7 +4442,7 @@
       "category" : "base",
       "description" : [ "Allows a spell to break blocks in regions that deny breaking" ],
       "field" : "bypass_break",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Bypass Break",
       "type" : "boolean"
     },
@@ -4449,7 +4450,7 @@
       "category" : "base",
       "description" : [ "Allows a spell to build blocks in regions that deny building" ],
       "field" : "bypass_build",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Bypass Build",
       "type" : "boolean"
     },
@@ -4489,7 +4490,7 @@
       "category" : "base",
       "description" : [ "This allos a spell to bypass pvp checks, so it can target players in pvp-restricted areas." ],
       "field" : "bypass_pvp",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Bypass Pvp",
       "type" : "boolean"
     },
@@ -4577,7 +4578,7 @@
       "category" : "mob",
       "description" : [ "A probability table of spells to cast", "This parameter is deprecated, it is better to use the triggers map" ],
       "field" : "cast",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Cast",
       "type" : "map"
     },
@@ -4778,7 +4779,7 @@
       "category" : "wand",
       "description" : [ "The class this wand uses", "If set this will be a class-bound wand, meaning it may store some of its properties in a player's class data rather than on the wand item", "This can be used to create wands that show spells and mana that a player has, so a player may change wands without losing progress", "A player must have access to this class to use the wand, if the class is locked it will need to be unlocked before the player may activate this wand" ],
       "field" : "class",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Class",
       "type" : "string"
     },
@@ -4842,7 +4843,7 @@
       "category" : "base",
       "description" : [ "The class this effect or action uses", "This determines the type of effect or action that will be performed" ],
       "field" : "class",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Class",
       "type" : "string"
     },
@@ -4850,7 +4851,7 @@
       "category" : "effects",
       "description" : [ "Can be used to color particles and firework effects" ],
       "field" : "color",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Color",
       "type" : "color"
     },
@@ -5018,7 +5019,7 @@
       "category" : "wand",
       "description" : [ "A percent reduction used for engineering spells that consume blocks when cast", "Currently only the values 1 and 0 are supported, where 1 means the player may use engineering magic without spending blocks", "This will appear on the wand lore as 'Manifestation'" ],
       "field" : "consume_reduction",
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Consume Reduction",
       "type" : "percentage_level"
     },
@@ -5059,7 +5060,7 @@
       "category" : "base",
       "description" : [ "How long, in milliseconds, a player has to wait before casting this spell again" ],
       "field" : "cooldown",
-      "importance" : 0,
+      "importance" : 190,
       "name" : "Cooldown",
       "type" : "integer"
     },
@@ -5067,15 +5068,15 @@
       "category" : "base",
       "description" : [ "How long, in milliseconds, a player has to wait before casting this any spells after having cast this one" ],
       "field" : "cooldown",
-      "importance" : 0,
-      "name" : "Cooldown",
+      "importance" : 60,
+      "name" : "Mage Global Cooldown",
       "type" : "integer"
     },
     "cooldown_reduction" : {
       "category" : "base",
       "description" : [ "" ],
       "field" : "cooldown_reduction",
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Cooldown Reduction",
       "type" : "percentage_level"
     },
@@ -5099,7 +5100,7 @@
       "category" : "base",
       "description" : [ "A percent reduction for costs in spells cast by this wand" ],
       "field" : "cost_reduction",
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Cost Reduction",
       "type" : "percentage_level"
     },
@@ -5115,7 +5116,7 @@
       "category" : "base",
       "description" : [ "The costs for casting this spell" ],
       "field" : "costs",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Costs",
       "type" : "cost_map"
     },
@@ -5283,7 +5284,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "damage",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Damage",
       "type" : "integer"
     },
@@ -5387,7 +5388,7 @@
       "category" : "construction",
       "description" : [ "" ],
       "field" : "destructible",
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Destructible",
       "type" : "string"
     },
@@ -5443,7 +5444,7 @@
       "category" : "effects",
       "description" : [ "Should this effect stop playing if the origin entity becomes invalid?" ],
       "field" : "disappear_with_origin_entity",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Disappear With Origin Entity",
       "type" : "boolean"
     },
@@ -5451,7 +5452,7 @@
       "category" : "effects",
       "description" : [ "Should this effect stop playing if the target entity becomes invalid?" ],
       "field" : "disappear_with_target_entity",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Disappear With Target Entity",
       "type" : "boolean"
     },
@@ -5523,7 +5524,7 @@
       "category" : "",
       "description" : [ "Which action the wand should perform when the player uses the drop (Q by default) key" ],
       "field" : "drop",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Drop Key Binding",
       "type" : "wand_action"
     },
@@ -5563,7 +5564,7 @@
       "category" : "base",
       "description" : [ "How long an effect or spell should last, in milliseconds" ],
       "field" : "duration",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Duration",
       "type" : "integer"
     },
@@ -5601,17 +5602,17 @@
     },
     "earns_cooldown" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "How long, in milliseconds, before this spell can earn its max SP value", "Until the cooldown expires the spell will earn no SP, or earn an increasing amount of reduced SP" ],
       "field" : "earns_cooldown",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Earns Cooldown",
       "type" : "integer"
     },
     "earns_sp" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "The maximum amount of SP this spell earns when casting", "A spell must be successfully cast to earn SP, this generally means it hit a target that it is allowed to affect", "SP earning will scale down after the first cast and slowly ramp back up to max over time, as defined by the earns_cooldown" ],
       "field" : "earns_sp",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Earns Sp",
       "type" : "integer"
     },
@@ -5751,11 +5752,19 @@
       "name" : "Effect Type",
       "type" : "effect_type"
     },
+    "effectlib" : {
+      "category" : "effects",
+      "description" : [ "An EffectLib effect to play", "This must contain at least a 'class' parameter to specify which EffectLib class to display" ],
+      "field" : "effectlib",
+      "importance" : 100,
+      "name" : "Effect Lib Effect",
+      "type" : "map"
+    },
     "effects" : {
       "category" : "base",
-      "description" : [ "Which effects to playe" ],
+      "description" : [ "Which effects to play" ],
       "field" : "effects",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Effects",
       "type" : "string"
     },
@@ -5819,7 +5828,7 @@
       "category" : "base",
       "description" : [ "This can be used to enable a spell that was disabled via config.yml, or to disable specific default" ],
       "field" : "enabled",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Enabled",
       "type" : "boolean"
     },
@@ -5851,7 +5860,7 @@
       "category" : "entity",
       "description" : [ "The amount of damage to apply to non-player targets" ],
       "field" : "entity_damage",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Entity Damage",
       "type" : "double"
     },
@@ -6539,7 +6548,7 @@
       "category" : "wand",
       "description" : [ "The currently selected hotbar", "Does not generally need to be set in a configuration" ],
       "field" : "hotbar",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Hotbar",
       "type" : "double"
     },
@@ -6547,7 +6556,7 @@
       "category" : "wand",
       "description" : [ "The number of hotbars this wand has", "Hotbars can be cycled using controls bound to the cycle_hotbar or cycle_hotbar_reverse actions" ],
       "field" : "hotbar_count",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Hotbar Count",
       "type" : "double"
     },
@@ -6579,7 +6588,7 @@
       "category" : "base",
       "description" : [ "An icon that represents a spell or wand", "These can be vanilla items, or custom items from a resource pack" ],
       "field" : "icon",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Icon",
       "type" : "icon"
     },
@@ -6587,7 +6596,7 @@
       "category" : "base",
       "description" : [ "An icon used when a spell is not available, due to permissions, cooldown, or insufficient resources" ],
       "field" : "icon_disabled",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Disabled Icon",
       "type" : "icon"
     },
@@ -6668,7 +6677,7 @@
       "category" : "wand",
       "description" : [ "Prevent this wand from despawning when dropped on the ground" ],
       "field" : "immortal",
-      "importance" : 0,
+      "importance" : 60,
       "name" : "Immortal",
       "type" : "double"
     },
@@ -6684,7 +6693,7 @@
       "category" : "wand",
       "description" : [ "Sets the unbreakable tag on the wand item", "This generally has to be set on a wand if using custom resource pack icons, to prevent the durability from changing" ],
       "field" : "indestructible",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Indestructible",
       "type" : "boolean"
     },
@@ -6700,7 +6709,7 @@
       "category" : "base",
       "description" : [ "Can be used to inherit from another template" ],
       "field" : "inherit",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Inherit",
       "type" : "string"
     },
@@ -6740,7 +6749,7 @@
       "category" : "",
       "description" : [ "How often to update the projectile location" ],
       "field" : "interval",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Interval",
       "type" : "long"
     },
@@ -6796,7 +6805,7 @@
       "category" : "",
       "description" : [ "Velocity to apply to dropped items", "This generally nees to be set lower than velocity applied to living entities, or items will get thrown around too far" ],
       "field" : "item_speed",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Item Speed",
       "type" : "double"
     },
@@ -6812,7 +6821,7 @@
       "category" : "effects",
       "description" : [ "Number of times to repeat the effect" ],
       "field" : "iterations",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Iterations",
       "type" : "integer"
     },
@@ -6828,7 +6837,7 @@
       "category" : "wand",
       "description" : [ "If set, this wand will not be dropped on death" ],
       "field" : "keep",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Keep",
       "type" : "boolean"
     },
@@ -6900,7 +6909,7 @@
       "category" : "",
       "description" : [ "What action the wand should perform when the player uses the swing (left-click by default) button" ],
       "field" : "left_click",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Left Click Binding",
       "type" : "wand_action"
     },
@@ -7044,7 +7053,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "living_entity_speed",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Living Entity Speed",
       "type" : "double"
     },
@@ -7057,12 +7066,12 @@
       "type" : "boolean"
     },
     "location" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "Where to play this effect" ],
       "field" : "location",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Location",
-      "type" : "string"
+      "type" : "effect_location"
     },
     "location_offset" : {
       "category" : "",
@@ -7140,7 +7149,7 @@
       "category" : "wand",
       "description" : [ "The amount of mana this wand currently has", "Can be used in a configuration to make a wand start out with mana, rather than waiting to regenerate" ],
       "field" : "mana",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Mana",
       "type" : "integer"
     },
@@ -7148,7 +7157,7 @@
       "category" : "wand",
       "description" : [ "The maximum amount of mana this wand can hold" ],
       "field" : "mana_max",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Mana Max",
       "type" : "double"
     },
@@ -7172,7 +7181,7 @@
       "category" : "wand",
       "description" : [ "Mana regeneration rate, in mana per second" ],
       "field" : "mana_regeneration",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Mana Regeneration",
       "type" : "double"
     },
@@ -7196,7 +7205,7 @@
       "category" : "",
       "description" : [ "The material to use" ],
       "field" : "material",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Material",
       "type" : "material"
     },
@@ -7204,7 +7213,7 @@
       "category" : "",
       "description" : [ "The data value of the material being used" ],
       "field" : "material_data",
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Material Data",
       "type" : "byte"
     },
@@ -7265,10 +7274,10 @@
       "type" : "integer"
     },
     "max_health" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "How much health this mob should have" ],
       "field" : "max_health",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Max Health",
       "type" : "double"
     },
@@ -7440,6 +7449,30 @@
       "name" : "Miss Effects",
       "type" : "string"
     },
+    "mob_cast_interval" : {
+      "category" : "mob",
+      "description" : [ "How often, in milliseconds, to cast a spell.", "This parameter is deprecated, use 'interval' and triggers instead" ],
+      "field" : "cast_interval",
+      "importance" : -1,
+      "name" : "Cast Interval",
+      "type" : "long"
+    },
+    "mob_interval" : {
+      "category" : "mob",
+      "description" : [ "How often to cast spells tied to the interval trigger" ],
+      "field" : "interval",
+      "importance" : 90,
+      "name" : "Interval",
+      "type" : "long"
+    },
+    "mob_name" : {
+      "category" : "mob",
+      "description" : [ "The display name of this mob", "This is required for Magic Mobs" ],
+      "field" : "name",
+      "importance" : 100,
+      "name" : "Name",
+      "type" : "string"
+    },
     "modal" : {
       "category" : "",
       "description" : [ "" ],
@@ -7452,7 +7485,7 @@
       "category" : "wand",
       "description" : [ "How this wand will present its spell inventory to the player" ],
       "field" : "mode",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Mode",
       "type" : "wand_mode"
     },
@@ -7756,7 +7789,7 @@
       "category" : "base",
       "description" : [ "" ],
       "field" : "parameters",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Parameters",
       "type" : "map"
     },
@@ -7764,7 +7797,7 @@
       "category" : "effects",
       "description" : [ "The type of particle to use in this effect" ],
       "field" : "particle",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Particle",
       "type" : "particle_effect"
     },
@@ -7788,7 +7821,7 @@
       "category" : "effects",
       "description" : [ "The number of particles to spawn with each particle packet", "Use this with particle_offset_x,y,z to spawn a dense or sparse group of particles while sending only a single packet to the client" ],
       "field" : "particle_count",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Particle Count",
       "type" : "integer"
     },
@@ -7812,7 +7845,7 @@
       "category" : "effects",
       "description" : [ "A random spread of particles along the x-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_x",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Particle Offset X",
       "type" : "float"
     },
@@ -7820,7 +7853,7 @@
       "category" : "effects",
       "description" : [ "A random spread of particles along the y-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_y",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Particle Offset Y",
       "type" : "float"
     },
@@ -7828,7 +7861,7 @@
       "category" : "effects",
       "description" : [ "A random spread of particles along the z-axis", "Use with particle_count to spawn multiple particles per packet" ],
       "field" : "particle_offset_z",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Particle Offset Z",
       "type" : "float"
     },
@@ -7868,7 +7901,7 @@
       "category" : "effects",
       "description" : [ "The number of particles to spawn with each iteration of this effect" ],
       "field" : "particles",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Particles",
       "type" : "integer"
     },
@@ -7996,7 +8029,7 @@
       "category" : "wand",
       "description" : [ "If set, a wand will not activate when held", "Instead, it will apply its affects when worn. Generally to be used with magic armor" ],
       "field" : "passive",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Passive",
       "type" : "boolean"
     },
@@ -8020,7 +8053,7 @@
       "category" : "wand",
       "description" : [ "A progression path that a wand will follow", "When enchanting or using the spellshop, a path will determine what spells are available to a player", "Paths may upgrade to other paths in a progression, when a player learns all of the spells available on their current path they will progress to the next." ],
       "field" : "path",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Path",
       "type" : "path"
     },
@@ -8052,7 +8085,7 @@
       "category" : "effects",
       "description" : [ "How long to wait, in ticks, between each iteration" ],
       "field" : "period",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Period",
       "type" : "integer"
     },
@@ -8180,7 +8213,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "player_damage",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Player Damage",
       "type" : "double"
     },
@@ -8348,8 +8381,8 @@
       "category" : "base",
       "description" : [ "If set to true, this spell will not be castable at all in a pvp-restricted area", "By default all spells will not target other players in pvp-restricted areas, but some spells like Fire can still be used to grief and so they are marked pvp_restricted: true to be unavailable in a no-pvp zone." ],
       "field" : "pvp_restricted",
-      "importance" : 0,
-      "name" : "Pvp Restricted",
+      "importance" : 90,
+      "name" : "PVP Restricted",
       "type" : "boolean"
     },
     "pworld" : {
@@ -8396,7 +8429,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "radius",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Radius",
       "type" : "double"
     },
@@ -8500,7 +8533,7 @@
       "category" : "targeting",
       "description" : [ "How far, in blocks, this spell can reach before counting as a miss", "This can apply to a base spell, which will do instant raycast targeting, or to a CustomProjectile which will travel over time until it reaches this distance" ],
       "field" : "range",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Range",
       "type" : "double"
     },
@@ -8660,7 +8693,7 @@
       "category" : "",
       "description" : [ "A list of potion effects to remove from the target" ],
       "field" : "remove_effects",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Remove Effects",
       "type" : "potion_effect_list"
     },
@@ -8740,7 +8773,7 @@
       "category" : "actions",
       "description" : [ "" ],
       "field" : "require_break",
-      "importance" : 0,
+      "importance" : 60,
       "name" : "Require Break",
       "type" : "boolean"
     },
@@ -8748,7 +8781,7 @@
       "category" : "actions",
       "description" : [ "" ],
       "field" : "require_build",
-      "importance" : 0,
+      "importance" : 60,
       "name" : "Require Build",
       "type" : "boolean"
     },
@@ -8956,7 +8989,7 @@
       "category" : "",
       "description" : [ "What action the wand should perform when the player uses the interact (right-click by default) button" ],
       "field" : "right_click",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Right Click Binding",
       "type" : "wand_action"
     },
@@ -9180,7 +9213,7 @@
       "category" : "",
       "description" : [ "Size of the effect" ],
       "field" : "size",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Size",
       "type" : "integer"
     },
@@ -9220,7 +9253,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "sound",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Sound",
       "type" : "sound"
     },
@@ -9276,7 +9309,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "sound_pitch",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Sound Pitch",
       "type" : "double"
     },
@@ -9284,7 +9317,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "sound_volume",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Sound Volume",
       "type" : "double"
     },
@@ -9332,7 +9365,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "source_location",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Source Location",
       "type" : "source_location_location_type"
     },
@@ -9428,7 +9461,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "speed",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Speed",
       "type" : "double"
     },
@@ -9468,7 +9501,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "spell_levels",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Spell Levels",
       "type" : "double"
     },
@@ -9476,7 +9509,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "spells",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Spells",
       "type" : "spell_list"
     },
@@ -9684,7 +9717,7 @@
       "category" : "",
       "description" : [ "What action the wand should perform when the player uses the swap (F by default) button" ],
       "field" : "swap",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Swap Binding",
       "type" : "wand_action"
     },
@@ -9724,8 +9757,8 @@
       "category" : "targeting",
       "description" : [ "How this spell should perform its targeting", "This only affects the initial targeting, not any projectiles that are launched" ],
       "field" : "target",
-      "importance" : 0,
-      "name" : "Target",
+      "importance" : 100,
+      "name" : "Targeting Mode",
       "type" : "target_type"
     },
     "target_above" : {
@@ -9876,7 +9909,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "target_location",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Target Location",
       "type" : "source_location_location_type"
     },
@@ -9953,16 +9986,16 @@
       "type" : "double"
     },
     "target_self" : {
-      "category" : "base",
-      "description" : [ "" ],
+      "category" : "targeting",
+      "description" : [ "Whether or not this spell should targe the caster", "This will affect projectiles, area of effect and other actions that target multiple entities" ],
       "field" : "target_self",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Target Self",
       "type" : "boolean"
     },
     "target_self_timeout" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "targeting",
+      "description" : [ "A timeout in milliseconds, after which the projectile is allowed to target the caster" ],
       "field" : "target_self_timeout",
       "importance" : 0,
       "name" : "Target Self Timeout",
@@ -10073,12 +10106,12 @@
       "type" : "boolean"
     },
     "template" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "wand",
+      "description" : [ "Used internally in item data to say which template a wand was created from", "Do not set this in configurations" ],
       "field" : "template",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Template",
-      "type" : "double"
+      "type" : "string"
     },
     "text" : {
       "category" : "",
@@ -10181,7 +10214,7 @@
       "category" : "base",
       "description" : [ "Set this to allow a spell to be toggled on and off with subsequent casts.", "Spells can either simply cancel when toggled off, or immediately perform their undo behaviors" ],
       "field" : "toggle",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Toggle",
       "type" : "spell_toggle_type"
     },
@@ -10211,9 +10244,9 @@
     },
     "total_duration" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A value that will be used in lore", "This is useful for spells that have a collection of repeat and delay actions, and so the total duration can not be automatically calculated" ],
       "field" : "total_duration",
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Total Duration",
       "type" : "integer"
     },
@@ -10285,12 +10318,20 @@
       "category" : "targeting",
       "description" : [ "" ],
       "field" : "transparent",
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Transparent",
       "type" : "string"
     },
     "triggers" : {
       "category" : "mob",
+      "description" : [ "A map of triggers that will cause this mob to cast spells" ],
+      "field" : "triggers",
+      "importance" : 90,
+      "name" : "Triggers",
+      "type" : "trigger_map"
+    },
+    "triggers-map" : {
+      "category" : "",
       "description" : [ "" ],
       "field" : "triggers",
       "importance" : 0,
@@ -10306,10 +10347,10 @@
       "type" : "string"
     },
     "type" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "The type of entity to spawn" ],
       "field" : "type",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Type",
       "type" : "entity_type"
     },
@@ -10342,7 +10383,7 @@
       "category" : "undo",
       "description" : [ "How long to wait, in milliseconds, before this spell will undo.", "The timer starts when the spell finishes completely" ],
       "field" : "undo",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Undo",
       "type" : "integer"
     },
@@ -10358,7 +10399,7 @@
       "category" : "undo",
       "description" : [ "If set, undo will happen over the course of several ticks", "This is in terms of changes (blocks) per second" ],
       "field" : "undo_speed",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Undo Speed",
       "type" : "double"
     },
@@ -10382,7 +10423,7 @@
       "category" : "wand",
       "description" : [ "If set, the wand will not be able to be dropped on the ground by the player" ],
       "field" : "undroppable",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Undroppable",
       "type" : "double"
     },
@@ -10454,7 +10495,7 @@
       "category" : "wand",
       "description" : [ "Prevent this wand from being put in a container" ],
       "field" : "unstashable",
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Unstashable",
       "type" : "double"
     },
@@ -10470,7 +10511,7 @@
       "category" : "",
       "description" : [ "If set to false, Entity-bound directions will not update during the Effect" ],
       "field" : "update_directions",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Update Directions",
       "type" : "boolean"
     },
@@ -10486,7 +10527,7 @@
       "category" : "effects",
       "description" : [ "If set to false, Entity-bound locations will not update during the Effect" ],
       "field" : "update_locations",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Update Locations",
       "type" : "boolean"
     },
@@ -10494,7 +10535,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "upgrade",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Upgrade",
       "type" : "boolean"
     },
@@ -10508,17 +10549,17 @@
     },
     "upgrade_required_casts" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "How many times this spell must be successfully cast before it upgrades", "Upgrades require that different spell levels have been defined. These levels have the same key as the base spell, but suffixed with a pipe (|) symbol and a level name. For instance, 'blink|2' is Blink level 2. Upgrade spells automatically inherit from the previous level, so each definition only needs to specify parameters that should change on upgrade." ],
       "field" : "upgrade_required_casts",
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Upgrade Required Casts",
       "type" : "long"
     },
     "upgrade_required_path" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "What path the player must be on before this spell can upgrade", "This can be used to gate spell upgrades, preventing players from spam-casting to level all of their spells.", "Upgrades require that different spell levels have been defined. These levels have the same key as the base spell, but suffixed with a pipe (|) symbol and a level name. For instance, 'blink|2' is Blink level 2. Upgrade spells automatically inherit from the previous level, so each definition only needs to specify parameters that should change on upgrade." ],
       "field" : "upgrade_required_path",
-      "importance" : 0,
+      "importance" : 20,
       "name" : "Upgrade Required Path",
       "type" : "path"
     },
@@ -10558,7 +10599,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "use_cast_location",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Use Cast Location",
       "type" : "boolean"
     },
@@ -10566,7 +10607,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "use_eye_location",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Use Eye Location",
       "type" : "boolean"
     },
@@ -10574,7 +10615,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "use_hit_location",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Use Hit Location",
       "type" : "boolean"
     },
@@ -10606,7 +10647,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "use_target_location",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Use Target Location",
       "type" : "boolean"
     },
@@ -10614,7 +10655,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "use_wand_location",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Use Wand Location",
       "type" : "boolean"
     },
@@ -10630,7 +10671,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "uses",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Uses",
       "type" : "double"
     },
@@ -10678,7 +10719,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "velocity",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Velocity",
       "type" : "double"
     },
@@ -10788,9 +10829,9 @@
     },
     "warmup" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "An alias for the 'delay' parameter of the Delay action, a delay in milliseconds", "If present this will be shown in lore as the spells' warmup time" ],
       "field" : "warmup",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Warmup",
       "type" : "integer"
     },
@@ -10852,9 +10893,9 @@
     },
     "worth" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "How much this spell is worth", "By default this is terms of SP", "Spells must have a worth assigned and be in a path's spell list to show up in the spellshop" ],
       "field" : "worth",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Worth",
       "type" : "double"
     },
@@ -10868,9 +10909,9 @@
     },
     "worth_sp" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "An alias for 'worth', this property should no longer be used." ],
       "field" : "worth_sp",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Worth Sp",
       "type" : "double"
     },
@@ -10939,11 +10980,11 @@
       "type" : "double"
     },
     "xp" : {
-      "category" : "",
+      "category" : "mob",
       "description" : [ "Amount of experience a mob should drop on death" ],
       "field" : "xp",
-      "importance" : 0,
-      "name" : "Xp",
+      "importance" : 90,
+      "name" : "XP",
       "type" : "integer"
     },
     "y2_equation" : {
@@ -11549,6 +11590,16 @@
         "zombie_converted_villager" : null,
         "zombie_destroy_door" : null,
         "zombie_infect" : null
+      }
+    },
+    "effect_location" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A location to play an effect list" ],
+      "name" : "Effect Location",
+      "options" : {
+        "both" : "Play at both the caster and target location",
+        "origin" : "Play at the caster's location",
+        "target" : "Play at the target lcoation"
       }
     },
     "effect_type" : {
@@ -12939,6 +12990,24 @@
       "name" : "Texture",
       "options" : {
         "See: http://mine.elmakers.com/#textures" : null
+      }
+    },
+    "trigger_map" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "A map of trigger types to spell probabilities" ],
+      "key_type" : "trigger_type",
+      "name" : "Trigger Map",
+      "options" : { },
+      "value_type" : "string"
+    },
+    "trigger_type" : {
+      "class_name" : "com.elmakers.mine.bukkit.magic.MageTrigger$MageTriggerType",
+      "description" : [ "An event that can trigger mobs to cast spells" ],
+      "name" : "Trigger Type",
+      "options" : {
+        "damage" : "When this entity takes damage",
+        "death" : "When this entity dies",
+        "interval" : "At a specific interval, defined by the 'interval' property"
       }
     },
     "vector" : {
