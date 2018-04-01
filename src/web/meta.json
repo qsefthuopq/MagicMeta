@@ -122,7 +122,7 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
-        "attributes" : null,
+        "mob_attributes" : null,
         "baby" : "false",
         "base_potion_type" : null,
         "boots" : null,
@@ -143,10 +143,10 @@
         "entity_attributes" : null,
         "entity_types-map" : null,
         "force" : "false",
+        "hand_item" : null,
         "health" : "1.0",
         "helmet" : null,
         "interact_spell" : null,
-        "item" : null,
         "leggings" : null,
         "loot" : "false",
         "mage" : null,
@@ -2213,7 +2213,7 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
-        "attributes" : null,
+        "mob_attributes" : null,
         "baby" : "false",
         "boots" : null,
         "can_pickup_items" : "false",
@@ -2230,10 +2230,10 @@
         "entity_attributes" : null,
         "entity_types-map" : null,
         "force" : "false",
+        "hand_item" : null,
         "health" : "1.0",
         "helmet" : null,
         "interact_spell" : null,
-        "item" : null,
         "leggings" : null,
         "loot" : "false",
         "mage" : null,
@@ -3719,7 +3719,7 @@
     "aggro" : "true",
     "ai" : "true",
     "amount" : "1",
-    "attributes" : null,
+    "mob_attributes" : null,
     "baby" : "false",
     "boots" : null,
     "can_pickup_items" : "false",
@@ -3732,10 +3732,10 @@
     "drop_xp" : "0",
     "drops" : null,
     "entity_attributes" : null,
+    "hand_item" : null,
     "health" : "1.0",
     "helmet" : null,
     "interact_spell" : null,
-    "item" : null,
     "leggings" : null,
     "mage" : null,
     "max_health" : "1.0",
@@ -3828,10 +3828,10 @@
       "type" : "integer"
     },
     "aggro" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "This will enable the thread table aggro behavior on an otherwise normal mob", "This makes the mob target the player that has done the most damage to to it, within track_range", "Mobs that cast spells or have other mage properties such as protection will automatically use aggro behavior." ],
       "field" : "aggro",
-      "importance" : 0,
+      "importance" : 10,
       "name" : "Aggro",
       "type" : "boolean"
     },
@@ -3839,7 +3839,7 @@
       "category" : "",
       "description" : [ "Whether or not this mob has 'AI'. A mob with AI turned off will not move or react, and also can not be pushed by velocity." ],
       "field" : "ai",
-      "importance" : 0,
+      "importance" : 20,
       "name" : "AI",
       "type" : "boolean"
     },
@@ -3940,8 +3940,8 @@
       "type" : "spell"
     },
     "amount" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "The amount of an item" ],
       "field" : "amount",
       "importance" : 0,
       "name" : "Amount",
@@ -4123,6 +4123,14 @@
       "name" : "Attributes",
       "type" : "attributes"
     },
+    "mob_attributes" : {
+      "category" : "mob",
+      "description" : [ "Attributes to apply to mob", "These are Magic attributes as defined in attributes.yml. For vanilla entity attributes, use entity_attributes" ],
+      "field" : "attributes",
+      "importance" : 0,
+      "name" : "Attributes",
+      "type" : "attributes"
+    },
     "auto_close" : {
       "category" : "",
       "description" : [ "" ],
@@ -4156,10 +4164,10 @@
       "type" : "string"
     },
     "baby" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Make this mob a baby mob" ],
       "field" : "baby",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Baby",
       "type" : "boolean"
     },
@@ -4288,7 +4296,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "boots",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Boots",
       "type" : "material"
     },
@@ -4634,7 +4642,7 @@
       "category" : "mob",
       "description" : [ "An item the mob must be holding in order to cast spells" ],
       "field" : "cast_requires_item",
-      "importance" : 0,
+      "importance" : 70,
       "name" : "Cast Requires Item",
       "type" : "material"
     },
@@ -4642,7 +4650,7 @@
       "category" : "mob",
       "description" : [ "If true, the mob will only cast spells if it has targeted an entity" ],
       "field" : "cast_requires_target",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Cast Requires Target",
       "type" : "boolean"
     },
@@ -4755,7 +4763,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "chestplate",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Chestplate",
       "type" : "material"
     },
@@ -5329,10 +5337,10 @@
       "type" : "boolean"
     },
     "default_drops" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Whether this mob should drop default vanilla drops on death" ],
       "field" : "default_drops",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Default Drops",
       "type" : "boolean"
     },
@@ -5537,10 +5545,10 @@
       "type" : "integer"
     },
     "drop_xp" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Amount of experience a mob should drop on death" ],
       "field" : "drop_xp",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Drop Xp",
       "type" : "integer"
     },
@@ -5769,10 +5777,10 @@
       "type" : "string"
     },
     "effects-map" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "effects",
+      "description" : [ "What effects this spell uses", "This is a map of events triggered by the spell to a list of effects to play when that event occurs","The most common event is 'cast', which happens when the spell is cast. Projectile spells have several other common events, including hit, miss, tick, hit_entity, hit_block and headshot.", "Custom events can also be defined here and used with the PlayEffects action." ],
       "field" : "effects",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Effects",
       "type" : "map"
     },
@@ -5852,7 +5860,7 @@
       "category" : "mob",
       "description" : [ "Vanilla entity attributes to apply to the mob" ],
       "field" : "entity_attributes",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Entity Attributes",
       "type" : "attribute_map"
     },
@@ -6360,6 +6368,14 @@
       "name" : "Grow",
       "type" : "float"
     },
+    "hand_item" : {
+      "category" : "mob",
+      "description" : [ "The item this mob is holding in its main hand" ],
+      "field" : "item",
+      "importance" : 100,
+      "name" : "Item in Hand",
+      "type" : "material"
+    },
     "has_uses" : {
       "category" : "wand",
       "description" : [ "Whether or not the wand has uses", "This is an internal property, you should not need to set it. It will be determined by the uses property being non-zero" ],
@@ -6460,7 +6476,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "helmet",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Helmet",
       "type" : "material"
     },
@@ -6743,7 +6759,7 @@
       "field" : "interact_spell",
       "importance" : 0,
       "name" : "Interact Spell",
-      "type" : "string"
+      "type" : "spell"
     },
     "interval" : {
       "category" : "",
@@ -6925,7 +6941,7 @@
       "category" : "",
       "description" : [ "" ],
       "field" : "leggings",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Leggings",
       "type" : "material"
     },
@@ -7114,8 +7130,8 @@
       "type" : "boolean"
     },
     "mage" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Specify properties to get applied to the Mage for this mob", "These can be the same sort of properties you would apply to a player class or wand" ],
       "field" : "mage",
       "importance" : 0,
       "name" : "Mage",
@@ -8226,10 +8242,10 @@
       "type" : "integer"
     },
     "potion_effects" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "A map of potion effects to apply to this entity" ],
       "field" : "potion_effects",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Potion Effects",
       "type" : "potion_effect_map"
     },
@@ -9746,8 +9762,8 @@
       "type" : "list"
     },
     "tamed" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "Set to true to make this mob tamed" ],
       "field" : "tamed",
       "importance" : 0,
       "name" : "Tamed",
@@ -10045,15 +10061,15 @@
       "category" : "targeting",
       "description" : [ "The class of entity this spell can target", "This parameter does not use the normal EntityType enum, it refers directly to classes", "This is so that it can be used with base classes like LivingEntity or Damageable to easily target a particular set of entity types", "Use the target_types parameter if you instead want to target one or more EntityTypes specifically" ],
       "field" : "target_type",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Target Type",
       "type" : "entity_class"
     },
-    "target_typs" : {
+    "target_types" : {
       "category" : "targeting",
       "description" : [ "One or more specific entity types for this spell to target. The spell will ignore any entities not on this list" ],
       "field" : "target_types",
-      "importance" : 0,
+      "importance" : 90,
       "name" : "Target Types",
       "type" : "entity_type_list"
     },
@@ -10267,10 +10283,10 @@
       "type" : "boolean"
     },
     "track_radius" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "mob",
+      "description" : [ "How far away a player must get before this mob no longer chases it" ],
       "field" : "track_radius",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Track Radius",
       "type" : "double"
     },
@@ -10981,9 +10997,9 @@
     },
     "xp" : {
       "category" : "mob",
-      "description" : [ "Amount of experience a mob should drop on death" ],
+      "description" : [ "Amount of experience contained in an experiene orb entity" ],
       "field" : "xp",
-      "importance" : 90,
+      "importance" : 20,
       "name" : "XP",
       "type" : "integer"
     },
@@ -11253,6 +11269,7 @@
     "target_self" : "false",
     "target_tamed" : "true",
     "target_type" : null,
+    "target_types" : null,
     "target_underwater" : "true",
     "target_unknown" : "true",
     "target_vanished" : "false",
