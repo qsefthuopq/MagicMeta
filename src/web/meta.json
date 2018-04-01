@@ -11821,15 +11821,15 @@
       "description" : [ "Different options for the initial targeting of a spell." ],
       "name" : "Targeting Type",
       "options" : {
-        "any" : null,
-        "any_entity" : null,
-        "block" : null,
-        "none" : null,
-        "other" : null,
-        "other_entity" : null,
-        "select" : null,
-        "select_entity" : null,
-        "self" : null
+        "any" : "will target any entity, falling back to the player if no other entity was targeted",
+        "any_entity" : "will target any entity, falling back to the player if no other entity was targeted. Does not target blocks at all.",
+        "block" : "Only target blocks, ignore entities",
+        "none" : "No target at all, can be used with some actions like Weather and Time",
+        "other" : "Will not target the caster, only other entities or blocks",
+        "other_entity" : "Will not target the caster, only other entities. Does not target blocks at all.",
+        "select" : "A special targeting mode for engineering spells, the first click will select a block and the second click will cast the spell using the selected block as the center or first target",
+        "select_entity" : "A special targeting mode, the first click will select and entity and the second click will cast the spell with that entity targeted. The entity may stay selected until the caster right-clicks.",
+        "self" : "Target the caster, often used with AreaOfEffect or buff spells"
       }
     },
     "texture" : {
