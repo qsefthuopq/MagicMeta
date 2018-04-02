@@ -133,14 +133,14 @@
         "color" : null,
         "default_drops" : "true",
         "direction" : null,
-        "disguise-map" : null,
+        "disguise_map" : null,
         "drop_xp" : "0",
         "drops" : null,
         "duration" : "2000",
         "duration_on_use" : "0",
         "dy_offset" : "0.0",
         "entity_attributes" : null,
-        "entity_types-map" : null,
+        "entity_types_map" : null,
         "force" : "false",
         "hand_item" : null,
         "health" : "1.0",
@@ -302,7 +302,7 @@
         "variant" : null,
         "velocity" : "20.0",
         "velocity_offset" : null,
-        "velocity_transform-map" : null,
+        "velocity_transform_map" : null,
         "visible_delay_ticks" : "1"
       },
       "short_class" : "ArmorStandProjectile"
@@ -779,7 +779,7 @@
         "use_target_location" : "true",
         "use_wand_location" : "true",
         "velocity" : "20.0",
-        "velocity_transform-map" : null
+        "velocity_transform_map" : null
       },
       "short_class" : "CustomProjectile"
     },
@@ -979,7 +979,7 @@
       "importance" : 0,
       "name" : "Disguise",
       "parameters" : {
-        "disguise-map" : null
+        "disguise_map" : null
       },
       "short_class" : "Disguise"
     },
@@ -1152,7 +1152,7 @@
         "variant" : null,
         "velocity" : "20.0",
         "velocity_offset" : null,
-        "velocity_transform-map" : null
+        "velocity_transform_map" : null
       },
       "short_class" : "EntityProjectile"
     },
@@ -2222,12 +2222,12 @@
         "chestplate" : null,
         "default_drops" : "true",
         "direction" : null,
-        "disguise-map" : null,
+        "disguise_map" : null,
         "drop_xp" : "0",
         "drops" : null,
         "dy_offset" : "0.0",
         "entity_attributes" : null,
-        "entity_types-map" : null,
+        "entity_types_map" : null,
         "force" : "false",
         "hand_item" : null,
         "health" : "1.0",
@@ -2565,7 +2565,7 @@
       "importance" : 10,
       "name" : "Tree",
       "parameters" : {
-        "biomes-map" : null,
+        "biomes_map" : null,
         "require_sapling" : "false",
         "type" : ""
       },
@@ -3727,7 +3727,7 @@
     "cast_requires_target" : "true",
     "chestplate" : null,
     "default_drops" : "true",
-    "disguise-map" : null,
+    "disguise_map" : null,
     "drop_xp" : "0",
     "drops" : null,
     "entity_attributes" : null,
@@ -4212,7 +4212,7 @@
       "name" : "Biomes",
       "type" : "string"
     },
-    "biomes-map" : {
+    "biomes_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "biomes",
@@ -5464,7 +5464,7 @@
       "name" : "Disguise",
       "type" : "string"
     },
-    "disguise-map" : {
+    "disguise_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "disguise",
@@ -5768,7 +5768,7 @@
       "name" : "Effects",
       "type" : "string"
     },
-    "effects-map" : {
+    "effects_map" : {
       "category" : "effects",
       "description" : [ "What effects this spell uses", "This is a map of events triggered by the spell to a list of effects to play when that event occurs", "The most common event is 'cast', which happens when the spell is cast. Projectile spells have several other common events, including hit, miss, tick, hit_entity, hit_block and headshot.", "Custom events can also be defined here and used with the PlayEffects action." ],
       "field" : "effects",
@@ -5888,7 +5888,7 @@
       "name" : "Entity Types",
       "type" : "string"
     },
-    "entity_types-map" : {
+    "entity_types_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "entity_types",
@@ -6000,7 +6000,7 @@
       "name" : "Faces",
       "type" : "string"
     },
-    "faces-list" : {
+    "faces_list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "faces",
@@ -7513,7 +7513,7 @@
       "name" : "Modify",
       "type" : "string"
     },
-    "modify-list" : {
+    "modify_list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "modify",
@@ -10346,7 +10346,7 @@
       "name" : "Triggers",
       "type" : "trigger_map"
     },
-    "triggers-map" : {
+    "triggers_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "triggers",
@@ -10771,7 +10771,7 @@
       "name" : "Velocity Transform",
       "type" : "string"
     },
-    "velocity_transform-map" : {
+    "velocity_transform_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "velocity_transform",
@@ -11302,7 +11302,7 @@
     "disguise_restricted" : "false",
     "earns_cooldown" : "0",
     "earns_sp" : "0",
-    "effects-map" : null,
+    "effects_map" : null,
     "enabled" : "true",
     "extended_description" : "",
     "glide_exclusive" : "false",
