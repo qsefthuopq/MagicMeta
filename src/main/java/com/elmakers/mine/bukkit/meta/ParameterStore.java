@@ -248,6 +248,10 @@ public class ParameterStore {
                 }
 
                 key = field + "-" + parameterType.getKey();
+                parameter = parameters.get(key);
+                if (parameter != null) {
+                    return parameter;
+                }
             } else {
                 return parameter;
             }
