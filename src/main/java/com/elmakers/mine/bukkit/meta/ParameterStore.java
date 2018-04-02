@@ -247,7 +247,7 @@ public class ParameterStore {
                     return parameter;
                 }
 
-                key = field + "-" + parameterType.getKey();
+                key = field + "_" + parameterType.getKey();
                 parameter = parameters.get(key);
                 if (parameter != null) {
                     return parameter;

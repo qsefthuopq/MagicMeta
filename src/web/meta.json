@@ -5416,7 +5416,7 @@
       "name" : "Direction",
       "type" : "string"
     },
-    "direction-disco_ball_effect_direction" : {
+    "direction_disco_ball_effect_direction" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "direction",
@@ -5768,14 +5768,6 @@
       "name" : "Effects",
       "type" : "string"
     },
-    "effects_map" : {
-      "category" : "effects",
-      "description" : [ "What effects this spell uses", "This is a map of events triggered by the spell to a list of effects to play when that event occurs", "The most common event is 'cast', which happens when the spell is cast. Projectile spells have several other common events, including hit, miss, tick, hit_entity, hit_block and headshot.", "Custom events can also be defined here and used with the PlayEffects action." ],
-      "field" : "effects",
-      "importance" : 100,
-      "name" : "Effects",
-      "type" : "map"
-    },
     "effects_ambient" : {
       "category" : "",
       "description" : [ "If true, the particles produced by these potion effects will be 'ambient', meaning slightly transparent and less noticable" ],
@@ -5783,6 +5775,14 @@
       "importance" : 0,
       "name" : "Effects Ambient",
       "type" : "boolean"
+    },
+    "effects_map" : {
+      "category" : "effects",
+      "description" : [ "What effects this spell uses", "This is a map of events triggered by the spell to a list of effects to play when that event occurs", "The most common event is 'cast', which happens when the spell is cast. Projectile spells have several other common events, including hit, miss, tick, hit_entity, hit_block and headshot.", "Custom events can also be defined here and used with the PlayEffects action." ],
+      "field" : "effects",
+      "importance" : 100,
+      "name" : "Effects",
+      "type" : "map"
     },
     "effects_particles" : {
       "category" : "",
@@ -10739,14 +10739,6 @@
       "name" : "Velocity",
       "type" : "double"
     },
-    "velocity-vector" : {
-      "category" : "",
-      "description" : [ "" ],
-      "field" : "velocity",
-      "importance" : 0,
-      "name" : "Velocity",
-      "type" : "vector"
-    },
     "velocity_max_distance" : {
       "category" : "",
       "description" : [ "" ],
@@ -10778,6 +10770,14 @@
       "importance" : 0,
       "name" : "Velocity Transform",
       "type" : "map"
+    },
+    "velocity_vector" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity",
+      "importance" : 0,
+      "name" : "Velocity",
+      "type" : "vector"
     },
     "vertical_range" : {
       "category" : "base",
