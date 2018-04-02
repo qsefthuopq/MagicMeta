@@ -138,4 +138,9 @@ public class ParameterType {
     public Class<?> getClassType() {
         return classType;
     }
+
+    @Override
+    public String toString() {
+        return key;
+    }
 }

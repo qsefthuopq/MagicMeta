@@ -30,7 +30,6 @@ public class Parameter {
         description = new ArrayList<>();
         description.add("");
         name = WordUtils.capitalizeFully(field, new char[]{'_'}).replaceAll("_", " ");
-
     }
 
     public Parameter(@Nonnull String field, @Nonnull ParameterType type) {
@@ -110,5 +109,10 @@ public class Parameter {
 
     public void setImportance(int importance) {
         this.importance = importance;
+    }
+
+    @Override
+    public String toString() {
+        return key + "@" + type;
     }
 }
