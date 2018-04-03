@@ -122,6 +122,7 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
+        "mob_attributes" : null,
         "baby" : "false",
         "base_potion_type" : null,
         "boots" : null,
@@ -133,14 +134,14 @@
         "color" : null,
         "default_drops" : "true",
         "direction" : null,
-        "disguise_map" : null,
+        "disguise-map" : null,
         "drop_xp" : "0",
         "drops" : null,
         "duration" : "2000",
         "duration_on_use" : "0",
         "dy_offset" : "0.0",
         "entity_attributes" : null,
-        "entity_types_map" : null,
+        "entity_types-map" : null,
         "force" : "false",
         "hand_item" : null,
         "health" : "1.0",
@@ -150,7 +151,6 @@
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
-        "mob_attributes" : null,
         "mob_cast_interval" : "0",
         "mob_interval" : "0",
         "name" : null,
@@ -302,7 +302,7 @@
         "variant" : null,
         "velocity" : "20.0",
         "velocity_offset" : null,
-        "velocity_transform_map" : null,
+        "velocity_transform-map" : null,
         "visible_delay_ticks" : "1"
       },
       "short_class" : "ArmorStandProjectile"
@@ -779,7 +779,7 @@
         "use_target_location" : "true",
         "use_wand_location" : "true",
         "velocity" : "20.0",
-        "velocity_transform_map" : null
+        "velocity_transform-map" : null
       },
       "short_class" : "CustomProjectile"
     },
@@ -979,7 +979,7 @@
       "importance" : 0,
       "name" : "Disguise",
       "parameters" : {
-        "disguise_map" : null
+        "disguise-map" : null
       },
       "short_class" : "Disguise"
     },
@@ -1152,7 +1152,7 @@
         "variant" : null,
         "velocity" : "20.0",
         "velocity_offset" : null,
-        "velocity_transform_map" : null
+        "velocity_transform-map" : null
       },
       "short_class" : "EntityProjectile"
     },
@@ -2213,6 +2213,7 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
+        "mob_attributes" : null,
         "baby" : "false",
         "boots" : null,
         "can_pickup_items" : "false",
@@ -2222,12 +2223,12 @@
         "chestplate" : null,
         "default_drops" : "true",
         "direction" : null,
-        "disguise_map" : null,
+        "disguise-map" : null,
         "drop_xp" : "0",
         "drops" : null,
         "dy_offset" : "0.0",
         "entity_attributes" : null,
-        "entity_types_map" : null,
+        "entity_types-map" : null,
         "force" : "false",
         "hand_item" : null,
         "health" : "1.0",
@@ -2237,7 +2238,6 @@
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
-        "mob_attributes" : null,
         "mob_cast_interval" : "0",
         "mob_interval" : "0",
         "name" : null,
@@ -2565,7 +2565,7 @@
       "importance" : 10,
       "name" : "Tree",
       "parameters" : {
-        "biomes_map" : null,
+        "biomes-map" : null,
         "require_sapling" : "false",
         "type" : ""
       },
@@ -3719,6 +3719,7 @@
     "aggro" : "true",
     "ai" : "true",
     "amount" : "1",
+    "mob_attributes" : null,
     "baby" : "false",
     "boots" : null,
     "can_pickup_items" : "false",
@@ -3727,7 +3728,7 @@
     "cast_requires_target" : "true",
     "chestplate" : null,
     "default_drops" : "true",
-    "disguise_map" : null,
+    "disguise-map" : null,
     "drop_xp" : "0",
     "drops" : null,
     "entity_attributes" : null,
@@ -3738,7 +3739,6 @@
     "leggings" : null,
     "mage" : null,
     "max_health" : "1.0",
-    "mob_attributes" : null,
     "mob_cast_interval" : "0",
     "mob_interval" : "0",
     "mob_name" : null,
@@ -4123,6 +4123,14 @@
       "name" : "Attributes",
       "type" : "attributes"
     },
+    "mob_attributes" : {
+      "category" : "mob",
+      "description" : [ "Attributes to apply to mob", "These are Magic attributes as defined in attributes.yml. For vanilla entity attributes, use entity_attributes" ],
+      "field" : "attributes",
+      "importance" : 0,
+      "name" : "Attributes",
+      "type" : "attributes"
+    },
     "auto_close" : {
       "category" : "",
       "description" : [ "" ],
@@ -4212,7 +4220,7 @@
       "name" : "Biomes",
       "type" : "string"
     },
-    "biomes_map" : {
+    "biomes-map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "biomes",
@@ -5416,7 +5424,7 @@
       "name" : "Direction",
       "type" : "string"
     },
-    "direction_disco_ball_effect_direction" : {
+    "direction-disco_ball_effect_direction" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "direction",
@@ -5464,7 +5472,7 @@
       "name" : "Disguise",
       "type" : "string"
     },
-    "disguise_map" : {
+    "disguise-map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "disguise",
@@ -5768,6 +5776,14 @@
       "name" : "Effects",
       "type" : "string"
     },
+    "effects-map" : {
+      "category" : "effects",
+      "description" : [ "" ],
+      "field" : "effects",
+      "importance" : 0,
+      "name" : "Effects",
+      "type" : "map"
+    },
     "effects_ambient" : {
       "category" : "",
       "description" : [ "If true, the particles produced by these potion effects will be 'ambient', meaning slightly transparent and less noticable" ],
@@ -5775,14 +5791,6 @@
       "importance" : 0,
       "name" : "Effects Ambient",
       "type" : "boolean"
-    },
-    "effects_map" : {
-      "category" : "effects",
-      "description" : [ "What effects this spell uses", "This is a map of events triggered by the spell to a list of effects to play when that event occurs", "The most common event is 'cast', which happens when the spell is cast. Projectile spells have several other common events, including hit, miss, tick, hit_entity, hit_block and headshot.", "Custom events can also be defined here and used with the PlayEffects action." ],
-      "field" : "effects",
-      "importance" : 100,
-      "name" : "Effects",
-      "type" : "map"
     },
     "effects_particles" : {
       "category" : "",
@@ -5888,7 +5896,7 @@
       "name" : "Entity Types",
       "type" : "string"
     },
-    "entity_types_map" : {
+    "entity_types-map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "entity_types",
@@ -6000,7 +6008,7 @@
       "name" : "Faces",
       "type" : "string"
     },
-    "faces_list" : {
+    "faces-list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "faces",
@@ -6634,9 +6642,9 @@
     },
     "icon_url" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A texture URL used in a skull icon", "This is useful when not using the resource pack for spell icons. Recommended to use 'example: skulls' in config.yml when not using a resource pack, to enable skull icons", "These URLs can only be from official Mojang sources or the client will reject them." ],
       "field" : "icon_url",
-      "importance" : 0,
+      "importance" : 30,
       "name" : "Icon Url",
       "type" : "texture"
     },
@@ -7457,14 +7465,6 @@
       "name" : "Miss Effects",
       "type" : "string"
     },
-    "mob_attributes" : {
-      "category" : "mob",
-      "description" : [ "Attributes to apply to mob", "These are Magic attributes as defined in attributes.yml. For vanilla entity attributes, use entity_attributes" ],
-      "field" : "attributes",
-      "importance" : 0,
-      "name" : "Attributes",
-      "type" : "attributes"
-    },
     "mob_cast_interval" : {
       "category" : "mob",
       "description" : [ "How often, in milliseconds, to cast a spell.", "This parameter is deprecated, use 'interval' and triggers instead" ],
@@ -7513,7 +7513,7 @@
       "name" : "Modify",
       "type" : "string"
     },
-    "modify_list" : {
+    "modify-list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "modify",
@@ -10346,7 +10346,7 @@
       "name" : "Triggers",
       "type" : "trigger_map"
     },
-    "triggers_map" : {
+    "triggers-map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "triggers",
@@ -10739,6 +10739,14 @@
       "name" : "Velocity",
       "type" : "double"
     },
+    "velocity-vector" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity",
+      "importance" : 0,
+      "name" : "Velocity",
+      "type" : "vector"
+    },
     "velocity_max_distance" : {
       "category" : "",
       "description" : [ "" ],
@@ -10763,21 +10771,13 @@
       "name" : "Velocity Transform",
       "type" : "string"
     },
-    "velocity_transform_map" : {
+    "velocity_transform-map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "velocity_transform",
       "importance" : 0,
       "name" : "Velocity Transform",
       "type" : "map"
-    },
-    "velocity_vector" : {
-      "category" : "",
-      "description" : [ "" ],
-      "field" : "velocity",
-      "importance" : 0,
-      "name" : "Velocity",
-      "type" : "vector"
     },
     "vertical_range" : {
       "category" : "base",
@@ -11302,7 +11302,7 @@
     "disguise_restricted" : "false",
     "earns_cooldown" : "0",
     "earns_sp" : "0",
-    "effects_map" : null,
+    "effects-map" : null,
     "enabled" : "true",
     "extended_description" : "",
     "glide_exclusive" : "false",
@@ -12341,7 +12341,7 @@
     },
     "particle_effect" : {
       "class_name" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
-      "description" : [ "A particle type" ],
+      "description" : [ "A particle type. Use the 'fx' spell to easily see particles in-game.", "/cast fx particle crit", "/cast fx particle <tab>" ],
       "name" : "Particle Effect",
       "options" : {
         "barrier" : null,
