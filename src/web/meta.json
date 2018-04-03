@@ -122,7 +122,6 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
-        "mob_attributes" : null,
         "baby" : "false",
         "base_potion_type" : null,
         "boots" : null,
@@ -151,6 +150,7 @@
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
+        "mob_attributes" : null,
         "mob_cast_interval" : "0",
         "mob_interval" : "0",
         "name" : null,
@@ -186,6 +186,9 @@
       "importance" : 80,
       "name" : "Armor Stand Projectile",
       "parameters" : {
+        "aggro" : "true",
+        "ai" : "true",
+        "amount" : "1",
         "apply_velocity" : "true",
         "armor_stand_arms" : "true",
         "armor_stand_baseplate" : "false",
@@ -194,17 +197,34 @@
         "armor_stand_marker" : "true",
         "armor_stand_small" : "false",
         "attach_duration" : "0",
+        "attributes" : null,
+        "baby" : "false",
+        "baseplate" : "true",
         "block_hit_count" : "1",
         "body_transform" : null,
+        "boots" : null,
         "boots_item" : null,
         "break_blocks" : "true",
         "breakable_size" : "1",
         "bypass_backfire" : "false",
+        "can_pickup_items" : "false",
+        "cast" : null,
+        "cast_interval" : "0",
+        "cast_requires_item" : null,
+        "cast_requires_target" : "true",
+        "chestplate" : null,
         "chestplate_item" : null,
         "close_fov" : "0.5",
         "close_range" : "0.0",
+        "default_drops" : "true",
+        "disabled_slots" : "0",
+        "disguise" : null,
+        "disguise_map" : null,
         "distance_weight" : "1.0",
         "drag" : "0.0",
+        "drop_xp" : "0",
+        "drops" : null,
+        "entity_attributes" : null,
         "entity_hit_count" : "1",
         "entity_weight" : "3",
         "fov" : "0.3",
@@ -213,6 +233,8 @@
         "head_transform" : null,
         "headshot" : null,
         "headshot_effects" : "headshot",
+        "health" : "1.0",
+        "helmet" : null,
         "helmet_item" : null,
         "hit_count" : "1",
         "hit_effects" : "hit",
@@ -223,16 +245,24 @@
         "hitbox_size" : "0.0",
         "ignore_blocks" : "false",
         "ignore_targeting" : "false",
+        "interact_spell" : null,
         "interval" : "30",
+        "invisible" : "false",
+        "item" : null,
         "left_arm_transform" : null,
         "left_leg_transform" : null,
+        "leggings" : null,
         "leggings_item" : null,
         "lifetime" : "8000",
         "location_offset" : null,
+        "mage" : null,
+        "marker" : "false",
+        "max_health" : "1.0",
         "min_block_range" : "0.0",
         "min_entity_range" : "0.0",
         "miss" : null,
         "miss_effects" : "miss",
+        "name" : null,
         "no_target" : "true",
         "npc_weight" : "-1",
         "orient" : "false",
@@ -249,9 +279,11 @@
         "pitch_min" : "90",
         "plan" : null,
         "player_weight" : "4",
+        "potion_effects" : null,
         "projectile_effects" : "projectile",
         "projectile_follow_player" : "false",
         "projectile_potion_effects" : null,
+        "protection" : null,
         "range" : "0",
         "range_padding" : "1.0",
         "reflect_count" : "-1",
@@ -269,6 +301,8 @@
         "right_arm_item" : null,
         "right_arm_transform" : null,
         "right_leg_transform" : null,
+        "silent" : "false",
+        "small" : "false",
         "source_location" : "",
         "spawn_reason" : null,
         "speed" : "1.0",
@@ -276,6 +310,9 @@
         "spread_movement" : "0.0",
         "spread_movement_max" : "0.0",
         "start" : "0",
+        "strength" : null,
+        "tags" : null,
+        "tamed" : "false",
         "target" : null,
         "target_breakable_depth" : "2",
         "target_breakables" : "1.0",
@@ -287,9 +324,12 @@
         "tick_effects" : "tick",
         "tick_size" : "0.5",
         "tmo" : "0",
+        "track_radius" : "128.0",
         "track_range" : "0.0",
         "track_speed" : "0.0",
         "track_target" : "false",
+        "triggers" : null,
+        "triggers_map" : null,
         "type" : null,
         "unbreakable_items" : "false",
         "update_launch_location" : "false",
@@ -303,7 +343,9 @@
         "velocity" : "20.0",
         "velocity_offset" : null,
         "velocity_transform-map" : null,
-        "visible_delay_ticks" : "1"
+        "visible_delay_ticks" : "1",
+        "weakness" : null,
+        "xp" : "0"
       },
       "short_class" : "ArmorStandProjectile"
     },
@@ -2213,7 +2255,6 @@
         "aggro" : "true",
         "ai" : "true",
         "amount" : "1",
-        "mob_attributes" : null,
         "baby" : "false",
         "boots" : null,
         "can_pickup_items" : "false",
@@ -2238,6 +2279,7 @@
         "loot" : "false",
         "mage" : null,
         "max_health" : "1.0",
+        "mob_attributes" : null,
         "mob_cast_interval" : "0",
         "mob_interval" : "0",
         "name" : null,
@@ -2774,6 +2816,7 @@
     "sound" : null,
     "sound_broadcast" : "true",
     "sound_pitch" : "1.0",
+    "sound_range" : "0",
     "sound_volume" : "1.0",
     "source_location" : "",
     "target_location" : "",
@@ -3719,7 +3762,6 @@
     "aggro" : "true",
     "ai" : "true",
     "amount" : "1",
-    "mob_attributes" : null,
     "baby" : "false",
     "boots" : null,
     "can_pickup_items" : "false",
@@ -3739,6 +3781,7 @@
     "leggings" : null,
     "mage" : null,
     "max_health" : "1.0",
+    "mob_attributes" : null,
     "mob_cast_interval" : "0",
     "mob_interval" : "0",
     "mob_name" : null,
@@ -4123,14 +4166,6 @@
       "name" : "Attributes",
       "type" : "attributes"
     },
-    "mob_attributes" : {
-      "category" : "mob",
-      "description" : [ "Attributes to apply to mob", "These are Magic attributes as defined in attributes.yml. For vanilla entity attributes, use entity_attributes" ],
-      "field" : "attributes",
-      "importance" : 0,
-      "name" : "Attributes",
-      "type" : "attributes"
-    },
     "auto_close" : {
       "category" : "",
       "description" : [ "" ],
@@ -4195,6 +4230,14 @@
       "name" : "Base Potion Type",
       "type" : "string"
     },
+    "baseplate" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "baseplate",
+      "importance" : 0,
+      "name" : "Baseplate",
+      "type" : "boolean"
+    },
     "bb" : {
       "alias" : "bypass_build",
       "category" : "base",
@@ -4221,6 +4264,14 @@
       "type" : "string"
     },
     "biomes-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "biomes",
+      "importance" : 0,
+      "name" : "Biomes",
+      "type" : "map"
+    },
+    "biomes_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "biomes",
@@ -5432,6 +5483,14 @@
       "name" : "Direction",
       "type" : "disco_ball_effect_direction"
     },
+    "direction_disco_ball_effect_direction" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "direction",
+      "importance" : 0,
+      "name" : "Direction",
+      "type" : "disco_ball_effect_direction"
+    },
     "direction_y" : {
       "category" : "",
       "description" : [ "" ],
@@ -5447,6 +5506,14 @@
       "importance" : 0,
       "name" : "Disable Mana Regeneration",
       "type" : "boolean"
+    },
+    "disabled_slots" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "disabled_slots",
+      "importance" : 0,
+      "name" : "Disabled Slots",
+      "type" : "integer"
     },
     "disappear_with_origin_entity" : {
       "category" : "effects",
@@ -5473,6 +5540,14 @@
       "type" : "string"
     },
     "disguise-map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "disguise",
+      "importance" : 0,
+      "name" : "Disguise",
+      "type" : "map"
+    },
+    "disguise_map" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "disguise",
@@ -5792,6 +5867,14 @@
       "name" : "Effects Ambient",
       "type" : "boolean"
     },
+    "effects_map" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "effects",
+      "importance" : 0,
+      "name" : "Effects",
+      "type" : "map"
+    },
     "effects_particles" : {
       "category" : "",
       "description" : [ "If false, the potion effects applied will not show as bubble particles" ],
@@ -5904,6 +5987,14 @@
       "name" : "Entity Types",
       "type" : "map"
     },
+    "entity_types_map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "entity_types",
+      "importance" : 0,
+      "name" : "Entity Types",
+      "type" : "map"
+    },
     "entity_undo" : {
       "category" : "undo",
       "description" : [ "" ],
@@ -6009,6 +6100,14 @@
       "type" : "string"
     },
     "faces-list" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "faces",
+      "importance" : 0,
+      "name" : "Faces",
+      "type" : "list"
+    },
+    "faces_list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "faces",
@@ -6359,6 +6458,14 @@
       "importance" : 0,
       "name" : "Gravity",
       "type" : "double"
+    },
+    "gravity_boolean" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "gravity",
+      "importance" : 0,
+      "name" : "Gravity",
+      "type" : "boolean"
     },
     "grow" : {
       "category" : "",
@@ -6785,6 +6892,14 @@
       "name" : "Invert",
       "type" : "boolean"
     },
+    "invisible" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "invisible",
+      "importance" : 0,
+      "name" : "Invisible",
+      "type" : "boolean"
+    },
     "invulnerable" : {
       "category" : "wand",
       "description" : [ "This wand will not take damage from any source, and can not be destroyed" ],
@@ -7209,6 +7324,14 @@
       "name" : "Mana Regeneration Boost",
       "type" : "double"
     },
+    "marker" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "marker",
+      "importance" : 0,
+      "name" : "Marker",
+      "type" : "boolean"
+    },
     "marker_key" : {
       "category" : "",
       "description" : [ "Where in player data should their marker location be saved", "Can be used to have different spells track different marker locations" ],
@@ -7465,6 +7588,14 @@
       "name" : "Miss Effects",
       "type" : "string"
     },
+    "mob_attributes" : {
+      "category" : "mob",
+      "description" : [ "Attributes to apply to mob", "These are Magic attributes as defined in attributes.yml. For vanilla entity attributes, use entity_attributes" ],
+      "field" : "attributes",
+      "importance" : 0,
+      "name" : "Attributes",
+      "type" : "attributes"
+    },
     "mob_cast_interval" : {
       "category" : "mob",
       "description" : [ "How often, in milliseconds, to cast a spell.", "This parameter is deprecated, use 'interval' and triggers instead" ],
@@ -7514,6 +7645,14 @@
       "type" : "string"
     },
     "modify-list" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "modify",
+      "importance" : 0,
+      "name" : "Modify",
+      "type" : "list"
+    },
+    "modify_list" : {
       "category" : "",
       "description" : [ "" ],
       "field" : "modify",
@@ -9249,6 +9388,14 @@
       "name" : "Skip",
       "type" : "integer"
     },
+    "small" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "small",
+      "importance" : 0,
+      "name" : "Small",
+      "type" : "boolean"
+    },
     "solid" : {
       "category" : "",
       "description" : [ "" ],
@@ -9328,6 +9475,14 @@
       "importance" : 90,
       "name" : "Sound Pitch",
       "type" : "double"
+    },
+    "sound_range" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "sound_range",
+      "importance" : 0,
+      "name" : "Sound Range",
+      "type" : "integer"
     },
     "sound_volume" : {
       "category" : "",
@@ -10354,6 +10509,14 @@
       "name" : "Triggers",
       "type" : "map"
     },
+    "triggers_map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "triggers",
+      "importance" : 0,
+      "name" : "Triggers",
+      "type" : "map"
+    },
     "tworld" : {
       "category" : "targeting",
       "description" : [ "" ],
@@ -10778,6 +10941,22 @@
       "importance" : 0,
       "name" : "Velocity Transform",
       "type" : "map"
+    },
+    "velocity_transform_map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity_transform",
+      "importance" : 0,
+      "name" : "Velocity Transform",
+      "type" : "map"
+    },
+    "velocity_vector" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "velocity",
+      "importance" : 0,
+      "name" : "Velocity",
+      "type" : "vector"
     },
     "vertical_range" : {
       "category" : "base",
