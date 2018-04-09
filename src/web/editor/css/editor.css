@@ -41,3 +41,41 @@
 #saveButtonContainer {
     margin-right: 1em;
 }
+
+.headerRow td {
+    background-color: #444444;
+    color: white;
+    padding: 6px;
+}
+
+#loadSpellsTable {
+    border-collapse: collapse;
+}
+
+.spellName {
+    font-weight: bold;
+}
+
+.spellCreator {
+    font-style: italic;
+}
+
+.spellDescriptionOuter {
+    position: relative;
+    height: 1.2em;
+}
+
+.spellDescriptionInner {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: auto;
+    top: 0;
+    bottom:0;
+}
+
+.spellDescription {
+    color: #888888;
+}

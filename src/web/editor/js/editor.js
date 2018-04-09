@@ -68,22 +68,25 @@ function load() {
 
     $("#loadSpellDialog").dialog({
       modal: true,
-      width: 'auto',
+      height: 400,
+      width: '640px',
+      resizeable: false,
       buttons: {
         Cancel: function() {
             $(this).dialog("close");
         },
         "Load": function() {
             $(this).dialog("close");
-            loadFile($('#loadSpellSelect').val());
+            var spell = jQuery(".ui-selected", this).data('key');
+            if (spell != '') {
+                loadFile(spell);
+            }
         }
+      },
+      open: function()  {
+        $(this).parent().find("button:eq(2)").focus();
       }
-    }).show().keydown(function (event) {
-        if (event.keyCode == $.ui.keyCode.ENTER) {
-            $(this).parent().find("button:eq(2)").trigger("click");
-            return false;
-        }
-    });
+    }).show();
 }
 
 function loadFile(fileName) {
@@ -106,7 +109,7 @@ function loadFile(fileName) {
 }
 
 function populateSpellFiles() {
-    var select = $('#loadSpellSelect');
+    var select = $('#loadSpellList');
     select.empty();
 
     spellFiles.sort(function(a, b) {
@@ -132,24 +135,39 @@ function populateSpellFiles() {
     for (var i = 0; i < spellFiles.length; i++) {
         var spell = spellFiles[i];
         var key = spell.key;
+        var loadKey = key;
         var isDefault = false;
         if (key.startsWith("default.")) {
             isDefault = true;
             key = key.substr(8);
         }
         var spellName = key + " : " + spell.name + " : " + spell.creator_name + " : " + spell.description;
+        var groupLabel = null;
         if (!owned && spell.creator_id != '' && spell.creator_id == user.id) {
             owned = true;
-            select.append($('<optgroup>').prop("label", "Your Spells"));
+            groupLabel = "Your Spells";
         } else if (!unowned && owned && (spell.creator_id == ''|| spell.creator_id !== user.id)) {
             unowned = true;
-            select.append($('<optgroup>').prop("label", "Other Sandbox Spells"));
+            groupLabel = "Other Sandbox Spells";
         } else if (!defaults && isDefault) {
             defaults = true;
-            select.append($('<optgroup>').prop("label", "Default Spells"));
+            groupLabel = "Default Survival Spells";
         }
-        var option = $('<option>').val(spell.key).text(spellName);
-        select.append(option);
+        if (groupLabel != null) {
+            var groupRow = $('<tr class="headerRow">');
+            var groupCell = $('<td>').prop('colspan', 4).text(groupLabel);
+            select.append(groupRow.append(groupCell));
+        }
+        var spellRow = $('<tr>').data('key', loadKey);
+        spellRow.append($('<td>').addClass('spellKey').text(key));
+        spellRow.append($('<td>').addClass('spellName').text(spell.name));
+        spellRow.append($('<td>').addClass('spellCreator').text(spell.creator_name));
+        spellRow.append($('<td>').addClass('spellDescription').append(
+            $('<div>').addClass('spellDescriptionOuter').append(
+                $('<div>').addClass('spellDescriptionInner').text(spell.description)
+            )
+        ));
+        select.append(spellRow);
     }
 }
 
@@ -170,4 +188,5 @@ function initialize() {
     $('#editor').keyup(checkKey);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
+    $("#loadSpellList").selectable({filter: 'tr'});
 }

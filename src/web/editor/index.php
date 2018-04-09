@@ -47,18 +47,21 @@ $user = getUser();
         Coming Soon (ish)!
     </div>
     <div id="codeEditor">
-        <textarea id="editor">
-        <?php echo file_get_contents("$sandboxServer/plugins/Magic/spells.yml") ?>
-        </textarea>
+        <textarea id="editor"></textarea>
     </div>
 </div>
 
 <?php include 'common/register.inc.php' ?>
 
 <div id="loadSpellDialog" title="Load Spell" style="display:none">
-    <select id="loadSpellSelect" size="10" style="max-width: 50em;">
+    <table id="loadSpellsTable">
+        <colgroup>
+            <col><col><col><col style="width: 100%">
+        </colgroup>
+        <tbody id="loadSpellList">
 
-    </select>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
