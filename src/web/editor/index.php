@@ -21,6 +21,7 @@ $user = getUser();
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="common/js/user.js"></script>
     <script src="js/codemirror.js"></script>
+    <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>
     <script type="text/javascript">

@@ -12,6 +12,15 @@ function save() {
         return;
     }
 
+    var spellConfig = codeEditor.getValue();
+    if (spellConfig.trim().length == 0) return;
+    try {
+        jsyaml.safeLoad(spellConfig, 'utf8');
+    } catch (e) {
+        alert(e.message);
+        return;
+    }
+
     saving = true;
     spellFiles = null;
     $("#saveButton").button('disable');
@@ -19,7 +28,7 @@ function save() {
         type: "POST",
         url: "save.php",
         data: {
-            spell: codeEditor.getValue()
+            spell: spellConfig
         },
         dataType: 'json'
     }).done(function(response) {
