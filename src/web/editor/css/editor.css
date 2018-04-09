@@ -33,18 +33,26 @@
     margin-bottom: 4px;
 }
 
-#userInfo {
+#userInfoContainer {
     flex-basis: 100%;
     text-align: right;
-    margin-right: 1em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end
 }
 
+#userInfo {
+    background: #DDDDDD;
+    display: flex;
+    flex-direction: row;
+    padding-right: 1em;
+    z-index: -100;
+}
+
 #userName {
     padding-left: 0.5em;
     font-style: italic;
+    font-weight: bold;
 }
 
 #userSkin {

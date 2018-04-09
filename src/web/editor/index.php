@@ -41,20 +41,22 @@ $user = getUser();
             <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton">Editor</label>
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton">Code</label>
         </span>
-        <span id="userInfo">
-            <div>
-                <span id="userSkin">&nbsp;</span>
-                <span id="userOverlay">&nbsp;</span>
-            </div>
-            <div>
-                <span id="userName"></span><br/>
-                <span id="loginButton" style="display: none">
-                    Login
-                </span>
-                <span id="logoutButton" style="display: none">
-                    Logout
-                </span>
-            </div>
+        <span id="userInfoContainer">
+            <span id="userInfo">
+                <div>
+                    <span id="userSkin">&nbsp;</span>
+                    <span id="userOverlay">&nbsp;</span>
+                </div>
+                <div>
+                    <span id="userName"></span><br/>
+                    <span id="loginButton" style="display: none">
+                        Login
+                    </span>
+                    <span id="logoutButton" style="display: none">
+                        Logout
+                    </span>
+                </div>
+            </span>
         </span>
     </div>
     <div id="guiEditor" style="display: none">
