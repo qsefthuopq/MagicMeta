@@ -185,7 +185,7 @@ function initialize() {
     $('#logoutButton').click(logout);
     $('#loginButton').click(login);
     $('#editor').keyup(checkKey);
-    $('#modeSelector').buttonset();
+    $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     checkUser();
 }

@@ -28,7 +28,7 @@ $user = getUser();
 <body>
 <div id="container">
     <div id="header">
-        <span>
+        <span id="saveButtonContainer">
             <button type="button" id="saveButton">Save</button>
         </span>
         <span>
