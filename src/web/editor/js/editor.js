@@ -86,6 +86,8 @@ function load() {
       open: function()  {
         $(this).parent().find("button:eq(2)").focus();
       }
+    }).dblclick(function() {
+        $(this).parent().find("button:eq(2)").trigger("click");
     }).show();
 }
 
