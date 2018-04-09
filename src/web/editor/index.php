@@ -76,7 +76,6 @@ $user = getUser();
     </div>
 </div>
 
-
 <div id="codeDialog" title="Enter Code" style="display:none">
   <div style="margin-bottom: 0.5em">
     <span style="float:left; margin:0 7px 7px 0;">
