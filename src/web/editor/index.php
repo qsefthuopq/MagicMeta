@@ -1,6 +1,6 @@
 <?php
 require_once('../config.inc.php');
-require_once('user.inc.php');
+require_once('common/user.inc.php');
 if (!$sandboxServer) die('No sandbox server defined');
 
 $user = getUser();
@@ -43,7 +43,7 @@ $user = getUser();
         </span>
         <span id="userInfoContainer">
             <span id="userInfo">
-                <div>
+                <div id="skinContainer">
                     <span id="userSkin">&nbsp;</span>
                     <span id="userOverlay">&nbsp;</span>
                 </div>

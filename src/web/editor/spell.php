@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 require_once('../config.inc.php');
-require_once('yaml.inc.php');
+require_once('common/yaml.inc.php');
 
 if (!$sandboxServer) {
     die(json_encode(array('success' => false, 'message' => 'No sandbox server defined')));

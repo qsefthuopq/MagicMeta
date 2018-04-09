@@ -11,6 +11,9 @@ $sandboxServer = '';
 // And set the URL to your standbox server here to direct players to log in
 $sandboxServerURL = '';
 
+// Set this if you want logins to work across multiple subdomains
+$primaryDomain = '';
+
 // This is mainly used in testing, normally doesn't need to be changed
 $magicDefaultsFolder = $magicRootFolder . '/defaults';
 

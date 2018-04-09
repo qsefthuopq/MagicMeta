@@ -22,8 +22,13 @@ if (is_null($registered) || $registered['code'] !== $userCode) {
     die(json_encode(array('success' => false, 'message' => 'Incorrect code')));
 }
 
-setcookie('user_id', $userId);
-setcookie('user_code', $userCode);
+if ($primaryDomain) {
+    setcookie('user_id', $userId, 0, '/', $primaryDomain);
+    setcookie('user_code', $userCode, 0, '/', $primaryDomain);
+} else {
+    setcookie('user_id', $userId, 0, '/', 'elmakers.com');
+    setcookie('user_code', $userCode, 0, '/', 'elmakers.com');
+}
 
 $user = array(
     'id' => $userId,

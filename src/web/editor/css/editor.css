@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: row;
     padding-right: 1em;
-    z-index: -100;
+    padding-left: 1em;
 }
 
 #userName {
@@ -56,24 +56,34 @@
 }
 
 #userSkin {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     height: 32px;
     width: 32px;
     background-size: 256px 256px;
     background-position: -32px -32px;
     background-repeat: no-repeat;
     display: inline-block;
-    position: relative;
-    left: 36px;
-    z-index: -10;
+    z-index: 10;
 }
 
 #userOverlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     height: 32px;
     width: 32px;
     background-size: 256px 256px;
     background-position: -160px -32px;
     background-repeat: no-repeat;
     display: inline-block;
+    z-index: 50;
+}
+
+#skinContainer {
+    position: relative;
+    width: 32px;
 }
 
 #loginButton {
