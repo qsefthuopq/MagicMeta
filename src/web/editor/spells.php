@@ -57,6 +57,7 @@ foreach ($defaultFiles as $spellFile) {
 
     $spellConfig = $spellConfig[$spellKey];
     if (isset($spellConfig['hidden']) && $spellConfig['hidden']) continue;
+    if ($spellKey === 'default') continue;
 
     $creatorId = isset($spellConfig['creator_id']) ? $spellConfig['creator_id'] : '';
     $creatorName = isset($spellConfig['creator_name']) ? $spellConfig['creator_name'] : '';
