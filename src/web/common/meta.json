@@ -8926,7 +8926,7 @@
     },
     "require_break" : {
       "category" : "actions",
-      "description" : [ "" ],
+      "description" : [ "If set to true, this spell can not be cast unless the player has permission to break blocks." ],
       "field" : "require_break",
       "importance" : 60,
       "name" : "Require Break",
