@@ -3,6 +3,7 @@ $(document).ready(initialize);
 var saving = false;
 var loading = false;
 var spellFiles = null;
+var codeEditor = null;
 function save() {
     if (saving) return;
 
@@ -18,7 +19,7 @@ function save() {
         type: "POST",
         url: "save.php",
         data: {
-            spell: jQuery('#editor').val()
+            spell: codeEditor.getValue()
         },
         dataType: 'json'
     }).done(function(response) {
@@ -37,7 +38,7 @@ function checkKey(event) {
 }
 
 function startNew() {
-    $('#editor').val('');
+    codeEditor.setValue('');
 }
 
 function load() {
@@ -105,7 +106,7 @@ function loadFile(fileName) {
         if (!response.success) {
             alert("Failed to fetch spell: " + response.message);
         } else {
-            $('#editor').val(response.yml);
+            codeEditor.setValue(response.yml);
         }
     });
 }
@@ -187,8 +188,10 @@ function initialize() {
     $("#loadButton").button().click(load);
     $("#newButton").button().click(startNew);
     $("#saveButton").button().click(save);
-    $('#editor').keyup(checkKey);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
+    codeEditor = CodeMirror.fromTextArea($('#editor').get(0), {
+        lineNumbers: true
+    });
 }
