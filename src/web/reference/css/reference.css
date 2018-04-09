@@ -50,6 +50,8 @@
 .propertyDescription {
     background: #EEEEEE;
     padding: 6px;
+    max-height: 10em;
+    overflow-y: auto;
 }
 
 .propertyType {
@@ -83,6 +85,7 @@
 
 .parameterList {
     overflow-y: auto;
+    flex: 0 0 auto;
 }
 
 .parameterContainer {
@@ -153,4 +156,23 @@
 
 .importance-- {
     background: #888888;
+}
+
+.addDescription {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+
+#describePropertyName {
+    font-weight: bold;
+}
+
+#describePropertyType {
+    font-weight: bold;
+    font-style: italic;
+}
+
+#describePropertyText {
+    margin-top: 10px;
 }

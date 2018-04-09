@@ -96,8 +96,21 @@ function addParameterDetails(container, listItem) {
     container.append(propertyKey);
 
     var propertyDescription = $('<div class="propertyDescription"/>');
-    for (var i = 0; i < property.description.length; i++) {
-        propertyDescription.append($('<div class="descriptionLine"/>').html(property.description[i]));
+    var isEmpty = property.description.length == 0 || (property.description.length == 1 && property.description[0] == '');
+    if (isEmpty) {
+        if (user.id != '') {
+            var describeSpan = $('<span>');
+            describeSpan.addClass('addDescription');
+            describeSpan.text("Help us out, add a description!");
+            describeSpan.click(function() {
+               addPropertyDescription(key, propertyDescription);
+            });
+            propertyDescription.append(describeSpan);
+        }
+    } else {
+        for (var i = 0; i < property.description.length; i++) {
+            propertyDescription.append($('<div class="descriptionLine"/>').html(property.description[i]));
+        }
     }
     container.append(propertyDescription);
 
@@ -300,6 +313,53 @@ function getSelectable(selectable, key) {
     parameterItem.addClass('ui-widget-content');
     parameterItem.data('key', key);
     return parameterItem;
+}
+
+function addPropertyDescription(key, descriptionContainer) {
+    var property = metadata.properties[key];
+    $('#describePropertyName').text(property.name);
+    $('#describePropertyType').text(property.type);
+
+    $("#addDescriptionDialog").dialog({
+      modal: true,
+      width: 'auto',
+      buttons: {
+        Cancel: function() {
+            $(this).dialog("close");
+        },
+        "Describe": function() {
+            $(this).dialog("close");
+            var lines = $('#describePropertyText').val().split("\n");
+            if (lines.length > 0 && lines[0] != '') {
+                var nonEmpty = [];
+                descriptionContainer.empty();
+                for (var i = 0; i < lines.length; i++) {
+                    var line = lines[i].trim();
+                    if (line == '') continue;
+                    nonEmpty.push(line);
+                    descriptionContainer.append($('<div class="descriptionLine"/>').html(line));
+                }
+
+                $.ajax( {
+                    type: "POST",
+                    url: "describe.php",
+                    data: {
+                        property: key,
+                        description: nonEmpty
+                    },
+                    dataType: 'json'
+                }).done(function(response) {
+                    if (!response.success) {
+                        alert("Describe failed: " + response.message + " ... sorry, thanks for trying!");
+                    }
+                });
+
+            } else {
+                alert("No description entered...");
+            }
+        }
+      }
+    });
 }
 
 function initialize() {

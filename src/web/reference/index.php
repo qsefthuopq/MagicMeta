@@ -1,5 +1,6 @@
 <?php
 require_once('../config.inc.php');
+require_once('common/user.inc.php');
 ?>
 <html>
 <head>
@@ -14,6 +15,9 @@ require_once('../config.inc.php');
     <script src="common/js/loading.js"></script>
     <script src="js/reference.js"></script>
     <?php if ($analytics) echo $analytics; ?>
+    <script type="text/javascript">
+        var user = <?= json_encode(getUser()) ?>;
+    </script>
 </head>
 <body>
 <div id="tabs" style="display:none">
@@ -184,6 +188,18 @@ require_once('../config.inc.php');
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="addDescriptionDialog" title="Describe Property" style="display: none">
+    <div>
+       Please describe the property <span id="describePropertyName"></span> of type <span id="describePropertyType"></span>
+    </div>
+    <div>
+        HTML is ok but please use sparingly. Changes are logged, please don't be evil.
+    </div>
+    <div>
+        <textarea id="describePropertyText" rows="10" cols="80"></textarea>
     </div>
 </div>
 
