@@ -1,4 +1,5 @@
 <?php
+require_once('../config.inc.php');
 header('Content-Type: application/json');
 if ($primaryDomain) {
     setcookie('user_id', null, 0, '/', $primaryDomain);

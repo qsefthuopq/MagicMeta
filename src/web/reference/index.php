@@ -9,10 +9,12 @@ require_once('common/user.inc.php');
     <link rel="stylesheet" href="common/css/smoothness/jquery-ui-1.10.3.custom.min.css"/>
     <link rel="stylesheet" href="common/css/common.css" />
     <link rel="stylesheet" href="common/css/loading.css" />
+    <link rel="stylesheet" href="common/css/user.css" />
     <link rel="stylesheet" href="css/reference.css"/>
     <script src="common/js/jquery-1.10.2.min.js"></script>
     <script src="common/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="common/js/loading.js"></script>
+    <script src="common/js/user.js"></script>
     <script src="js/reference.js"></script>
     <?php if ($analytics) echo $analytics; ?>
     <script type="text/javascript">
@@ -21,15 +23,18 @@ require_once('common/user.inc.php');
 </head>
 <body>
 <div id="tabs" style="display:none">
-    <ul id="tablist">
-        <li><a href="#spellProperties">Spell Properties</a></li>
-        <li><a href="#spellParameters">Spell Parameters</a></li>
-        <li><a href="#actions">Actions</a></li>
-        <li><a href="#effects">Effects</a></li>
-        <li><a href="#effectlib">EffectLib</a></li>
-        <li><a href="#wands">Wands</a></li>
-        <li><a href="#mobs">Mobs</a></li>
-    </ul>
+    <div id="tabContainer">
+        <ul id="tablist">
+            <li><a href="#spellProperties">Spell Properties</a></li>
+            <li><a href="#spellParameters">Spell Parameters</a></li>
+            <li><a href="#actions">Actions</a></li>
+            <li><a href="#effects">Effects</a></li>
+            <li><a href="#effectlib">EffectLib</a></li>
+            <li><a href="#wands">Wands</a></li>
+            <li><a href="#mobs">Mobs</a></li>
+            <?php include "common/userinfo.inc.php" ?>
+        </ul>
+    </div>
     <div id="spellProperties" class="flextab">
         <div class="flexContainer">
             <div class="scrollingTab">
@@ -202,6 +207,8 @@ require_once('common/user.inc.php');
         <textarea id="describePropertyText" rows="10" cols="80"></textarea>
     </div>
 </div>
+
+<?php include 'common/register.inc.php' ?>
 
 <!-- Loading Indicator -->
 <div class="modal"></div>

@@ -14,12 +14,12 @@ $user = getUser();
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="common/css/common.css" />
     <link rel="stylesheet" href="common/css/loading.css" />
+    <link rel="stylesheet" href="common/css/user.css"/>
     <link rel="stylesheet" href="css/editor.css"/>
-    <link rel="stylesheet" href="css/user.css"/>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="common/js/user.js"></script>
     <script src="js/editor.js"></script>
-    <script src="js/user.js"></script>
     <script type="text/javascript">
         var user = <?= json_encode($user) ?>;
     </script>
@@ -41,23 +41,7 @@ $user = getUser();
             <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton">Editor</label>
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton">Code</label>
         </span>
-        <span id="userInfoContainer">
-            <span id="userInfo">
-                <div id="skinContainer">
-                    <span id="userSkin">&nbsp;</span>
-                    <span id="userOverlay">&nbsp;</span>
-                </div>
-                <div>
-                    <span id="userName"></span><br/>
-                    <span id="loginButton" style="display: none">
-                        Login
-                    </span>
-                    <span id="logoutButton" style="display: none">
-                        Logout
-                    </span>
-                </div>
-            </span>
-        </span>
+        <?php include "common/userinfo.inc.php" ?>
     </div>
     <div id="guiEditor" style="display: none">
         Coming Soon (ish)!
@@ -69,27 +53,7 @@ $user = getUser();
     </div>
 </div>
 
-<div id="registrationDialog" title="Log In" style="display: none">
-    <div id="registrationTitle">Please log into the <span class="server"><?= $sandboxServerURL ?></span> server and register</div>
-    <div>
-        <label for="userId">In-Game Name:</label><input type="text" id="userId">
-    </div>
-</div>
-
-<div id="codeDialog" title="Enter Code" style="display:none">
-  <div style="margin-bottom: 0.5em">
-    <span style="float:left; margin:0 7px 7px 0;">
-        <img src="http://i.stack.imgur.com/FhHRx.gif" alt="Waiting.."/>
-    </span>
-      <span>Please enter the code in-game at</span>
-  </div>
-  <div>
-      <span class="server"><?= $sandboxServerURL ?></span>
-  </div>
-  <div class="code">
-    /magic register <span id="codeDiv"></span>
-  </div>
-</div>
+<?php include 'common/register.inc.php' ?>
 
 <div id="loadSpellDialog" title="Load Spell" style="display:none">
     <select id="loadSpellSelect" size="10" style="max-width: 50em;">

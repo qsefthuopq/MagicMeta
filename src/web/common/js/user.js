@@ -1,4 +1,4 @@
-$(document).ready(initialize);
+$(document).ready(initializeUser);
 
 var checkCodeTimer = null;
 
@@ -31,7 +31,7 @@ function register() {
     jQuery('#userId').removeClass('invalid');
     $.ajax( {
         type: "POST",
-        url: "getcode.php",
+        url: "common/getcode.php",
         data: {
             user: userName
         },
@@ -50,7 +50,7 @@ function register() {
 function logout() {
     $.ajax( {
         type: "POST",
-        url: "logout.php",
+        url: "common/logout.php",
         dataType: 'json'
     });
 
@@ -84,7 +84,7 @@ function scheduleCheck(userName, userId, code, timeout) {
 function checkCode(userName, userId, code, timeout) {
     $.ajax( {
         type: "POST",
-        url: "checkcode.php",
+        url: "common/checkcode.php",
         data: {
             user: userId,
             code: code
@@ -100,4 +100,26 @@ function checkCode(userName, userId, code, timeout) {
             scheduleCheck(userName, userId, code, timeout + 1000);
         }
     });
+}
+
+function checkUser() {
+    if (user.id == '') {
+        $('#userName').text('Anonymous');
+        $('#userSkin').css('background-image', '');
+        $('#userOverlay').css('background-image', '');
+        $('#loginButton').show();
+        $('#logoutButton').hide();
+    }  else {
+        $('#userName').text(user.name);
+        $('#userSkin').css('background-image', 'url("' + user.skin + '")');
+        $('#userOverlay').css('background-image', 'url("' + user.skin + '")');
+        $('#loginButton').hide();
+        $('#logoutButton').show();
+    }
+}
+
+function initializeUser() {
+    $('#logoutButton').click(logout);
+    $('#loginButton').click(login);
+    checkUser();
 }

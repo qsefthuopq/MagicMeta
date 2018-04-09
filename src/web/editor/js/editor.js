@@ -6,6 +6,11 @@ var spellFiles = null;
 function save() {
     if (saving) return;
 
+    if (user.id == '') {
+        login();
+        return;
+    }
+
     saving = true;
     spellFiles = null;
     $("#saveButton").button('disable');
@@ -23,26 +28,6 @@ function save() {
             alert("Save failed: " + response.message);
         }
     });
-}
-
-function checkUser() {
-    if (user.id == '') {
-        $('#userName').text('Anonymous');
-        $('#userSkin').css('background-image', '');
-        $('#userOverlay').css('background-image', '');
-        $("#saveButton").button('disable');
-        $("#saveButton").prop('title', 'Log in to save your work');
-        $('#loginButton').show();
-        $('#logoutButton').hide();
-    }  else {
-        $('#userName').text(user.name);
-        $('#userSkin').css('background-image', 'url("' + user.skin + '")');
-        $('#userOverlay').css('background-image', 'url("' + user.skin + '")');
-        $("#saveButton").button('enable');
-        $("#saveButton").prop('title', 'Save changes and reload the sandbox server');
-        $('#loginButton').hide();
-        $('#logoutButton').show();
-    }
 }
 
 function checkKey(event) {
@@ -182,10 +167,7 @@ function initialize() {
     $("#loadButton").button().click(load);
     $("#newButton").button().click(startNew);
     $("#saveButton").button().click(save);
-    $('#logoutButton').click(logout);
-    $('#loginButton').click(login);
     $('#editor').keyup(checkKey);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
-    checkUser();
 }
