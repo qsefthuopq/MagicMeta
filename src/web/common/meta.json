@@ -3896,7 +3896,7 @@
     },
     "alias" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "This can be used to provide an alternate key for a spell.", "Most often this is needed when changing the key of a spell, but you want players with the old version of the key to keep their spell." ],
       "field" : "alias",
       "importance" : 0,
       "name" : "Alias",
