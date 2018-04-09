@@ -11,13 +11,13 @@ $user = getUser();
 <head>
     <title><?= $title ?> Editor</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="common/css/smoothness/jquery-ui-1.10.3.custom.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
     <link rel="stylesheet" href="common/css/common.css" />
     <link rel="stylesheet" href="common/css/loading.css" />
     <link rel="stylesheet" href="css/editor.css"/>
     <link rel="stylesheet" href="css/user.css"/>
-    <script src="common/js/jquery-1.10.2.min.js"></script>
-    <script src="common/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="js/editor.js"></script>
     <script src="js/user.js"></script>
     <script type="text/javascript">
