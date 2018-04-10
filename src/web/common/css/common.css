@@ -38,3 +38,9 @@
     color: white;
     background-color: #222288;
 }
+
+.spellIcon {
+    width: 32px;
+    height: 32px;
+    margin-right: 1em;
+}

@@ -51,6 +51,7 @@
     background: #EEEEEE;
     padding: 6px;
     max-height: 10em;
+    min-height: 2em;
     overflow-y: auto;
 }
 

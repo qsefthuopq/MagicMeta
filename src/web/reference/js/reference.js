@@ -168,7 +168,7 @@ function populateOptions(options, container, title) {
         var keyCell = $('<td>').text(key);
         var descriptionCell = $('<td>');
         if (options[key] != null) {
-            descriptionCell.text(options[key]);
+            descriptionCell.html(options[key]);
         }
         row.append(keyCell);
         row.append(descriptionCell);
@@ -365,7 +365,7 @@ function addPropertyDescription(key, descriptionContainer) {
 function initialize() {
     $.ajax( {
         type: "GET",
-        url: "common/meta.json",
+        url: "common/meta.php",
         dataType: 'json'
     }).done(function(meta) {
         // Populate tabs
