@@ -49,6 +49,10 @@
     padding-bottom: 2px;
 }
 
+#referenceButtonContainer {
+    padding-left: 2em;
+}
+
 .headerRow td {
     background-color: #444444;
     color: white;

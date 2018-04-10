@@ -8,8 +8,11 @@ $magicRootFolder = dirname(__FILE__) . '/../main/resources';
 // The webserver will need write access to $sandboxServer/plugins/Magic/data/updated.yml
 // and read access to $sandboxServer/plugins/Magic/data/registered.yml
 $sandboxServer = '';
-// And set the URL to your standbox server here to direct players to log in
+// And set the URL to your sandbox server here to direct players to log in
 $sandboxServerURL = '';
+
+// Use your own reference URL here if you want
+$referenceURL = 'reference.elmakers.com';
 
 // Set this if you want logins to work across multiple subdomains
 $primaryDomain = '';

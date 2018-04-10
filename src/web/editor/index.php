@@ -26,6 +26,7 @@ $user = getUser();
     <script src="js/editor.js"></script>
     <script type="text/javascript">
         var user = <?= json_encode($user) ?>;
+        var referenceURL = '//<?= $referenceURL ?>';
     </script>
     <?php if ($analytics) echo $analytics; ?>
 </head>
@@ -47,6 +48,9 @@ $user = getUser();
         </span>
         <span>
             <button type="button" id="validateButton">Validate</button>
+        </span>
+        <span id="referenceButtonContainer">
+            <button type="button" id="referenceButton">Reference</button>
         </span>
         <?php include "common/userinfo.inc.php" ?>
     </div>

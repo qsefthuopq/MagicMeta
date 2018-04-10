@@ -213,11 +213,16 @@ function checkMode() {
     }
 }
 
+function openReference() {
+    window.open(referenceURL, '_blank');
+}
+
 function initialize() {
     $("#loadButton").button().click(load);
     $("#newButton").button().click(startNew);
     $("#saveButton").button().click(save);
     $('#validateButton').button().click(validate);
+    $('#referenceButton').button().click(openReference);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
