@@ -9,17 +9,11 @@ var codeEditor = null;
 var guiEditor = null;
 
 function getSpellConfig() {
-    return codeEditor.getValue();
+    return getActiveEditor().getValue();
 }
 
 function setSpellConfig(spellConfig) {
-    if (codeEditor != null) {
-        codeEditor.setValue(spellConfig);
-    }
-
-    if (guiEditor != null) {
-        guiEditor.setValue(spellConfig);
-    }
+    getActiveEditor().setValue(spellConfig);
 }
 
 function save() {
@@ -219,6 +213,31 @@ function populateSpellFiles() {
     }
 }
 
+function getActiveEditor() {
+    var currentMode = $('#modeSelector').find('input:checked').prop('id');
+    if (currentMode == 'editorModeButton') {
+        return getGUIEditor();
+    }
+
+    return getCodeEditor();
+}
+
+function getGUIEditor() {
+    if (guiEditor == null) {
+        guiEditor = new GUIEditor($('#editorTree'));
+    }
+
+    return guiEditor;
+}
+
+function getCodeEditor() {
+    if (codeEditor == null) {
+        codeEditor = new CodeEditor($('#editor'));
+    }
+
+    return codeEditor;
+}
+
 function checkMode() {
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     if (currentMode == 'editorModeButton') {
@@ -226,10 +245,7 @@ function checkMode() {
         $('#guiEditor').show();
         $('#validateButton').hide();
 
-        if (guiEditor == null) {
-            guiEditor = new GUIEditor($('#editorTree'));
-        }
-
+        var guiEditor = getGUIEditor();
         if (codeEditor != null) {
             var config = validate();
             if (config == null) {
@@ -244,9 +260,7 @@ function checkMode() {
         $('#guiEditor').hide();
         $('#validateButton').show();
 
-        if (codeEditor == null) {
-            codeEditor = new CodeEditor($('#editor'));
-        }
+        getCodeEditor();
     }
 }
 
