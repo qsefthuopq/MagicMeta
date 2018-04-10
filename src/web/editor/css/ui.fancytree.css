@@ -95,7 +95,7 @@ ul.fancytree-container li.fancytree-lastsib {
   background-color: silver;
 }
 ul.fancytree-connectors.fancytree-container li {
-  background-image: url("../skin-lion/vline.gif");
+  background-image: url("../image/vline.gif");
   background-position: 0 0;
 }
 ul.fancytree-container li.fancytree-lastsib,
@@ -121,7 +121,7 @@ span.fancytree-drag-helper-img,
   vertical-align: top;
   background-repeat: no-repeat;
   background-position: left;
-  background-image: url("../skin-lion/icons.gif");
+  background-image: url("../image/icons.gif");
   background-position: 0px 0px;
 }
 span.fancytree-icon,
@@ -168,7 +168,7 @@ span.fancytree-expander {
 }
 .fancytree-connectors .fancytree-exp-n span.fancytree-expander,
 .fancytree-connectors .fancytree-exp-nl span.fancytree-expander {
-  background-image: url("../skin-lion/icons.gif");
+  background-image: url("../image/icons.gif");
   margin-top: 0;
 }
 .fancytree-connectors .fancytree-exp-n span.fancytree-expander,
@@ -336,7 +336,7 @@ span.fancytree-icon {
 .fancytree-loading span.fancytree-expander:hover,
 .fancytree-statusnode-loading span.fancytree-icon,
 .fancytree-statusnode-loading span.fancytree-icon:hover {
-  background-image: url("../skin-lion/loading.gif");
+  background-image: url("../image/loading.gif");
   background-position: 0px 0px;
 }
 /* Status node icons */
@@ -450,7 +450,7 @@ span.fancytree-drag-source.fancytree-drag-remove {
 .fancytree-container.fancytree-rtl span.fancytree-expander,
 .fancytree-container.fancytree-rtl span.fancytree-icon,
 .fancytree-container.fancytree-rtl span.fancytree-drag-helper-img {
-  background-image: url("../skin-lion/icons-rtl.gif");
+  background-image: url("../image/icons-rtl.gif");
 }
 .fancytree-container.fancytree-rtl .fancytree-exp-n span.fancytree-expander,
 .fancytree-container.fancytree-rtl .fancytree-exp-nl span.fancytree-expander {
@@ -458,21 +458,21 @@ span.fancytree-drag-source.fancytree-drag-remove {
 }
 .fancytree-container.fancytree-rtl.fancytree-connectors .fancytree-exp-n span.fancytree-expander,
 .fancytree-container.fancytree-rtl.fancytree-connectors .fancytree-exp-nl span.fancytree-expander {
-  background-image: url("../skin-lion/icons-rtl.gif");
+  background-image: url("../image/icons-rtl.gif");
 }
 ul.fancytree-container.fancytree-rtl ul {
   padding: 0 16px 0 0;
 }
 ul.fancytree-container.fancytree-rtl.fancytree-connectors li {
   background-position: right 0;
-  background-image: url("../skin-lion/vline-rtl.gif");
+  background-image: url("../image/vline-rtl.gif");
 }
 ul.fancytree-container.fancytree-rtl li.fancytree-lastsib,
 ul.fancytree-container.fancytree-rtl.fancytree-no-connector > li {
   background-image: none;
 }
 #fancytree-drop-marker.fancytree-rtl {
-  background-image: url("../skin-lion/icons-rtl.gif");
+  background-image: url("../image/icons-rtl.gif");
 }
 /*------------------------------------------------------------------------------
  * 'table' extension
