@@ -14,6 +14,9 @@ function getSpellConfig() {
 
 function setSpellConfig(config) {
     codeEditor.setValue(config);
+
+    // Temporary, update tree if in gui mode
+    checkMode();
 }
 
 function save() {
