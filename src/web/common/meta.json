@@ -8334,6 +8334,17 @@
             "name": "Icon",
             "type": "icon"
         },
+        "icon_spell": {
+            "category": "base",
+            "description": [
+                "An icon that represents a spell",
+                "These can be vanilla items, or custom items from a resource pack"
+            ],
+            "field": "icon",
+            "importance": 100,
+            "name": "Icon",
+            "type": "spell_icon"
+        },
         "icon_disabled": {
             "category": "base",
             "description": [
@@ -14324,7 +14335,7 @@
         "glide_exclusive": "false",
         "glide_restricted": "false",
         "hidden": "false",
-        "icon": null,
+        "icon_spell": null,
         "icon_disabled": null,
         "icon_disabled_url": null,
         "icon_url": null,
@@ -14914,6 +14925,14 @@
                 "diamond_axe:2": null,
                 "diamond_hoe:4": null
             }
+        },
+        "spell_icon": {
+            "class_name": "java.lang.String",
+            "description": [
+                "A spell icon from a resource pack"
+            ],
+            "name": "Spell Icon",
+            "options": {}
         },
         "integer": {
             "class_name": "java.lang.Integer",
