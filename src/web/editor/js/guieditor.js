@@ -19,9 +19,15 @@ function GUIEditor(container)
             }
         },
         edit: {
-            triggerStart: ["clickActive", "dblclick", "mac+enter", "shift+click"],
+            triggerStart: ["clickActive", "mac+enter", "shift+click"],
             beforeEdit: function(event, data){
                 return !data.node.isFolder();
+            },
+            close: function (event, data) {
+                if (data.save && data.isNew) {
+                    // Quick-enter: add new nodes until we hit [enter] on an empty title
+                    $("#tree").trigger("nodeCommand", {cmd: "addSibling"});
+                }
             }
         },
         table: {
@@ -236,7 +242,75 @@ GUIEditor.prototype.setValue = function(spellConfig)
 
 GUIEditor.prototype.getValue = function()
 {
-    return '';
+    var spellStructure = {};
+    var root = this.tree.getRootNode();
+    for (var i = 0; i < root.children.length; i++) {
+        var spellNode = root.children[i];
+        var spellKey = spellNode.title;
+        var spell = this.getSpellValue(spellNode);
+
+        spellStructure[spellKey] = spell;
+    }
+    return dumpYaml(spellStructure);
+};
+
+GUIEditor.prototype.getSpellValue = function(spellNode)
+{
+    var spell = {};
+    for (var i = 0; i < spellNode.children.length; i++) {
+        var childNode = spellNode.children[i];
+        var childKey = childNode.title;
+        switch (childKey) {
+            case "Properties":
+                this.appendToObject(childNode.children, spell);
+                break;
+            case "Parameters":
+                spell.parameters = {};
+                this.appendToObject(childNode.children, spell.parameters);
+                break;
+            case "Costs":
+                spell.costs = {};
+                this.appendToObject(childNode.children, spell.costs);
+                break;
+            case "Effects":
+                spell.effects = {};
+                this.appendToObject(childNode.children, spell.effects);
+                break;
+            case "Actions":
+                spell.actions = {};
+                this.appendToObject(childNode.children, spell.actions);
+                break;
+        }
+    }
+    return spell;
+};
+
+GUIEditor.prototype.appendClassListToObject = function(nodes, list) {
+    if (nodes == null) return;
+    for (var i = 0; i < nodes.length; i++) {
+       var newObject = {class: nodes[i].title};
+       this.appendToObject(nodes[i].children, newObject);
+       list.push(newObject);
+    }
+};
+
+GUIEditor.prototype.appendToObject = function(nodes, object) {
+    if (nodes == null) return;
+    for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        if (node.data.type == 'action_handler') {
+            var newList = [];
+            this.appendClassListToObject(node.children, newList);
+            object[node.title] = newList;
+        } else if (node.isFolder()) {
+            var newObject = {};
+            this.appendToObject(node.children, newObject);
+            object[node.title] = newObject;
+        } else {
+            var nodeInput = $("input", node.tr);
+            object[node.title] = nodeInput.val();
+        }
+    }
 };
 
 GUIEditor.prototype.convertToTree = function(config) {
@@ -264,6 +338,7 @@ GUIEditor.prototype.getNode = function(key, value) {
         node.children = [];
         node.folder = true;
         node.expanded = true;
+        node.data = {type: 'action_handler'};
         for (var i = 0; i < value.length; i++) {
             var className = value[i]['class'];
             delete value[i]['class'];
@@ -350,7 +425,8 @@ GUIEditor.prototype.addTriggers = function(config, section, title, tree) {
                     title: key,
                     children: [],
                     expanded: true,
-                    folder: true
+                    folder: true,
+                    data: {type: 'action_handler'}
                 };
 
                 var handlerConfig = sectionConfig[key];

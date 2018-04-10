@@ -68,8 +68,6 @@ $user = getUser();
     </div>
 
     <div id="guiEditor" style="display: none">
-        <div style="color: red">Work in progress, not yet functional!</div>
-        <br/>
         <table id="editorTree">
             <colgroup>
                 <col width="350px">

@@ -241,28 +241,30 @@ function getCodeEditor() {
 function checkMode() {
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     if (currentMode == 'editorModeButton') {
-        $('#codeEditor').hide();
-        $('#guiEditor').show();
-        $('#validateButton').hide();
-
-        var guiEditor = getGUIEditor();
+        var gui = getGUIEditor();
         if (codeEditor != null) {
             var config = validate();
             if (config == null) {
-                jQuery('#codeModeButton').prop('checked', true);
-                $('#modeSelector').controlgroup('refresh');
+                setTimeout(function() {
+                    $('#codeModeButton').prop('checked', true);
+                    $('#modeSelector').controlgroup('refresh');
+                }, 1);
                 return;
             }
-            guiEditor.setValue(codeEditor.getValue());
+            gui.setValue(codeEditor.getValue());
         }
+
+        $('#codeEditor').hide();
+        $('#guiEditor').show();
+        $('#validateButton').hide();
     } else {
         $('#codeEditor').show();
         $('#guiEditor').hide();
         $('#validateButton').show();
 
-        var codeEditor = getCodeEditor();
+        var code = getCodeEditor();
         if (guiEditor != null) {
-            codeEditor.setValue(guiEditor.getValue());
+            code.setValue(guiEditor.getValue());
         }
     }
 }
