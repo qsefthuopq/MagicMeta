@@ -12,11 +12,23 @@ function getSpellConfig() {
     return codeEditor.getValue();
 }
 
-function setSpellConfig(config) {
-    codeEditor.setValue(config);
+function setSpellConfig(spellConfig) {
+    if (codeEditor != null) {
+        codeEditor.setValue(spellConfig);
+    }
 
-    // Temporary, update tree if in gui mode
-    checkMode();
+    if (treeEditor != null) {
+        var config = null;
+        try {
+            config = jsyaml.safeLoad(spellConfig, 'utf8');
+        } catch (e) {
+
+        }
+        if (config != null) {
+            config = convertToTree(config);
+            treeEditor.reload(config);
+        }
+    }
 }
 
 function save() {
@@ -457,12 +469,25 @@ function initialize() {
     $('#validateButton').button().click(validate);
     $('#referenceButton').button().click(openReference);
     $('#forkButton').button().click(fork);
-    $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
-    checkMode();
+    var loadSpell = null;
     var currentHash = window.location.hash;
     if (currentHash != '') {
-        loadFile(currentHash.substring(1));
+        currentHash = currentHash.substring(1);
+        var pieces = currentHash.split('.');
+        if (pieces.length > 1) {
+            if (pieces[0] == 'editor') {
+                $('#editorModeButton').prop('checked', true);
+            }
+            loadSpell = pieces[1];
+        } else {
+            loadSpell = pieces[0];
+        }
+    }
+    $('#modeSelector').controlgroup();
+    checkMode();
+    if (loadSpell != null) {
+        loadFile(loadSpell);
     }
 }
