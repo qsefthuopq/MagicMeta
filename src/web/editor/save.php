@@ -34,7 +34,7 @@ if (file_exists($spellFile)) {
 
     if (count($existing) != 1 || !isset($existing[$key])
         || !isset($existing[$key]['creator_id']) || $existing[$key]['creator_id'] != $user['id']) {
-        die(json_encode(array('success' => false, 'message' => 'Spell exists and you are not the original creator, please try another key name')));
+        die(json_encode(array('success' => false, 'message' => 'Spell exists and you are not the original creator, please fork and then save.')));
     }
 }
 

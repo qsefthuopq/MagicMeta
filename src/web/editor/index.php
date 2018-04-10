@@ -34,23 +34,26 @@ $user = getUser();
 <div id="container">
     <div id="header">
         <span id="saveButtonContainer">
-            <button type="button" id="saveButton">Save</button>
+            <button type="button" id="saveButton" title="Save your spell and reload the sandbox server configs">Save</button>
         </span>
         <span>
-            <button type="button" id="loadButton">Load</button>
+            <button type="button" id="loadButton" title="Load a saved spell, or one of the survival defaults">Load</button>
         </span>
         <span>
-            <button type="button" id="newButton">New</button>
+            <button type="button" id="forkButton" title="Make a copy of your current spell with a unique key name">Fork</button>
+        </span>
+        <span>
+            <button type="button" id="newButton" title="Clear your spell and start fresh">New</button>
         </span>
         <span id="modeSelector">
-            <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton">Editor</label>
-            <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton">Code</label>
+            <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton" title="Use a graphical editor to build your spell">Editor</label>
+            <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton" title="View the raw configuration code for your spell">Code</label>
         </span>
         <span>
-            <button type="button" id="validateButton">Check</button>
+            <button type="button" id="validateButton" title="Check your spell configuration for syntax errors">Check</button>
         </span>
         <span id="referenceButtonContainer">
-            <button type="button" id="referenceButton">Reference</button>
+            <button type="button" id="referenceButton" title="Open the reference guide in a new window">Reference</button>
         </span>
         <?php include "common/userinfo.inc.php" ?>
     </div>

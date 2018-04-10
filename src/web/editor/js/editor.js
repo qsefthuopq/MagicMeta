@@ -3,8 +3,18 @@ $(document).ready(initialize);
 var saving = false;
 var loading = false;
 var spellFiles = null;
+var spellKeys = {};
 var codeEditor = null;
 var markedErrors = [];
+
+function getSpellConfig() {
+    return codeEditor.getValue();
+}
+
+function setSpellConfig(config) {
+    codeEditor.setValue(config);
+}
+
 function save() {
     if (saving) return;
 
@@ -24,7 +34,7 @@ function save() {
         type: "POST",
         url: "save.php",
         data: {
-            spell: codeEditor.getValue()
+            spell: getSpellConfig()
         },
         dataType: 'json'
     }).done(function(response) {
@@ -45,7 +55,7 @@ function clearErrorMarks() {
 
 function validate() {
     clearErrorMarks();
-    var spellConfig = codeEditor.getValue();
+    var spellConfig = getSpellConfig();
     if (spellConfig.trim().length == 0) return false;
     try {
         jsyaml.safeLoad(spellConfig, 'utf8');
@@ -65,11 +75,11 @@ function validate() {
 }
 
 function startNew() {
-    codeEditor.setValue('');
+    setSpellConfig('');
 }
 
-function load() {
-    if (loading) return;
+function getSpellFiles(callback) {
+    if (loading) return null;
 
     if (spellFiles == null) {
         loading = true;
@@ -87,12 +97,19 @@ function load() {
                 spellFiles = response.spells;
                 if (spellFiles != null) {
                     populateSpellFiles();
-                    load();
+                    callback();
                 }
             }
         });
-        return;
+        return null;
     }
+
+    return spellFiles;
+}
+
+function load() {
+    var spells = getSpellFiles(load);
+    if (spells == null) return;
 
     $("#loadSpellDialog").dialog({
       modal: true,
@@ -133,7 +150,7 @@ function loadFile(fileName) {
         if (!response.success) {
             alert("Failed to fetch spell: " + response.message);
         } else {
-            codeEditor.setValue(response.yml);
+            setSpellConfig(response.yml);
         }
     });
 }
@@ -141,6 +158,7 @@ function loadFile(fileName) {
 function populateSpellFiles() {
     var select = $('#loadSpellList');
     select.empty();
+    spellKeys = {};
 
     spellFiles.sort(function(a, b) {
         var aIsDefault = (a.creator_id == '');
@@ -199,6 +217,7 @@ function populateSpellFiles() {
             )
         ));
         select.append(spellRow);
+        spellKeys[key] = true;
     }
 }
 
@@ -214,6 +233,56 @@ function checkMode() {
     }
 }
 
+function fork() {
+    var spells = getSpellFiles(fork);
+    if (spells == null) return;
+
+    var spellConfig = getSpellConfig();
+    if (spellConfig.trim().length == 0) {
+        alert("There's nothing to fork...");
+        return false;
+    }
+    var spell = null;
+    try {
+        spell = jsyaml.safeLoad(spellConfig, 'utf8');
+    } catch (e) {
+        alert("Please fix your errors and try again: " + e.message);
+        return false;
+    }
+
+    var key = null;
+    for (key in spell) {
+        if (spell.hasOwnProperty(key)) {
+            spell = spell[key];
+            break;
+        }
+    }
+
+    if (key != null) {
+        while (key.length > 1 && key[key.length - 1] >= '0' && key[key.length - 1] <= '9') {
+            key = key.substr(0, key.length - 1);
+        }
+        var index = 2;
+        var baseKey = key;
+        while (spellKeys.hasOwnProperty(key)) {
+            key = baseKey + '' + index;
+            index++;
+        }
+    }
+
+    var newSpell = {};
+    newSpell[key] = spell;
+    spellKeys[key] = true;
+
+    setSpellConfig(dumpYaml(newSpell));
+
+    return true;
+}
+
+function dumpYaml(object) {
+    return jsyaml.dump(object, {lineWidth: 200, noRefs: true});
+}
+
 function openReference() {
     window.open(referenceURL, '_blank');
 }
@@ -224,6 +293,7 @@ function initialize() {
     $("#saveButton").button().click(save);
     $('#validateButton').button().click(validate);
     $('#referenceButton').button().click(openReference);
+    $('#forkButton').button().click(fork);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
