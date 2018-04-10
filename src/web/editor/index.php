@@ -29,6 +29,8 @@ $user = getUser();
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>
+    <script src="js/codeeditor.js"></script>
+    <script src="js/guieditor.js"></script>
     <script type="text/javascript">
         var user = <?= json_encode($user) ?>;
         var referenceURL = '//<?= $referenceURL ?>';
@@ -69,12 +71,12 @@ $user = getUser();
         <table id="editorTree">
             <colgroup>
                 <col width="350px">
-                <col width="200px">
+                <col width="400px">
             </colgroup>
             <tbody>
               <tr>
                 <td></td>
-                <td><input name="input1" type="input"></td>
+                <td><input type="input" class="propertyInput"></td>
               </tr>
             </tbody>
           </table>

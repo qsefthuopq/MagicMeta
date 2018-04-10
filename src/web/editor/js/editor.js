@@ -4,9 +4,9 @@ var saving = false;
 var loading = false;
 var spellFiles = null;
 var spellKeys = {};
+
 var codeEditor = null;
-var treeEditor = null;
-var markedErrors = [];
+var guiEditor = null;
 
 function getSpellConfig() {
     return codeEditor.getValue();
@@ -17,17 +17,8 @@ function setSpellConfig(spellConfig) {
         codeEditor.setValue(spellConfig);
     }
 
-    if (treeEditor != null) {
-        var config = null;
-        try {
-            config = jsyaml.safeLoad(spellConfig, 'utf8');
-        } catch (e) {
-
-        }
-        if (config != null) {
-            config = convertToTree(config);
-            treeEditor.reload(config);
-        }
+    if (guiEditor != null) {
+        guiEditor.setValue(spellConfig);
     }
 }
 
@@ -62,28 +53,19 @@ function save() {
     });
 }
 
-function clearErrorMarks() {
-    for (var i = 0; i < markedErrors.length; i++) {
-        markedErrors[i].clear();
-    }
-    markedErrors = [];
-}
-
 function validate() {
-    clearErrorMarks();
+    if (codeEditor != null) {
+        codeEditor.clearErrors();
+    }
     var spellConfig = getSpellConfig();
     if (spellConfig.trim().length == 0) return false;
     var config = null;
     try {
         config = jsyaml.safeLoad(spellConfig, 'utf8');
     } catch (e) {
-        var lineNumber = e.mark.line;
-        var line = codeEditor.getLine(lineNumber);
-        var startOfLine = 0;
-        while (startOfLine < line.length && line[startOfLine] == ' ') startOfLine++;
-        if (startOfLine >= e.mark.column) startOfLine = 0;
-        var marked = codeEditor.markText({line: lineNumber, ch: startOfLine}, {line: lineNumber, ch: e.mark.column}, {className: 'syntax-error', title: e.message});
-        markedErrors.push(marked);
+        if (codeEditor != null) {
+            codeEditor.showError(e);
+        }
         alert(e.message);
         return null;
     }
@@ -244,64 +226,18 @@ function checkMode() {
         $('#guiEditor').show();
         $('#validateButton').hide();
 
-        if (treeEditor == null) {
-            treeEditor = $('#editorTree').fancytree({
-                extensions: ["dnd", "table", "edit"],
-                dnd: {
-                    preventVoidMoves: true,
-                    preventRecursiveMoves: true,
-                    autoExpandMS: 400,
-                    dragStart: function(node, data) {
-                        return true;
-                    },
-                    dragEnter: function(node, data) {
-                        // return ["before", "after"];
-                        return true;
-                    },
-                    dragDrop: function(node, data) {
-                        data.otherNode.moveTo(node, data.hitMode);
-                    }
-                },
-                edit: {
-                    triggerStart: ["clickActive", "dblclick", "mac+enter", "shift+click"],
-                    beforeEdit: function(event, data){
-                        return !data.node.isFolder();
-                    }
-                },
-                table: {
-                    indentation: 20,
-                    nodeColumnIdx: 0
-                },
-                createNode: function(event, data) {
-                    var node = data.node;
-                    var tdList = $(node.tr).find(">td");
-
-                    if (node.isFolder()) {
-                        tdList.eq(0)
-                          .prop("colspan", 2)
-                          .nextAll().remove();
-                    }
-                },
-                renderColumns: function(event, data) {
-                    var node = data.node;
-                    var tdList = $(node.tr).find(">td");
-
-                    if (!node.isFolder()) {
-                        tdList.eq(1).find("input").val(node.data.value);
-                    }
-                }
-            }).fancytree("getTree");
+        if (guiEditor == null) {
+            guiEditor = new GUIEditor($('#editorTree'));
         }
 
         if (codeEditor != null) {
             var config = validate();
-            if (validate == null) {
+            if (config == null) {
                 jQuery('#codeModeButton').prop('checked', true);
                 $('#modeSelector').controlgroup('refresh');
                 return;
             }
-            config = convertToTree(config);
-            treeEditor.reload(config);
+            guiEditor.setValue(codeEditor.getValue());
         }
     } else {
         $('#codeEditor').show();
@@ -309,108 +245,8 @@ function checkMode() {
         $('#validateButton').show();
 
         if (codeEditor == null) {
-            codeEditor = CodeMirror.fromTextArea($('#editor').get(0), {
-                lineNumbers: true,
-                extraKeys: {
-                    "Ctrl-S": save,
-                    "Ctrl-D": validate
-                }
-            });
+            codeEditor = new CodeEditor($('#editor'));
         }
-    }
-}
-
-
-function convertToTree(config) {
-    var tree = [];
-    for (var key in config) {
-        if (config.hasOwnProperty(key)) {
-            var spell = {
-                title: key,
-                children: convertSpellToTree(config[key]),
-                expanded: true,
-                folder: true
-            };
-            tree.push(spell);
-        }
-    }
-
-    return tree;
-}
-
-function convertSpellToTree(config) {
-    var tree = [];
-
-    var properties = {
-        title: 'Properties',
-        children: [],
-        expanded: true,
-        folder: true
-    };
-
-    for (var key in config) {
-        if (config.hasOwnProperty(key) && key != 'actions' && key != 'parameters' && key !='effects') {
-            properties.children.push({
-                title: key,
-                value: config[key]
-            });
-        }
-    }
-
-    tree.push(properties);
-    addTriggers(config, 'actions', 'Actions', tree);
-    addTriggers(config, 'effects', 'Effects', tree);
-
-    var parameters = {
-        title: 'Parameters',
-        children: [],
-        expanded: true,
-        folder: true
-    };
-
-    if (config.hasOwnProperty('parameters')) {
-        for (var key in config.parameters) {
-            if (config.parameters.hasOwnProperty(key)) {
-                parameters.children.push({
-                    title: key,
-                    value: config.parameters[key]
-                });
-            }
-        }
-    }
-    tree.push(parameters);
-
-    return tree;
-}
-
-function addTriggers(config, section, title, tree) {
-    if (config.hasOwnProperty(section)) {
-        var sectionConfig = config[section];
-        var subSection = {
-            title: title,
-            children: [],
-            expanded: true,
-            folder: true
-        };
-        for (var key in sectionConfig) {
-            if (sectionConfig.hasOwnProperty(key)) {
-                var triggerHandler = {
-                    title: key,
-                    children: [],
-                    expanded: true,
-                    folder: true
-                };
-
-                var handlerConfig = sectionConfig[key];
-                for (var i = 0; i < handlerConfig.length; i++) {
-                    triggerHandler.children.push({
-                        'title' : handlerConfig[i]['class']
-                    });
-                }
-                subSection.children.push(triggerHandler);
-            }
-        }
-        tree.push(subSection);
     }
 }
 
