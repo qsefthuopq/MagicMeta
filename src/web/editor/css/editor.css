@@ -90,3 +90,8 @@
     height: 100%;
     width: 100%;
 }
+
+.syntax-error {
+    text-decoration: underline;
+    color: red;
+}

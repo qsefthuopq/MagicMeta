@@ -45,6 +45,9 @@ $user = getUser();
             <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton">Editor</label>
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton">Code</label>
         </span>
+        <span>
+            <button type="button" id="validateButton">Validate</button>
+        </span>
         <?php include "common/userinfo.inc.php" ?>
     </div>
     <div id="guiEditor" style="display: none">

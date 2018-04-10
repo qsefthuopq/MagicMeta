@@ -4,6 +4,7 @@ var saving = false;
 var loading = false;
 var spellFiles = null;
 var codeEditor = null;
+var markedErrors = [];
 function save() {
     if (saving) return;
 
@@ -12,12 +13,7 @@ function save() {
         return;
     }
 
-    var spellConfig = codeEditor.getValue();
-    if (spellConfig.trim().length == 0) return;
-    try {
-        jsyaml.safeLoad(spellConfig, 'utf8');
-    } catch (e) {
-        alert(e.message);
+    if (!validate()) {
         return;
     }
 
@@ -28,7 +24,7 @@ function save() {
         type: "POST",
         url: "save.php",
         data: {
-            spell: spellConfig
+            spell: codeEditor.getValue()
         },
         dataType: 'json'
     }).done(function(response) {
@@ -40,10 +36,32 @@ function save() {
     });
 }
 
-function checkKey(event) {
-    if (event.key == 's' && event.ctrlKey) {
-        save();
+function clearErrorMarks() {
+    for (var i = 0; i < markedErrors.length; i++) {
+        markedErrors[i].clear();
     }
+    markedErrors = [];
+}
+
+function validate() {
+    clearErrorMarks();
+    var spellConfig = codeEditor.getValue();
+    if (spellConfig.trim().length == 0) return false;
+    try {
+        jsyaml.safeLoad(spellConfig, 'utf8');
+    } catch (e) {
+        var lineNumber = e.mark.line;
+        var line = codeEditor.getLine(lineNumber);
+        var startOfLine = 0;
+        while (startOfLine < line.length && line[startOfLine] == ' ') startOfLine++;
+        if (startOfLine >= e.mark.column) startOfLine = 0;
+        var marked = codeEditor.markText({line: lineNumber, ch: startOfLine}, {line: lineNumber, ch: e.mark.column}, {className: 'syntax-error', title: e.message});
+        markedErrors.push(marked);
+        alert(e.message);
+        return false;
+    }
+
+    return true;
 }
 
 function startNew() {
@@ -187,9 +205,11 @@ function checkMode() {
     if (this.id == 'editorModeButton') {
         $('#codeEditor').hide();
         $('#guiEditor').show();
+        $('#validateButton').hide();
     } else {
         $('#codeEditor').show();
         $('#guiEditor').hide();
+        $('#validateButton').show();
     }
 }
 
@@ -197,10 +217,15 @@ function initialize() {
     $("#loadButton").button().click(load);
     $("#newButton").button().click(startNew);
     $("#saveButton").button().click(save);
+    $('#validateButton').button().click(validate);
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
     codeEditor = CodeMirror.fromTextArea($('#editor').get(0), {
-        lineNumbers: true
+        lineNumbers: true,
+        extraKeys: {
+            "Ctrl-S": save,
+            "Ctrl-D": validate
+        }
     });
 }
