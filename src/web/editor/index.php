@@ -16,11 +16,15 @@ $user = getUser();
     <link rel="stylesheet" href="common/css/loading.css" />
     <link rel="stylesheet" href="common/css/user.css"/>
     <link rel="stylesheet" href="css/codemirror.css"/>
+    <link rel="stylesheet" href="css/ui.fancytree.css"/>
     <link rel="stylesheet" href="css/editor.css"/>
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="common/js/user.js"></script>
     <script src="js/codemirror.js"></script>
+    <script src="js/jquery.fancytree.min.js"></script>
+    <script src="js/jquery.fancytree.table.js"></script>
+    <script src="js/jquery.fancytree.dnd.js"></script>
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>
@@ -57,9 +61,24 @@ $user = getUser();
         </span>
         <?php include "common/userinfo.inc.php" ?>
     </div>
+
     <div id="guiEditor" style="display: none">
-        Coming Soon (ish)!
+        <div style="color: red">Work in progress, not yet functional!</div>
+        <br/>
+        <table id="editorTree">
+            <colgroup>
+                <col width="350px">
+                <col width="200px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><input name="input1" type="input"></td>
+              </tr>
+            </tbody>
+          </table>
     </div>
+
     <div id="codeEditor">
         <textarea id="editor"></textarea>
     </div>
