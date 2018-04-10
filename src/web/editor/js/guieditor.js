@@ -2,7 +2,8 @@ function GUIEditor(container)
 {
     this.clipboard = null;
     var fancytree = container.fancytree({
-        extensions: ["dnd", "table", "edit"],
+        extensions: ["dnd", "table", "edit", "gridnav"],
+        titlesTabbable: true,
         dnd: {
             preventVoidMoves: true,
             preventRecursiveMoves: true,
@@ -26,9 +27,13 @@ function GUIEditor(container)
             close: function (event, data) {
                 if (data.save && data.isNew) {
                     // Quick-enter: add new nodes until we hit [enter] on an empty title
-                    $("#tree").trigger("nodeCommand", {cmd: "addSibling"});
+                    container.trigger("nodeCommand", {cmd: "addSibling"});
                 }
             }
+        },
+        gridnav: {
+            autofocusInput: false,
+            handleCursorKeys: true
         },
         table: {
             indentation: 20,
@@ -212,7 +217,7 @@ function GUIEditor(container)
         ],
         beforeOpen: function (event, ui) {
             var node = $.ui.fancytree.getNode(ui.target);
-            $("#tree").contextmenu("enableEntry", "paste", !!editor.clipboard);
+            container.contextmenu("enableEntry", "paste", !!editor.clipboard);
             node.setActive();
         },
         select: function (event, ui) {
