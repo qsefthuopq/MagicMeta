@@ -260,7 +260,10 @@ function checkMode() {
         $('#guiEditor').hide();
         $('#validateButton').show();
 
-        getCodeEditor();
+        var codeEditor = getCodeEditor();
+        if (guiEditor != null) {
+            codeEditor.setValue(guiEditor.getValue());
+        }
     }
 }
 

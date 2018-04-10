@@ -18,8 +18,10 @@ $user = getUser();
     <link rel="stylesheet" href="css/codemirror.css"/>
     <link rel="stylesheet" href="css/ui.fancytree.css"/>
     <link rel="stylesheet" href="css/editor.css"/>
+
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/ui-contextmenu/jquery.ui-contextmenu.min.js"></script>
     <script src="common/js/user.js"></script>
     <script src="js/codemirror.js"></script>
     <script src="js/jquery.fancytree.min.js"></script>
