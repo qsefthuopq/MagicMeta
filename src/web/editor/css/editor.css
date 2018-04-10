@@ -102,6 +102,6 @@
     color: red;
 }
 
-#loadSpellsTable:focus {
+#editorTree:focus {
     outline: 0;
 }
