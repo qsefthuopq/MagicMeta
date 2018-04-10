@@ -1,6 +1,9 @@
 function GUIEditor(container)
 {
     this.clipboard = null;
+    this.metadata = null;
+    this.metaindex = null;
+    this.pendingConfig = null;
     var fancytree = container.fancytree({
         extensions: ["dnd", "table", "edit", "gridnav"],
         titlesTabbable: true,
@@ -229,10 +232,56 @@ function GUIEditor(container)
             }, 100);
         }
     });
+
+    $.ajax( {
+        type: "GET",
+        url: "common/meta.php",
+        dataType: 'json'
+    }).done(function(meta) {
+        editor.setMetadata(meta);
+    });
+};
+
+GUIEditor.prototype.setMetadata = function(meta)
+{
+    if (meta == null) {
+        alert("Error loading metadata, please reload and try again.");
+        return;
+    }
+    this.metaindex = {};
+    this.metadata = meta;
+    this.indexMetadata("spell_properties");
+    this.indexMetadata("spell_parameters");
+    this.indexMetadata("spell_parameters");
+    this.indexMetadata("effect_parameters");
+    this.indexMetadata("effectlib_parameters");
+    this.indexMetadata("action_parameters");
+
+    if (this.pendingConfig != null) {
+        this.setValue(this.pendingConfig);
+        this.pendingConfig = null;
+    }
+};
+
+GUIEditor.prototype.indexMetadata = function(section) {
+    var properties = this.metadata.properties;
+    var sectionProperties = this.metadata[section];
+    var propertyIndex = {};
+    for (var key in sectionProperties) {
+        if (sectionProperties.hasOwnProperty(key)) {
+            var property = properties[key];
+            propertyIndex[property.field] = key;
+        }
+    }
+    this.metaindex[section] = propertyIndex;
 };
 
 GUIEditor.prototype.setValue = function(spellConfig)
 {
+    if (this.metadata == null) {
+        this.pendingConfig = spellConfig;
+        return;
+    }
     var config = null;
     try {
         config = jsyaml.safeLoad(spellConfig, 'utf8');
@@ -313,7 +362,14 @@ GUIEditor.prototype.appendToObject = function(nodes, object) {
             object[node.title] = newObject;
         } else {
             var nodeInput = $("input", node.tr);
-            object[node.title] = nodeInput.val();
+            var value = nodeInput.val();
+            if (node.data.type == 'double') {
+                value = parseFloat(value);
+            } else if (node.data.type == 'integer') {
+                value = parseInt(value);
+            }
+
+            object[node.title] = value;
         }
     }
 };
@@ -335,15 +391,23 @@ GUIEditor.prototype.convertToTree = function(config) {
     return tree;
 };
 
-GUIEditor.prototype.getNode = function(key, value) {
-    var node = {title: key};
+GUIEditor.prototype.getNode = function(key, value, metaSection, nodeType) {
+    var node = {title: key, data: {}};
 
+    if (metaSection && this.metaindex[metaSection].hasOwnProperty(key)) {
+        var propertyKey = this.metaindex[metaSection][key];
+        node.data.type = this.metadata.properties[propertyKey].type;
+    } else if (nodeType) {
+        node.data.type = nodeType;
+    }
     if (Array.isArray(value))
     {
         node.children = [];
         node.folder = true;
         node.expanded = true;
-        node.data = {type: 'action_handler'};
+
+        // TODO: This should be handled generically?
+        node.data.type = 'action_handler';
         for (var i = 0; i < value.length; i++) {
             var className = value[i]['class'];
             delete value[i]['class'];
@@ -379,25 +443,25 @@ GUIEditor.prototype.convertSpellToTree = function(config) {
 
     for (var key in config) {
         if (config.hasOwnProperty(key) && key != 'actions' && key != 'parameters' && key !='effects' && key != 'costs') {
-            properties.children.push(this.getNode(key, config[key]));
+            properties.children.push(this.getNode(key, config[key], "spell_properties"));
         }
     }
 
     tree.push(properties);
-    this.addTriggers(config, 'actions', 'Actions', tree);
-    this.addTriggers(config, 'effects', 'Effects', tree);
-    this.addOptionalSection(config, 'parameters', 'Parameters', tree);
-    this.addOptionalSection(config, 'costs', 'Costs', tree);
+    this.addTriggers(config, 'actions', 'Actions', tree, "action_parameters");
+    this.addTriggers(config, 'effects', 'Effects', tree, "effect_parameters");
+    this.addOptionalSection(config, 'parameters', 'Parameters', tree, "spell_parameters");
+    this.addOptionalSection(config, 'costs', 'Costs', tree, null, 'double');
 
     return tree;
 };
 
-GUIEditor.prototype.addOptionalSection = function(config, section, title, tree) {
+GUIEditor.prototype.addOptionalSection = function(config, section, title, tree, metaSection, nodeType) {
     section = config.hasOwnProperty(section) ? config[section] : null;
-    this.addSection(section, title, tree);
+    this.addSection(section, title, tree, metaSection, nodeType);
 };
 
-GUIEditor.prototype.addSection = function(section, title, tree) {
+GUIEditor.prototype.addSection = function(section, title, tree, metaSection, nodeType) {
     var sectionFolder = {
         title: title,
         children: [],
@@ -408,14 +472,14 @@ GUIEditor.prototype.addSection = function(section, title, tree) {
     if (section != null) {
         for (var key in section) {
             if (section.hasOwnProperty(key)) {
-                sectionFolder.children.push(this.getNode(key, section[key]));
+                sectionFolder.children.push(this.getNode(key, section[key], metaSection, nodeType));
             }
         }
     }
     tree.push(sectionFolder);
 };
 
-GUIEditor.prototype.addTriggers = function(config, section, title, tree) {
+GUIEditor.prototype.addTriggers = function(config, section, title, tree, metaSection) {
     if (config.hasOwnProperty(section)) {
         var sectionConfig = config[section];
         var subSection = {
@@ -442,7 +506,7 @@ GUIEditor.prototype.addTriggers = function(config, section, title, tree) {
                         className = handlerConfig[i]['class'];
                         delete handlerConfig[i]['class'];
                     }
-                    this.addSection(handlerConfig[i], className, triggerHandler.children);
+                    this.addSection(handlerConfig[i], className, triggerHandler.children, metaSection);
                 }
                 subSection.children.push(triggerHandler);
             }
