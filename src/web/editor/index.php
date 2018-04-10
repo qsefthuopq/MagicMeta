@@ -47,7 +47,7 @@ $user = getUser();
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton">Code</label>
         </span>
         <span>
-            <button type="button" id="validateButton">Validate</button>
+            <button type="button" id="validateButton">Check</button>
         </span>
         <span id="referenceButtonContainer">
             <button type="button" id="referenceButton">Reference</button>

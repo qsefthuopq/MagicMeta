@@ -176,9 +176,10 @@ function populateSpellFiles() {
         if (!owned && spell.creator_id != '' && spell.creator_id == user.id) {
             owned = true;
             groupLabel = "Your Spells";
-        } else if (!unowned && owned && (spell.creator_id == ''|| spell.creator_id !== user.id)) {
+        }
+        if (!unowned && (spell.creator_id == ''|| spell.creator_id !== user.id)) {
             unowned = true;
-            groupLabel = "Other Sandbox Spells";
+            groupLabel = "Sandbox Spells Created by Others";
         } else if (!defaults && isDefault) {
             defaults = true;
             groupLabel = "Default Survival Spells";
