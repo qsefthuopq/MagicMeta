@@ -5,6 +5,7 @@ var loading = false;
 var spellFiles = null;
 var spellKeys = {};
 var codeEditor = null;
+var treeEditor = null;
 var markedErrors = [];
 
 function getSpellConfig() {
@@ -23,7 +24,7 @@ function save() {
         return;
     }
 
-    if (!validate()) {
+    if (validate() == null) {
         return;
     }
 
@@ -57,8 +58,9 @@ function validate() {
     clearErrorMarks();
     var spellConfig = getSpellConfig();
     if (spellConfig.trim().length == 0) return false;
+    var config = null;
     try {
-        jsyaml.safeLoad(spellConfig, 'utf8');
+        config = jsyaml.safeLoad(spellConfig, 'utf8');
     } catch (e) {
         var lineNumber = e.mark.line;
         var line = codeEditor.getLine(lineNumber);
@@ -68,10 +70,10 @@ function validate() {
         var marked = codeEditor.markText({line: lineNumber, ch: startOfLine}, {line: lineNumber, ch: e.mark.column}, {className: 'syntax-error', title: e.message});
         markedErrors.push(marked);
         alert(e.message);
-        return false;
+        return null;
     }
 
-    return true;
+    return config;
 }
 
 function startNew() {
@@ -189,7 +191,6 @@ function populateSpellFiles() {
             isDefault = true;
             key = key.substr(8);
         }
-        var spellName = key + " : " + spell.name + " : " + spell.creator_name + " : " + spell.description;
         var groupLabel = null;
         if (!owned && spell.creator_id != '' && spell.creator_id == user.id) {
             owned = true;
@@ -222,14 +223,173 @@ function populateSpellFiles() {
 }
 
 function checkMode() {
-    if (this.id == 'editorModeButton') {
+    var currentMode = $('#modeSelector').find('input:checked').prop('id');
+    if (currentMode == 'editorModeButton') {
         $('#codeEditor').hide();
         $('#guiEditor').show();
         $('#validateButton').hide();
+
+        if (treeEditor == null) {
+            treeEditor = $('#editorTree').fancytree({
+                extensions: ["dnd", "table"],
+                dnd: {
+                    preventVoidMoves: true,
+                    preventRecursiveMoves: true,
+                    autoExpandMS: 400,
+                    dragStart: function(node, data) {
+                        return true;
+                    },
+                    dragEnter: function(node, data) {
+                        // return ["before", "after"];
+                        return true;
+                    },
+                    dragDrop: function(node, data) {
+                        data.otherNode.moveTo(node, data.hitMode);
+                    }
+                },
+                table: {
+                    indentation: 20,
+                    nodeColumnIdx: 0
+                },
+                createNode: function(event, data) {
+                    var node = data.node;
+                    var tdList = $(node.tr).find(">td");
+
+                    if (node.isFolder()) {
+                        tdList.eq(0)
+                          .prop("colspan", 2)
+                          .nextAll().remove();
+                    }
+                },
+                renderColumns: function(event, data) {
+                    var node = data.node;
+                    var tdList = $(node.tr).find(">td");
+
+                    if (!node.isFolder()) {
+                        tdList.eq(1).find("input").val(node.data.value);
+                    }
+                }
+            }).fancytree("getTree");
+        }
+
+        if (codeEditor != null) {
+            var config = validate();
+            if (validate == null) {
+                jQuery('#codeModeButton').prop('checked', true);
+                $('#modeSelector').controlgroup('refresh');
+                return;
+            }
+            config = convertToTree(config);
+            treeEditor.reload(config);
+        }
     } else {
         $('#codeEditor').show();
         $('#guiEditor').hide();
         $('#validateButton').show();
+
+        if (codeEditor == null) {
+            codeEditor = CodeMirror.fromTextArea($('#editor').get(0), {
+                lineNumbers: true,
+                extraKeys: {
+                    "Ctrl-S": save,
+                    "Ctrl-D": validate
+                }
+            });
+        }
+    }
+}
+
+
+function convertToTree(config) {
+    var tree = [];
+    for (var key in config) {
+        if (config.hasOwnProperty(key)) {
+            var spell = {
+                title: key,
+                children: convertSpellToTree(config[key]),
+                expanded: true,
+                folder: true
+            };
+            tree.push(spell);
+        }
+    }
+
+    return tree;
+}
+
+function convertSpellToTree(config) {
+    var tree = [];
+
+    var properties = {
+        title: 'Properties',
+        children: [],
+        expanded: true,
+        folder: true
+    };
+
+    for (var key in config) {
+        if (config.hasOwnProperty(key) && key != 'actions' && key != 'parameters' && key !='effects') {
+            properties.children.push({
+                title: key,
+                value: config[key]
+            });
+        }
+    }
+
+    tree.push(properties);
+    addTriggers(config, 'actions', 'Actions', tree);
+    addTriggers(config, 'effects', 'Effects', tree);
+
+    var parameters = {
+        title: 'Parameters',
+        children: [],
+        expanded: true,
+        folder: true
+    };
+
+    if (config.hasOwnProperty('parameters')) {
+        for (var key in config.parameters) {
+            if (config.parameters.hasOwnProperty(key)) {
+                parameters.children.push({
+                    title: key,
+                    value: config.parameters[key]
+                });
+            }
+        }
+    }
+    tree.push(parameters);
+
+    return tree;
+}
+
+function addTriggers(config, section, title, tree) {
+    if (config.hasOwnProperty(section)) {
+        var sectionConfig = config[section];
+        var subSection = {
+            title: title,
+            children: [],
+            expanded: true,
+            folder: true
+        };
+        for (var key in sectionConfig) {
+            if (sectionConfig.hasOwnProperty(key)) {
+                var triggerHandler = {
+                    title: key,
+                    children: [],
+                    expanded: true,
+                    folder: true
+                };
+
+                var handlerConfig = sectionConfig[key];
+                for (var i = 0; i < handlerConfig.length; i++) {
+                    triggerHandler.children.push({
+                        'title' : handlerConfig[i]['class']
+                    });
+                }
+                subSection.children.push(triggerHandler);
+            }
+        }
+        tree.push(subSection);
     }
 }
 
@@ -297,14 +457,7 @@ function initialize() {
     $('#modeSelector').controlgroup();
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
-    codeEditor = CodeMirror.fromTextArea($('#editor').get(0), {
-        lineNumbers: true,
-        extraKeys: {
-            "Ctrl-S": save,
-            "Ctrl-D": validate
-        }
-    });
-
+    checkMode();
     var currentHash = window.location.hash;
     if (currentHash != '') {
         loadFile(currentHash.substring(1));
