@@ -234,4 +234,9 @@ function initialize() {
             "Ctrl-D": validate
         }
     });
+
+    var currentHash = window.location.hash;
+    if (currentHash != '') {
+        loadFile(currentHash.substring(1));
+    }
 }
