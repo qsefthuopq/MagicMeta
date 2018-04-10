@@ -246,7 +246,7 @@ function checkMode() {
 
         if (treeEditor == null) {
             treeEditor = $('#editorTree').fancytree({
-                extensions: ["dnd", "table"],
+                extensions: ["dnd", "table", "edit"],
                 dnd: {
                     preventVoidMoves: true,
                     preventRecursiveMoves: true,
@@ -260,6 +260,12 @@ function checkMode() {
                     },
                     dragDrop: function(node, data) {
                         data.otherNode.moveTo(node, data.hitMode);
+                    }
+                },
+                edit: {
+                    triggerStart: ["clickActive", "dblclick", "mac+enter", "shift+click"],
+                    beforeEdit: function(event, data){
+                        return !data.node.isFolder();
                     }
                 },
                 table: {

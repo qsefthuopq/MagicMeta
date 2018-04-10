@@ -25,6 +25,7 @@ $user = getUser();
     <script src="js/jquery.fancytree.min.js"></script>
     <script src="js/jquery.fancytree.table.js"></script>
     <script src="js/jquery.fancytree.dnd.js"></script>
+    <script src="js/jquery.fancytree.edit.js"></script>
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>
