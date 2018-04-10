@@ -256,6 +256,37 @@ GUIEditor.prototype.convertToTree = function(config) {
     return tree;
 };
 
+GUIEditor.prototype.getNode = function(key, value) {
+    var node = {title: key};
+
+    if (Array.isArray(value))
+    {
+        node.children = [];
+        node.folder = true;
+        node.expanded = true;
+        for (var i = 0; i < value.length; i++) {
+            var className = value[i]['class'];
+            delete value[i]['class'];
+            this.addSection(value[i], className, node.children);
+        }
+    }
+    else if (typeof(value) === 'object')
+    {
+        node.children = [];
+        node.folder = true;
+        node.expanded = true;
+        for (var childKey in value) {
+            if (value.hasOwnProperty(childKey)) {
+                node.children.push(this.getNode(childKey, value[childKey]));
+            }
+        }
+    } else {
+        node.value = value;
+    }
+
+    return node;
+};
+
 GUIEditor.prototype.convertSpellToTree = function(config) {
     var tree = [];
 
@@ -267,38 +298,41 @@ GUIEditor.prototype.convertSpellToTree = function(config) {
     };
 
     for (var key in config) {
-        if (config.hasOwnProperty(key) && key != 'actions' && key != 'parameters' && key !='effects') {
-            properties.children.push({
-                title: key,
-                value: config[key]
-            });
+        if (config.hasOwnProperty(key) && key != 'actions' && key != 'parameters' && key !='effects' && key != 'costs') {
+            properties.children.push(this.getNode(key, config[key]));
         }
     }
 
     tree.push(properties);
     this.addTriggers(config, 'actions', 'Actions', tree);
     this.addTriggers(config, 'effects', 'Effects', tree);
+    this.addOptionalSection(config, 'parameters', 'Parameters', tree);
+    this.addOptionalSection(config, 'costs', 'Costs', tree);
 
-    var parameters = {
-        title: 'Parameters',
+    return tree;
+};
+
+GUIEditor.prototype.addOptionalSection = function(config, section, title, tree) {
+    section = config.hasOwnProperty(section) ? config[section] : null;
+    this.addSection(section, title, tree);
+};
+
+GUIEditor.prototype.addSection = function(section, title, tree) {
+    var sectionFolder = {
+        title: title,
         children: [],
         expanded: true,
         folder: true
     };
 
-    if (config.hasOwnProperty('parameters')) {
-        for (var key in config.parameters) {
-            if (config.parameters.hasOwnProperty(key)) {
-                parameters.children.push({
-                    title: key,
-                    value: config.parameters[key]
-                });
+    if (section != null) {
+        for (var key in section) {
+            if (section.hasOwnProperty(key)) {
+                sectionFolder.children.push(this.getNode(key, section[key]));
             }
         }
     }
-    tree.push(parameters);
-
-    return tree;
+    tree.push(sectionFolder);
 };
 
 GUIEditor.prototype.addTriggers = function(config, section, title, tree) {
@@ -321,9 +355,13 @@ GUIEditor.prototype.addTriggers = function(config, section, title, tree) {
 
                 var handlerConfig = sectionConfig[key];
                 for (var i = 0; i < handlerConfig.length; i++) {
-                    triggerHandler.children.push({
-                        'title' : handlerConfig[i]['class']
-                    });
+                    // Kinda hacky ... would like to get rid of this eventually?
+                    var className = 'EffectSingle';
+                    if (handlerConfig[i].hasOwnProperty('class')) {
+                        className = handlerConfig[i]['class'];
+                        delete handlerConfig[i]['class'];
+                    }
+                    this.addSection(handlerConfig[i], className, triggerHandler.children);
                 }
                 subSection.children.push(triggerHandler);
             }
