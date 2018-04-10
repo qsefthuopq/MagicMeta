@@ -18,6 +18,12 @@
     width: 100%;
     flex-basis: 100%;
     display: flex;
+    flex-direction: column;
+}
+
+.CodeMirror {
+    width: 100%;
+    flex-basis: 100%;
 }
 
 #guiEditor {
@@ -84,11 +90,6 @@
 
 .ui-checkboxradio-icon {
     display: none;
-}
-
-.CodeMirror {
-    height: 100%;
-    width: 100%;
 }
 
 .syntax-error {
