@@ -30,6 +30,12 @@ Editor.prototype.save = function() {
         return;
     }
 
+    var spellConfig = this.getSpellConfig();
+    var spellKey = this.simpleParse(spellConfig).key;
+    if (spellKey != null) {
+        this.updateHash(spellKey);
+    }
+
     this.saving = true;
     this.spellFiles = null;
     var me = this;
@@ -38,7 +44,7 @@ Editor.prototype.save = function() {
         type: "POST",
         url: "save.php",
         data: {
-            spell: this.getSpellConfig()
+            spell: spellConfig
         },
         dataType: 'json'
     }).done(function(response) {
@@ -134,14 +140,18 @@ Editor.prototype.load = function() {
     }).show();
 };
 
+Editor.prototype.updateHash = function(spellName) {
+    var currentMode = $('#modeSelector').find('input:checked').prop('id');
+    currentMode = (currentMode == 'editorModeButton') ? 'editor.' : '';
+    window.location.hash = currentMode + spellName;
+};
+
 Editor.prototype.loadFile = function(fileName) {
     if (fileName == null || fileName.length == 0) return;
 
-    var me = this;
-    var currentMode = $('#modeSelector').find('input:checked').prop('id');
-    currentMode = (currentMode == 'editorModeButton') ? 'editor.' : '';
-    window.location.hash = currentMode + fileName;
+    this.updateHash(fileName);
 
+    var me = this;
     $.ajax( {
         type: "POST",
         url: "spell.php",
