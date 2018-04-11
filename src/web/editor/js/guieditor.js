@@ -236,22 +236,10 @@ function GUIEditor(container)
             }, 100);
         }
     });
-
-    $.ajax( {
-        type: "GET",
-        url: "common/meta.php",
-        dataType: 'json'
-    }).done(function(meta) {
-        editor.setMetadata(meta);
-    });
 };
 
 GUIEditor.prototype.setMetadata = function(meta)
 {
-    if (meta == null) {
-        alert("Error loading metadata, please reload and try again.");
-        return;
-    }
     this.metaindex = {};
     this.metadata = meta;
     this.indexMetadata("spell_properties");

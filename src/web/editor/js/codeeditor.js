@@ -40,3 +40,7 @@ CodeEditor.prototype.showError = function(e)
     this.markedErrors.push(marked);
 };
 
+CodeEditor.prototype.setMetadata = function(meta)
+{
+
+};

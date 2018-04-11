@@ -3,6 +3,7 @@ $(document).ready(initialize);
 var saving = false;
 var loading = false;
 var spellFiles = null;
+var metadata = null;
 var spellKeys = {};
 
 var codeEditor = null;
@@ -229,6 +230,9 @@ function getActiveEditor() {
 function getGUIEditor() {
     if (guiEditor == null) {
         guiEditor = new GUIEditor($('#editorTree'));
+        if (metadata != null) {
+            guiEditor.setMetadata(metadata);
+        }
     }
 
     return guiEditor;
@@ -237,6 +241,9 @@ function getGUIEditor() {
 function getCodeEditor() {
     if (codeEditor == null) {
         codeEditor = new CodeEditor($('#editor'));
+        if (metadata != null) {
+            codeEditor.setMetadata(metadata);
+        }
     }
 
     return codeEditor;
@@ -327,6 +334,20 @@ function openReference() {
     window.open(referenceURL, '_blank');
 }
 
+function setMetadata(meta) {
+    if (meta == null) {
+        alert("Error loading metadata, please reload and try again.");
+        return;
+    }
+    metadata = meta;
+    if (codeEditor != null) {
+        codeEditor.setMetadata(meta);
+    }
+    if (guiEditor != null) {
+        guiEditor.setMetadata(meta);
+    }
+}
+
 function initialize() {
     $("#loadButton").button().click(load);
     $("#newButton").button().click(function() { startNew("Basic"); });
@@ -366,4 +387,12 @@ function initialize() {
     } else {
         startNew("Basic");
     }
+
+    $.ajax( {
+        type: "GET",
+        url: "common/meta.php",
+        dataType: 'json'
+    }).done(function(meta) {
+        setMetadata(meta);
+    });
 }
