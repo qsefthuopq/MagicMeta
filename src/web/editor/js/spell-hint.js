@@ -39,6 +39,81 @@
         }
     };
 
+    function addUnique(kw, result) {
+        // add if not already in result set
+        if (!kw || result.indexOf(kw) !== -1) {
+            return;
+        }
+        result.push(kw);
+    }
+
+    function rstrip(line) {
+        return line.replace(/\s*$/g, '');
+    }
+
+    function getIndentation(line, tabSizeInSpaces) {
+        if (!line.match(/^\s*?$/)) {
+            // only strip if line isn't all whitespace
+            line = rstrip(line);
+        }
+
+        // walk left from right until whitespace or eol
+        var s = line.length;
+        while (s && WORD_OR_COLON.test(line.charAt(s - 1))) --s;
+        line = line.slice(0, s);
+        // change tabs to spaces
+        line = line.replace(/\t/g, tabSizeInSpaces);
+        // return the number of spaces
+        return line.length;
+    }
+
+    function getKeyFromLine(line) {
+        var m = line.match(LEAF_KV);
+        if (m) {
+            return m[1];
+        }
+    }
+
+    function walkUp(pos, indent, cm, tabSizeInSpaces) {
+        pos.line --;
+        var thisLine = cm.getLine(pos.line);
+        while (!OBJECT_KEY.test(thisLine) && getIndentation(thisLine, tabSizeInSpaces) >= indent) {
+            // while this isn't the line we're looking for, move along
+            pos.line --;
+            thisLine = cm.getLine(pos.line);
+        }
+        pos.ch = cm.getLine(pos.line);
+        return pos;
+    }
+
+    function getHierarchy(pos, cm, tabSizeInSpaces) {
+        var hierarchy = [];
+        var thisLine = cm.getLine(pos.line);
+
+        var isHighestContext = (getIndentation(thisLine, tabSizeInSpaces) === 0);
+        var isIndentedBlock = (pos.ch !== 0 && getIndentation(thisLine, tabSizeInSpaces) !== 0);
+
+        var thisIndentation = getIndentation(thisLine, tabSizeInSpaces);
+        while (pos.ch !== 0 && thisIndentation) {
+            // while not at beginning of line (highest point in hierarchy)
+            // OR we have reached highest hierarchy (no indentation)
+            var k = getKeyFromLine(thisLine);
+            if (k !== undefined) {
+                hierarchy.push(k);
+            }
+            pos = walkUp(pos, thisIndentation, cm, tabSizeInSpaces);
+            thisLine = cm.getLine(pos.line);
+            thisIndentation = getIndentation(thisLine, tabSizeInSpaces);
+        }
+
+        if (!isHighestContext || isIndentedBlock) {
+            // is an indented block, add the above level's key
+            hierarchy.push(getKeyFromLine(thisLine));
+        }
+
+        return hierarchy;
+    }
+
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
         var constants = opts.constants || CONSTANTS;
         var keywords = opts.keywords || KEYWORDS;
@@ -59,51 +134,11 @@
         var word = curLine.slice(start, end);
 
         var result = [];
-        // TODO: Move these functions out
-        function walkUp(pos, indent) {
-            pos.line --;
-            var thisLine = cm.getLine(pos.line);
-            while (!OBJECT_KEY.test(thisLine) && getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) >= indent) {
-                // while this isn't the line we're looking for, move along
-                pos.line --;
-                thisLine = cm.getLine(pos.line);
-            }
-            pos.ch = cm.getLine(pos.line);
-            return pos;
-        }
-
-        function getHierarchy(pos) {
-            var hierarchy = [];
-            var thisLine = cm.getLine(pos.line);
-
-            var isHighestContext = (getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) === 0);
-            var isIndentedBlock = (pos.ch !== 0 && getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) !== 0);
-
-            var thisIndentation = getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces);
-            while (pos.ch !== 0 && thisIndentation) {
-                // while not at beginning of line (highest point in hierarchy)
-                // OR we have reached highest hierarchy (no indentation)
-                var k = getKeyFromLine(thisLine, LEAF_KV);
-                if (k !== undefined) {
-                    hierarchy.push(k);
-                }
-                pos = walkUp(pos, thisIndentation);
-                thisLine = cm.getLine(pos.line);
-                thisIndentation = getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces);
-            }
-
-            if (!isHighestContext || isIndentedBlock) {
-                // is an indented block, add the above level's key
-                hierarchy.push(getKeyFromLine(thisLine, LEAF_KV));
-            }
-
-            return hierarchy;
-        }
 
         // get context of hierarchy
         var context = keywords;
         var contextKeywords = [];
-        var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch)).reverse();
+        var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch), cm, tabSizeInSpaces).reverse();
 
         // walk down contexts
         for (var h in hierarchy) {
@@ -152,38 +187,3 @@
         }
     });
 });
-
-function addUnique(kw, result) {
-    // add if not already in result set
-    if (!kw || result.indexOf(kw) !== -1) {
-        return;
-    }
-    result.push(kw);
-}
-
-function rstrip(line) {
-    return line.replace(/\s*$/g, '');
-}
-
-function getIndentation(line, WORD_OR_COLON, tabSizeInSpaces) {
-    if (!line.match(/^\s*?$/)) {
-        // only strip if line isn't all whitespace
-        line = rstrip(line);
-    }
-
-    // walk left from right until whitespace or eol
-    var s = line.length;
-    while (s && WORD_OR_COLON.test(line.charAt(s - 1))) --s;
-    line = line.slice(0, s);
-    // change tabs to spaces
-    line = line.replace(/\t/g, tabSizeInSpaces);
-    // return the number of spaces
-    return line.length;
-}
-
-function getKeyFromLine(line, LEAF_KV) {
-    var m = line.match(LEAF_KV);
-    if (m) {
-        return m[1];
-    }
-}
