@@ -1598,6 +1598,19 @@
       },
       "short_class" : "ModifyGameMode"
     },
+    "modify_mage" : {
+      "category" : "",
+      "class_name" : "ModifyMageAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Modify Mage",
+      "parameters" : {
+        "mage_class" : "",
+        "modify_type" : "activate"
+      },
+      "short_class" : "ModifyMage"
+    },
     "modify_mana" : {
       "category" : "player",
       "class_name" : "ModifyManaAction",
@@ -1610,6 +1623,18 @@
         "mana" : "1"
       },
       "short_class" : "ModifyMana"
+    },
+    "modify_max_health" : {
+      "category" : "",
+      "class_name" : "ModifyMaxHealthAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Modify Max Health",
+      "parameters" : {
+        "health" : "0.0"
+      },
+      "short_class" : "ModifyMaxHealth"
     },
     "modify_properties" : {
       "category" : "player",
@@ -7326,6 +7351,14 @@
       "name" : "Mage",
       "type" : "map"
     },
+    "mage_class" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "mage_class",
+      "importance" : 0,
+      "name" : "Mage Class",
+      "type" : "string"
+    },
     "magic_damage" : {
       "category" : "",
       "description" : [ "" ],
@@ -7741,6 +7774,14 @@
       "importance" : 0,
       "name" : "Modify Target",
       "type" : "string"
+    },
+    "modify_type" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "modify_type",
+      "importance" : 0,
+      "name" : "Modify Type",
+      "type" : "mage_modify_type"
     },
     "mount_name" : {
       "category" : "",
@@ -12190,6 +12231,18 @@
         "0" : null,
         "1" : null,
         "100" : null
+      }
+    },
+    "mage_modify_type" : {
+      "class_name" : "com.elmakers.mine.bukkit.action.builtin.ModifyMageAction$ModifyType",
+      "description" : [ "How to modify the target mage" ],
+      "name" : "Modify Type",
+      "options" : {
+        "activate" : null,
+        "lock" : null,
+        "switch" : null,
+        "unlock" : null,
+        "unlock_and_activate" : null
       }
     },
     "map" : {
