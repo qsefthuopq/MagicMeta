@@ -180,7 +180,7 @@ function GUIEditor(container)
                 cmd = "addSibling";
                 break;
             case "del":
-            case "backspace": // mac
+            case "meta+backspace": // mac
                 cmd = "remove";
                 break;
             case "ctrl+up":
