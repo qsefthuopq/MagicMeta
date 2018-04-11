@@ -144,8 +144,7 @@ public class MagicMeta {
         spell.setMage(mage);
         spell.loadTemplate("interrogator", templateConfiguration);
 
-        CastContext context = new CastContext(mage);
-        context.setSpell(spell);
+        CastContext context = new CastContext(spell);
 
         // First get base action parameters
         SpellAction baseAction = new CompoundAction() {};
