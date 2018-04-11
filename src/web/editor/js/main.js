@@ -9,6 +9,7 @@ function initialize() {
     $("#saveButton").button().click(function() { editor.save(); });
     $('#validateButton').button().click(function() { editor.validate(); });
     $('#referenceButton').button().click(function() { editor.openReference(); });
+    $('#downloadButton').button().click(function() { editor.download(); });
     $('#forkButton').button().click(function() { editor.fork(); });
     $('#modeSelector input[type=radio]').change(function() { editor.checkMode(); });
     $("#loadSpellList").selectable({filter: 'tr'});

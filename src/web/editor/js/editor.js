@@ -285,18 +285,8 @@ Editor.prototype.checkMode = function() {
     }
 };
 
-Editor.prototype.fork = function() {
-    var me = this;
-    var spells = this.getSpellFiles(function() { me.fork(); });
-    if (spells == null) return;
-
-    var spellConfig = this.getSpellConfig();
+Editor.prototype.simpleParse = function(spellConfig) {
     var lines = spellConfig.split("\n");
-    if (spellConfig.trim().length == 0 || lines.length == 0) {
-        alert("There's nothing to fork...");
-        return false;
-    }
-
     var keyLine = 0;
     var key = null;
     while (keyLine < lines.length) {
@@ -305,12 +295,35 @@ Editor.prototype.fork = function() {
         key = line;
         break;
     }
-    if (key == null) {
+    keyLine--;
+    if (key != null) {
+        key = key.substring(0, key.length - 1);
+    }
+    return {
+        key: key,
+        keyLine: keyLine,
+        lines: lines
+    }
+};
+
+Editor.prototype.fork = function() {
+    var me = this;
+    var spells = this.getSpellFiles(function() { me.fork(); });
+    if (spells == null) return;
+
+    var spellConfig = this.getSpellConfig();
+    spellConfig = this.simpleParse(spellConfig);
+
+    if (spellConfig.lines.length == 0 || spellConfig.lines[0].trim().length == 0) {
+        alert("There's nothing to fork...");
+        return false;
+    }
+    if (spellConfig.key == null || spellConfig.key == '') {
         alert("Couldn't find the spell key... is your config OK?");
         return false;
     }
-    keyLine--;
-    key = key.substring(0, key.length - 1);
+
+    var key = spellConfig.key;
     if (key != '') {
         while (key.length > 1 && key[key.length - 1] >= '0' && key[key.length - 1] <= '9') {
             key = key.substr(0, key.length - 1);
@@ -323,7 +336,8 @@ Editor.prototype.fork = function() {
         }
     }
 
-    lines[keyLine] = key + ":";
+    var lines = spellConfig.lines;
+    lines[spellConfig.keyLine] = key + ":";
     var newSpell = lines.join("\n");
     this.spellKeys[key] = true;
 
@@ -334,6 +348,21 @@ Editor.prototype.fork = function() {
 
 Editor.prototype.openReference = function() {
     window.open(referenceURL, '_blank');
+};
+
+Editor.prototype.download = function() {
+    var spellConfig = this.getSpellConfig();
+    var key = this.simpleParse(spellConfig).key;
+    if (key == null || key == '') {
+        alert("Nothing to download... ?");
+        return;
+    }
+
+    var downloadLink = document.createElement('a');
+    downloadLink.setAttribute('href', 'data:text/yaml;charset=utf-8,' + encodeURIComponent(spellConfig));
+    downloadLink.setAttribute('target', "_new");
+    downloadLink.setAttribute('download', key + ".yml");
+    downloadLink.click();
 };
 
 Editor.prototype.setMetadata = function(meta) {

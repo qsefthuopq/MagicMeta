@@ -65,6 +65,9 @@ $user = getUser();
                 <option value="Projectile">Projectile</option>
             </select>
         </span>
+        <span id="downloadButtonContainer">
+            <button type="button" id="downloadButton" title="Download this spell config. Place in plugins/Magic/spells to load it on your server.">Download</button>
+        </span>
         <span id="modeSelector" class="controlgroup">
             <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton" title="Use a graphical editor to build your spell">Editor</label>
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton" title="View the raw configuration code for your spell">Code</label>
