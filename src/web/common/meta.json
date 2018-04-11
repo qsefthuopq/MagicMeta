@@ -1599,9 +1599,9 @@
       "short_class" : "ModifyGameMode"
     },
     "modify_mage" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ModifyMageAction",
-      "description" : [ "" ],
+      "description" : [ "Can be used to lock, unlock or activate a player's mage classes" ],
       "examples" : [ ],
       "importance" : 0,
       "name" : "Modify Mage",
@@ -1625,9 +1625,9 @@
       "short_class" : "ModifyMana"
     },
     "modify_max_health" : {
-      "category" : "",
+      "category" : "entity",
       "class_name" : "ModifyMaxHealthAction",
-      "description" : [ "" ],
+      "description" : [ "Modify the maximum health of the target entity.", "This change is permanent!" ],
       "examples" : [ ],
       "importance" : 0,
       "name" : "Modify Max Health",
@@ -6618,7 +6618,7 @@
       "category" : "",
       "description" : [ "Amount of health to heal" ],
       "field" : "health",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Health",
       "type" : "double"
     },
@@ -7352,10 +7352,10 @@
       "type" : "map"
     },
     "mage_class" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "player",
+      "description" : [ "A mage class as defined in classes.yml, or one of the example configs" ],
       "field" : "mage_class",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Mage Class",
       "type" : "string"
     },
@@ -7776,10 +7776,10 @@
       "type" : "string"
     },
     "modify_type" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "player",
+      "description" : [ "Determine what to do with the player's classes" ],
       "field" : "modify_type",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Modify Type",
       "type" : "mage_modify_type"
     },
