@@ -1,7 +1,7 @@
 {
   "action_parameters" : {
-    "actions" : null,
     "action_class" : null,
+    "actions" : null,
     "ignore_result" : "false",
     "requires_entity_target" : "false",
     "requires_target" : "false",
@@ -568,6 +568,19 @@
         "vertical_range" : "8"
       },
       "short_class" : "ChangeWorld"
+    },
+    "chat" : {
+      "category" : "player",
+      "class_name" : "ChatAction",
+      "description" : [ "Force the target player to say something in chat" ],
+      "examples" : [ ],
+      "importance" : 50,
+      "name" : "Chat",
+      "parameters" : {
+        "message" : "",
+        "randomized_messages" : null
+      },
+      "short_class" : "Chat"
     },
     "check_block" : {
       "category" : "compound",
@@ -3741,12 +3754,12 @@
   "effectlib_parameters" : {
     "asynchronous" : "true",
     "auto_orient" : "false",
-    "effect_class" : null,
     "color" : null,
     "delay_ticks" : "0",
     "disappear_with_origin_entity" : "false",
     "disappear_with_target_entity" : "false",
     "duration" : null,
+    "effect_class" : null,
     "effect_type" : "instant",
     "effectlib_class" : null,
     "iterations" : "0",
@@ -3811,6 +3824,14 @@
     "xp" : "0"
   },
   "properties" : {
+    "action_class" : {
+      "category" : "base",
+      "description" : [ "The class this action uses", "This determines the type of action that will be performed" ],
+      "field" : "class",
+      "importance" : 100,
+      "name" : "Class",
+      "type" : "action_class"
+    },
     "actions" : {
       "category" : "actions",
       "description" : [ "A map of events to actions to run. The most comment event used by all spells is 'cast'", "Actions determine the behavior of a spell, defining what it does" ],
@@ -4927,38 +4948,6 @@
       "name" : "Cloud Size",
       "type" : "float"
     },
-    "effect_class" : {
-      "category" : "base",
-      "description" : [ "The class this effect uses", "This determines the type of effect that will be performed", "This can normally be omitted, defaulting to EffectSingle, which will just play a single particle effect, sound, firework, and/or effectlib effect." ],
-      "field" : "class",
-      "importance" : 20,
-      "name" : "Class",
-      "type" : "effect_class"
-    },
-    "effectlib_class" : {
-      "category" : "base",
-      "description" : [ "The class this effect uses", "This determines the type of effect that will be shown" ],
-      "field" : "class",
-      "importance" : 100,
-      "name" : "Class",
-      "type" : "effectlib_class"
-    },
-    "spell_class" : {
-      "category" : "base",
-      "description" : [ "The class this spell uses", "This determines the type of spell that will be performed", "This is not used in action-based spells, and should generally be avoided", "The main exception is engineering magic, which still relies heavily on ConstructSpell" ],
-      "field" : "class",
-      "importance" : 0,
-      "name" : "Class",
-      "type" : "spell_class"
-    },
-    "action_class" : {
-      "category" : "base",
-      "description" : [ "The class this action uses", "This determines the type of action that will be performed" ],
-      "field" : "class",
-      "importance" : 100,
-      "name" : "Class",
-      "type" : "action_class"
-    },
     "color" : {
       "category" : "effects",
       "description" : [ "Can be used to color particles and firework effects" ],
@@ -5911,6 +5900,14 @@
       "importance" : 100,
       "name" : "Effect Lib Effect",
       "type" : "map"
+    },
+    "effectlib_class" : {
+      "category" : "base",
+      "description" : [ "The class this effect uses", "This determines the type of effect that will be shown" ],
+      "field" : "class",
+      "importance" : 100,
+      "name" : "Class",
+      "type" : "effectlib_class"
     },
     "effects" : {
       "category" : "base",
@@ -8769,6 +8766,14 @@
       "name" : "Randomize",
       "type" : "boolean"
     },
+    "randomized_messages" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "randomized_messages",
+      "importance" : 0,
+      "name" : "Randomized Messages",
+      "type" : "list"
+    },
     "range" : {
       "category" : "targeting",
       "description" : [ "How far, in blocks, this spell can reach before counting as a miss", "This can apply to a base spell, which will do instant raycast targeting, or to a CustomProjectile which will travel over time until it reaches this distance" ],
@@ -9752,6 +9757,14 @@
       "importance" : 0,
       "name" : "Spell",
       "type" : "string"
+    },
+    "spell_class" : {
+      "category" : "base",
+      "description" : [ "The class this spell uses", "This determines the type of spell that will be performed", "This is not used in action-based spells, and should generally be avoided", "The main exception is engineering magic, which still relies heavily on ConstructSpell" ],
+      "field" : "class",
+      "importance" : 0,
+      "name" : "Class",
+      "type" : "spell_class"
     },
     "spell_inventory" : {
       "category" : "",
@@ -11575,7 +11588,6 @@
     "cancellable" : "true",
     "cast_on_no_target" : "true",
     "category" : null,
-    "spell_class" : null,
     "color" : null,
     "costs" : null,
     "creator" : null,
@@ -11609,6 +11621,7 @@
     "require_health_percentage" : "0.0",
     "requirements" : null,
     "show_undoable" : "true",
+    "spell_class" : null,
     "tags" : null,
     "toggle" : "none",
     "undoable" : "false",
@@ -11621,34 +11634,16 @@
     "worth_sp" : "0.0"
   },
   "types" : {
-    "actions" : {
-      "class_name" : "java.util.Map",
-      "description" : [ "An action handler, with lists of actions defined for events such as 'cast'" ],
-      "name" : "Actions",
-      "options" : { }
-    },
     "action_class" : {
       "class_name" : "java.lang.String",
       "description" : [ "A builtin or external SpellAction class" ],
       "name" : "Action Class",
       "options" : { }
     },
-    "spell_class" : {
-      "class_name" : "java.lang.String",
-      "description" : [ "A builtin or external Spell class" ],
-      "name" : "Spell Class",
-      "options" : { }
-    },
-    "effect_class" : {
-      "class_name" : "java.lang.String",
-      "description" : [ "A builtin or external EffectPlayer class" ],
-      "name" : "Effect Class",
-      "options" : { }
-    },
-    "effectlib_class" : {
-      "class_name" : "java.lang.String",
-      "description" : [ "A builtin or external Effect class" ],
-      "name" : "EffectLib Class",
+    "actions" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "An action handler, with lists of actions defined for events such as 'cast'" ],
+      "name" : "Actions",
       "options" : { }
     },
     "attribute" : {
@@ -11916,6 +11911,12 @@
         "zombie_infect" : null
       }
     },
+    "effect_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external EffectPlayer class" ],
+      "name" : "Effect Class",
+      "options" : { }
+    },
     "effect_location" : {
       "class_name" : "java.lang.String",
       "description" : [ "A location to play an effect list" ],
@@ -11935,6 +11936,12 @@
         "instant" : null,
         "repeating" : null
       }
+    },
+    "effectlib_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external Effect class" ],
+      "name" : "EffectLib Class",
+      "options" : { }
     },
     "enchantment" : {
       "class_name" : "org.bukkit.enchantments.Enchantment",
@@ -13291,6 +13298,12 @@
       "class_name" : "java.lang.String",
       "description" : [ "The key name of a spell" ],
       "name" : "Spell",
+      "options" : { }
+    },
+    "spell_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external Spell class" ],
+      "name" : "Spell Class",
       "options" : { }
     },
     "spell_icon" : {
