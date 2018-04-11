@@ -196,6 +196,7 @@
         "armor_stand_invisible" : "true",
         "armor_stand_marker" : "true",
         "armor_stand_small" : "false",
+        "arms" : "false",
         "attach_duration" : "0",
         "attributes" : null,
         "baby" : "false",
@@ -501,6 +502,7 @@
         "relative_target_offset" : null,
         "source_at_target" : "false",
         "source_direction" : null,
+        "source_direction_is_target" : "false",
         "source_direction_offset" : null,
         "source_direction_speed" : "0.0",
         "source_is_target" : "false",
@@ -622,7 +624,8 @@
         "local_echo" : "true",
         "modal" : "false",
         "op" : "false",
-        "timeout" : "0"
+        "timeout" : "0",
+        "variables" : null
       },
       "short_class" : "Command"
     },
@@ -1416,6 +1419,7 @@
       "importance" : 0,
       "name" : "Item Shop",
       "parameters" : {
+        "apply_to_caster" : "false",
         "apply_to_wand" : "true",
         "auto_close" : "true",
         "auto_upgrade" : "false",
@@ -2320,6 +2324,7 @@
       "name" : "Spell Shop",
       "parameters" : {
         "allow_locked" : "false",
+        "apply_to_caster" : "false",
         "apply_to_wand" : "true",
         "auto_close" : "true",
         "auto_upgrade" : "false",
@@ -2806,7 +2811,13 @@
     "orient" : "false",
     "origin_offset" : null,
     "particle" : null,
+    "particle_count" : "1",
+    "particle_data" : "0.0",
+    "particle_offset_x" : "0.3",
+    "particle_offset_y" : "0.3",
+    "particle_offset_z" : "0.3",
     "particle_override" : null,
+    "particle_speed" : "0.0",
     "relative_offset" : null,
     "relative_target_offset" : null,
     "reorient" : "false",
@@ -4022,6 +4033,14 @@
       "name" : "Angular Velocity Z",
       "type" : "double"
     },
+    "apply_to_caster" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "apply_to_caster",
+      "importance" : 0,
+      "name" : "Apply To Caster",
+      "type" : "boolean"
+    },
     "apply_to_wand" : {
       "category" : "",
       "description" : [ "Whether the purchased item should apply directly to the player's wand" ],
@@ -4132,6 +4151,14 @@
       "field" : "armor_stand_small",
       "importance" : 0,
       "name" : "Armor Stand Small",
+      "type" : "boolean"
+    },
+    "arms" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "arms",
+      "importance" : 0,
+      "name" : "Arms",
       "type" : "boolean"
     },
     "async" : {
@@ -5298,6 +5325,22 @@
       "importance" : 0,
       "name" : "Crash Velocity Y Offset",
       "type" : "double"
+    },
+    "creator" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "creator",
+      "importance" : 0,
+      "name" : "Creator",
+      "type" : "string"
+    },
+    "creator_id" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "creator_id",
+      "importance" : 0,
+      "name" : "Creator Id",
+      "type" : "string"
     },
     "cross_world" : {
       "category" : "",
@@ -7988,6 +8031,14 @@
       "name" : "Particle Count",
       "type" : "integer"
     },
+    "particle_data" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "particle_data",
+      "importance" : 0,
+      "name" : "Particle Data",
+      "type" : "double"
+    },
     "particle_helix" : {
       "category" : "effects",
       "description" : [ "The particle to use in the helix of this effect" ],
@@ -9516,6 +9567,14 @@
       "name" : "Source Direction",
       "type" : "string"
     },
+    "source_direction_is_target" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "source_direction_is_target",
+      "importance" : 0,
+      "name" : "Source Direction Is Target",
+      "type" : "boolean"
+    },
     "source_direction_offset" : {
       "category" : "",
       "description" : [ "" ],
@@ -10894,6 +10953,14 @@
       "name" : "Variable2",
       "type" : "string"
     },
+    "variables" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "variables",
+      "importance" : 0,
+      "name" : "Variables",
+      "type" : "list"
+    },
     "variant" : {
       "category" : "",
       "description" : [ "" ],
@@ -11484,6 +11551,8 @@
     "category" : null,
     "color" : null,
     "costs" : null,
+    "creator" : null,
+    "creator_id" : null,
     "description" : "",
     "disable_mana_regeneration" : "false",
     "disguise_restricted" : "false",
@@ -12531,34 +12600,63 @@
       "description" : [ "A particle type. Use the 'fx' spell to easily see particles in-game.", "/cast fx particle crit", "/cast fx particle <tab>" ],
       "name" : "Particle Effect",
       "options" : {
+        "ambient_entity_effect" : null,
+        "angry_villager" : null,
         "barrier" : null,
+        "block" : null,
         "block_crack" : null,
         "block_dust" : null,
+        "bubble" : null,
+        "bubble_column_up" : null,
+        "bubble_pop" : null,
         "cloud" : null,
         "crit" : null,
         "crit_magic" : null,
+        "current_down" : null,
         "damage_indicator" : null,
         "dragon_breath" : null,
         "drip_lava" : null,
         "drip_water" : null,
+        "dripping_lava" : null,
+        "dripping_water" : null,
+        "dust" : null,
+        "effect" : null,
+        "elder_guardian" : null,
+        "enchant" : null,
+        "enchanted_hit" : null,
         "enchantment_table" : null,
         "end_rod" : null,
+        "entity_effect" : null,
+        "explosion" : null,
+        "explosion_emitter" : null,
         "explosion_huge" : null,
         "explosion_large" : null,
         "explosion_normal" : null,
         "falling_dust" : null,
+        "firework" : null,
         "fireworks_spark" : null,
+        "fishing" : null,
         "flame" : null,
         "footstep" : null,
+        "happy_villager" : null,
         "heart" : null,
+        "instant_effect" : null,
+        "item" : null,
         "item_crack" : null,
+        "item_slime" : null,
+        "item_snowball" : null,
         "item_take" : null,
+        "large_smoke" : null,
         "lava" : null,
         "mob_appearance" : null,
+        "mycelium" : null,
         "note" : null,
+        "poof" : null,
         "portal" : null,
+        "rain" : null,
         "redstone" : null,
         "slime" : null,
+        "smoke" : null,
         "smoke_large" : null,
         "smoke_normal" : null,
         "snow_shovel" : null,
@@ -12569,17 +12667,22 @@
         "spell_mob_ambient" : null,
         "spell_witch" : null,
         "spit" : null,
+        "splash" : null,
+        "squid_ink" : null,
         "suspended" : null,
         "suspended_depth" : null,
         "sweep_attack" : null,
         "totem" : null,
+        "totem_of_undying" : null,
         "town_aura" : null,
+        "underwater" : null,
         "villager_angry" : null,
         "villager_happy" : null,
         "water_bubble" : null,
         "water_drop" : null,
         "water_splash" : null,
-        "water_wake" : null
+        "water_wake" : null,
+        "witch" : null
       }
     },
     "path" : {
