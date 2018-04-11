@@ -367,6 +367,8 @@ GUIEditor.prototype.appendToObject = function(nodes, object) {
                 value = parseFloat(value);
             } else if (node.data.type == 'integer') {
                 value = parseInt(value);
+            } else if (node.data.type == 'boolean') {
+                value = value === 'true';
             }
 
             object[node.title] = value;
