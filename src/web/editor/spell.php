@@ -25,8 +25,7 @@ if (count($lines) == 0) {
     die(json_encode(array('success' => false, 'message' => 'File is empty')));
 }
 
-function startsWith($haystack, $needle)
-{
+function startsWith($haystack, $needle) {
     // search backwards starting from haystack length characters from the end
     return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
 }

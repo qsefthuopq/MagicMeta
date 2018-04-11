@@ -38,15 +38,38 @@ if (file_exists($spellFile)) {
     }
 }
 
-foreach ($spells as $key => $spell) {
-    $spell['creator_id'] = $user['id'];
-    $spell['creator_name'] = $user['name'];
-    $spells[$key] = $spell;
+function startsWith($haystack, $needle) {
+    // search backwards starting from haystack length characters from the end
+    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
 }
 
-$spells = yaml_emit_clean($spells);
+// Don't use the $spells object after this point, we don't want to lose comments and formatting.
+$lines = explode("\n", $spell);
+$cleaned = array();
+$afterKey = false;
+foreach ($lines as $line) {
+    $trimmed = trim($line);
+    if (startsWith($trimmed, 'creator_')) continue;
 
-if (file_put_contents($spellFile, $spells) === FALSE) {
+    if ($afterKey && $trimmed[0] != '# ' && count($trimmed) != 0) {
+        $indentSize = strlen($line) - strlen(ltrim($line));
+        $indent = substr($line, 0, $indentSize);
+        array_push($cleaned, $indent . 'creator_id: ' . $user['id']);
+        array_push($cleaned, $indent . 'creator_name: ' . $user['name']);
+        $afterKey = false;
+    }
+
+    array_push($cleaned, $line);
+
+    // Check for spell keys to add creator lines
+    if (count($trimmed) != 0 && $line[0] != '#' && $line[0] != ' ') {
+        $afterKey = true;
+    }
+}
+
+$spell = implode("\n", $cleaned);
+
+if (file_put_contents($spellFile, $spell) === FALSE) {
     die(json_encode(array('success' => false, 'message' => 'Could not write to file ' . $spellFile)));
 }
 
