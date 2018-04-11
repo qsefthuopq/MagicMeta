@@ -1,7 +1,7 @@
 {
   "action_parameters" : {
     "actions" : null,
-    "code_class" : null,
+    "action_class" : null,
     "ignore_result" : "false",
     "requires_entity_target" : "false",
     "requires_target" : "false",
@@ -2799,6 +2799,7 @@
     "color_override" : null,
     "delay" : "0",
     "effect" : null,
+    "effect_class" : null,
     "effectlib" : null,
     "entity_effect" : null,
     "firework" : null,
@@ -3740,13 +3741,14 @@
   "effectlib_parameters" : {
     "asynchronous" : "true",
     "auto_orient" : "false",
-    "code_class" : null,
+    "effect_class" : null,
     "color" : null,
     "delay_ticks" : "0",
     "disappear_with_origin_entity" : "false",
     "disappear_with_target_entity" : "false",
     "duration" : null,
     "effect_type" : "instant",
+    "effectlib_class" : null,
     "iterations" : "0",
     "material" : null,
     "material_data" : null,
@@ -4925,13 +4927,37 @@
       "name" : "Cloud Size",
       "type" : "float"
     },
-    "code_class" : {
+    "effect_class" : {
       "category" : "base",
-      "description" : [ "The class this effect or action uses", "This determines the type of effect or action that will be performed" ],
+      "description" : [ "The class this effect uses", "This determines the type of effect that will be performed", "This can normally be omitted, defaulting to EffectSingle, which will just play a single particle effect, sound, firework, and/or effectlib effect." ],
+      "field" : "class",
+      "importance" : 20,
+      "name" : "Class",
+      "type" : "effect_class"
+    },
+    "effectlib_class" : {
+      "category" : "base",
+      "description" : [ "The class this effect uses", "This determines the type of effect that will be shown" ],
       "field" : "class",
       "importance" : 100,
       "name" : "Class",
-      "type" : "string"
+      "type" : "effectlib_class"
+    },
+    "spell_class" : {
+      "category" : "base",
+      "description" : [ "The class this spell uses", "This determines the type of spell that will be performed", "This is not used in action-based spells, and should generally be avoided", "The main exception is engineering magic, which still relies heavily on ConstructSpell" ],
+      "field" : "class",
+      "importance" : 0,
+      "name" : "Class",
+      "type" : "spell_class"
+    },
+    "action_class" : {
+      "category" : "base",
+      "description" : [ "The class this action uses", "This determines the type of action that will be performed" ],
+      "field" : "class",
+      "importance" : 100,
+      "name" : "Class",
+      "type" : "action_class"
     },
     "color" : {
       "category" : "effects",
@@ -11549,6 +11575,7 @@
     "cancellable" : "true",
     "cast_on_no_target" : "true",
     "category" : null,
+    "spell_class" : null,
     "color" : null,
     "costs" : null,
     "creator" : null,
@@ -11598,6 +11625,30 @@
       "class_name" : "java.util.Map",
       "description" : [ "An action handler, with lists of actions defined for events such as 'cast'" ],
       "name" : "Actions",
+      "options" : { }
+    },
+    "action_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external SpellAction class" ],
+      "name" : "Action Class",
+      "options" : { }
+    },
+    "spell_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external Spell class" ],
+      "name" : "Spell Class",
+      "options" : { }
+    },
+    "effect_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external EffectPlayer class" ],
+      "name" : "Effect Class",
+      "options" : { }
+    },
+    "effectlib_class" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A builtin or external Effect class" ],
+      "name" : "EffectLib Class",
       "options" : { }
     },
     "attribute" : {
