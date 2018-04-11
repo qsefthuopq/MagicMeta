@@ -5153,7 +5153,7 @@
     "cooldown_mage" : {
       "category" : "base",
       "description" : [ "How long, in milliseconds, a player has to wait before casting this any spells after having cast this one" ],
-      "field" : "cooldown",
+      "field" : "cooldown_mage",
       "importance" : 60,
       "name" : "Mage Global Cooldown",
       "type" : "integer"
