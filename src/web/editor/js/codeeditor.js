@@ -3,8 +3,8 @@ function CodeEditor(container)
     this.editor = CodeMirror.fromTextArea(container.get(0), {
         lineNumbers: true,
         extraKeys: {
-            "Ctrl-S": save,
-            "Ctrl-D": validate,
+            "Ctrl-S": function() { editor.save(); },
+            "Ctrl-D": function() { editor.validate(); },
             "Ctrl-Space": "autocomplete"
         }
     });

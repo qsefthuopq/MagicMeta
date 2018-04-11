@@ -99,7 +99,7 @@
 
 .syntax-error {
     text-decoration: underline;
-    color: red;
+    color: red !important;
 }
 
 #editorTree:focus {

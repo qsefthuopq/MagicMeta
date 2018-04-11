@@ -173,11 +173,11 @@ function GUIEditor(container)
                 break;
             case "ctrl+o":
             case "meta+o": // mac
-                load();
+                editor.load();
                 break;
             case "ctrl+s":
             case "meta+s": // mac
-                save();
+                editor.save();
                 break;
             case "ctrl+n":
             case "meta+n": // mac

@@ -37,6 +37,7 @@ $user = getUser();
     <script src="js/editor.js"></script>
     <script src="js/codeeditor.js"></script>
     <script src="js/guieditor.js"></script>
+    <script src="js/main.js"></script>
     <script type="text/javascript">
         var user = <?= json_encode($user) ?>;
         var referenceURL = '//<?= $referenceURL ?>';

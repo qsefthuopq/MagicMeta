@@ -1,96 +1,99 @@
-$(document).ready(initialize);
+function Editor()
+{
+    this.saving = false;
+    this.loading = false;
+    this.spellFiles = null;
+    this.metadata = null;
+    this.spellKeys = {};
 
-var saving = false;
-var loading = false;
-var spellFiles = null;
-var metadata = null;
-var spellKeys = {};
+    this.codeEditor = null;
+    this.guiEditor = null;
+};
 
-var codeEditor = null;
-var guiEditor = null;
+Editor.prototype.getSpellConfig = function() {
+    return this.getActiveEditor().getValue();
+};
 
-function getSpellConfig() {
-    return getActiveEditor().getValue();
-}
+Editor.prototype.setSpellConfig = function(spellConfig) {
+    this.getActiveEditor().setValue(spellConfig);
+};
 
-function setSpellConfig(spellConfig) {
-    getActiveEditor().setValue(spellConfig);
-}
-
-function save() {
-    if (saving) return;
+Editor.prototype.save = function() {
+    if (this.saving) return;
 
     if (user.id == '') {
         login();
         return;
     }
 
-    if (validate() == null) {
+    if (this.validate() == null) {
         return;
     }
 
-    saving = true;
-    spellFiles = null;
+    this.saving = true;
+    this.spellFiles = null;
+    var me = this;
     $("#saveButton").button('disable');
     $.ajax( {
         type: "POST",
         url: "save.php",
         data: {
-            spell: getSpellConfig()
+            spell: this.getSpellConfig()
         },
         dataType: 'json'
     }).done(function(response) {
         $("#saveButton").button('enable');
-        saving = false;
+        me.saving = false;
         if (!response.success) {
             alert("Save failed: " + response.message);
         }
     });
-}
+};
 
-function validate() {
-    if (codeEditor != null) {
-        codeEditor.clearErrors();
+Editor.prototype.validate = function() {
+    if (this.codeEditor != null) {
+        this.codeEditor.clearErrors();
     }
-    var spellConfig = getSpellConfig();
+    var spellConfig = this.getSpellConfig();
     if (spellConfig.trim().length == 0) return false;
     var config = null;
     try {
         config = jsyaml.safeLoad(spellConfig, 'utf8');
     } catch (e) {
-        if (codeEditor != null) {
-            codeEditor.showError(e);
+        if (this.codeEditor != null) {
+            this.codeEditor.showError(e);
         }
         alert(e.message);
         return null;
     }
 
     return config;
-}
+};
 
-function startNew(template) {
-    setSpellConfig($('#template' + template).val());
-}
+Editor.prototype.startNew = function(template) {
+    this.setSpellConfig($('#template' + template).val());
+};
 
-function getSpellFiles(callback) {
-    if (loading) return null;
+Editor.prototype.getSpellFiles = function(callback) {
+    if (this.loading) return null;
 
-    if (spellFiles == null) {
-        loading = true;
+    if (this.spellFiles == null) {
+        this.loading = true;
+        var me = this;
         $("#loadButton").button('disable');
         $.ajax( {
             type: "POST",
             url: "spells.php",
             dataType: 'json'
         }).done(function(response) {
-            loading = false;
+            me.loading = false;
             $("#loadButton").button('enable');
             if (!response.success) {
                 alert("Failed to fetch spells: " + response.message);
             } else {
-                spellFiles = response.spells;
-                if (spellFiles != null) {
-                    populateSpellFiles();
+                me.spellFiles = response.spells;
+                if (me.spellFiles != null) {
+                    me.populateSpellFiles();
                     callback();
                 }
             }
@@ -98,41 +101,43 @@ function getSpellFiles(callback) {
         return null;
     }
 
-    return spellFiles;
-}
+    return this.spellFiles;
+};
 
-function load() {
-    var spells = getSpellFiles(load);
+Editor.prototype.load = function() {
+    var me = this;
+    var spells = this.getSpellFiles(function() { me.load(); });
     if (spells == null) return;
 
     $("#loadSpellDialog").dialog({
-      modal: true,
-      height: 400,
-      width: '640px',
-      resizeable: false,
-      buttons: {
-        Cancel: function() {
-            $(this).dialog("close");
-        },
-        "Load": function() {
-            $(this).dialog("close");
-            var spell = jQuery(".ui-selected", this).data('key');
-            if (spell != '') {
-                loadFile(spell);
+        modal: true,
+        height: 400,
+        width: '640px',
+        resizeable: false,
+        buttons: {
+            Cancel: function() {
+                $(this).dialog("close");
+            },
+            "Load": function() {
+                $(this).dialog("close");
+                var spell = jQuery(".ui-selected", this).data('key');
+                if (spell != '') {
+                    me.loadFile(spell);
+                }
             }
+        },
+        open: function()  {
+            $(this).parent().find("button:eq(2)").focus();
         }
-      },
-      open: function()  {
-        $(this).parent().find("button:eq(2)").focus();
-      }
     }).dblclick(function() {
         $(this).parent().find("button:eq(2)").trigger("click");
     }).show();
-}
+};
 
-function loadFile(fileName) {
+Editor.prototype.loadFile = function(fileName) {
     if (fileName == null || fileName.length == 0) return;
 
+    var me = this;
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     currentMode = (currentMode == 'editorModeButton') ? 'editor' : 'code';
     window.location.hash = currentMode + "." + fileName;
@@ -148,17 +153,17 @@ function loadFile(fileName) {
         if (!response.success) {
             alert("Failed to fetch spell: " + response.message);
         } else {
-            setSpellConfig(response.yml);
+            me.setSpellConfig(response.yml);
         }
     });
-}
+};
 
-function populateSpellFiles() {
+Editor.prototype.populateSpellFiles = function() {
     var select = $('#loadSpellList');
     select.empty();
-    spellKeys = {};
+    this.spellKeys = {};
 
-    spellFiles.sort(function(a, b) {
+    this.spellFiles.sort(function(a, b) {
         var aIsDefault = (a.creator_id == '');
         var bIsDefault = (b.creator_id == '');
         if (aIsDefault && !bIsDefault) {
@@ -178,8 +183,8 @@ function populateSpellFiles() {
     var owned = false;
     var unowned = false;
     var defaults = false;
-    for (var i = 0; i < spellFiles.length; i++) {
-        var spell = spellFiles[i];
+    for (var i = 0; i < this.spellFiles.length; i++) {
+        var spell = this.spellFiles[i];
         var key = spell.key;
         var loadKey = key;
         var isDefault = false;
@@ -214,47 +219,47 @@ function populateSpellFiles() {
             )
         ));
         select.append(spellRow);
-        spellKeys[key] = true;
+        this.spellKeys[key] = true;
     }
-}
+};
 
-function getActiveEditor() {
+Editor.prototype.getActiveEditor = function() {
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     if (currentMode == 'editorModeButton') {
-        return getGUIEditor();
+        return this.getGUIEditor();
     }
 
-    return getCodeEditor();
-}
+    return this.getCodeEditor();
+};
 
-function getGUIEditor() {
-    if (guiEditor == null) {
-        guiEditor = new GUIEditor($('#editorTree'));
-        if (metadata != null) {
-            guiEditor.setMetadata(metadata);
+Editor.prototype.getGUIEditor = function() {
+    if (this.guiEditor == null) {
+        this.guiEditor = new GUIEditor($('#editorTree'));
+        if (this.metadata != null) {
+            this.guiEditor.setMetadata(this.metadata);
         }
     }
 
-    return guiEditor;
-}
+    return this.guiEditor;
+};
 
-function getCodeEditor() {
-    if (codeEditor == null) {
-        codeEditor = new CodeEditor($('#editor'));
-        if (metadata != null) {
-            codeEditor.setMetadata(metadata);
+Editor.prototype.getCodeEditor = function() {
+    if (this.codeEditor == null) {
+        this.codeEditor = new CodeEditor($('#editor'));
+        if (this.metadata != null) {
+            this.codeEditor.setMetadata(this.metadata);
         }
     }
 
-    return codeEditor;
-}
+    return this.codeEditor;
+};
 
-function checkMode() {
+Editor.prototype.checkMode = function() {
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     if (currentMode == 'editorModeButton') {
-        var gui = getGUIEditor();
-        if (codeEditor != null) {
-            var config = validate();
+        var gui = this.getGUIEditor();
+        if (this.codeEditor != null) {
+            var config = this.validate();
             if (config == null) {
                 setTimeout(function() {
                     $('#codeModeButton').prop('checked', true);
@@ -262,7 +267,7 @@ function checkMode() {
                 }, 1);
                 return;
             }
-            gui.setValue(codeEditor.getValue());
+            gui.setValue(this.codeEditor.getValue());
         }
 
         $('#codeEditor').hide();
@@ -273,18 +278,19 @@ function checkMode() {
         $('#guiEditor').hide();
         $('#validateButton').show();
 
-        var code = getCodeEditor();
-        if (guiEditor != null) {
-            code.setValue(guiEditor.getValue());
+        var code = this.getCodeEditor();
+        if (this.guiEditor != null) {
+            code.setValue(this.guiEditor.getValue());
         }
     }
-}
+};
 
-function fork() {
-    var spells = getSpellFiles(fork);
+Editor.prototype.fork = function() {
+    var me = this;
+    var spells = this.getSpellFiles(function() { me.fork(); });
     if (spells == null) return;
 
-    var spellConfig = getSpellConfig();
+    var spellConfig = this.getSpellConfig();
     if (spellConfig.trim().length == 0) {
         alert("There's nothing to fork...");
         return false;
@@ -311,7 +317,7 @@ function fork() {
         }
         var index = 2;
         var baseKey = key;
-        while (spellKeys.hasOwnProperty(key)) {
+        while (this.spellKeys.hasOwnProperty(key)) {
             key = baseKey + '' + index;
             index++;
         }
@@ -319,80 +325,27 @@ function fork() {
 
     var newSpell = {};
     newSpell[key] = spell;
-    spellKeys[key] = true;
+    this.spellKeys[key] = true;
 
-    setSpellConfig(dumpYaml(newSpell));
+    this.setSpellConfig(dumpYaml(newSpell));
 
     return true;
-}
+};
 
-function dumpYaml(object) {
-    return jsyaml.dump(object, {lineWidth: 200, noRefs: true});
-}
-
-function openReference() {
+Editor.prototype.openReference = function() {
     window.open(referenceURL, '_blank');
-}
+};
 
-function setMetadata(meta) {
+Editor.prototype.setMetadata = function(meta) {
     if (meta == null) {
         alert("Error loading metadata, please reload and try again.");
         return;
     }
-    metadata = meta;
-    if (codeEditor != null) {
-        codeEditor.setMetadata(meta);
+    this.metadata = meta;
+    if (this.codeEditor != null) {
+        this.codeEditor.setMetadata(meta);
     }
-    if (guiEditor != null) {
-        guiEditor.setMetadata(meta);
+    if (this.guiEditor != null) {
+        this.guiEditor.setMetadata(meta);
     }
-}
-
-function initialize() {
-    $("#loadButton").button().click(load);
-    $("#newButton").button().click(function() { startNew("Basic"); });
-    $("#saveButton").button().click(save);
-    $('#validateButton').button().click(validate);
-    $('#referenceButton').button().click(openReference);
-    $('#forkButton').button().click(fork);
-    $('#modeSelector input[type=radio]').change(checkMode);
-    $("#loadSpellList").selectable({filter: 'tr'});
-    $("#newSelector").selectmenu({
-      classes: {
-        "ui-selectmenu-button": "ui-button-icon-only demo-splitbutton-select"
-      },
-      change: function(){
-        startNew(this.value);
-      }
-    });
-
-    var loadSpell = null;
-    var currentHash = window.location.hash;
-    if (currentHash != '') {
-        currentHash = currentHash.substring(1);
-        var pieces = currentHash.split('.');
-        if (pieces.length > 1) {
-            if (pieces[0] == 'editor') {
-                $('#editorModeButton').prop('checked', true);
-            }
-            loadSpell = pieces[1];
-        } else {
-            loadSpell = pieces[0];
-        }
-    }
-    $('.controlgroup').controlgroup();
-    checkMode();
-    if (loadSpell != null) {
-        loadFile(loadSpell);
-    } else {
-        startNew("Basic");
-    }
-
-    $.ajax( {
-        type: "GET",
-        url: "common/meta.php",
-        dataType: 'json'
-    }).done(function(meta) {
-        setMetadata(meta);
-    });
-}
+};
