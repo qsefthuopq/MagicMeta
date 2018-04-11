@@ -1632,7 +1632,8 @@
       "importance" : 0,
       "name" : "Modify Max Health",
       "parameters" : {
-        "health" : "0.0"
+        "health_scale" : "0.0",
+        "max_health" : "0.0"
       },
       "short_class" : "ModifyMaxHealth"
     },
@@ -6622,6 +6623,14 @@
       "name" : "Health",
       "type" : "double"
     },
+    "health_scale" : {
+      "category" : "player",
+      "description" : [ "The scale to use when translating health to UI hearts" ],
+      "field" : "health_scale",
+      "importance" : 50,
+      "name" : "Health Scale",
+      "type" : "double"
+    },
     "height" : {
       "category" : "",
       "description" : [ "Height of an effect" ],
@@ -7521,7 +7530,7 @@
     },
     "max_health" : {
       "category" : "mob",
-      "description" : [ "How much health this mob should have" ],
+      "description" : [ "The maximum health this mob or player should have" ],
       "field" : "max_health",
       "importance" : 100,
       "name" : "Max Health",
