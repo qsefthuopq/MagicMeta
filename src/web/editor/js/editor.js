@@ -67,8 +67,8 @@ function validate() {
     return config;
 }
 
-function startNew() {
-    setSpellConfig($('#templateBasic').val());
+function startNew(template) {
+    setSpellConfig($('#template' + template).val());
 }
 
 function getSpellFiles(callback) {
@@ -329,13 +329,22 @@ function openReference() {
 
 function initialize() {
     $("#loadButton").button().click(load);
-    $("#newButton").button().click(startNew);
+    $("#newButton").button().click(function() { startNew("Basic"); });
     $("#saveButton").button().click(save);
     $('#validateButton').button().click(validate);
     $('#referenceButton').button().click(openReference);
     $('#forkButton').button().click(fork);
     $('#modeSelector input[type=radio]').change(checkMode);
     $("#loadSpellList").selectable({filter: 'tr'});
+    $("#newSelector").selectmenu({
+      classes: {
+        "ui-selectmenu-button": "ui-button-icon-only demo-splitbutton-select"
+      },
+      change: function(){
+        startNew(this.value);
+      }
+    });
+
     var loadSpell = null;
     var currentHash = window.location.hash;
     if (currentHash != '') {
@@ -350,11 +359,11 @@ function initialize() {
             loadSpell = pieces[0];
         }
     }
-    $('#modeSelector').controlgroup();
+    $('.controlgroup').controlgroup();
     checkMode();
     if (loadSpell != null) {
         loadFile(loadSpell);
     } else {
-        startNew();
+        startNew("Basic");
     }
 }

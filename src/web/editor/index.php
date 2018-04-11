@@ -55,10 +55,16 @@ $user = getUser();
         <span>
             <button type="button" id="forkButton" title="Make a copy of your current spell with a unique key name">Fork</button>
         </span>
-        <span>
+        <span class="controlgroup">
             <button type="button" id="newButton" title="Clear your spell and start fresh">New</button>
+            <select id="newSelector">
+                <option value="Blank">Blank</option>
+                <option value="Basic">Basic</option>
+                <option value="AOE">Area of Effect</option>
+                <option value="Projectile">Projectile</option>
+            </select>
         </span>
-        <span id="modeSelector">
+        <span id="modeSelector" class="controlgroup">
             <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton" title="Use a graphical editor to build your spell">Editor</label>
             <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton" title="View the raw configuration code for your spell">Code</label>
         </span>
@@ -105,6 +111,7 @@ $user = getUser();
 </div>
 
 <div id="defaultTemplates" style="display: none">
+    <textarea id="templateBlank"></textarea>
     <textarea id="templateBasic">myspell:
   name: My New Spell
   description: Damage Your Target
@@ -119,6 +126,52 @@ $user = getUser();
         class: Sphere
     - sound: magic.zap
   parameters:
+    range: 32
+    damage: 10
+    </textarea>
+</div>
+    <textarea id="templateProjectile">myprojectile:
+  name: My Projectile
+  description: Damage Your Target
+  icon: stick
+  actions:
+    cast:
+    - class: CustomProjectile
+      actions:
+      - class: Damage
+  effects:
+    cast:
+    - sound: magic.zap
+    hit:
+    - location: target
+      effectlib:
+        class: Sphere
+    tick:
+    - location: target
+      particle: redstone
+  parameters:
+    range: 32
+    velocity: 20
+    damage: 10
+    </textarea>
+    <textarea id="templateAOE">myareaofeffect:
+  name: My Projectile
+  description: Damage Everything Around You
+  icon: stick
+  actions:
+    cast:
+    - class: AreaOfEffect
+      actions:
+      - class: Damage
+  effects:
+    cast:
+    - sound: magic.zap
+    - location: targets
+      effectlib:
+        class: Sphere
+  parameters:
+    target: self
+    radius: 16
     damage: 10
     </textarea>
 </div>

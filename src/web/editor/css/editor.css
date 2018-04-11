@@ -117,3 +117,11 @@
 .ui-menu kbd { /* Keyboard shortcuts for ui-contextmenu titles */
     float: right;
 }
+
+.ui-button-icon-only.demo-splitbutton-select {
+    width: 0.5em;
+}
+
+.controlgroup {
+    flex: 0 0 auto;
+}
