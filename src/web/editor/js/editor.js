@@ -68,7 +68,7 @@ function validate() {
 }
 
 function startNew() {
-    setSpellConfig('');
+    setSpellConfig($('#templateBasic').val());
 }
 
 function getSpellFiles(callback) {
@@ -354,5 +354,7 @@ function initialize() {
     checkMode();
     if (loadSpell != null) {
         loadFile(loadSpell);
+    } else {
+        startNew();
     }
 }

@@ -103,5 +103,25 @@ $user = getUser();
         </tbody>
     </table>
 </div>
+
+<div id="defaultTemplates" style="display: none">
+    <textarea id="templateBasic">myspell:
+  name: My New Spell
+  description: Damage Your Target
+  icon: stick
+  actions:
+    cast:
+    - class: Damage
+  effects:
+    cast:
+    - location: target
+      effectlib:
+        class: Sphere
+    - sound: magic.zap
+  parameters:
+    damage: 10
+    </textarea>
+</div>
+
 </body>
 </html>
