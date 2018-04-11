@@ -39,10 +39,6 @@
         }
     };
 
-    function rstrip(line) {
-        return line.replace(/\s*$/g, '');
-    }
-
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
         var constants = opts.constants || CONSTANTS;
         var keywords = opts.keywords || KEYWORDS;
@@ -63,20 +59,11 @@
         var word = curLine.slice(start, end);
 
         var result = [];
-        // TODO(Shrugs) ask if this is the most efficient place to put these functions
-        // esp since they need reference to cm
-        function add(kw) {
-            // add if not already in result set
-            if (!kw || result.indexOf(kw) !== -1) {
-                return;
-            }
-            result.push(kw);
-        }
-
+        // TODO: Move these functions out
         function walkUp(pos, indent) {
             pos.line --;
             var thisLine = cm.getLine(pos.line);
-            while (!OBJECT_KEY.test(thisLine) && getIndentation(thisLine) >= indent) {
+            while (!OBJECT_KEY.test(thisLine) && getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) >= indent) {
                 // while this isn't the line we're looking for, move along
                 pos.line --;
                 thisLine = cm.getLine(pos.line);
@@ -85,53 +72,29 @@
             return pos;
         }
 
-        function getIndentation(line) {
-
-            if (!line.match(/^\s*?$/)) {
-                // only strip if line isn't all whitespace
-                line = rstrip(line);
-            }
-
-            // walk left from right until whitespace or eol
-            var s = line.length;
-            while (s && WORD_OR_COLON.test(line.charAt(s - 1))) --s;
-            line = line.slice(0, s);
-            // change tabs to spaces
-            line = line.replace(/\t/g, tabSizeInSpaces);
-            // return the number of spaces
-            return line.length;
-        }
-
-        function getKeyFromLine(line) {
-            var m = line.match(LEAF_KV);
-            if (m) {
-                return m[1];
-            }
-        }
-
         function getHierarchy(pos) {
             var hierarchy = [];
             var thisLine = cm.getLine(pos.line);
 
-            var isHighestContext = (getIndentation(thisLine) === 0);
-            var isIndentedBlock = (pos.ch !== 0 && getIndentation(thisLine) !== 0);
+            var isHighestContext = (getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) === 0);
+            var isIndentedBlock = (pos.ch !== 0 && getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces) !== 0);
 
-            var thisIndentation = getIndentation(thisLine);
+            var thisIndentation = getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces);
             while (pos.ch !== 0 && thisIndentation) {
                 // while not at beginning of line (highest point in hierarchy)
                 // OR we have reached highest hierarchy (no indentation)
-                var k = getKeyFromLine(thisLine);
+                var k = getKeyFromLine(thisLine, LEAF_KV);
                 if (k !== undefined) {
                     hierarchy.push(k);
                 }
                 pos = walkUp(pos, thisIndentation);
                 thisLine = cm.getLine(pos.line);
-                thisIndentation = getIndentation(thisLine);
+                thisIndentation = getIndentation(thisLine, WORD_OR_COLON, tabSizeInSpaces);
             }
 
             if (!isHighestContext || isIndentedBlock) {
                 // is an indented block, add the above level's key
-                hierarchy.push(getKeyFromLine(thisLine));
+                hierarchy.push(getKeyFromLine(thisLine, LEAF_KV));
             }
 
             return hierarchy;
@@ -159,7 +122,7 @@
             for (var c in valueKeywords) {
                 var kw = valueKeywords[c];
                 if (kw.indexOf(word) !== -1) {
-                    add(kw);
+                    addUnique(kw, result);
                 }
             }
         } else {
@@ -175,7 +138,7 @@
                         // and have it auto indent correctly, adhering to spaces or tabs
                         kw += ':\n';
                     }
-                    add(kw);
+                    addUnique(kw, result);
                 }
             }
         }
@@ -189,3 +152,38 @@
         }
     });
 });
+
+function addUnique(kw, result) {
+    // add if not already in result set
+    if (!kw || result.indexOf(kw) !== -1) {
+        return;
+    }
+    result.push(kw);
+}
+
+function rstrip(line) {
+    return line.replace(/\s*$/g, '');
+}
+
+function getIndentation(line, WORD_OR_COLON, tabSizeInSpaces) {
+    if (!line.match(/^\s*?$/)) {
+        // only strip if line isn't all whitespace
+        line = rstrip(line);
+    }
+
+    // walk left from right until whitespace or eol
+    var s = line.length;
+    while (s && WORD_OR_COLON.test(line.charAt(s - 1))) --s;
+    line = line.slice(0, s);
+    // change tabs to spaces
+    line = line.replace(/\t/g, tabSizeInSpaces);
+    // return the number of spaces
+    return line.length;
+}
+
+function getKeyFromLine(line, LEAF_KV) {
+    var m = line.match(LEAF_KV);
+    if (m) {
+        return m[1];
+    }
+}
