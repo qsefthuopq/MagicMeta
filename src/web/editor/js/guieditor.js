@@ -57,7 +57,11 @@ function GUIEditor(container)
             var tdList = $(node.tr).find(">td");
 
             if (!node.isFolder()) {
-                tdList.eq(1).find("input").val(node.data.value);
+                var input = tdList.eq(1).find("input");
+                input.val(node.data.value);
+                if (node.data.type) {
+                    input.attr('list', 'list-' + node.data.type);
+                }
             }
         }
     });
@@ -267,6 +271,24 @@ GUIEditor.prototype.setMetadata = function(meta)
         this.setValue(this.pendingConfig);
         this.pendingConfig = null;
     }
+
+    // Only supported in Chrome, but very handy!
+    for (var typeKey in this.metadata.types) {
+        if (this.metadata.types.hasOwnProperty(typeKey)) {
+            var typeInfo = this.metadata.types[typeKey];
+            var hasOptions = false;
+            var dataList = $('<datalist>').prop('id', 'list-' + typeKey);
+            for (var optionKey in typeInfo.options) {
+                if (typeInfo.options.hasOwnProperty(optionKey)) {
+                    hasOptions = true;
+                    dataList.append($('<option>').text(optionKey));
+                }
+            }
+            if (hasOptions) {
+                $('body').append(dataList);
+            }
+        }
+    }
 };
 
 GUIEditor.prototype.mergeMetadata = function(section) {
@@ -366,7 +388,7 @@ GUIEditor.prototype.getSpellValue = function(spellNode)
 GUIEditor.prototype.appendClassListToObject = function(nodes, list) {
     if (nodes == null) return;
     for (var i = 0; i < nodes.length; i++) {
-       var newObject = {class: nodes[i].title};
+       var newObject = {class: nodes[i].data.value};
        this.appendToObject(nodes[i].children, newObject);
        list.push(newObject);
     }
@@ -437,7 +459,7 @@ GUIEditor.prototype.getNode = function(key, value, metaSection, nodeType) {
         for (var i = 0; i < value.length; i++) {
             var className = value[i]['class'];
             delete value[i]['class'];
-            this.addSection(value[i], className, node.children);
+            this.addConfigurableClass(value[i], className, node.children, metaSection);
         }
     }
     else if (typeof(value) === 'object')
@@ -447,7 +469,7 @@ GUIEditor.prototype.getNode = function(key, value, metaSection, nodeType) {
         node.expanded = true;
         for (var childKey in value) {
             if (value.hasOwnProperty(childKey)) {
-                node.children.push(this.getNode(childKey, value[childKey]));
+                node.children.push(this.getNode(childKey, value[childKey], metaSection));
             }
         }
     } else {
@@ -475,7 +497,7 @@ GUIEditor.prototype.convertSpellToTree = function(config) {
 
     tree.push(properties);
     this.addTriggers(config, 'actions', 'Actions', tree, "all_action_parameters");
-    this.addTriggers(config, 'effects', 'Effects', tree, "all_effect_parameters");
+    this.addTriggers(config, 'effects', 'Effects', tree, "all_effect_parameters", 'effect_class');
     this.addOptionalSection(config, 'parameters', 'Parameters', tree, "all_spell_parameters");
     this.addOptionalSection(config, 'costs', 'Costs', tree, null, 'double');
 
@@ -505,7 +527,34 @@ GUIEditor.prototype.addSection = function(section, title, tree, metaSection, nod
     tree.push(sectionFolder);
 };
 
-GUIEditor.prototype.addTriggers = function(config, section, title, tree, metaSection) {
+GUIEditor.prototype.addConfigurableClass = function(section, value, tree, metaSection, classType) {
+    var sectionFolder = {
+        title: 'class',
+        children: [],
+        expanded: true,
+        folder: false,
+        value: value,
+        data: {}
+    };
+
+    if (classType) {
+        sectionFolder.data.type = classType;
+    } else if (metaSection && this.metaindex[metaSection].hasOwnProperty('class')) {
+        var propertyKey = this.metaindex[metaSection]['class'];
+        sectionFolder.data.type = this.metadata.properties[propertyKey].type;
+    }
+
+    if (section != null) {
+        for (var key in section) {
+            if (section.hasOwnProperty(key)) {
+                sectionFolder.children.push(this.getNode(key, section[key], metaSection));
+            }
+        }
+    }
+    tree.push(sectionFolder);
+};
+
+GUIEditor.prototype.addTriggers = function(config, section, title, tree, metaSection, classType) {
     if (config.hasOwnProperty(section)) {
         var sectionConfig = config[section];
         var subSection = {
@@ -532,7 +581,7 @@ GUIEditor.prototype.addTriggers = function(config, section, title, tree, metaSec
                         className = handlerConfig[i]['class'];
                         delete handlerConfig[i]['class'];
                     }
-                    this.addSection(handlerConfig[i], className, triggerHandler.children, metaSection);
+                    this.addConfigurableClass(handlerConfig[i], className, triggerHandler.children, metaSection, classType);
                 }
                 subSection.children.push(triggerHandler);
             }
