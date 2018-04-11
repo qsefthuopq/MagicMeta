@@ -51,7 +51,7 @@ foreach ($lines as $line) {
     $trimmed = trim($line);
     if (startsWith($trimmed, 'creator_')) continue;
 
-    if ($afterKey && $trimmed[0] != '# ' && count($trimmed) != 0) {
+    if ($afterKey && strlen($trimmed) != 0 && $trimmed[0] != '#') {
         $indentSize = strlen($line) - strlen(ltrim($line));
         $indent = substr($line, 0, $indentSize);
         array_push($cleaned, $indent . 'creator_id: ' . $user['id']);
@@ -62,7 +62,7 @@ foreach ($lines as $line) {
     array_push($cleaned, $line);
 
     // Check for spell keys to add creator lines
-    if (count($trimmed) != 0 && $line[0] != '#' && $line[0] != ' ') {
+    if (strlen($trimmed) != 0 && $line[0] != '#' && $line[0] != ' ') {
         $afterKey = true;
     }
 }
