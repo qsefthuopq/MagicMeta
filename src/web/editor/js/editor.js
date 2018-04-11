@@ -139,8 +139,8 @@ Editor.prototype.loadFile = function(fileName) {
 
     var me = this;
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
-    currentMode = (currentMode == 'editorModeButton') ? 'editor' : 'code';
-    window.location.hash = currentMode + "." + fileName;
+    currentMode = (currentMode == 'editorModeButton') ? 'editor.' : '';
+    window.location.hash = currentMode + fileName;
 
     $.ajax( {
         type: "POST",

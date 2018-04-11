@@ -113,19 +113,30 @@ $user = getUser();
 
 <div id="defaultTemplates" style="display: none">
     <textarea id="templateBlank"></textarea>
-    <textarea id="templateBasic">myspell:
+    <textarea id="templateBasic"># This is the key name of this spell
+# It must be unique across the server, and is used in commands such as /mage, /wand and /mgive
+# to refer to this spell.
+myspell:
+  # Name and description may be added here and will appear in lore for this spell.
   name: My New Spell
   description: Damage Your Target
+  # Choose an icon, used when showing this spell in a wand inventory.
   icon: stick
+  # Actions define what this spell does when cast. In this case we will damage the target.
   actions:
+    # Actions can be triggered from a few different events, but the most common is "cast",
+    # which will happen immediately when the spell is cast.
     cast:
     - class: Damage
+  # Effects are particle or sound effects that are shown when the spell is cast.
   effects:
     cast:
     - location: target
       effectlib:
         class: Sphere
     - sound: magic.zap
+  # Parameters change how a spell behaves, these may be base spell parameters or
+  # specific to the set of actions you are using.
   parameters:
     range: 32
     damage: 10
@@ -137,16 +148,23 @@ $user = getUser();
   icon: stick
   actions:
     cast:
+    # Some actions may be chained together.
+    # In this case, the CustomProjectile action launches a projectile, and when it hits
+    # it will run the actions in its "actions" list.
     - class: CustomProjectile
       actions:
       - class: Damage
   effects:
     cast:
     - sound: magic.zap
+    # These effects will play when the projectile hits, which will happen some time
+    # after casting, as determined by the "velocity" parameter.
     hit:
     - location: target
       effectlib:
         class: Sphere
+    # These effects will play each tick as the projectile travels. This can be used
+    # to make your projectile visible.
     tick:
     - location: target
       particle: redstone
@@ -161,6 +179,9 @@ $user = getUser();
   icon: stick
   actions:
     cast:
+    # Some actions may be chained together.
+    # In this case, the AreaOfEffect action search for entities within a certain radius,
+    # and then it will run the actions in its "actions" list on each of those entities.
     - class: AreaOfEffect
       actions:
       - class: Damage
