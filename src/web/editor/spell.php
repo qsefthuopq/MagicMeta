@@ -20,13 +20,24 @@ if (strpos($key, 'default.') === 0) {
     $spellFile = file_get_contents($spellFolder . '/' . $key . '.yml');
 }
 
-$spellFile = yaml_parse($spellFile);
-
-foreach ($spellFile as $key => $spell) {
-    unset($spell['creator_id']);
-    unset($spell['creator_name']);
-    $spellFile[$key] = $spell;
+$lines = explode("\n", $spellFile);
+if (count($lines) == 0) {
+    die(json_encode(array('success' => false, 'message' => 'File is empty')));
 }
-$spellFile = yaml_emit_clean($spellFile);
 
-die(json_encode(array('success' => true, 'yml' => $spellFile)));
+function startsWith($haystack, $needle)
+{
+    // search backwards starting from haystack length characters from the end
+    return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== FALSE;
+}
+
+$cleaned = array();
+foreach ($lines as $line) {
+    $trimmed = trim($line);
+    if (startsWith($trimmed, 'creator_')) continue;
+    array_push($cleaned, $line);
+}
+
+$cleaned = implode("\n", $cleaned);
+
+die(json_encode(array('success' => true, 'yml' => $cleaned)));
