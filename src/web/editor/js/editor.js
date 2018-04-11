@@ -132,6 +132,10 @@ function load() {
 function loadFile(fileName) {
     if (fileName == null || fileName.length == 0) return;
 
+    var currentMode = $('#modeSelector').find('input:checked').prop('id');
+    currentMode = (currentMode == 'editorModeButton') ? 'editor' : 'code';
+    window.location.hash = currentMode + "." + fileName;
+
     $.ajax( {
         type: "POST",
         url: "spell.php",
