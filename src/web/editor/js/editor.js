@@ -291,27 +291,27 @@ Editor.prototype.fork = function() {
     if (spells == null) return;
 
     var spellConfig = this.getSpellConfig();
-    if (spellConfig.trim().length == 0) {
+    var lines = spellConfig.split("\n");
+    if (spellConfig.trim().length == 0 || lines.length == 0) {
         alert("There's nothing to fork...");
         return false;
     }
-    var spell = null;
-    try {
-        spell = jsyaml.safeLoad(spellConfig, 'utf8');
-    } catch (e) {
-        alert("Please fix your errors and try again: " + e.message);
+
+    var keyLine = 0;
+    var key = null;
+    while (keyLine < lines.length) {
+        var line = lines[keyLine++].trim();
+        if (line.startsWith("#") || line.length == 0) continue;
+        key = line;
+        break;
+    }
+    if (key == null) {
+        alert("Couldn't find the spell key... is your config OK?");
         return false;
     }
-
-    var key = null;
-    for (key in spell) {
-        if (spell.hasOwnProperty(key)) {
-            spell = spell[key];
-            break;
-        }
-    }
-
-    if (key != null) {
+    keyLine--;
+    key = key.substring(0, key.length - 1);
+    if (key != '') {
         while (key.length > 1 && key[key.length - 1] >= '0' && key[key.length - 1] <= '9') {
             key = key.substr(0, key.length - 1);
         }
@@ -323,11 +323,11 @@ Editor.prototype.fork = function() {
         }
     }
 
-    var newSpell = {};
-    newSpell[key] = spell;
+    lines[keyLine] = key + ":";
+    var newSpell = lines.join("\n");
     this.spellKeys[key] = true;
 
-    this.setSpellConfig(dumpYaml(newSpell));
+    this.setSpellConfig(newSpell);
 
     return true;
 };
