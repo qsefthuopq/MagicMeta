@@ -252,15 +252,39 @@ GUIEditor.prototype.setMetadata = function(meta)
     this.metadata = meta;
     this.indexMetadata("spell_properties");
     this.indexMetadata("spell_parameters");
-    this.indexMetadata("spell_parameters");
     this.indexMetadata("effect_parameters");
     this.indexMetadata("effectlib_parameters");
     this.indexMetadata("action_parameters");
+
+    var allEffectParameters = this.mergeMetadata("effectlib_effects");
+    this.metaindex['all_effect_parameters'] = $.extend(allEffectParameters, this.metaindex["effect_parameters"], this.metaindex["effectlib_parameters"]);
+
+    var allActionParameters = this.mergeMetadata("actions");
+    this.metaindex['all_action_parameters'] = $.extend(allActionParameters, this.metaindex["action_parameters"]);
+    this.metaindex['all_spell_parameters'] = $.extend({}, this.metaindex["all_action_parameters"], this.metaindex["spell_parameters"]);
 
     if (this.pendingConfig != null) {
         this.setValue(this.pendingConfig);
         this.pendingConfig = null;
     }
+};
+
+GUIEditor.prototype.mergeMetadata = function(section) {
+    var properties = this.metadata.properties;
+    var allParameters = {};
+    for (var parameterClass in this.metadata[section]) {
+        if (this.metadata[section].hasOwnProperty(parameterClass)) {
+            var classSection = this.metadata[section][parameterClass].parameters;
+            for (var key in classSection) {
+                if (classSection.hasOwnProperty(key)) {
+                    var property = properties[key];
+                    allParameters[property.field] = key;
+                }
+            }
+        }
+    }
+
+    return allParameters;
 };
 
 GUIEditor.prototype.indexMetadata = function(section) {
@@ -450,9 +474,9 @@ GUIEditor.prototype.convertSpellToTree = function(config) {
     }
 
     tree.push(properties);
-    this.addTriggers(config, 'actions', 'Actions', tree, "action_parameters");
-    this.addTriggers(config, 'effects', 'Effects', tree, "effect_parameters");
-    this.addOptionalSection(config, 'parameters', 'Parameters', tree, "spell_parameters");
+    this.addTriggers(config, 'actions', 'Actions', tree, "all_action_parameters");
+    this.addTriggers(config, 'effects', 'Effects', tree, "all_effect_parameters");
+    this.addOptionalSection(config, 'parameters', 'Parameters', tree, "all_spell_parameters");
     this.addOptionalSection(config, 'costs', 'Costs', tree, null, 'double');
 
     return tree;
