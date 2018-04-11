@@ -18,6 +18,10 @@ foreach ($spellFiles as $spellFile) {
     if (!endsWith($spellFile, '.yml')) continue;
 
     $spellConfig = yaml_parse_file($spellFolder . '/' . $spellFile);
+    if (!$spellConfig) {
+        error_log("Error parsing spell file: " . $spellFolder . '/' . $spellFile);
+        continue;
+    }
     $spellKeys = array_keys($spellConfig);
 
     // TODO: Spell levels
@@ -48,9 +52,13 @@ $defaultMessages = $defaultMessages['spells'];
 $defaultsFolder = "$magicRootFolder/defaults/spells";
 $defaultFiles = scandir($defaultsFolder);
 foreach ($defaultFiles as $spellFile) {
-    if (!endsWith($spellFile, '.yml')) continue;
+    if (!endsWith($spellFile, '.yml') || $spellFile === '_header.yml') continue;
 
     $spellConfig = yaml_parse_file($defaultsFolder . '/' . $spellFile);
+    if (!$spellConfig) {
+        error_log("Error parsing spell file: " . $defaultsFolder . '/' . $spellFile);
+        continue;
+    }
     $spellKeys = array_keys($spellConfig);
     if (count($spellKeys) == 0) continue;
     $spellKey = $spellKeys[0];
