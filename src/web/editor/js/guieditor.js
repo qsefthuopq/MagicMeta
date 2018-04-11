@@ -376,9 +376,11 @@ GUIEditor.prototype.getSpellValue = function(spellNode)
 GUIEditor.prototype.appendClassListToObject = function(nodes, list) {
     if (nodes == null) return;
     for (var i = 0; i < nodes.length; i++) {
-       var newObject = {class: nodes[i].data.value};
-       this.appendToObject(nodes[i].children, newObject);
-       list.push(newObject);
+        var nodeInput = $("input", nodes[i].tr);
+        var value = nodeInput.val();
+        var newObject = {class: value};
+        this.appendToObject(nodes[i].children, newObject);
+        list.push(newObject);
     }
 };
 
