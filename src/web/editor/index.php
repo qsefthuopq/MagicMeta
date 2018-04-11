@@ -16,6 +16,7 @@ $user = getUser();
     <link rel="stylesheet" href="common/css/loading.css" />
     <link rel="stylesheet" href="common/css/user.css"/>
     <link rel="stylesheet" href="css/codemirror.css"/>
+    <link rel="stylesheet" href="css/show-hint.css"/>
     <link rel="stylesheet" href="css/ui.fancytree.css"/>
     <link rel="stylesheet" href="css/editor.css"/>
 
@@ -29,6 +30,8 @@ $user = getUser();
     <script src="js/jquery.fancytree.dnd.js"></script>
     <script src="js/jquery.fancytree.edit.js"></script>
     <script src="js/jquery.fancytree.gridnav.js"></script>
+    <script src="js/show-hint.js"></script>
+    <script src="js/anyword-hint.js"></script>
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>

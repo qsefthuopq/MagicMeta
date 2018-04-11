@@ -4,7 +4,8 @@ function CodeEditor(container)
         lineNumbers: true,
         extraKeys: {
             "Ctrl-S": save,
-            "Ctrl-D": validate
+            "Ctrl-D": validate,
+            "Ctrl-Space": "autocomplete"
         }
     });
     this.markedErrors = [];
