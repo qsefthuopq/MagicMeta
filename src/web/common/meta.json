@@ -3785,7 +3785,6 @@
     "disappear_with_origin_entity" : "false",
     "disappear_with_target_entity" : "false",
     "duration" : null,
-    "effect_class" : null,
     "effect_type" : "instant",
     "effectlib_class" : null,
     "iterations" : "0",
