@@ -624,9 +624,9 @@
       "short_class" : "CheckMana"
     },
     "clear_chat" : {
-      "category" : "",
+      "category" : "player",
       "class_name" : "ClearChatAction",
-      "description" : [ "" ],
+      "description" : [ "Clear the target player's chat log", "This is done by sending 100 blank lines" ],
       "examples" : [ ],
       "importance" : 0,
       "name" : "Clear Chat",
