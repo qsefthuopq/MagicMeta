@@ -162,3 +162,7 @@
 .inheritedProperty {
     font-style: italic;
 }
+
+.defaultProperty {
+    font-weight: bold;
+}

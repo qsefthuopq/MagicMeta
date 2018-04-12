@@ -181,14 +181,19 @@
         return actions;
     }
 
+    function addSuffix(text, suffix) {
+        if (suffix && !text.endsWith(suffix)) {
+            text = text + suffix;
+        }
+        return text;
+    }
+
     function getCurrentClass(pos, indent, cm, tabSizeInSpaces, suffix) {
         var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
         var currentClass = null;
         if (siblings.hasOwnProperty("class")) {
             currentClass = siblings['class'];
-            if (!currentClass.endsWith(suffix)) {
-                currentClass = currentClass + suffix;
-            }
+            currentClass = addSuffix(currentClass, suffix);
         }
         return currentClass;
     }
@@ -197,6 +202,9 @@
         var titleCell = $('<td>').text(hint.text);
         if (hint.inherited) {
             titleCell.addClass('inheritedProperty');
+        }
+        if (hint.isDefault) {
+            titleCell.addClass('defaultProperty');
         }
         $(element).append(titleCell);
         var description = $('<div>');
@@ -211,7 +219,7 @@
         $(element).append($('<td>').append(description));
     }
 
-    function convertHint(text, value, metadata, valueType, inherited) {
+    function convertHint(text, value, metadata, valueType, inherited, defaultValue) {
         var description = null;
         var importance = 0;
         if (valueType && metadata && value) {
@@ -226,35 +234,58 @@
             description: description,
             render: renderHint,
             importance: importance,
-            inherited: inherited
+            inherited: inherited,
+            isDefault: defaultValue
         };
         return hint;
     }
 
-    function getSorted(values, inheritedValues, word, suffix, metadata, valueType) {
+    function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, valueType) {
         var startsWith = [];
         var contains = [];
+        var foundDefault = false;
         for (var kw in values) {
+            var isDefault = defaultValue == kw;
+            if (isDefault) foundDefault = true;
             if (kw.indexOf(word) !== -1) {
+                var hint = convertHint(kw + suffix, values[kw], metadata, valueType, false, isDefault);
                 if (kw.startsWith(word)) {
-                    startsWith.push(convertHint(kw + suffix, values[kw], metadata, valueType, false));
+                    startsWith.push(hint);
                 } else {
-                    contains.push(convertHint(kw + suffix, values[kw], metadata, valueType, false));
+                    contains.push(hint);
                 }
             }
         }
         if (inheritedValues != null) {
             for (var kw in inheritedValues) {
+                var isDefault = defaultValue == kw;
+                if (isDefault) foundDefault = true;
                 if (kw.indexOf(word) !== -1) {
+                    var hint = convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true, isDefault);
                     if (kw.startsWith(word)) {
-                        startsWith.push(convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true));
+                        startsWith.push(hint);
                     } else {
-                        contains.push(convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true));
+                        contains.push(hint);
                     }
                 }
             }
         }
+
+        if (defaultValue != null && !foundDefault && defaultValue.indexOf(word) !== -1) {
+            if (defaultValue.startsWith(word)) {
+                startsWith.push(convertHint(defaultValue + suffix, null, metadata, valueType, false, true));
+            } else {
+                contains.push(convertHint(defaultValue + suffix, null, metadata, valueType, false, true));
+            }
+        }
+
         function sortProperties(a, b) {
+            if (a.isDefault && !b.isDefault) {
+                return -1;
+            }
+            if (!a.isDefault && b.isDefault) {
+                return 1;
+            }
             if (a.inherited && !b.inherited) {
                 return 1;
             }
@@ -303,6 +334,7 @@
             // if we'e on a line with a key get values for that key
             var values = {};
             var valueType = '';
+            var defaultValue = null;
             var fieldName = hierarchy[hierarchy.length - 1];
             if (hierarchy.length == 2) {
                 if (metadata.spell_context.properties.hasOwnProperty(fieldName)) {
@@ -336,38 +368,54 @@
                 values = metadata.spell_context.effectlib_classes;
                 valueType = 'effectlib_effects';
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions') {
+                var propertyKey = null;
                 if (metadata.spell_context.action_parameters.hasOwnProperty(fieldName)) {
-                    var propertyKey = metadata.spell_context.action_parameters[fieldName];
-                    if (metadata.properties.hasOwnProperty(propertyKey)) {
-                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    propertyKey = metadata.spell_context.action_parameters[fieldName];
+                    if (metadata.action_parameters.hasOwnProperty(propertyKey)) {
+                        defaultValue = metadata.action_parameters[propertyKey];
                     }
-                } else {
-                    var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Action");
-                    if (actionClass != null) {
-                        if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
-                            var propertyKey = metadata.spell_context.actions[actionClass][fieldName];
-                            if (metadata.properties.hasOwnProperty(propertyKey)) {
-                                values = metadata.types[metadata.properties[propertyKey].type].options;
-                            }
+                }
+                var shortClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                if (shortClass != null) {
+                    var actionClass = addSuffix(shortClass, "Action");
+                    if (propertyKey == null && metadata.spell_context.actions.hasOwnProperty(actionClass)) {
+                        propertyKey = metadata.spell_context.actions[actionClass][fieldName];
+                    }
+
+                    if (propertyKey != null && metadata.spell_context.action_classes.hasOwnProperty(shortClass)) {
+                        var classKey = metadata.spell_context.action_classes[shortClass];
+                        if (metadata.actions[classKey].parameters.hasOwnProperty(propertyKey)) {
+                            defaultValue = metadata.actions[classKey].parameters[propertyKey];
                         }
                     }
                 }
+                if (propertyKey != null && metadata.properties.hasOwnProperty(propertyKey)) {
+                    values = metadata.types[metadata.properties[propertyKey].type].options;
+                }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && hierarchy[hierarchy.length - 2] == 'effectlib') {
+                var propertyKey = null;
                 if (metadata.spell_context.effectlib_parameters.hasOwnProperty(fieldName)) {
-                    var propertyKey = metadata.spell_context.effectlib_parameters[fieldName];
-                    if (metadata.properties.hasOwnProperty(propertyKey)) {
-                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    propertyKey = metadata.spell_context.effectlib_parameters[fieldName];
+                    if (metadata.effectlib_parameters.hasOwnProperty(propertyKey)) {
+                        defaultValue = metadata.effectlib_parameters[propertyKey];
                     }
-                } else {
-                    var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Effect");
-                    if (effectClass != null) {
-                        if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
-                            var propertyKey = metadata.spell_context.effects[effectClass][fieldName];
-                            if (metadata.properties.hasOwnProperty(propertyKey)) {
-                                values = metadata.types[metadata.properties[propertyKey].type].options;
-                            }
+                }
+                var shortClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                if (shortClass != null) {
+                    var effectClass = addSuffix(shortClass, "Effect");
+                    if (propertyKey == null && metadata.spell_context.effects.hasOwnProperty(effectClass)) {
+                        propertyKey = metadata.spell_context.effects[effectClass][fieldName];
+                    }
+
+                    if (propertyKey != null && metadata.spell_context.effectlib_classes.hasOwnProperty(shortClass)) {
+                        var classKey = metadata.spell_context.effectlib_classes[shortClass];
+                        if (metadata.effectlib_effects[classKey].parameters.hasOwnProperty(propertyKey)) {
+                            defaultValue = metadata.effectlib_effects[classKey].parameters[propertyKey];
                         }
                     }
+                }
+                if (propertyKey != null && metadata.properties.hasOwnProperty(propertyKey)) {
+                    values = metadata.types[metadata.properties[propertyKey].type].options;
                 }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects') {
                 if (metadata.spell_context.effect_parameters.hasOwnProperty(fieldName)) {
@@ -377,7 +425,7 @@
                     }
                 }
             }
-            result = getSorted(values, null, word, '', metadata, valueType);
+            result = getSorted(values, null, defaultValue, word, '', metadata, valueType);
         } else {
             // else, do suggestions for new property keys
             var properties = {};
@@ -423,7 +471,7 @@
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
-            result = getSorted(properties, inherited, word, ': ', metadata, 'properties');
+            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties');
         }
 
         if (result.length > 0 && (result.length > 1 || result[0] != word)) {

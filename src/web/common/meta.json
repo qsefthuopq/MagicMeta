@@ -5433,8 +5433,8 @@
       "type" : "boolean"
     },
     "damage" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "entity",
+      "description" : [ "How much damage to deal to the target" ],
       "field" : "damage",
       "importance" : 100,
       "name" : "Damage",
