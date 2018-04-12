@@ -9563,7 +9563,7 @@
     },
     "sound" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A sound effect to play. Can be a vanilla sound or a custom sound from a resource pack." ],
       "field" : "sound",
       "importance" : 100,
       "name" : "Sound",
@@ -9571,9 +9571,9 @@
     },
     "sound_broadcast" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Set to false to make a sound only heard by the caster or target, it will not be broadcast to the world." ],
       "field" : "sound_broadcast",
-      "importance" : 0,
+      "importance" : 75,
       "name" : "Sound Broadcast",
       "type" : "boolean"
     },
@@ -9619,7 +9619,7 @@
     },
     "sound_pitch" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The pitch of a sound effect.", "Values greater than 1 will increase pitch, values less than 1 will lower pitch." ],
       "field" : "sound_pitch",
       "importance" : 90,
       "name" : "Sound Pitch",
@@ -9627,7 +9627,7 @@
     },
     "sound_range" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The range of the sound effect, in blocks.", "If not specified, the range is auto-computed based on sound volume following vanilla logic." ],
       "field" : "sound_range",
       "importance" : 0,
       "name" : "Sound Range",
