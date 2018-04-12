@@ -165,7 +165,11 @@
             if (indent <= actionsIndent) break;
             line = line.replace("-", "").trim();
             if (line.startsWith("class:")) {
-                actions.push(line.replace("class: ", ""));
+                var action = line.replace("class: ", "");
+                if (!action.endsWith("Action")) {
+                    action = action + "Action";
+                }
+                actions.push(action);
             }
             current++;
         }
@@ -173,11 +177,14 @@
         return actions;
     }
 
-    function getCurrentClass(pos, indent, cm, tabSizeInSpaces) {
+    function getCurrentClass(pos, indent, cm, tabSizeInSpaces, suffix) {
         var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
         var currentClass = null;
         if (siblings.hasOwnProperty("class")) {
             currentClass = siblings['class'];
+            if (!currentClass.endsWith(suffix)) {
+                currentClass = currentClass + suffix;
+            }
         }
         return currentClass;
     }
@@ -229,19 +236,86 @@
         // get context of hierarchy
         var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch), cm, tabSizeInSpaces).reverse();
         if (cm.debug) console.log(hierarchy);
+        var pos = CodeMirror.Pos(cur.line, cur.ch);
+        var thisLine = cm.getLine(pos.line);
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
             var values = {};
-            if (hierarchy.length >= 4 && hierarchy[1] == 'actions' && hierarchy[hierarchy.length - 1] == 'class') {
+            var fieldName = hierarchy[hierarchy.length - 1];
+            if (hierarchy.length == 2) {
+                if (metadata.spell_context.properties.hasOwnProperty(fieldName)) {
+                    var propertyKey = metadata.spell_context.properties[fieldName];
+                    if (metadata.properties.hasOwnProperty(propertyKey)) {
+                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    }
+                }
+            } else if (hierarchy.length == 3 && hierarchy[1] == 'parameters') {
+                if (metadata.spell_context.parameters.hasOwnProperty(fieldName)) {
+                    var propertyKey = metadata.spell_context.parameters[fieldName];
+                    if (metadata.properties.hasOwnProperty(propertyKey)) {
+                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    }
+                } else {
+                    var actions = getAllActions(cm, tabSizeInSpaces);
+                    for (var i = 0; i < actions.length; i++) {
+                        var action = actions[i];
+                        if (metadata.spell_context.actions.hasOwnProperty(action) && metadata.spell_context.actions[action].hasOwnProperty(fieldName)) {
+                            var propertyKey =  metadata.spell_context.actions[action][fieldName];
+                            if (metadata.properties.hasOwnProperty(propertyKey)) {
+                                values = metadata.types[metadata.properties[propertyKey].type].options;
+                            }
+                        }
+                    }
+                }
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions' && fieldName == 'class') {
                 values = metadata.spell_context.action_classes;
-            } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && hierarchy[hierarchy.length - 1] == 'class') {
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && fieldName == 'class') {
                 values = metadata.spell_context.effectlib_classes;
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions') {
+                if (metadata.spell_context.action_parameters.hasOwnProperty(fieldName)) {
+                    var propertyKey = metadata.spell_context.action_parameters[fieldName];
+                    if (metadata.properties.hasOwnProperty(propertyKey)) {
+                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    }
+                } else {
+                    var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Action");
+                    if (actionClass != null) {
+                        if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
+                            var propertyKey = metadata.spell_context.actions[actionClass][fieldName];
+                            if (metadata.properties.hasOwnProperty(propertyKey)) {
+                                values = metadata.types[metadata.properties[propertyKey].type].options;
+                            }
+                        }
+                    }
+                }
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && hierarchy[hierarchy.length - 2] == 'effectlib') {
+                if (metadata.spell_context.effectlib_parameters.hasOwnProperty(fieldName)) {
+                    var propertyKey = metadata.spell_context.effectlib_parameters[fieldName];
+                    if (metadata.properties.hasOwnProperty(propertyKey)) {
+                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    }
+                } else {
+                    var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Effect");
+                    if (effectClass != null) {
+                        if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
+                            var propertyKey = metadata.spell_context.effects[effectClass][fieldName];
+                            if (metadata.properties.hasOwnProperty(propertyKey)) {
+                                values = metadata.types[metadata.properties[propertyKey].type].options;
+                            }
+                        }
+                    }
+                }
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects') {
+                if (metadata.spell_context.effect_parameters.hasOwnProperty(fieldName)) {
+                    var propertyKey = metadata.spell_context.effect_parameters[fieldName];
+                    if (metadata.properties.hasOwnProperty(propertyKey)) {
+                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                    }
+                }
             }
             result = getSorted(values, word);
         } else {
             // else, do suggestions for new property keys
-            var pos = CodeMirror.Pos(cur.line, cur.ch);
-            var thisLine = cm.getLine(pos.line);
             var properties = {};
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
@@ -252,9 +326,6 @@
                 var actions = getAllActions(cm, tabSizeInSpaces);
                 for (var i = 0; i < actions.length; i++) {
                     var action = actions[i];
-                    if (!action.endsWith("Action")) {
-                        action = action + "Action";
-                    }
                     if (metadata.spell_context.actions.hasOwnProperty(action)) {
                         properties = $.extend(properties, metadata.spell_context.actions[action]);
                     }
@@ -263,22 +334,16 @@
                 properties = metadata.spell_context.effect_parameters;
             } else if (hierarchy.length >= 5 && hierarchy[hierarchy.length - 1] == '' && hierarchy[3] == 'effectlib') {
                 properties = metadata.spell_context.effectlib_parameters;
-                var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Effect");
                 if (effectClass != null) {
-                    if (!effectClass.endsWith("Effect")) {
-                        effectClass = effectClass + "Effect";
-                    }
                     if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
                         properties = $.extend(properties, metadata.spell_context.effects[effectClass]);
                     }
                 }
             } else if (hierarchy.length >= 4 && hierarchy[hierarchy.length - 1] == '' && hierarchy[1] == 'actions') {
                 properties = metadata.spell_context.action_parameters;
-                var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Action");
                 if (actionClass != null) {
-                    if (!actionClass.endsWith("Action")) {
-                        actionClass = actionClass + "Action";
-                    }
                     if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
                         properties = $.extend(properties, metadata.spell_context.actions[actionClass]);
                     }
