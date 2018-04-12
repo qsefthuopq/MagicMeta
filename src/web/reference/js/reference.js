@@ -146,7 +146,7 @@ function addParameterDetails(container, listItem) {
         populateOptions(metadata.types[propertyType.key_type].options, propertyTypeDetails, 'Map of ' + metadata.types[propertyType.key_type].name + ':');
         populateOptions(metadata.types[propertyType.value_type].options, propertyTypeDetails, 'to ' + metadata.types[propertyType.value_type].name + ':');
     } else if (propertyType.hasOwnProperty('value_type')) {
-        populateOptions(metadata.types[propertyType.value_type].options, propertyTypeDetails, 'List of ' + metadata.types[propertyType.value_type].name + + ':');
+        populateOptions(metadata.types[propertyType.value_type].options, propertyTypeDetails, 'List of ' + metadata.types[propertyType.value_type].name + ':');
     }
     container.append(propertyTypeDetails);
 

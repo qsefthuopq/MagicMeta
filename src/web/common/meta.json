@@ -12056,7 +12056,7 @@
         "Creature" : "Mobs that can attack",
         "Damageable" : "Any damageable entity",
         "DroppedItem" : "Items dropped on the ground",
-        "Living Entity" : "All living entities",
+        "LivingEntity" : "All living entities",
         "Player" : "Players"
       }
     },
