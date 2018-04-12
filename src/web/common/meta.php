@@ -25,18 +25,14 @@ $effects = array_column($meta['effectlib_effects'], 'short_class');
 $effects = array_fill_keys($effects, null);
 $meta['types']['effectlib_class']['options'] = $effects;
 
-$meta['types']['effect_class']['options'] = array('EffectSingle' => null, 'EffectRing' => null, 'EffectTrail' => null);
-
 function mapFields($meta, $type, $propertyHolder = null) {
     $propertyHolder = is_null($propertyHolder) ? $meta : $propertyHolder;
     $keys = array_keys($propertyHolder[$type]);
     $properties = $meta['properties'];
     $mapped = array();
     foreach ($keys as $key) {
-        // Skip some of these...
-        if ($key === 'creator_id' || $key === 'creator') continue;
         $property = $properties[$key];
-        if (isset($property['alias'])) continue;
+        if (isset($property['alias']) || $property['importance'] < 0) continue;
         $mapped[$property['field']] = $key;
     }
     return $mapped;
@@ -45,12 +41,23 @@ function mapFields($meta, $type, $propertyHolder = null) {
 // Populate contextual lists of parameters
 $meta['spell_context'] = array(
     'properties' => mapFields($meta, 'spell_properties'),
-    'parameters' => mapFields($meta, 'spell_parameters')
+    'parameters' => mapFields($meta, 'spell_parameters'),
+    'effect_parameters' => mapFields($meta, 'effect_parameters'),
+    'effectlib_parameters' => mapFields($meta, 'effectlib_parameters'),
+    'action_parameters' => mapFields($meta, 'action_parameters'),
+    'action_classes' => array_column($meta['actions'], 'short_class'),
+    'effectlib_classes' => array_column($meta['effectlib_effects'], 'short_class')
 );
 $actions = array();
 foreach ($meta['actions'] as $action) {
     $actions[$action['class_name']] = mapFields($meta, 'parameters', $action);
 }
 $meta['spell_context']['actions'] = $actions;
+
+$effects = array();
+foreach ($meta['effectlib_effects'] as $effect) {
+    $effects[$effect['class_name']] = mapFields($meta, 'parameters', $effect);
+}
+$meta['spell_context']['effects'] = $effects;
 
 echo json_encode($meta);

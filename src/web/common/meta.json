@@ -5380,7 +5380,7 @@
       "category" : "actions",
       "description" : [ "" ],
       "field" : "creator",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Creator",
       "type" : "string"
     },
@@ -5388,7 +5388,7 @@
       "category" : "actions",
       "description" : [ "" ],
       "field" : "creator_id",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Creator Id",
       "type" : "string"
     },
@@ -5818,8 +5818,8 @@
     },
     "effect_class" : {
       "category" : "",
-      "description" : [ "" ],
-      "field" : "effect_class",
+      "description" : [ "What type of effect to player", "Most often this can be left out, it defaults to EffectSingle which means to play the effect just once." ],
+      "field" : "class",
       "importance" : 0,
       "name" : "Effect Class",
       "type" : "string"
@@ -11974,7 +11974,11 @@
       "class_name" : "java.lang.String",
       "description" : [ "A builtin or external EffectPlayer class" ],
       "name" : "Effect Class",
-      "options" : { }
+      "options" : {
+        "EffectSingle" : "Play this effect just once, at the specified location",
+        "EffectRing" : "Play this effect multiple times in rings around the specified location",
+        "EffectTrail" : "Play this effect multiple times in a trail between the source and target locations"
+      }
     },
     "effect_location" : {
       "class_name" : "java.lang.String",

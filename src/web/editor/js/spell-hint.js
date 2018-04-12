@@ -16,8 +16,8 @@
 
     var WHITESPACE = /\s+/;
     var WORD = /\w+/;
-    var OBJECT_KEY = /^\s*?(\w+)\s*?:\s*?$/;
-    var LEAF_KV = /^\s*?(\w+)\s*?:\s*?/;
+    var OBJECT_KEY = /^[\s-]*?(\w+)\s*?:\s*?$/;
+    var LEAF_KV = /^[\s-]*?(\w+)\s*?:\s*?/;
     var WORD_OR_COLON = /\w+|:/;
 
     function rstrip(line) {
@@ -42,11 +42,16 @@
         return "";
     }
 
-    function getKey(line) {
+    function getKeyValue(line) {
         line = line.replace('- ', '');
-        line = line.trim();
-        line = line.substring(0, line.indexOf(':'));
-        return line;
+        var kv = line.split(':');
+        kv[0] = kv[0].trim();
+        if (kv.length == 0) {
+            kv[1] = '';
+        } else {
+            kv[1] = kv[1].trim();
+        }
+        return kv;
     }
 
     function getSiblings(pos, indent, cm, tabSizeInSpaces) {
@@ -62,21 +67,25 @@
 
             if (!isEmpty && thisIndent < indent) break;
             if (isObject && thisIndent == indent) {
-                siblings[getKey(thisLine)] = true;
+                var kv = getKeyValue(thisLine);
+                siblings[kv[0]] = kv[1];
             }
-            pos.line --;
+            if (trimmed.startsWith("-")) break;
+            pos.line--;
         }
         pos.line = startLine;
         while (pos.line < cm.lineCount()) {
             var thisLine = cm.getLine(pos.line);
             var trimmed = thisLine.trim();
+            if (trimmed.startsWith("-")) break;
             var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
             var isObject = thisLine.indexOf(':') > 0;
             var thisIndent = getIndentation(thisLine, tabSizeInSpaces);
 
             if (!isEmpty && thisIndent < indent) break;
             if (isObject && thisIndent == indent) {
-                siblings[getKey(thisLine)] = true;
+                var kv = getKeyValue(thisLine);
+                siblings[kv[0]] = kv[1];
             }
             pos.line++;
         }
@@ -164,11 +173,22 @@
         return actions;
     }
 
+    function getCurrentClass(pos, indent, cm, tabSizeInSpaces) {
+        var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
+        var currentClass = null;
+        if (siblings.hasOwnProperty("class")) {
+            currentClass = siblings['class'];
+        }
+        return currentClass;
+    }
+
     function getSorted(values, word, suffix) {
         suffix = (typeof suffix === 'undefined') ? '' : suffix;
         var startsWith = [];
         var contains = [];
+        var isArray = (Array.isArray(values));
         for (var kw in values) {
+            if (isArray) kw = values[kw];
             if (kw.indexOf(word) !== -1) {
                 if (kw.startsWith(word)) {
                     startsWith.push(kw + suffix);
@@ -208,13 +228,20 @@
 
         // get context of hierarchy
         var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch), cm, tabSizeInSpaces).reverse();
-        console.log(hierarchy);
+        if (cm.debug) console.log(hierarchy);
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
             var values = {};
+            if (hierarchy.length >= 4 && hierarchy[1] == 'actions' && hierarchy[hierarchy.length - 1] == 'class') {
+                values = metadata.spell_context.action_classes;
+            } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && hierarchy[hierarchy.length - 1] == 'class') {
+                values = metadata.spell_context.effectlib_classes;
+            }
             result = getSorted(values, word);
         } else {
             // else, do suggestions for new property keys
+            var pos = CodeMirror.Pos(cur.line, cur.ch);
+            var thisLine = cm.getLine(pos.line);
             var properties = {};
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
@@ -232,10 +259,31 @@
                         properties = $.extend(properties, metadata.spell_context.actions[action]);
                     }
                 }
+            } else if (hierarchy.length == 4 && hierarchy[3] == '' && hierarchy[1] == 'effects') {
+                properties = metadata.spell_context.effect_parameters;
+            } else if (hierarchy.length >= 5 && hierarchy[hierarchy.length - 1] == '' && hierarchy[3] == 'effectlib') {
+                properties = metadata.spell_context.effectlib_parameters;
+                var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                if (effectClass != null) {
+                    if (!effectClass.endsWith("Effect")) {
+                        effectClass = effectClass + "Effect";
+                    }
+                    if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
+                        properties = $.extend(properties, metadata.spell_context.effects[effectClass]);
+                    }
+                }
+            } else if (hierarchy.length >= 4 && hierarchy[hierarchy.length - 1] == '' && hierarchy[1] == 'actions') {
+                properties = metadata.spell_context.action_parameters;
+                var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+                if (actionClass != null) {
+                    if (!actionClass.endsWith("Action")) {
+                        actionClass = actionClass + "Action";
+                    }
+                    if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
+                        properties = $.extend(properties, metadata.spell_context.actions[actionClass]);
+                    }
+                }
             }
-            // TODO: Effects and actions
-            var pos = CodeMirror.Pos(cur.line, cur.ch);
-            var thisLine = cm.getLine(pos.line);
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
             result = getSorted(properties, word, ': ');
