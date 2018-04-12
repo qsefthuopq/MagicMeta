@@ -129,3 +129,21 @@
 .controlgroup {
     flex: 0 0 auto;
 }
+
+.CodeMirror-hint {
+    display: table-row;
+}
+
+.CodeMirror-hint td div {
+    max-height: 30px;
+    overflow: hidden;
+    margin-left: 1em;
+    color: #888888;
+    max-width: 50em;
+    text-overflow: ellipsis;
+}
+
+.CodeMirror-hint-active td div {
+    max-height: inherit;
+    color: #000000;
+}

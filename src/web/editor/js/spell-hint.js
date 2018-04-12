@@ -138,12 +138,16 @@
     }
 
     function filterMap(map, toRemove) {
+        var newMap = map;
         for (var key in toRemove) {
             if (toRemove.hasOwnProperty(key) && map.hasOwnProperty(key)) {
-                delete map[key];
+                if (newMap == null) {
+                    newMap = $.extend(map);
+                }
+                delete newMap[key];
             }
         }
-        return map;
+        return newMap;
     }
 
     function getAllActions(cm, tabSizeInSpaces) {
@@ -190,7 +194,36 @@
         return currentClass;
     }
 
-    function getSorted(values, word, suffix) {
+    function renderHint(element, pos, hint) {
+        $(element).append($('<td>').text(hint.text));
+        var description = $('<div>');
+        if (hint.description != null && hint.description.length > 0) {
+            for (var i = 0; i < hint.description.length; i++) {
+                if (i != 0) {
+                    description.append($('<br/>'));
+                }
+                description.append($('<span>').html(hint.description[i]));
+            }
+        }
+        $(element).append($('<td>').append(description));
+    }
+
+    function convertHint(text, value, metadata, valueType) {
+        var description = null;
+        if (valueType && metadata) {
+            description = metadata[valueType][value]['description'];
+        } else {
+            description = value == null ? null : [value]
+        }
+        var hint = {
+            text: text,
+            description: description,
+            render: renderHint
+        };
+        return hint;
+    }
+
+    function getSorted(values, word, suffix, metadata, valueType) {
         suffix = (typeof suffix === 'undefined') ? '' : suffix;
         var startsWith = [];
         var contains = [];
@@ -199,9 +232,9 @@
             if (isArray) kw = values[kw];
             if (kw.indexOf(word) !== -1) {
                 if (kw.startsWith(word)) {
-                    startsWith.push(kw + suffix);
+                    startsWith.push(convertHint(kw + suffix, values[kw], metadata, valueType));
                 } else {
-                    contains.push(kw + suffix);
+                    contains.push(convertHint(kw + suffix, values[kw], metadata, valueType));
                 }
             }
         }
@@ -229,7 +262,6 @@
         while (end < curLine.length && WORD.test(curLine.charAt(end))) ++end;
 
         var word = curLine.slice(start, end);
-
         var result = [];
 
         // get context of hierarchy
@@ -240,6 +272,7 @@
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
             var values = {};
+            var valueType = '';
             var fieldName = hierarchy[hierarchy.length - 1];
             if (hierarchy.length == 2) {
                 if (metadata.spell_context.properties.hasOwnProperty(fieldName)) {
@@ -268,8 +301,10 @@
                 }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions' && fieldName == 'class') {
                 values = metadata.spell_context.action_classes;
+                valueType = 'actions';
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && fieldName == 'class') {
                 values = metadata.spell_context.effectlib_classes;
+                valueType = 'effectlib_effects';
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions') {
                 if (metadata.spell_context.action_parameters.hasOwnProperty(fieldName)) {
                     var propertyKey = metadata.spell_context.action_parameters[fieldName];
@@ -312,7 +347,7 @@
                     }
                 }
             }
-            result = getSorted(values, word);
+            result = getSorted(values, word, undefined, metadata, valueType);
         } else {
             // else, do suggestions for new property keys
             var properties = {};
