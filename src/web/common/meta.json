@@ -8723,7 +8723,7 @@
     },
     "radius" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The radius of this sphere or circle, in blocks" ],
       "field" : "radius",
       "importance" : 100,
       "name" : "Radius",
@@ -8747,7 +8747,7 @@
     },
     "radius_increase" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Amount to increase the radius per tick" ],
       "field" : "radius_increase",
       "importance" : 0,
       "name" : "Radius Increase",
@@ -11975,8 +11975,8 @@
       "description" : [ "A builtin or external EffectPlayer class" ],
       "name" : "Effect Class",
       "options" : {
-        "EffectSingle" : "Play this effect just once, at the specified location",
         "EffectRing" : "Play this effect multiple times in rings around the specified location",
+        "EffectSingle" : "Play this effect just once, at the specified location",
         "EffectTrail" : "Play this effect multiple times in a trail between the source and target locations"
       }
     },
