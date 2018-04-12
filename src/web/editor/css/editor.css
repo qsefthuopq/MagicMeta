@@ -151,12 +151,25 @@
 .spellIcon {
     width: 16px;
     height: 16px;
-    margin-right: 1em;
 }
 
 .CodeMirror-hint-active td div .spellIcon {
     width: 32px;
     height: 32px;
+}
+
+.textureIcon {
+    width: 16px;
+    height: 16px;
+    background-size: 128px 64px;
+    background-position: -16px -16px;
+}
+
+.CodeMirror-hint-active td div .textureIcon {
+    width: 32px;
+    height: 32px;
+    background-size: 256px 128px;
+    background-position: -32px -32px;
 }
 
 .inheritedProperty {

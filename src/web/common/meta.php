@@ -19,6 +19,18 @@ foreach ($spellJson as $spellPredicate) {
 $meta['types']['spell_icon']['options'] = $spellIcons;
 $meta['types']['spell_icon_disabled']['options'] = $disabledIcons;
 
+// Load URL textures
+$textures = array();
+$textureConfig = $magicRootFolder . '/../../resource-pack/common/source/image_map.yml';
+if (file_exists($textureConfig)) {
+    $textures = yaml_parse_file($textureConfig);
+    $textureOptions = array();
+    foreach ($textures as $texture) {
+        $textureOptions[$texture] = '<span style="background-image: url(' . $texture . ')" class="textureIcon"/>';
+    }
+    $meta['types']['texture']['options'] = $textureOptions;
+}
+
 // Load sounds
 $soundsJson = json_decode(file_get_contents($resourcePackFolder . '/default/assets/minecraft/sounds.json'), true);
 $sounds = array_keys($soundsJson);
