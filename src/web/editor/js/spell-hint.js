@@ -140,8 +140,8 @@
         var newMap = map;
         for (var key in toRemove) {
             if (toRemove.hasOwnProperty(key) && map.hasOwnProperty(key)) {
-                if (newMap == null) {
-                    newMap = $.extend(map);
+                if (newMap == map) {
+                    newMap = $.extend({}, map);
                 }
                 delete newMap[key];
             }
