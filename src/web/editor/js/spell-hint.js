@@ -195,7 +195,11 @@
     }
 
     function renderHint(element, pos, hint) {
-        $(element).append($('<td>').text(hint.text));
+        var titleCell = $('<td>').text(hint.text);
+        if (hint.inherited) {
+            titleCell.addClass('inheritedProperty');
+        }
+        $(element).append(titleCell);
         var description = $('<div>');
         if (hint.description != null && hint.description.length > 0) {
             for (var i = 0; i < hint.description.length; i++) {
@@ -208,7 +212,7 @@
         $(element).append($('<td>').append(description));
     }
 
-    function convertHint(text, value, metadata, valueType) {
+    function convertHint(text, value, metadata, valueType, inherited) {
         var description = null;
         var importance = 0;
         if (valueType && metadata) {
@@ -222,32 +226,46 @@
             text: text,
             description: description,
             render: renderHint,
-            importance: importance
+            importance: importance,
+            inherited: inherited
         };
         return hint;
     }
 
-    function getSorted(values, word, suffix, metadata, valueType) {
-        suffix = (typeof suffix === 'undefined') ? '' : suffix;
+    function getSorted(values, inheritedValues, word, suffix, metadata, valueType) {
         var startsWith = [];
         var contains = [];
-        var isArray = (Array.isArray(values));
         for (var kw in values) {
-            if (isArray) kw = values[kw];
             if (kw.indexOf(word) !== -1) {
                 if (kw.startsWith(word)) {
-                    startsWith.push(convertHint(kw + suffix, values[kw], metadata, valueType));
+                    startsWith.push(convertHint(kw + suffix, values[kw], metadata, valueType, false));
                 } else {
-                    contains.push(convertHint(kw + suffix, values[kw], metadata, valueType));
+                    contains.push(convertHint(kw + suffix, values[kw], metadata, valueType, false));
+                }
+            }
+        }
+        if (inheritedValues != null) {
+            for (var kw in inheritedValues) {
+                if (kw.indexOf(word) !== -1) {
+                    if (kw.startsWith(word)) {
+                        startsWith.push(convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true));
+                    } else {
+                        contains.push(convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true));
+                    }
                 }
             }
         }
         function sortProperties(a, b) {
+            if (a.inherited && !b.inherited) {
+                return 1;
+            }
+            if (!a.inherited && b.inherited) {
+                return -1;
+            }
             if (a.importance == b.importance) {
                 return a.text.localeCompare(b.text);
-            } else {
-                return b.importance - a.importance;
             }
+            return b.importance - a.importance;
         }
         startsWith.sort(sortProperties);
         contains.sort(sortProperties);
@@ -360,39 +378,40 @@
                     }
                 }
             }
-            result = getSorted(values, word, undefined, metadata, valueType);
+            result = getSorted(values, null, word, '', metadata, valueType);
         } else {
             // else, do suggestions for new property keys
             var properties = {};
+            var inherited = null;
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
                 properties = metadata.spell_context.properties;
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'parameters') {
                 // Add base parameters
-                properties = metadata.spell_context.parameters;
+                inherited = metadata.spell_context.parameters;
                 var actions = getAllActions(cm, tabSizeInSpaces);
                 for (var i = 0; i < actions.length; i++) {
                     var action = actions[i];
                     if (metadata.spell_context.actions.hasOwnProperty(action)) {
-                        properties = $.extend(properties, metadata.spell_context.actions[action]);
+                        properties = metadata.spell_context.actions[action];
                     }
                 }
             } else if (hierarchy.length == 4 && hierarchy[3] == '' && hierarchy[1] == 'effects') {
                 properties = metadata.spell_context.effect_parameters;
             } else if (hierarchy.length >= 5 && hierarchy[hierarchy.length - 1] == '' && hierarchy[3] == 'effectlib') {
-                properties = metadata.spell_context.effectlib_parameters;
+                inherited = metadata.spell_context.effectlib_parameters;
                 var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Effect");
                 if (effectClass != null) {
                     if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
-                        properties = $.extend({}, metadata.spell_context.effects[effectClass], properties);
+                        properties = metadata.spell_context.effects[effectClass];
                     }
                 }
             } else if (hierarchy.length >= 4 && hierarchy[hierarchy.length - 1] == '' && hierarchy[1] == 'actions') {
-                properties = metadata.spell_context.action_parameters;
+                inherited = metadata.spell_context.action_parameters;
                 var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Action");
                 if (actionClass != null) {
                     if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
-                        properties = $.extend({}, metadata.spell_context.actions[actionClass], properties);
+                        properties = metadata.spell_context.actions[actionClass];
                     }
                 }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
@@ -405,7 +424,7 @@
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
-            result = getSorted(properties, word, ': ');
+            result = getSorted(properties, inherited, word, ': ', metadata, 'properties');
         }
 
         if (result.length > 0 && (result.length > 1 || result[0] != word)) {
