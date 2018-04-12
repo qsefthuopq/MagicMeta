@@ -204,8 +204,6 @@
                 }
             }
         }
-        startsWith.sort();
-        contains.sort();
         return startsWith.concat(contains);
     }
 
@@ -337,7 +335,7 @@
                 var effectClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Effect");
                 if (effectClass != null) {
                     if (metadata.spell_context.effects.hasOwnProperty(effectClass)) {
-                        properties = $.extend(properties, metadata.spell_context.effects[effectClass]);
+                        properties = $.extend({}, metadata.spell_context.effects[effectClass], properties);
                     }
                 }
             } else if (hierarchy.length >= 4 && hierarchy[hierarchy.length - 1] == '' && hierarchy[1] == 'actions') {
@@ -345,7 +343,7 @@
                 var actionClass = getCurrentClass(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces, "Action");
                 if (actionClass != null) {
                     if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
-                        properties = $.extend(properties, metadata.spell_context.actions[actionClass]);
+                        properties = $.extend({}, metadata.spell_context.actions[actionClass], properties);
                     }
                 }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
