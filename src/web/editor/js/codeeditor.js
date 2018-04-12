@@ -5,6 +5,8 @@ function CodeEditor(container)
         extraKeys: {
             "Ctrl-S": function() { editor.save(); },
             "Ctrl-D": function() { editor.validate(); },
+            'Shift-Tab': 'indentLess',
+            'Tab': 'indentMore',
             "Ctrl-Space": "autocomplete"
         }
     });
