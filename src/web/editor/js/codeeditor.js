@@ -8,6 +8,7 @@ function CodeEditor(container)
             "Ctrl-Space": "autocomplete"
         }
     });
+    this.editor.metadata = null;
     this.markedErrors = [];
 };
 
@@ -42,5 +43,5 @@ CodeEditor.prototype.showError = function(e)
 
 CodeEditor.prototype.setMetadata = function(meta)
 {
-
+    this.editor.metadata = meta;
 };

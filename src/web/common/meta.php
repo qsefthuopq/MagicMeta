@@ -27,4 +27,21 @@ $meta['types']['effectlib_class']['options'] = $effects;
 
 $meta['types']['effect_class']['options'] = array('EffectSingle' => null, 'EffectRing' => null, 'EffectTrail' => null);
 
+function mapFields($meta, $type) {
+    $keys = array_keys($meta[$type]);
+    $properties = $meta['properties'];
+    $mapped = array();
+    foreach ($keys as $key) {
+        // Skip some of these...
+        if ($key === 'owner_id' || $key === 'owner_name') continue;
+        array_push($mapped, $properties[$key]['field']);
+    }
+    return $mapped;
+}
+
+// Populate contextual lists of parameters
+$meta['spell_context'] = array(
+    'properties' => mapFields($meta, 'spell_properties')
+);
+
 echo json_encode($meta);

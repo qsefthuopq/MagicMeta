@@ -20,25 +20,6 @@
     var LEAF_KV = /^\s*?(\w+)\s*?:\s*?/;
     var WORD_OR_COLON = /\w+|:/;
 
-    // global constants that will show up regardless of context
-    var CONSTANTS = ['true', 'false', '{}', '[]'];
-
-    // context specific keywords
-    var KEYWORDS= {
-        'configuration': [],
-        'name': ['myService'],
-        'provider': {
-            'image': ['ubuntu12.04', 'centos7.0', 'ubuntu14.04', 'centos6.5', 'fedora20'],
-            'name': ['\'digitalocean\'', '\'aws\'', '\'rackspace\''],
-            'region': ['nyc1', 'nyc2', 'sfo1'],
-            'size': ['512mb']
-        },
-        'services': {
-            'nginx': ['*'],
-            'php': ['*']
-        }
-    };
-
     function addUnique(kw, result) {
         // add if not already in result set
         if (!kw || result.indexOf(kw) !== -1) {
@@ -72,15 +53,20 @@
         if (m) {
             return m[1];
         }
+        return "";
     }
 
     function walkUp(pos, indent, cm, tabSizeInSpaces) {
         pos.line --;
         var thisLine = cm.getLine(pos.line);
-        while (!OBJECT_KEY.test(thisLine) && getIndentation(thisLine, tabSizeInSpaces) >= indent) {
+        var trimmed = thisLine.trim();
+        var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
+        while (pos.line > 0 && (!OBJECT_KEY.test(thisLine) || getIndentation(thisLine, tabSizeInSpaces) >= indent || isEmpty)) {
             // while this isn't the line we're looking for, move along
             pos.line --;
             thisLine = cm.getLine(pos.line);
+            trimmed = thisLine.trim();
+            isEmpty = trimmed.length == 0 || trimmed[0] == '#';
         }
         pos.ch = cm.getLine(pos.line);
         return pos;
@@ -115,8 +101,11 @@
     }
 
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
-        var constants = opts.constants || CONSTANTS;
-        var keywords = opts.keywords || KEYWORDS;
+        if (cm.metadata == null) {
+            return;
+        }
+        var metadata = cm.metadata;
+
         var tabSizeInSpaces = new Array(cm.options.tabSize + 1).join(' ');
 
         var cur = cm.getCursor(),
@@ -136,24 +125,12 @@
         var result = [];
 
         // get context of hierarchy
-        var context = keywords;
-        var contextKeywords = [];
         var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch), cm, tabSizeInSpaces).reverse();
-
-        // walk down contexts
-        for (var h in hierarchy) {
-            context = context[hierarchy[h]];
-        }
-        if (context instanceof Array) {
-            // is array of suggested values
-            contextKeywords = context;
-        } else {
-            contextKeywords = Object.keys(context);
-        }
-
         if (LEAF_KV.test(curLine)) {
-            // if we'e on a line with a key
-            var valueKeywords = contextKeywords.concat(constants);
+            // if we'e on a line with a key get values for that key
+            var values = [];
+
+            var valueKeywords = values.concat(values);
             for (var c in valueKeywords) {
                 var kw = valueKeywords[c];
                 if (kw.indexOf(word) !== -1) {
@@ -161,19 +138,17 @@
                 }
             }
         } else {
-            // else, do contextual suggestions
-            for (var i in contextKeywords) {
-                var kw = contextKeywords[i];
+            // else, do suggestions for new property keys
+            var properties = [];
+            if (hierarchy.length == 2 && hierarchy[1] == '') {
+                // Add base parameters
+                properties = metadata.spell_context.properties;
+            }
+
+            for (var i in properties) {
+                var kw = properties[i];
                 if (kw.indexOf(word) !== -1) {
-                    if (context[kw] instanceof Array) {
-                        kw += ': ';
-                    } else {
-                        // if this context has additional contexts below it, it is a key, and add a colon
-                        // Ideally, I'd like to have it auto newline as well, but I don't think there's a good way to do that
-                        // and have it auto indent correctly, adhering to spaces or tabs
-                        kw += ':\n';
-                    }
-                    addUnique(kw, result);
+                    addUnique(kw + ": ", result);
                 }
             }
         }
