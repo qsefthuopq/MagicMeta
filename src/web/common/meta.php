@@ -33,7 +33,7 @@ function mapFields($meta, $type) {
     $mapped = array();
     foreach ($keys as $key) {
         // Skip some of these...
-        if ($key === 'owner_id' || $key === 'owner_name') continue;
+        if ($key === 'creator_id' || $key === 'creator') continue;
         array_push($mapped, $properties[$key]['field']);
     }
     return $mapped;

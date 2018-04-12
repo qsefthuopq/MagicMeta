@@ -33,14 +33,8 @@
     }
 
     function getIndentation(line, tabSizeInSpaces) {
-        if (!line.match(/^\s*?$/)) {
-            // only strip if line isn't all whitespace
-            line = rstrip(line);
-        }
-
-        // walk left from right until whitespace or eol
-        var s = line.length;
-        while (s && WORD_OR_COLON.test(line.charAt(s - 1))) --s;
+        var s = 0;
+        while (s < line.length && !WORD_OR_COLON.test(line.charAt(s))) s++;
         line = line.slice(0, s);
         // change tabs to spaces
         line = line.replace(/\t/g, tabSizeInSpaces);
@@ -54,6 +48,47 @@
             return m[1];
         }
         return "";
+    }
+
+    function getKey(line) {
+        line = line.replace('- ', '');
+        line = line.trim();
+        line = line.substring(0, line.indexOf(':'));
+        return line;
+    }
+
+    function getSiblings(pos, indent, cm, tabSizeInSpaces) {
+        var siblings = {};
+        var startLine = pos.line;
+        pos.line--;
+        while (pos.line > 0) {
+            var thisLine = cm.getLine(pos.line);
+            var trimmed = thisLine.trim();
+            var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
+            var isObject = thisLine.indexOf(':') > 0;
+            var thisIndent = getIndentation(thisLine, tabSizeInSpaces);
+
+            if (!isEmpty && thisIndent < indent) break;
+            if (isObject && thisIndent == indent) {
+                siblings[getKey(thisLine)] = true;
+            }
+            pos.line --;
+        }
+        pos.line = startLine;
+        while (pos.line < cm.lineCount()) {
+            var thisLine = cm.getLine(pos.line);
+            var trimmed = thisLine.trim();
+            var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
+            var isObject = thisLine.indexOf(':') > 0;
+            var thisIndent = getIndentation(thisLine, tabSizeInSpaces);
+
+            if (!isEmpty && thisIndent < indent) break;
+            if (isObject && thisIndent == indent) {
+                siblings[getKey(thisLine)] = true;
+            }
+            pos.line++;
+        }
+        return siblings;
     }
 
     function walkUp(pos, indent, cm, tabSizeInSpaces) {
@@ -100,6 +135,17 @@
         return hierarchy;
     }
 
+    function filterList(list, map) {
+        var newList = [];
+        for (var i = 0; i < list.length; i++) {
+            if (!map.hasOwnProperty(list[i])) {
+                newList.push(list[i]);
+            }
+        }
+
+        return newList;
+    }
+
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
         if (cm.metadata == null) {
             return;
@@ -144,7 +190,10 @@
                 // Add base parameters
                 properties = metadata.spell_context.properties;
             }
-
+            var pos = CodeMirror.Pos(cur.line, cur.ch);
+            var thisLine = cm.getLine(pos.line);
+            var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
+            properties = filterList(properties, siblings);
             for (var i in properties) {
                 var kw = properties[i];
                 if (kw.indexOf(word) !== -1) {
