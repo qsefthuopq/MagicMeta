@@ -8,6 +8,22 @@ function CodeEditor(container)
             "Ctrl-Space": "autocomplete"
         }
     });
+    var cm = this.editor;
+    this.editor.on('change', function onChange(editor, input) {
+        CodeMirror.commands.autocomplete(cm, null, {
+            completeSingle: false,
+            customKeys: {
+              Up: function(cm, handle) {handle.moveFocus(-1);},
+              Down: function(cm, handle) {handle.moveFocus(1);},
+              PageUp: function(cm, handle) {handle.moveFocus(-handle.menuSize() + 1, true);},
+              PageDown: function(cm, handle) {handle.moveFocus(handle.menuSize() - 1, true);},
+              Home: function(cm, handle) {handle.setFocus(0);},
+              End: function(cm, handle) {handle.setFocus(handle.length - 1);},
+              Tab: function(cm, handle) {handle.pick();},
+              Esc: function(handle) {handle.close();}
+            }
+        });
+    });
     this.editor.metadata = null;
     this.markedErrors = [];
 };
