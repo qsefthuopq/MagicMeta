@@ -146,6 +146,34 @@
         return newList;
     }
 
+    function getAllActions(cm, tabSizeInSpaces) {
+        var actionsStart = 0;
+        var actionsIndent = 0;
+        for (var i = 1; i < cm.lineCount(); i++) {
+            var line = cm.getLine(i);
+            actionsIndent = getIndentation(line, tabSizeInSpaces);
+            if (line.trim() == 'actions:') {
+                actionsStart = i;
+                break;
+            }
+        }
+
+        var actions = [];
+        var current = actionsStart + 1;
+        while (current < cm.lineCount()) {
+            var line = cm.getLine(current);
+            var indent = getIndentation(line, tabSizeInSpaces);
+            if (indent <= actionsIndent) break;
+            line = line.replace("-", "").trim();
+            if (line.startsWith("class:")) {
+                actions.push(line.replace("class: ", ""));
+            }
+            current++;
+        }
+
+        return actions;
+    }
+
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
         if (cm.metadata == null) {
             return;
@@ -172,6 +200,7 @@
 
         // get context of hierarchy
         var hierarchy = getHierarchy(CodeMirror.Pos(cur.line, cur.ch), cm, tabSizeInSpaces).reverse();
+        console.log(hierarchy);
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
             var values = [];
@@ -189,7 +218,21 @@
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
                 properties = metadata.spell_context.properties;
+            } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'parameters') {
+                // Add base parameters
+                properties = metadata.spell_context.parameters;
+                var actions = getAllActions(cm, tabSizeInSpaces);
+                for (var i = 0; i < actions.length; i++) {
+                    var action = actions[i];
+                    if (!action.endsWith("Action")) {
+                        action = action + "Action";
+                    }
+                    if (metadata.spell_context.actions.hasOwnProperty(action)) {
+                        properties = properties.concat(metadata.spell_context.actions[action]);
+                    }
+                }
             }
+            // TODO: Effects and actions
             var pos = CodeMirror.Pos(cur.line, cur.ch);
             var thisLine = cm.getLine(pos.line);
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
