@@ -350,6 +350,11 @@
                 }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
                 properties = metadata.types.cost_type.options;
+            } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'actions') {
+                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null};
+            } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'effects') {
+                properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
+                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
