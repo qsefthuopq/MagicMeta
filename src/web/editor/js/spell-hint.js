@@ -283,6 +283,8 @@
                         properties = $.extend(properties, metadata.spell_context.actions[actionClass]);
                     }
                 }
+            } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
+                properties = metadata.types.cost_type.options;
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
