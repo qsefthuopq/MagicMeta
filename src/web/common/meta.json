@@ -623,6 +623,16 @@
       },
       "short_class" : "CheckMana"
     },
+    "clear_chat" : {
+      "category" : "",
+      "class_name" : "ClearChatAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Clear Chat",
+      "parameters" : { },
+      "short_class" : "ClearChat"
+    },
     "command" : {
       "category" : "control",
       "class_name" : "CommandAction",
