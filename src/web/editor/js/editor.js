@@ -56,7 +56,7 @@ Editor.prototype.save = function() {
     });
 };
 
-Editor.prototype.validate = function() {
+Editor.prototype.validate = function(showOk) {
     if (this.codeEditor != null) {
         this.codeEditor.clearErrors();
     }
@@ -78,12 +78,17 @@ Editor.prototype.validate = function() {
         return null;
     }
 
-    $('#validation').removeClass("error");
-    $('#validationIcon').html("&#x1F44D;");
-    $('#validation').text("Looks ok!");
-    $('#validation').prop('title', '');
-    $('#validationIcon').show().fadeOut(5000);
-    $('#validation').show().fadeOut(5000);
+    if (showOk) {
+        $('#validation').removeClass("error");
+        $('#validationIcon').html("&#x1F44D;");
+        $('#validation').text("Looks ok!");
+        $('#validation').prop('title', '');
+        $('#validationIcon').show().fadeOut(5000);
+        $('#validation').show().fadeOut(5000);
+    } else {
+        $('#validationIcon').hide();
+        $('#validation').hide();
+    }
 
     return config;
 };

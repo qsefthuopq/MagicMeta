@@ -8,8 +8,12 @@ function CodeEditor(container)
             "Ctrl-Space": "autocomplete"
         }
     });
+    this.validateTimeout = null;
+    var me = this;
     var cm = this.editor;
     this.editor.on('change', function onChange(editor, input) {
+        me.startValidateTimer();
+
         if (input.from.line != input.to.line) return;
         var line = cm.getLine(input.from.line);
         if (line.indexOf(':') > 0 && !line.endsWith(' ')) return;
@@ -19,6 +23,17 @@ function CodeEditor(container)
     });
     this.editor.metadata = null;
     this.markedErrors = [];
+};
+
+CodeEditor.prototype.startValidateTimer = function() {
+    if (this.validateTimeout != null) {
+        clearTimeout(this.validateTimeout);
+    }
+    var me = this;
+    this.validateTimeout = setTimeout(function() {
+        me.validateTimeout = null;
+        editor.validate();
+    }, 2000);
 };
 
 CodeEditor.prototype.setValue = function(yaml)

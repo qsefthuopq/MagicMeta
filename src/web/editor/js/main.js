@@ -7,7 +7,7 @@ function initialize() {
     $("#loadButton").button().click(function() { editor.load(); });
     $("#newButton").button().click(function() { editor.startNew("Basic"); });
     $("#saveButton").button().click(function() { editor.save(); });
-    $('#validateButton').button().click(function() { editor.validate(); });
+    $('#validateButton').button().click(function() { editor.validate(true); });
     $('#referenceButton').button().click(function() { editor.openReference(); });
     $('#downloadButton').button().click(function() { editor.download(); });
     $('#forkButton').button().click(function() { editor.fork(); });
