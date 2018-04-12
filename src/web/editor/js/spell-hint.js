@@ -56,6 +56,7 @@
 
     function getSiblings(pos, indent, cm, tabSizeInSpaces) {
         var siblings = {};
+        if (pos.ch < indent) indent = pos.ch;
         var startLine = pos.line;
         pos.line--;
         while (pos.line > 0) {
