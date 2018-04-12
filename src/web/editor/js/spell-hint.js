@@ -71,6 +71,7 @@
                 var kv = getKeyValue(thisLine);
                 siblings[kv[0]] = kv[1];
             }
+            if (thisIndent <= indent && trimmed.startsWith("-")) break;
             pos.line--;
         }
         pos.line = startLine;
