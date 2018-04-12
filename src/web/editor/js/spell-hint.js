@@ -215,7 +215,7 @@
     function convertHint(text, value, metadata, valueType, inherited) {
         var description = null;
         var importance = 0;
-        if (valueType && metadata) {
+        if (valueType && metadata && value) {
             var dataType = metadata[valueType][value];
             description = dataType['description'];
             importance = dataType['importance'];
