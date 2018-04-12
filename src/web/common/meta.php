@@ -7,14 +7,17 @@ $meta = json_decode(file_get_contents('meta.json'), true);
 $spellJson = json_decode(file_get_contents($resourcePackFolder . '/default/assets/minecraft/models/item/diamond_axe.json'), true);
 $spellJson = $spellJson['overrides'];
 $spellIcons = array();
+$disabledIcons = array();
 $diamondUses = 1562;
 foreach ($spellJson as $spellPredicate) {
     $durability = round($spellPredicate['predicate']['damage'] * $diamondUses);
     if ($durability == 0) continue;
     $texture = str_replace('item/', '', $spellPredicate['model']);
     $spellIcons['diamond_axe:' . $durability] = '<img src="common/image/' . $texture . '.png" class="spellIcon"/>' . $texture;
+    $disabledIcons['diamond_hoe:' . $durability] = '<img src="common/image/' . $texture . '.png" class="spellIcon"/>' . $texture;
 }
 $meta['types']['spell_icon']['options'] = $spellIcons;
+$meta['types']['spell_icon_disabled']['options'] = $disabledIcons;
 
 // Load sounds
 $soundsJson = json_decode(file_get_contents($resourcePackFolder . '/default/assets/minecraft/sounds.json'), true);

@@ -6830,7 +6830,7 @@
       "field" : "icon_disabled",
       "importance" : 90,
       "name" : "Disabled Icon",
-      "type" : "icon"
+      "type" : "spell_icon_disabled"
     },
     "icon_disabled_url" : {
       "category" : "base",
@@ -13385,6 +13385,12 @@
       "class_name" : "java.lang.String",
       "description" : [ "A spell icon from a resource pack" ],
       "name" : "Spell Icon",
+      "options" : { }
+    },
+    "spell_icon_disabled" : {
+      "class_name" : "java.lang.String",
+      "description" : [ "A spell icon from a resource pack, with a disabled or greyed out appearance" ],
+      "name" : "Disabled Spell Icon",
       "options" : { }
     },
     "spell_list" : {
