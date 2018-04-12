@@ -12,6 +12,7 @@ function CodeEditor(container)
     this.editor.on('change', function onChange(editor, input) {
         CodeMirror.commands.autocomplete(cm, null, {
             completeSingle: false,
+            closeOnUnfocus: false,
             customKeys: {
               Up: function(cm, handle) {handle.moveFocus(-1);},
               Down: function(cm, handle) {handle.moveFocus(1);},
@@ -20,7 +21,7 @@ function CodeEditor(container)
               Home: function(cm, handle) {handle.setFocus(0);},
               End: function(cm, handle) {handle.setFocus(handle.length - 1);},
               Tab: function(cm, handle) {handle.pick();},
-              Esc: function(handle) {handle.close();}
+              Esc: function(cm, handle) {handle.close();}
             }
         });
     });
