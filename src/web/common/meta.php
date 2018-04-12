@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $meta = json_decode(file_get_contents('meta.json'), true);
 
 // Load resource pack textures
-$spellJson = json_decode(file_get_contents('../rp/default/assets/minecraft/models/item/diamond_axe.json'), true);
+$spellJson = json_decode(file_get_contents($resourcePackFolder . '/default/assets/minecraft/models/item/diamond_axe.json'), true);
 $spellJson = $spellJson['overrides'];
 $spellIcons = array();
 $diamondUses = 1562;
@@ -17,7 +17,7 @@ foreach ($spellJson as $spellPredicate) {
 $meta['types']['spell_icon']['options'] = $spellIcons;
 
 // Load sounds
-$soundsJson = json_decode(file_get_contents('../rp/default/assets/minecraft/sounds.json'), true);
+$soundsJson = json_decode(file_get_contents($resourcePackFolder . '/default/assets/minecraft/sounds.json'), true);
 $sounds = array_keys($soundsJson);
 $sounds = array_fill_keys($sounds, null);
 $meta['types']['sound']['options'] = array_merge($meta['types']['sound']['options'], $sounds);
@@ -45,25 +45,31 @@ function mapFields($meta, $type, $propertyHolder = null) {
 }
 
 // Populate contextual lists of parameters
-$meta['spell_context'] = array(
-    'properties' => mapFields($meta, 'spell_properties'),
-    'parameters' => mapFields($meta, 'spell_parameters'),
-    'effect_parameters' => mapFields($meta, 'effect_parameters'),
-    'effectlib_parameters' => mapFields($meta, 'effectlib_parameters'),
-    'action_parameters' => mapFields($meta, 'action_parameters'),
-    'action_classes' => array_column($meta['actions'], 'short_class'),
-    'effectlib_classes' => array_column($meta['effectlib_effects'], 'short_class')
-);
-$actions = array();
-foreach ($meta['actions'] as $action) {
-    $actions[$action['class_name']] = mapFields($meta, 'parameters', $action);
-}
-$meta['spell_context']['actions'] = $actions;
+if (isset($_REQUEST['context'])) {
+    $meta['spell_context'] = array(
+        'properties' => mapFields($meta, 'spell_properties'),
+        'parameters' => mapFields($meta, 'spell_parameters'),
+        'effect_parameters' => mapFields($meta, 'effect_parameters'),
+        'effectlib_parameters' => mapFields($meta, 'effectlib_parameters'),
+        'action_parameters' => mapFields($meta, 'action_parameters'),
+        'action_classes' => array_combine(
+            array_column($meta['actions'], 'short_class'),
+            array_keys($meta['actions'])),
+        'effectlib_classes' => array_combine(
+            array_column($meta['effectlib_effects'], 'short_class'),
+            array_keys($meta['effectlib_effects'])),
+    );
+    $actions = array();
+    foreach ($meta['actions'] as $action) {
+        $actions[$action['class_name']] = mapFields($meta, 'parameters', $action);
+    }
+    $meta['spell_context']['actions'] = $actions;
 
-$effects = array();
-foreach ($meta['effectlib_effects'] as $effect) {
-    $effects[$effect['class_name']] = mapFields($meta, 'parameters', $effect);
+    $effects = array();
+    foreach ($meta['effectlib_effects'] as $effect) {
+        $effects[$effect['class_name']] = mapFields($meta, 'parameters', $effect);
+    }
+    $meta['spell_context']['effects'] = $effects;
 }
-$meta['spell_context']['effects'] = $effects;
 
 echo json_encode($meta);

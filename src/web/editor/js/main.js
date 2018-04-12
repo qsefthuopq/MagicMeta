@@ -46,7 +46,7 @@ function initialize() {
 
     $.ajax( {
         type: "GET",
-        url: "common/meta.php",
+        url: "common/meta.php?context",
         dataType: 'json'
     }).done(function(meta) {
         editor.setMetadata(meta);
