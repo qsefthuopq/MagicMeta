@@ -20,6 +20,7 @@ function CodeEditor(container)
         var line = cm.getLine(input.from.line);
         if (line.indexOf(':') > 0 && !line.endsWith(' ')) return;
         CodeMirror.commands.autocomplete(cm, null, {
+            // closeOnUnfocus: false,
             completeSingle: false
         });
     });
