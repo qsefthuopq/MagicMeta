@@ -16,6 +16,12 @@ foreach ($spellJson as $spellPredicate) {
 }
 $meta['types']['spell_icon']['options'] = $spellIcons;
 
+// Load sounds
+$soundsJson = json_decode(file_get_contents('../rp/default/assets/minecraft/sounds.json'), true);
+$sounds = array_keys($soundsJson);
+$sounds = array_fill_keys($sounds, null);
+$meta['types']['sound']['options'] = array_merge($meta['types']['sound']['options'], $sounds);
+
 // Populate action, effect and effectlib class types
 $actions = array_column($meta['actions'], 'short_class');
 $actions = array_fill_keys($actions, null);
