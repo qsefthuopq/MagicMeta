@@ -360,7 +360,7 @@
             result = getSorted(properties, word, ': ');
         }
 
-        if (result.length) {
+        if (result.length > 0 && (result.length > 1 || result[0] != word)) {
             return {
                 list: result,
                 from: CodeMirror.Pos(cur.line, start),
