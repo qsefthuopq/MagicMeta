@@ -35,7 +35,9 @@ function mapFields($meta, $type, $propertyHolder = null) {
     foreach ($keys as $key) {
         // Skip some of these...
         if ($key === 'creator_id' || $key === 'creator') continue;
-        array_push($mapped, $properties[$key]['field']);
+        $property = $properties[$key];
+        if (isset($property['alias'])) continue;
+        $mapped[$property['field']] = $key;
     }
     return $mapped;
 }

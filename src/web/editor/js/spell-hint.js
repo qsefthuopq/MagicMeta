@@ -20,14 +20,6 @@
     var LEAF_KV = /^\s*?(\w+)\s*?:\s*?/;
     var WORD_OR_COLON = /\w+|:/;
 
-    function addUnique(kw, result) {
-        // add if not already in result set
-        if (!kw || result.indexOf(kw) !== -1) {
-            return;
-        }
-        result.push(kw);
-    }
-
     function rstrip(line) {
         return line.replace(/\s*$/g, '');
     }
@@ -135,15 +127,13 @@
         return hierarchy;
     }
 
-    function filterList(list, map) {
-        var newList = [];
-        for (var i = 0; i < list.length; i++) {
-            if (!map.hasOwnProperty(list[i])) {
-                newList.push(list[i]);
+    function filterMap(map, toRemove) {
+        for (var key in toRemove) {
+            if (toRemove.hasOwnProperty(key) && map.hasOwnProperty(key)) {
+                delete map[key];
             }
         }
-
-        return newList;
+        return map;
     }
 
     function getAllActions(cm, tabSizeInSpaces) {
@@ -172,6 +162,24 @@
         }
 
         return actions;
+    }
+
+    function getSorted(values, word, suffix) {
+        suffix = (typeof suffix === 'undefined') ? '' : suffix;
+        var startsWith = [];
+        var contains = [];
+        for (var kw in values) {
+            if (kw.indexOf(word) !== -1) {
+                if (kw.startsWith(word)) {
+                    startsWith.push(kw + suffix);
+                } else {
+                    contains.push(kw + suffix);
+                }
+            }
+        }
+        startsWith.sort();
+        contains.sort();
+        return startsWith.concat(contains);
     }
 
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
@@ -203,18 +211,11 @@
         console.log(hierarchy);
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
-            var values = [];
-
-            var valueKeywords = values.concat(values);
-            for (var c in valueKeywords) {
-                var kw = valueKeywords[c];
-                if (kw.indexOf(word) !== -1) {
-                    addUnique(kw, result);
-                }
-            }
+            var values = {};
+            result = getSorted(values, word);
         } else {
             // else, do suggestions for new property keys
-            var properties = [];
+            var properties = {};
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
                 properties = metadata.spell_context.properties;
@@ -228,7 +229,7 @@
                         action = action + "Action";
                     }
                     if (metadata.spell_context.actions.hasOwnProperty(action)) {
-                        properties = properties.concat(metadata.spell_context.actions[action]);
+                        properties = $.extend(properties, metadata.spell_context.actions[action]);
                     }
                 }
             }
@@ -236,13 +237,8 @@
             var pos = CodeMirror.Pos(cur.line, cur.ch);
             var thisLine = cm.getLine(pos.line);
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
-            properties = filterList(properties, siblings);
-            for (var i in properties) {
-                var kw = properties[i];
-                if (kw.indexOf(word) !== -1) {
-                    addUnique(kw + ": ", result);
-                }
-            }
+            properties = filterMap(properties, siblings);
+            result = getSorted(properties, word, ': ');
         }
 
         if (result.length) {
