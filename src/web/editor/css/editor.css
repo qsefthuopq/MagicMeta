@@ -166,3 +166,23 @@
 .defaultProperty {
     font-weight: bold;
 }
+
+#userInfoContainer {
+    flex-basis: auto;
+}
+
+#validationContainer {
+    color: #00DD00;
+    flex: 1 1 100%;
+    max-height: 2em;
+    margin-right: 1em;
+}
+
+#validationIcon {
+    margin-left: 1em;
+    margin-right: 4px;
+}
+
+#validation.error {
+    color: red;
+}

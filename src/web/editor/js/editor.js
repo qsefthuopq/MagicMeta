@@ -69,9 +69,21 @@ Editor.prototype.validate = function() {
         if (this.codeEditor != null) {
             this.codeEditor.showError(e);
         }
-        alert(e.message);
+        $('#validationIcon').html("&#x1F44E;");
+        $('#validation').text(e.message);
+        $('#validation').prop('title', e.message);
+        $('#validation').addClass("error");
+        $('#validationIcon').show();
+        $('#validation').show();
         return null;
     }
+
+    $('#validation').removeClass("error");
+    $('#validationIcon').html("&#x1F44D;");
+    $('#validation').text("Looks ok!");
+    $('#validation').prop('title', '');
+    $('#validationIcon').show().fadeOut(5000);
+    $('#validation').show().fadeOut(5000);
 
     return config;
 };
