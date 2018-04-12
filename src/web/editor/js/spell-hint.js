@@ -210,15 +210,19 @@
 
     function convertHint(text, value, metadata, valueType) {
         var description = null;
+        var importance = 0;
         if (valueType && metadata) {
-            description = metadata[valueType][value]['description'];
+            var dataType = metadata[valueType][value];
+            description = dataType['description'];
+            importance = dataType['importance'];
         } else {
             description = value == null ? null : [value]
         }
         var hint = {
             text: text,
             description: description,
-            render: renderHint
+            render: renderHint,
+            importance: importance
         };
         return hint;
     }
@@ -238,6 +242,15 @@
                 }
             }
         }
+        function sortProperties(a, b) {
+            if (a.importance == b.importance) {
+                return a.text.localeCompare(b.text);
+            } else {
+                return b.importance - a.importance;
+            }
+        }
+        startsWith.sort(sortProperties);
+        contains.sort(sortProperties);
         return startsWith.concat(contains);
     }
 
