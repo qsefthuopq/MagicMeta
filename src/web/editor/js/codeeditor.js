@@ -10,19 +10,12 @@ function CodeEditor(container)
     });
     var cm = this.editor;
     this.editor.on('change', function onChange(editor, input) {
+        if (input.from.line != input.to.line) return;
+        var line = cm.getLine(input.from.line);
+        if (line.indexOf(':') > 0 && !line.endsWith(' ')) return;
         CodeMirror.commands.autocomplete(cm, null, {
             completeSingle: false,
-            closeOnUnfocus: false,
-            customKeys: {
-              Up: function(cm, handle) {handle.moveFocus(-1);},
-              Down: function(cm, handle) {handle.moveFocus(1);},
-              PageUp: function(cm, handle) {handle.moveFocus(-handle.menuSize() + 1, true);},
-              PageDown: function(cm, handle) {handle.moveFocus(handle.menuSize() - 1, true);},
-              Home: function(cm, handle) {handle.setFocus(0);},
-              End: function(cm, handle) {handle.setFocus(handle.length - 1);},
-              Tab: function(cm, handle) {handle.pick();},
-              Esc: function(cm, handle) {handle.close();}
-            }
+            closeOnUnfocus: false
         });
     });
     this.editor.metadata = null;
