@@ -15,7 +15,7 @@
     "use strict";
 
     var WHITESPACE = /\s+/;
-    var WORD = /\w+/;
+    var WORD = /[\w\.]+/;
     var OBJECT_KEY = /^[\s-]*?(\w+)\s*?:\s*?$/;
     var LEAF_KV = /^[\s-]*?(\w+)\s*?:\s*?/;
     var WORD_OR_COLON = /\w+|:/;

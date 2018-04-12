@@ -134,6 +134,10 @@
     display: table-row;
 }
 
+li.CodeMirror-hint-active {
+    background: #00AAFF;
+}
+
 .CodeMirror-hint td div {
     max-height: 30px;
     overflow: hidden;
@@ -170,6 +174,18 @@
     height: 32px;
     background-size: 256px 128px;
     background-position: -32px -32px;
+}
+
+.colorSwatch {
+    width: 32px;
+    height: 16px;
+    margin-right: 1em;
+    display: inline-block;
+}
+
+.CodeMirror-hint-active td div .colorSwatch {
+    width: 32px;
+    height: 32px;
 }
 
 .inheritedProperty {
