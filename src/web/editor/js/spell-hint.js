@@ -452,6 +452,8 @@
             curLine = cm.getLine(cur.line),
             token = cm.getTokenAt(cur);
 
+        if (curLine.trim().startsWith("#")) return;
+
         var start = token.end,
             end = token.end;
 
