@@ -13443,10 +13443,7 @@
       "class_name" : "java.lang.String",
       "description" : [ "A bit of text" ],
       "name" : "String",
-      "options" : {
-        "Hello" : null,
-        "World" : null
-      }
+      "options" : { }
     },
     "string_list" : {
       "class_name" : "java.util.List",
