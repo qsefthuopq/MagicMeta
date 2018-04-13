@@ -562,14 +562,29 @@
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
                 properties = metadata.spell_context.properties;
-            } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'parameters') {
+            } else if (hierarchy.length >= 3 && hierarchy[hierarchy.length - 1] == '' && hierarchy[1] == 'parameters') {
                 // Add base parameters
-                inherited = metadata.spell_context.parameters;
                 var actions = getAllActions(cm, tabSizeInSpaces);
                 for (var i = 0; i < actions.length; i++) {
                     var action = actions[i];
                     if (metadata.spell_context.actions.hasOwnProperty(action)) {
-                        properties = metadata.spell_context.actions[action];
+                        properties = $.extend(properties, metadata.spell_context.actions[action]);
+                    }
+                }
+                if (hierarchy.length == 3) {
+                    inherited = metadata.spell_context.parameters;
+                } else {
+                    // Search for map property
+                    for (var field in properties) {
+                        if (properties.hasOwnProperty(field) && field == hierarchy[hierarchy.length - 2]) {
+                            var propertyKey = properties[field];
+                            var propertyType = metadata.properties[propertyKey].type;
+                            propertyType = metadata.types[propertyType];
+                            if (propertyType.hasOwnProperty('key_type')) {
+                                propertyType = metadata.types[propertyType.key_type];
+                                properties = propertyType.options;
+                            }
+                        }
                     }
                 }
             } else if (hierarchy.length == 4 && hierarchy[3] == '' && hierarchy[1] == 'effects') {
