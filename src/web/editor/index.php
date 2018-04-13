@@ -56,6 +56,8 @@ $user = getUser();
                 <option value="Basic">Basic</option>
                 <option value="AOE">Area of Effect</option>
                 <option value="Projectile">Projectile</option>
+                <option value="Sphere">Build Sphere</option>
+                <option value="Break">Break Block</option>
             </select>
         </span>
         <span id="downloadButtonContainer">
@@ -171,13 +173,108 @@ myspell:
     - sound: magic.zap
     - location: targets
       effectlib:
-        class: Sphere
+        class: AnimatedBall
   parameters:
     target: self
-    radius: 16
-    damage: 10
+    radius: 8
     add_effects:
       levitation: 2
+    </textarea>
+    <textarea id="templateSphere">mysphere:
+  name: My Sphere
+  description: Make a temporary sphere of blocks
+  icon: slime_ball
+  actions:
+    cast:
+    # Some actions may be chained together.
+    # In this case, the Sphere action selects blocks within a Spehere
+    # and then it will run the actions in its "actions" list on each of those blocks.
+    #
+    # Actions that call other actions like this are called "compound" actions.
+    # They are generally separated into two categories: those that target blocks, and
+    # those that target entities.
+    # It only makes sense to use the right type of action with the right type of compound action,
+    # using a Damage or PotionEffect action inside a Sphere would do nothing.
+    - class: Sphere
+      actions:
+      # The ModifyBlock action is the most common action to use within a block-based compound action.
+      - class: ModifyBlock
+  effects:
+    cast:
+    - sound: magic.zap
+    - location: target
+      effectlib:
+        class: Sphere
+        # Variables can be used in effect parameters.
+        # They will refer to spell parameters in the main "parameters" section (see below)
+        # This keeps effects in sync with spell behaviors, for instance this
+        # Sphere effect will always match up to the Sphere action radius
+        radius: $radius
+        # Likewise, this effect will only last until the Sphere disappears.
+        duration: $undo
+  parameters:
+    # This will make the spell ignore entities and only target blocks
+    target: block
+    range: 16
+    # This makes the spell cast even if it misses, that is does not hit a block
+    # this allows for the creation of a sphere in mid-air
+    allow_max_range: true
+    radius: 3
+    # A "brush" in Magic is a material or other special tool used for modifying blocks
+    # in this case we are simply using glass.
+    brush: glass
+    # Spells won't modify air by default, here we allow this spell to only modify air so it won't break anything.
+    modifiable: air
+    # Almost everything in Magic is undoable. We don't want our world filled with
+    # random spheres, so we will make this one last only 10 seconds.
+    undo: 10000
+    # Spell can be given cooldowns, so they can't be spam-cast.
+    # This spell is limited to every 15 seconds, allowing it to undo
+    # before it can be cast again.
+    cooldown: 15000
+    </textarea>
+    <textarea id="templateBreak">mybreak:
+  name: My Break
+  description: Break a Block
+  icon: sulphur
+  actions:
+    cast:
+    # The BreakBlock action can be used to slowly break blocks, using packet effects
+    # to mimic vanilla block breaking.
+    - class: BreakBlock
+  effects:
+    cast:
+    - sound: magic.zap
+    - location: target
+      particle: block_crack
+      # Some particles, like block_crack, require extra data like a material to work with.
+      # However, in this case we will let the particle use the target block, which is the default
+      # behavior if you don't specify a material. Try uncommenting the following line to see what happens.
+      # material: glass
+
+      # These parameters can be used to fill out particle effects without sending
+      # additional particle packets to players.
+      # This is an efficient way to give your effects more punch.
+      particle_count: 30
+      # The offset X/Y/Z parameters make the particles randomly spawn within a volume around the
+      # target location
+      particle_offset_x: 0.5
+      particle_offset_y: 0.5
+      particle_offset_z: 0.5
+
+  parameters:
+    # This will make the spell ignore entities and only target blocks
+    target: block
+    range: 16
+    # This determines how much block durability to take away with each cast
+    # Repeated casts will do more damage, eventually destroying the block.
+    break_durability: 10
+    # Only certain blocks are destructible by default. Here we make this spell
+    # able to break any solid block.
+    destructible: solid
+    # Almost everything in Magic is undoable. We don't want our world filled with
+    # random holes, so we will make this one last only 10 seconds.
+    undo: 10000
     </textarea>
 </div>
 
