@@ -247,10 +247,12 @@
         var foundDefault = false;
         for (var kw in values) {
             var isDefault = defaultValue == kw;
+            var description = values[kw];
+            var match = kw + description;
             if (isDefault) foundDefault = true;
-            if (kw.indexOf(word) !== -1) {
-                var hint = convertHint(kw + suffix, values[kw], metadata, valueType, false, isDefault);
-                if (kw.startsWith(word)) {
+            if (match.indexOf(word) !== -1) {
+                var hint = convertHint(kw + suffix, description, metadata, valueType, false, isDefault);
+                if (match.startsWith(word)) {
                     startsWith.push(hint);
                 } else {
                     contains.push(hint);
@@ -260,10 +262,12 @@
         if (inheritedValues != null) {
             for (var kw in inheritedValues) {
                 var isDefault = defaultValue == kw;
+                var description = inheritedValues[kw];
+                var match = kw + description;
                 if (isDefault) foundDefault = true;
-                if (kw.indexOf(word) !== -1) {
-                    var hint = convertHint(kw + suffix, inheritedValues[kw], metadata, valueType, true, isDefault);
-                    if (kw.startsWith(word)) {
+                if (match.indexOf(word) !== -1) {
+                    var hint = convertHint(kw + suffix, description, metadata, valueType, true, isDefault);
+                    if (match.startsWith(word)) {
                         startsWith.push(hint);
                     } else {
                         contains.push(hint);
