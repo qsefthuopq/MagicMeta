@@ -5538,7 +5538,7 @@
     },
     "destructible" : {
       "category" : "construction",
-      "description" : [ "" ],
+      "description" : [ "What blocks this spell can break" ],
       "field" : "destructible",
       "importance" : 80,
       "name" : "Destructible",
@@ -7760,6 +7760,14 @@
       "importance" : 100,
       "name" : "Mode",
       "type" : "wand_mode"
+    },
+    "modifiable" : {
+      "category" : "construction",
+      "description" : [ "What blocks this spell can modify" ],
+      "field" : "modifiable",
+      "importance" : 80,
+      "name" : "Modifiable",
+      "type" : "string"
     },
     "modify" : {
       "category" : "",
@@ -11588,6 +11596,7 @@
     "instant_block_effects" : "false",
     "loud" : "false",
     "message_targets" : "true",
+    "modifiable" : null,
     "npc_weight" : "-1",
     "origin_at_target" : "false",
     "otdx" : null,
