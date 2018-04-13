@@ -155,8 +155,8 @@ myspell:
     damage: 10
     </textarea>
     <textarea id="templateAOE">myareaofeffect:
-  name: My Projectile
-  description: Damage Everything Around You
+  name: My AOE
+  description: Levitate Everything Around You
   icon: stick
   actions:
     cast:
@@ -165,7 +165,7 @@ myspell:
     # and then it will run the actions in its "actions" list on each of those entities.
     - class: AreaOfEffect
       actions:
-      - class: Damage
+      - class: PotionEffect
   effects:
     cast:
     - sound: magic.zap
@@ -176,6 +176,8 @@ myspell:
     target: self
     radius: 16
     damage: 10
+    add_effects:
+      levitation: 2
     </textarea>
 </div>
 
