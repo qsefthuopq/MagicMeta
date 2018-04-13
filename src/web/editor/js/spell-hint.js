@@ -220,7 +220,44 @@
         $(element).append($('<td>').append(description));
     }
 
-    function convertHint(text, value, metadata, classType, inherited, defaultValue) {
+    function RGBToHSV(hex) {
+        // Remove quotes
+        hex = hex.substring(1, hex.length - 1);
+
+        // Get the RGB values to calculate the Hue.
+        var r = parseInt(hex.substring(0,2),16)/255;
+        var g = parseInt(hex.substring(2,4),16)/255;
+        var b = parseInt(hex.substring(4,6),16)/255;
+
+        // Getting the Max and Min values for Chroma.
+        var max = Math.max.apply(Math, [r,g,b]);
+        var min = Math.min.apply(Math, [r,g,b]);
+
+        // Variables for HSV value of hex color.
+        var chr = max-min;
+        var hue = 0;
+        var val = max;
+        var sat = 0;
+
+        if (val > 0) {
+            // Calculate Saturation only if Value isn't 0.
+            sat = chr/val;
+            if (sat > 0) {
+                if (r == max) {
+                    hue = 60*(((g-min)-(b-min))/chr);
+                    if (hue < 0) {hue += 360;}
+                } else if (g == max) {
+                    hue = 120+60*(((b-min)-(r-min))/chr);
+                } else if (b == max) {
+                    hue = 240+60*(((r-min)-(g-min))/chr);
+                }
+            }
+        }
+
+        return [hue, sat, val];
+    }
+
+    function convertHint(text, value, metadata, classType, valueType, inherited, defaultValue) {
         var description = null;
         var importance = 0;
         if (classType && metadata && value && metadata[classType].hasOwnProperty(value)) {
@@ -230,6 +267,11 @@
         } else {
             description = value == null ? null : [value]
         }
+
+        if (importance == 0 && valueType == 'color') {
+            importance = RGBToHSV(text)[0];
+        }
+
         var hint = {
             text: text,
             description: description,
@@ -250,7 +292,37 @@
         return description;
     }
 
-    function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, classType, includeContains) {
+    function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, classType, valueType) {
+        var includeContains = true;
+        switch (valueType) {
+            case 'milliseconds':
+            case 'percentage':
+                includeContains = false;
+                break;
+            case 'integer':
+                includeContains = false;
+                values = $.extend({}, values);
+                if (defaultValue != null) {
+                    addMultiples(defaultValue, values, 0);
+                }
+                if (word != '') {
+                    values[word] = null;
+                    addPowersOfTen(parseInt(word), values);
+                }
+                break;
+            case 'double':
+                includeContains = false;
+                values = $.extend({}, values);
+                if (defaultValue != null) {
+                    addMultiples(defaultValue, values, 5);
+                }
+                if (word != '') {
+                    values[word] = null;
+                    addPowersOfTen(parseInt(word), values);
+                }
+                break;
+        }
+
         var startsWith = [];
         var contains = [];
         var foundDefault = false;
@@ -261,7 +333,7 @@
             var match = kw + trimmedDescription;
             if (isDefault) foundDefault = true;
             if (match.indexOf(word) !== -1) {
-                var hint = convertHint(kw + suffix, description, metadata, classType, false, isDefault);
+                var hint = convertHint(kw + suffix, description, metadata, classType, valueType, false, isDefault);
                 if (match.startsWith(word)) {
                     startsWith.push(hint);
                 } else {
@@ -277,7 +349,7 @@
                 var match = kw + trimmedDescription;
                 if (isDefault) foundDefault = true;
                 if (match.indexOf(word) !== -1) {
-                    var hint = convertHint(kw + suffix, description, metadata, classType, true, isDefault);
+                    var hint = convertHint(kw + suffix, description, metadata, classType, valueType, true, isDefault);
                     if (match.startsWith(word)) {
                         startsWith.push(hint);
                     } else {
@@ -289,9 +361,9 @@
 
         if (defaultValue != null && !foundDefault && defaultValue.indexOf(word) !== -1) {
             if (defaultValue.startsWith(word)) {
-                startsWith.push(convertHint(defaultValue + suffix, null, metadata, classType, false, true));
+                startsWith.push(convertHint(defaultValue + suffix, null, metadata, classType, valueType, false, true));
             } else {
-                contains.push(convertHint(defaultValue + suffix, null, metadata, classType, false, true));
+                contains.push(convertHint(defaultValue + suffix, null, metadata, classType, valueType, false, true));
             }
         }
 
@@ -481,37 +553,7 @@
                     }
                 }
             }
-
-            var includeContains = true;
-            switch (valueType) {
-                case 'milliseconds':
-                case 'percentage':
-                    includeContains = false;
-                    break;
-                case 'integer':
-                    includeContains = false;
-                    values = $.extend({}, values);
-                    if (defaultValue != null) {
-                        addMultiples(defaultValue, values, 0);
-                    }
-                    if (word != '') {
-                        values[word] = null;
-                        addPowersOfTen(parseInt(word), values);
-                    }
-                    break;
-                case 'double':
-                    includeContains = false;
-                    values = $.extend({}, values);
-                    if (defaultValue != null) {
-                        addMultiples(defaultValue, values, 5);
-                    }
-                    if (word != '') {
-                        values[word] = null;
-                        addPowersOfTen(parseInt(word), values);
-                    }
-                    break;
-            }
-            result = getSorted(values, null, defaultValue, word, '', metadata, classType, includeContains);
+            result = getSorted(values, null, defaultValue, word, '', metadata, classType, valueType);
         } else {
             // else, do suggestions for new property keys
             var properties = {};
@@ -557,7 +599,7 @@
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
-            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties', true);
+            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties', null);
         }
 
         if (result.length > 0 && (result.length > 1 || result[0] != word)) {
