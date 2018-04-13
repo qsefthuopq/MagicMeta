@@ -648,7 +648,14 @@
             result = getSorted(properties, inherited, null, word, suffix, metadata, 'properties', null);
         }
 
-        if (result.length > 0 && (result.length > 1 || result[0] != word)) {
+        var suggestion = false;
+        for (var key in result) {
+            if (result.hasOwnProperty(key) && result[key].text != word) {
+                suggestion = true;
+                break;
+            }
+        }
+        if (suggestion) {
             return {
                 list: result,
                 from: CodeMirror.Pos(cur.line, start),
