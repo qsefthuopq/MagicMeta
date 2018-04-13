@@ -285,6 +285,12 @@
         }
 
         function sortProperties(a, b) {
+            if (a == word) {
+                return -1;
+            }
+            if (b == word) {
+                return 1;
+            }
             if (a.isDefault && !b.isDefault) {
                 return -1;
             }
