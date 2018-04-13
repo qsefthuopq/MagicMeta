@@ -58,6 +58,7 @@ $user = getUser();
                 <option value="Projectile">Projectile</option>
                 <option value="Sphere">Build Sphere</option>
                 <option value="Break">Break Block</option>
+                <option value="Repeating">Repeating Effect</option>
             </select>
         </span>
         <span id="downloadButtonContainer">
@@ -275,6 +276,55 @@ myspell:
     # Almost everything in Magic is undoable. We don't want our world filled with
     # random holes, so we will make this one last only 10 seconds.
     undo: 10000
+    </textarea>
+    <textarea id="templateRepeating">goldwalker:
+  name: Goldwalker
+  description: Turn everything around you to gold
+  icon: gold_ingot
+  actions:
+    cast:
+    # The repeat action repeats its contained actions
+    # multiple times.
+    - class: Repeat
+      actions:
+      # The Retarget action updates the target location
+      # Otherwise each iteration of this Repeat would target
+      # the same location.
+      - class: Retarget
+      - class: Sphere
+        actions:
+        - class: ModifyBlock
+      # The delay action delays for some amount of time
+      # before letting the spell proceed on to the next actions
+      # This is often used inside of a Repeat action to make a spell
+      # animate over several ticks.
+      # without the Delay, the Repeat would run through its repetitions
+      # immediately.
+      - class: Delay
+  parameters:
+    target: self
+    radius: 4
+    brush:
+    repeat: 100
+    # Delaying for 500 milliseconds (1/2 a second) in between each
+    # repeat, meaning this runs twice a second.
+    delay: 500
+    # Here we use a "negated" material set. The ! character at the start
+    # means "not", so this will modify anything that's not transparent.
+    # This prevents tall grass and other passthrough blocks from turning
+    # to gold.
+    # We would still like to be able to walk on lava and water, though,
+    # so we add those to the list.
+    modifiable: "all_water,all_lava,!transparent"
+    # This parameter doesn't affect the spell behavior at all, but will
+    # advertise that this spell lasts for 50 seconds, which is
+    # delay x repeat.
+    total_duration: 50000
+    undo: 10000
+    # The undo_speed parameter can be used to make undo animated.
+    # This will undo 20 blocks per second, rather than undoing all at once.
+    undo_speed: 20
+    cooldown: 2000
     </textarea>
 </div>
 
