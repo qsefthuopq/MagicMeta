@@ -22,14 +22,21 @@ $user = getUser();
 
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/ui-contextmenu/jquery.ui-contextmenu.min.js"></script>
     <script src="common/js/user.js"></script>
     <script src="js/codemirror.js"></script>
+    <script src="js/jquery.fancytree.min.js"></script>
+    <script src="js/jquery.fancytree.table.js"></script>
+    <script src="js/jquery.fancytree.dnd.js"></script>
+    <script src="js/jquery.fancytree.edit.js"></script>
+    <script src="js/jquery.fancytree.gridnav.js"></script>
     <script src="js/show-hint.js"></script>
     <script src="js/spell-hint.js"></script>
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
     <script src="js/editor.js"></script>
     <script src="js/codeeditor.js"></script>
+    <script src="js/guieditor.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
         var user = <?= json_encode($user) ?>;
@@ -64,6 +71,10 @@ $user = getUser();
         <span id="referenceButtonContainer">
             <button type="button" id="referenceButton" title="Open the reference guide in a new window">Reference</button>
         </span>
+        <span id="modeSelector" class="controlgroup">
+            <input type="radio" name="editorMode" id="editorModeButton"><label for="editorModeButton" title="Use a graphical editor to build your spell">Editor</label>
+            <input type="radio" name="editorMode" id="codeModeButton" checked="checked"><label for="codeModeButton" title="View the raw configuration code for your spell">Code</label>
+        </span>
         <span>
             <button type="button" id="validateButton" title="Check your spell configuration for syntax errors">Check</button>
         </span>
@@ -72,6 +83,21 @@ $user = getUser();
             <span id="validation"></span>
         </span>
         <?php include "common/userinfo.inc.php" ?>
+    </div>
+
+    <div id="guiEditor" style="display: none">
+        <table id="editorTree">
+            <colgroup>
+                <col width="350px">
+                <col width="400px">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><input type="input" class="propertyInput"></td>
+              </tr>
+            </tbody>
+          </table>
     </div>
 
     <div id="codeEditor">
