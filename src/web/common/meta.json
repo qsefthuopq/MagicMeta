@@ -1331,6 +1331,21 @@
       },
       "short_class" : "Flower"
     },
+    "fly" : {
+      "category" : "",
+      "class_name" : "FlyAction",
+      "description" : [ "Put the target player into creative mode fly" ],
+      "examples" : [ "levitate", "superfly" ],
+      "importance" : 20,
+      "name" : "Fly",
+      "parameters" : {
+        "duration" : "infinite",
+        "max_height" : "0",
+        "max_height_above_ground" : "-1",
+        "speed" : "0.0"
+      },
+      "short_class" : "Fly"
+    },
     "freeze" : {
       "category" : "construction",
       "class_name" : "FreezeAction",
@@ -2281,7 +2296,9 @@
       "examples" : [ "skills" ],
       "importance" : 0,
       "name" : "Skill Selector",
-      "parameters" : { },
+      "parameters" : {
+        "page" : "1"
+      },
       "short_class" : "SkillSelector"
     },
     "skip" : {
@@ -4598,6 +4615,14 @@
       "name" : "Bypass Build",
       "type" : "boolean"
     },
+    "bypass_cooldown" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "bypass_cooldown",
+      "importance" : 0,
+      "name" : "Bypass Cooldown",
+      "type" : "boolean"
+    },
     "bypass_deactivate" : {
       "category" : "base",
       "description" : [ "This spell can not be deactivated by other spells" ],
@@ -4677,6 +4702,14 @@
       "importance" : 0,
       "name" : "Cancel Effects",
       "type" : "boolean"
+    },
+    "cancel_effects_delay" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cancel_effects_delay",
+      "importance" : 0,
+      "name" : "Cancel Effects Delay",
+      "type" : "string"
     },
     "cancel_on_cast_other" : {
       "category" : "base",
@@ -8080,6 +8113,14 @@
       "importance" : 0,
       "name" : "Overrides",
       "type" : "string_list"
+    },
+    "page" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "page",
+      "importance" : 0,
+      "name" : "Page",
+      "type" : "integer"
     },
     "parameters" : {
       "category" : "base",
@@ -11550,6 +11591,7 @@
     "bypass" : "false",
     "bypass_break" : "false",
     "bypass_build" : "false",
+    "bypass_cooldown" : "false",
     "bypass_deactivate" : "false",
     "bypass_mage_cooldown" : "false",
     "bypass_permissions" : "false",
@@ -11573,7 +11615,7 @@
     "cooldown_reduction" : "0",
     "cost_reduction" : "0",
     "damage_resistance_protection" : "0",
-    "destructible" : null,
+    "destructible" : "",
     "destructible_durability" : "0",
     "destructible_override" : "false",
     "display_cooldown" : "-1",
@@ -13561,6 +13603,7 @@
     "brush_inventory" : null,
     "brush_mode" : "none",
     "brushes" : null,
+    "cancel_effects_delay" : null,
     "cast_interval" : "0",
     "cast_location" : null,
     "cast_min_bowpull" : "0",
