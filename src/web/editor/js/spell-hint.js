@@ -284,6 +284,7 @@
     }
 
     function trimTags(description) {
+        if (description == null) return description;
         var index = description.lastIndexOf('>');
         if (index > 0 && index < description.length - 1) {
             description = description.substring(index + 1);
