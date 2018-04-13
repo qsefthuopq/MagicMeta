@@ -189,6 +189,22 @@
         return text;
     }
 
+    function isInList(pos, indent, cm, tabSizeInSpaces) {
+        if (pos.ch < indent) indent = pos.ch;
+        while (pos.line > 0) {
+            var thisLine = cm.getLine(pos.line);
+            var trimmed = thisLine.trim();
+            if (trimmed.startsWith('-')) return true;
+            var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
+            var thisIndent = getIndentation(thisLine, tabSizeInSpaces);
+
+            if (!isEmpty && thisIndent < indent) break;
+            if (thisIndent < indent) break;
+            pos.line--;
+        }
+        return false;
+    }
+
     function getCurrentClass(pos, indent, cm, tabSizeInSpaces, suffix) {
         var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
         var currentClass = null;
@@ -559,6 +575,7 @@
             // else, do suggestions for new property keys
             var properties = {};
             var inherited = null;
+            var suffix = ': ';
             if (hierarchy.length == 2 && hierarchy[1] == '') {
                 // Add base parameters
                 properties = metadata.spell_context.properties;
@@ -583,6 +600,19 @@
                             if (propertyType.hasOwnProperty('key_type')) {
                                 propertyType = metadata.types[propertyType.key_type];
                                 properties = propertyType.options;
+                            } else if (propertyType.hasOwnProperty('value_type')) {
+                                propertyType = metadata.types[propertyType.value_type];
+                                properties = propertyType.options;
+                                suffix = '';
+                                if (!isInList(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces)) {
+                                    var list = properties;
+                                    properties = {};
+                                    for (var key in list) {
+                                        if (list.hasOwnProperty(key)) {
+                                            properties["- " + key] = list[key];
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -615,7 +645,7 @@
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
-            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties', null);
+            result = getSorted(properties, inherited, null, word, suffix, metadata, 'properties', null);
         }
 
         if (result.length > 0 && (result.length > 1 || result[0] != word)) {
