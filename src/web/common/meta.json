@@ -5494,7 +5494,7 @@
       "field" : "delay",
       "importance" : 0,
       "name" : "Delay",
-      "type" : "integer"
+      "type" : "milliseconds"
     },
     "delay_ticks" : {
       "category" : "effects",
@@ -5742,7 +5742,7 @@
       "field" : "duration",
       "importance" : 100,
       "name" : "Duration",
-      "type" : "integer"
+      "type" : "milliseconds"
     },
     "duration_multiplier" : {
       "category" : "",
@@ -11201,7 +11201,7 @@
       "field" : "warmup",
       "importance" : 70,
       "name" : "Warmup",
-      "type" : "integer"
+      "type" : "milliseconds"
     },
     "warning_effects" : {
       "category" : "",
@@ -12726,6 +12726,26 @@
         "action_bar" : "The action bar",
         "chat" : "Player chat",
         "title" : "A screen title"
+      }
+    },
+    "milliseconds" : {
+      "class_name" : "java.lang.Integer",
+      "description" : [ "A number of millisecons" ],
+      "name" : "Milliseconds",
+      "options" : {
+        "0" : "Immediate",
+        "1000" : "1 Second",
+        "10000" : "10 Seconds",
+        "1200000" : "2 Minutes",
+        "2000" : "2 Seconds",
+        "20000" : "20 Seconds",
+        "30000" : "30 Seconds",
+        "300000" : "5 Minutes",
+        "3600000" : "1 Hour",
+        "450000" : "45 Seconds",
+        "500" : "1/2 Second",
+        "5000" : "5 Seconds",
+        "600000" : "10 Minutes"
       }
     },
     "particle_effect" : {
