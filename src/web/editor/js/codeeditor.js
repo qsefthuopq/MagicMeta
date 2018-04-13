@@ -19,6 +19,7 @@ function CodeEditor(container)
         if (input.from.line != input.to.line) return;
         var line = cm.getLine(input.from.line);
         if (line.indexOf(':') > 0 && !line.endsWith(' ')) return;
+        if (line.trim().startsWith('-') && !line.endsWith(' ')) return;
         CodeMirror.commands.autocomplete(cm, null, {
             // closeOnUnfocus: false,
             completeSingle: false
