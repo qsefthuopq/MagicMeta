@@ -60,7 +60,7 @@ $colorMap = array("aliceblue"=>"f0f8ff","antiquewhite"=>"faebd7","aqua"=>"00ffff
 
 $colorHints = array();
 foreach ($colorMap as $name => $color) {
-    $colorHints[$color] = '<span class="colorSwatch" style="background-color: #' . $color . '">&nbsp;</span>' . $name;
+    $colorHints['"' . $color . '"'] = '<span class="colorSwatch" style="background-color: #' . $color . '">&nbsp;</span>' . $name;
 }
 $meta['types']['color']['options'] = $colorHints;
 
