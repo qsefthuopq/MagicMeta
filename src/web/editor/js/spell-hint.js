@@ -241,6 +241,15 @@
         return hint;
     }
 
+    function trimTags(description) {
+        var index = description.lastIndexOf('>');
+        if (index > 0 && index < description.length - 1) {
+            description = description.substring(index + 1);
+        }
+
+        return description;
+    }
+
     function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, classType, includeContains) {
         var startsWith = [];
         var contains = [];
@@ -248,7 +257,8 @@
         for (var kw in values) {
             var isDefault = defaultValue == kw;
             var description = values[kw];
-            var match = kw + description;
+            var trimmedDescription = trimTags(description);
+            var match = kw + trimmedDescription;
             if (isDefault) foundDefault = true;
             if (match.indexOf(word) !== -1) {
                 var hint = convertHint(kw + suffix, description, metadata, classType, false, isDefault);
@@ -263,7 +273,8 @@
             for (var kw in inheritedValues) {
                 var isDefault = defaultValue == kw;
                 var description = inheritedValues[kw];
-                var match = kw + description;
+                var trimmedDescription = trimTags(description);
+                var match = kw + trimmedDescription;
                 if (isDefault) foundDefault = true;
                 if (match.indexOf(word) !== -1) {
                     var hint = convertHint(kw + suffix, description, metadata, classType, true, isDefault);
