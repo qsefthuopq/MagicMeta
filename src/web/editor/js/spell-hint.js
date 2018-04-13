@@ -220,11 +220,11 @@
         $(element).append($('<td>').append(description));
     }
 
-    function convertHint(text, value, metadata, valueType, inherited, defaultValue) {
+    function convertHint(text, value, metadata, classType, inherited, defaultValue) {
         var description = null;
         var importance = 0;
-        if (valueType && metadata && value && metadata[valueType].hasOwnProperty(value)) {
-            var dataType = metadata[valueType][value];
+        if (classType && metadata && value && metadata[classType].hasOwnProperty(value)) {
+            var dataType = metadata[classType][value];
             description = dataType['description'];
             importance = dataType['importance'];
         } else {
@@ -241,7 +241,7 @@
         return hint;
     }
 
-    function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, valueType) {
+    function getSorted(values, inheritedValues, defaultValue, word, suffix, metadata, classType, includeContains) {
         var startsWith = [];
         var contains = [];
         var foundDefault = false;
@@ -251,7 +251,7 @@
             var match = kw + description;
             if (isDefault) foundDefault = true;
             if (match.indexOf(word) !== -1) {
-                var hint = convertHint(kw + suffix, description, metadata, valueType, false, isDefault);
+                var hint = convertHint(kw + suffix, description, metadata, classType, false, isDefault);
                 if (match.startsWith(word)) {
                     startsWith.push(hint);
                 } else {
@@ -266,7 +266,7 @@
                 var match = kw + description;
                 if (isDefault) foundDefault = true;
                 if (match.indexOf(word) !== -1) {
-                    var hint = convertHint(kw + suffix, description, metadata, valueType, true, isDefault);
+                    var hint = convertHint(kw + suffix, description, metadata, classType, true, isDefault);
                     if (match.startsWith(word)) {
                         startsWith.push(hint);
                     } else {
@@ -278,9 +278,9 @@
 
         if (defaultValue != null && !foundDefault && defaultValue.indexOf(word) !== -1) {
             if (defaultValue.startsWith(word)) {
-                startsWith.push(convertHint(defaultValue + suffix, null, metadata, valueType, false, true));
+                startsWith.push(convertHint(defaultValue + suffix, null, metadata, classType, false, true));
             } else {
-                contains.push(convertHint(defaultValue + suffix, null, metadata, valueType, false, true));
+                contains.push(convertHint(defaultValue + suffix, null, metadata, classType, false, true));
             }
         }
 
@@ -310,7 +310,34 @@
         }
         startsWith.sort(sortProperties);
         contains.sort(sortProperties);
-        return startsWith.concat(contains);
+        if (includeContains) {
+            startsWith = startsWith.concat(contains);;
+        }
+        return startsWith;
+    }
+
+    function addMultiples(value, values, decimalLimit) {
+        values[value * 2] = null;
+        values[value * 10] = null;
+        var lessValue = value;
+        while (decimalLimit >= 0) {
+            lessValue /= 2;
+            values[Math.floor(lessValue)] = null;
+            if (lessValue < 1) decimalLimit--;
+        }
+        lessValue = value;
+        while (decimalLimit >= 0) {
+            lessValue /= 10;
+            values[Math.floor(lessValue)] = null;
+            if (lessValue < 1) decimalLimit--;
+        }
+    }
+
+    function addPowersOfTen(value, values) {
+        for (var i = 0; i < 3; i++) {
+            value *= 10;
+            values[value] = null;
+        }
     }
 
     CodeMirror.registerHelper('hint', 'yaml', function(cm, opts) {
@@ -344,21 +371,24 @@
         if (LEAF_KV.test(curLine)) {
             // if we'e on a line with a key get values for that key
             var values = {};
-            var valueType = '';
+            var classType = '';
+            var valueType = null;
             var defaultValue = null;
             var fieldName = hierarchy[hierarchy.length - 1];
             if (hierarchy.length == 2) {
                 if (metadata.spell_context.properties.hasOwnProperty(fieldName)) {
                     var propertyKey = metadata.spell_context.properties[fieldName];
                     if (metadata.properties.hasOwnProperty(propertyKey)) {
-                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                        valueType = metadata.properties[propertyKey].type;
+                        values = metadata.types[valueType].options;
                     }
                 }
             } else if (hierarchy.length == 3 && hierarchy[1] == 'parameters') {
                 if (metadata.spell_context.parameters.hasOwnProperty(fieldName)) {
                     var propertyKey = metadata.spell_context.parameters[fieldName];
                     if (metadata.properties.hasOwnProperty(propertyKey)) {
-                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                        valueType = metadata.properties[propertyKey].type;
+                        values = metadata.types[valueType].options;
                     }
                 } else {
                     var actions = getAllActions(cm, tabSizeInSpaces);
@@ -367,17 +397,18 @@
                         if (metadata.spell_context.actions.hasOwnProperty(action) && metadata.spell_context.actions[action].hasOwnProperty(fieldName)) {
                             var propertyKey =  metadata.spell_context.actions[action][fieldName];
                             if (metadata.properties.hasOwnProperty(propertyKey)) {
-                                values = metadata.types[metadata.properties[propertyKey].type].options;
+                                valueType = metadata.properties[propertyKey].type;
+                                values = metadata.types[valueType].options;
                             }
                         }
                     }
                 }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions' && fieldName == 'class') {
                 values = metadata.spell_context.action_classes;
-                valueType = 'actions';
+                classType = 'actions';
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && fieldName == 'class') {
                 values = metadata.spell_context.effectlib_classes;
-                valueType = 'effectlib_effects';
+                classType = 'effectlib_effects';
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'actions') {
                 var propertyKey = null;
                 if (metadata.spell_context.action_parameters.hasOwnProperty(fieldName)) {
@@ -401,7 +432,8 @@
                     }
                 }
                 if (propertyKey != null && metadata.properties.hasOwnProperty(propertyKey)) {
-                    values = metadata.types[metadata.properties[propertyKey].type].options;
+                    valueType = metadata.properties[propertyKey].type;
+                    values = metadata.types[valueType].options;
                 }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects' && hierarchy[hierarchy.length - 2] == 'effectlib') {
                 var propertyKey = null;
@@ -426,17 +458,49 @@
                     }
                 }
                 if (propertyKey != null && metadata.properties.hasOwnProperty(propertyKey)) {
-                    values = metadata.types[metadata.properties[propertyKey].type].options;
+                    valueType = metadata.properties[propertyKey].type;
+                    values = metadata.types[valueType].options;
                 }
             } else if (hierarchy.length >= 4 && hierarchy[1] == 'effects') {
                 if (metadata.spell_context.effect_parameters.hasOwnProperty(fieldName)) {
                     var propertyKey = metadata.spell_context.effect_parameters[fieldName];
                     if (metadata.properties.hasOwnProperty(propertyKey)) {
-                        values = metadata.types[metadata.properties[propertyKey].type].options;
+                        valueType = metadata.properties[propertyKey].type;
+                        values = metadata.types[valueType].options;
                     }
                 }
             }
-            result = getSorted(values, null, defaultValue, word, '', metadata, valueType);
+
+            var includeContains = true;
+            switch (valueType) {
+                case 'milliseconds':
+                case 'percentage':
+                    includeContains = false;
+                    break;
+                case 'integer':
+                    includeContains = false;
+                    values = $.extend({}, values);
+                    if (defaultValue != null) {
+                        addMultiples(defaultValue, values, 0);
+                    }
+                    if (word != '') {
+                        values[word] = null;
+                        addPowersOfTen(parseInt(word), values);
+                    }
+                    break;
+                case 'double':
+                    includeContains = false;
+                    values = $.extend({}, values);
+                    if (defaultValue != null) {
+                        addMultiples(defaultValue, values, 5);
+                    }
+                    if (word != '') {
+                        values[word] = null;
+                        addPowersOfTen(parseInt(word), values);
+                    }
+                    break;
+            }
+            result = getSorted(values, null, defaultValue, word, '', metadata, classType, includeContains);
         } else {
             // else, do suggestions for new property keys
             var properties = {};
@@ -482,7 +546,7 @@
             }
             var siblings = getSiblings(pos, getIndentation(thisLine, tabSizeInSpaces), cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
-            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties');
+            result = getSorted(properties, inherited, null, word, ': ', metadata, 'properties', true);
         }
 
         if (result.length > 0 && (result.length > 1 || result[0] != word)) {
