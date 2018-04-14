@@ -670,6 +670,8 @@
                 properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
                 'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
             }
+            // pos may have been modified
+            pos = CodeMirror.Pos(cur.line, cur.ch);
             var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
             result = getSorted(properties, inherited, null, word, suffix, metadata, 'properties', null);
