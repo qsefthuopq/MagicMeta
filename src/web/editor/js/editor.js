@@ -2,6 +2,7 @@ function Editor()
 {
     this.saving = false;
     this.loading = false;
+    this.deleting = false;
     this.spellFiles = null;
     this.metadata = null;
     this.spellKeys = {};
@@ -37,7 +38,6 @@ Editor.prototype.save = function() {
     }
 
     this.saving = true;
-    this.spellFiles = null;
     var me = this;
     $("#saveButton").button('disable');
     $.ajax( {
@@ -52,6 +52,8 @@ Editor.prototype.save = function() {
         me.saving = false;
         if (!response.success) {
             alert("Save failed: " + response.message);
+        } else {
+            this.spellFiles = null;
         }
     });
 };
@@ -330,6 +332,45 @@ Editor.prototype.simpleParse = function(spellConfig) {
         key: key,
         keyLine: keyLine,
         lines: lines
+    }
+};
+
+Editor.prototype.deleteSpell = function() {
+    if (this.deleting) return;
+
+    var spellConfig = this.getSpellConfig();
+    spellConfig = this.simpleParse(spellConfig);
+
+    if (spellConfig.lines.length == 0 || spellConfig.lines[0].trim().length == 0) {
+        alert("There's nothing to delete...");
+        return false;
+    }
+    if (spellConfig.key == null) {
+        alert("Couldn't find the spell key... is your config OK?");
+        return;
+    }
+
+    if (confirm("Are you sure you want to permanently delete the spell " + spellConfig.key + "?\nForever is a very long time...")) {
+        var me = this;
+        $("#deleteButton").button('disable');
+        this.deleting = true;
+        $.ajax( {
+            type: "POST",
+            url: "delete.php",
+            data: {
+                spell: spellConfig.key
+            },
+            dataType: 'json'
+        }).done(function(response) {
+            $("#deleteButton").button('enable');
+            me.deleting = false;
+            if (!response.success) {
+                alert("Delete failed: " + response.message);
+            } else {
+                this.spellFiles = null;
+                alert("Deleted " + spellConfig.key);
+            }
+        });
     }
 };
 

@@ -10,6 +10,7 @@ function initialize() {
     $('#validateButton').button().click(function() { editor.validate(true); });
     $('#referenceButton').button().click(function() { editor.openReference(); });
     $('#downloadButton').button().click(function() { editor.download(); });
+    $('#deleteButton').button().click(function() { editor.deleteSpell(); });
     $('#forkButton').button().click(function() { editor.fork(); });
     $('#modeSelector input[type=radio]').change(function() { editor.checkMode(); });
     $("#loadSpellList").selectable({filter: 'tr'});

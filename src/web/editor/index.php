@@ -49,6 +49,9 @@ $user = getUser();
         <span>
             <button type="button" id="forkButton" title="Make a copy of your current spell with a unique key name">Fork</button>
         </span>
+        <span>
+            <button type="button" id="deleteButton" title="Delete your current spell... forever ever ever ever ever">Delete</button>
+        </span>
         <span class="controlgroup">
             <button type="button" id="newButton" title="Clear your spell and start fresh">New</button>
             <select id="newSelector">
