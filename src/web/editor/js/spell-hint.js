@@ -664,11 +664,11 @@
                 properties = metadata.types.cost_type.options;
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'actions') {
                 // Action triggers
-                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null};
+                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null, '- class': null};
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'effects') {
                 // Effect triggers
                 properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
-                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
+                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null, '- location': null};
             }
             // pos may have been modified
             pos = CodeMirror.Pos(cur.line, cur.ch);
