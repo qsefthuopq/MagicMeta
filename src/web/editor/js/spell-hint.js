@@ -58,6 +58,7 @@
         var siblings = {};
         if (pos.ch < indent) indent = pos.ch;
         var startLine = pos.line;
+        pos = $.extend({}, pos);
         pos.line--;
         while (pos.line > 0) {
             var thisLine = cm.getLine(pos.line);
@@ -94,6 +95,7 @@
     }
 
     function walkUp(pos, indent, cm, tabSizeInSpaces) {
+        pos = $.extend({}, pos);
         pos.line --;
         var thisLine = cm.getLine(pos.line);
         var trimmed = thisLine.trim();
@@ -191,6 +193,7 @@
 
     function isInList(pos, indent, cm, tabSizeInSpaces) {
         if (pos.ch < indent) indent = pos.ch;
+        pos = $.extend({}, pos);
         while (pos.line > 0) {
             var thisLine = cm.getLine(pos.line);
             var trimmed = thisLine.trim();
@@ -670,8 +673,6 @@
                 properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
                 'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null, '- location': null};
             }
-            // pos may have been modified
-            pos = CodeMirror.Pos(cur.line, cur.ch);
             var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
             result = getSorted(properties, inherited, null, word, suffix, metadata, 'properties', null);
