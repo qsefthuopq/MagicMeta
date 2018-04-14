@@ -667,14 +667,17 @@
                 properties = metadata.types.cost_type.options;
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'actions') {
                 // Action triggers
-                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null, '- class': null};
+                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null};
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'effects') {
                 // Effect triggers
                 properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
-                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null, '- location': null};
+                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
             }
             var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
+            if (inherited != null) {
+                inherited = filterMap(inherited, siblings);
+            }
             result = getSorted(properties, inherited, null, word, suffix, metadata, 'properties', null);
         }
 
