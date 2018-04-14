@@ -19,6 +19,7 @@
     var OBJECT_KEY = /^[\s-]*?(\w+)\s*?:\s*?$/;
     var LEAF_KV = /^[\s-]*?(\w+)\s*?:\s*?/;
     var WORD_OR_COLON = /\w+|:/;
+    var WORD_OR_COLON_OR_DASH = /-\w+|:/;
 
     function rstrip(line) {
         return line.replace(/\s*$/g, '');
@@ -27,6 +28,16 @@
     function getIndentation(line, tabSizeInSpaces) {
         var s = 0;
         while (s < line.length && !WORD_OR_COLON.test(line.charAt(s))) s++;
+        line = line.slice(0, s);
+        // change tabs to spaces
+        line = line.replace(/\t/g, tabSizeInSpaces);
+        // return the number of spaces
+        return line.length;
+    }
+
+    function getListIndentation(line, tabSizeInSpaces) {
+        var s = 0;
+        while (s < line.length && !WORD_OR_COLON_OR_DASH.test(line.charAt(s))) s++;
         line = line.slice(0, s);
         // change tabs to spaces
         line = line.replace(/\t/g, tabSizeInSpaces);
@@ -54,14 +65,44 @@
         return kv;
     }
 
+    function getParent(pos, indent, cm, tabSizeInSpaces) {
+        if (pos.line == 0) return null;
+        var thisLine = cm.getLine(pos.line);
+        var currentLine = pos.line;
+        currentLine--;
+        while (currentLine > 0) {
+            thisLine = cm.getLine(currentLine);
+            var thisIndent = getIndentation(thisLine, tabSizeInSpaces);
+            if (thisIndent <= indent)
+                return thisLine.trim().replace(':', '');
+            currentLine--;
+        }
+
+        return null;
+    }
+
+    function getPreviousSibling(pos, indent, cm, tabSizeInSpaces) {
+        if (pos.line == 0) return null;
+        var currentLine = pos.line;
+        currentLine--;
+        while (currentLine > 0) {
+            var thisLine = cm.getLine(currentLine);
+            var thisIndent = getListIndentation(thisLine, tabSizeInSpaces);
+            if (thisIndent == indent) return thisLine.trim().replace(':', '');
+            currentLine--;
+        }
+
+        return null;
+    }
+
     function getSiblings(pos, indent, cm, tabSizeInSpaces) {
         var siblings = {};
         if (pos.ch < indent) indent = pos.ch;
         var startLine = pos.line;
-        pos = $.extend({}, pos);
-        pos.line--;
-        while (pos.line > 0) {
-            var thisLine = cm.getLine(pos.line);
+        var currentLine = pos.line;
+        currentLine--;
+        while (currentLine > 0) {
+            var thisLine = cm.getLine(currentLine);
             var trimmed = thisLine.trim();
             var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
             var isObject = thisLine.indexOf(':') > 0;
@@ -73,11 +114,11 @@
                 siblings[kv[0]] = kv[1];
             }
             if (thisIndent <= indent && trimmed.startsWith("-")) break;
-            pos.line--;
+            currentLine--;
         }
-        pos.line = startLine;
-        while (pos.line < cm.lineCount()) {
-            var thisLine = cm.getLine(pos.line);
+        currentLine = startLine;
+        while (currentLine < cm.lineCount()) {
+            var thisLine = cm.getLine(currentLine);
             var trimmed = thisLine.trim();
             if (trimmed.startsWith("-")) break;
             var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
@@ -89,26 +130,25 @@
                 var kv = getKeyValue(thisLine);
                 siblings[kv[0]] = kv[1];
             }
-            pos.line++;
+            currentLine++;
         }
         return siblings;
     }
 
     function walkUp(pos, indent, cm, tabSizeInSpaces) {
-        pos = $.extend({}, pos);
-        pos.line --;
-        var thisLine = cm.getLine(pos.line);
+        var currentLine = pos.line;
+        currentLine --;
+        var thisLine = cm.getLine(currentLine);
         var trimmed = thisLine.trim();
         var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
-        while (pos.line > 0 && (!OBJECT_KEY.test(thisLine) || getIndentation(thisLine, tabSizeInSpaces) >= indent || isEmpty)) {
+        while (currentLine > 0 && (!OBJECT_KEY.test(thisLine) || getIndentation(thisLine, tabSizeInSpaces) >= indent || isEmpty)) {
             // while this isn't the line we're looking for, move along
-            pos.line --;
-            thisLine = cm.getLine(pos.line);
+            currentLine --;
+            thisLine = cm.getLine(currentLine);
             trimmed = thisLine.trim();
             isEmpty = trimmed.length == 0 || trimmed[0] == '#';
         }
-        pos.ch = cm.getLine(pos.line);
-        return pos;
+        return currentLine;
     }
 
     function getHierarchy(pos, cm, tabSizeInSpaces) {
@@ -126,8 +166,8 @@
             if (k !== undefined) {
                 hierarchy.push(k);
             }
-            pos = walkUp(pos, thisIndentation, cm, tabSizeInSpaces);
-            thisLine = cm.getLine(pos.line);
+            var line = walkUp(pos, thisIndentation, cm, tabSizeInSpaces);
+            thisLine = cm.getLine(line);
             thisIndentation = getIndentation(thisLine, tabSizeInSpaces);
         }
 
@@ -193,9 +233,9 @@
 
     function isInList(pos, indent, cm, tabSizeInSpaces) {
         if (pos.ch < indent) indent = pos.ch;
-        pos = $.extend({}, pos);
-        while (pos.line > 0) {
-            var thisLine = cm.getLine(pos.line);
+        var currentLine = pos.line;
+        while (currentLine > 0) {
+            var thisLine = cm.getLine(currentLine);
             var trimmed = thisLine.trim();
             if (trimmed.startsWith('-')) return true;
             var isEmpty = trimmed.length == 0 || trimmed[0] == '#';
@@ -203,7 +243,7 @@
 
             if (!isEmpty && thisIndent < indent) break;
             if (thisIndent < indent) break;
-            pos.line--;
+            currentLine--;
         }
         return false;
     }
@@ -443,15 +483,20 @@
         }
     }
 
+    function makeList(properties) {
+        var list = properties;
+        properties = {};
+        for (var key in list) {
+            if (list.hasOwnProperty(key)) {
+                properties["- " + key] = list[key];
+            }
+        }
+        return properties;
+    }
+
     function checkList(properties, pos, indent, cm, tabSizeInSpaces) {
         if (!isInList(pos, indent, cm, tabSizeInSpaces)) {
-            var list = properties;
-            properties = {};
-            for (var key in list) {
-                if (list.hasOwnProperty(key)) {
-                    properties["- " + key] = list[key];
-                }
-            }
+            properties = makeList(properties);
         }
 
         return properties
@@ -598,6 +643,7 @@
                     }
                 }
             }
+
             result = getSorted(values, null, defaultValue, word, '', metadata, classType, valueType);
         } else {
             // else, do suggestions for new property keys
@@ -640,7 +686,14 @@
             } else if (hierarchy.length == 4 && hierarchy[3] == '' && hierarchy[1] == 'effects') {
                 // Base effect parameters
                 properties = metadata.spell_context.effect_parameters;
-                properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
+
+                // Check if this is at the same indent level as a list, if so add - to suggestions
+                var previousSibling = getPreviousSibling(pos, indent, cm, tabSizeInSpaces);
+                if (previousSibling != null && previousSibling.startsWith('-')) {
+                    properties = makeList(properties);
+                } else {
+                    properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
+                }
             } else if (hierarchy.length >= 5 && hierarchy[hierarchy.length - 1] == '' && hierarchy[3] == 'effectlib') {
                 // Effectlib parameters
                 inherited = metadata.spell_context.effectlib_parameters;
@@ -658,20 +711,32 @@
                     if (metadata.spell_context.actions.hasOwnProperty(actionClass)) {
                         properties = metadata.spell_context.actions[actionClass];
                     }
-                }
 
-                inherited = checkList(inherited, pos, indent, cm, tabSizeInSpaces);
-                properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
+                    inherited = checkList(inherited, pos, indent, cm, tabSizeInSpaces);
+                    properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
+                } else {
+                    inherited = makeList(inherited);
+                    properties = makeList(properties);
+                }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
                 // Costs
                 properties = metadata.types.cost_type.options;
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'actions') {
                 // Action triggers
                 properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null};
+                var parent = getParent(pos, indent, cm, tabSizeInSpaces);
+                if (parent != "actions") {
+                    properties['- class'] = null;
+                }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'effects') {
                 // Effect triggers
                 properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
                 'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
+
+                var parent = getParent(pos, indent, cm, tabSizeInSpaces);
+                if (parent != "effects") {
+                    properties['- location'] = null;
+                }
             }
             var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
             properties = filterMap(properties, siblings);
