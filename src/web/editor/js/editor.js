@@ -53,7 +53,7 @@ Editor.prototype.save = function() {
         if (!response.success) {
             alert("Save failed: " + response.message);
         } else {
-            this.spellFiles = null;
+            me.spellFiles = null;
         }
     });
 };
@@ -367,7 +367,7 @@ Editor.prototype.deleteSpell = function() {
             if (!response.success) {
                 alert("Delete failed: " + response.message);
             } else {
-                this.spellFiles = null;
+                me.spellFiles = null;
                 alert("Deleted " + spellConfig.key);
             }
         });
