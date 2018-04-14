@@ -12038,7 +12038,7 @@
       "options" : {
         "both" : "Play at both the caster and target location",
         "origin" : "Play at the caster's location",
-        "target" : "Play at the target lcoation"
+        "target" : "Play at the target location"
       }
     },
     "effect_type" : {

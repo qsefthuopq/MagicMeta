@@ -31,6 +31,12 @@ if (file_exists($textureConfig)) {
     $meta['types']['texture']['options'] = $textureOptions;
 }
 
+// Add particle previews
+$particles = $meta['types']['particle_effect']['options'];
+foreach ($particles as $particle => $empty) {
+    $meta['types']['particle_effect']['options'][$particle] = '<img src="common/image/particle/' . $particle . '.gif" class="particlePreview"/>';
+}
+
 // Create colors
 // From http://www.w3schools.com/HTML/html_colornames.asp
 $colorMap = array("aliceblue"=>"f0f8ff","antiquewhite"=>"faebd7","aqua"=>"00ffff","aquamarine"=>"7fffd4","azure"=>"f0ffff",

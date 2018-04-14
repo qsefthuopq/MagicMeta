@@ -162,6 +162,16 @@ li.CodeMirror-hint-active {
     height: 32px;
 }
 
+.particlePreview {
+    width: 16px;
+    height: 16px;
+}
+
+.CodeMirror-hint-active td div .particlePreview {
+    width: 32px;
+    height: 32px;
+}
+
 .textureIcon {
     width: 16px;
     height: 16px;
