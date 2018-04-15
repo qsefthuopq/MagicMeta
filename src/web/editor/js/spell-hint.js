@@ -723,19 +723,24 @@
                 properties = metadata.types.cost_type.options;
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'actions') {
                 // Action triggers
-                properties = {'cast': null, 'alternate_down': null, 'alternate_up': null, 'alternate_sneak': null};
+                properties = {'cast': 'cast_actions', 'alternate_up': 'alternate_up_actions',
+                    'alternate_down': 'alternate_down_actions', 'alternate_sneak': 'alternate_sneak_actions'};
                 var parent = getParent(pos, indent, cm, tabSizeInSpaces);
                 if (parent != "actions") {
-                    properties['- class'] = null;
+                    properties['- class'] = "Add a new action to this list";
                 }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && hierarchy[1] == 'effects') {
                 // Effect triggers
-                properties = {'cast': null, 'tick': null, 'hit': null, 'hit_entity': null, 'hit_block': null,
-                'blockmiss': null, 'prehit': null, 'step': null, 'reflect': null, 'miss': null, 'headshot': null};
+                properties = {'cast': 'cast_effect_list', 'tick': 'tick_effect_list', 'hit': 'hit_effect_list',
+                'hit_entity': 'hit_entity_effect_list', 'hit_block': 'hit_block_effect_list',
+                'blockmiss': 'blockmiss_effect_list', 'prehit': 'prehit_effect_list',
+                'step': 'step_effect_list', 'reflect': 'reflect_effect_list',
+                'miss': 'miss_effect_list', 'headshot': 'headshot_effect_list',
+                'projectile': 'projectile_effect_list'};
 
                 var parent = getParent(pos, indent, cm, tabSizeInSpaces);
                 if (parent != "effects") {
-                    properties['- location'] = null;
+                    properties['- location'] = "Add a new effect to this list";
                 }
             }
             var siblings = getSiblings(pos, indent, cm, tabSizeInSpaces);
