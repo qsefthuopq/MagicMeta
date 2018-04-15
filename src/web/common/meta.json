@@ -6267,7 +6267,8 @@
     },
     "fade_in" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The amount of time for a title to fade in.",
+            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
       "field" : "fade_in",
       "importance" : 0,
       "name" : "Fade In",
@@ -6275,7 +6276,8 @@
     },
     "fade_out" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The amount of time for a title to fade out.",
+            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
       "field" : "fade_out",
       "importance" : 0,
       "name" : "Fade Out",
@@ -7660,7 +7662,7 @@
     },
     "message" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The message to send the target." ],
       "field" : "message",
       "importance" : 0,
       "name" : "Message",
@@ -7668,7 +7670,8 @@
     },
     "message_target" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Whether or not the message will be sent to the target.",
+            "If false, the message will be sent to the caster." ],
       "field" : "message_target",
       "importance" : 0,
       "name" : "Message Target",
@@ -8876,7 +8879,10 @@
     },
     "randomized_messages" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [
+          "A list of messages from which one will be randomly picked and sent to the player.",
+          "Setting this property will override your \"message\" property."
+      ],
       "field" : "randomized_messages",
       "importance" : 0,
       "name" : "Randomized Messages",
@@ -10012,7 +10018,8 @@
     },
     "stay" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The amount of time the title will stay visible before transitioning out.",
+            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
       "field" : "stay",
       "importance" : 0,
       "name" : "Stay",
@@ -10092,7 +10099,8 @@
     },
     "sub_message" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The smaller, lower message on a title.",
+            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
       "field" : "sub_message",
       "importance" : 0,
       "name" : "Sub Message",
