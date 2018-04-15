@@ -3884,6 +3884,14 @@
       "name" : "Class",
       "type" : "action_class"
     },
+    "actions" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "actions",
+      "importance" : 0,
+      "name" : "Actions",
+      "type" : "actions"
+    },
     "actions_map" : {
       "category" : "actions",
       "description" : [ "A map of events to actions to run. The most comment event used by all spells is 'cast'", "Actions determine the behavior of a spell, defining what it does" ],
@@ -3891,134 +3899,6 @@
       "importance" : 100,
       "name" : "Actions",
       "type" : "action_trigger_map"
-    },
-    "cast_actions" : {
-      "category" : "actions",
-      "description" : [ "A list of actions to perform immediately when this spell is cast", "Actions determine the behavior of a spell, defining what it does" ],
-      "field" : "actions",
-      "importance" : 100,
-      "name" : "Actions",
-      "type" : "action_list"
-    },
-    "alternate_down_actions" : {
-      "category" : "actions",
-      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is looking straight down" ],
-      "field" : "alternate_down",
-      "importance" : 30,
-      "name" : "Alt-Down Actions",
-      "type" : "action_list"
-    },
-    "alternate_up_actions" : {
-      "category" : "actions",
-      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is looking straight up" ],
-      "field" : "alternate_up",
-      "importance" : 30,
-      "name" : "Alt-Up Actions",
-      "type" : "action_list"
-    },
-    "alternate_sneak_actions" : {
-      "category" : "actions",
-      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is holding shift" ],
-      "field" : "alternate_sneak",
-      "importance" : 50,
-      "name" : "Alt-Sneak Actions",
-      "type" : "action_list"
-    },
-    "cast_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform immediately when this spell is cast", "Actions determine the behavior of a spell, defining what it does" ],
-      "field" : "cast",
-      "importance" : 100,
-      "name" : "Cast Effects",
-      "type" : "effects_list"
-    },
-    "hit_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile spell hits a block or entity target", "This is often used to attach effects to the entity hit by a spell" ],
-      "field" : "hit",
-      "importance" : 90,
-      "name" : "Hit Effects",
-      "type" : "effects_list"
-    },
-    "headshot_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile spell hits an entity in the head", "Only works with the CustomProjectile action" ],
-      "field" : "hit",
-      "importance" : 80,
-      "name" : "Headshot Effects",
-      "type" : "effects_list"
-    },
-    "miss_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile misses completely, expiring in mid-air" ],
-      "field" : "miss",
-      "importance" : 50,
-      "name" : "Miss Effects",
-      "type" : "effects_list"
-    },
-    "projectile_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to to attach to a projectile before launching it" ],
-      "field" : "projectile",
-      "importance" : 60,
-      "name" : "Projectile Effects",
-      "type" : "effects_list"
-    },
-    "tick_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to to perform every tick while a projectile is in flight", "This is often used to make a projectile visible as it flies.", "The effect will be played every 'tick_size' blocks, which defaults to 0.5 blocks. This means for fast-moving projectiles this effect may get played many times per server tick, so use complex effects here sparingly!", "Only works with the CustomProjectile action" ],
-      "field" : "tick",
-      "importance" : 70,
-      "name" : "Tick Effects",
-      "type" : "effects_list"
-    },
-    "step_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform once per tick on a projectile", "This is similar to tick effects, but only happens once per tick, regardless of the particle's velocity" ],
-      "field" : "step",
-      "importance" : 40,
-      "name" : "Step Effects",
-      "type" : "effects_list"
-    },
-    "reflect_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile is reflected", "Spells can be reflected by certain spells, blocks, or items" ],
-      "field" : "reflect",
-      "importance" : 45,
-      "name" : "Reflect Effects",
-      "type" : "effects_list"
-    },
-    "hit_block_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile spell hits a block (but not an entity)", "If this effect list plays, so will the 'hit' effect list." ],
-      "field" : "hit_block",
-      "importance" : 30,
-      "name" : "Hit Block Effects",
-      "type" : "effects_list"
-    },
-    "hit_entity_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform when a projectile spell hits an entity", "If this effect list plays, so will the 'hit' effect list." ],
-      "field" : "hit_entity",
-      "importance" : 30,
-      "name" : "Hit Entity Effects",
-      "type" : "effects_list"
-    },
-    "blockmiss_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform each tick of a projectile that does not hit a block", "These effects are mostly used to debug particle movement and not generally used in a real spell." ],
-      "field" : "block_miss",
-      "importance" : 0,
-      "name" : "Block Miss Effects",
-      "type" : "effects_list"
-    },
-    "prehit_effect_list" : {
-      "category" : "effects",
-      "description" : [ "A list of effects to perform just before a projectile hits its target", "These effects are mostly used to debug particle movement and not generally used in a real spell." ],
-      "field" : "prehit",
-      "importance" : 0,
-      "name" : "Pre-Hit Effects",
-      "type" : "effects_list"
     },
     "active_brush" : {
       "category" : "wand",
@@ -4180,6 +4060,22 @@
       "name" : "Allowed Entities",
       "type" : "list"
     },
+    "alternate_down_actions" : {
+      "category" : "actions",
+      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is looking straight down" ],
+      "field" : "alternate_down",
+      "importance" : 30,
+      "name" : "Alt-Down Actions",
+      "type" : "action_list"
+    },
+    "alternate_sneak_actions" : {
+      "category" : "actions",
+      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is holding shift" ],
+      "field" : "alternate_sneak",
+      "importance" : 50,
+      "name" : "Alt-Sneak Actions",
+      "type" : "action_list"
+    },
     "alternate_spell" : {
       "category" : "wand",
       "description" : [ "The spell to cast when performing the action bound to alt_cast on this wand" ],
@@ -4195,6 +4091,14 @@
       "importance" : 40,
       "name" : "Alternate Spell 2",
       "type" : "spell"
+    },
+    "alternate_up_actions" : {
+      "category" : "actions",
+      "description" : [ "A list of actions to perform immediately when this spell is cast, if the player is looking straight up" ],
+      "field" : "alternate_up",
+      "importance" : 30,
+      "name" : "Alt-Up Actions",
+      "type" : "action_list"
     },
     "amount" : {
       "category" : "mob",
@@ -4557,6 +4461,14 @@
       "name" : "Block Reflect Chance",
       "type" : "double"
     },
+    "blockmiss_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform each tick of a projectile that does not hit a block", "These effects are mostly used to debug particle movement and not generally used in a real spell." ],
+      "field" : "block_miss",
+      "importance" : 0,
+      "name" : "Block Miss Effects",
+      "type" : "effects_list"
+    },
     "body_transform" : {
       "category" : "",
       "description" : [ "" ],
@@ -4886,6 +4798,22 @@
       "importance" : -1,
       "name" : "Cast",
       "type" : "map"
+    },
+    "cast_actions" : {
+      "category" : "actions",
+      "description" : [ "A list of actions to perform immediately when this spell is cast", "Actions determine the behavior of a spell, defining what it does" ],
+      "field" : "actions",
+      "importance" : 100,
+      "name" : "Actions",
+      "type" : "action_list"
+    },
+    "cast_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform immediately when this spell is cast", "Actions determine the behavior of a spell, defining what it does" ],
+      "field" : "cast",
+      "importance" : 100,
+      "name" : "Cast Effects",
+      "type" : "effects_list"
     },
     "cast_interval" : {
       "category" : "wand",
@@ -6387,8 +6315,7 @@
     },
     "fade_in" : {
       "category" : "",
-      "description" : [ "The amount of time for a title to fade in.",
-            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
+      "description" : [ "The amount of time for a title to fade in.", "<em>Applies only when \"message_type\" is set to \"title\"</em>" ],
       "field" : "fade_in",
       "importance" : 0,
       "name" : "Fade In",
@@ -6396,8 +6323,7 @@
     },
     "fade_out" : {
       "category" : "",
-      "description" : [ "The amount of time for a title to fade out.",
-            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
+      "description" : [ "The amount of time for a title to fade out.", "<em>Applies only when \"message_type\" is set to \"title\"</em>" ],
       "field" : "fade_out",
       "importance" : 0,
       "name" : "Fade Out",
@@ -6763,6 +6689,14 @@
       "name" : "Headshot",
       "type" : "string"
     },
+    "headshot_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile spell hits an entity in the head", "Only works with the CustomProjectile action" ],
+      "field" : "hit",
+      "importance" : 80,
+      "name" : "Headshot Effects",
+      "type" : "effects_list"
+    },
     "headshot_effects" : {
       "category" : "",
       "description" : [ "" ],
@@ -6875,6 +6809,14 @@
       "name" : "Hidden",
       "type" : "boolean"
     },
+    "hit_block_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile spell hits a block (but not an entity)", "If this effect list plays, so will the 'hit' effect list." ],
+      "field" : "hit_block",
+      "importance" : 30,
+      "name" : "Hit Block Effects",
+      "type" : "effects_list"
+    },
     "hit_count" : {
       "category" : "",
       "description" : [ "How many entities the projectile can hit before expiring" ],
@@ -6883,6 +6825,14 @@
       "name" : "Hit Count",
       "type" : "integer"
     },
+    "hit_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile spell hits a block or entity target", "This is often used to attach effects to the entity hit by a spell" ],
+      "field" : "hit",
+      "importance" : 90,
+      "name" : "Hit Effects",
+      "type" : "effects_list"
+    },
     "hit_effects" : {
       "category" : "",
       "description" : [ "An effect key, specifying which effects to play when the projectile hits" ],
@@ -6890,6 +6840,14 @@
       "importance" : 0,
       "name" : "Hit Effects",
       "type" : "string"
+    },
+    "hit_entity_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile spell hits an entity", "If this effect list plays, so will the 'hit' effect list." ],
+      "field" : "hit_entity",
+      "importance" : 30,
+      "name" : "Hit Entity Effects",
+      "type" : "effects_list"
     },
     "hit_on_miss" : {
       "category" : "",
@@ -7790,8 +7748,7 @@
     },
     "message_target" : {
       "category" : "",
-      "description" : [ "Whether or not the message will be sent to the target.",
-            "If false, the message will be sent to the caster." ],
+      "description" : [ "Whether or not the message will be sent to the target.", "If false, the message will be sent to the caster." ],
       "field" : "message_target",
       "importance" : 0,
       "name" : "Message Target",
@@ -7860,6 +7817,14 @@
       "importance" : 0,
       "name" : "Miss",
       "type" : "string"
+    },
+    "miss_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile misses completely, expiring in mid-air" ],
+      "field" : "miss",
+      "importance" : 50,
+      "name" : "Miss Effects",
+      "type" : "effects_list"
     },
     "miss_effects" : {
       "category" : "",
@@ -8725,6 +8690,14 @@
       "name" : "Precision",
       "type" : "integer"
     },
+    "prehit_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform just before a projectile hits its target", "These effects are mostly used to debug particle movement and not generally used in a real spell." ],
+      "field" : "prehit",
+      "importance" : 0,
+      "name" : "Pre-Hit Effects",
+      "type" : "effects_list"
+    },
     "prevent_passthrough" : {
       "category" : "actions",
       "description" : [ "" ],
@@ -8772,6 +8745,14 @@
       "importance" : 0,
       "name" : "Projectile",
       "type" : "string"
+    },
+    "projectile_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to to attach to a projectile before launching it" ],
+      "field" : "projectile",
+      "importance" : 60,
+      "name" : "Projectile Effects",
+      "type" : "effects_list"
     },
     "projectile_effects" : {
       "category" : "",
@@ -8999,10 +8980,7 @@
     },
     "randomized_messages" : {
       "category" : "",
-      "description" : [
-          "A list of messages from which one will be randomly picked and sent to the player.",
-          "Setting this property will override your \"message\" property."
-      ],
+      "description" : [ "A list of messages from which one will be randomly picked and sent to the player.", "Setting this property will override your \"message\" property." ],
       "field" : "randomized_messages",
       "importance" : 0,
       "name" : "Randomized Messages",
@@ -9079,6 +9057,14 @@
       "importance" : 0,
       "name" : "Reflect Count",
       "type" : "integer"
+    },
+    "reflect_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform when a projectile is reflected", "Spells can be reflected by certain spells, blocks, or items" ],
+      "field" : "reflect",
+      "importance" : 45,
+      "name" : "Reflect Effects",
+      "type" : "effects_list"
     },
     "reflect_reorient" : {
       "category" : "",
@@ -10138,8 +10124,7 @@
     },
     "stay" : {
       "category" : "",
-      "description" : [ "The amount of time the title will stay visible before transitioning out.",
-            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
+      "description" : [ "The amount of time the title will stay visible before transitioning out.", "<em>Applies only when \"message_type\" is set to \"title\"</em>" ],
       "field" : "stay",
       "importance" : 0,
       "name" : "Stay",
@@ -10160,6 +10145,14 @@
       "importance" : 0,
       "name" : "Step",
       "type" : "float"
+    },
+    "step_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to perform once per tick on a projectile", "This is similar to tick effects, but only happens once per tick, regardless of the particle's velocity" ],
+      "field" : "step",
+      "importance" : 40,
+      "name" : "Step Effects",
+      "type" : "effects_list"
     },
     "step_x" : {
       "category" : "",
@@ -10219,8 +10212,7 @@
     },
     "sub_message" : {
       "category" : "",
-      "description" : [ "The smaller, lower message on a title.",
-            "<em>Applies only when \"message_type\" is set to \"title\"<\/em>" ],
+      "description" : [ "The smaller, lower message on a title.", "<em>Applies only when \"message_type\" is set to \"title\"</em>" ],
       "field" : "sub_message",
       "importance" : 0,
       "name" : "Sub Message",
@@ -10649,6 +10641,14 @@
       "importance" : 0,
       "name" : "Tick",
       "type" : "string"
+    },
+    "tick_effect_list" : {
+      "category" : "effects",
+      "description" : [ "A list of effects to to perform every tick while a projectile is in flight", "This is often used to make a projectile visible as it flies.", "The effect will be played every 'tick_size' blocks, which defaults to 0.5 blocks. This means for fast-moving projectiles this effect may get played many times per server tick, so use complex effects here sparingly!", "Only works with the CustomProjectile action" ],
+      "field" : "tick",
+      "importance" : 70,
+      "name" : "Tick Effects",
+      "type" : "effects_list"
     },
     "tick_effects" : {
       "category" : "",
@@ -11878,28 +11878,22 @@
       "name" : "Action Class",
       "options" : { }
     },
-    "action_trigger_map" : {
-      "class_name" : "java.util.Map",
-      "description" : [ "An action handler, with lists of actions defined for triggered events such as 'cast'" ],
-      "name" : "Action Trigger Map",
-      "options" : { }
-    },
-    "effects_trigger_map" : {
-      "class_name" : "java.util.Map",
-      "description" : [ "Lists of effects defined for triggered events such as 'cast'" ],
-      "name" : "Event Trigger Map",
-      "options" : { }
-    },
     "action_list" : {
       "class_name" : "java.util.List",
       "description" : [ "A a list of actions to perform in order" ],
       "name" : "Action List",
       "options" : { }
     },
-    "effects_list" : {
-      "class_name" : "java.util.List",
-      "description" : [ "A a list of effects to perform in order" ],
-      "name" : "Effect List",
+    "action_trigger_map" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "An action handler, with lists of actions defined for triggered events such as 'cast'" ],
+      "name" : "Action Trigger Map",
+      "options" : { }
+    },
+    "actions" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "" ],
+      "name" : "Actions",
       "options" : { }
     },
     "attribute" : {
@@ -12201,6 +12195,18 @@
       "class_name" : "java.lang.String",
       "description" : [ "A builtin or external Effect class" ],
       "name" : "EffectLib Class",
+      "options" : { }
+    },
+    "effects_list" : {
+      "class_name" : "java.util.List",
+      "description" : [ "A a list of effects to perform in order" ],
+      "name" : "Effect List",
+      "options" : { }
+    },
+    "effects_trigger_map" : {
+      "class_name" : "java.util.Map",
+      "description" : [ "Lists of effects defined for triggered events such as 'cast'" ],
+      "name" : "Event Trigger Map",
       "options" : { }
     },
     "enchantment" : {
