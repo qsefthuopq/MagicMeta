@@ -138,6 +138,11 @@ li.CodeMirror-hint-active {
     background: #00AAFF;
 }
 
+li.CodeMirror-hint:hover {
+    background: #DDEEFF;
+    color: #000000;
+}
+
 .CodeMirror-hint td div {
     max-height: 30px;
     overflow: hidden;
@@ -149,6 +154,13 @@ li.CodeMirror-hint-active {
 
 .CodeMirror-hint-active td div {
     max-height: inherit;
+    white-space: pre-wrap;
+    color: #000000;
+}
+
+.CodeMirror-hint:hover td div {
+    max-height: inherit;
+    white-space: pre-wrap;
     color: #000000;
 }
 
@@ -162,12 +174,22 @@ li.CodeMirror-hint-active {
     height: 32px;
 }
 
+.CodeMirror-hint:hover td div .spellIcon {
+    width: 32px;
+    height: 32px;
+}
+
 .particlePreview {
     width: 16px;
     height: 16px;
 }
 
 .CodeMirror-hint-active td div .particlePreview {
+    width: 32px;
+    height: 32px;
+}
+
+.CodeMirror-hint:hover td div .particlePreview {
     width: 32px;
     height: 32px;
 }
@@ -186,6 +208,13 @@ li.CodeMirror-hint-active {
     background-position: -32px -32px;
 }
 
+.CodeMirror-hint:hover td div .textureIcon {
+    width: 32px;
+    height: 32px;
+    background-size: 256px 128px;
+    background-position: -32px -32px;
+}
+
 .colorSwatch {
     width: 32px;
     height: 16px;
@@ -194,6 +223,11 @@ li.CodeMirror-hint-active {
 }
 
 .CodeMirror-hint-active td div .colorSwatch {
+    width: 32px;
+    height: 32px;
+}
+
+.CodeMirror-hint:hover td div .colorSwatch {
     width: 32px;
     height: 32px;
 }
