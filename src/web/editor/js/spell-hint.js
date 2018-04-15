@@ -483,12 +483,23 @@
         }
     }
 
-    function makeList(properties) {
+    function makeList(properties, thisLine) {
+        var prefix = "- ";
+        if (thisLine != null) {
+            var trimmed = thisLine.trim();
+            if (trimmed.startsWith('-')) {
+                if (!thisLine.endsWith(' ')) {
+                    prefix = " ";
+                } else {
+                    return properties;
+                }
+            }
+        }
         var list = properties;
         properties = {};
         for (var key in list) {
             if (list.hasOwnProperty(key)) {
-                properties["- " + key] = list[key];
+                properties[prefix + key] = list[key];
             }
         }
         return properties;
@@ -496,7 +507,7 @@
 
     function checkList(properties, pos, indent, cm, tabSizeInSpaces) {
         if (!isInList(pos, indent, cm, tabSizeInSpaces)) {
-            properties = makeList(properties);
+            properties = makeList(properties, null);
         }
 
         return properties
@@ -690,7 +701,7 @@
                 // Check if this is at the same indent level as a list, if so add - to suggestions
                 var previousSibling = getPreviousSibling(pos, indent, cm, tabSizeInSpaces);
                 if (previousSibling != null && previousSibling.startsWith('-')) {
-                    properties = makeList(properties);
+                    properties = makeList(properties, thisLine);
                 } else {
                     properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
                 }
@@ -715,8 +726,8 @@
                     inherited = checkList(inherited, pos, indent, cm, tabSizeInSpaces);
                     properties = checkList(properties, pos, indent, cm, tabSizeInSpaces);
                 } else {
-                    inherited = makeList(inherited);
-                    properties = makeList(properties);
+                    inherited = makeList(inherited, thisLine);
+                    properties = makeList(properties, thisLine);
                 }
             } else if (hierarchy.length == 3 && hierarchy[2] == '' && (hierarchy[1] == 'costs' || hierarchy[1] == 'active_costs')) {
                 // Costs
