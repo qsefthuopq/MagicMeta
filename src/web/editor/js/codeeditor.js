@@ -2,6 +2,9 @@ function CodeEditor(container)
 {
     this.editor = CodeMirror.fromTextArea(container.get(0), {
         lineNumbers: true,
+        gutters: ["CodeMirror-lint-markers"],
+        lint: true,
+        mode: "text/x-yaml",
         extraKeys: {
             "Ctrl-S": function() { editor.save(); },
             "Ctrl-D": function() { editor.validate(); },
@@ -14,7 +17,6 @@ function CodeEditor(container)
     var me = this;
     var cm = this.editor;
     this.editor.on('change', function onChange(editor, input) {
-        me.startValidateTimer();
 
         if (input.from.line != input.to.line) return;
         var line = cm.getLine(input.from.line);

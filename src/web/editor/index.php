@@ -17,6 +17,7 @@ $user = getUser();
     <link rel="stylesheet" href="common/css/user.css"/>
     <link rel="stylesheet" href="css/codemirror.css"/>
     <link rel="stylesheet" href="css/show-hint.css"/>
+    <link rel="stylesheet" href="css/lint.css"/>
     <link rel="stylesheet" href="css/ui.fancytree.css"/>
     <link rel="stylesheet" href="css/editor.css"/>
 
@@ -28,6 +29,8 @@ $user = getUser();
     <script src="js/spell-hint.js"></script>
     <script src="js/js-yaml.min.js"></script>
     <script src="js/yaml.js"></script>
+    <script src="js/lint.js"></script>
+    <script src="js/yaml-lint.js"></script>
     <script src="js/editor.js"></script>
     <script src="js/codeeditor.js"></script>
     <script src="js/main.js"></script>
