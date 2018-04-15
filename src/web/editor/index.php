@@ -73,13 +73,6 @@ $user = getUser();
         <span id="referenceButtonContainer">
             <button type="button" id="referenceButton" title="Open the reference guide in a new window">Reference</button>
         </span>
-        <span>
-            <button type="button" id="validateButton" title="Check your spell configuration for syntax errors">Check</button>
-        </span>
-        <span id="validationIcon"></span>
-        <span id="validationContainer">
-            <span id="validation"></span>
-        </span>
         <?php include "common/userinfo.inc.php" ?>
     </div>
 

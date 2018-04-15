@@ -27,7 +27,8 @@ Editor.prototype.save = function() {
         return;
     }
 
-    if (this.validate() == null) {
+    if (!this.getActiveEditor().isValid()) {
+        alert("You have errors in your code, please fix them before saving!");
         return;
     }
 
@@ -56,43 +57,6 @@ Editor.prototype.save = function() {
             me.spellFiles = null;
         }
     });
-};
-
-Editor.prototype.validate = function(showOk) {
-    if (this.codeEditor != null) {
-        this.codeEditor.clearErrors();
-    }
-    var spellConfig = this.getSpellConfig();
-    if (spellConfig.trim().length == 0) return false;
-    var config = null;
-    try {
-        config = jsyaml.safeLoad(spellConfig, 'utf8');
-    } catch (e) {
-        if (this.codeEditor != null) {
-            this.codeEditor.showError(e);
-        }
-        $('#validationIcon').html("&#x1F44E;");
-        $('#validation').text(e.message);
-        $('#validation').prop('title', e.message);
-        $('#validation').addClass("error");
-        $('#validationIcon').show();
-        $('#validation').show();
-        return null;
-    }
-
-    if (showOk) {
-        $('#validation').removeClass("error");
-        $('#validationIcon').html("&#x1F44D;");
-        $('#validation').text("Looks ok!");
-        $('#validation').prop('title', '');
-        $('#validationIcon').show().fadeOut(5000);
-        $('#validation').show().fadeOut(5000);
-    } else {
-        $('#validationIcon').hide();
-        $('#validation').hide();
-    }
-
-    return config;
 };
 
 Editor.prototype.startNew = function(template) {
@@ -287,9 +251,9 @@ Editor.prototype.checkMode = function() {
     var currentMode = $('#modeSelector').find('input:checked').prop('id');
     if (currentMode == 'editorModeButton') {
         var gui = this.getGUIEditor();
-        if (this.codeEditor != null) {
-            var config = this.validate();
-            if (config == null) {
+        if (this.codeEditor != nul) {
+            if (!this.codeEditor.isValid()) {
+                alert("You have errors in your code, please fix them before switching modes!");
                 setTimeout(function() {
                     $('#codeModeButton').prop('checked', true);
                     $('#modeSelector').controlgroup('refresh');

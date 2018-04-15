@@ -544,6 +544,10 @@ GUIEditor.prototype.addConfigurableClass = function(section, value, tree, metaSe
     tree.push(sectionFolder);
 };
 
+GUIEditor.prototype.isValid = function() {
+    return true;
+};
+
 GUIEditor.prototype.addTriggers = function(config, section, title, tree, metaSection, classType) {
     if (config.hasOwnProperty(section)) {
         var sectionConfig = config[section];
