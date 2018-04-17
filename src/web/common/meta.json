@@ -5069,7 +5069,7 @@
       "field" : "cloud_particle",
       "importance" : 0,
       "name" : "Cloud Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "cloud_size" : {
       "category" : "",
@@ -5950,7 +5950,7 @@
       "field" : "effect_particle",
       "importance" : 0,
       "name" : "Effect Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "effect_particle_count" : {
       "category" : "wand",
@@ -7407,7 +7407,7 @@
       "field" : "line_particle",
       "importance" : 0,
       "name" : "Line Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "line_particles" : {
       "category" : "",
@@ -7527,7 +7527,7 @@
       "field" : "main_particle",
       "importance" : 0,
       "name" : "Main Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "mana" : {
       "category" : "wand",
@@ -8239,7 +8239,7 @@
       "field" : "particle",
       "importance" : 100,
       "name" : "Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_base1" : {
       "category" : "effects",
@@ -8247,7 +8247,7 @@
       "field" : "particle_base1",
       "importance" : 0,
       "name" : "Particle Base1",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_base2" : {
       "category" : "effects",
@@ -8255,7 +8255,7 @@
       "field" : "particle_base2",
       "importance" : 0,
       "name" : "Particle Base2",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_count" : {
       "category" : "effects",
@@ -8279,7 +8279,7 @@
       "field" : "particle_helix",
       "importance" : 0,
       "name" : "Particle Helix",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_nucleus" : {
       "category" : "effects",
@@ -8287,7 +8287,7 @@
       "field" : "particle_nucleus",
       "importance" : 0,
       "name" : "Particle Nucleus",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_offset_x" : {
       "category" : "effects",
@@ -8319,7 +8319,7 @@
       "field" : "particle_orbital",
       "importance" : 0,
       "name" : "Particle Orbital",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "particle_override" : {
       "category" : "effects",
@@ -10047,7 +10047,7 @@
       "field" : "sphere_particle",
       "importance" : 0,
       "name" : "Sphere Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "sphere_particles" : {
       "category" : "",
@@ -10776,7 +10776,7 @@
       "field" : "tornado_particle",
       "importance" : 0,
       "name" : "Tornado Particle",
-      "type" : "particle_effect"
+      "type" : "particle"
     },
     "total_duration" : {
       "category" : "base",
@@ -12982,10 +12982,10 @@
         "600000" : "10 Minutes"
       }
     },
-    "particle_effect" : {
-      "class_name" : "com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect",
+    "particle" : {
+      "class_name" : "org.bukkit.particle",
       "description" : [ "A particle type. Use the 'fx' spell to easily see particles in-game.", "/cast fx particle crit", "/cast fx particle <tab>" ],
-      "name" : "Particle Effect",
+      "name" : "Particle",
       "options" : {
         "barrier" : null,
         "block_crack" : null,
