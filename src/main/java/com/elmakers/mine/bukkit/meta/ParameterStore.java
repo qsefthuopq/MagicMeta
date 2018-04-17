@@ -10,6 +10,7 @@ import org.apache.commons.lang.ClassUtils;
 import org.bukkit.Effect;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.block.Biome;
@@ -19,7 +20,6 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 import com.elmakers.mine.bukkit.item.Cost;
 import com.elmakers.mine.bukkit.magic.SourceLocation;
-import com.elmakers.mine.bukkit.slikey.effectlib.util.ParticleEffect;
 import com.elmakers.mine.bukkit.wand.WandMode;
 import com.google.common.base.CaseFormat;
 
@@ -195,7 +195,7 @@ public class ParameterStore {
                 break;
             case "effect_particle":
             case "particle":
-                parameterType = getParameterType(ParticleEffect.class);
+                parameterType = getParameterType(Particle.class);
                 break;
             case "effect_sound":
             case "sound":

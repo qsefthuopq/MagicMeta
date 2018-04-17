@@ -3267,6 +3267,8 @@
       "parameters" : {
         "iterations" : "200",
         "mountain_height" : "0.5",
+        "particle1" : "villager_happy",
+        "particle2" : "drip_water",
         "particles" : "500",
         "period" : "5",
         "precision" : "100",
@@ -3312,6 +3314,8 @@
       "name" : "Explode",
       "parameters" : {
         "amount" : "25",
+        "particle1" : "explosion_normal",
+        "particle2" : "explosion_huge",
         "sound" : "entity_generic_explode",
         "speed" : "0.5"
       },
@@ -3326,6 +3330,7 @@
       "name" : "Flame",
       "parameters" : {
         "iterations" : "600",
+        "particle" : "flame",
         "type" : "repeating"
       },
       "short_class" : "Flame"
@@ -3556,6 +3561,7 @@
       "name" : "Music",
       "parameters" : {
         "iterations" : "400",
+        "particle" : "note",
         "radials_per_step" : "0.39269908169872414",
         "radius" : "0.4",
         "type" : "repeating"
@@ -8239,6 +8245,22 @@
       "field" : "particle",
       "importance" : 100,
       "name" : "Particle",
+      "type" : "particle"
+    },
+    "particle1" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "particle1",
+      "importance" : 0,
+      "name" : "Particle1",
+      "type" : "particle"
+    },
+    "particle2" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "particle2",
+      "importance" : 0,
+      "name" : "Particle2",
       "type" : "particle"
     },
     "particle_base1" : {
