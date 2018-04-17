@@ -12983,7 +12983,7 @@
       }
     },
     "particle" : {
-      "class_name" : "org.bukkit.particle",
+      "class_name" : "org.bukkit.Particle",
       "description" : [ "A particle type. Use the 'fx' spell to easily see particles in-game.", "/cast fx particle crit", "/cast fx particle <tab>" ],
       "name" : "Particle",
       "options" : {
