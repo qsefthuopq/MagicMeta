@@ -147,6 +147,7 @@
         "helmet" : null,
         "interact_spell" : null,
         "leggings" : null,
+        "lifetime" : "0",
         "loot" : "false",
         "mage" : null,
         "max_health" : "1",
@@ -565,7 +566,9 @@
         "require_build" : "false",
         "require_exit" : "true",
         "safe" : "true",
-        "vertical_range" : "8"
+        "target_world" : null,
+        "vertical_range" : "8",
+        "worlds" : null
       },
       "short_class" : "ChangeWorld"
     },
@@ -1491,7 +1494,9 @@
       "examples" : [ "kill" ],
       "importance" : 30,
       "name" : "Kill",
-      "parameters" : { },
+      "parameters" : {
+        "magic_damage" : "false"
+      },
       "short_class" : "Kill"
     },
     "light" : {
@@ -2346,6 +2351,7 @@
         "helmet" : null,
         "interact_spell" : null,
         "leggings" : null,
+        "lifetime" : "0",
         "loot" : "false",
         "mage" : null,
         "max_health" : "1",
@@ -3857,6 +3863,7 @@
     "helmet" : null,
     "interact_spell" : null,
     "leggings" : null,
+    "lifetime" : "0",
     "mage" : null,
     "max_health" : "1",
     "mob_attributes" : null,
@@ -7418,6 +7425,14 @@
       "name" : "Living Entity Speed",
       "type" : "double"
     },
+    "load" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "load",
+      "importance" : 0,
+      "name" : "Load",
+      "type" : "boolean"
+    },
     "local_echo" : {
       "category" : "",
       "description" : [ "" ],
@@ -10586,6 +10601,14 @@
       "name" : "Target Vanished",
       "type" : "boolean"
     },
+    "target_world" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "target_world",
+      "importance" : 0,
+      "name" : "Target World",
+      "type" : "string"
+    },
     "target_yaw_offset" : {
       "category" : "",
       "description" : [ "Offset the yaw of the target" ],
@@ -11435,6 +11458,14 @@
       "importance" : 0,
       "name" : "World Border Restricted",
       "type" : "boolean"
+    },
+    "worlds" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "worlds",
+      "importance" : 0,
+      "name" : "Worlds",
+      "type" : "map"
     },
     "worth" : {
       "category" : "base",
@@ -13685,7 +13716,8 @@
       "options" : {
         "damage" : "When this entity takes damage",
         "death" : "When this entity dies",
-        "interval" : "At a specific interval, defined by the 'interval' property"
+        "interval" : "At a specific interval, defined by the 'interval' property",
+        "spawn" : "When this mob spawns"
       }
     },
     "vector" : {
