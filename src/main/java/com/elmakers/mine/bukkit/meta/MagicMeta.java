@@ -221,7 +221,6 @@ public class MagicMeta {
 
     private void generateEffectLibMeta() {
         // Create a dummy effect manager
-        ParticleEffect.ParticlePacket.skipInitialization();
         EffectManager manager = new EffectManager(null);
         // First get all base effect parameters
         System.out.println("Scanning Effect");
