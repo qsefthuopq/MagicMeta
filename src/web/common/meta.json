@@ -506,6 +506,7 @@
         "source_direction_is_target" : "false",
         "source_direction_offset" : null,
         "source_direction_speed" : "0",
+        "source_is_caster" : "false",
         "source_is_target" : "false",
         "source_location" : null,
         "source_offset" : null,
@@ -1834,6 +1835,7 @@
       "importance" : 10,
       "name" : "Orient",
       "parameters" : {
+        "orient_target" : "false",
         "pitch" : "0",
         "pitch_offset" : "0",
         "yaw" : "0",
@@ -2670,6 +2672,7 @@
       "name" : "Torch",
       "parameters" : {
         "allow_glowstone" : "false",
+        "allow_sea_lantern" : "false",
         "glowstone_torch" : "false",
         "not_attachable" : "not_attachable",
         "redstone_torch" : "false"
@@ -3828,12 +3831,13 @@
     "effectlib_class" : null,
     "iterations" : "0",
     "material" : null,
-    "material_data" : null,
+    "material_data" : "0",
     "offset" : null,
     "particle_count" : "1",
     "particle_offset_x" : "0",
     "particle_offset_y" : "0",
     "particle_offset_z" : "0",
+    "particle_size" : "1.0",
     "particle_speed" : "0",
     "period" : "1",
     "pitch" : null,
@@ -4055,6 +4059,14 @@
       "field" : "allow_passthrough",
       "importance" : 0,
       "name" : "Allow Passthrough",
+      "type" : "boolean"
+    },
+    "allow_sea_lantern" : {
+      "category" : "",
+      "description" : [ "If true, sea lanterns will be used when casting underwater" ],
+      "field" : "allow_sea_lantern",
+      "importance" : 0,
+      "name" : "Allow Sea Lantern",
       "type" : "boolean"
     },
     "allowed" : {
@@ -8119,6 +8131,14 @@
       "name" : "Orient Snap",
       "type" : "double"
     },
+    "orient_target" : {
+      "category" : "",
+      "description" : [ "If true, the target will be oriented instead of the caster" ],
+      "field" : "orient_target",
+      "importance" : 0,
+      "name" : "Orient Target",
+      "type" : "boolean"
+    },
     "origin_at_target" : {
       "category" : "targeting",
       "description" : [ "" ],
@@ -8357,6 +8377,14 @@
       "field" : "particle_radius",
       "importance" : 0,
       "name" : "Particle Radius",
+      "type" : "float"
+    },
+    "particle_size" : {
+      "category" : "",
+      "description" : [ "The size of the particle, only works on redstone dust particles" ],
+      "field" : "particle_size",
+      "importance" : 0,
+      "name" : "Particle Size",
       "type" : "float"
     },
     "particle_speed" : {
@@ -9879,6 +9907,14 @@
       "name" : "Source Direction Speed",
       "type" : "double"
     },
+    "source_is_caster" : {
+      "category" : "",
+      "description" : [ "Makes the caster the source, useful for actions embedded in an AreaOfEffect or other compound action which changes the source." ],
+      "field" : "source_is_caster",
+      "importance" : 0,
+      "name" : "Source Is Caster",
+      "type" : "boolean"
+    },
     "source_is_target" : {
       "category" : "",
       "description" : [ "" ],
@@ -10961,6 +10997,14 @@
       "name" : "Undo Oldest",
       "type" : "integer"
     },
+    "undo_sorted" : {
+      "category" : "actions",
+      "description" : [ "If set to false, blocks will not be sorted prior to undo", "Only use this if you're sure you have no attachable or gravity blocks in your construction, or changes may not undo properly." ],
+      "field" : "undo_sorted",
+      "importance" : 0,
+      "name" : "Undo Sorted",
+      "type" : "boolean"
+    },
     "undo_speed" : {
       "category" : "undo",
       "description" : [ "If set, undo will happen over the course of several ticks", "This is in terms of changes (blocks) per second" ],
@@ -11864,6 +11908,7 @@
     "tworld" : null,
     "u" : "0",
     "undo" : "0",
+    "undo_sorted" : "true",
     "undo_speed" : "0",
     "unsafe" : null,
     "vertical_range" : "8",
