@@ -5179,7 +5179,7 @@
     },
     "command" : {
       "category" : "",
-      "description" : [ "The command to execute" ],
+      "description" : [ "The command to execute", "The following variables can be used in this command:", "<ul><li>@spell : The name of the spell</li><li>@p : The name of the caster. Can also use @pn</li><li>@pd : The display name (nick) of the caster</li><li>@uuid : The UUID of the caster</li><li>@world, @x, @y, @z : The location of the caster</li><li>@t : The name of the target. Can also use @tn</li><li>@td : The display name (nick) of the target</li><li>@tuuid : The UUID of the target</li><li>@tworld, @tx, @ty, @tz : The location of the target</li></ul>" ],
       "field" : "command",
       "importance" : 0,
       "name" : "Command",
@@ -5195,7 +5195,7 @@
     },
     "commands" : {
       "category" : "",
-      "description" : [ "A list of commands to execute" ],
+      "description" : [ "A list of commands to execute", "The following variables can be used in these command:", "<ul><li>@spell : The name of the spell</li><li>@p : The name of the caster. Can also use @pn</li><li>@pd : The display name (nick) of the caster</li><li>@uuid : The UUID of the caster</li><li>@world, @x, @y, @z : The location of the caster</li><li>@t : The name of the target. Can also use @tn</li><li>@td : The display name (nick) of the target</li><li>@tuuid : The UUID of the target</li><li>@tworld, @tx, @ty, @tz : The location of the target</li></ul>" ],
       "field" : "commands",
       "importance" : 0,
       "name" : "Commands",
@@ -6108,9 +6108,9 @@
     },
     "elemental_damage" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The amount of damage to do to an Elemental from the Elementals plugin." ],
       "field" : "elemental_damage",
-      "importance" : 0,
+      "importance" : -1,
       "name" : "Elemental Damage",
       "type" : "double"
     },
@@ -7525,15 +7525,15 @@
     },
     "magic_damage" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Determines whether or not to use \"magic\" (thrown potion) damage versus normal damage.", "Magic damage ignores armor, and is the default for damaging spells- set this to false if you wish armor to protect from spell damage." ],
       "field" : "magic_damage",
-      "importance" : 0,
+      "importance" : 50,
       "name" : "Magic Damage",
       "type" : "boolean"
     },
     "magic_entity_damage" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "This can be used to turn off magic damage specifically when targeting non-players." ],
       "field" : "magic_entity_damage",
       "importance" : 0,
       "name" : "Magic Entity Damage",
@@ -7773,9 +7773,9 @@
     },
     "message" : {
       "category" : "",
-      "description" : [ "The message to send the target." ],
+      "description" : [ "The message to send the target.", "The following variables can be used in this message: ", "<ul><li>@spell : The name of the spell</li><li>@p : The name of the caster. Can also use @pn</li><li>@pd : The display name (nick) of the caster</li><li>@uuid : The UUID of the caster</li><li>@world, @x, @y, @z : The location of the caster</li><li>@t : The name of the target. Can also use @tn</li><li>@td : The display name (nick) of the target</li><li>@tuuid : The UUID of the target</li><li>@tworld, @tx, @ty, @tz : The location of the target</li></ul>" ],
       "field" : "message",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Message",
       "type" : "string"
     },
