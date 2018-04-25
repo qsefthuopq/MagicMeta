@@ -2,8 +2,6 @@
 
 require_once('config.inc.php');
 
-require_once('common/spyc.php');
-
 function parseConfigFile($name, $loadDefaults, $disableDefaults = false) {
 	global $magicDefaultsFolder;
 	global $magicRootFolder;
@@ -12,18 +10,20 @@ function parseConfigFile($name, $loadDefaults, $disableDefaults = false) {
 	$overrideFile = "$magicRootFolder/$name.yml";
 
     if ($loadDefaults) {
-	    $config = spyc_load_file($baseFile);
+	    $config = yaml_parse_file($baseFile);
 	    if (file_exists($overrideFile)) {
-            $override = spyc_load_file($overrideFile);
-            if ($disableDefaults) {
-                foreach ($config as $key => &$spell) {
-                    $spell['enabled'] = false;
+            $override = yaml_parse_file($overrideFile);
+            if ($override) {
+                if ($disableDefaults) {
+                    foreach ($config as $key => &$spell) {
+                        $spell['enabled'] = false;
+                    }
                 }
+                $config = array_replace_recursive($config, $override);
             }
-            $config = array_replace_recursive($config, $override);
         }
     } else {
-        $config = spyc_load_file($overrideFile);
+        $config = yaml_parse_file($overrideFile);
     }
 
     if (count($config) == 1 && $config[0] == 0) {
@@ -296,7 +296,7 @@ $cloneMaterial = isset($general['clone_item']) ? $general['clone_item'] : 'pumpk
 $books = array();
 if (file_exists($infoBookRootConfig)) {
 	$booksConfigKeys = array('version-check', 'onlogin', 'protected');
-	$booksConfig = spyc_load_file($infoBookRootConfig);
+	$booksConfig = yaml_parse_file($infoBookRootConfig);
 	foreach ($booksConfig as $key => $book) {
 		// Hacky.. InfoBook has a weird config :\
 		if (!in_array($booksConfig, $booksConfigKeys)) {
@@ -308,7 +308,7 @@ if (file_exists($infoBookRootConfig)) {
 $textures = array();
 $textureConfig = $magicRootFolder . '/../../resource-pack/common/source/image_map.yml';
 if (file_exists($textureConfig)) {
-    $textures = array_values(spyc_load_file($textureConfig));
+    $textures = array_values(yaml_parse_file($textureConfig));
 }
 
 function underscoreToReadable($s) {
