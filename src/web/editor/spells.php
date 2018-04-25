@@ -46,17 +46,17 @@ foreach ($spellFiles as $spellFile) {
     array_push($spells, $spell);
 }
 
-$defaultMessages = yaml_parse_file("$magicRootFolder/defaults/messages/spells.yml");
-$defaultMessages = $defaultMessages['spells'];
+$survivalMessages = yaml_parse_file("$magicRootFolder/examples/survival/messages/spells.yml");
+$survivalMessages = $survivalMessages['spells'];
 
-$defaultsFolder = "$magicRootFolder/defaults/spells";
-$defaultFiles = scandir($defaultsFolder);
-foreach ($defaultFiles as $spellFile) {
+$survivalFolder = "$magicRootFolder/examples/survival/spells";
+$survivalFiles = scandir($survivalFolder);
+foreach ($survivalFiles as $spellFile) {
     if (!endsWith($spellFile, '.yml') || $spellFile === '_header.yml') continue;
 
-    $spellConfig = yaml_parse_file($defaultsFolder . '/' . $spellFile);
+    $spellConfig = yaml_parse_file($survivalFolder . '/' . $spellFile);
     if (!$spellConfig) {
-        error_log("Error parsing spell file: " . $defaultsFolder . '/' . $spellFile);
+        error_log("Error parsing spell file: " . $survivalFolder . '/' . $spellFile);
         continue;
     }
     $spellKeys = array_keys($spellConfig);
@@ -72,11 +72,11 @@ foreach ($defaultFiles as $spellFile) {
     $spellName = isset($spellConfig['name']) ? $spellConfig['name'] : '';
     $spellDescription = isset($spellConfig['description']) ? $spellConfig['description'] : '';
 
-    if (!$spellName && isset($defaultMessages[$spellKey]) && isset($defaultMessages[$spellKey]['name'])) {
-        $spellName = $defaultMessages[$spellKey]['name'];
+    if (!$spellName && isset($survivalMessages[$spellKey]) && isset($survivalMessages[$spellKey]['name'])) {
+        $spellName = $survivalMessages[$spellKey]['name'];
     }
-    if (!$spellDescription && isset($defaultMessages[$spellKey]) && isset($defaultMessages[$spellKey]['description'])) {
-        $spellDescription = $defaultMessages[$spellKey]['description'];
+    if (!$spellDescription && isset($survivalMessages[$spellKey]) && isset($survivalMessages[$spellKey]['description'])) {
+        $spellDescription = $survivalMessages[$spellKey]['description'];
     }
 
     $spell = array(
