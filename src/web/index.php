@@ -6,13 +6,13 @@ function parseConfigFile($name, $loadDefaults, $disableDefaults = false) {
 	global $magicDefaultsFolder;
 	global $magicRootFolder;
 
-    $baseFile = "$magicDefaultsFolder/$name.defaults.yml";
+    $baseFile = "$magicDefaultsFolder/$name.yml";
 	$overrideFile = "$magicRootFolder/$name.yml";
 
     if ($loadDefaults) {
 	    $config = yaml_parse_file($baseFile);
 	    if (file_exists($overrideFile)) {
-            $override = yaml_parse_file($overrideFile);
+            $override = @yaml_parse_file($overrideFile);
             if ($override) {
                 if ($disableDefaults) {
                     foreach ($config as $key => &$spell) {
@@ -23,7 +23,7 @@ function parseConfigFile($name, $loadDefaults, $disableDefaults = false) {
             }
         }
     } else {
-        $config = yaml_parse_file($overrideFile);
+        $config = @yaml_parse_file($overrideFile);
     }
 
     if (count($config) == 1 && $config[0] == 0) {
@@ -38,8 +38,14 @@ $path = 'default';
 $texturePath = 'default';
 try {
     global $magicRootFolder;
+    global $magicDefaultsFolder;
+
+    // Using survival configs in place of defaults now!
+    $magicDefaultsFolder = "$magicRootFolder/examples/survival";
+
     // Look for path override
-    if (isset($_REQUEST['example'])) {
+    $isExample = isset($_REQUEST['example']);
+    if ($isExample) {
         $path = $_REQUEST['example'];
         $magicRootFolder = "$magicRootFolder/examples/$path";
         
@@ -49,16 +55,26 @@ try {
     }
 
 	$general = parseConfigFile('config', true);
-	if (!isset($general['load_default_spells'])) $general['load_default_spells'] = true;
-	if (!isset($general['disable_default_spells'])) $general['disable_default_spells'] = false;
-	if (!isset($general['load_default_wands'])) $general['load_default_wands'] = true;
-    if (!isset($general['disable_default_wands'])) $general['disable_default_wands'] = false;
-	if (!isset($general['load_default_crafting'])) $general['load_default_crafting'] = true;
-	if (!isset($general['load_default_paths'])) $general['load_default_paths'] = true;
-	$allSpells = parseConfigFile('spells', $general['load_default_spells'], $general['disable_default_spells']);
-	$wands = parseConfigFile('wands', $general['load_default_wands'], $general['disable_default_wands']);
-	$crafting = parseConfigFile('crafting', $general['load_default_crafting']);
-	$enchantingConfig = parseConfigFile('paths', $general['load_default_paths']);
+    $skipDefaultSpells = isset($general['skip_inherited']) && in_array('spells', $general['skip_inherited']);
+    $skipDefaultWands = isset($general['skip_inherited']) && in_array('wands', $general['skip_inherited']);
+    $skipDefaultCrafting = isset($general['skip_inherited']) && in_array('crafting', $general['skip_inherited']);
+    $skipDefaultPaths = isset($general['skip_inherited']) && in_array('paths', $general['skip_inherited']);
+
+    $disableDefaultSpells = isset($general['disable_inherited']) && in_array('spells', $general['disable_inherited']);
+    $disableDefaultWands = isset($general['disable_inherited']) && in_array('wands', $general['disable_inherited']);
+
+    // Another hack, if we're not inheriting then don't load any defaults
+    if ($isExample && !isset($general['inherit'])) {
+        $skipDefaultSpells = true;
+        $skipDefaultWands = true;
+        $skipDefaultCrafting = true;
+        $skipDefaultPaths = true;
+    }
+
+	$allSpells = parseConfigFile('spells', !$skipDefaultSpells, $disableDefaultSpells);
+	$wands = parseConfigFile('wands', !$skipDefaultWands, $disableDefaultWands);
+	$crafting = parseConfigFile('crafting', !$skipDefaultCrafting);
+	$enchantingConfig = parseConfigFile('paths', !$skipDefaultPaths);
 	$messages = parseConfigFile('messages', true);
 	
 	// Load resource pack textures
@@ -93,9 +109,10 @@ foreach ($allSpells as $key => $spell) {
         $spellPieces = explode('|', $key);
         $baseKey = $spellPieces[0];
         $level = $spellPieces[1];
-        $spellLevel = $spells[$key];
-        if (isset($allSpells[$baseKey])) {
-            $baseSpell = &$allSpells[$baseKey];
+        $spellLevel = $allSpells[$key];
+        if (isset($spells[$baseKey])) {
+            $spellLevel['key'] = $key;
+            $baseSpell = &$spells[$baseKey];
             if (!isset($baseSpell['spell_levels'])) {
                 $baseSpell['spell_levels'] = array($level => $spellLevel);
             } else {
@@ -107,7 +124,17 @@ foreach ($allSpells as $key => $spell) {
 
 	if (isset($spell['inherit']) && $spell['inherit'])
     {
-        $spell = array_merge($spell, $allSpells[$spell['inherit']]);
+        $inheritKey = $spell['inherit'];
+        // this is a little hacky but should be good enough!
+        if (strpos($inheritKey, '|') !== FALSE) {
+            $spellPieces = explode('|', $inheritKey);
+            $baseKey = $spellPieces[0];
+            if (isset($allSpells[$baseKey])) {
+                 $spell = array_merge($spell, $allSpells[$baseKey]);
+            }
+        }
+
+        $spell = array_merge($spell, $allSpells[$inheritKey]);
         $spell['enabled'] = true;
     }
 	if ((isset($spell['hidden']) && $spell['hidden']) || (isset($spell['enabled']) && !$spell['enabled'])) {
@@ -136,16 +163,21 @@ function getPath($key) {
     global $enchantingConfig;
 
     if (!isset($enchanting[$key])) {
+        if (!isset($enchantingConfig[$key])) {
+            return null;
+        }
         $config = $enchantingConfig[$key];
         $pathSpells = isset($config['spells']) ? $config['spells'] : array();
         $requiredSpells = isset($config['required_spells']) ? $config['required_spells'] : array();
         if (isset($config['inherit'])) {
             $baseConfig = getPath($config['inherit']);
-            unset($baseConfig['hidden']);
-            $spells = $config['spells'];
-            $config = array_replace_recursive($baseConfig, $config);
-            if ($baseConfig['spells']) {
-                $config['spells'] = array_merge($spells, $baseConfig['spells']);
+            if ($baseConfig) {
+                unset($baseConfig['hidden']);
+                $spells = $config['spells'];
+                $config = array_replace_recursive($baseConfig, $config);
+                if ($baseConfig['spells']) {
+                    $config['spells'] = array_merge($spells, $baseConfig['spells']);
+                }
             }
         }
         $config['required_spells'] = $requiredSpells;
@@ -155,6 +187,7 @@ function getPath($key) {
 
     return $enchanting[$key];
 }
+
 foreach ($enchantingConfig as $key => $path) {
     getPath($key);
 }
@@ -229,6 +262,7 @@ foreach ($wands as $key => $wand) {
 	if (!is_array($wandsSpells)) {
 		$wandsSpells = array();
 	}
+	$worth = 0;
     foreach ($wandsSpells as $wandSpell) {
         if (isset($spells[$wandSpell]) && isset($spells[$wandSpell]['worth'])) {
            $worth += $spells[$wandSpell]['worth'];
