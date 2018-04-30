@@ -317,8 +317,6 @@ $enchantingEnabled = isset($general['enable_enchanting']) ? $general['enable_enc
 $combiningEnabled = isset($general['enable_combining']) ? $general['enable_combining'] : false;
 
 $wandItem = isset($general['wand_item']) ? $general['wand_item'] : '';
-$craftingMaterialUpper = isset($general['crafting_material_upper']) ? $general['crafting_material_upper'] : '';
-$craftingMaterialLower = isset($general['crafting_material_lower']) ? $general['crafting_material_lower'] : '';
 $craftingEnabled = isset($general['enable_crafting']) ? $general['enable_crafting'] : false;
 $rightClickCycles = isset($general['right_click_cycles']) ? $general['right_click_cycles'] : false;
 
@@ -420,7 +418,7 @@ function printIcon($iconUrl, $title) {
 				<h2>Obtaining a Wand</h2>
 				<div>
 				In order to cast spells, you must obtain a wand. Each wand is unique and knows one or more spells. Wands can also be imbued with
-				special properties and materials. Players do not "know" spells- if you lose your wand, you have no magic.<br/><br/>
+				special properties and materials.<br/><br/>
 				You may find a wand in one of the following ways:
 				<ul>
 					<?php if ($howToGetWands) {
@@ -429,9 +427,7 @@ function printIcon($iconUrl, $title) {
 						}
 					}?>
 					<?php if ($craftingEnabled) {
-						echo '<li>Craft a wand with ' . printMaterial($craftingMaterialUpper) . ' and ' . 
-								printMaterial($craftingMaterialLower);
-						echo '</li>'; 
+						echo '<li>Craft a wand (See: Crafting)</li>';
 					}?>
 				</ul>
 				</div>
