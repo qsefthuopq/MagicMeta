@@ -32,9 +32,9 @@ if (file_exists($textureConfig)) {
 }
 
 // Add particle previews
-$particles = $meta['types']['particle_effect']['options'];
+$particles = $meta['types']['particle']['options'];
 foreach ($particles as $particle => $empty) {
-    $meta['types']['particle_effect']['options'][$particle] = '<img src="common/image/particle/' . $particle . '.gif" class="particlePreview"/>';
+    $meta['types']['particle']['options'][$particle] = '<img src="common/image/particle/' . $particle . '.gif" class="particlePreview"/>';
 }
 
 // Create colors
