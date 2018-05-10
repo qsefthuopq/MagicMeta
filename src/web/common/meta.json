@@ -142,10 +142,13 @@
         "entity_attributes" : null,
         "entity_types-map" : null,
         "force" : "false",
+        "gravity" : "true",
+        "gravity_boolean" : "true",
         "hand_item" : null,
         "health" : "1",
         "helmet" : null,
         "interact_spell" : null,
+        "interval_requires_target" : "true",
         "leggings" : null,
         "lifetime" : "0",
         "loot" : "false",
@@ -249,6 +252,7 @@
         "ignore_targeting" : "false",
         "interact_spell" : null,
         "interval" : "30",
+        "interval_requires_target" : "true",
         "invisible" : "false",
         "item" : null,
         "left_arm_transform" : null,
@@ -473,6 +477,21 @@
         "min_health" : "-1"
       },
       "short_class" : "Capture"
+    },
+    "cast" : {
+      "category" : "",
+      "class_name" : "CastAction",
+      "description" : [ "Cast a specific spell, optionally providing parameters", "This can be used to make complex combinations of spells, or a spell that randomly casts other spells", "It could also be used as a way to organize commonly-used sets of actions and use them in several different spells." ],
+      "examples" : [ ],
+      "importance" : 20,
+      "name" : "Cast",
+      "parameters" : {
+        "cooldown_free" : "false",
+        "cost_free" : "true",
+        "spell" : null,
+        "spell_parameters" : null
+      },
+      "short_class" : "Cast"
     },
     "change_biome" : {
       "category" : "construction",
@@ -863,6 +882,7 @@
       "importance" : 0,
       "name" : "Cycle Block",
       "parameters" : {
+        "cycle_colors" : "false",
         "materials" : null
       },
       "short_class" : "CycleBlock"
@@ -1318,7 +1338,8 @@
         "start" : "0",
         "ticks_flown" : "0",
         "track_projectile" : "false",
-        "trail" : "false"
+        "trail" : "false",
+        "use_wand_color" : "true"
       },
       "short_class" : "Firework"
     },
@@ -1457,7 +1478,7 @@
       "category" : "player",
       "class_name" : "ItemShopAction",
       "description" : [ "Create a GUI shop that can sell vanilla or magic items", "The shop is also capable of casting spells on players" ],
-      "examples" : [ "bank", "bookshop", "itemshop", "magicitemshop", "tweakshop" ],
+      "examples" : [  ],
       "importance" : 0,
       "name" : "Item Shop",
       "parameters" : {
@@ -1559,6 +1580,21 @@
         "override" : "false"
       },
       "short_class" : "Lock"
+    },
+    "lower_block" : {
+      "category" : "",
+      "class_name" : "LowerBlockAction",
+      "description" : [ "Lower a block so that it is within a certain distance of its lowest neighbor" ],
+      "examples" : [ "flatten" ],
+      "importance" : 10,
+      "name" : "Lower Block",
+      "parameters" : {
+        "faces" : null,
+        "faces_list" : null,
+        "slopes" : null,
+        "vertical_range" : "8"
+      },
+      "short_class" : "LowerBlock"
     },
     "message" : {
       "category" : "player",
@@ -2014,6 +2050,23 @@
       },
       "short_class" : "Projectile"
     },
+    "raise_block" : {
+      "category" : "construction",
+      "class_name" : "RaiseBlockAction",
+      "description" : [ "Raise a block up so that it is near its highest neighbor" ],
+      "examples" : [ "raise" ],
+      "importance" : 20,
+      "name" : "Raise Block",
+      "parameters" : {
+        "consume" : "false",
+        "consume_variants" : "true",
+        "faces" : null,
+        "faces_list" : null,
+        "slopes" : null,
+        "vertical_range" : "8"
+      },
+      "short_class" : "RaiseBlock"
+    },
     "random" : {
       "category" : "compound",
       "class_name" : "RandomAction",
@@ -2212,6 +2265,7 @@
       "importance" : 70,
       "name" : "Selector",
       "parameters" : {
+        "apply_to_caster" : "false",
         "apply_to_wand" : "false",
         "auto_close" : "true",
         "cast_spell" : null,
@@ -2221,20 +2275,32 @@
         "confirm_title" : null,
         "cost" : "0",
         "cost_modifiers" : null,
+        "cost_override" : null,
         "cost_type" : "currency",
+        "cost_type_fallback" : "item",
         "costs" : null,
         "currency" : "0",
+        "earn" : "0.0",
+        "earn_scale" : "1.0",
+        "earn_type" : "currency",
+        "earns" : null,
+        "earns_map" : null,
+        "effects" : "selected",
         "experience" : "0",
+        "free" : "false",
         "icon" : null,
         "item" : null,
         "items" : null,
         "limit" : "0",
         "options" : null,
+        "put_in_hand" : "false",
         "requirements" : null,
         "scale" : "1",
         "selected" : null,
+        "selected_free" : null,
         "show_unavailable" : "false",
         "sp" : "0",
+        "switch_class" : null,
         "title" : null,
         "unlock" : null,
         "unlock_class" : null,
@@ -2252,6 +2318,62 @@
       "name" : "Serial",
       "parameters" : { },
       "short_class" : "Serial"
+    },
+    "shop" : {
+      "category" : "compound",
+      "class_name" : "ShopAction",
+      "description" : [ "A flexible shop GUI, based on Selector, for selling items, spells, wand or just about anything else." ],
+      "examples" : [ "bank", "bookshop", "itemshop", "magicitemshop", "tweakshop" ],
+      "importance" : 0,
+      "name" : "Shop",
+      "parameters" : {
+        "apply_to_caster" : "false",
+        "apply_to_wand" : "false",
+        "auto_close" : "true",
+        "cast_spell" : null,
+        "commands" : null,
+        "confirm" : "false",
+        "confirm_filler" : null,
+        "confirm_title" : null,
+        "cost" : "0.0",
+        "cost_modifiers" : null,
+        "cost_override" : null,
+        "cost_type" : "currency",
+        "cost_type_fallback" : "item",
+        "costs" : null,
+        "costs_map" : null,
+        "earn" : "0.0",
+        "earn_scale" : "1.0",
+        "earn_type" : "currency",
+        "earns" : null,
+        "earns_map" : null,
+        "effects" : "selected",
+        "free" : "false",
+        "icon" : null,
+        "item" : null,
+        "items" : null,
+        "limit" : "0",
+        "options" : null,
+        "put_in_hand" : "false",
+        "requirements" : null,
+        "scale" : "1.0",
+        "selected" : null,
+        "selected_free" : null,
+        "sell" : "false",
+        "show_extra_spells" : "false",
+        "show_free" : "false",
+        "show_path_spells" : "false",
+        "show_required_spells" : "false",
+        "show_unavailable" : "false",
+        "spells" : null,
+        "switch_class" : null,
+        "title" : null,
+        "unlock" : null,
+        "unlock_class" : null,
+        "unlock_confirm_title" : null,
+        "unlock_section" : "unlocked"
+      },
+      "short_class" : "Shop"
     },
     "shrink_block" : {
       "category" : "construction",
@@ -2393,7 +2515,7 @@
       "category" : "player",
       "class_name" : "SpellShopAction",
       "description" : [ "A spell-specific variant of ItemShop", "Can be used to spell a specific set of spells, cast spells on the buyer, or automatically show players the spells available to them at their current path.", "This is the main method of progression for players that is available via the enchantment table GUI" ],
-      "examples" : [ "architectshop", "engineershop", "spellshop", "tpshop" ],
+      "examples" : [ ],
       "importance" : 0,
       "name" : "Spell Shop",
       "parameters" : {
@@ -2693,6 +2815,18 @@
       },
       "short_class" : "Tree"
     },
+    "trigger" : {
+      "category" : "",
+      "class_name" : "TriggerAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Trigger",
+      "parameters" : {
+        "trigger" : null
+      },
+      "short_class" : "Trigger"
+    },
     "undo" : {
       "category" : "control",
       "class_name" : "UndoAction",
@@ -2714,6 +2848,18 @@
         "undo_to" : "0"
       },
       "short_class" : "Undo"
+    },
+    "upgrade_path" : {
+      "category" : "player",
+      "class_name" : "UpgradePathAction",
+      "description" : [ "Check the current path for upgrades or process property upgrades by some number of levels" ],
+      "examples" : [ "spellshop" ],
+      "importance" : 0,
+      "name" : "Upgrade Path",
+      "parameters" : {
+        "upgrade_levels" : "0"
+      },
+      "short_class" : "UpgradePath"
     },
     "vanish" : {
       "category" : "player",
@@ -3932,6 +4078,14 @@
       "importance" : 0,
       "name" : "Active Costs",
       "type" : "cost_map"
+    },
+    "active_costs_map" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "active_costs",
+      "importance" : 0,
+      "name" : "Active Costs",
+      "type" : "map"
     },
     "active_effects" : {
       "category" : "",
@@ -5314,6 +5468,14 @@
       "name" : "Cooldown",
       "type" : "integer"
     },
+    "cooldown_free" : {
+      "category" : "",
+      "description" : [ "Whether to skip cooldowns on the casted spells" ],
+      "field" : "cooldown_free",
+      "importance" : 0,
+      "name" : "Cooldown Free",
+      "type" : "boolean"
+    },
     "cooldown_mage" : {
       "category" : "base",
       "description" : [ "How long, in milliseconds, a player has to wait before casting this any spells after having cast this one" ],
@@ -5338,6 +5500,14 @@
       "name" : "Cost",
       "type" : "integer"
     },
+    "cost_free" : {
+      "category" : "",
+      "description" : [ "Whether to skip cost deduction on the casted spells" ],
+      "field" : "cost_free",
+      "importance" : 0,
+      "name" : "Cost Free",
+      "type" : "boolean"
+    },
     "cost_modifiers" : {
       "category" : "",
       "description" : [ "" ],
@@ -5345,6 +5515,14 @@
       "importance" : 0,
       "name" : "Cost Modifiers",
       "type" : "list"
+    },
+    "cost_override" : {
+      "category" : "",
+      "description" : [ "Can be used to change all item costs to a specific currency" ],
+      "field" : "cost_override",
+      "importance" : 0,
+      "name" : "Cost Override",
+      "type" : "string"
     },
     "cost_reduction" : {
       "category" : "base",
@@ -5362,6 +5540,14 @@
       "name" : "Cost Type",
       "type" : "cost_type"
     },
+    "cost_type_fallback" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cost_type_fallback",
+      "importance" : 0,
+      "name" : "Cost Type Fallback",
+      "type" : "string"
+    },
     "costs" : {
       "category" : "base",
       "description" : [ "The costs for casting this spell" ],
@@ -5369,6 +5555,14 @@
       "importance" : 100,
       "name" : "Costs",
       "type" : "cost_map"
+    },
+    "costs_map" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "costs",
+      "importance" : 0,
+      "name" : "Costs",
+      "type" : "map"
     },
     "count" : {
       "category" : "",
@@ -5529,6 +5723,14 @@
       "importance" : 0,
       "name" : "Curve",
       "type" : "float"
+    },
+    "cycle_colors" : {
+      "category" : "",
+      "description" : [ "If true, configured color blocks will automatically cycle" ],
+      "field" : "cycle_colors",
+      "importance" : 0,
+      "name" : "Cycle Colors",
+      "type" : "boolean"
     },
     "cycle_mini_step" : {
       "category" : "",
@@ -5890,6 +6092,46 @@
       "name" : "Dy Offset",
       "type" : "double"
     },
+    "earn" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "earn",
+      "importance" : 0,
+      "name" : "Earn",
+      "type" : "double"
+    },
+    "earn_multiplier" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "earn_multiplier",
+      "importance" : 0,
+      "name" : "Earn Multiplier",
+      "type" : "string"
+    },
+    "earn_scale" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "earn_scale",
+      "importance" : 0,
+      "name" : "Earn Scale",
+      "type" : "double"
+    },
+    "earn_type" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "earn_type",
+      "importance" : 0,
+      "name" : "Earn Type",
+      "type" : "string"
+    },
+    "earns" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "earns",
+      "importance" : 0,
+      "name" : "Earns",
+      "type" : "string"
+    },
     "earns_cooldown" : {
       "category" : "base",
       "description" : [ "How long, in milliseconds, before this spell can earn its max SP value", "Until the cooldown expires the spell will earn no SP, or earn an increasing amount of reduced SP" ],
@@ -5897,6 +6139,14 @@
       "importance" : 50,
       "name" : "Earns Cooldown",
       "type" : "integer"
+    },
+    "earns_map" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "earns",
+      "importance" : 0,
+      "name" : "Earns",
+      "type" : "map"
     },
     "earns_sp" : {
       "category" : "base",
@@ -7131,6 +7381,14 @@
       "name" : "Interval",
       "type" : "long"
     },
+    "interval_requires_target" : {
+      "category" : "",
+      "description" : [ "The mob's interval triggers will not fire unless it has a target" ],
+      "field" : "interval_requires_target",
+      "importance" : 0,
+      "name" : "Interval Requires Target",
+      "type" : "boolean"
+    },
     "inventory_rows" : {
       "category" : "wand",
       "description" : [ "How many rows to show in the spell inventory in chest and skills mobde" ],
@@ -8253,7 +8511,7 @@
     },
     "parameters" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "A list of spell parameters which determines how the spell behaves. Check out the Spell Parameters section above!" ],
       "field" : "parameters",
       "importance" : 100,
       "name" : "Parameters",
@@ -9621,10 +9879,18 @@
     },
     "selected" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "A message to show to the player after selecting an option" ],
       "field" : "selected",
       "importance" : 0,
       "name" : "Selected",
+      "type" : "string"
+    },
+    "selected_free" : {
+      "category" : "",
+      "description" : [ "A message to use when selecting a free option" ],
+      "field" : "selected_free",
+      "importance" : 0,
+      "name" : "Selected Free",
       "type" : "string"
     },
     "sell" : {
@@ -9762,6 +10028,14 @@
       "importance" : 0,
       "name" : "Skip",
       "type" : "integer"
+    },
+    "slopes" : {
+      "category" : "",
+      "description" : [ "A probability map of # of blocks to allow between a block and its neighbors" ],
+      "field" : "slopes",
+      "importance" : 0,
+      "name" : "Slopes",
+      "type" : "map"
     },
     "small" : {
       "category" : "",
@@ -10075,6 +10349,14 @@
       "name" : "Spell Levels",
       "type" : "double"
     },
+    "spell_parameters" : {
+      "category" : "",
+      "description" : [ "Parameters to pass to the spell being cast" ],
+      "field" : "spell_parameters",
+      "importance" : 0,
+      "name" : "Spell Parameters",
+      "type" : "map"
+    },
     "spells" : {
       "category" : "",
       "description" : [ "" ],
@@ -10298,6 +10580,14 @@
       "importance" : 90,
       "name" : "Swap Binding",
       "type" : "wand_action"
+    },
+    "switch_class" : {
+      "category" : "",
+      "description" : [ "A class to switch to, locking the currently active class" ],
+      "field" : "switch_class",
+      "importance" : 0,
+      "name" : "Switch Class",
+      "type" : "string"
     },
     "t2world" : {
       "category" : "targeting",
@@ -10916,6 +11206,14 @@
       "name" : "Transparent",
       "type" : "string"
     },
+    "trigger" : {
+      "category" : "mob",
+      "description" : [ "The trigger to trigger on the target mob" ],
+      "field" : "trigger",
+      "importance" : 0,
+      "name" : "Trigger",
+      "type" : "string"
+    },
     "triggers" : {
       "category" : "mob",
       "description" : [ "A map of triggers that will cause this mob to cast spells" ],
@@ -11259,6 +11557,14 @@
       "field" : "use_target_location",
       "importance" : -1,
       "name" : "Use Target Location",
+      "type" : "boolean"
+    },
+    "use_wand_color" : {
+      "category" : "",
+      "description" : [ "Set to false to avoid using the wand color for effects" ],
+      "field" : "use_wand_color",
+      "importance" : 0,
+      "name" : "Use Wand Color",
       "type" : "boolean"
     },
     "use_wand_location" : {
@@ -11931,6 +12237,7 @@
     "description" : "",
     "disable_mana_regeneration" : "false",
     "disguise_restricted" : "false",
+    "earns" : "0",
     "earns_cooldown" : "0",
     "earns_sp" : "0",
     "effects_map" : null,
@@ -12151,18 +12458,18 @@
       "value_type" : "double"
     },
     "cost_type" : {
-      "class_name" : "com.elmakers.mine.bukkit.item.Cost$Type",
+      "class_name" : "java.lang.String",
       "description" : [ "A type of cost required or consumed by something" ],
       "name" : "Cost Type",
       "options" : {
         "currency" : "Vault currency",
-        "health" : null,
-        "hunger" : null,
+        "health" : "Living entity health",
+        "hunger" : "Player hunger",
         "item" : "The currency_item defined in config.yml",
         "levels" : "Experience levels",
-        "mana" : null,
-        "sp" : null,
-        "xp" : null
+        "mana" : "Mana",
+        "sp" : "Spell Points",
+        "xp" : "Player experience, calculated from level and percent progress"
       }
     },
     "damage_type" : {
@@ -13942,6 +14249,7 @@
         "damage" : "When this entity takes damage",
         "death" : "When this entity dies",
         "interval" : "At a specific interval, defined by the 'interval' property",
+        "launch" : "When this entity launches a projectile",
         "spawn" : "When this mob spawns"
       }
     },
@@ -14027,6 +14335,7 @@
     "cooldown_reduction" : "0",
     "cost_reduction" : "0",
     "drop" : "none",
+    "earn_multiplier" : null,
     "effect_bubbles" : "false",
     "effect_color" : null,
     "effect_particle" : null,
