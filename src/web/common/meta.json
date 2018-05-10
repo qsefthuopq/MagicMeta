@@ -1478,7 +1478,7 @@
       "category" : "player",
       "class_name" : "ItemShopAction",
       "description" : [ "Create a GUI shop that can sell vanilla or magic items", "The shop is also capable of casting spells on players" ],
-      "examples" : [  ],
+      "examples" : [ ],
       "importance" : 0,
       "name" : "Item Shop",
       "parameters" : {
@@ -5782,7 +5782,7 @@
     },
     "damage_type" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The type of damage to apply to the target", "Note that using any custom damage type other than 'magic' will result in the caster not showing up as the source of damage to the target", "This may be important if using quest, arena or other plugins that care about who does damage for the purposes of giving rewards." ],
       "field" : "damage_type",
       "importance" : 0,
       "name" : "Damage Type",
@@ -12477,13 +12477,29 @@
       "description" : [ "A type of damage" ],
       "name" : "Damage Type",
       "options" : {
+        "anvil" : null,
+        "burn" : null,
+        "cactus" : null,
+        "cramming" : null,
+        "dragon_breath" : null,
+        "drown" : null,
         "explosion" : null,
         "fall" : null,
+        "falling_block" : null,
         "fire" : null,
+        "fly_into_wall" : null,
+        "generic" : null,
+        "hot_floor" : null,
+        "lava" : null,
+        "lightning" : null,
         "magic" : null,
+        "out_of_world" : null,
         "overall" : null,
         "physical" : null,
-        "projectile" : null
+        "projectile" : null,
+        "starve" : null,
+        "stuck" : null,
+        "wither" : null
       }
     },
     "damage_type_map" : {
