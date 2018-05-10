@@ -18,7 +18,6 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
-import com.elmakers.mine.bukkit.item.Cost;
 import com.elmakers.mine.bukkit.magic.SourceLocation;
 import com.elmakers.mine.bukkit.wand.WandMode;
 import com.google.common.base.CaseFormat;
@@ -127,10 +126,6 @@ public class ParameterStore {
             case "weakness":
             case "strength":
                 parameterType = getMapType("damage_type_map", getParameterType("damage_type", String.class), getParameterType(Double.class));
-                break;
-            case "costs":
-            case "active_costs":
-                parameterType = getMapType("cost_map", getParameterType(Cost.Type.class), getParameterType(Double.class));
                 break;
             case "alternate_spell":
             case "alternate_spell2":
