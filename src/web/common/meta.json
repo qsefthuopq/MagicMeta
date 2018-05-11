@@ -10319,9 +10319,9 @@
     },
     "spell" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "The spell to cast" ],
       "field" : "spell",
-      "importance" : 0,
+      "importance" : 100,
       "name" : "Spell",
       "type" : "string"
     },
@@ -10353,7 +10353,7 @@
       "category" : "",
       "description" : [ "Parameters to pass to the spell being cast" ],
       "field" : "spell_parameters",
-      "importance" : 0,
+      "importance" : 80,
       "name" : "Spell Parameters",
       "type" : "map"
     },
