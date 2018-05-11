@@ -392,6 +392,21 @@
       },
       "short_class" : "BlockSearch"
     },
+    "book" : {
+      "category" : "",
+      "class_name" : "BookAction",
+      "description" : [ "Modify a book-based wand, used for creating dynamic books", "Can also give a book" ],
+      "examples" : [ "playerstats" ],
+      "importance" : 0,
+      "name" : "Book",
+      "parameters" : {
+        "author" : "mage",
+        "give_book" : "false",
+        "pages" : null,
+        "title" : ""
+      },
+      "short_class" : "Book"
+    },
     "break_block" : {
       "category" : "construction",
       "class_name" : "BreakBlockAction",
@@ -1520,6 +1535,19 @@
         "magic_damage" : "false"
       },
       "short_class" : "Kill"
+    },
+    "ledger" : {
+      "category" : "",
+      "class_name" : "LedgerAction",
+      "description" : [ "Create a dynamic ledger from a book wand, which will show a player's balances" ],
+      "examples" : [ "ledger" ],
+      "importance" : 0,
+      "name" : "Ledger",
+      "parameters" : {
+        "ignore_currencies" : null,
+        "show_currencies" : null
+      },
+      "short_class" : "Ledger"
     },
     "light" : {
       "category" : "construction",
@@ -4479,6 +4507,14 @@
       "name" : "Attributes",
       "type" : "attributes"
     },
+    "author" : {
+      "category" : "",
+      "description" : [ "The author of the book" ],
+      "field" : "author",
+      "importance" : 0,
+      "name" : "Author",
+      "type" : "string"
+    },
     "auto_close" : {
       "category" : "",
       "description" : [ "" ],
@@ -5716,6 +5752,14 @@
       "name" : "Currency",
       "type" : "integer"
     },
+    "currency_display" : {
+      "category" : "",
+      "description" : [ "What type of currency to display in the xp level when holding this wand", "Defaults to SP if the SP system is enabled" ],
+      "field" : "currency_display",
+      "importance" : 0,
+      "name" : "Currency Display",
+      "type" : "string"
+    },
     "curve" : {
       "category" : "",
       "description" : [ "" ],
@@ -6884,6 +6928,14 @@
       "name" : "Game Mode",
       "type" : "game_mode"
     },
+    "give_book" : {
+      "category" : "",
+      "description" : [ "If true, will give a book item to the target player rather than modifying the caster's wand " ],
+      "field" : "give_book",
+      "importance" : 0,
+      "name" : "Give Book",
+      "type" : "boolean"
+    },
     "glide_exclusive" : {
       "category" : "base",
       "description" : [ "" ],
@@ -7276,6 +7328,14 @@
       "importance" : 0,
       "name" : "Ignore Blocks",
       "type" : "boolean"
+    },
+    "ignore_currencies" : {
+      "category" : "",
+      "description" : [ "A list of currency types to ignore" ],
+      "field" : "ignore_currencies",
+      "importance" : 0,
+      "name" : "Ignore Currencies",
+      "type" : "list"
     },
     "ignore_result" : {
       "category" : "base",
@@ -8508,6 +8568,14 @@
       "importance" : 0,
       "name" : "Page",
       "type" : "integer"
+    },
+    "pages" : {
+      "category" : "",
+      "description" : [ "A map of page numbers to lists of strings, to show as the pages of the book" ],
+      "field" : "pages",
+      "importance" : 0,
+      "name" : "Pages",
+      "type" : "map"
     },
     "parameters" : {
       "category" : "base",
@@ -9932,6 +10000,14 @@
       "importance" : 0,
       "name" : "Show Cloud",
       "type" : "boolean"
+    },
+    "show_currencies" : {
+      "category" : "",
+      "description" : [ "A list of currencies to show, if omitted will show all" ],
+      "field" : "show_currencies",
+      "importance" : 0,
+      "name" : "Show Currencies",
+      "type" : "list"
     },
     "show_extra_spells" : {
       "category" : "",
@@ -14350,6 +14426,7 @@
     "consume_spell" : null,
     "cooldown_reduction" : "0",
     "cost_reduction" : "0",
+    "currency_display" : null,
     "drop" : "none",
     "earn_multiplier" : null,
     "effect_bubbles" : "false",
