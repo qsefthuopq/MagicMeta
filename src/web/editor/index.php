@@ -303,7 +303,7 @@ myspell:
   parameters:
     target: self
     radius: 4
-    brush:
+    brush: gold_block
     repeat: 100
     # Delaying for 500 milliseconds (1/2 a second) in between each
     # repeat, meaning this runs twice a second.
