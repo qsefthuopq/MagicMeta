@@ -124,7 +124,6 @@ myspell:
     range: 32
     damage: 10
     </textarea>
-</div>
     <textarea id="templateProjectile">myprojectile:
   name: My Projectile
   description: Damage Your Target
