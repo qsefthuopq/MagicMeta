@@ -363,6 +363,7 @@
       "importance" : 0,
       "name" : "Ascend",
       "parameters" : {
+        "keep_velocity" : "false",
         "require_build" : "false",
         "require_exit" : "true",
         "safe" : "true",
@@ -621,6 +622,7 @@
       "importance" : 0,
       "name" : "Change World",
       "parameters" : {
+        "keep_velocity" : "false",
         "require_build" : "false",
         "require_exit" : "true",
         "safe" : "true",
@@ -1002,6 +1004,7 @@
         "damage" : "1",
         "damage_max_distance" : "0",
         "damage_multiplier" : "0",
+        "damage_source_location" : "body",
         "damage_type" : null,
         "elemental_damage" : "1",
         "entity_damage" : "1",
@@ -1057,6 +1060,7 @@
       "importance" : 0,
       "name" : "Descend",
       "parameters" : {
+        "keep_velocity" : "false",
         "require_build" : "false",
         "require_exit" : "true",
         "safe" : "true",
@@ -1391,6 +1395,7 @@
         "expected_lifespan" : "0",
         "firework" : null,
         "flicker" : "false",
+        "hit_effects" : "hit",
         "launch" : "false",
         "lifetime" : "10000",
         "power" : "1",
@@ -1415,6 +1420,7 @@
       "name" : "Flower",
       "parameters" : {
         "flowers" : null,
+        "grow_on" : "grass_block",
         "tall_flowers" : null
       },
       "short_class" : "Flower"
@@ -2118,6 +2124,7 @@
         "count" : "1",
         "damage" : "0",
         "fire" : "false",
+        "hit_effects" : "hit",
         "lifetime" : "10000",
         "orient" : "true",
         "pickup" : null,
@@ -2179,6 +2186,7 @@
       "parameters" : {
         "allow_cross_world" : "true",
         "friend_key" : "recall_friends",
+        "keep_velocity" : "false",
         "marker_key" : "recall_marker",
         "protection_duration" : "0",
         "require_build" : "false",
@@ -2501,6 +2509,7 @@
         "damage" : "1",
         "damage_max_distance" : "0",
         "damage_multiplier" : "0",
+        "damage_source_location" : "body",
         "damage_type" : null,
         "elemental_damage" : "1",
         "entity_damage" : "1",
@@ -2753,6 +2762,7 @@
         "count" : "1",
         "fire" : "false",
         "fuse" : "80",
+        "hit_effects" : "hit",
         "lifetime" : "10000",
         "projectile_effects" : "projectile",
         "set_target" : "false",
@@ -2793,6 +2803,7 @@
       "name" : "Teleport",
       "parameters" : {
         "allow_passthrough" : "true",
+        "keep_velocity" : "false",
         "ledge_range" : "2",
         "passthrough_range" : "4",
         "require_build" : "false",
@@ -2815,6 +2826,7 @@
         "consume_variants" : "true",
         "damage" : "0",
         "fall_damage" : "0",
+        "hit_effects" : "hit",
         "hurts" : "true",
         "lifetime" : "10000",
         "max_damage" : "0",
@@ -2845,6 +2857,7 @@
       "name" : "Throw Item",
       "parameters" : {
         "age_items" : "5500",
+        "hit_effects" : "hit",
         "item" : null,
         "lifetime" : "10000",
         "orient" : "true",
@@ -5935,6 +5948,14 @@
       "name" : "Damage Resistance Protection",
       "type" : "integer"
     },
+    "damage_source_location" : {
+      "category" : "targeting",
+      "description" : [ "The location on the target entity to use when calculating distance-based damage" ],
+      "field" : "damage_source_location",
+      "importance" : 0,
+      "name" : "Damage Source Location",
+      "type" : "source_location_location_type"
+    },
     "damage_type" : {
       "category" : "",
       "description" : [ "The type of damage to apply to the target", "Note that using any custom damage type other than 'magic' will result in the caster not showing up as the source of damage to the target", "This may be important if using quest, arena or other plugins that care about who does damage for the purposes of giving rewards." ],
@@ -7143,6 +7164,14 @@
       "name" : "Grow",
       "type" : "float"
     },
+    "grow_on" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "grow_on",
+      "importance" : 0,
+      "name" : "Grow On",
+      "type" : "string"
+    },
     "hand_item" : {
       "category" : "mob",
       "description" : [ "The item this mob is holding in its main hand" ],
@@ -7718,6 +7747,14 @@
       "field" : "keep_in_inventory",
       "importance" : 0,
       "name" : "Keep In Inventory",
+      "type" : "boolean"
+    },
+    "keep_velocity" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "keep_velocity",
+      "importance" : 0,
+      "name" : "Keep Velocity",
       "type" : "boolean"
     },
     "key_description" : {
