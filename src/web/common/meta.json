@@ -708,6 +708,16 @@
       "parameters" : { },
       "short_class" : "ClearChat"
     },
+    "clear_fall_protection" : {
+      "category" : "",
+      "class_name" : "ClearFallProtectionAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Clear Fall Protection",
+      "parameters" : { },
+      "short_class" : "ClearFallProtection"
+    },
     "command" : {
       "category" : "control",
       "class_name" : "CommandAction",
