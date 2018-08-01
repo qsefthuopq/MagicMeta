@@ -250,7 +250,7 @@ function addPropertyHolderDetails(container, key, section, baseProperties) {
         for (var i = 0; i < propertyHolder.examples.length; i++) {
             var example = propertyHolder.examples[i];
             var exampleLink = $('<a target="_blank">');
-            exampleLink.prop('href', 'https://github.com/elBukkit/MagicPlugin/blob/master/Magic/src/main/resources/defaults/spells/' + example + '.yml');
+            exampleLink.prop('href', 'https://github.com/elBukkit/MagicPlugin/blob/master/Magic/src/main/resources/examples/survival/spells/' + example + '.yml');
             exampleLink.text(example);
             exampleDiv.append(exampleLink);
         }
