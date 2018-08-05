@@ -1,5 +1,6 @@
 function Editor()
 {
+    this.tutorial = new Tutorial($('#tutorialMask'));
     this.saving = false;
     this.loading = false;
     this.deleting = false;
@@ -409,4 +410,8 @@ Editor.prototype.setMetadata = function(meta) {
     if (this.guiEditor != null) {
         this.guiEditor.setMetadata(meta);
     }
+};
+
+Editor.prototype.startTutorial = function() {
+    this.tutorial.start($('#welcomeTutorial'));
 };

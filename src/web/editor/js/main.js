@@ -9,6 +9,7 @@ function initialize() {
     $("#saveButton").button().click(function() { editor.save(); });
     $('#referenceButton').button().click(function() { editor.openReference(); });
     $('#downloadButton').button().click(function() { editor.download(); });
+    $('#helpButton').button().click(function() { editor.startTutorial(); });
     $('#deleteButton').button().click(function() { editor.deleteSpell(); });
     $('#forkButton').button().click(function() { editor.fork(); });
     $('#modeSelector input[type=radio]').change(function() { editor.checkMode(); });
@@ -51,6 +52,10 @@ function initialize() {
     }).done(function(meta) {
         editor.setMetadata(meta);
     });
+
+    if (user.id == '') {
+        editor.startTutorial();
+    }
 }
 
 function dumpYaml(object) {

@@ -1,0 +1,107 @@
+.tutorial {
+    display: none;
+    z-index: 10000;
+    position: absolute;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #AFEEFF;
+    border: solid 2px #000;
+    background-color: rgba(230, 245, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.2);
+    padding: 1em;
+    max-width: 60%;
+    font-size: 1.5em;
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.tutorial > div {
+    margin-bottom: 0.5em;
+}
+
+.mask {
+    display: none;
+    z-index: 9500;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*
+
+Speech bubble CSS from
+
+http://nicolasgallagher.com/pure-css-speech-bubbles/demo/default.css
+
+*/
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates triangle */
+.balloon:after {
+  content:"";
+  position:absolute;
+  bottom:-15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#f3961c transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.balloon.top:after {
+  top: -15px; /* value = - border-top-width - border-bottom-width */
+  left: 50px; /* controls horizontal position */
+  bottom: auto;
+  left: auto;
+  border-width: 0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color: #DDEEFF transparent;
+}
+
+.balloon.top-right:after {
+  top: -15px; /* value = - border-top-width - border-bottom-width */
+  right: 50px; /* controls horizontal position */
+  bottom: auto;
+  left: auto;
+  border-width: 0 15px 15px; /* vary these values to change the angle of the vertex */
+  border-color: #DDEEFF transparent;
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.balloon.left:after {
+  top: 16px; /* controls vertical position */
+  left: -50px; /* value = - border-left-width - border-right-width */
+  bottom: auto;
+  border-width: 10px 50px 10px 0;
+  border-color: #DDEEFF transparent;
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.balloon.right:after {
+  top: 16px; /* controls vertical position */
+  right: -50px; /* value = - border-left-width - border-right-width */
+  bottom: auto;
+  left: auto;
+  border-width: 10px 0 10px 50px;
+  border-color: #DDEEFF transparent;
+}

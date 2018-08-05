@@ -58,6 +58,10 @@
     padding-left: 2em;
 }
 
+#helpButtonContainer {
+    padding-left: 2em;
+}
+
 .headerRow td {
     background-color: #444444;
     color: white;

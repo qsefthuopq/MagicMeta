@@ -7,7 +7,7 @@ $magicRootFolder = dirname(__FILE__) . '/../main/resources';
 // This is for the live editor, if you have a sandbox server set up the file path here.
 // The webserver will need write access to $sandboxServer/plugins/Magic/data/updated.yml
 // and read access to $sandboxServer/plugins/Magic/data/registered.yml
-$sandboxServer = '';
+$sandboxServer = '/home/minecraft/servers/sandbox';
 // And set the URL to your sandbox server here to direct players to log in
 $sandboxServerURL = '';
 
