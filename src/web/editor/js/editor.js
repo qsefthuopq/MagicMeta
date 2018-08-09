@@ -393,7 +393,6 @@ Editor.prototype.download = function() {
 
     var downloadLink = document.createElement('a');
     downloadLink.setAttribute('href', 'data:text/yaml;charset=utf-8,' + encodeURIComponent(spellConfig));
-    downloadLink.setAttribute('target', "_new");
     downloadLink.setAttribute('download', key + ".yml");
     downloadLink.click();
 };
