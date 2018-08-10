@@ -700,6 +700,18 @@
       },
       "short_class" : "CheckMana"
     },
+    "check_requirements" : {
+      "category" : "compound",
+      "class_name" : "CheckRequirementsAction",
+      "description" : [ "Runs a set of actions only if the caster meets certain requirements" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Check Requirements",
+      "parameters" : {
+        "requirements" : null
+      },
+      "short_class" : "CheckRequirements"
+    },
     "clear_chat" : {
       "category" : "player",
       "class_name" : "ClearChatAction",
@@ -1898,6 +1910,7 @@
         "exemption_duration" : "0",
         "fall_protection" : "0",
         "helmet_item" : null,
+        "jump_cast" : "",
         "jump_controllable" : "0",
         "liftoff_duration" : "0",
         "liftoff_thrust" : "0",
@@ -2301,6 +2314,7 @@
         "duration_warning" : "0",
         "exemption_duration" : "0",
         "fall_protection" : "0",
+        "jump_cast" : "",
         "jump_controllable" : "0",
         "liftoff_duration" : "0",
         "liftoff_thrust" : "0",
@@ -5098,6 +5112,14 @@
       "name" : "Cancel On Damage",
       "type" : "double"
     },
+    "cancel_on_death" : {
+      "category" : "actions",
+      "description" : [ "This spell will cancel if the caster dies" ],
+      "field" : "cancel_on_death",
+      "importance" : 0,
+      "name" : "Cancel On Death",
+      "type" : "boolean"
+    },
     "cancel_on_no_permission" : {
       "category" : "base",
       "description" : [ "Check for permission changes while the spell is running and cancel if the player has no permission", "Can be used for brooms, levitate or other lasting effects that should cancel if a player moves into a restricted area" ],
@@ -7724,6 +7746,14 @@
       "importance" : 100,
       "name" : "Iterations",
       "type" : "integer"
+    },
+    "jump_cast" : {
+      "category" : "",
+      "description" : [ "A spell to cast while the player is riding and presses the spacebar" ],
+      "field" : "jump_cast",
+      "importance" : 0,
+      "name" : "Jump Cast",
+      "type" : "string"
     },
     "jump_controllable" : {
       "category" : "",
@@ -12451,6 +12481,7 @@
     "bypass_undo" : "false",
     "cancel_on_cast_other" : "false",
     "cancel_on_damage" : "0",
+    "cancel_on_death" : "false",
     "cancel_on_no_permission" : "false",
     "cancel_on_no_wand" : "false",
     "cd" : "true",
@@ -15494,6 +15525,7 @@
         "cast" : "The cast location, defaults to wand location or player handss",
         "eyes" : "The target's eyes",
         "feet" : "The target's feet",
+        "head" : "The target's head, an alias for 'eyes'",
         "hit" : "The exact hit location",
         "wand" : "The wand location"
       }
