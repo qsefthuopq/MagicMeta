@@ -18,7 +18,7 @@
     code for readability, and automatically suggest new properties or values in a context-aware way.</div>
     <div>You won't have to leave this page to look up names for materials, particles or anything else you'll need to type here!</div>
     <div style="margin-top: 2em">
-        The editor comes preloaded with an simple example configuration that describes the general anatomy of a spell. It is a good
+        The editor comes preloaded with a simple example configuration that describes the general anatomy of a spell. It is a good
         idea to read through this configuration, paying special attention to its comments, in order to understand how the spell works.
     </div>
 </div>
