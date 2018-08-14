@@ -686,6 +686,18 @@
       },
       "short_class" : "CheckHealth"
     },
+    "check_inventory" : {
+      "category" : "compound",
+      "class_name" : "CheckInventoryAction",
+      "description" : [ "Check the players inventory for a specific item", "Will run sub-actions if the item is found", "If no sub-actions are given, will cancel the spell if the item is not found" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Check Inventory",
+      "parameters" : {
+        "item" : null
+      },
+      "short_class" : "CheckInventory"
+    },
     "check_mana" : {
       "category" : "compound",
       "class_name" : "CheckManaAction",
@@ -905,6 +917,7 @@
         "plan" : null,
         "player_weight" : "4",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "projectile_follow_player" : "false",
         "range" : "0",
         "range_padding" : "1",
@@ -1275,6 +1288,7 @@
         "plan" : null,
         "player_weight" : "4",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "projectile_follow_player" : "false",
         "projectile_potion_effects" : null,
         "range" : "0",
@@ -1412,6 +1426,7 @@
         "lifetime" : "10000",
         "power" : "1",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "set_target" : "false",
         "silent" : "false",
         "speed" : "0.1",
@@ -2143,6 +2158,7 @@
         "pickup" : null,
         "projectile" : "TippedArrow",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "reorient" : "false",
         "set_target" : "false",
         "size" : "1",
@@ -2779,6 +2795,7 @@
         "hit_effects" : "hit",
         "lifetime" : "10000",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "set_target" : "false",
         "size" : "6",
         "tnt_velocity" : "1",
@@ -2846,6 +2863,7 @@
         "max_damage" : "0",
         "orient" : "true",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "reorient" : "false",
         "set_target" : "false",
         "source_location" : "",
@@ -2876,6 +2894,7 @@
         "lifetime" : "10000",
         "orient" : "true",
         "projectile_effects" : "projectile",
+        "projectile_effects_use_target" : "false",
         "reorient" : "false",
         "set_target" : "false",
         "source_location" : "",
@@ -9411,6 +9430,14 @@
       "name" : "Projectile Effects",
       "type" : "string"
     },
+    "projectile_effects_use_target" : {
+      "category" : "",
+      "description" : [ "Set to true to use the projectile location as the target location (instead of the source) for projectile effects" ],
+      "field" : "projectile_effects_use_target",
+      "importance" : 0,
+      "name" : "Projectile Effects Use Target",
+      "type" : "boolean"
+    },
     "projectile_follow_player" : {
       "category" : "",
       "description" : [ "" ],
@@ -15814,6 +15841,7 @@
     "spells" : null,
     "stack" : "false",
     "swap" : "none",
+    "tags" : null,
     "template" : null,
     "track" : "false",
     "undroppable" : "false",
