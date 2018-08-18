@@ -91,6 +91,7 @@
         "clear" : "false",
         "duration" : "0",
         "exclude_spells" : null,
+        "reduce" : "0",
         "spells" : null,
         "target_caster" : "false"
       },
@@ -973,6 +974,7 @@
       "name" : "Cycle Block",
       "parameters" : {
         "cycle_colors" : "false",
+        "cycle_variants" : "false",
         "materials" : null
       },
       "short_class" : "CycleBlock"
@@ -5957,6 +5959,14 @@
       "name" : "Cycle Moon Phase",
       "type" : "boolean"
     },
+    "cycle_variants" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cycle_variants",
+      "importance" : 0,
+      "name" : "Cycle Variants",
+      "type" : "boolean"
+    },
     "damage" : {
       "category" : "entity",
       "description" : [ "How much damage to deal to the target" ],
@@ -6292,6 +6302,14 @@
       "importance" : 0,
       "name" : "Drops",
       "type" : "list"
+    },
+    "drops_require_player_killer" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "drops_require_player_killer",
+      "importance" : 0,
+      "name" : "Drops Require Player Killer",
+      "type" : "boolean"
     },
     "durability_max_distance" : {
       "category" : "",
@@ -9718,6 +9736,14 @@
       "name" : "Redstone Torch",
       "type" : "boolean"
     },
+    "reduce" : {
+      "category" : "",
+      "description" : [ "Reduce the cooldown by some amount of milliseconds" ],
+      "field" : "reduce",
+      "importance" : 0,
+      "name" : "Reduce",
+      "type" : "integer"
+    },
     "reflect_chance" : {
       "category" : "",
       "description" : [ "" ],
@@ -11633,8 +11659,8 @@
       "type" : "integer"
     },
     "unbreakable" : {
-      "category" : "",
-      "description" : [ "" ],
+      "category" : "actions",
+      "description" : [ "Blocks created or modified by this spell will be unbreakable" ],
       "field" : "unbreakable",
       "importance" : 0,
       "name" : "Unbreakable",
@@ -12592,6 +12618,7 @@
     "transparent" : null,
     "tworld" : null,
     "u" : "0",
+    "unbreakable" : "false",
     "undo" : "0",
     "undo_sorted" : "true",
     "undo_speed" : "0",
