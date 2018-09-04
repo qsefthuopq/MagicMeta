@@ -9262,7 +9262,7 @@
       "field" : "pitch",
       "importance" : 0,
       "name" : "Pitch",
-      "type" : "double"
+      "type" : "pitch"
     },
     "pitch_controllable" : {
       "category" : "",
@@ -9278,7 +9278,7 @@
       "field" : "pitch_max",
       "importance" : 0,
       "name" : "Pitch Max",
-      "type" : "integer"
+      "type" : "pitch"
     },
     "pitch_min" : {
       "category" : "",
@@ -9286,7 +9286,7 @@
       "field" : "pitch_min",
       "importance" : 0,
       "name" : "Pitch Min",
-      "type" : "integer"
+      "type" : "pitch"
     },
     "pitch_offset" : {
       "category" : "",
@@ -9294,7 +9294,7 @@
       "field" : "pitch_offset",
       "importance" : 0,
       "name" : "Pitch Offset",
-      "type" : "double"
+      "type" : "pitch"
     },
     "plan" : {
       "category" : "",
@@ -12416,7 +12416,7 @@
       "field" : "yaw",
       "importance" : 0,
       "name" : "Yaw",
-      "type" : "float"
+      "type" : "yaw"
     },
     "yaw_max" : {
       "category" : "",
@@ -12424,7 +12424,7 @@
       "field" : "yaw_max",
       "importance" : 0,
       "name" : "Yaw Max",
-      "type" : "double"
+      "type" : "yaw"
     },
     "yaw_offset" : {
       "category" : "",
@@ -12432,7 +12432,7 @@
       "field" : "yaw_offset",
       "importance" : 0,
       "name" : "Yaw Offset",
-      "type" : "double"
+      "type" : "yaw"
     },
     "z2_equation" : {
       "category" : "",
@@ -13280,6 +13280,31 @@
         "0.1" : null,
         "0.5" : null,
         "1" : null
+      }
+    },
+    "pitch" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number of degrees from -90 to 90" ],
+      "name" : "Float",
+      "options" : {
+        "-90" : null,
+        "-45" : null,
+        "0" : null,
+        "45" : null,
+        "90" : null
+      }
+    },
+    "yaw" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number of degrees from 0 to 359" ],
+      "name" : "Float",
+      "options" : {
+        "0" : null,
+        "45" : null,
+        "90" : null,
+        "135" : null,
+        "180" : null,
+        "359" : null
       }
     },
     "font" : {
