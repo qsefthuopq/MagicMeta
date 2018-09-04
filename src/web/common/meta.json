@@ -457,6 +457,7 @@
       "parameters" : {
         "brush" : null,
         "brushes" : null,
+        "brushmod" : null,
         "sample" : "false"
       },
       "short_class" : "Brush"
@@ -681,6 +682,7 @@
       "importance" : 0,
       "name" : "Check Health",
       "parameters" : {
+        "as_percentages" : "false",
         "full_health" : "false",
         "max_health" : "0.0",
         "min_health" : "0.0"
@@ -4626,6 +4628,14 @@
       "name" : "Arms",
       "type" : "boolean"
     },
+    "as_percentages" : {
+      "category" : "",
+      "description" : [ "Specify health in terms of percentage of max, rather than an absolute value" ],
+      "field" : "as_percentages",
+      "importance" : 0,
+      "name" : "As Percentages",
+      "type" : "boolean"
+    },
     "async" : {
       "category" : "",
       "description" : [ "" ],
@@ -4979,6 +4989,14 @@
       "importance" : 50,
       "name" : "Brushes",
       "type" : "material_list"
+    },
+    "brushmod" : {
+      "category" : "",
+      "description" : [ "A modifier to apply to the brush before selecting the main brush", "This can be used to set clone/replicate options to full air, or to set the base material for map brushes" ],
+      "field" : "brushmod",
+      "importance" : 0,
+      "name" : "Brushmod",
+      "type" : "string"
     },
     "bu" : {
       "alias" : "bypass_undo",
@@ -9368,6 +9386,14 @@
       "name" : "Pre-Hit Effects",
       "type" : "effects_list"
     },
+    "preuse" : {
+      "category" : "",
+      "description" : [ "This wand will consue a use prior to casting a spell, rather than after the spell completes" ],
+      "field" : "preuse",
+      "importance" : 0,
+      "name" : "Preuse",
+      "type" : "string"
+    },
     "prevent_passthrough" : {
       "category" : "actions",
       "description" : [ "" ],
@@ -13282,31 +13308,6 @@
         "1" : null
       }
     },
-    "pitch" : {
-      "class_name" : "java.lang.Float",
-      "description" : [ "A number of degrees from -90 to 90" ],
-      "name" : "Float",
-      "options" : {
-        "-90" : null,
-        "-45" : null,
-        "0" : null,
-        "45" : null,
-        "90" : null
-      }
-    },
-    "yaw" : {
-      "class_name" : "java.lang.Float",
-      "description" : [ "A number of degrees from 0 to 359" ],
-      "name" : "Float",
-      "options" : {
-        "0" : null,
-        "45" : null,
-        "90" : null,
-        "135" : null,
-        "180" : null,
-        "359" : null
-      }
-    },
     "font" : {
       "class_name" : "java.awt.Font",
       "description" : [ "A font name" ],
@@ -14873,6 +14874,18 @@
         "1" : "V"
       }
     },
+    "pitch" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number of degrees from -90 to 90" ],
+      "name" : "Float",
+      "options" : {
+        "-45" : null,
+        "-90" : null,
+        "0" : null,
+        "45" : null,
+        "90" : null
+      }
+    },
     "potion_effect_list" : {
       "class_name" : "java.util.List",
       "description" : [ "" ],
@@ -15802,6 +15815,19 @@
         "cycle" : "Cycle from storming to clear",
         "storm" : "Start raining or snowing"
       }
+    },
+    "yaw" : {
+      "class_name" : "java.lang.Float",
+      "description" : [ "A number of degrees from 0 to 359" ],
+      "name" : "Float",
+      "options" : {
+        "0" : null,
+        "135" : null,
+        "180" : null,
+        "359" : null,
+        "45" : null,
+        "90" : null
+      }
     }
   },
   "wand_properties" : {
@@ -15880,6 +15906,7 @@
     "path" : null,
     "potion_effects" : null,
     "powered" : "false",
+    "preuse" : null,
     "protected" : "false",
     "protection" : null,
     "quick_cast" : null,
