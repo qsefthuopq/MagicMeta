@@ -224,6 +224,7 @@
         "chestplate_item" : null,
         "close_fov" : "0.5",
         "close_range" : "0",
+        "color" : null,
         "default_drops" : "true",
         "disabled_slots" : "0",
         "disguise" : null,
@@ -1243,7 +1244,7 @@
     "entity_projectile" : {
       "category" : "compound",
       "class_name" : "EntityProjectileAction",
-      "description" : [ "A CustonmProjectile with an entity attached", "Ever want to attack someone using a flying llama?" ],
+      "description" : [ "A CustomProjectile with an entity attached", "Ever want to attack someone using a flying llama?" ],
       "examples" : [ ],
       "importance" : 40,
       "name" : "Entity Projectile",
@@ -1782,6 +1783,20 @@
         "game_mode" : null
       },
       "short_class" : "ModifyGameMode"
+    },
+    "modify_lore" : {
+      "category" : "",
+      "class_name" : "ModifyLoreAction",
+      "description" : [ "Modifies the lore of a vanilla item", "Can be used to add, subtract or otherwise modify numeric values in lore using regex" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Modify Lore",
+      "parameters" : {
+        "digits" : "0",
+        "modify" : null,
+        "modify_list" : null
+      },
+      "short_class" : "ModifyLore"
     },
     "modify_mage" : {
       "category" : "player",
@@ -6149,6 +6164,14 @@
       "name" : "Destructible Override",
       "type" : "boolean"
     },
+    "digits" : {
+      "category" : "",
+      "description" : [ "The number of digits past the decimal point to include in the numeric output" ],
+      "field" : "digits",
+      "importance" : 0,
+      "name" : "Digits",
+      "type" : "integer"
+    },
     "direction" : {
       "category" : "",
       "description" : [ "" ],
@@ -7612,6 +7635,14 @@
       "field" : "ignore_invalid",
       "importance" : 0,
       "name" : "Ignore Invalid",
+      "type" : "boolean"
+    },
+    "ignore_region_overrides" : {
+      "category" : "actions",
+      "description" : [ "This spell will ignore region flags that say it should be able to build even if the player has no permission to build, such as allowed-spells or allowed-spell-categories" ],
+      "field" : "ignore_region_overrides",
+      "importance" : 0,
+      "name" : "Ignore Region Overrides",
       "type" : "boolean"
     },
     "ignore_result" : {
@@ -12599,6 +12630,7 @@
     "hitbox_size" : "0",
     "id" : null,
     "ignore_blocks" : "false",
+    "ignore_region_overrides" : "false",
     "ignore_types" : null,
     "indestructible_materials" : null,
     "instant_block_effects" : "false",
