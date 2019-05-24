@@ -161,6 +161,7 @@
         "mob_cast_interval" : "0",
         "mob_interval" : "0",
         "name" : null,
+        "offhand" : null,
         "particle" : null,
         "potion_effects" : null,
         "protection" : null,
@@ -276,6 +277,7 @@
         "name" : null,
         "no_target" : "true",
         "npc_weight" : "-1",
+        "offhand" : null,
         "orient" : "false",
         "orient_head" : "false",
         "orient_right_arm" : "false",
@@ -535,6 +537,7 @@
       "importance" : 0,
       "name" : "Cast Result",
       "parameters" : {
+        "end_result" : "false",
         "result" : null
       },
       "short_class" : "CastResult"
@@ -660,7 +663,8 @@
       "importance" : 20,
       "name" : "Check Block",
       "parameters" : {
-        "allowed" : null
+        "allowed" : null,
+        "fail" : null
       },
       "short_class" : "CheckBlock"
     },
@@ -675,6 +679,7 @@
         "allow_caster" : "true",
         "allowed_entities" : null,
         "denied_entities" : null,
+        "fail" : null,
         "only_caster" : "false"
       },
       "short_class" : "CheckEntity"
@@ -688,6 +693,7 @@
       "name" : "Check Health",
       "parameters" : {
         "as_percentages" : "false",
+        "fail" : null,
         "full_health" : "false",
         "max_health" : "0.0",
         "min_health" : "0.0"
@@ -702,6 +708,7 @@
       "importance" : 0,
       "name" : "Check Inventory",
       "parameters" : {
+        "fail" : null,
         "item" : null
       },
       "short_class" : "CheckInventory"
@@ -714,6 +721,7 @@
       "importance" : 20,
       "name" : "Check Mana",
       "parameters" : {
+        "fail" : null,
         "require_mana" : "0",
         "require_mana_empty" : "false",
         "require_mana_not_full" : "false"
@@ -728,9 +736,24 @@
       "importance" : 0,
       "name" : "Check Requirements",
       "parameters" : {
+        "fail" : null,
         "requirements" : null
       },
       "short_class" : "CheckRequirements"
+    },
+    "check_velocity" : {
+      "category" : "compound",
+      "class_name" : "CheckVelocityAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Check Velocity",
+      "parameters" : {
+        "fail" : null,
+        "max_speed" : "nan",
+        "min_speed" : "nan"
+      },
+      "short_class" : "CheckVelocity"
     },
     "clear_chat" : {
       "category" : "player",
@@ -1726,10 +1749,12 @@
         "fade_in" : "-1",
         "fade_out" : "-1",
         "message" : "",
+        "message_key" : null,
         "message_target" : "false",
         "message_type" : null,
         "stay" : "-1",
-        "sub_message" : ""
+        "sub_message" : "",
+        "sub_message_key" : null
       },
       "short_class" : "Message"
     },
@@ -3012,6 +3037,7 @@
       "parameters" : {
         "admin_permission" : null,
         "cancel" : "true",
+        "sort" : "false",
         "target_block_timeout" : "0",
         "target_blocks" : "true",
         "target_caster" : "false",
@@ -6713,6 +6739,22 @@
       "name" : "Enchantments",
       "type" : "enchantment_map"
     },
+    "end_result" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "end_result",
+      "importance" : 0,
+      "name" : "End Result",
+      "type" : "boolean"
+    },
+    "entity" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "entity",
+      "importance" : 0,
+      "name" : "Entity",
+      "type" : "string"
+    },
     "entity_attributes" : {
       "category" : "mob",
       "description" : [ "Vanilla entity attributes to apply to the mob" ],
@@ -6920,6 +6962,14 @@
       "importance" : 0,
       "name" : "Fade Out",
       "type" : "integer"
+    },
+    "fail" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "fail",
+      "importance" : 0,
+      "name" : "Fail",
+      "type" : "string"
     },
     "fall_damage" : {
       "category" : "",
@@ -8434,6 +8484,14 @@
       "name" : "Message",
       "type" : "string"
     },
+    "message_key" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "message_key",
+      "importance" : 0,
+      "name" : "Message Key",
+      "type" : "string"
+    },
     "message_target" : {
       "category" : "",
       "description" : [ "Whether or not the message will be sent to the target.", "If false, the message will be sent to the caster." ],
@@ -8697,6 +8755,14 @@
       "importance" : 0,
       "name" : "Npc Weight",
       "type" : "integer"
+    },
+    "offhand" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "offhand",
+      "importance" : 0,
+      "name" : "Offhand",
+      "type" : "string"
     },
     "offset" : {
       "category" : "",
@@ -9369,6 +9435,14 @@
       "importance" : 0,
       "name" : "Plane",
       "type" : "base_image_effect_plane"
+    },
+    "player" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "player",
+      "importance" : 0,
+      "name" : "Player",
+      "type" : "string"
     },
     "player_damage" : {
       "category" : "",
@@ -10130,6 +10204,14 @@
       "name" : "Requires Target",
       "type" : "boolean"
     },
+    "reset_mana_on_activate" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "reset_mana_on_activate",
+      "importance" : 0,
+      "name" : "Reset Mana On Activate",
+      "type" : "string"
+    },
     "reset_time_on_path_change" : {
       "category" : "",
       "description" : [ "" ],
@@ -10520,6 +10602,14 @@
       "field" : "solid",
       "importance" : 0,
       "name" : "Solid",
+      "type" : "boolean"
+    },
+    "sort" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "sort",
+      "importance" : 0,
+      "name" : "Sort",
       "type" : "boolean"
     },
     "soul" : {
@@ -11040,6 +11130,14 @@
       "field" : "sub_message",
       "importance" : 0,
       "name" : "Sub Message",
+      "type" : "string"
+    },
+    "sub_message_key" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "sub_message_key",
+      "importance" : 0,
+      "name" : "Sub Message Key",
       "type" : "string"
     },
     "swap" : {
@@ -11763,6 +11861,14 @@
       "importance" : 0,
       "name" : "Undo Oldest",
       "type" : "integer"
+    },
+    "undo_reversed" : {
+      "category" : "actions",
+      "description" : [ "" ],
+      "field" : "undo_reversed",
+      "importance" : 0,
+      "name" : "Undo Reversed",
+      "type" : "boolean"
     },
     "undo_sorted" : {
       "category" : "actions",
@@ -12630,6 +12736,7 @@
     "display_cooldown" : "-1",
     "distance_weight" : "1",
     "duration" : "0",
+    "entity" : "",
     "entity_undo" : "false",
     "entity_undo_types" : null,
     "entity_weight" : "3",
@@ -12650,6 +12757,7 @@
     "loud" : "false",
     "message_targets" : "true",
     "modifiable" : null,
+    "name" : "",
     "npc_weight" : "-1",
     "origin_at_target" : "false",
     "otdx" : null,
@@ -12661,6 +12769,7 @@
     "otz" : null,
     "passive" : "false",
     "passthrough" : null,
+    "player" : "",
     "player_weight" : "4",
     "prevent_passthrough" : null,
     "pworld" : null,
@@ -12695,6 +12804,7 @@
     "u" : "0",
     "unbreakable" : "false",
     "undo" : "0",
+    "undo_reversed" : "true",
     "undo_sorted" : "true",
     "undo_speed" : "0",
     "unsafe" : null,
@@ -15962,6 +16072,7 @@
     "quiet" : "false",
     "rename" : "false",
     "rename_description" : "false",
+    "reset_mana_on_activate" : null,
     "right_click" : "none",
     "sp_multiplier" : "0",
     "spell_inventory" : null,
