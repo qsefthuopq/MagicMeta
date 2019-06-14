@@ -585,6 +585,7 @@
         "source_relative_direction_pitch_offset" : "0",
         "source_relative_direction_yaw_offset" : "0",
         "source_yaw_offset" : "0",
+        "swap_source_and_target" : "false",
         "target_attachment" : "false",
         "target_caster" : "false",
         "target_direction" : null,
@@ -11147,6 +11148,14 @@
       "importance" : 90,
       "name" : "Swap Binding",
       "type" : "wand_action"
+    },
+    "swap_source_and_target" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "swap_source_and_target",
+      "importance" : 0,
+      "name" : "Swap Source And Target",
+      "type" : "boolean"
     },
     "switch_class" : {
       "category" : "",
