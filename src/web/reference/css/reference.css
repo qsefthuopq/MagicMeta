@@ -72,6 +72,8 @@
 .propertyTypeDescription {
     background: #EEEEEE;
     padding: 6px;
+    max-height: 10em;
+    overflow: auto;
 }
 
 .descriptionLine {
