@@ -732,20 +732,7 @@
     "check_requirements" : {
       "category" : "compound",
       "class_name" : "CheckRequirementsAction",
-      "description" : [ "Runs a set of actions only if the caster meets certain requirements",
-        "permission: Check a permission",
-        "path: The player must have reached a progression path",
-        "path_exact: The player must current be on a progression path",
-        "path_end: The player must be ready to advance from a path",
-        "wand: The player must be holding a specific wand",
-        "holding_wand: The player must be holding any wand (true/false)",
-        "class: The player must have unlocked a specific mage class",
-        "wand_tags: The player must be holding a wand with specific tags",
-        "wands: The player must be holding one of a set of wands",
-        "wand_properties: The player's wand must have properties within a specific range",
-        "class_properties: The player's mage class must have properties within a specific range",
-        "attributes: The player must have some attributes within a specific range"
-      ],
+      "description" : [ "Runs a set of actions only if the caster meets certain requirements", "permission: Check a permission", "path: The player must have reached a progression path", "path_exact: The player must current be on a progression path", "path_end: The player must be ready to advance from a path", "wand: The player must be holding a specific wand", "holding_wand: The player must be holding any wand (true/false)", "class: The player must have unlocked a specific mage class", "wand_tags: The player must be holding a wand with specific tags", "wands: The player must be holding one of a set of wands", "wand_properties: The player's wand must have properties within a specific range", "class_properties: The player's mage class must have properties within a specific range", "attributes: The player must have some attributes within a specific range" ],
       "examples" : [ ],
       "importance" : 0,
       "name" : "Check Requirements",
@@ -6979,7 +6966,7 @@
     },
     "fail" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Runs sub actions on fail instead of success" ],
       "field" : "fail",
       "importance" : 0,
       "name" : "Fail",
@@ -7123,7 +7110,7 @@
     },
     "firework_silent" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "Set this to false to disable the sound made from a firework effect." ],
       "field" : "firework_silent",
       "importance" : 0,
       "name" : "Firework Silent",
@@ -9692,7 +9679,7 @@
     },
     "quick_cast" : {
       "category" : "base",
-      "description" : [ "" ],
+      "description" : [ "When set to true, the wand will always instantly cast abilities upon selection.", "(Note: This can also be individually defined, per spell, in spells.yml - just make sure to remove the property from your wand, or set it to false! Otherwise the wand will override any spell settings.)" ],
       "field" : "quick_cast",
       "importance" : 0,
       "name" : "Quick Cast",
@@ -10220,7 +10207,7 @@
     },
     "reset_mana_on_activate" : {
       "category" : "",
-      "description" : [ "" ],
+      "description" : [ "When set to true, the wand's mana will be reset to the 'mana' value defined in wands.yml", "This can be used by players as a method of refilling their mana if it is low." ],
       "field" : "reset_mana_on_activate",
       "importance" : 0,
       "name" : "Reset Mana On Activate",
