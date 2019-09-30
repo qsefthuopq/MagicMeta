@@ -47,13 +47,13 @@
         <dependency>
             <groupId>com.elmakers.mine.bukkit.plugins</groupId>
             <artifactId>Magic</artifactId>
-            <version>7.7.5-SNAPSHOT</version>
+            <version>7.7.6-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.slikey</groupId>
             <artifactId>EffectLib</artifactId>
-            <version>6.2-SNAPSHOT</version>
+            <version>6.3-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

@@ -171,6 +171,7 @@
         "reapplication_delay" : "0",
         "reason" : null,
         "repeat_random" : "true",
+        "set_source" : "false",
         "set_target" : "false",
         "silent" : "false",
         "speed" : "0",
@@ -180,6 +181,7 @@
         "track_radius" : "128",
         "triggers" : null,
         "type" : null,
+        "wait_for_death" : "true",
         "wait_time" : "0",
         "weakness" : null,
         "xp" : "0"
@@ -729,10 +731,24 @@
       },
       "short_class" : "CheckMana"
     },
+    "check_potion_effects" : {
+      "category" : "compound",
+      "class_name" : "CheckPotionEffectsAction",
+      "description" : [ "" ],
+      "examples" : [ ],
+      "importance" : 0,
+      "name" : "Check Potion Effects",
+      "parameters" : {
+        "blocked" : null,
+        "fail" : null,
+        "required" : null
+      },
+      "short_class" : "CheckPotionEffects"
+    },
     "check_requirements" : {
       "category" : "compound",
       "class_name" : "CheckRequirementsAction",
-      "description" : [ "Runs a set of actions only if the caster meets certain requirements", "Some requirement types expect a single value, others expect a section containing one or more of: min, max, value. These requirements can be a range or require a specific value to be set.","permission: Check a permission", "path: The player must have reached a progression path", "path_exact: The player must current be on a progression path", "path_end: The player must be ready to advance from a path", "wand: The player must be holding a specific wand", "holding_wand: The player must be holding any wand (true/false)", "class: The player must have unlocked a specific mage class", "wand_tags: The player must be holding a wand with specific tags", "wands: The player must be holding one of a set of wands", "wand_properties: The player's wand must have properties within a specific range (ranged)", "class_properties: The player's mage class must have properties within a specific range (ranged)", "attributes: The player must have some attributes within a specific range (ranged)", "time: Only during a certain time of day (ranged)", "light: Only at certain light levels (ranged)" ],
+      "description" : [ "Runs a set of actions only if the caster meets certain requirements", "Some requirement types expect a single value, others expect a section containing one or more of: min, max, value. These requirements can be a range or require a specific value to be set.", "permission: Check a permission", "path: The player must have reached a progression path", "path_exact: The player must current be on a progression path", "path_end: The player must be ready to advance from a path", "wand: The player must be holding a specific wand", "holding_wand: The player must be holding any wand (true/false)", "class: The player must have unlocked a specific mage class", "wand_tags: The player must be holding a wand with specific tags", "wands: The player must be holding one of a set of wands", "wand_properties: The player's wand must have properties within a specific range (ranged)", "class_properties: The player's mage class must have properties within a specific range (ranged)", "attributes: The player must have some attributes within a specific range (ranged)", "time: Only during a certain time of day (ranged)", "light: Only at certain light levels (ranged)" ],
       "examples" : [ ],
       "importance" : 0,
       "name" : "Check Requirements",
@@ -2458,6 +2474,7 @@
         "apply_to_caster" : "false",
         "apply_to_wand" : "false",
         "auto_close" : "true",
+        "cast_for_tags" : null,
         "cast_spell" : null,
         "commands" : null,
         "confirm" : "false",
@@ -2522,6 +2539,7 @@
         "apply_to_caster" : "false",
         "apply_to_wand" : "false",
         "auto_close" : "true",
+        "cast_for_tags" : null,
         "cast_spell" : null,
         "commands" : null,
         "confirm" : "false",
@@ -2681,6 +2699,7 @@
         "protection" : null,
         "reason" : null,
         "repeat_random" : "true",
+        "set_source" : "false",
         "set_target" : "false",
         "silent" : "false",
         "speed" : "0",
@@ -2690,6 +2709,7 @@
         "track_radius" : "128",
         "triggers" : null,
         "type" : null,
+        "wait_for_death" : "true",
         "weakness" : null,
         "xp" : "0"
       },
@@ -3439,6 +3459,7 @@
         "frame_delay" : "5",
         "iterations" : "200",
         "orient" : "true",
+        "orient_pitch" : "false",
         "particle" : "redstone",
         "period" : "2",
         "plane" : "xyz",
@@ -3508,6 +3529,7 @@
         "enable_rotation" : "true",
         "height" : "3",
         "iterations" : "200",
+        "orient" : "false",
         "particle" : "flame",
         "particles" : "100",
         "period" : "2",
@@ -3826,6 +3848,7 @@
         "invert" : "false",
         "iterations" : "200",
         "orient" : "true",
+        "orient_pitch" : "false",
         "particle" : "redstone",
         "period" : "2",
         "plane" : "xyz",
@@ -3987,6 +4010,7 @@
       "parameters" : {
         "iterations" : "300",
         "particle" : "smoke_normal",
+        "particles" : "20",
         "type" : "repeating"
       },
       "short_class" : "Smoke"
@@ -4058,8 +4082,11 @@
       "importance" : 70,
       "name" : "Tornado",
       "parameters" : {
+        "circle_height" : "0.0",
+        "circle_particles" : "64",
         "cloud_color" : null,
         "cloud_particle" : "cloud",
+        "cloud_particles" : "100",
         "cloud_size" : "2.5",
         "distance" : "0.375",
         "iterations" : "20",
@@ -4888,6 +4915,14 @@
       "name" : "Block Reflect Chance",
       "type" : "double"
     },
+    "blocked" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "blocked",
+      "importance" : 0,
+      "name" : "Blocked",
+      "type" : "potion_effect_list"
+    },
     "blockmiss_effect_list" : {
       "category" : "effects",
       "description" : [ "A list of effects to perform each tick of a projectile that does not hit a block", "These effects are mostly used to debug particle movement and not generally used in a real spell." ],
@@ -5258,6 +5293,14 @@
       "name" : "Cast Effects",
       "type" : "effects_list"
     },
+    "cast_for_tags" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cast_for_tags",
+      "importance" : 0,
+      "name" : "Cast For Tags",
+      "type" : "map"
+    },
     "cast_interval" : {
       "category" : "wand",
       "description" : [ "How often, in milliseconds, to auto-cast the cast_spell set on this wand" ],
@@ -5451,6 +5494,22 @@
       "name" : "Chestplate Item",
       "type" : "material"
     },
+    "circle_height" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "circle_height",
+      "importance" : 0,
+      "name" : "Circle Height",
+      "type" : "double"
+    },
+    "circle_particles" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "circle_particles",
+      "importance" : 0,
+      "name" : "Circle Particles",
+      "type" : "integer"
+    },
     "circles" : {
       "category" : "",
       "description" : [ "" ],
@@ -5514,6 +5573,14 @@
       "importance" : 0,
       "name" : "Cloud Particle",
       "type" : "particle"
+    },
+    "cloud_particles" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "cloud_particles",
+      "importance" : 0,
+      "name" : "Cloud Particles",
+      "type" : "integer"
     },
     "cloud_size" : {
       "category" : "",
@@ -10165,6 +10232,14 @@
       "name" : "Require Wand",
       "type" : "boolean"
     },
+    "required" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "required",
+      "importance" : 0,
+      "name" : "Required",
+      "type" : "potion_effect_list"
+    },
     "requirements" : {
       "category" : "base",
       "description" : [ "" ],
@@ -10452,6 +10527,14 @@
       "importance" : 0,
       "name" : "Server",
       "type" : "string"
+    },
+    "set_source" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "set_source",
+      "importance" : 0,
+      "name" : "Set Source",
+      "type" : "boolean"
     },
     "set_target" : {
       "category" : "",
@@ -12334,6 +12417,14 @@
       "importance" : 0,
       "name" : "Volume Type",
       "type" : "string"
+    },
+    "wait_for_death" : {
+      "category" : "",
+      "description" : [ "" ],
+      "field" : "wait_for_death",
+      "importance" : 0,
+      "name" : "Wait For Death",
+      "type" : "boolean"
     },
     "wait_for_landing" : {
       "category" : "",
