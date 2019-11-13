@@ -8,7 +8,7 @@
     <url>http://mine.elmakers.com</url>
 
     <properties>
-        <jackson.version>2.6.5</jackson.version>
+        <jackson.version>2.10.1</jackson.version>
         <findbugs.version>1.3.9</findbugs.version>
         <bukkit.version>1.13-R0.1-SNAPSHOT</bukkit.version>
     </properties>
