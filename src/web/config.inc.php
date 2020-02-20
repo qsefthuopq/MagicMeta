@@ -27,25 +27,25 @@ $resourcePackFolder = $magicRootFolder . '/../resource-pack';
 $infoBookRootConfig = dirname(__FILE__) . '/../main/resources/examples/InfoBook/config.yml';
 
 // Page title
-$title = "elMakers Magic Development Site";
+$title = "魔法插件开发服务器";
 
 // Instructional YouTube video id
 $youTubeVideo = '8rjY8pjjPM8';
 
 // How players get wands, other than view the configured ways in magic.yml (crafting, random chests)
-$howToGetWands = array('You can purchase wands in an Essentials Shop', 'You can find wands on the ground using the dynmap');
+$howToGetWands = array('你可以在Essentials的商店内购买法杖', '你也可以使用dynmap找到地面上的法杖');
 
 // Page overview - this will get put in a Header at the top of the page.
 $pageOverview = <<<EOT
 	<div style="margin-left: 128px;">
-		Welcome to the development server for the Magic plugin by elMakers!<br/><br/>
-		This is a plugin for the <a href="http://www.bukkit.org" target="_new">Bukkit</a> minecraft server.
-		For more information, <a href="http://dev.bukkit.org/bukkit-plugins/magic/" target="_new">click here.</a>
+		欢迎来到elMakers的魔法插件开发服务器!<br/><br/>
+		这是款服务器插件 <a href="http://www.bukkit.org" target="_new">Bukkit</a> minecraft server.
+		更多信息,请 <a href="http://dev.bukkit.org/bukkit-plugins/magic/" target="_new">点击这里.</a>
 		<br/><br/>
-		While this is just a development server, you are free to log in and play at
-		<span class="minecraftServer">mine.elmakers.com</span>. You may also view our <a href="http://mine.elmakers.com:8080"/>dynmap here</a>, the world is a bit of a mess.
+		因为这只是个开发服务器, 所以你可以自由登录并游玩该服务器，IP为
+		<span class="minecraftServer">mine.elmakers.com</span>.（需要正版账号） 你也可以在这里查看我们的 <a href="http://mine.elmakers.com:8080"/>卫星地图</a>, 这个世界有点乱.
 		<br/><br/>
-		Thanks for looking!
+		感谢观看!
 	</div>
 EOT;
 
