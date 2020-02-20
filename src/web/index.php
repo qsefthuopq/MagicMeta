@@ -415,11 +415,11 @@ function printIcon($iconUrl, $title) {
 			</ul>
 			<div id="overview">
 			  <div class="scrollingTab">
-				<h2>Obtaining a Wand</h2>
+				<h2>获得一根法杖</h2>
 				<div>
-				In order to cast spells, you must obtain a wand. Each wand is unique and knows one or more spells. Wands can also be imbued with
-				special properties and materials.<br/><br/>
-				You may find a wand in one of the following ways:
+				你需要有一根法杖才能施法. 每根法杖都是独特的并且拥有一种或多种法术. 你可以更改法杖的
+				特殊属性和材料.<br/><br/>
+				你可以通过以下方式找到法杖:
 				<ul>
 					<?php if ($howToGetWands) {
 						foreach ($howToGetWands as $item) {
@@ -480,35 +480,35 @@ function printIcon($iconUrl, $title) {
 						<br/><br/>
 						激活法杖背包后, 每种法术都由一个图标代表显示. 你可以使用快捷栏按钮(1-9)快捷更改法术.
 						<br/><br/>
-						You can also open your inventory ('E' by default) to see all of the spells and materials your wand has, with detailed descriptions:
+						你也可以打开你的背包 (默认按'E') 来查看法杖内的所有法术及其介绍:
 						<br/><br/>
 						<img src="image/WandInventory.png" alt="Wand inventory image"/>
 						<br/><br/>
-						While in this view, you can re-arrange your spells and materials, deciding which ones to put in the hotbar.
+						在这个页面内,你可以重组你的法术, 决定将那些法术放到快捷栏内.
 						<br/><br/>
-						Right-click again to deactivate the wand inventory and restore your items. Any items you
-						collected while the wand inventory was active will be in your survival inventory.
+						再次右击关闭法杖背包并恢复你的生存物品. 任何在你
+						使用法杖背包时捡到的物品都会放入你的生存背包内.
 						<br/><br/>
-						For wands with more than 35 spells, clicking outside of the inventory will cycle to the next "page" of spells.
-                        Right-clicking outside of the inventory will go to the previous page.
-                        Renaming a wand on an anvil will organize its inventory,
-						should it get too cluttered.
+						拥有多于35种法术的背包可以左击背包外的区域来翻到下一页.
+                        右击背包外的区域翻到上一页.
+                        使用铁砧重命名法杖会重组法杖背包内的法术,
+						打乱你原有的排序.
 						<br/><br/>
-						A spell or material can be quick-selected from an open wand inventory using right-click.
+						可以打开法杖背包并右击法术可以快速选择法术.
 						<br/><br/>
-						<b>Cycle Mode</b><br/>
-						This mode only works well with low-powered wands, ones that only have a few spells. In this mode
-						you right-click to cycle through available spells- there is no menu, and no icons.
+						<b>循环模式</b><br/>
+						这个模式只适用于拥有很少法术的法杖. 在这个模式下
+						右击即可切换法术,在这个模式下没有菜单和图标.
 				</div>
 				<h2>Costs</h2>
 				<div>
-					Casting costs vary by spell, wand, and server configuration.<br/><br/>
-					The most common setup is the "mana" system. In this mode, each wand has a mana pool that 
-					regenerates over time. While a wand is active, your mana is represented by the XP bar. (Your gathered XP will
-					be saved and restored when the wand deactivates).<br/><br/>
-					Other configurations could range from consuming actual XP, reagent items, or just being free.
+					法力消耗根据法术、法杖类型和服务器配置而有所不同.<br/><br/>
+					默认配置使用 "mana·法力" 系统. 在这个模式下, 每根法杖的法力会在一段时间后恢复 
+					当激活法杖时, 你的法力值显示在经验条处. (你获得的经验会
+					被保存并在取消激活法杖时恢复).<br/><br/>
+					配置可以改为消耗经验值、物品来施法,也可以免费施法.
 					<br/><br/>
-					Some wands may also have a limited number of uses, after which time they will self-destruct.
+					一些法杖可能会有使用次数的限制, 达到一次的施法次数后法杖会自毁.
 				</div>
 			  </div>
 			</div>
