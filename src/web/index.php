@@ -427,58 +427,58 @@ function printIcon($iconUrl, $title) {
 						}
 					}?>
 					<?php if ($craftingEnabled) {
-						echo '<li>Craft a wand (See: Crafting)</li>';
+						echo '<li>合成一根法杖 (详见: 合成)</li>';
 					}?>
 				</ul>
 				</div>
 				<?php 
 				if ($enchantingEnabled) {
 					?>
-					<div>You may upgrade your wands on an enchanting table.</div>
+					<div>你可以在附魔台处升级你的法杖.</div>
 				<?php
 				} ?>
 				<?php 
 				if ($combiningEnabled) {
 					?>
-					<div>You may combine two wands on an anvil. (Click the empty result slot, it's WIP!)</div>
+					<div>你可以使用铁砧来融合两根法杖. (点击空格合成)</div>
 				<?php 
 				} ?>
-                <div>There are also <?= count($wands); ?> wand templates, which may be purchasable or given my admins.</div>
+                <div>也有可购买或管理员可获得的 <?= count($wands); ?> 法杖模板.</div>
 
-                <h2>Wand Spells</h2>
+                <h2>法术</h2>
                 <div>
-                    Wands contain one or more spells in their inventory. Wands may generally know any spell, though some wands
-                    may only naturally obtain certain spells via enchanting.
+                    法杖背包内包含一个或多个法术. 法杖可以容纳任何法术, 尽管通过附魔一些法杖
+                    可能只能获得一些法术.
                 </div>
                 <br/>
                 <div>
-                    There are currently <?= count($spells) ?> spells available.
+                    目前共有 <?= count($spells) ?> 种可用的法术.
                 </div>
 
 
-				<h2>Using a Wand</h2>
+				<h2>使用法杖</h2>
 				<div>
-					A wand is considered "active" when you are holding it. Any special effects a wand gives are only applied while the wand is active.<br.>
+					在你手持法杖时这根法杖会被视为"激活"状态. 法杖的任何特殊效果只在法杖激活时有效.<br.>
 					<br/><br/>
-					Swing a wand (left-click) to cast its active spell. Some wands may have more than one spell. If a wand has multiple spells, you use the
-					interact (right-click) action to select spells.
+					挥动法杖 (左击) 即可使用激活的法术. 一些法杖拥有多种法术. 如果一根法杖拥有多种法术, 你可以使用
+					交互 (右击) 来切换法术.
 					<br/><br/>
 
-						For detailed instructions, see this video:<br/><br/>
+						详细教程请查看视频:<br/><br/>
 						<iframe width="640" height="360" src="//www.youtube.com/embed/<?= $youTubeVideo ?>" frameborder="0" allowfullscreen></iframe>
 						<br/><br/>
-					    Wands may function in one of three modes:<br/>
-					    <b>Chest Mode</b><br/>
-					    In the default mode, right-clicking with your wand will pop up a chest inventory. Click on a spell icon to activate it.<br/><br/>
-					    If your wand has a lot of spells, click outside of the inventory window to move to the next page. Right-click outside of the inventory to move back a page.
+					    法杖共有三种施法模式:<br/>
+					    <b>箱子模式</b><br/>
+					    这是默认模式, 右击你的法杖会打开一个箱子背包. 点击法术图标即可激活法术.<br/><br/>
+					    如果你的法杖内有大量的法术, 可以点击背包窗口外来翻到下一页. 右击背包外翻到上一页.
 					    <br/><br/>
-					    <b>Inventory Mode</b><br/>
-						Right-click with your wand to toggle the wand inventory. When the wand's inventory is active, your survival items are stored
-						and your player's inventory will change to show the spells and materials bound to your active wand:
+					    <b>背包模式</b><br/>
+						右击你的法杖来切换为法杖背包. 在激活了法杖背包的情况下, 你的生存物品会自动保存
+						并且你的背包会显示法术和绑定到你激活的法杖的材料:
 						<br/><br/>
 						<img src="image/WandHotbar.png" alt="Wand hotbar image"/>
 						<br/><br/>
-						With the wand inventory active, each spell is represented by an icon. You can quickly change spells using the hotbar buttons (1-9).
+						激活法杖背包后, 每种法术都由一个图标代表显示. 你可以使用快捷栏按钮(1-9)快捷更改法术.
 						<br/><br/>
 						You can also open your inventory ('E' by default) to see all of the spells and materials your wand has, with detailed descriptions:
 						<br/><br/>
