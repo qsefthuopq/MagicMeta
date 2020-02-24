@@ -465,7 +465,7 @@ function printIcon($iconUrl, $title) {
 					<br/><br/>
 
 						详细教程请查看视频:<br/><br/>
-						<iframe width="640" height="360" src="//www.youtube.com/embed/<?= $youTubeVideo ?>" frameborder="0" allowfullscreen></iframe>
+						<iframe src="//player.bilibili.com/player.html?aid=83672223&cid=143143168&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 						<br/><br/>
 					    法杖共有三种施法模式:<br/>
 					    <b>箱子模式</b><br/>
@@ -540,7 +540,7 @@ function printIcon($iconUrl, $title) {
 			  </div>
 			  </div>
 			  <div class="details" id="spellDetails">
-			  	Select a spell for details.
+			  	请选择一个法术以查看详细信息.
 			  </div>
 			</div>
 			<div id="crafting">
@@ -580,7 +580,7 @@ function printIcon($iconUrl, $title) {
 			  </div>
 			  </div>
 			  <div class="details" id="craftingDetails">
-			  	Select a recipe for details.
+			  	请选择一个配方以查看详细信息.
 			  </div>
 			</div>
 			<div id="enchanting">
@@ -598,7 +598,7 @@ function printIcon($iconUrl, $title) {
 			  </div>
 			  </div>
 			  <div class="details" id="enchantingDetails">
-			  	Select an enchanting path for details.
+			  	请选择查看详情的附魔路径.
 			  </div>
 			</div>
 			<div id="wands">
@@ -639,7 +639,7 @@ function printIcon($iconUrl, $title) {
 			  </div>
 			  </div>
 			  <div class="details" id="wandDetails">
-			  	Select a wand for details.
+			  	请选择一根查看详细信息的法杖.
 			  </div>
 			</div>
 			<div id="upgrades">
@@ -683,14 +683,14 @@ function printIcon($iconUrl, $title) {
 			  </div>
 			  </div>
 			  <div class="details" id="bookDetails">
-			  	Select a book to read.
+			  	请选择一本要读的书.
 			  </div>
 			</div>
             <div id="icons">
                 <div class="scrollingTab">
                     <div>
                         <div class="title">
-                            There are <?= count($spellIcons) ?> spell icons available in the Magic RP, each is a variant of the diamond axe item.
+                            资源包内共有 <?= count($spellIcons) ?> 个可用的法术图标, 每个图标都使用的是钻石斧这个物品.
                         </div>
                         <ul id="iconList">
                             <?php
@@ -708,7 +708,7 @@ function printIcon($iconUrl, $title) {
 				<div class="scrollingTab">
 					<div>
 						<div class="title">
-							Legacy configs use player skulls for icons, here are <?= count($textures) ?> that have been made or chosen specifically for Magic.
+							使用玩家头颅显示图标的旧版配置, 共有 <?= count($textures) ?> 种图标.
 						</div>
 						<ul id="textureList">
 							<?php
